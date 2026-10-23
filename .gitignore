@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+.openai/
+.git-credentials
+my-trip/
+site-output/
+node_modules/
+.DS_Store

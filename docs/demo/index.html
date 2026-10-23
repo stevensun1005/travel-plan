@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5ef"><meta name="description" content="一起选择方案、看懂预算、沿真实路线出发。">
+  <title>travel-plan · 旅行一起选</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <script src="vendor/leaflet/leaflet.js" defer></script><script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#top">travel<span>—</span>plan<span class="brand-dot">●</span></a><nav aria-label="旅行导航"><a href="#budget">预算</a><a href="#flights">航班</a><a href="#route">地图</a><a href="#itinerary">行程</a></nav></header>
+  <main>
+    <section class="hero wrap" id="top"><p class="eyebrow">LESS GUESSING. MORE GOING.</p><h1 id="trip-title">你的下一次旅行</h1><p id="trip-subtitle"></p><div class="trip-facts" id="trip-facts"></div><p id="trip-notice" class="notice" hidden></p><div id="constraints" class="tags"></div></section>
+    <section class="wrap section" id="budget" aria-labelledby="budget-title"><div class="section-head"><div><p class="eyebrow">MAKE IT YOURS</p><h2 id="budget-title">选方案，算预算</h2></div><span class="capsule">一份计划 · 多种可能</span></div><div id="budget-planner"></div></section>
+    <section class="wrap section" id="flights" aria-labelledby="flights-title"><div class="section-head"><div><p class="eyebrow">FROM HERE TO THERE</p><h2 id="flights-title">航班行程</h2></div><div class="flight-controls"><button id="flight-prev" aria-label="上一程航班">←</button><span id="flight-index"></span><button id="flight-next" aria-label="下一程航班">→</button></div></div><div id="flight-carousel" tabindex="0" role="region" aria-label="左右滑动、拖动或使用方向键切换航班"></div></section>
+    <section class="wrap section" id="events"><div class="section-head"><div><p class="eyebrow">SOMETHING SPECIAL</p><h2>特别活动与晚餐备选</h2></div></div><div id="event-cards"></div></section>
+    <section class="wrap section" id="route" aria-labelledby="route-title"><div class="section-head"><div><p class="eyebrow">PLACES, NOT GUESSWORK</p><h2 id="route-title">地图是真的，路线也是</h2></div><span class="capsule">OpenStreetMap × OSRM</span></div><div id="map-days" class="map-days"></div><div class="map-layout"><div id="map" aria-label="真实旅行地图"></div><aside id="map-details"></aside></div><p class="fine">路线为路网估算，不含实时拥堵和游玩。预算中的住宿选择用于费用比较；改变实际住宿后，需同步更新地点与路线缓存。</p></section>
+    <section class="wrap section" id="itinerary" aria-labelledby="itinerary-title"><div class="section-head"><div><p class="eyebrow">ONE DAY AT A TIME</p><h2 id="itinerary-title">把每一天安排明白</h2></div></div><div id="coverage"></div><div id="days"></div></section>
+    <section class="wrap section" id="drive"><div class="section-head"><div><p class="eyebrow">ON THE ROAD</p><h2>租车与交通</h2></div></div><div id="rental"></div></section>
+    <section class="wrap section" id="prep"><div class="section-head"><div><p class="eyebrow">YOUR OWN NOTES</p><h2>小提醒</h2></div></div><form id="todo-form"><label for="todo-text">添加自己的提醒</label><div><input id="todo-text" maxlength="300" placeholder="想记下什么？"><button>添加</button></div></form><ul id="todos"></ul></section>
+    <section class="wrap section" id="research"><h2>来源与待确认</h2><div id="sources"></div></section>
+    <p id="load-error" class="wrap notice" hidden>页面数据未能载入，请使用本地服务器打开，并检查trip-data.json。</p>
+  </main>
+  <footer class="wrap"><a class="brand" href="#top">travel—plan</a><p>一起选，一起出发。<br>浏览器保存各自的预算选择，不代表已经预订，也不自动跨设备同步。</p><a href="#top">回到顶部 ↑</a></footer>
+</body></html>

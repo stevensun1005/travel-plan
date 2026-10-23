@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "trip": {
+    "id": "new-trip",
+    "title": "你的下一次旅行",
+    "subtitle": "把日期、想去的地方和预算交给 travel-plan。",
+    "startDate": "",
+    "endDate": "",
+    "nights": 0,
+    "travelers": 2,
+    "currency": "CAD",
+    "demo": false,
+    "notice": "行程资料待补充；目前没有报价或预订。",
+    "constraints": []
+  },
+  "budget": {
+    "target": 8000,
+    "categories": [],
+    "presets": []
+  },
+  "journeys": [],
+  "map": {
+    "places": [],
+    "dailyRoutes": [],
+    "routesFile": "routes.json"
+  },
+  "days": [],
+  "coverage": [],
+  "rental": {},
+  "todo": [],
+  "sources": [],
+  "events": []
+}

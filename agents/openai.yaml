@@ -1,0 +1,4 @@
+interface:
+  display_name: "travel-plan"
+  short_description: "把旅行资料变成能查价、选预算、看真实地图、分享给同伴的互动攻略"
+  default_prompt: "用 $travel-plan 根据我的旅行资料制作可选预算、真实路线地图和每日行程网页。"

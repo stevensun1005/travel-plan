@@ -1,0 +1,524 @@
+{
+  "version": 1,
+  "trip": {
+    "id": "vancouver-fictional-demo",
+    "title": "温哥华 · 慢一点，海边见",
+    "subtitle": "海鲜、海风与一辆敞篷车。把喜欢的选项放在一起，看看这趟旅行怎样刚刚好。",
+    "startDate": "2030-06-28",
+    "endDate": "2030-07-01",
+    "nights": 3,
+    "travelers": 2,
+    "currency": "CAD",
+    "demo": true,
+    "notice": "功能演示：酒店、价格、航班与时刻均为虚构，不能预订。公共地标和缓存道路用于展示真实地图能力。",
+    "constraints": [
+      "海鲜优先",
+      "海边慢旅行",
+      "不安排hiking",
+      "真实地点 · 虚构报价"
+    ]
+  },
+  "budget": {
+    "target": 4500,
+    "categories": [
+      {
+        "id": "flights",
+        "label": "机票｜两人往返",
+        "defaultOption": "economy",
+        "options": [
+          {
+            "id": "basic",
+            "label": "经济基础舱（演示）",
+            "amount": 1400,
+            "status": "虚构演示 · 不可预订",
+            "note": "仅示例金额；实际航班、行李和退改待查。",
+            "fareFamily": "Basic · 演示",
+            "bagPerPerson": 60
+          },
+          {
+            "id": "economy",
+            "label": "经济舱（演示）",
+            "amount": 1600,
+            "status": "虚构演示 · 不可预订",
+            "note": "两人完整往返的虚构总价，不代表任何航空公司的报价。",
+            "fareFamily": "Economy · 演示",
+            "bagPerPerson": 60
+          },
+          {
+            "id": "comfort",
+            "label": "更舒适的舱位（演示）",
+            "amount": 2400,
+            "status": "虚构演示 · 不可预订",
+            "note": "演示舱位升级和行李费用联动，不是可购买的产品。",
+            "fareFamily": "Comfort · 演示",
+            "bagPerPerson": 80
+          }
+        ],
+        "color": "#326b74"
+      },
+      {
+        "id": "hotel",
+        "label": "住宿｜一间房三晚",
+        "defaultOption": "harbour",
+        "options": [
+          {
+            "id": "harbour",
+            "label": "Harbour House · King（虚构）",
+            "amount": 900,
+            "status": "虚构演示 · 不可预订",
+            "note": "酒店与价格虚构；用于演示全住期合计和房型比较。"
+          },
+          {
+            "id": "garden",
+            "label": "Garden Stay · Queen（虚构）",
+            "amount": 720,
+            "status": "虚构演示 · 不可预订",
+            "note": "虚构的省钱选项；实际位置、退款和税费应在研究后填写。"
+          },
+          {
+            "id": "ocean",
+            "label": "Ocean Room · 海景（虚构）",
+            "amount": 1120,
+            "status": "虚构演示 · 不可预订",
+            "note": "虚构房型升级；不声称存在真实库存。"
+          }
+        ],
+        "color": "#d49c56"
+      },
+      {
+        "id": "car",
+        "label": "租车｜两天总额",
+        "defaultOption": "standard",
+        "options": [
+          {
+            "id": "compact",
+            "label": "普通小车（演示）",
+            "amount": 200,
+            "status": "虚构演示 · 不可预订",
+            "note": "税费、年龄资格、保障、取还地点均未实查。"
+          },
+          {
+            "id": "standard",
+            "label": "双座敞篷（演示）",
+            "amount": 260,
+            "status": "虚构演示 · 不可预订",
+            "note": "只演示费用比较；双座不保证比四座便宜。"
+          },
+          {
+            "id": "premium",
+            "label": "敞篷升级（演示）",
+            "amount": 340,
+            "status": "虚构演示 · 不可预订",
+            "note": "虚构升级额度，不能当作租车报价。"
+          }
+        ],
+        "color": "#6d8c64"
+      },
+      {
+        "id": "food",
+        "label": "餐饮｜两人全程",
+        "defaultOption": "seafood",
+        "options": [
+          {
+            "id": "local",
+            "label": "餐盘与咖啡（演示）",
+            "amount": 500,
+            "status": "虚构演示 · 不可预订",
+            "note": "全程两人合计，虚构含税小费预算。"
+          },
+          {
+            "id": "seafood",
+            "label": "海鲜好好吃（演示）",
+            "amount": 600,
+            "status": "虚构演示 · 不可预订",
+            "note": "几顿正式餐加本地简餐的演示额度，没有真实菜单报价。"
+          },
+          {
+            "id": "treat",
+            "label": "餐饮更宽裕（演示）",
+            "amount": 850,
+            "status": "虚构演示 · 不可预订",
+            "note": "为菜单升级留额度；仅供预算交互演示。"
+          }
+        ],
+        "color": "#c97965"
+      },
+      {
+        "id": "transport",
+        "label": "交通｜接送停车油费",
+        "defaultOption": "ground",
+        "options": [
+          {
+            "id": "ground",
+            "label": "接送＋停车油费（演示）",
+            "amount": 180,
+            "status": "虚构演示 · 不可预订",
+            "note": "不含已经计入租车类别的车费。"
+          }
+        ],
+        "color": "#8096ad"
+      },
+      {
+        "id": "activities",
+        "label": "活动｜门票与体验",
+        "defaultOption": "visits",
+        "options": [
+          {
+            "id": "visits",
+            "label": "景点与体验（演示）",
+            "amount": 300,
+            "status": "虚构演示 · 不可预订",
+            "note": "全部虚构费用，真实项目和票种需要另查。"
+          }
+        ],
+        "color": "#9b82a6"
+      },
+      {
+        "id": "bags",
+        "label": "行李｜全程预留",
+        "defaultOption": "two",
+        "options": [
+          {
+            "id": "none",
+            "label": "仅随身行李（演示）",
+            "amount": 0,
+            "status": "虚构演示 · 不可预订",
+            "note": "不保证真实机票含随身行李。"
+          },
+          {
+            "id": "two",
+            "label": "两人托运预留（演示）",
+            "amount": 120,
+            "status": "虚构演示 · 不可预订",
+            "note": "按所选航班选项的演示单人金额联动。",
+            "bagCount": 2
+          }
+        ],
+        "color": "#b6aa7b"
+      },
+      {
+        "id": "buffer",
+        "label": "机动额度",
+        "defaultOption": "buffer",
+        "options": [
+          {
+            "id": "buffer",
+            "label": "预留一点弹性",
+            "amount": 200,
+            "status": "虚构演示 · 不可预订",
+            "note": "已计入总额，不再额外加收。"
+          },
+          {
+            "id": "more",
+            "label": "多留一点弹性",
+            "amount": 400,
+            "status": "虚构演示 · 不可预订",
+            "note": "额外留200缓冲。"
+          }
+        ],
+        "color": "#a7b9b4"
+      }
+    ],
+    "presets": [
+      {
+        "id": "save",
+        "label": "省一点，留给海鲜",
+        "selections": {
+          "flights": "basic",
+          "hotel": "garden",
+          "car": "compact"
+        },
+        "note": "演示更换票种、房型和车型。"
+      },
+      {
+        "id": "treat",
+        "label": "更享受一点",
+        "selections": {
+          "hotel": "ocean",
+          "car": "premium",
+          "food": "treat"
+        },
+        "note": "海景、敞篷升级和更宽裕餐饮的虚构组合。"
+      }
+    ]
+  },
+  "journeys": [
+    {
+      "id": "outbound",
+      "title": "去程｜多伦多 → 温哥华",
+      "proposal": {
+        "airline": "示例航班 · 无实际航班号",
+        "fareFamily": "Economy · 演示",
+        "departure": {
+          "airport": "YYZ",
+          "date": "2030-06-28",
+          "time": "09:00"
+        },
+        "arrival": {
+          "airport": "YVR",
+          "date": "2030-06-28",
+          "time": "11:00"
+        },
+        "route": "YYZ → YVR",
+        "duration": "示例时长",
+        "connection": "转机条件待实际查价",
+        "note": "所有时刻为虚构演示，不能据此安排真实出行。"
+      }
+    },
+    {
+      "id": "return",
+      "title": "回程｜温哥华 → 多伦多",
+      "proposal": {
+        "airline": "示例航班 · 无实际航班号",
+        "fareFamily": "Economy · 演示",
+        "departure": {
+          "airport": "YVR",
+          "date": "2030-07-01",
+          "time": "14:00"
+        },
+        "arrival": {
+          "airport": "YYZ",
+          "date": "2030-07-01",
+          "time": "21:30"
+        },
+        "route": "YVR → YYZ",
+        "duration": "示例时长",
+        "connection": "转机条件待实际查价",
+        "note": "所有时刻为虚构演示，不能据此安排真实出行。"
+      }
+    }
+  ],
+  "map": {
+    "places": [
+      {
+        "id": "base",
+        "name": "海港公共起点 · 非真实酒店",
+        "lat": 49.2897,
+        "lng": -123.1245,
+        "address": "Coal Harbour 公共地标示例点",
+        "note": "公共参考位置；本示例酒店虚构，不将此点称作酒店入口。"
+      },
+      {
+        "id": "canada",
+        "name": "Canada Place",
+        "lat": 49.2888,
+        "lng": -123.1111,
+        "address": "Canada Place, Vancouver",
+        "note": "真实公共地标，行程时刻和费用仅为演示。"
+      },
+      {
+        "id": "stanley",
+        "name": "Stanley Park 海岸",
+        "lat": 49.3017,
+        "lng": -123.1307,
+        "address": "Stanley Park, Vancouver",
+        "note": "公园道路附近的示例停靠点，具体合法停车入口需出发前核对。"
+      },
+      {
+        "id": "granville",
+        "name": "Granville Island",
+        "lat": 49.2712,
+        "lng": -123.134,
+        "address": "Granville Island, Vancouver",
+        "note": "市场附近公共参考点。"
+      },
+      {
+        "id": "kits",
+        "name": "Kitsilano Beach",
+        "lat": 49.2735,
+        "lng": -123.1534,
+        "address": "Kitsilano Beach, Vancouver",
+        "note": "海滩附近公共参考点，不保证当日海况。"
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 1,
+        "label": "06/28",
+        "placeIds": [
+          "base",
+          "canada",
+          "base"
+        ],
+        "transport": "walking",
+        "note": "步行参考；不使用驾车几何冒充步行路线。"
+      },
+      {
+        "day": 2,
+        "label": "06/29",
+        "placeIds": [
+          "base",
+          "stanley",
+          "granville",
+          "base"
+        ],
+        "transport": "driving",
+        "note": "道路估算不含停车、游玩和实时拥堵。"
+      },
+      {
+        "day": 3,
+        "label": "06/30",
+        "placeIds": [
+          "base",
+          "kits",
+          "base"
+        ],
+        "transport": "driving",
+        "note": "海岸兜风的公共地点示例。"
+      }
+    ],
+    "routesFile": "routes.json"
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2030-06-28",
+      "title": "抵达之后，先把节奏放慢",
+      "locations": [
+        "公共海港起点",
+        "Canada Place"
+      ],
+      "schedule": [
+        {
+          "time": "按实际航班",
+          "title": "抵达与入住",
+          "text": "本示例没有实际预订。机场接送、酒店与入住时刻需要在真实行程中确认。",
+          "placeId": "base"
+        },
+        {
+          "time": "傍晚建议",
+          "title": "海边散步与第一顿海鲜",
+          "text": "只演示轻松抵达日，不加入远途景点或山径。",
+          "placeId": "canada"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2030-06-29",
+      "title": "敞篷兜风，看海也看城市",
+      "locations": [
+        "Stanley Park",
+        "Granville Island"
+      ],
+      "schedule": [
+        {
+          "time": "09:00建议",
+          "title": "取车",
+          "text": "指定日期、年龄、驾照与车型应查完整结算价。示例不提供真实车源。",
+          "placeId": "base"
+        },
+        {
+          "time": "上午建议",
+          "title": "海岸公园",
+          "text": "车览与正常短走，不安排hiking；停车点按现场合法车位选择。",
+          "placeId": "stanley"
+        },
+        {
+          "time": "下午建议",
+          "title": "市场与海鲜",
+          "text": "给午餐、停车、休息留时间，具体店铺待查。",
+          "placeId": "granville"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2030-06-30",
+      "title": "让沙滩占据一整个下午",
+      "locations": [
+        "Kitsilano Beach",
+        "海港起点"
+      ],
+      "schedule": [
+        {
+          "time": "午后建议",
+          "title": "海边休息",
+          "text": "正常步行、拍照和看海，不把海滩到访写成必能下水。",
+          "placeId": "kits"
+        },
+        {
+          "time": "傍晚建议",
+          "title": "最后一顿正式海鲜",
+          "text": "餐厅、节日营业和菜单价格留待实际研究。",
+          "placeId": "base"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2030-07-01",
+      "title": "慢慢收拾，回到日常",
+      "locations": [
+        "海港起点"
+      ],
+      "schedule": [
+        {
+          "time": "按酒店政策",
+          "title": "退房与行李寄存",
+          "text": "不要默认免费延迟退房或日间房。",
+          "placeId": "base"
+        },
+        {
+          "time": "按出票时刻倒推",
+          "title": "机场与返程",
+          "text": "示例航班只是演示，不能据此值机或预订。"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "item": "海边与沙滩",
+      "when": "第1、3天",
+      "note": "保留放松时间，不把步行看海当作下水项目。"
+    },
+    {
+      "item": "公园山径",
+      "when": "替代",
+      "note": "以海岸车览和短途步行替代登山，明确不是登顶。"
+    },
+    {
+      "item": "市场与海鲜",
+      "when": "第2天及晚餐",
+      "note": "餐厅待选，示例中不虚构已预订菜单。"
+    }
+  ],
+  "rental": {
+    "title": "双座敞篷 · 把沿途也变成旅行",
+    "summary": "演示内容：车型和报价未实查。真实任务需按驾驶年龄、完整驾照、实际日期、税费及保障查价。",
+    "details": [
+      {
+        "label": "租期",
+        "value": "示例两天"
+      },
+      {
+        "label": "车型",
+        "value": "双座敞篷 · 未确定"
+      },
+      {
+        "label": "交车地点",
+        "value": "尚未取得，地图不编造地址"
+      }
+    ],
+    "notes": [
+      "双座不必然比四座便宜。",
+      "油费与停车计入地面交通，不重复计车费。",
+      "门店年龄规则、保障与退款条件均需要核对。"
+    ]
+  },
+  "todo": [],
+  "sources": [
+    {
+      "label": "OpenStreetMap 地图数据",
+      "url": "https://www.openstreetmap.org/copyright",
+      "note": "地图数据版权归OpenStreetMap贡献者，价格与行程时刻不来源于此。"
+    },
+    {
+      "label": "OSRM 道路规划",
+      "url": "https://project-osrm.org/",
+      "note": "缓存道路为路网估算，不含实时拥堵。"
+    }
+  ],
+  "events": []
+}
