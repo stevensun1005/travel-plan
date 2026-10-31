@@ -12,7 +12,7 @@
 ![Budget](https://img.shields.io/badge/budget-interactive-6d8c64)
 [![License: MIT](https://img.shields.io/badge/license-MIT-153b3d)](LICENSE)
 
-[**打开互动演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
+[**打开基础演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [西葡案例](#西葡多城规划) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
 
 </div>
 
@@ -24,6 +24,38 @@
 
 ## 先看看成品
 
+### 西葡多城规划
+
+**CASE 01 / ESPAÑA × PORTUGAL**
+
+**为一场巴萨主场比赛，选一条自己的路。**
+
+里斯本 → 塞维利亚 → 巴塞罗那，是其中一种答案。也可以去波尔图、加住一晚、换成火车，看看日期、路线和预算怎样一起变化。
+
+[![西班牙与葡萄牙旅行规划首页：比赛主线与当前行程](docs/assets/iberia-overview.jpg)](https://spain-barca-matchweek-jan2027.stezero.chatgpt.site/)
+
+| 先选路线，再按自己的节奏改 | 点开一天，就能看清要去哪里 |
+| :---: | :---: |
+| [![十套路线预设与对应机票、全程费用比较](docs/assets/iberia-routes.jpg)](docs/assets/iberia-routes.jpg) | [![景点照片、推荐理由、建议时长与门票信息](docs/assets/iberia-attractions.jpg)](docs/assets/iberia-attractions.jpg) |
+| 十套预设 · 城市自由勾选 · 火车与飞机比较 | 实景照片 · 为什么值得去 · 停留多久 · 门票多少 |
+
+- **路线可选，也可自己组合**：城市、顺序、住宿晚数、日游与逐段交通联动重排。
+- **比赛是行程的主线**：围绕主场比赛安排停留，明确区分日期假设与官方最终确认。
+- **价格影响推荐顺序**：Expedia 对应日期报价与估算分别标注，结合国际机票、欧洲交通和住宿比较全程花费。
+- **景点信息就在日程旁**：展开当天即可看照片、推荐理由、建议停留时间、票价和官方链接。
+
+[**进入西葡案例 →**](https://spain-barca-matchweek-jan2027.stezero.chatgpt.site/) · [直接看线路选择](https://spain-barca-matchweek-jan2027.stezero.chatgpt.site/#choose) · [查看景点实拍大图](docs/assets/iberia-attractions.jpg)
+
+> 此案例保留原站点访问权限，在线查看需要登录并拥有该站点权限；截图可直接在本仓库查看。截图于 2026-10-31 从现有项目本地页面实拍，所含报价记录截至 2026-10-30，不代表当前售价、库存或已预订。[截图中的照片许可](THIRD_PARTY_NOTICES.md#案例截图中的照片)。
+
+### 温哥华基础演示
+
+**CASE 02 / THE BUILDLESS STARTER**
+
+**先用一份轻量攻略，试试一起做选择。**
+
+不用配置 API key 或安装前端依赖，就能体验机酒选项、预算占比、航班切换与真实路线地图。
+
 ![预算选择与支出占比](docs/assets/budget.png)
 
 <details>
@@ -34,6 +66,8 @@
 </details>
 
 > 演示使用温哥华公共地标。**酒店、价格、航班和时刻全部虚构，不能预订。** 地图与道路线用于展示功能；你自己的攻略会按实际资料与可取得的报价制作。
+
+[**打开无需登录的基础演示 →**](https://stevensun1005.github.io/travel-plan/demo/)
 
 ## 这份 skill 会多做哪一步
 
@@ -48,7 +82,7 @@
 | 「跨年有什么特别的」 | 核对本年度活动、节日关闭、晚秀与游船冲突，区分常规节目 |
 | 「怎么发给同伴」 | 白名单静态打包；按授权部署并交付确认成功的分享链接 |
 
-**也支持把多城旅行做成选择器。** 用户需要时，Agent会扩展底板：自由勾选城市、改晚数和顺序、切换火车/飞机，联动日期、住宿、路线和预算；围绕球赛等必参加事件排程。景点详情就近展开照片、推荐理由、停留时间及门票，所有备选线路使用同样标准。指定Expedia时按对应行程核价，改条件会使不匹配报价失效，并保留手填预算。详见 [多城市工作流](references/multi-city.md)；当前在线演示展示基础底板。
+**也支持把多城旅行做成选择器。** 用户需要时，Agent会扩展底板：自由勾选城市、改晚数和顺序、切换火车/飞机，联动日期、住宿、路线和预算；围绕球赛等必参加事件排程。景点详情就近展开照片、推荐理由、停留时间及门票，所有备选线路使用同样标准。指定Expedia时按对应行程核价，改条件会使不匹配报价失效，并保留手填预算。详见 [多城市工作流](references/multi-city.md)；上方西葡案例展示扩展后的实现，温哥华演示展示基础底板。
 
 ## 三步安装
 
