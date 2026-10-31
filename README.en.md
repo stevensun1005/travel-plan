@@ -16,6 +16,8 @@ A Codex skill with a buildless website starter. Merge PDFs and previous plans, r
 
 The demo uses real public landmarks with **fictional hotels, prices, flights and times**. Nothing in it is a bookable quote.
 
+For multi-city requests, the agent can extend the starter with city/night/order choices, rail-versus-flight options, event-anchored scheduling, and linked dates, lodging, maps and costs. Attraction details include photos, reasons to visit, duration and ticket information across every route. Expedia research follows the requested itinerary; mismatched quotes become estimates again while manual budgets survive. See [multi-city workflow](references/multi-city.md). These extensions are task-specific; the online demo shows the base starter.
+
 ## Install
 
 Requires Python 3.10+ and a skill-enabled Codex environment. No npm install or API key is needed for the starter demo.
