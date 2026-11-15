@@ -13,7 +13,8 @@ A Codex skill with a buildless website starter. Merge PDFs and previous plans, r
 - **Hand-drawn look:** graph-paper and chalkboard themes, handwriting headings, highlighter marks, boarding-pass flight cards and a little travelling alpaca.
 - **Make your own:** a 「做同款攻略」 button in the top bar (and 「复制提示词」 at the bottom) copies a ready-to-paste prompt that installs travel-plan in Claude Code or Codex and starts a new plan.
 - **Pre-departure checklist:** travel documents for each traveler's passport and residency (visas, electronic travel authorisations, passport validity, return documents) and bookings with release windows, sorted by deadline with countdowns.
-- **Ledger breakdown:** under the spending chart each category is a row with its share and a progress bar; tap 「+」 to expand every line item, like an expense app.
+- **Phone-friendly:** a two-row top bar on phones, swipeable day filters and map stops (tap a stop to jump to it on the map), and route legs folded away until needed.
+- **Ledger breakdown:** under the spending chart each category is a row with its share and a progress bar; tap 「+」 to expand every line item, like an expense app. Items must add up to the option amount (the validator checks), and scale with package splits and baggage counts.
 - **Useful choices:** compare whole-trip options, edit custom amounts and budget limits, see percentages, save locally. Flight+hotel packages lock the included hotel (and transfers) automatically, so nothing is counted twice.
 - **Research that keeps its limits:** price records, estimates and bookings remain distinct; taxes, luggage, age restrictions and rental periods matter.
 - **Coverage you can inspect:** every requested source item is scheduled, replaced, optional or explicitly excluded.
