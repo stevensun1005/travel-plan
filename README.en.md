@@ -11,7 +11,7 @@ A Codex skill with a buildless website starter. Merge PDFs and previous plans, r
 - **Real geography:** Leaflet, OpenStreetMap, cached OSRM road geometry, daily filters and directions — plus an offline OSM base map (land, forests, road classes, route shields, place names) so the map still reads when a host blocks map tiles.
 - **Share a route poster:** one button draws a hand-drawn poster of every day's route, place stickers and highlights, with a save-image button.
 - **Hand-drawn look:** graph-paper and chalkboard themes, handwriting headings, highlighter marks, boarding-pass flight cards and a little travelling alpaca.
-- **Make your own:** a 「复制提示词」 button copies a ready-to-paste prompt that installs travel-plan in Claude Code or Codex and starts a new plan.
+- **Make your own:** a 「做同款攻略」 button in the top bar (and 「复制提示词」 at the bottom) copies a ready-to-paste prompt that installs travel-plan in Claude Code or Codex and starts a new plan.
 - **Pre-departure checklist:** travel documents for each traveler's passport and residency (visas, electronic travel authorisations, passport validity, return documents) and bookings with release windows, sorted by deadline with countdowns.
 - **Useful choices:** compare whole-trip options, edit custom amounts and budget limits, see percentages, save locally. Flight+hotel packages lock the included hotel (and transfers) automatically, so nothing is counted twice.
 - **Research that keeps its limits:** price records, estimates and bookings remain distinct; taxes, luggage, age restrictions and rental periods matter.
