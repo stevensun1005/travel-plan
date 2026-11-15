@@ -268,15 +268,51 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
   });
   text(ctx, share.footer || '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准', W / 2, H - 22, { font: `15px ${SANS}`, color: INK2, align: 'center' });
 
-  showModal(canvas.toDataURL('image/png'), share.title || `${data.trip.title} · 路线图`);
+  const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+  showModal(canvas.toDataURL('image/png'), title, blob);
 }
 
-function showModal(src, title) {
+function fileName(title) {
+  return `${String(title).replace(/[\\/:*?"<>|\s·]+/g, '-').replace(/^-+|-+$/g, '') || 'route-map'}.png`;
+}
+
+// 保存图片：Claude 页面里用 downloads 能力；手机用系统分享面板（可存到相册）；电脑浏览器直接下载。
+async function saveImage(blob, title, say) {
+  const name = fileName(title);
+  const claude = globalThis.claude;
+  if (claude?.use) {
+    const downloads = await claude.use('downloads').catch(() => null);
+    if (!downloads) return say('这里不能直接保存，截图就好');
+    try { await downloads.save({ filename: name, data: blob }); say('已保存'); }
+    catch (e) { say(e?.code === 'declined' ? '' : e?.code === 'rate_limited' ? '稍等一下再试' : '这里不能直接保存，截图就好'); }
+    return;
+  }
+  const file = typeof File === 'function' ? new File([blob], name, { type: 'image/png' }) : null;
+  if (file && matchMedia('(pointer: coarse)').matches && navigator.canShare?.({ files: [file] })) {
+    try { await navigator.share({ files: [file], title }); return say(''); }
+    catch (e) { if (e?.name === 'AbortError') return say(''); }
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+  say('已下载');
+}
+
+function showModal(src, title, blob) {
   document.querySelector('.share-modal')?.remove();
   const modal = document.createElement('div');
   modal.className = 'share-modal'; modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-label', '分享路线图');
-  modal.innerHTML = `<div class="share-sheet"><header><h3>分享路线图</h3><button type="button" data-close>关闭</button></header><img alt=""><p class="fine">截图，或者长按（手机）/ 右键（电脑）图片即可保存。</p></div>`;
+  modal.innerHTML = `<div class="share-sheet"><header><h3>分享路线图</h3><span class="share-actions"><button type="button" data-save>保存图片</button><button type="button" data-close>关闭</button></span></header><img alt=""><p class="fine" role="status" aria-live="polite">点「保存图片」存到手机或电脑；也可以直接截图。</p></div>`;
   const img = modal.querySelector('img'); img.src = src; img.alt = title;
+  const note = modal.querySelector('.fine'), saveBtn = modal.querySelector('[data-save]');
+  const hint = note.textContent;
+  saveBtn.hidden = !blob;
+  saveBtn.onclick = async () => {
+    saveBtn.disabled = true;
+    try { await saveImage(blob, title, msg => { note.textContent = msg || hint; }); }
+    finally { saveBtn.disabled = false; }
+  };
   const opener = document.activeElement;
   const close = () => { modal.remove(); document.removeEventListener('keydown', onKey); opener?.focus?.(); };
   const onKey = e => { if (e.key === 'Escape') close(); };

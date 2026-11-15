@@ -2,14 +2,14 @@
 
 **Turn scattered travel notes into a page you can plan together.**
 
-[Public starter demo](https://stevensun1005.github.io/travel-plan/demo/) · [中文 README](README.md) · [Skill instructions](SKILL.md)
+[Live demo: Toronto → Oʻahu](https://stevensun1005.github.io/travel-plan/demo/) · [中文 README](README.md) · [Skill instructions](SKILL.md)
 
 ![Interactive budget](docs/assets/budget.png)
 
 A Codex skill with a buildless website starter. Merge PDFs and previous plans, research date-specific flight/hotel/car options, build realistic daily schedules, and let travelers compare choices with a live budget and spending chart.
 
 - **Real geography:** Leaflet, OpenStreetMap, cached OSRM road geometry, daily filters and directions — plus an offline OSM base map (land, forests, road classes, route shields, place names) so the map still reads when a host blocks map tiles.
-- **Share a route poster:** one button draws a hand-drawn poster of every day's route, place stickers and highlights; screenshot it to share.
+- **Share a route poster:** one button draws a hand-drawn poster of every day's route, place stickers and highlights, with a save-image button.
 - **Hand-drawn look:** graph-paper and chalkboard themes, handwriting headings, highlighter marks, boarding-pass flight cards and a little travelling alpaca.
 - **Make your own:** a 「复制提示词」 button copies a ready-to-paste prompt that installs travel-plan in Claude Code or Codex and starts a new plan.
 - **Pre-departure checklist:** travel documents for each traveler's passport and residency (visas, electronic travel authorisations, passport validity, return documents) and bookings with release windows, sorted by deadline with countdowns.
@@ -18,13 +18,13 @@ A Codex skill with a buildless website starter. Merge PDFs and previous plans, r
 - **Coverage you can inspect:** every requested source item is scheduled, replaced, optional or explicitly excluded.
 - **Shareable output:** validate, package only required files, publish through available authorized hosting tools.
 
-The demo uses real public landmarks with **fictional hotels, prices, flights and times**. Nothing in it is a bookable quote.
+The live demo is a real plan made with travel-plan: Toronto to Oʻahu for five nights in January, with a nonstop flight or an Expedia flight+hotel package, one rental-car day, tours instead of a second car day, and a pre-departure checklist for two different passports. Prices are records and estimates from 2026-11-15; **nothing is booked**. `create_trip.py --demo` still creates a fictional Vancouver sample.
 
 | Offline base map | Share route poster |
 | :---: | :---: |
 | [![Land, forests, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers and highlights](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
 
-For multi-city requests, the agent can extend the starter with city/night/order choices, rail-versus-flight options, event-anchored scheduling, and linked dates, lodging, maps and costs. Attraction details include photos, reasons to visit, duration and ticket information across every route. Expedia research follows the requested itinerary; mismatched quotes become estimates again while manual budgets survive. See [multi-city workflow](references/multi-city.md). These extensions are task-specific; the public starter demo remains a separate, smaller example.
+For multi-city requests, the agent can extend the starter with city/night/order choices, rail-versus-flight options, event-anchored scheduling, and linked dates, lodging, maps and costs. Attraction details include photos, reasons to visit, duration and ticket information across every route. Expedia research follows the requested itinerary; mismatched quotes become estimates again while manual budgets survive. See [multi-city workflow](references/multi-city.md). These extensions are task-specific; the Oʻahu demo uses the single-city starter.
 
 ## Install
 
