@@ -45,6 +45,15 @@ def validate(folder):
             if not option.get('status'):warnings.append(f'{category["id"]}/{option.get("id")}: price status missing')
             if 'bagPerPerson' in option:check(money(option['bagPerPerson']),'Invalid baggage rate')
             if 'bagCount' in option:check(isinstance(option['bagCount'],int) and option['bagCount']>=0,'Invalid bag count')
+        default=next((o for o in options if o.get('id')==category.get('defaultOption')),{})
+        check(not default.get('bundleOnly'),f'{category["id"]}: default option cannot be bundle-only')
+    # Bundles: e.g. a flight+hotel package locks the hotel to an included (bundle-only) option
+    for category in categories:
+        for option in category.get('options',[]):
+            for target_id,target_option in (option.get('bundles') or {}).items():
+                target=next((c for c in categories if c['id']==target_id),None)
+                check(target is not None and target_id!=category['id'],f'{category["id"]}/{option.get("id")}: bundles unknown category {target_id}')
+                check(target is not None and any(o['id']==target_option for o in target.get('options',[])),f'{category["id"]}/{option.get("id")}: bundles unknown option {target_option}')
     for preset in budget.get('presets',[]):
         for category_id,option_id in preset.get('selections',{}).items():
             check(category_id in category_ids,f'Preset {preset.get("id")}: unknown category')
@@ -66,6 +75,24 @@ def validate(folder):
             for coord in coords:check(len(coord)==2 and all(isinstance(v,(int,float)) and math.isfinite(v) for v in coord),'Invalid route coordinate')
             check(route.get('distance',-1)>=0 and route.get('duration',-1)>=0,'Invalid road estimate')
     elif data.get('map',{}).get('dailyRoutes'):warnings.append('Road cache pending: show points and navigation only')
+    base_file=(folder/data.get('map',{}).get('basemapFile','basemap.json')).resolve()
+    check(base_file.is_relative_to(folder.resolve()),'Base map file escapes project directory')
+    if base_file.is_file() and base_file.is_relative_to(folder.resolve()):
+        base=json.loads(base_file.read_text(encoding='utf-8'))
+        check(isinstance(base.get('land',[]),list) and isinstance(base.get('roads',{}),dict),'Invalid base map structure')
+        for label in base.get('labels',[])+base.get('shields',[]):
+            check(isinstance(label.get('lat'),(int,float)) and isinstance(label.get('lng'),(int,float)),'Invalid base map label')
+    elif data.get('map',{}).get('places'):warnings.append('Base map pending: run fetch_basemap.py so the map reads without online tiles')
+    share=data.get('share')
+    if share is not None:
+        check(isinstance(share,dict),'share must be an object')
+        share=share if isinstance(share,dict) else {}
+        for poi in share.get('pois',[]):check(poi.get('placeId') in place_ids,f'Share poster references unknown place {poi.get("placeId")}')
+        for day in share.get('days',[]):check(day.get('day') in day_ids,f'Share poster references unknown day {day.get("day")}')
+        if 'bbox' in share:
+            box=share['bbox'];check(isinstance(box,list) and len(box)==4 and all(isinstance(v,(int,float)) and math.isfinite(v) for v in box) and box[0]<box[2] and box[1]<box[3],'share.bbox must be [west,south,east,north]')
+        if share.get('mapTitle'):
+            title=share['mapTitle'];check(isinstance(title.get('lat'),(int,float)) and isinstance(title.get('lng'),(int,float)),'share.mapTitle needs lat and lng')
     if trip.get('demo'):warnings.append('FICTIONAL DEMO: prices/hotels/flights are not bookable quotes')
     return errors,warnings
 

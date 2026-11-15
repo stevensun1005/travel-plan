@@ -11,3 +11,5 @@
 pending/building/publishing继续跟进同一部署，成功且返回生产URL才说上线。普通HTTP工具被防爬拦截不等于部署失败，结合平台、权限和正常浏览器判断，不绕过验证码或访问控制。
 
 更新站点时重新生成同一静态输出，验证并部署新版本。区分本地校验、浏览器、Git推送、远端CI和生产部署的状态，不混用结论。
+
+托管环境的CSP可能拦截OpenStreetMap在线图块（例如 Artifact）。发布前先跑 `fetch_basemap.py`，`package_site.py` 会把 `basemap.json` 和 `share-map.mjs` 一起打包，地图在图块被拦截时仍显示陆地、公路和地名。分享海报只在浏览器里绘制；托管环境不允许下载时，提示用户截图或长按保存，不为此申请额外权限。

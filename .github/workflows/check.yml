@@ -16,5 +16,6 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: node --test tests/budget.test.mjs
       - run: node --check assets/starter/app.mjs
+      - run: node --check assets/starter/share-map.mjs
       - run: python scripts/create_trip.py /tmp/travel-plan-demo --demo
       - run: python scripts/validate_trip.py /tmp/travel-plan-demo

@@ -25,6 +25,19 @@ test('zero and cents never produce floating-point budget drift',()=>{
   for(const choice of Object.values(selected.selections))choice.customAmount=0.1;
   assert.equal(calculate(data.budget,selected).total,0.8);
 });
+test('a package locks the bundled category and releases it when unselected',()=>{
+  const selected=normalize(data.budget);selected.selections.flights.optionId='package';
+  const pkg=calculate(data.budget,selected);
+  assert.equal(pkg.selections.hotel.optionId,'in-package');
+  assert.deepEqual(pkg.locked,['hotel']);
+  assert.equal(pkg.total,3960);
+  const back={...pkg,selections:{...pkg.selections,flights:{optionId:'economy',customAmount:0}}};
+  const released=calculate(data.budget,back);
+  assert.equal(released.selections.hotel.optionId,'harbour');
+  assert.deepEqual(released.locked,[]);
+  // a saved bundle-only choice without its package falls back to the default
+  assert.equal(normalize(data.budget,{selections:{hotel:{optionId:'in-package'}}}).selections.hotel.optionId,'harbour');
+});
 test('carousel positions are relative to the actual viewport',()=>{
   const rect=(left,width)=>({getBoundingClientRect:()=>({left,width})});
   assert.equal(nearestIndex(rect(125,600),[rect(-489,600),rect(125,600)]),1);

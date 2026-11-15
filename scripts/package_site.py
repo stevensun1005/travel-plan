@@ -14,8 +14,9 @@ def package(source,destination):
     data=json.loads((source/'trip-data.json').read_text(encoding='utf-8'))
     files=['index.html','styles.css','app.mjs','budget.mjs','trip-data.json']
     files+=[p.relative_to(source).as_posix() for p in (source/'vendor').rglob('*') if p.is_file()]
-    routes=data.get('map',{}).get('routesFile','routes.json')
-    if (source/routes).is_file():files.append(routes)
+    files+=[name for name in ['share-map.mjs'] if (source/name).is_file()]  # optional in projects made before it existed
+    for optional in [data.get('map',{}).get('routesFile','routes.json'),data.get('map',{}).get('basemapFile','basemap.json')]:
+        if (source/optional).is_file():files.append(optional)
     for name in files:
         origin=(source/name).resolve()
         if not origin.is_relative_to(source) or origin.is_symlink():raise ValueError('Asset escapes source project')

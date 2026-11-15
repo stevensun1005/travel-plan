@@ -54,16 +54,14 @@
 
 **先用一份轻量攻略，试试一起做选择。**
 
-不用配置 API key 或安装前端依赖，就能体验机酒选项、预算占比、航班切换与真实路线地图。
+不用配置 API key 或安装前端依赖，就能体验机酒选项、预算占比、航班切换、真实路线地图和一键分享路线图。界面是方格纸上的手绘图解风（和 [stock-html](https://github.com/stevensun1005/stock-html) 同一套视觉规范），右上角可切到黑板主题。
 
-![预算选择与支出占比](docs/assets/budget.png)
+![方格纸手绘风：预算选择与支出占比](docs/assets/budget.png)
 
-<details>
-<summary><strong>展开看真实路线地图</strong></summary>
-
-![真实底图、逐日地点和道路线](docs/assets/map.png)
-
-</details>
+| 地图自带离线底图 | 一键生成分享路线图 |
+| :---: | :---: |
+| [![陆地、山区、公路分级、编号牌和地名，在线图块被拦截时也能看](docs/assets/map.png)](docs/assets/map.png) | [![手绘海报：每天路线、景点贴纸和每日亮点](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
+| 公路分级 · 编号牌 · 山区绿地 · 城镇/山峰/海湾名 | 每天一种颜色 · 景点贴纸 · 每日卡片 · 截图就能发 |
 
 > 演示使用温哥华公共地标。**酒店、价格、航班和时刻全部虚构，不能预订。** 地图与道路线用于展示功能；你自己的攻略会按实际资料与可取得的报价制作。
 
@@ -81,6 +79,10 @@
 | 「酒店机票让我自己选」 | 可选方案、自定义金额、预算上限、总额/余额与支出占比联动 |
 | 「跨年有什么特别的」 | 核对本年度活动、节日关闭、晚秀与游船冲突，区分常规节目 |
 | 「怎么发给同伴」 | 白名单静态打包；按授权部署并交付确认成功的分享链接 |
+| 「我订的是机酒套餐」 | 选中套餐时酒店（和接送）自动切成「已含在套餐」，取消后恢复，总价不重复计算 |
+| 「地图太空了」「发布后地图不显示」 | 自带OpenStreetMap离线底图：陆地、山区、公路分级、编号牌、地名，图块被拦截也能看 |
+| 「想发一张路线图给朋友」 | 地图旁「分享路线图」按钮，生成手绘海报：每天路线、景点贴纸和每日亮点 |
+| 「做得好看一点」 | 方格纸 / 黑板两套手绘图解风主题，手写体标题、荧光笔重点、登机牌航班卡 |
 
 **也支持把多城旅行做成选择器。** 用户需要时，Agent会扩展底板：自由勾选城市、改晚数和顺序、切换火车/飞机，联动日期、住宿、路线和预算；围绕球赛等必参加事件排程。景点详情就近展开照片、推荐理由、停留时间及门票，所有备选线路使用同样标准。指定Expedia时按对应行程核价，改条件会使不匹配报价失效，并保留手填预算。详见 [多城市工作流](references/multi-city.md)；上方西葡案例展示扩展后的实现，温哥华演示展示基础底板。
 
@@ -150,11 +152,14 @@ python scripts/validate_trip.py ./my-trip
 python scripts/serve.py ./my-trip
 ```
 
-打开命令实际打印的URL。演示包含缓存道路线；地图底图需要联网。生成空白旅行时去掉 `--demo`。
+打开命令实际打印的URL。演示包含缓存道路线和离线底图；在线图块需要联网。生成空白旅行时去掉 `--demo`。
 
 ```bash
 # 修改 trip-data.json 后，按需取得真实公路几何
 python scripts/fetch_routes.py ./my-trip
+
+# 离线底图（陆地、山区、公路分级、编号牌、地名）；装了 shapely 时大陆海岸线也能填色
+python scripts/fetch_basemap.py ./my-trip
 
 # 只打包页面需要的文件，输出目录必须为新目录或空目录
 python scripts/package_site.py ./my-trip ./site-output
@@ -169,7 +174,7 @@ python scripts/package_site.py ./my-trip ./site-output
                 ↓
          trip-data.json
                 ↓
-    互动预算 + 航班 + 真实地图 + 每日行程
+  互动预算 + 航班 + 真实地图 + 每日行程 + 分享海报
                 ↓
        本地查看 / 静态打包 / 授权发布
 ```
@@ -182,6 +187,7 @@ python scripts/package_site.py ./my-trip ./site-output
 - 酒店按全住期计算；餐费、停车、强制费用的口径写清楚。
 - 套餐已含的晚餐、门票和接送只计一次。
 - 行李等有依赖的金额随所选航班调整。
+- 机酒套餐用 `bundles` 声明包含哪些类别，被包含的类别自动锁定为「已含」，不会和单订酒店叠加。
 - 用最小货币单位累计，自定义负数、损坏的保存内容和零预算都有处理。
 - 饼图是**当前支出构成**；未用预算不混成一块“支出”。
 
@@ -205,6 +211,8 @@ python scripts/package_site.py ./my-trip ./site-output
 <summary>地图到底是真实的，还是装饰性的示意图？</summary>
 
 使用Leaflet、OpenStreetMap和真实经纬度；道路线来自缓存OSRM结果。没有路由数据就先显示地点和导航，不画虚构曲线。游船、接驳、军事基地和观光巴士不会用汽车最短路冒充。
+
+在线图块下面还有一层用OpenStreetMap数据生成的离线底图（`fetch_basemap.py`），发布到会拦截外部图片的托管环境时，地图依然有陆地、公路和地名。分享海报也用同一份数据在浏览器里画出来。
 
 </details>
 
@@ -235,9 +243,10 @@ python scripts/package_site.py ./my-trip ./site-output
 python -m unittest discover -s tests -p "test_*.py"
 node --test tests/budget.test.mjs
 node --check assets/starter/app.mjs
+node --check assets/starter/share-map.mjs
 ```
 
-测试覆盖预算组合、行李联动、金额精度、零支出、损坏保存内容、航班容器偏移、数据引用，以及静态包不包含原始PDF、`.env`和托管身份。浏览器交互与远端CI状态分开验证。
+测试覆盖预算组合、行李联动、机酒套餐锁定与释放、金额精度、零支出、损坏保存内容、航班容器偏移、数据与海报引用、离线底图生成（不联网，用样例OSM数据），以及静态包不包含原始PDF、`.env`和托管身份。浏览器交互与远端CI状态分开验证。
 
 欢迎提交具体问题、可复现的行程边界案例，或小而完整的PR。新功能请附能说明行为的检查；公开fixture使用虚构数据。
 
