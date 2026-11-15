@@ -31,6 +31,10 @@ For multi-city requests, the agent can extend the starter with city/night/order 
 
 ## Install
 
+**Claude:** upload the `claude-skill/travel-plan` folder (zipped, containing `travel-plan/SKILL.md`) in Claude's skills settings. It is a small bootstrap that clones or pulls this repository into `.skills/travel-plan` on every run and then follows the full `SKILL.md`, so later updates apply automatically.
+
+**Codex:**
+
 Requires Python 3.10+ and a skill-enabled Codex environment. No npm install or API key is needed for the starter demo.
 
 ```bash

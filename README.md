@@ -20,7 +20,7 @@
 
 你有一份旧PDF、几张机票截图、一串想去的地方，还有「别太赶」「吃好一点」「预算别爆」这些真实需求。
 
-**travel-plan** 是给 Codex 使用的旅行规划 skill。它把这些资料整理成一份能看地图、切换机酒方案、实时算预算、发给同伴的网页。交付包含可编辑数据、网页和校验工具，不只是一段聊天记录。
+**travel-plan** 是给 Claude 和 Codex 使用的旅行规划 skill。它把这些资料整理成一份能看地图、切换机酒方案、实时算预算、发给同伴的网页。交付包含可编辑数据、网页和校验工具，不只是一段聊天记录。
 
 ## 先看看成品
 
@@ -68,7 +68,13 @@ Air Canada 直飞和 Expedia 机酒套餐二选一（选套餐时酒店和接送
 
 ## 三步安装
 
-需要支持 skill 的 Codex，以及用于本地工具的 **Python 3.10+**。网页底板不需要npm install，也不需要API key。Node.js 18+仅用于开发校验和JS测试。
+网页底板不需要 npm install，也不需要 API key；本地工具需要 **Python 3.10+**，Node.js 18+ 仅用于开发校验和 JS 测试。
+
+### 在 Claude 里用（自动更新）
+
+上传 [`claude-skill/travel-plan`](claude-skill/travel-plan/SKILL.md) 这个文件夹（打成 zip，里面是 `travel-plan/SKILL.md`）到 Claude 的 skills 设置里。它很短，只做一件事：每次启动先把这个仓库克隆或 `git pull` 到工作区的 `.skills/travel-plan`，再照仓库里的完整 `SKILL.md` 做。所以只要上传一次，以后仓库更新会自动生效；拉取失败时继续用已有版本，不会丢本地改动。
+
+### 在 Codex 里用
 
 ```bash
 git clone https://github.com/stevensun1005/travel-plan.git
