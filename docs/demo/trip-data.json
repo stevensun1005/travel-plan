@@ -16,7 +16,8 @@
       "海边慢旅行",
       "不安排hiking",
       "真实地点 · 虚构报价"
-    ]
+    ],
+    "kicker": "YYZ ✈ YVR · 演示行程"
   },
   "budget": {
     "target": 4500,
@@ -52,9 +53,21 @@
             "note": "演示舱位升级和行李费用联动，不是可购买的产品。",
             "fareFamily": "Comfort · 演示",
             "bagPerPerson": 80
+          },
+          {
+            "id": "package",
+            "label": "机酒套餐（演示）",
+            "amount": 2300,
+            "status": "虚构演示 · 不可预订",
+            "note": "演示机酒打包：选中后酒店自动切到「已含在套餐」，不重复计算。金额虚构。",
+            "fareFamily": "Economy · 演示",
+            "bagPerPerson": 60,
+            "bundles": {
+              "hotel": "in-package"
+            }
           }
         ],
-        "color": "#326b74"
+        "color": "#2a70cf"
       },
       {
         "id": "hotel",
@@ -81,9 +94,17 @@
             "amount": 1120,
             "status": "虚构演示 · 不可预订",
             "note": "虚构房型升级；不声称存在真实库存。"
+          },
+          {
+            "id": "in-package",
+            "label": "已含在机酒套餐",
+            "amount": 0,
+            "status": "配合机酒套餐",
+            "note": "只在机票选「机酒套餐」时自动使用。",
+            "bundleOnly": true
           }
         ],
-        "color": "#d49c56"
+        "color": "#e07a12"
       },
       {
         "id": "car",
@@ -112,7 +133,7 @@
             "note": "虚构升级额度，不能当作租车报价。"
           }
         ],
-        "color": "#6d8c64"
+        "color": "#1f9652"
       },
       {
         "id": "food",
@@ -141,7 +162,7 @@
             "note": "为菜单升级留额度；仅供预算交互演示。"
           }
         ],
-        "color": "#c97965"
+        "color": "#d2402f"
       },
       {
         "id": "transport",
@@ -156,7 +177,7 @@
             "note": "不含已经计入租车类别的车费。"
           }
         ],
-        "color": "#8096ad"
+        "color": "#2b9c9a"
       },
       {
         "id": "activities",
@@ -171,7 +192,7 @@
             "note": "全部虚构费用，真实项目和票种需要另查。"
           }
         ],
-        "color": "#9b82a6"
+        "color": "#9b6dd0"
       },
       {
         "id": "bags",
@@ -194,7 +215,7 @@
             "bagCount": 2
           }
         ],
-        "color": "#b6aa7b"
+        "color": "#c99a1c"
       },
       {
         "id": "buffer",
@@ -216,7 +237,7 @@
             "note": "额外留200缓冲。"
           }
         ],
-        "color": "#a7b9b4"
+        "color": "#8a958c"
       }
     ],
     "presets": [
@@ -239,6 +260,14 @@
           "food": "treat"
         },
         "note": "海景、敞篷升级和更宽裕餐饮的虚构组合。"
+      },
+      {
+        "id": "package",
+        "label": "机酒套餐",
+        "selections": {
+          "flights": "package"
+        },
+        "note": "演示套餐联动：酒店自动切到「已含在机酒套餐」。"
       }
     ]
   },
@@ -519,5 +548,6 @@
       "url": "https://project-osrm.org/",
       "note": "缓存道路为路网估算，不含实时拥堵。"
     }
-  ]
+  ],
+  "events": []
 }

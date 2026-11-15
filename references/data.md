@@ -5,11 +5,12 @@
 | 根字段 | 结构 |
 | --- | --- |
 | `version` | `1` |
-| `trip` | `id,title,subtitle,startDate,endDate,nights,travelers,currency,demo,notice,constraints[]`，ISO日期；endDate可以包含跨夜回家日 |
+| `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,demo,notice,constraints[]`，ISO日期；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
 | `budget` | `target,categories[],presets[]` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,fareFamily,departure,arrival,route,duration,connection,note,url` |
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `time,title,text,placeId,links[]` |
-| `map` | `places[],dailyRoutes[],routesFile` |
+| `map` | `places[],dailyRoutes[],routesFile,basemapFile` |
+| `share` | 可选：分享路线图海报，见下方「分享路线图」 |
 | `coverage` | `{item,when,note}` |
 | `rental` | `{title,summary,details:[{label,value}],notes[],links:[{label,url}]}` |
 | `todo` | 用户明确提供的提醒文字数组，可以为空 |
@@ -25,6 +26,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 - 航班option可带 `fareFamily,bagPerPerson,journeys[]`；有不同班次时提供完整替代journeys。
 - 行李option可带 `bagCount`，在已给出航班行李价时联动；否则使用明示预留，不猜收费。
 - preset：`{id,label,selections:{类别ID:选项ID},note}`；估算状态不会因组合而变成报价。
+- 套餐：option可带 `bundles:{类别ID:选项ID}`，例如机票选项 `{"hotel":"in-package"}`。选中它时被包含的类别锁定为该选项（下拉框禁用）；被包含的选项标 `bundleOnly:true`、金额通常为0，没有套餐选中时隐藏并回到默认。默认选项不能是bundleOnly；交通等其他类别也可以一起打包（例如套餐含接送时 `{"hotel":"in-package","transport":"no-airport"}`）。
 - 前端选择用于预算比较。下方日程和已缓存道路按原排定行程；变更真实酒店后应由Agent更新POI与缓存，不暗示选择费用就完成全部重新规划。
 
 ## 地点与路线
@@ -36,6 +38,23 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 `driving/transfer`可生成公路缓存；`walking`给步行导航，不用驾车估时。`trolley/boat/shuttle`用官方交通说明和链接。`extraPlaceIds`只标记，不作为私家车途经点。
 
 `routesFile`默认`routes.json`，内容为 `{provider,generatedOn,routes:[{day,placeIds,geometry,distance,duration,legs,snappedWaypoints,source}]}`。距离米、时间秒；legs数量等于途经点数减一。几何来自实际路由结果，不手画。估时不含实时拥堵和停留。
+
+`basemapFile`默认`basemap.json`，由 `fetch_basemap.py` 生成：`{provider,generatedOn,bbox,detail,land[],coast[],green[],roads:{motorway,trunk,primary,secondary},shields[],labels[]}`。坐标为 `[lng,lat]`；`land/green` 是多边形环列表，`coast` 是没能闭合成陆地时保留的海岸线；`shields` 为 `{ref,cls,lat,lng}`，`labels` 为 `{name,lat,lng,rank,kind}`（kind：town/peak/bay/range）。数据来自OpenStreetMap（ODbL），保留页面上的OSM标注。
+
+## 分享路线图
+
+`share` 全部可选，缺省时从 `days`（标题、日程）和 `places` 自动生成：
+
+| 字段 | 说明 |
+| --- | --- |
+| `kicker,title,subtitle,footer` | 海报页头和页脚文字 |
+| `days[]` | `{day,tag,short,items[],badgeAt}`；`tag`卡片标题，`short`底部日程条用的短名，`items`最多5条亮点，`badgeAt`是日期徽章在当天路线上的位置（0–1） |
+| `pois[]` | `{placeId,icon,label,side,dx,dy}`；side为left/right/above/below，或用dx/dy像素偏移并自动画引线 |
+| `bbox` | `[西,南,东,北]`，海报地图范围；缺省为全部地点和路线外扩10% |
+| `mapTitle` | `{text,lng,lat}`，地图上的大字（如岛名） |
+| `seaLabel` | 海面文字（如 PACIFIC OCEAN） |
+
+海报只用页面已有数据在浏览器里绘制，不上传；托管环境不允许下载时，用户截图或长按保存。
 
 未知信息可保留待确认，校验警告不要求补造事实；已填引用和数字必须有效。
 

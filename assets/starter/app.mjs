@@ -5,9 +5,9 @@ const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&
 const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:'';}catch{return '';}};
 const link=(label,value)=>url(value)?`<a href="${escape(url(value))}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`:'';
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
-let data,selection,key;
+let data,selection,key,basemap,cachedRoads=[];
 const money=value=>`${data.trip.currency||'CAD'} ${Number(value).toLocaleString('en-CA',{maximumFractionDigits:2})}`;
-const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#326b74','#d49c56','#6d8c64','#c97965','#8096ad','#9b82a6','#b6aa7b','#a7b9b4'][index%8];
+const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#2a70cf','#e07a12','#1f9652','#d2402f','#2b9c9a','#9b6dd0','#c99a1c','#8a958c'][index%8];
 function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save-status').textContent='已自动保存到当前浏览器';}catch{$('#save-status').textContent='本次选择有效，浏览器未能保存';}}
 
 function renderBudget(){
@@ -15,7 +15,7 @@ function renderBudget(){
   if(!budget?.categories?.length){$('#budget').hidden=true;return;}
   key=`travel-plan:budget:v1:${data.trip.id}`;selection=normalize(budget,read(key,{}));
   $('#budget-planner').innerHTML=`<div class="budget-shell"><div class="budget-heading"><div><small>${data.trip.travelers}人 · 全程合计</small><strong class="budget-total" id="budget-total"></strong></div><label class="target">预算上限 · ${escape(data.trip.currency)}<input id="budget-target" aria-label="预算上限" type="number" min="1" max="1000000" step="0.01" value="${selection.target}"></label></div><div class="balance" id="budget-balance" role="status" aria-live="polite"></div><div class="presets"><button data-reset>恢复初始方案</button>${(budget.presets||[]).map(p=>`<button data-preset="${escape(p.id)}">${escape(p.label)}</button>`).join('')}<span class="saved" id="save-status">选择保存在当前浏览器</span></div><div class="budget-layout"><div class="choices">${budget.categories.map(c=>`<article class="choice" data-category="${escape(c.id)}"><header><label for="choice-${escape(c.id)}">${escape(c.label)}</label><strong data-amount></strong></header><select id="choice-${escape(c.id)}" data-select="${escape(c.id)}" aria-describedby="note-${escape(c.id)}">${c.options.map(o=>`<option value="${escape(o.id)}">${escape(o.label)} · ${money(o.amount)}</option>`).join('')}<option value="custom">自定义总额…</option></select><label class="custom" hidden>自定义全程合计 · ${escape(data.trip.currency)}<input data-custom="${escape(c.id)}" aria-label="${escape(c.label)}自定义金额" type="number" min="0" max="1000000" step="0.01" value="0"></label><span class="price-status"></span><p id="note-${escape(c.id)}" data-note></p><div data-source></div></article>`).join('')}</div><aside class="chart-panel"><h3>预算都花在哪？</h3><p>占当前总支出的百分比</p><svg id="budget-chart" viewBox="0 0 220 220" role="img" aria-label="分类支出占比，详见图例"></svg><ul class="legend" id="budget-legend"></ul></aside></div><p class="fine">所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。预算选择各自保存在浏览器，不自动同步；日程与地图仍按原排定方案参考。</p><p class="quote-warning" id="budget-warning"></p></div>`;
-  $('#budget-planner').addEventListener('change',e=>{const id=e.target.dataset.select;if(!id)return;selection.selections[id].optionId=e.target.value;updateBudget();if(id==='flights')syncFlights();});
+  $('#budget-planner').addEventListener('change',e=>{const id=e.target.dataset.select;if(!id)return;selection.selections[id].optionId=e.target.value;updateBudget(true);if(id==='flights')syncFlights();});
   $('#budget-planner').addEventListener('input',e=>{
     if(!e.target.matches('#budget-target,[data-custom]') || !e.target.validity.valid || !e.target.value.trim())return;
     const value=Number(e.target.value),target=e.target.id==='budget-target';if(!validMoney(value,target?1:0))return;
@@ -33,6 +33,7 @@ function renderBudget(){
 }
 function updateBudget(sync=false,persist=true){
   const result=calculate(data.budget,selection);selection={target:result.target,selections:result.selections};
+  if(!sync)for(const row of result.rows)if(row.option.id!=='custom'){const s=document.querySelector(`[data-category="${row.id}"] select`);if(s&&s.value!==row.option.id)s.value=row.option.id;}
   $('#budget-total').textContent=money(result.total);$('#budget-balance').dataset.over=result.remaining<0;
   $('#budget-balance').innerHTML=`<span>${money(result.total)}</span><span>${result.remaining>=0?'预算内，还剩':'超出预算'} ${money(Math.abs(result.remaining))}</span>`;
   if(sync)$('#budget-target').value=result.target;
@@ -40,6 +41,9 @@ function updateBudget(sync=false,persist=true){
     const card=document.querySelector(`[data-category="${row.id}"]`);
     if(sync){card.querySelector('select').value=row.option.id;card.querySelector('input').value=result.selections[row.id].customAmount;}
     card.querySelector('[data-amount]').textContent=money(row.amount);card.querySelector('.custom').hidden=row.option.id!=='custom';
+    const isLocked=result.locked.includes(row.id),select=card.querySelector('select');select.disabled=isLocked;
+    for(const o of row.options.filter(o=>o.bundleOnly))select.querySelector(`option[value="${o.id}"]`).hidden=!isLocked;
+    if(isLocked)select.value=row.option.id;
     card.querySelector('.price-status').textContent=row.option.status||'待确认';card.querySelector('[data-note]').textContent=row.option.note||'';card.querySelector('[data-source]').innerHTML=link('查价入口',row.option.url);
     if(row.id==='bags')for(const o of row.options.filter(o=>o.bagCount)){
       const flight=result.rows.find(r=>r.id==='flights');const rate=flight?.option.bagPerPerson;
@@ -89,17 +93,35 @@ function directions(places,mode='driving'){
 async function renderMap(){
   const config=data.map;if(!config?.places?.length){$('#route').hidden=true;return;}
   if(!window.L){$('#map-details').innerHTML='<p>地图组件未能加载，请刷新。</p>';return;}
-  const map=L.map('map',{scrollWheelZoom:false});L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);L.control.scale({imperial:false}).addTo(map);
+  const map=L.map('map',{scrollWheelZoom:false,zoomSnap:.25,zoomDelta:.5});L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',e=>{e.tile.style.visibility='hidden';}).addTo(map);L.control.scale({imperial:false}).addTo(map);
+  // Offline base map (land, forests, roads by class, shields, place names) drawn under the tiles.
+  // It shows wherever online tiles are blocked (some hosts' CSP) — see scripts/fetch_basemap.py.
+  map.createPane('base').style.zIndex=150;
+  fetch(config.basemapFile||'basemap.json').then(r=>r.ok?r.json():null).then(b=>{
+    if(!b)return;basemap=b;const ll=line=>line.map(([x,y])=>[y,x]),flat={pane:'base',interactive:false};
+    if(b.land?.length)L.polygon(b.land.map(poly=>poly.map(ll)),{...flat,color:'#9fb39a',weight:1.2,fillColor:'#f3f0e2',fillOpacity:1}).addTo(map);
+    else{$('#map').classList.add('base-land');if(b.coast?.length)L.polyline(b.coast.map(ll),{...flat,color:'#6f9fb3',weight:2}).addTo(map);}
+    if(b.green?.length)L.polygon(b.green.map(poly=>poly.map(ll)),{...flat,stroke:false,fillColor:'#cfe2bd',fillOpacity:.85}).addTo(map);
+    // Roads from small to big: secondary, primary, trunk, motorway — each with a soft casing so it reads on the paper.
+    for(const [cls,w,c] of [['secondary',1.3,'#d3cdb8'],['primary',2,'#f2d48c'],['trunk',2.6,'#efb36b'],['motorway',3.2,'#e38f4a']]){
+      const lines=b.roads?.[cls];if(!lines?.length)continue;
+      if(cls!=='secondary')L.polyline(lines.map(ll),{...flat,color:'#8c7a5e',weight:w+1.6,opacity:.35}).addTo(map);
+      L.polyline(lines.map(ll),{...flat,color:c,weight:w}).addTo(map);
+    }
+    const tag=(lat,lng,cls,html)=>L.marker([lat,lng],{pane:'base',interactive:false,keyboard:false,icon:L.divIcon({className:cls,html:`<span>${html}</span>`,iconSize:null})}).addTo(map);
+    (b.shields||[]).forEach(s=>tag(s.lat,s.lng,`base-shield${s.cls==='motorway'?' interstate':''}`,escape(s.ref)));
+    (b.labels||[]).forEach(l=>tag(l.lat,l.lng,`base-label rank-${l.rank} kind-${l.kind||'town'}`,(l.kind==='peak'?'▲ ':'')+escape(l.name)));
+  }).catch(()=>{});
   const layer=L.featureGroup().addTo(map),markers=new Map();let selected=0,roads=[];
   const get=id=>config.places.find(p=>p.id===id);
   $('#map-days').innerHTML=`<button data-map-day="0" aria-pressed="true">全部路线</button>${config.dailyRoutes.map(r=>`<button data-map-day="${r.day}" aria-pressed="false">${escape(r.label||`Day ${r.day}`)}</button>`).join('')}`;
-  const fit=()=>{map.invalidateSize();if(layer.getLayers().length)map.fitBounds(layer.getBounds(),{padding:[28,28],maxZoom:15});};
+  const fit=()=>{map.invalidateSize();if(layer.getLayers().length)map.fitBounds(layer.getBounds(),{padding:[14,14],maxZoom:15});};
   function show(day){
     selected=day;layer.clearLayers();markers.clear();const route=config.dailyRoutes.find(r=>r.day===day);
     document.querySelectorAll('[data-map-day]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.mapDay)===day));
     const visible=route?[...new Set([...route.placeIds,...(route.extraPlaceIds||[])])].map(get):config.places;
     const lines=roads.filter(r=>!day||r.day===day);
-    for(const line of lines){L.geoJSON(line.geometry,{style:{color:'#fff',weight:8}}).addTo(layer);L.geoJSON(line.geometry,{style:{color:color(null,line.day-1),weight:4}}).addTo(layer);}
+    for(const line of lines){L.geoJSON(line.geometry,{style:{color:'#2a2a2e',weight:7,opacity:.85}}).addTo(layer);L.geoJSON(line.geometry,{style:{color:color(null,line.day-1),weight:4}}).addTo(layer);}
     visible.forEach((p,index)=>{const marker=L.marker([p.lat,p.lng],{title:p.name,icon:L.divIcon({className:'map-pin',html:String(index+1),iconSize:[30,30],iconAnchor:[15,15]})}).bindPopup(`<b>${escape(p.name)}</b><br>${escape(p.address||'')}<br>${escape(p.note||'')}<br>${link('Google Maps',`https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`)}`).addTo(layer);markers.set(p.id,marker);});
     const special=route&&!['driving','transfer','walking'].includes(route.transport);const navigation=route&&!special?directions(route.placeIds.map(get),route.transport==='walking'?'walking':'driving'):'';
     const distance=lines.reduce((sum,r)=>sum+r.distance,0),duration=lines.reduce((sum,r)=>sum+r.duration,0);
@@ -111,8 +133,9 @@ async function renderMap(){
     if(e.target.closest('[data-fit]'))fit();
     if(e.target.closest('[data-fullscreen]')){const panel=document.querySelector('.map-layout');if(document.fullscreenElement)document.exitFullscreen();else panel.requestFullscreen?.().catch(()=>fit());}
   });
+  $('#share-map').onclick=async()=>{const btn=$('#share-map');btn.disabled=true;btn.textContent='正在画…';try{const m=await import('./share-map.mjs');await m.openShareMap({data,roads:cachedRoads,basemap,color});}catch(error){console.error(error);}finally{btn.disabled=false;btn.textContent='分享路线图';}};
   new ResizeObserver(fit).observe($('#map'));document.addEventListener('fullscreenchange',()=>requestAnimationFrame(fit));show(0);
-  try{const response=await fetch(config.routesFile||'routes.json');if(!response.ok)throw Error('Road cache missing');const cached=await response.json();roads=(cached.routes||[]).filter(r=>r.geometry?.type==='LineString');show(selected);}catch{ /* Keep points and navigation when cache is unavailable. */ }
+  try{const response=await fetch(config.routesFile||'routes.json');if(!response.ok)throw Error('Road cache missing');const cached=await response.json();roads=(cached.routes||[]).filter(r=>r.geometry?.type==='LineString');show(selected);cachedRoads=roads;}catch{ /* Keep points and navigation when cache is unavailable. */ }
 }
 
 function renderDays(){
@@ -135,7 +158,7 @@ function renderTodo(){
 async function init(){
   try{
     const response=await fetch('trip-data.json',{cache:'no-store'});if(!response.ok)throw Error('Trip missing');data=await response.json();
-    document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;$('#trip-subtitle').textContent=data.trip.subtitle||'';
+    document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
     renderBudget();renderFlights();renderDays();renderRental();renderTodo();renderMap();

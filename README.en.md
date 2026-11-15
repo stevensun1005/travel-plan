@@ -8,13 +8,19 @@
 
 A Codex skill with a buildless website starter. Merge PDFs and previous plans, research date-specific flight/hotel/car options, build realistic daily schedules, and let travelers compare choices with a live budget and spending chart.
 
-- **Real geography:** Leaflet, OpenStreetMap, cached OSRM road geometry, daily filters and directions.
-- **Useful choices:** compare whole-trip options, edit custom amounts and budget limits, see percentages, save locally.
+- **Real geography:** Leaflet, OpenStreetMap, cached OSRM road geometry, daily filters and directions — plus an offline OSM base map (land, forests, road classes, route shields, place names) so the map still reads when a host blocks map tiles.
+- **Share a route poster:** one button draws a hand-drawn poster of every day's route, place stickers and highlights; screenshot it to share.
+- **Hand-drawn look:** graph-paper and chalkboard themes, handwriting headings, highlighter marks and boarding-pass flight cards (the same visual language as [stock-html](https://github.com/stevensun1005/stock-html)).
+- **Useful choices:** compare whole-trip options, edit custom amounts and budget limits, see percentages, save locally. Flight+hotel packages lock the included hotel (and transfers) automatically, so nothing is counted twice.
 - **Research that keeps its limits:** price records, estimates and bookings remain distinct; taxes, luggage, age restrictions and rental periods matter.
 - **Coverage you can inspect:** every requested source item is scheduled, replaced, optional or explicitly excluded.
 - **Shareable output:** validate, package only required files, publish through available authorized hosting tools.
 
 The demo uses real public landmarks with **fictional hotels, prices, flights and times**. Nothing in it is a bookable quote.
+
+| Offline base map | Share route poster |
+| :---: | :---: |
+| [![Land, forests, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers and highlights](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
 
 For multi-city requests, the agent can extend the starter with city/night/order choices, rail-versus-flight options, event-anchored scheduling, and linked dates, lodging, maps and costs. Attraction details include photos, reasons to visit, duration and ticket information across every route. Expedia research follows the requested itinerary; mismatched quotes become estimates again while manual budgets survive. See [multi-city workflow](references/multi-city.md). These extensions are task-specific; the public starter demo remains a separate, smaller example.
 
@@ -60,10 +66,11 @@ python scripts/validate_trip.py ./my-trip
 python scripts/serve.py ./my-trip
 ```
 
-Open the actual URL printed by the server. Map tiles require internet access. Omit `--demo` for a blank trip.
+Open the actual URL printed by the server. The demo includes cached roads and an offline base map; online tiles require internet access. Omit `--demo` for a blank trip.
 
 ```bash
 python scripts/fetch_routes.py ./my-trip
+python scripts/fetch_basemap.py ./my-trip   # offline base map; shapely optional for mainland coastlines
 python scripts/package_site.py ./my-trip ./site-output
 ```
 
@@ -77,6 +84,7 @@ Edit one `trip-data.json`. See [data contract](references/data.md), [research ru
 python -m unittest discover -s tests -p "test_*.py"
 node --test tests/budget.test.mjs
 node --check assets/starter/app.mjs
+node --check assets/starter/share-map.mjs
 ```
 
 MIT licensed. Component and map licenses are retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

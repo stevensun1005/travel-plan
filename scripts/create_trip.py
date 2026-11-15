@@ -16,6 +16,8 @@ def create(destination, demo=False):
     if demo and (SKILL/'assets/demo-routes.json').is_file():
         shutil.copyfile(SKILL/'assets/demo-routes.json',destination/'routes.json')
     else:(destination/'routes.json').write_text(json.dumps({'provider':'none','routes':[]})+'\n',encoding='utf-8')
+    if demo and (SKILL/'assets/demo-basemap.json').is_file():
+        shutil.copyfile(SKILL/'assets/demo-basemap.json',destination/'basemap.json')
     print(f'Created {destination}')
     print(f'Next: edit {destination / "trip-data.json"}')
     return destination
