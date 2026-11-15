@@ -7,6 +7,7 @@ const link=(label,value)=>url(value)?`<a href="${escape(url(value))}" target="_b
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
 let data,selection,key,basemap,cachedRoads=[];
 const SKILL_REPO='https://github.com/stevensun1005/travel-plan';
+const PHONE=matchMedia('(max-width:760px)');
 const money=value=>`${data.trip.currency||'CAD'} ${Number(value).toLocaleString('en-CA',{maximumFractionDigits:2})}`;
 const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#2a70cf','#e07a12','#1f9652','#d2402f','#2b9c9a','#9b6dd0','#c99a1c','#8a958c'][index%8];
 function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save-status').textContent='已自动保存到当前浏览器';}catch{$('#save-status').textContent='本次选择有效，浏览器未能保存';}}
@@ -126,11 +127,16 @@ async function renderMap(){
     visible.forEach((p,index)=>{const marker=L.marker([p.lat,p.lng],{title:p.name,icon:L.divIcon({className:'map-pin',html:String(index+1),iconSize:[30,30],iconAnchor:[15,15]})}).bindPopup(`<b>${escape(p.name)}</b><br>${escape(p.address||'')}<br>${escape(p.note||'')}<br>${link('Google Maps',`https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`)}`).addTo(layer);markers.set(p.id,marker);});
     const special=route&&!['driving','transfer','walking'].includes(route.transport);const navigation=route&&!special?directions(route.placeIds.map(get),route.transport==='walking'?'walking':'driving'):'';
     const distance=lines.reduce((sum,r)=>sum+r.distance,0),duration=lines.reduce((sum,r)=>sum+r.duration,0);
-    $('#map-details').innerHTML=`<h3>${escape(route?data.days.find(d=>d.day===day)?.title||route.label:data.trip.title)}</h3><p>${escape(route?.note||'按日期查看地点、道路和导航。')}</p><p>${lines.length?`道路约${(distance/1000).toFixed(1)} km · 路网估时${Math.round(duration/60)}分钟`:special?'此日使用专用交通，以官方线路为准，不画汽车最短路线。':'道路缓存待补充；先显示准确地点，不画示意连线。'}</p><div class="map-actions">${link(special?'官方线路':'当天导航',special?route.officialUrl:navigation)}<button data-fit>完整范围</button><button data-fullscreen>全屏地图</button></div><ol class="map-stops">${visible.map((p,i)=>`<li><button data-pin="${escape(p.id)}">${i+1}. ${escape(p.name)}</button><small>${escape(p.address||p.note||'')}</small></li>`).join('')}</ol>${lines.flatMap(line=>line.legs.map((leg,i)=>`<p>${escape(get(line.placeIds[i]).name)} → ${escape(get(line.placeIds[i+1]).name)}<br>${(leg.distance/1000).toFixed(1)} km · 约${Math.round(leg.duration/60)}分钟</p>`)).join('')}`;fit();
+    $('#map-details').innerHTML=`<h3>${escape(route?data.days.find(d=>d.day===day)?.title||route.label:data.trip.title)}</h3><p>${escape(route?.note||'按日期查看地点、道路和导航。')}</p><p>${lines.length?`道路约${(distance/1000).toFixed(1)} km · 路网估时${Math.round(duration/60)}分钟`:special?'此日使用专用交通，以官方线路为准，不画汽车最短路线。':'道路缓存待补充；先显示准确地点，不画示意连线。'}</p><div class="map-actions">${link(special?'官方线路':'当天导航',special?route.officialUrl:navigation)}<button data-fit>完整范围</button><button data-fullscreen>全屏地图</button></div><p class="swipe-hint">${visible.length}个地点 · 左右滑动，点一下在地图上定位</p><ol class="map-stops">${visible.map((p,i)=>`<li><button data-pin="${escape(p.id)}">${i+1}. ${escape(p.name)}</button><small>${escape(p.address||p.note||'')}</small></li>`).join('')}</ol>${legsHtml(lines)}`;fit();
+  }
+  function legsHtml(lines){
+    // 分段路程：电脑上默认展开，手机上收起，免得把页面拉得很长。
+    const legs=lines.flatMap(line=>line.legs.map((leg,i)=>`<p>${escape(get(line.placeIds[i]).name)} → ${escape(get(line.placeIds[i+1]).name)}<br>${(leg.distance/1000).toFixed(1)} km · 约${Math.round(leg.duration/60)}分钟</p>`));
+    return legs.length?`<details class="map-legs"${PHONE.matches?'':' open'}><summary>分段路程 · ${legs.length}段</summary>${legs.join('')}</details>`:'';
   }
   $('#route').addEventListener('click',e=>{
     const day=e.target.closest('[data-map-day]'),pin=e.target.closest('[data-pin]');
-    if(day)show(Number(day.dataset.mapDay));if(pin){const marker=markers.get(pin.dataset.pin);if(marker){map.setView(marker.getLatLng(),16);marker.openPopup();}}
+    if(day)show(Number(day.dataset.mapDay));if(pin){const marker=markers.get(pin.dataset.pin);if(marker){if(PHONE.matches)$('#map').scrollIntoView({block:'nearest',behavior:'smooth'});map.setView(marker.getLatLng(),16);marker.openPopup();}}
     if(e.target.closest('[data-fit]'))fit();
     if(e.target.closest('[data-fullscreen]')){const panel=document.querySelector('.map-layout');if(document.fullscreenElement)document.exitFullscreen();else panel.requestFullscreen?.().catch(()=>fit());}
   });
@@ -174,6 +180,13 @@ function renderChecklist(){
   $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
   draw();
 }
+function navSpy(){
+  // 顶栏高亮当前看到的区块。
+  const links=new Map([...document.querySelectorAll('.topbar nav a[href^="#"]')].map(a=>[a.hash.slice(1),a]));
+  if(!links.size||!('IntersectionObserver' in window))return;
+  const io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));links.get(e.target.id)?.setAttribute('aria-current','location');}},{rootMargin:'-40% 0px -55% 0px'});
+  links.forEach((a,id)=>{const s=document.getElementById(id);if(s)io.observe(s);});
+}
 function renderOwnPrompt(){
   // "Make your own" card: a ready-to-paste prompt that installs the skill and starts a new plan.
   const box=$('#own-prompt');if(!box)return;
@@ -212,7 +225,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();renderMap();
+    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();navSpy();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');
