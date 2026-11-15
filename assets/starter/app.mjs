@@ -206,10 +206,26 @@ function renderOwnPrompt(){
     '先用我给的信息开始，只问真正缺的。',
   ].join('\n');
   const status=$('#copy-status');
-  $('#copy-prompt').onclick=async()=>{
-    try{await navigator.clipboard.writeText(box.value);status.textContent='已复制，粘贴给 Claude Code 或 Codex 就能开始';}
-    catch{box.closest('details').open=true;box.focus();box.select();status.textContent='浏览器不让直接复制：已经帮你选中，按 Ctrl+C（手机长按）复制';}
+  // 底部卡片和顶栏按钮共用：writeText 必须在点击里直接调用。
+  const copy=async fromTop=>{
+    try{
+      await navigator.clipboard.writeText(box.value);
+      status.textContent='已复制，粘贴给 Claude Code 或 Codex 就能开始';
+      if(fromTop)toast('已复制提示词：粘贴给 Claude Code 或 Codex，就能做一份自己的攻略');
+    }catch{
+      if(fromTop)$('#make-your-own').scrollIntoView({behavior:'smooth'});
+      box.closest('details').open=true;box.focus({preventScroll:fromTop});box.select();
+      status.textContent='浏览器不让直接复制：已经帮你选中，按 Ctrl+C（手机长按）复制';
+    }
   };
+  $('#copy-prompt').onclick=()=>copy(false);
+  const topBtn=$('#own-top');if(topBtn)topBtn.onclick=()=>copy(true);
+}
+function toast(message){
+  let el=document.querySelector('.toast');
+  if(!el){el=document.createElement('div');el.className='toast';el.setAttribute('role','status');el.setAttribute('aria-live','polite');document.body.append(el);}
+  el.textContent=message;el.classList.add('show');
+  clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),3200);
 }
 function renderTodo(){
   const storage=`travel-plan:todo:v1:${data.trip.id}`;let todos=read(storage,null);

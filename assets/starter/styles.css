@@ -304,7 +304,8 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
   .topbar nav{order:3;flex:1 0 100%;margin:0 calc(-1*max(16px,env(safe-area-inset-right,0px))) 0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:2px 16px 0;gap:0;justify-content:space-around;overflow-x:auto;scrollbar-width:none;border-top:1.5px dashed var(--line);font-size:16px}
   .topbar nav::-webkit-scrollbar{display:none}
   .topbar nav a{flex:none;padding:8px 6px 9px;white-space:nowrap}
-  .theme-btn{order:2;margin-left:auto}
+  .own-btn{order:1;margin-left:auto;font-size:14px;padding:2px 8px}
+  .theme-btn{order:2}
   .map-days{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px 10px;scroll-padding-inline:16px;scroll-snap-type:x proximity}
   .map-days::-webkit-scrollbar{display:none}
   .map-days button{flex:none;scroll-snap-align:start}
@@ -414,3 +415,11 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 @media (max-width:760px){.own-card{flex-direction:column;align-items:center;text-align:left}.own-alpaca{width:96px;height:96px}.brand-alpaca{width:30px;height:30px}}
 @media (prefers-reduced-motion: reduce){.brand:hover .brand-alpaca{animation:none}}
 .brand>.brand-text{color:var(--ink)}
+
+/* ---------- 顶栏：做同款攻略 ---------- */
+.own-btn{border:2px solid var(--ink);border-radius:var(--r3);background:var(--hl);color:var(--ink);padding:2px 12px;font:15px/1.4 var(--hand);box-shadow:2px 2px 0 var(--shadow);white-space:nowrap;cursor:pointer}
+.own-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+.own-btn svg{width:20px;height:20px;vertical-align:-5px;margin-right:2px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:300;width:max-content;max-width:min(92vw,460px);padding:10px 16px;background:var(--card);color:var(--ink);border:2.5px solid var(--ink);border-radius:var(--r3);box-shadow:4px 4px 0 var(--shadow);font:16px/1.4 var(--hand);opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:380px){.own-btn svg,.own-more{display:none}.brand{font-size:17px}.brand-alpaca{width:26px;height:26px}}
