@@ -172,6 +172,8 @@ function renderChecklist(){
   const list=data.checklist;if(!list?.items?.length){$('#checklist').hidden=true;$('a[href="#checklist"]')?.setAttribute('hidden','');return;}
   const storage=`travel-plan:checklist:v1:${data.trip.id}`,saved=read(storage,{});const done=saved&&typeof saved==='object'?saved:{};
   const groups=list.groups?.length?list.groups:[{id:'',label:'待办'}];
+  // 每组可以收起；group.open:false 表示默认收起。勾选后重画时保留当前展开状态。
+  const opened=new Map(groups.map(g=>[g.id||'',g.open!==false]));
   const sortKey=item=>daysUntil(item.due)??1e6;
   const isDone=item=>done[item.id]??(item.status==='done'||item.status==='booked');
   const chip=item=>{
@@ -185,11 +187,13 @@ function renderChecklist(){
     $('#checklist-groups').innerHTML=groups.map(g=>{
       const items=list.items.filter(i=>(i.group||'')===(g.id||'')||(!g.id&&!groups.some(x=>x.id===i.group))).sort((a,b)=>sortKey(a)-sortKey(b));
       if(!items.length)return '';
-      return `<section class="check-group"><h3>${escape(g.label)}<small>${items.filter(i=>!isDone(i)).length} 项待办</small></h3><ul>${items.map(i=>`<li class="${isDone(i)?'is-done':''}"><label><input type="checkbox" data-check="${escape(i.id)}" ${isDone(i)?'checked':''}><span class="check-title">${escape(i.title)}</span></label><div class="check-meta">${i.who?`<span class="who">${escape(i.who)}</span>`:''}${chip(i)}${i.lead?`<span class="lead">${escape(i.lead)}</span>`:''}</div>${i.note?`<p>${escape(i.note)}</p>`:''}${link(i.urlLabel||'官方入口',i.url)}</li>`).join('')}</ul></section>`;
+      const left=items.filter(i=>!isDone(i)).length;
+      return `<details class="check-group" data-group="${escape(g.id||'')}"${opened.get(g.id||'')?' open':''}><summary><h3>${escape(g.label)}<small>${left?`${left} 项待办`:'都办好了'}</small></h3><span class="fold" aria-hidden="true"></span></summary><ul>${items.map(i=>`<li class="${isDone(i)?'is-done':''}"><label><input type="checkbox" data-check="${escape(i.id)}" ${isDone(i)?'checked':''}><span class="check-title">${escape(i.title)}</span></label><div class="check-meta">${i.who?`<span class="who">${escape(i.who)}</span>`:''}${chip(i)}${i.lead?`<span class="lead">${escape(i.lead)}</span>`:''}</div>${i.note?`<p>${escape(i.note)}</p>`:''}${link(i.urlLabel||'官方入口',i.url)}</li>`).join('')}</ul></details>`;
     }).join('');
     const facts=$('#trip-facts');if(facts&&!facts.querySelector('.todo-fact'))facts.insertAdjacentHTML('beforeend','<a class="todo-fact" href="#checklist"></a>');
     const fact=facts?.querySelector('.todo-fact');if(fact)fact.textContent=open.length?`待办 ${open.length} 项`:'待办已完成';
   };
+  $('#checklist-groups').addEventListener('toggle',e=>{const g=e.target.closest?.('[data-group]');if(g)opened.set(g.dataset.group,g.open);},true);
   $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
   draw();
 }

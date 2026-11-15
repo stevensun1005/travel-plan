@@ -105,6 +105,7 @@ def validate(folder):
         check(isinstance(checklist,dict),'checklist must be an object')
         checklist=checklist if isinstance(checklist,dict) else {}
         group_ids={g.get('id') for g in checklist.get('groups',[])}
+        for g in checklist.get('groups',[]):check(isinstance(g.get('open',True),bool),f'Checklist group {g.get("id")}: open must be true or false')
         items=checklist.get('items',[]);unique(items,'id','checklist')
         for item in items:
             check(bool(item.get('title')),f'Checklist {item.get("id")}: missing title')

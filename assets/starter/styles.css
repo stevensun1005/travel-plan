@@ -374,13 +374,19 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
 .check-summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 16px;padding:10px 14px;font-size:15px;background:var(--card);border:2px solid var(--ink);border-radius:var(--r3);box-shadow:3px 3px 0 var(--shadow)}
 .check-summary strong{font:700 20px var(--hand)}
 .check-summary small{margin-left:auto;color:var(--ink2);font-size:12.5px}
-.check-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:18px;align-items:start}
+.check-groups{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
 .check-group{padding:12px 16px;background:var(--card);border:2.5px solid var(--ink);border-radius:var(--r1);box-shadow:4px 4px 0 var(--shadow);min-width:0}
-.check-group h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0 0 4px}
+.check-group summary{display:flex;align-items:center;gap:10px;cursor:pointer;list-style:none;padding:2px 0}
+.check-group summary::-webkit-details-marker{display:none}
+.check-group h3{flex:1;display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:0}
+.check-group .fold{flex:none;width:24px;height:24px;display:grid;place-items:center;border:2px solid var(--ink);border-radius:50%;font:700 18px/1 var(--hand);background:var(--card);box-shadow:1.5px 1.5px 0 var(--shadow)}
+.check-group .fold::before{content:"+"}
+.check-group[open] .fold::before{content:"−"}
+.check-group[open]>summary{margin-bottom:4px}
+.check-group summary:hover .fold{background:var(--hl)}
 .check-group h3 small{font:14px var(--hand);color:var(--ink2)}
-.check-group ul{list-style:none;margin:0;padding:0}
+.check-group ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:0 28px}
 .check-group li{padding:9px 0;border-top:1.5px dashed var(--line)}
-.check-group li:first-child{border-top:0}
 .check-group label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
 .check-group input{margin-top:5px;accent-color:var(--green);flex:none;width:16px;height:16px}
 .check-title{font-weight:650;font-size:15px;line-height:1.5}

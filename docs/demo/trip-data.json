@@ -2062,7 +2062,8 @@
     "groups": [
       {
         "id": "documents",
-        "label": "证件与入境"
+        "label": "证件与入境",
+        "open": false
       },
       {
         "id": "bookings",
@@ -2070,7 +2071,8 @@
       },
       {
         "id": "before",
-        "label": "出发前"
+        "label": "出发前",
+        "open": false
       }
     ],
     "items": [
