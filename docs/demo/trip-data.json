@@ -1,403 +1,780 @@
 {
   "version": 1,
   "trip": {
-    "id": "vancouver-fictional-demo",
-    "title": "温哥华 · 慢一点，海边见",
-    "subtitle": "海鲜、海风与一辆敞篷车。把喜欢的选项放在一起，看看这趟旅行怎样刚刚好。",
-    "startDate": "2030-06-28",
-    "endDate": "2030-07-01",
-    "nights": 3,
+    "id": "oahu-2027-jan-five-nights",
+    "title": "欧胡岛五晚 · 1/3–1/9",
+    "subtitle": "多伦多直飞檀香山。珍珠港一天；只租一天车绕岛，牧场看侏罗纪山谷、北岸看海龟吃虾饭、菠萝园坐小火车，晚上去Ko Olina看星星；恐龙湾跟团浮潜，傍晚坐帆船看日落。",
+    "startDate": "2027-01-03",
+    "endDate": "2027-01-09",
+    "nights": 5,
     "travelers": 2,
     "currency": "CAD",
-    "demo": true,
-    "notice": "功能演示：酒店、价格、航班与时刻均为虚构，不能预订。公共地标和缓存道路用于展示真实地图能力。",
+    "demo": false,
+    "notice": "全部未预订。机票和部分酒店价格来自你11/15截图的结算页或套餐页，其他为搜索页记录；门票按官方或公开常规价折算（按1 USD≈1.45 CAD预算假设，不是锁定汇率）。回程是1/9凌晨00:10的直飞，所以1/8晚上去机场。单独订的酒店都按5晚（1/3–1/8）、Vio含税费价格算；Expedia机酒套餐维持Expedia给的6晚。",
     "constraints": [
-      "海鲜优先",
-      "海边慢旅行",
-      "不安排hiking",
-      "真实地点 · 虚构报价"
+      "两人 · 一间房",
+      "不冲浪、不安排hiking（钻石山改外围观景）",
+      "可以正常步行和上下车",
+      "喜欢海鲜",
+      "驾驶人出行时23岁 · 加拿大G牌",
+      "目标预算CAD 8000以内",
+      "只租一天车"
     ],
-    "kicker": "YYZ ✈ YVR · 演示行程"
+    "kicker": "YYZ ✈ HNL · 两个人的欧胡岛"
   },
   "budget": {
-    "target": 4500,
+    "target": 8000,
     "categories": [
       {
         "id": "flights",
         "label": "机票｜两人往返",
-        "defaultOption": "economy",
+        "color": "#2a70cf",
+        "defaultOption": "ac-standard",
         "options": [
           {
-            "id": "basic",
-            "label": "经济基础舱（演示）",
-            "amount": 1400,
-            "status": "虚构演示 · 不可预订",
-            "note": "仅示例金额；实际航班、行李和退改待查。",
-            "fareFamily": "Basic · 演示",
-            "bagPerPerson": 60
+            "id": "ac-standard",
+            "label": "Air Canada Standard · 往返直飞",
+            "amount": 2128.64,
+            "status": "11/15 AC官网结算页（你的截图）",
+            "note": "两人往返含税CA$2,128.64（票价1,754＋税费374.64）。去程1/3 17:35直飞，回程1/9 00:10直飞，13:51到多伦多。Standard每人可带1件随身行李；购票24小时内可全额退款，之后按票规。",
+            "fareFamily": "Standard",
+            "bagPerPerson": 90,
+            "url": "https://www.aircanada.com/"
           },
           {
-            "id": "economy",
-            "label": "经济舱（演示）",
-            "amount": 1600,
-            "status": "虚构演示 · 不可预订",
-            "note": "两人完整往返的虚构总价，不代表任何航空公司的报价。",
-            "fareFamily": "Economy · 演示",
-            "bagPerPerson": 60
+            "id": "ac-basic",
+            "label": "Air Canada Basic · 往返直飞",
+            "amount": 1928.64,
+            "status": "11/15 Expedia单买价（你的截图）",
+            "note": "同样的直飞航班，比Standard省200。不可退、不可改，不含随身行李箱（只能带个人小包），不能免费选座。",
+            "fareFamily": "Basic",
+            "bagPerPerson": 90,
+            "url": "https://www.expedia.ca/"
           },
           {
-            "id": "comfort",
-            "label": "更舒适的舱位（演示）",
-            "amount": 2400,
-            "status": "虚构演示 · 不可预订",
-            "note": "演示舱位升级和行李费用联动，不是可购买的产品。",
-            "fareFamily": "Comfort · 演示",
-            "bagPerPerson": 80
-          },
-          {
-            "id": "package",
-            "label": "机酒套餐（演示）",
-            "amount": 2300,
-            "status": "虚构演示 · 不可预订",
-            "note": "演示机酒打包：选中后酒店自动切到「已含在套餐」；饼图按单独购买价（机票1600、酒店900，虚构）的比例把套餐价拆给机票和酒店。",
-            "fareFamily": "Economy · 演示",
-            "bagPerPerson": 60,
+            "id": "expedia-pkg",
+            "label": "Expedia机酒套餐 · 含Sheraton 6晚",
+            "amount": 5178.4,
+            "status": "11/15 Expedia套餐页（你的截图）",
+            "note": "机票（AC直飞Basic）加Sheraton Waikiki Beach Resort King城景6晚（1/3–1/9，按Expedia套餐给的晚数，第6晚等于晚班机前一直有房间可用），含税合计CA$5,178.40。预算和饼图按单独购买价的比例拆分：机票单买CA$1,931（11/15 Google Flights两人往返）、酒店单买CA$5,918.92（Expedia单订6晚含税，与Google Hotels每晚约CA$830加夏威夷税相符），所以套餐里约24.6%算机票（约CA$1,274）、75.4%算酒店（约CA$3,905）。选中时酒店自动切成「已含在机酒套餐」，交通自动去掉机场往返打车。机票不可退、不可改；酒店12/20前可退。",
+            "fareFamily": "Basic",
+            "bagPerPerson": 90,
+            "url": "https://www.expedia.ca/",
             "bundles": {
-              "hotel": "in-package"
+              "hotel": "in-package",
+              "transport": "ground-pkg"
             },
             "split": {
-              "flights": 1600,
-              "hotel": 900
+              "flights": 1931,
+              "hotel": 5918.92
             }
           }
-        ],
-        "color": "#2a70cf"
+        ]
       },
       {
         "id": "hotel",
-        "label": "住宿｜一间房三晚",
-        "defaultOption": "harbour",
+        "label": "酒店｜一间房5晚（1/3–1/8）",
+        "color": "#e07a12",
+        "defaultOption": "renew",
         "options": [
           {
-            "id": "harbour",
-            "label": "Harbour House · King（虚构）",
-            "amount": 900,
-            "status": "虚构演示 · 不可预订",
-            "note": "酒店与价格虚构；用于演示全住期合计和房型比较。"
+            "id": "renew",
+            "label": "Hotel Renew · 离海滩2分钟 · 最省",
+            "amount": 1223,
+            "status": "11/15 Vio查价（含税费）",
+            "note": "1/3–1/8共5晚，Vio含税费总价CA$1,223，可免费取消、先订后付（截止日以订单页为准）。同样日期Google/Expedia约CA$1,605。1/8上午退房后寄存行李。",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
           },
           {
-            "id": "garden",
-            "label": "Garden Stay · Queen（虚构）",
-            "amount": 720,
-            "status": "虚构演示 · 不可预订",
-            "note": "虚构的省钱选项；实际位置、退款和税费应在研究后填写。"
+            "id": "hyatt",
+            "label": "Hyatt Place · 含早餐",
+            "amount": 1745,
+            "status": "11/15 Vio查价（含税费）",
+            "note": "5晚Vio含税费CA$1,745，含早餐；可免费取消的价格是CA$2,090。含早餐的话，餐饮可以选简单档。",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
           },
           {
-            "id": "ocean",
-            "label": "Ocean Room · 海景（虚构）",
-            "amount": 1120,
-            "status": "虚构演示 · 不可预订",
-            "note": "虚构房型升级；不声称存在真实库存。"
+            "id": "kaimana",
+            "label": "Kaimana Beach Hotel · 在海滩上",
+            "amount": 1763,
+            "status": "11/15 Vio查价（含税费）",
+            "note": "5晚Vio含税费CA$1,763；要免费取消、先订后付的价格是CA$2,096。就在海滩上，在Kapiʻolani公园旁边，比Waikīkī中心安静。之前Costco的含双早价格是按6晚报的，不再使用。",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+          },
+          {
+            "id": "alohilani",
+            "label": "ʻAlohilani · 海滩对面",
+            "amount": 2082,
+            "status": "11/15 Vio查价（含税费）",
+            "note": "5晚Vio含税费CA$2,082（另一档报价CA$1,905，房型和退改以订单页为准）。之前Costco送购物卡和酒店额度的价格是按6晚报的，不再使用。",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+          },
+          {
+            "id": "sheraton",
+            "label": "Sheraton Waikiki · Vio单订",
+            "amount": 3438,
+            "status": "11/15 Vio查价（含税费）",
+            "note": "5晚Vio含税费CA$3,438（原价CA$4,752），可免费取消、先订后付；但Vio标注「需要换房」，即住到一半要换一次房间。不想换房就选Expedia机酒套餐里的Sheraton。",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
           },
           {
             "id": "in-package",
-            "label": "已含在机酒套餐",
+            "label": "已含在机酒套餐（按比例拆分）",
             "amount": 0,
-            "status": "配合机酒套餐",
-            "note": "只在机票选「机酒套餐」时自动使用。",
+            "status": "配合Expedia套餐",
+            "note": "机票选了「Expedia机酒套餐」时自动使用。这里显示的是套餐价按单独购买价拆给酒店的部分，不另外收费。",
             "bundleOnly": true
           }
-        ],
-        "color": "#e07a12"
+        ]
       },
       {
         "id": "car",
-        "label": "租车｜两天总额",
-        "defaultOption": "standard",
+        "label": "租车｜只租1/5一天",
+        "color": "#1f9652",
+        "defaultOption": "compact",
         "options": [
           {
             "id": "compact",
-            "label": "普通小车（演示）",
-            "amount": 200,
-            "status": "虚构演示 · 不可预订",
-            "note": "税费、年龄资格、保障、取还地点均未实查。"
+            "label": "普通小车 · 一天",
+            "amount": 180,
+            "status": "Kayak搜索页＋估算",
+            "note": "Kayak上HNL机场1/5 07:00–1/6 07:00小车约CA$75–88（按25岁以上显示）。在Waikīkī门店取车通常更贵，另加未满25岁附加费约CA$40，预算留CA$180。",
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
           },
           {
-            "id": "standard",
-            "label": "双座敞篷（演示）",
-            "amount": 260,
-            "status": "虚构演示 · 不可预订",
-            "note": "只演示费用比较；双座不保证比四座便宜。"
+            "id": "jeep",
+            "label": "Jeep Wrangler 敞篷 · 一天",
+            "amount": 190,
+            "status": "Kayak搜索页＋估算",
+            "note": "Kayak上HNL机场的Open-air Jeep一天约CA$86，和小车差不多。环岛一天开敞篷很合适，但未满25岁能不能租这个车型要看租车公司的规定。",
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
           },
           {
-            "id": "premium",
-            "label": "敞篷升级（演示）",
-            "amount": 340,
-            "status": "虚构演示 · 不可预订",
-            "note": "虚构升级额度，不能当作租车报价。"
+            "id": "z4",
+            "label": "Turo BMW Z4 · 一天",
+            "amount": 430,
+            "status": "按旧报价推算 · 尚无新报价",
+            "note": "之前查到的Z4 48小时含保障USD574.85，按一天推算约USD300。新日期还没有报价，车源和交车地址都没确认。",
+            "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI"
           }
-        ],
-        "color": "#1f9652"
+        ]
       },
       {
         "id": "food",
         "label": "餐饮｜两人全程",
+        "color": "#d2402f",
         "defaultOption": "seafood",
         "options": [
           {
-            "id": "local",
-            "label": "餐盘与咖啡（演示）",
-            "amount": 500,
-            "status": "虚构演示 · 不可预订",
-            "note": "全程两人合计，虚构含税小费预算。"
+            "id": "lean",
+            "label": "简单吃（含早餐酒店适用）",
+            "amount": 850,
+            "status": "预算估算",
+            "note": "5天两人，含税和小费。以poke、餐车和便利店早餐为主，有一两顿正式晚餐。"
           },
           {
             "id": "seafood",
-            "label": "海鲜好好吃（演示）",
-            "amount": 600,
-            "status": "虚构演示 · 不可预订",
-            "note": "几顿正式餐加本地简餐的演示额度，没有真实菜单报价。"
+            "label": "海鲜好好吃",
+            "amount": 1100,
+            "status": "预算估算",
+            "note": "约每天CA$220两人：Duke's、Nico's Pier 38、Giovanni's虾饭、日落晚餐。PCC套票自带晚餐。"
           },
           {
             "id": "treat",
-            "label": "餐饮更宽裕（演示）",
-            "amount": 850,
-            "status": "虚构演示 · 不可预订",
-            "note": "为菜单升级留额度；仅供预算交互演示。"
+            "label": "多吃几顿正式海鲜",
+            "amount": 1400,
+            "status": "预算估算",
+            "note": "多加1–2顿Roy's或House Without A Key这种档次的晚餐。"
           }
-        ],
-        "color": "#d2402f"
+        ]
       },
       {
         "id": "transport",
-        "label": "交通｜接送停车油费",
+        "label": "交通｜打车、观光巴士、停车油费",
+        "color": "#2b9c9a",
         "defaultOption": "ground",
         "options": [
           {
             "id": "ground",
-            "label": "接送＋停车油费（演示）",
-            "amount": 180,
-            "status": "虚构演示 · 不可预订",
-            "note": "不含已经计入租车类别的车费。"
+            "label": "Uber＋观光巴士4日票＋停车油费",
+            "amount": 570,
+            "status": "预算估算",
+            "note": "机场往返打车约USD90，珍珠港往返约USD70；Waikiki Trolley四日全线票两人约USD150（1/6市区和Ala Moana、1/7钻石山、1/8海岸线都用它）；酒店停车一晚约USD45，景点停车约USD5，油费约USD25。合计约USD390。"
+          },
+          {
+            "id": "ground-pkg",
+            "label": "同上，但不含机场往返",
+            "amount": 440,
+            "bundleOnly": true,
+            "status": "配合Expedia机酒套餐",
+            "note": "按你的要求，选机酒套餐时不计机场↔酒店打车（约USD90）。你截图里的套餐只列了机票和酒店；如果Expedia订单其实不含接送，请改成自定义金额，加回约CA$130。"
           }
-        ],
-        "color": "#2b9c9a"
+        ]
       },
       {
         "id": "activities",
-        "label": "活动｜门票与体验",
-        "defaultOption": "visits",
+        "label": "门票与体验",
+        "color": "#9b6dd0",
+        "defaultOption": "jurassic",
         "options": [
           {
-            "id": "visits",
-            "label": "景点与体验（演示）",
-            "amount": 300,
-            "status": "虚构演示 · 不可预订",
-            "note": "全部虚构费用，真实项目和票种需要另查。"
+            "id": "jurassic",
+            "label": "牧场Jurassic Adventure 2.5小时",
+            "amount": 1140,
+            "status": "官方/公开常规价折算",
+            "note": "两人：古兰尼牧场Jurassic Adventure USD300；珍珠港Passport USD200＋亚利桑那号约$2；恐龙湾Roberts Hawaii接送＋门票USD130＋浮潜装备约USD40；Dole小火车约USD38＋迷宫约USD18；ʻIolani Palace约USD56。合计约USD784。PCC和平等院这次不去。"
+          },
+          {
+            "id": "two-tours",
+            "label": "牧场两个90分钟团",
+            "amount": 1050,
+            "status": "官方/公开常规价折算",
+            "note": "Movie Sites（Kaʻaʻawa山谷）加Jungle Expedition（Hakipuʻu雨林），每人各USD59.95，要订两个相连的场次，共3小时，植物园就要缩短。合计约USD724。"
+          },
+          {
+            "id": "movie-only",
+            "label": "牧场只去Movie Sites",
+            "amount": 880,
+            "status": "官方/公开常规价折算",
+            "note": "只保留90分钟的Movie Sites团，最省。合计约USD604。"
           }
-        ],
-        "color": "#9b6dd0"
+        ]
+      },
+      {
+        "id": "evening",
+        "label": "夜间活动｜日落和星空",
+        "color": "#4b5fb3",
+        "defaultOption": "both",
+        "options": [
+          {
+            "id": "both",
+            "label": "日落帆船 + Ko Olina看星星",
+            "amount": 395,
+            "status": "公开常规价折算",
+            "note": "两人：Moana Sailing日落帆船约USD162（2×80.99）＋Stars Above Hawaii星空讲解约USD108.50（2×54.25），合计约USD270.50。不含船上加点的饮料、Ko Olina晚餐和停车。"
+          },
+          {
+            "id": "sail",
+            "label": "只坐日落帆船",
+            "amount": 235,
+            "status": "公开常规价折算",
+            "note": "两人约USD162。"
+          },
+          {
+            "id": "sail-budget",
+            "label": "便宜的1.5小时日落船",
+            "amount": 165,
+            "status": "公开常规价折算",
+            "note": "Manu Kai happy hour帆船两人约USD113，不含看星星。"
+          },
+          {
+            "id": "none",
+            "label": "不安排",
+            "amount": 0,
+            "status": "—",
+            "note": "在海边自己看日落。"
+          }
+        ]
       },
       {
         "id": "bags",
-        "label": "行李｜全程预留",
+        "label": "托运行李",
+        "color": "#c99a1c",
         "defaultOption": "two",
         "options": [
           {
             "id": "none",
-            "label": "仅随身行李（演示）",
+            "label": "不托运",
             "amount": 0,
-            "status": "虚构演示 · 不可预订",
-            "note": "不保证真实机票含随身行李。"
+            "status": "按所选票价",
+            "note": "Standard每人可带1件随身行李箱；Basic和套餐里的Basic不行。"
+          },
+          {
+            "id": "one",
+            "label": "两人合托一件",
+            "amount": 90,
+            "status": "按所选票价联动",
+            "note": "跟着上面选的票价自动换算。",
+            "bagCount": 1
           },
           {
             "id": "two",
-            "label": "两人托运预留（演示）",
-            "amount": 120,
-            "status": "虚构演示 · 不可预订",
-            "note": "按所选航班选项的演示单人金额联动。",
+            "label": "每人托运一件",
+            "amount": 180,
+            "status": "按所选票价联动",
+            "note": "按AC首件托运每人约CA$90估算（Google显示）。最终以出票页的行李规定为准。",
             "bagCount": 2
           }
-        ],
-        "color": "#c99a1c"
+        ]
       },
       {
         "id": "buffer",
         "label": "机动额度",
+        "color": "#8a958c",
         "defaultOption": "buffer",
         "options": [
           {
             "id": "buffer",
             "label": "预留一点弹性",
-            "amount": 200,
-            "status": "虚构演示 · 不可预订",
-            "note": "已计入总额，不再额外加收。"
+            "amount": 300,
+            "status": "已含在总额",
+            "note": "用来兜酒店税费差价、汇率波动、行李寄存和小费。"
           },
           {
             "id": "more",
             "label": "多留一点弹性",
-            "amount": 400,
-            "status": "虚构演示 · 不可预订",
-            "note": "额外留200缓冲。"
+            "amount": 500,
+            "status": "已含在总额",
+            "note": "如果Hotel Renew或Hyatt结算页显示还要另加约19%的夏威夷税，建议选这一档。"
           }
-        ],
-        "color": "#8a958c"
+        ]
       }
     ],
     "presets": [
       {
         "id": "save",
-        "label": "省一点，留给海鲜",
+        "label": "能省则省",
         "selections": {
-          "flights": "basic",
-          "hotel": "garden",
-          "car": "compact"
+          "flights": "ac-basic",
+          "hotel": "renew",
+          "food": "lean",
+          "activities": "movie-only",
+          "bags": "one"
         },
-        "note": "演示更换票种、房型和车型。"
+        "note": "Basic票不能带随身行李箱，所以托运一件；牧场只去90分钟的团。"
       },
       {
-        "id": "treat",
-        "label": "更享受一点",
+        "id": "kaimana",
+        "label": "海滩 · Kaimana",
         "selections": {
-          "hotel": "ocean",
-          "car": "premium",
-          "food": "treat"
+          "flights": "ac-standard",
+          "hotel": "kaimana"
         },
-        "note": "海景、敞篷升级和更宽裕餐饮的虚构组合。"
+        "note": "在海滩上的酒店，Vio价不含早餐。"
+      },
+      {
+        "id": "alohilani",
+        "label": "海景 · ʻAlohilani",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "alohilani"
+        },
+        "note": "海滩对面的五星度假酒店。"
       },
       {
         "id": "package",
-        "label": "机酒套餐",
+        "label": "Expedia机酒套餐",
         "selections": {
-          "flights": "package"
+          "flights": "expedia-pkg",
+          "hotel": "in-package",
+          "bags": "two"
         },
-        "note": "演示套餐联动：酒店自动切到「已含在机酒套餐」。"
+        "note": "Sheraton 6晚加直飞Basic机票，酒店和机场打车自动不重复计算。机票不能退改，也不能带随身行李箱。"
+      },
+      {
+        "id": "treat",
+        "label": "Z4敞篷＋海景",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "alohilani",
+          "car": "z4",
+          "food": "treat",
+          "buffer": "more"
+        },
+        "note": "会超出8000。Z4是按旧报价推算的，还没有新报价。"
       }
     ]
   },
   "journeys": [
     {
       "id": "outbound",
-      "title": "去程｜多伦多 → 温哥华",
+      "title": "去程｜多伦多 → 檀香山",
       "proposal": {
-        "airline": "示例航班 · 无实际航班号",
-        "fareFamily": "Economy · 演示",
+        "airline": "Air Canada AC589 · 直飞",
+        "fareFamily": "Standard",
         "departure": {
           "airport": "YYZ",
-          "date": "2030-06-28",
-          "time": "09:00"
+          "date": "2027-01-03",
+          "time": "17:35"
         },
         "arrival": {
-          "airport": "YVR",
-          "date": "2030-06-28",
-          "time": "11:00"
+          "airport": "HNL",
+          "date": "2027-01-03",
+          "time": "22:38"
         },
-        "route": "YYZ → YVR",
-        "duration": "示例时长",
-        "connection": "转机条件待实际查价",
-        "note": "所有时刻为虚构演示，不能据此安排真实出行。"
+        "route": "YYZ → HNL",
+        "duration": "10小时3分",
+        "connection": "直飞",
+        "note": "到达是夏威夷时间，比多伦多晚5小时。落地后打车到Waikīkī约25–30分钟。",
+        "url": "https://www.aircanada.com/"
       }
     },
     {
       "id": "return",
-      "title": "回程｜温哥华 → 多伦多",
+      "title": "回程｜檀香山 → 多伦多",
       "proposal": {
-        "airline": "示例航班 · 无实际航班号",
-        "fareFamily": "Economy · 演示",
+        "airline": "Air Canada · 直飞",
         "departure": {
-          "airport": "YVR",
-          "date": "2030-07-01",
-          "time": "14:00"
+          "airport": "HNL",
+          "date": "2027-01-09",
+          "time": "00:10"
         },
         "arrival": {
           "airport": "YYZ",
-          "date": "2030-07-01",
-          "time": "21:30"
+          "date": "2027-01-09",
+          "time": "13:51"
         },
-        "route": "YVR → YYZ",
-        "duration": "示例时长",
-        "connection": "转机条件待实际查价",
-        "note": "所有时刻为虚构演示，不能据此安排真实出行。"
+        "route": "HNL → YYZ",
+        "duration": "8小时41分",
+        "connection": "直飞",
+        "note": "1/9凌晨00:10起飞，也就是1/8晚上要去机场。航班号以出票页为准。",
+        "fareFamily": "Standard",
+        "url": "https://www.aircanada.com/"
       }
     }
   ],
   "map": {
     "places": [
       {
-        "id": "base",
-        "name": "海港公共起点 · 非真实酒店",
-        "lat": 49.2897,
-        "lng": -123.1245,
-        "address": "Coal Harbour 公共地标示例点",
-        "note": "公共参考位置；本示例酒店虚构，不将此点称作酒店入口。"
+        "id": "hnl",
+        "name": "HNL 檀香山机场",
+        "lat": 21.3330717,
+        "lng": -157.9196383,
+        "address": "Daniel K. Inouye International Airport",
+        "note": "定位在航站楼停车楼附近；接送按实际航站楼的上下客区。"
       },
       {
-        "id": "canada",
-        "name": "Canada Place",
-        "lat": 49.2888,
-        "lng": -123.1111,
-        "address": "Canada Place, Vancouver",
-        "note": "真实公共地标，行程时刻和费用仅为演示。"
+        "id": "hotel",
+        "name": "Waikīkī酒店（默认Hotel Renew，未订）",
+        "lat": 21.2727845,
+        "lng": -157.8222219,
+        "address": "129 Paoakalani Ave, Honolulu, HI 96815",
+        "note": "其他候选酒店都在1.5公里内，换酒店后每天的路线基本不变。"
       },
       {
-        "id": "stanley",
-        "name": "Stanley Park 海岸",
-        "lat": 49.3017,
-        "lng": -123.1307,
-        "address": "Stanley Park, Vancouver",
-        "note": "公园道路附近的示例停靠点，具体合法停车入口需出发前核对。"
+        "id": "waikiki-beach",
+        "name": "Kūhiō Beach｜Waikīkī海滩",
+        "lat": 21.275,
+        "lng": -157.82694,
+        "address": "Kalākaua Ave, Waikīkī",
+        "note": "离酒店步行几分钟；1/7日落帆船从海滩上船，具体上船点以订单为准。"
       },
       {
-        "id": "granville",
-        "name": "Granville Island",
-        "lat": 49.2712,
-        "lng": -123.134,
-        "address": "Granville Island, Vancouver",
-        "note": "市场附近公共参考点。"
+        "id": "dukes",
+        "name": "Duke's Waikiki",
+        "lat": 21.2768421,
+        "lng": -157.8277917,
+        "address": "2335 Kalākaua Ave, Honolulu",
+        "note": "海边餐厅，晚餐建议预订。"
       },
       {
-        "id": "kits",
-        "name": "Kitsilano Beach",
-        "lat": 49.2735,
-        "lng": -123.1534,
-        "address": "Kitsilano Beach, Vancouver",
-        "note": "海滩附近公共参考点，不保证当日海况。"
+        "id": "pearl-harbor",
+        "name": "珍珠港游客中心",
+        "lat": 21.3674843,
+        "lng": -157.9384488,
+        "address": "1 Arizona Memorial Pl, Honolulu",
+        "note": "不能带包入场，有付费寄存。去福特岛（密苏里号、航空博物馆）坐官方接驳车。"
+      },
+      {
+        "id": "arizona",
+        "name": "USS Arizona 亚利桑那号纪念馆",
+        "lat": 21.364906,
+        "lng": -157.9500297,
+        "address": "Pearl Harbor（只能乘官方船）",
+        "note": "在港湾水面上，只能坐国家公园的船过去，地图只标位置。"
+      },
+      {
+        "id": "bowfin",
+        "name": "潜艇博物馆 / USS Bowfin",
+        "lat": 21.368732,
+        "lng": -157.9394436,
+        "address": "11 Arizona Memorial Dr, Honolulu",
+        "note": "就在游客中心旁边，走过去。"
+      },
+      {
+        "id": "missouri",
+        "name": "密苏里号战列舰",
+        "lat": 21.3621708,
+        "lng": -157.9533179,
+        "address": "63 Cowpens St, Ford Island",
+        "note": "福特岛是现役军事基地，私家车不能进，只能坐接驳车。"
+      },
+      {
+        "id": "aviation",
+        "name": "珍珠港航空博物馆",
+        "lat": 21.3588442,
+        "lng": -157.9629042,
+        "address": "319 Lexington Blvd, Ford Island",
+        "note": "坐接驳车去，和密苏里号同一条线。"
+      },
+      {
+        "id": "car-pickup",
+        "name": "Waikīkī租车门店（示例位置）",
+        "lat": 21.2734513,
+        "lng": -157.8222713,
+        "address": "Kalākaua Ave东段",
+        "note": "具体门店订车后才能确定。1/5早上取车，1/6早上还车。"
+      },
+      {
+        "id": "hoomaluhia",
+        "name": "Hoʻomaluhia 植物园",
+        "lat": 21.3882747,
+        "lng": -157.8070148,
+        "address": "45-680 Luluku Rd, Kāneʻohe",
+        "note": "9:00–16:00，免费；每周四和元旦闭园。可以开车进园，也可以下车走一小段。"
+      },
+      {
+        "id": "kualoa",
+        "name": "Kualoa Ranch 古兰尼牧场",
+        "lat": 21.5208318,
+        "lng": -157.8372577,
+        "address": "49-560 Kamehameha Hwy, Kāneʻohe",
+        "note": "Jurassic Adventure约2.5小时，坐车进三条山谷，提前签到。"
+      },
+      {
+        "id": "kualoa-beach",
+        "name": "Kualoa Regional Park 海滩",
+        "lat": 21.5129704,
+        "lng": -157.8367475,
+        "address": "49-479 Kamehameha Hwy",
+        "note": "可以看草帽岛（Mokoliʻi），岸边散步。"
+      },
+      {
+        "id": "dole",
+        "name": "Dole Plantation 菠萝园",
+        "lat": 21.5259081,
+        "lng": -158.0378039,
+        "address": "64-1550 Kamehameha Hwy, Wahiawā",
+        "note": "每天9:30–17:30。小火车约20分钟、大约每10分钟一班；迷宫平均40分钟。末班时间以电话确认为准。"
+      },
+      {
+        "id": "laniakea",
+        "name": "Laniakea 海龟海滩",
+        "lat": 21.6187,
+        "lng": -158.0853,
+        "address": "Kamehameha Hwy, Haleʻiwa",
+        "note": "在岸边看海龟，要保持距离；冬天浪大，不下水。路边停车很紧张。"
+      },
+      {
+        "id": "giovanni",
+        "name": "Giovanni's Kahuku 虾饭",
+        "lat": 21.677198,
+        "lng": -157.9484211,
+        "address": "56-505 Kamehameha Hwy, Kahuku",
+        "note": "排队的话，旁边的Romy's和Fumi's也可以。"
+      },
+      {
+        "id": "hanauma",
+        "name": "Hanauma Bay 恐龙湾",
+        "lat": 21.2734227,
+        "lng": -157.6948549,
+        "address": "7455 Kalanianaʻole Hwy, Honolulu",
+        "note": "周三至周日开放，周一、二闭园。这次跟Roberts Hawaii的接送团去，不开车。"
+      },
+      {
+        "id": "halona",
+        "name": "Hālona 喷泉孔观景台",
+        "lat": 21.2827,
+        "lng": -157.6776,
+        "address": "8483 Kalanianaʻole Hwy",
+        "note": "蓝线观光巴士的拍照停靠点。"
+      },
+      {
+        "id": "makapuu",
+        "name": "Makapuʻu 路边观景台",
+        "lat": 21.3115,
+        "lng": -157.6609,
+        "address": "Kalanianaʻole Hwy",
+        "note": "公路边的观景点，不走灯塔步道。"
+      },
+      {
+        "id": "waimanalo",
+        "name": "Waimānalo 海滩公园",
+        "lat": 21.3325,
+        "lng": -157.6942,
+        "address": "41-741 Kalanianaʻole Hwy, Waimānalo",
+        "note": "长长的白沙滩，适合慢慢走。"
+      },
+      {
+        "id": "diamond-head",
+        "name": "钻石山 Kahala Lookout 观景台",
+        "lat": 21.2557,
+        "lng": -157.807,
+        "address": "Diamond Head Rd",
+        "note": "绿线观光巴士的拍照停靠点，下车即到，不用爬山。"
+      },
+      {
+        "id": "iolani",
+        "name": "ʻIolani Palace 王宫",
+        "lat": 21.3068147,
+        "lng": -157.8587655,
+        "address": "364 S King St, Honolulu",
+        "note": "周二至周六开放，只能网上买票。"
+      },
+      {
+        "id": "nicos",
+        "name": "Nico's Pier 38 海鲜",
+        "lat": 21.3175754,
+        "lng": -157.8775063,
+        "address": "1129 N Nimitz Hwy, Honolulu",
+        "note": "鱼市场旁边，有poke和炸鱼。"
+      },
+      {
+        "id": "ala-moana",
+        "name": "Ala Moana 商场 / Magic Island",
+        "lat": 21.2911,
+        "lng": -157.8435,
+        "address": "1450 Ala Moana Blvd, Honolulu",
+        "note": "购物，旁边是Magic Island海滨公园。"
+      },
+      {
+        "id": "house",
+        "name": "House Without A Key 日落晚餐",
+        "lat": 21.2774759,
+        "lng": -157.8318823,
+        "address": "2199 Kālia Rd, Honolulu",
+        "note": "Halekulani酒店里的海边餐厅，有日落和草裙舞表演，建议预订。"
+      },
+      {
+        "id": "kaimana-hotel",
+        "name": "候选：Kaimana Beach Hotel",
+        "lat": 21.2645,
+        "lng": -157.8213,
+        "address": "2863 Kalākaua Ave, Honolulu",
+        "note": "在海滩上，Kapiʻolani公园旁边。"
+      },
+      {
+        "id": "alohilani-hotel",
+        "name": "候选：ʻAlohilani Resort",
+        "lat": 21.2741,
+        "lng": -157.824,
+        "address": "2490 Kalākaua Ave, Honolulu",
+        "note": "在Kūhiō Beach对面。"
+      },
+      {
+        "id": "sheraton-hotel",
+        "name": "候选：Sheraton Waikiki",
+        "lat": 21.2775,
+        "lng": -157.8306,
+        "address": "2255 Kalākaua Ave, Honolulu",
+        "note": "Waikīkī中心，直接临海。"
+      },
+      {
+        "id": "trolley-hub",
+        "name": "Waikiki Trolley 主站（DFS Galleria）",
+        "lat": 21.28,
+        "lng": -157.8296,
+        "address": "330 Royal Hawaiian Ave, Honolulu",
+        "note": "各条线路的主要上车点之一；每条线的站点和发车时间以官方为准。"
+      },
+      {
+        "id": "waikele",
+        "name": "Waikele Premium Outlets 奥莱",
+        "lat": 21.4017617,
+        "lng": -158.0068567,
+        "address": "94-790 Lumiaina St, Waipahu, HI 96797",
+        "note": "周一至周四10:00–19:00，周五六10:00–20:00，周日11:00–18:00；免费停车。在H-1和H-2交汇处，回Waikīkī顺路。"
+      },
+      {
+        "id": "ko-olina",
+        "name": "Ko Olina 星空讲解（Four Seasons）",
+        "lat": 21.3392955,
+        "lng": -158.125741,
+        "address": "92-1001 Olani St, Kapolei, HI 96707",
+        "note": "Stars Above Hawaii的集合点在酒店Naupaka Spa金色电梯；观测在泳池平台或网球场屋顶。"
       }
     ],
     "dailyRoutes": [
       {
         "day": 1,
-        "label": "06/28",
+        "label": "01/03 抵达",
         "placeIds": [
-          "base",
-          "canada",
-          "base"
+          "hnl",
+          "hotel"
         ],
-        "transport": "walking",
-        "note": "步行参考；不使用驾车几何冒充步行路线。"
+        "transport": "transfer",
+        "note": "深夜打车，路上约25–30分钟。"
       },
       {
         "day": 2,
-        "label": "06/29",
+        "label": "01/04 珍珠港",
         "placeIds": [
-          "base",
-          "stanley",
-          "granville",
-          "base"
+          "hotel",
+          "pearl-harbor",
+          "hotel"
         ],
-        "transport": "driving",
-        "note": "道路估算不含停车、游玩和实时拥堵。"
+        "extraPlaceIds": [
+          "bowfin",
+          "arizona",
+          "aviation",
+          "missouri",
+          "waikiki-beach"
+        ],
+        "transport": "transfer",
+        "note": "Uber往返。亚利桑那号坐官方船；密苏里号和航空博物馆坐官方接驳车，私家车不能进福特岛。",
+        "officialUrl": "https://www.nps.gov/perl/planyourvisit/index.htm"
       },
       {
         "day": 3,
-        "label": "06/30",
+        "label": "01/05 环岛开车日",
         "placeIds": [
-          "base",
-          "kits",
-          "base"
+          "car-pickup",
+          "hoomaluhia",
+          "kualoa",
+          "giovanni",
+          "laniakea",
+          "dole",
+          "waikele",
+          "ko-olina",
+          "hotel"
         ],
         "transport": "driving",
-        "note": "海岸兜风的公共地点示例。"
+        "note": "顺时针绕岛，最后去西边的Ko Olina看星星；奥莱是可选的。路上时间不含停留和拥堵。"
+      },
+      {
+        "day": 4,
+        "label": "01/06 市区（观光巴士）",
+        "placeIds": [
+          "trolley-hub",
+          "iolani",
+          "ala-moana"
+        ],
+        "extraPlaceIds": [
+          "car-pickup",
+          "nicos"
+        ],
+        "transport": "trolley",
+        "note": "红线去王宫和唐人街，粉线去Ala Moana；地图只标站点，不画巴士线路。Nico's用Uber。",
+        "officialUrl": "https://waikikitrolley.com/"
+      },
+      {
+        "day": 5,
+        "label": "01/07 恐龙湾＋日落帆船",
+        "placeIds": [
+          "hotel",
+          "hanauma"
+        ],
+        "extraPlaceIds": [
+          "diamond-head",
+          "waikiki-beach"
+        ],
+        "transport": "shuttle",
+        "note": "上午坐Roberts Hawaii接送车，下午坐观光巴士绿线，傍晚从海滩上船；都只标位置，不画私家车路线。",
+        "officialUrl": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package"
+      },
+      {
+        "day": 6,
+        "label": "01/08 离岛",
+        "placeIds": [
+          "hotel",
+          "house",
+          "hnl"
+        ],
+        "transport": "transfer",
+        "note": "上午可选坐蓝线到Hālona；晚上打车去机场。",
+        "extraPlaceIds": [
+          "halona"
+        ]
       }
     ],
     "routesFile": "routes.json"
@@ -405,161 +782,807 @@
   "days": [
     {
       "day": 1,
-      "date": "2030-06-28",
-      "title": "抵达之后，先把节奏放慢",
+      "date": "2027-01-03",
+      "title": "周日 · 直飞檀香山，夜里入住",
       "locations": [
-        "公共海港起点",
-        "Canada Place"
+        "多伦多YYZ",
+        "檀香山HNL",
+        "Waikīkī"
       ],
       "schedule": [
         {
-          "time": "按实际航班",
-          "title": "抵达与入住",
-          "text": "本示例没有实际预订。机场接送、酒店与入住时刻需要在真实行程中确认。",
-          "placeId": "base"
+          "time": "15:00前",
+          "title": "到Pearson机场",
+          "text": "直飞到美国的航班要先在多伦多过美国预清关，建议起飞前2.5–3小时到。不需要签证的话，也确认一下护照有效期。"
         },
         {
-          "time": "傍晚建议",
-          "title": "海边散步与第一顿海鲜",
-          "text": "只演示轻松抵达日，不加入远途景点或山径。",
-          "placeId": "canada"
+          "time": "17:35",
+          "title": "AC589 起飞",
+          "text": "直飞约10小时。飞机上尽量按夏威夷时间睡觉，夏威夷比多伦多晚5小时。"
+        },
+        {
+          "time": "22:38",
+          "title": "落地檀香山",
+          "text": "国内到达，不用再入境。取行李后打车或用Uber去酒店，约25–30分钟，费用约USD40–50。",
+          "placeId": "hnl"
+        },
+        {
+          "time": "约23:30",
+          "title": "入住酒店",
+          "text": "提前告诉酒店会深夜到达，以免房间被取消。",
+          "placeId": "hotel"
         }
       ]
     },
     {
       "day": 2,
-      "date": "2030-06-29",
-      "title": "敞篷兜风，看海也看城市",
+      "date": "2027-01-04",
+      "title": "周一 · 珍珠港四馆一整天，傍晚看天气坐日落帆船",
       "locations": [
-        "Stanley Park",
-        "Granville Island"
+        "珍珠港游客中心",
+        "亚利桑那号",
+        "潜艇博物馆",
+        "密苏里号",
+        "航空博物馆",
+        "Waikīkī"
       ],
       "schedule": [
         {
-          "time": "09:00建议",
-          "title": "取车",
-          "text": "指定日期、年龄、驾照与车型应查完整结算价。示例不提供真实车源。",
-          "placeId": "base"
+          "time": "06:30",
+          "title": "时差早起，吃早餐",
+          "text": "刚到几天会很早醒，正好用来去珍珠港。不用开车。"
         },
         {
-          "time": "上午建议",
-          "title": "海岸公园",
-          "text": "车览与正常短走，不安排hiking；停车点按现场合法车位选择。",
-          "placeId": "stanley"
+          "time": "07:15",
+          "title": "Uber到珍珠港",
+          "text": "约25分钟。不能带包进入，只能带透明小包或手机钱包；有付费寄存处。",
+          "placeId": "pearl-harbor"
         },
         {
-          "time": "下午建议",
-          "title": "市场与海鲜",
-          "text": "给午餐、停车、休息留时间，具体店铺待查。",
-          "placeId": "granville"
+          "time": "08:00左右",
+          "title": "USS Arizona 亚利桑那号纪念馆",
+          "text": "预约免费，只收少量订票费。预约在Recreation.gov放出，订最早的场次。包括影片和乘船，约75分钟。",
+          "placeId": "arizona",
+          "links": [
+            {
+              "label": "Recreation.gov预约",
+              "url": "https://www.recreation.gov/ticket/facility/233338"
+            }
+          ]
+        },
+        {
+          "time": "09:30",
+          "title": "潜艇博物馆 / USS Bowfin",
+          "text": "就在游客中心旁边，Passport通票包含。",
+          "placeId": "bowfin"
+        },
+        {
+          "time": "11:00",
+          "title": "接驳车去福特岛 · 密苏里号",
+          "text": "日本投降签字的甲板就在这里，看完在岛上吃简单午餐。",
+          "placeId": "missouri"
+        },
+        {
+          "time": "13:30",
+          "title": "珍珠港航空博物馆",
+          "text": "两个机库，约1.5小时。看完坐接驳车回游客中心。",
+          "placeId": "aviation",
+          "links": [
+            {
+              "label": "Passport to Pearl Harbor",
+              "url": "https://www.pearlharborhistoricsites.org/tickets"
+            }
+          ]
+        },
+        {
+          "time": "15:30",
+          "title": "回Waikīkī",
+          "text": "航空博物馆看完坐接驳车回游客中心，Uber约25分钟，16:00左右到。",
+          "placeId": "hotel"
+        },
+        {
+          "time": "16:30–19:00（看天气）",
+          "title": "备选：Waikīkī 日落帆船",
+          "text": "日落帆船可以安排在今天或1/7，看出发前的天气和海况，哪天风浪小、云少就选哪天。选今天的话，16:30到海滩上船点，17:00–19:00出海；时差刚倒，累的话就留给1/7。不坐船就在Kūhiō Beach散步看日落（1月约18:05）。",
+          "placeId": "waikiki-beach",
+          "links": [
+            {
+              "label": "Moana Sailing 订票",
+              "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
+            }
+          ]
+        },
+        {
+          "time": "18:30（坐船就改19:15）",
+          "title": "晚餐：Duke's Waikiki",
+          "text": "海边餐厅，吃鱼和Hula Pie，建议提前订位；今天坐日落帆船的话，订19:15。",
+          "placeId": "dukes"
         }
       ]
     },
     {
       "day": 3,
-      "date": "2030-06-30",
-      "title": "让沙滩占据一整个下午",
+      "date": "2027-01-05",
+      "title": "周二 · 唯一的开车日：植物园、牧场侏罗纪团、虾饭和海龟、菠萝园，晚上去Ko Olina看星星",
       "locations": [
-        "Kitsilano Beach",
-        "海港起点"
+        "Hoʻomaluhia",
+        "古兰尼牧场",
+        "Kahuku虾饭",
+        "海龟海滩",
+        "菠萝园",
+        "（可选）Waikele奥莱",
+        "Ko Olina 看星星"
       ],
       "schedule": [
         {
-          "time": "午后建议",
-          "title": "海边休息",
-          "text": "正常步行、拍照和看海，不把海滩到访写成必能下水。",
-          "placeId": "kits"
+          "time": "08:15",
+          "title": "Waikīkī取车",
+          "text": "带上G牌驾照和信用卡，检查车况并拍照。今天顺时针绕岛：先去东北边的山谷，再沿北岸回来。",
+          "placeId": "car-pickup"
         },
         {
-          "time": "傍晚建议",
-          "title": "最后一顿正式海鲜",
-          "text": "餐厅、节日营业和菜单价格留待实际研究。",
-          "placeId": "base"
+          "time": "09:00–10:05",
+          "title": "Hoʻomaluhia 植物园",
+          "text": "9:00开门。开车进园，在湖边停车拍山，下车走一小段。这次不去平等院，所以这里可以多待一会儿。",
+          "placeId": "hoomaluhia"
+        },
+        {
+          "time": "11:00–13:30",
+          "title": "古兰尼牧场 Jurassic Adventure",
+          "text": "10:40左右到牧场签到。坐越野车进Kualoa、Hakipuʻu、Kaʻaʻawa三条山谷，看《侏罗纪公园》《侏罗纪世界》等拍摄地。路面颠簸，只有短距离步行。场次要提前订。",
+          "placeId": "kualoa",
+          "links": [
+            {
+              "label": "Kualoa官方",
+              "url": "https://www.kualoa.com/tours/"
+            }
+          ]
+        },
+        {
+          "time": "14:05–14:40",
+          "title": "Giovanni's 蒜蓉虾饭",
+          "text": "午餐。排队太长就换旁边的Romy's或Fumi's。之后沿Kamehameha Hwy往西开，经过鲨鱼湾和威美亚湾时在车上看一眼就好：冬天下午北岸浪大，不专门停。",
+          "placeId": "giovanni"
+        },
+        {
+          "time": "15:05–15:20",
+          "title": "Laniakea 看海龟",
+          "text": "下午常有海龟上岸晒太阳，在岸边看15分钟，保持距离。路边停车紧，找不到车位就直接去菠萝园。",
+          "placeId": "laniakea"
+        },
+        {
+          "time": "15:40–17:30",
+          "title": "Dole Plantation：小火车 + 迷宫",
+          "text": "先坐Pineapple Express小火车（约20分钟，大约每10分钟一班；官方建议连菠萝切片表演留1小时），再走Pineapple Garden Maze（平均40分钟），最后吃Dole Whip。全园9:30–17:30，末班车和迷宫最后入场时间官网没写，出发前打电话808-621-8408确认；如果末班较早，就先走迷宫。",
+          "placeId": "dole",
+          "links": [
+            {
+              "label": "Dole Plantation官方",
+              "url": "https://www.doleplantation.com/"
+            }
+          ]
+        },
+        {
+          "time": "17:50–18:40（可选）",
+          "title": "Waikele Premium Outlets 奥莱",
+          "text": "从菠萝园沿H-2开约20分钟。只逛50分钟左右；在菠萝园玩得晚，就跳过，直接去Ko Olina吃晚饭。",
+          "placeId": "waikele",
+          "links": [
+            {
+              "label": "奥莱官方",
+              "url": "https://www.premiumoutlets.com/outlet/waikele"
+            }
+          ]
+        },
+        {
+          "time": "19:00–19:50",
+          "title": "Ko Olina 晚餐",
+          "text": "从奥莱开约18分钟（从菠萝园直接过去约35分钟）。在Ko Olina度假区里吃，例如 Monkeypod Kitchen，建议订位。",
+          "placeId": "ko-olina"
+        },
+        {
+          "time": "20:00–21:00",
+          "title": "星空讲解 · Stars Above Hawaii",
+          "text": "天文讲解员带电脑望远镜，讲夏威夷星空导航，约1小时，照片会发到手机。1/7是新月，这几天月光最暗。开场时间按订到的场次为准，当天下午会发短信说明天气和观测位置；因天气取消可全额退款或改期。",
+          "placeId": "ko-olina",
+          "links": [
+            {
+              "label": "订票页",
+              "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort"
+            }
+          ]
+        },
+        {
+          "time": "21:00",
+          "title": "开回Waikīkī",
+          "text": "约45分钟，21:45左右到酒店。夜路慢一点；今天是很长的一天。车停酒店过夜（约USD45），明早还车。",
+          "placeId": "hotel"
         }
       ]
     },
     {
       "day": 4,
-      "date": "2030-07-01",
-      "title": "慢慢收拾，回到日常",
+      "date": "2027-01-06",
+      "title": "周三 · 还车，坐观光巴士逛市区",
       "locations": [
-        "海港起点"
+        "ʻIolani王宫",
+        "唐人街",
+        "Nico's Pier 38",
+        "Ala Moana"
       ],
       "schedule": [
         {
-          "time": "按酒店政策",
-          "title": "退房与行李寄存",
-          "text": "不要默认免费延迟退房或日间房。",
-          "placeId": "base"
+          "time": "08:00",
+          "title": "加满油还车",
+          "text": "按订单上的时间还，超时可能多算一天。",
+          "placeId": "car-pickup"
         },
         {
-          "time": "按出票时刻倒推",
-          "title": "机场与返程",
-          "text": "示例航班只是演示，不能据此值机或预订。"
+          "time": "09:00",
+          "title": "启用Waikiki Trolley四日票",
+          "text": "四日全线票两人约USD150，可以随上随下，1/6到1/8都用它。坐红线（市区历史线）去王宫。",
+          "placeId": "trolley-hub",
+          "links": [
+            {
+              "label": "Waikiki Trolley官方",
+              "url": "https://waikikitrolley.com/"
+            }
+          ]
+        },
+        {
+          "time": "10:00",
+          "title": "ʻIolani Palace 王宫",
+          "text": "美国唯一的王宫，周二至周六开放，只能网上买票。",
+          "placeId": "iolani",
+          "links": [
+            {
+              "label": "ʻIolani Palace官方",
+              "url": "https://www.iolanipalace.org/visit/"
+            }
+          ]
+        },
+        {
+          "time": "11:30",
+          "title": "卡美哈梅哈国王像、唐人街",
+          "text": "国王像就在王宫对面，唐人街坐红线或走过去。"
+        },
+        {
+          "time": "12:30",
+          "title": "Nico's Pier 38 海鲜午餐",
+          "text": "不在观光巴士线上，Uber约10分钟。poke饭和炸鱼。",
+          "placeId": "nicos"
+        },
+        {
+          "time": "14:30",
+          "title": "Ala Moana 商场",
+          "text": "坐粉线（Ala Moana购物线）来回。",
+          "placeId": "ala-moana"
+        },
+        {
+          "time": "18:00",
+          "title": "Waikīkī晚餐",
+          "text": "明早去恐龙湾，早点睡。",
+          "placeId": "waikiki-beach"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2027-01-07",
+      "title": "周四 · 跟团浮潜、钻石山观景台，傍晚坐帆船看日落",
+      "locations": [
+        "恐龙湾",
+        "钻石山 Kahala观景台",
+        "Waikīkī海上日落"
+      ],
+      "schedule": [
+        {
+          "time": "早上（按团的接送时间）",
+          "title": "Roberts Hawaii 恐龙湾接送团",
+          "text": "含门票和Waikīkī往返车，约USD65/人；浮潜装备不含，可以在湾里现场租。最多提前一个月订。",
+          "placeId": "hanauma",
+          "links": [
+            {
+              "label": "Roberts Hawaii",
+              "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package"
+            },
+            {
+              "label": "恐龙湾官方",
+              "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/"
+            }
+          ]
+        },
+        {
+          "time": "上午",
+          "title": "浮潜",
+          "text": "先看保护区影片，再在内湾浮潜。是否适合游泳和用脚蹼，按自己的身体状况、救生员指示和当天海况决定。如果当天关闭或海况不好，1/8也开放，可以改期。",
+          "placeId": "hanauma"
+        },
+        {
+          "time": "中午",
+          "title": "回酒店休息、午餐",
+          "text": "跟团车送回Waikīkī。",
+          "placeId": "hotel"
+        },
+        {
+          "time": "13:30",
+          "title": "坐绿线去钻石山观景台",
+          "text": "绿线（Diamond Head Line）在Kahala Lookout有拍照停靠，下车就能看到钻石山和海，不用走路爬山。绿线一圈约70分钟，下午最后一班约15:10–15:40从钻石山一带返回，别太晚出发。不进火山口：进火山口要另外预约州立公园门票，而且不登顶也没什么可看。",
+          "placeId": "diamond-head",
+          "links": [
+            {
+              "label": "绿线时刻和站点",
+              "url": "https://waikikitrolley.com/green-line/"
+            }
+          ]
+        },
+        {
+          "time": "16:30",
+          "title": "到海滩上船点集合",
+          "text": "一般提前20–30分钟到。穿方便上下船的鞋，带件薄外套，海上傍晚有风。",
+          "placeId": "waikiki-beach"
+        },
+        {
+          "time": "17:00–19:00",
+          "title": "Waikīkī 日落帆船（或改到1/4）",
+          "text": "例如Moana Sailing 2小时帆船（约USD81/人，含一杯饮料）；Manu Kai的1.5小时happy hour约USD56/人。1月日落约18:05，回程天黑后能看到Waikīkī和钻石山的夜景。风浪大时船公司可能取消。帆船也可以放在1/4傍晚，按出发前的天气预报选风浪小、云少的一天；如果已经在1/4坐过，今天就在海边看日落、早点吃饭。",
+          "placeId": "waikiki-beach",
+          "links": [
+            {
+              "label": "Moana Sailing 订票",
+              "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
+            }
+          ]
+        },
+        {
+          "time": "19:15",
+          "title": "晚餐：Waikīkī 海鲜",
+          "text": "下船后就在附近吃，1/4没去成的话就去Duke's。",
+          "placeId": "dukes"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2027-01-08",
+      "title": "周五 · 慢一天，日落晚餐，半夜离岛",
+      "locations": [
+        "Waikīkī",
+        "House Without A Key",
+        "HNL"
+      ],
+      "schedule": [
+        {
+          "time": "上午（备用）",
+          "title": "恐龙湾备用",
+          "text": "只有1/7被取消时才用，周五开放。"
+        },
+        {
+          "time": "上午",
+          "title": "退房，寄存行李",
+          "text": "上午退房，把行李寄存在前台，晚上回来取。想在去机场前洗个澡，可以问酒店能不能用健身房或泳池的淋浴。选的是Expedia机酒套餐的话，套餐含到1/9的房间，可以一直用到去机场前。",
+          "placeId": "hotel"
+        },
+        {
+          "time": "上午",
+          "title": "可选：坐蓝线看东南海岸",
+          "text": "蓝线（Ocean View Line）沿海边开到Hālona喷泉孔（拍照停靠）和Sea Life Park，一圈约1小时50分钟，早上8:30起约40分钟一班。不想坐就在海滩休息、购物。",
+          "placeId": "halona",
+          "links": [
+            {
+              "label": "蓝线时刻和站点",
+              "url": "https://waikikitrolley.com/blue-line/"
+            }
+          ]
+        },
+        {
+          "time": "17:30",
+          "title": "House Without A Key 日落晚餐",
+          "text": "看日落和草裙舞表演，建议预订。",
+          "placeId": "house"
+        },
+        {
+          "time": "21:00",
+          "title": "去机场",
+          "text": "约25–30分钟。回程是1/9 00:10的Air Canada直飞，建议提前2.5–3小时到。订的是机酒套餐的话，按订单的接送安排走。",
+          "placeId": "hnl"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2027-01-09",
+      "title": "周六 · 直飞回到多伦多",
+      "locations": [
+        "HNL",
+        "YYZ"
+      ],
+      "schedule": [
+        {
+          "time": "00:10",
+          "title": "Air Canada直飞起飞",
+          "text": "红眼航班约8小时41分，尽量在飞机上睡。"
+        },
+        {
+          "time": "13:51",
+          "title": "到达多伦多",
+          "text": "按多伦多时间。从美国回加拿大要过加拿大海关。"
         }
       ]
     }
   ],
-  "coverage": [
-    {
-      "item": "海边与沙滩",
-      "when": "第1、3天",
-      "note": "保留放松时间，不把步行看海当作下水项目。"
-    },
-    {
-      "item": "公园山径",
-      "when": "替代",
-      "note": "以海岸车览和短途步行替代登山，明确不是登顶。"
-    },
-    {
-      "item": "市场与海鲜",
-      "when": "第2天及晚餐",
-      "note": "餐厅待选，示例中不虚构已预订菜单。"
-    }
-  ],
+  "coverage": [],
   "rental": {
-    "title": "双座敞篷 · 把沿途也变成旅行",
-    "summary": "演示内容：车型和报价未实查。真实任务需按驾驶年龄、完整驾照、实际日期、税费及保障查价。",
+    "title": "租车：只租1/5一天（08:15取 – 1/6早上还）",
+    "summary": "只有1/5环岛那天开车。珍珠港用Uber，恐龙湾跟Roberts Hawaii接送团，1/6–1/8市区和海岸线坐Waikiki Trolley观光巴士。",
     "details": [
       {
-        "label": "租期",
-        "value": "示例两天"
+        "label": "驾驶人",
+        "value": "出行时23岁，加拿大G牌，驾龄五六年"
       },
       {
-        "label": "车型",
-        "value": "双座敞篷 · 未确定"
+        "label": "取还车",
+        "value": "建议Waikīkī门店；Kayak的价格是机场门店的"
       },
       {
-        "label": "交车地点",
-        "value": "尚未取得，地图不编造地址"
+        "label": "默认车型",
+        "value": "普通小车，约CA$180（含青年费预留）"
+      },
+      {
+        "label": "当前状态",
+        "value": "未预订 · 没有23岁的完整结算价"
       }
     ],
     "notes": [
-      "双座不必然比四座便宜。",
-      "油费与停车计入地面交通，不重复计车费。",
-      "门店年龄规则、保障与退款条件均需要核对。"
+      "未满25岁通常要另付年轻驾驶人附加费，驾龄长也不能免；部分车型可能不能租。",
+      "加拿大G牌可以在夏威夷开车，一般不需要国际驾照；取车要带实体驾照和本人信用卡。",
+      "不要默认自己的车险或信用卡能保租车，订之前确认保障范围和自付额。",
+      "1/5以牧场场次为中心：植物园9:00开门，牧场11:00左右的团，菠萝园留到关门。牧场场次更晚的话，就缩短植物园或跳过看海龟。"
+    ],
+    "links": [
+      {
+        "label": "Kayak 一天比价",
+        "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
+      },
+      {
+        "label": "Turo 檀香山",
+        "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI"
+      }
     ]
   },
   "todo": [],
   "sources": [
     {
-      "label": "OpenStreetMap 地图数据",
-      "url": "https://www.openstreetmap.org/copyright",
-      "note": "地图数据版权归OpenStreetMap贡献者，价格与行程时刻不来源于此。"
+      "label": "11/15 复查：单独购买价（用于拆分机酒套餐）",
+      "url": "https://www.google.com/travel/search?q=Sheraton%20Waikiki%20Beach%20Resort%20Jan%203%20to%20Jan%209%202027&hl=en&gl=ca&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Google Flights AC直飞往返两人从CA$1,931；Google Hotels Sheraton King城景可退约CA$830/晚（未含夏威夷税），6晚加税约CA$5,920，与Expedia单订CA$5,918.92一致。"
     },
     {
-      "label": "OSRM 道路规划",
-      "url": "https://project-osrm.org/",
-      "note": "缓存道路为路网估算，不含实时拥堵。"
+      "label": "11/15 Vio：1/3–1/8 五晚含税费总价",
+      "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+      "checkedOn": "2026-11-15",
+      "note": "Hotel Renew CA$1,223（原CA$1,605，可免费取消、先订后付）；Hyatt Place CA$1,745含早（可免费取消CA$2,090）；Kaimana CA$1,763（可免费取消CA$2,096）；ʻAlohilani CA$2,082；Sheraton CA$3,438（原CA$4,752，需中途换房）。"
+    },
+    {
+      "label": "你的截图：Air Canada官网 YYZ⇄HNL 1/3–1/9 Standard直飞",
+      "url": "https://www.aircanada.com/",
+      "checkedOn": "2026-11-15",
+      "note": "两人含税CA$2,128.64，回程1/9 00:10–13:51。"
+    },
+    {
+      "label": "你的截图：Expedia机酒套餐（Sheraton 6晚＋AC直飞Basic）",
+      "url": "https://www.expedia.ca/",
+      "checkedOn": "2026-11-15",
+      "note": "套餐CA$5,178.40；分开买酒店5,918.92、机票1,928.64。"
+    },
+    {
+      "label": "你的截图：Costco Travel 酒店",
+      "url": "https://www.costcotravel.ca/",
+      "checkedOn": "2026-11-15",
+      "note": "Kaimana Beach Hotel含双早CA$2,302.02；ʻAlohilani部分海景King CA$2,707.08（另有CA$177购物卡和USD150酒店额度）。截图未显示晚数。 这两个价格按6晚报，单独订酒店改按5晚后不再使用。"
+    },
+    {
+      "label": "Google Flights：YYZ–HNL 1/3–1/8 两人",
+      "url": "https://www.google.com/travel/flights/booking?tfs=CBwQAho_EgoyMDI3LTAxLTAzIh8KA1lZWhIKMjAyNy0wMS0wMxoDSE5MKgJBQzIDNTg5agcIARIDWVlacgcIARIDSE5MGmESCjIwMjctMDEtMDgiIAoDSE5MEgoyMDI3LTAxLTA4GgNTRk8qAlVBMgQxMzQ2Ih8KA1NGTxIKMjAyNy0wMS0wORoDWVlaKgJVQTIDNjA4agcIARIDSE5McgcIARIDWVlaQAFAAUgBcAGCAQsI____________AZgBAQ&hl=en&gl=ca&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "早前用1/8回程查的记录（经SFO的AC Standard 2,467等），已被1/9凌晨的直飞报价取代。"
+    },
+    {
+      "label": "Google Hotels：Waikīkī 1/3–1/8",
+      "url": "https://www.google.com/travel/search?q=hotels%20in%20Waikiki%20Jan%203%20to%20Jan%208%202027&hl=en&gl=ca&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Google显示的是每晚含费价，不含约19%的夏威夷税；单独订酒店改用Vio含税费总价。"
+    },
+    {
+      "label": "Kayak：HNL 租车 1/5–1/8",
+      "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-08h/2027-01-08-08h?sort=price_a",
+      "checkedOn": "2026-11-15",
+      "note": "搜索页三天总价，没有按23岁加入附加费。"
+    },
+    {
+      "label": "恐龙湾 · 檀香山市公园处",
+      "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/",
+      "checkedOn": "2026-11-15",
+      "note": "周三至周日开放，6:45–13:30入场；非居民USD25（网上另加2.35%）；停车$3现金；提前两天7:00 HST开放预约。"
+    },
+    {
+      "label": "PCC 开放时间",
+      "url": "https://www.polynesia.com/faq/hours-of-operation",
+      "checkedOn": "2026-11-15",
+      "note": "周日、周三闭园；周一、二、四、五、六12:00–21:00。票价参考：Aliʻi Luau约USD198/人，Gateway约USD150/人。"
+    },
+    {
+      "label": "Hoʻomaluhia 植物园",
+      "url": "https://www.honolulu.gov/dpr/honolulu-botanical-gardens/hoomaluhia-botanical-garden/",
+      "checkedOn": "2026-11-15",
+      "note": "9:00–16:00；每周四、圣诞和元旦闭园。"
+    },
+    {
+      "label": "Pearl Harbor Historic Sites",
+      "url": "https://www.pearlharborhistoricsites.org/tickets",
+      "checkedOn": "2026-11-15",
+      "note": "Passport约USD99.99/人，包括密苏里号、航空博物馆和潜艇博物馆；亚利桑那号单独免费预约。"
+    },
+    {
+      "label": "ʻIolani Palace",
+      "url": "https://www.iolanipalace.org/visit/",
+      "checkedOn": "2026-11-15",
+      "note": "周二至周六开放，只能网上买票；成人约USD28（2026年公开价）。"
+    },
+    {
+      "label": "Kualoa Ranch",
+      "url": "https://www.kualoa.com/tours/",
+      "checkedOn": "2026-11-15",
+      "note": "Jurassic Adventure 2.5小时USD149.95；Movie Sites和Jungle Expedition各90分钟USD59.95。没有显示具体场次。"
+    },
+    {
+      "label": "Roberts Hawaii · Hanauma Bay Experience",
+      "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
+      "checkedOn": "2026-11-15",
+      "note": "含门票和Waikīkī往返接送，成人约USD65；未写明含浮潜装备。"
+    },
+    {
+      "label": "Byodo-In 平等院",
+      "url": "https://byodo-in.com/visit/",
+      "checkedOn": "2026-11-15",
+      "note": "8:30–16:30，最后入场16:15；成人USD10，停车每小时$6。"
+    },
+    {
+      "label": "Kayak：HNL 租车 1/5–1/6 一天",
+      "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+      "checkedOn": "2026-11-15",
+      "note": "小车约CA$75–88，Open-air Jeep约CA$86，未计未满25岁附加费。"
+    },
+    {
+      "label": "Waikiki Trolley",
+      "url": "https://waikikitrolley.com/green-line/",
+      "checkedOn": "2026-11-15",
+      "note": "绿线：钻石山火山口（需另外预约）和Kahala Lookout拍照停靠，一圈约70分钟。蓝线：Hālona喷泉孔拍照停靠、Sea Life Park，约40分钟一班、一圈约1小时50分，不停钻石山观景台。四日全线票各网站约USD65–76/人。"
+    },
+    {
+      "label": "Waikele Premium Outlets",
+      "url": "https://www.premiumoutlets.com/outlet/waikele",
+      "checkedOn": "2026-11-15",
+      "note": "周一至周四10:00–19:00，周五六10:00–20:00，周日11:00–18:00（官网商家页面显示）。"
+    },
+    {
+      "label": "Dole Plantation 官网与FAQ",
+      "url": "https://www.doleplantation.com/",
+      "checkedOn": "2026-11-15",
+      "note": "全园9:30–17:30；小火车约20分钟，订票页写约每10分钟一班；迷宫平均40分钟；小火车加切菠萝表演建议至少1小时。末班时间未公布。"
+    },
+    {
+      "label": "Stars Above Hawaii · Ko Olina Polynesian Star Navigation Show",
+      "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
+      "checkedOn": "2026-11-15",
+      "note": "成人USD54.25，约1小时，Four Seasons Ko Olina集合；天气取消可退或改期；场次时间未在页面列出。"
+    },
+    {
+      "label": "Waikīkī日落帆船",
+      "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
+      "checkedOn": "2026-11-15",
+      "note": "Moana Sailing 2小时约USD80.99/人含一杯饮料，17:00出发；Waikīkī日落船一般17:00–17:30出发，USD56–149/人。1/7为新月（2027-01-07 20:24 UTC）。"
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "title": "Hilton Hawaiian Village 周五烟花",
+      "status": "待确认",
+      "priceLabel": "免费 · 在海边看",
+      "description": "传统上酒店会在周五晚上放烟花，1/8正好是周五。",
+      "conflict": "今年是否举行、几点放，都要出发前查。和House Without A Key晚餐时间相近，按实际时间二选一。",
+      "url": "https://www.hiltonhawaiianvillage.com/"
+    },
+    {
+      "title": "PCC 下午＋晚上（如果还想去）",
+      "status": "未计入预算",
+      "priceLabel": "套票约USD150–198/人，另需交通",
+      "description": "每周日、周三闭园，12:00–21:00。要玩村落、晚餐和HĀ晚间秀，需要一个完整的下午加晚上。",
+      "conflict": "现在的行程里没有空出来的下午加晚上；只能拿1/8白天的空闲时间换，并且要坐PCC的接送巴士，还要算好赶00:10的航班。",
+      "url": "https://www.polynesia.com/"
+    }
+  ],
+  "share": {
+    "kicker": "YYZ ✈ HNL · 2027.1.3 – 1.9",
+    "title": "欧胡岛 5晚6天 路线图",
+    "subtitle": "多伦多直飞 · 只租一天车 · 不爬山也能玩遍",
+    "footer": "路线按 OpenStreetMap 道路数据绘制 · 全部未预订 · 查价 2026-11-15",
+    "days": [
+      {
+        "day": 1,
+        "tag": "抵达",
+        "items": [
+          "✈️ AC直飞 17:35 → 22:38",
+          "🏨 夜里入住 Waikīkī"
+        ],
+        "short": "抵达",
+        "badgeAt": 0.15
+      },
+      {
+        "day": 2,
+        "tag": "珍珠港",
+        "items": [
+          "⚓ 亚利桑那号纪念馆",
+          "🚢 密苏里号战列舰",
+          "🛩️ 航空博物馆＋潜艇",
+          "⛵ 日落帆船（看天气，或1/7）",
+          "🦞 Duke's 海边晚餐"
+        ],
+        "short": "珍珠港",
+        "badgeAt": 0.5
+      },
+      {
+        "day": 3,
+        "tag": "环岛开车日",
+        "items": [
+          "🌺 Hoʻomaluhia 植物园",
+          "🦖 古兰尼牧场 侏罗纪深度团",
+          "🍤 虾饭 · 🐢 海龟",
+          "🍍 菠萝园 小火车 + 迷宫",
+          "🌌 Ko Olina 看星星"
+        ],
+        "short": "环岛",
+        "badgeAt": 0.4
+      },
+      {
+        "day": 4,
+        "tag": "市区观光巴士",
+        "items": [
+          "🚋 Waikiki Trolley 红线",
+          "👑 ʻIolani 王宫 · 唐人街",
+          "🐟 Nico's Pier 38 海鲜",
+          "🛍️ Ala Moana 商场"
+        ],
+        "short": "市区",
+        "badgeAt": 0.55
+      },
+      {
+        "day": 5,
+        "tag": "浮潜·钻石山·日落",
+        "items": [
+          "🤿 恐龙湾跟团浮潜",
+          "🚋 绿线到钻石山观景台",
+          "⛵ 日落帆船（或1/4）"
+        ],
+        "short": "浮潜",
+        "badgeAt": 0.55
+      },
+      {
+        "day": 6,
+        "tag": "慢一天·离岛",
+        "items": [
+          "🌊 蓝线看海岸（可选）",
+          "🏖️ Waikīkī 海滩",
+          "🌇 日落晚餐 + 草裙舞",
+          "✈️ 00:10 直飞回多伦多"
+        ],
+        "short": "离岛",
+        "badgeAt": 0.92
+      },
+      {
+        "day": 7,
+        "tag": "到家",
+        "items": [],
+        "short": "到家"
+      }
+    ],
+    "pois": [
+      {
+        "placeId": "hotel",
+        "icon": "🏨",
+        "label": "Waikīkī 住这里",
+        "dx": -215,
+        "dy": 34
+      },
+      {
+        "placeId": "pearl-harbor",
+        "icon": "⚓",
+        "label": "珍珠港",
+        "side": "left"
+      },
+      {
+        "placeId": "iolani",
+        "icon": "👑",
+        "label": "王宫",
+        "dx": -40,
+        "dy": -66
+      },
+      {
+        "placeId": "diamond-head",
+        "icon": "🌋",
+        "label": "钻石山观景台",
+        "dx": 6,
+        "dy": 34
+      },
+      {
+        "placeId": "hanauma",
+        "icon": "🤿",
+        "label": "恐龙湾浮潜",
+        "side": "above"
+      },
+      {
+        "placeId": "hoomaluhia",
+        "icon": "🌺",
+        "label": "植物园",
+        "side": "right"
+      },
+      {
+        "placeId": "kualoa",
+        "icon": "🦖",
+        "label": "古兰尼牧场",
+        "side": "right"
+      },
+      {
+        "placeId": "giovanni",
+        "icon": "🍤",
+        "label": "蒜蓉虾饭",
+        "side": "right"
+      },
+      {
+        "placeId": "laniakea",
+        "icon": "🐢",
+        "label": "海龟海滩",
+        "side": "left"
+      },
+      {
+        "placeId": "dole",
+        "icon": "🍍",
+        "label": "菠萝园 小火车+迷宫",
+        "side": "right"
+      },
+      {
+        "placeId": "waikele",
+        "icon": "🛍️",
+        "label": "奥莱（可选）",
+        "side": "left"
+      },
+      {
+        "placeId": "ko-olina",
+        "icon": "🌌",
+        "label": "Ko Olina 看星星",
+        "side": "below"
+      }
+    ],
+    "bbox": [
+      -158.29,
+      21.245,
+      -157.64,
+      21.72
+    ],
+    "mapTitle": {
+      "text": "O‘ahu",
+      "lng": -158.035,
+      "lat": 21.6
+    },
+    "seaLabel": "PACIFIC OCEAN"
+  },
   "checklist": {
-    "asOf": "2030-04-15",
+    "asOf": "2026-11-15",
     "groups": [
       {
         "id": "documents",
-        "label": "证件"
+        "label": "证件与入境"
       },
       {
         "id": "bookings",
@@ -572,45 +1595,276 @@
     ],
     "items": [
       {
-        "id": "id-check",
+        "id": "me-passport",
         "group": "documents",
-        "title": "检查两人的带照片证件（国内航班）",
+        "who": "我",
+        "title": "确认加拿大护照有效期覆盖全程",
+        "due": "2026-11-30",
+        "lead": "现在检查",
+        "note": "加拿大公民去美国免签，也不用申请ESTA，但坐飞机必须用护照。有效期偏短的话，航空公司可能按「离开美国后还有6个月」执行，稳妥起见先换新护照。",
+        "url": "https://travel.gc.ca/destinations/united-states",
+        "urlLabel": "加拿大政府旅行建议"
+      },
+      {
+        "id": "gf-passport",
+        "group": "documents",
+        "who": "女朋友",
+        "title": "确认中国护照有效期：离开美国后最好还剩6个月以上",
+        "due": "2026-11-30",
+        "lead": "现在检查；在加拿大换护照要好几周",
+        "note": "美国一般要求护照在离境后还有6个月有效期，CBP「Six-Month Club」名单上的国家可以豁免（最新为2025-12-18版），中国是否在名单上请以该名单为准。不够6个月的话，尽快通过中国驻加拿大领馆换发。",
+        "url": "https://www.cbp.gov/document/bulletins/six-month-club-update",
+        "urlLabel": "CBP六个月名单"
+      },
+      {
+        "id": "gf-visa",
+        "group": "documents",
+        "who": "女朋友",
+        "title": "确认美国B1/B2签证在1/3入境时仍有效",
+        "due": "2026-11-30",
+        "lead": "现在检查",
+        "note": "签证还在旧护照上的话，旧护照和新护照都要带。加拿大PR身份不能代替美国签证。",
+        "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html",
+        "urlLabel": "美国国务院访客签证"
+      },
+      {
+        "id": "gf-evus",
+        "group": "documents",
+        "who": "女朋友",
+        "title": "完成EVUS登记（或确认还在有效期内）",
+        "due": "2026-12-20",
+        "lead": "建议提前2周；最晚出发前72小时",
+        "note": "持10年B1/B2签证的中国护照必须登记EVUS，否则会被拒绝登机。费用USD30.75（2026年1月起，之后可能小幅上调），有效2年；换了护照或签证就要重新登记。只在官网 evus.gov 办理，小心收费代办网站。",
+        "url": "https://www.evus.gov/",
+        "urlLabel": "EVUS官网"
+      },
+      {
+        "id": "gf-prcard",
+        "group": "documents",
+        "who": "女朋友",
+        "title": "确认加拿大PR卡到1/9回加拿大时仍有效",
+        "due": "2026-11-30",
+        "lead": "现在检查；PR卡续签要好几个月",
+        "note": "坐飞机回加拿大，必须出示有效的PR卡或PR旅行证件（PRTD），电子COPR不被航空公司接受。如果PR卡在1/9前到期，续签只能在加拿大境内办，PRTD要在境外申请且需要时间，要先评估行程。",
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html",
+        "urlLabel": "加拿大移民局PR卡"
+      },
+      {
+        "id": "insurance",
+        "group": "documents",
         "who": "两人",
-        "due": "2030-06-01",
-        "lead": "提前4周",
-        "note": "演示：国际行程会在这里列护照有效期、签证/电子旅行许可和办理时间。"
+        "title": "买旅行医疗保险",
+        "due": "2026-12-20",
+        "lead": "出发前买好",
+        "note": "安省OHIP在美国能报销的很少，美国看病很贵。如果靠信用卡自带的保险，先确认覆盖天数、金额和是否需要用这张卡付机票。"
+      },
+      {
+        "id": "hawaii-ag",
+        "group": "documents",
+        "who": "两人",
+        "title": "填写夏威夷动植物申报表",
+        "due": "2027-01-03",
+        "dueLabel": "1/3 飞机上",
+        "lead": "到达前填好",
+        "note": "所有到夏威夷的旅客都要申报带的动植物。机上可能发纸质表，也可能用官方数字版Akamai Arrival，以当天航班安排为准；一家人填一份即可。",
+        "url": "https://akamaiarrival.hawaii.gov/",
+        "urlLabel": "Akamai Arrival"
+      },
+      {
+        "id": "flight",
+        "group": "bookings",
+        "who": "我",
+        "title": "订机票：AC往返直飞（或Expedia机酒套餐）",
+        "due": "2026-11-22",
+        "lead": "越早越好",
+        "note": "Google Flights显示这个日期价格偏高。在AC官网购票，24小时内可全额退款；Expedia套餐里的机票是Basic，不能退改。"
       },
       {
         "id": "hotel",
         "group": "bookings",
-        "title": "订 Harbour House（虚构）",
-        "who": "两人",
-        "due": "2030-05-15",
+        "who": "我",
+        "title": "订5晚酒店（1/3–1/8），记下免费取消截止日",
+        "due": "2026-11-30",
         "lead": "越早越好",
-        "note": "演示酒店，不能预订。"
+        "note": "Vio含税费价：Hotel Renew CA$1,223（可免费取消、先订后付），Hyatt Place CA$1,745（含早），Kaimana CA$1,763，ʻAlohilani CA$2,082，Sheraton CA$3,438（需中途换房）。免费取消截止日以订单页为准。"
+      },
+      {
+        "id": "arizona",
+        "group": "bookings",
+        "who": "我",
+        "title": "预约1/4 USS Arizona纪念馆最早场次",
+        "due": "2026-11-20",
+        "dueLabel": "已开放 · 尽快订",
+        "lead": "提前8周放票，每天15:00夏威夷时间（多伦多20:00）",
+        "note": "免费，每张收$1手续费，订了不能改也不能退。如果没抢到，前一天15:00还会放出24小时内的票，但1/3那时我们还在飞机上，所以最好现在就订。",
+        "url": "https://www.recreation.gov/ticket/facility/233338",
+        "urlLabel": "Recreation.gov"
+      },
+      {
+        "id": "kualoa",
+        "group": "bookings",
+        "who": "我",
+        "title": "订古兰尼牧场 Jurassic Adventure（1/5 11:00左右）",
+        "due": "2026-12-01",
+        "lead": "提前3–4周",
+        "note": "热门场次会订满。订11:00左右的场次：太早赶不及植物园，太晚菠萝园的时间就不够。",
+        "url": "https://www.kualoa.com/tours/",
+        "urlLabel": "Kualoa官网"
       },
       {
         "id": "car",
         "group": "bookings",
-        "title": "订两天敞篷车（虚构）",
-        "due": "2030-05-31",
-        "lead": "提前4周",
-        "note": "按驾驶人实际年龄和驾照查价。"
+        "who": "我",
+        "title": "订1/5一天租车",
+        "due": "2026-12-05",
+        "lead": "提前约1个月",
+        "note": "按23岁、加拿大G牌查完整价格，含未满25岁附加费、保险和Waikīkī门店取还车。确认这个车型23岁能不能租。"
       },
       {
-        "id": "dinner",
+        "id": "roberts",
         "group": "bookings",
-        "title": "海鲜晚餐订位",
-        "due": "2030-06-14",
-        "lead": "提前2周"
+        "who": "我",
+        "title": "订1/7恐龙湾 Roberts Hawaii 接送团",
+        "due": "2026-12-07",
+        "dueLabel": "12/7 起可订",
+        "lead": "最多提前一个月开放",
+        "note": "含门票和Waikīkī往返车，约USD65/人；浮潜装备不含。",
+        "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
+        "urlLabel": "Roberts Hawaii"
       },
       {
-        "id": "insurance",
+        "id": "house",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/8 House Without A Key 日落晚餐",
+        "due": "2026-12-08",
+        "lead": "约提前4周（以订位平台放位为准）",
+        "note": "靠海的座位看日落最好，订的时候备注。"
+      },
+      {
+        "id": "pearl-passport",
+        "group": "bookings",
+        "who": "我",
+        "title": "买珍珠港 Passport 通票（密苏里号、航空馆、潜艇馆）",
+        "due": "2026-12-20",
+        "lead": "随时可买",
+        "url": "https://www.pearlharborhistoricsites.org/tickets",
+        "urlLabel": "Pearl Harbor Historic Sites"
+      },
+      {
+        "id": "iolani",
+        "group": "bookings",
+        "who": "我",
+        "title": "买1/6 ʻIolani Palace 门票",
+        "due": "2026-12-20",
+        "lead": "提前约2周；只能网上买",
+        "url": "https://www.iolanipalace.org/visit/",
+        "urlLabel": "ʻIolani Palace"
+      },
+      {
+        "id": "dukes",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/4 Duke's 晚餐",
+        "due": "2026-12-20",
+        "lead": "提前约2周"
+      },
+      {
+        "id": "trolley",
+        "group": "bookings",
+        "who": "我",
+        "title": "买 Waikiki Trolley 四日全线票",
+        "due": "2027-01-05",
+        "lead": "1/6用之前买好",
+        "url": "https://waikikitrolley.com/",
+        "urlLabel": "Waikiki Trolley"
+      },
+      {
+        "id": "hanauma-backup",
+        "group": "bookings",
+        "who": "我",
+        "title": "备用：1/8恐龙湾自订门票（只在1/7被取消时）",
+        "due": "2027-01-06",
+        "dueLabel": "1/6 07:00 夏威夷时间",
+        "lead": "提前2天7:00放票（多伦多12:00）",
+        "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/",
+        "urlLabel": "恐龙湾官方"
+      },
+      {
+        "id": "roaming",
         "group": "before",
-        "title": "买旅行保险",
         "who": "两人",
-        "due": "2030-06-27",
-        "lead": "出发前"
+        "title": "开通美国漫游或买eSIM",
+        "due": "2027-01-02",
+        "lead": "出发前一天"
+      },
+      {
+        "id": "yyz",
+        "group": "before",
+        "who": "两人",
+        "title": "1/3 15:00前到皮尔逊机场（在多伦多过美国预清关）",
+        "due": "2027-01-03",
+        "lead": "起飞前2.5–3小时",
+        "note": "女朋友带好中国护照（和有签证的旧护照）、PR卡；你带加拿大护照。"
+      },
+      {
+        "id": "late-checkout",
+        "group": "before",
+        "who": "我",
+        "title": "问酒店1/8寄存行李，能不能用淋浴",
+        "due": "2027-01-05",
+        "lead": "入住时问",
+        "note": "回程是1/9 00:10的红眼航班，白天退房后行李放前台；问一下健身房或泳池淋浴能不能用，去机场前洗个澡。"
+      },
+      {
+        "id": "dole-call",
+        "group": "before",
+        "who": "我",
+        "title": "打电话问菠萝园1/5小火车末班和迷宫最后入场时间",
+        "due": "2027-01-04",
+        "lead": "前一天",
+        "note": "官网只写全园9:30–17:30。电话808-621-8408；如果末班早于16:30，就先走迷宫再坐车。",
+        "url": "https://www.doleplantation.com/",
+        "urlLabel": "Dole Plantation官方"
+      },
+      {
+        "id": "stars",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/5 Ko Olina星空讲解，确认那天的场次和开场时间",
+        "due": "2026-12-15",
+        "lead": "提前3–4周；24小时前可免费取消",
+        "note": "订票页没写哪几晚有、几点开始（其他平台写过20:00/21:00/22:00），订的时候确认周二有没有场次，最好订20:00。因天气取消可全额退款或改期。",
+        "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
+        "urlLabel": "Stars Above Hawaii"
+      },
+      {
+        "id": "sail",
+        "group": "bookings",
+        "who": "我",
+        "title": "订Waikīkī日落帆船：1/4或1/7（看天气），17:00左右出发",
+        "due": "2026-12-20",
+        "lead": "先订1/7占位，出发前按预报决定是否改到1/4",
+        "note": "Moana Sailing 2小时约USD81/人；Manu Kai 1.5小时约USD56/人。订之前看清改期和取消规则（很多船公司出发前24小时内不能退），订的时候确认上船点。",
+        "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
+        "urlLabel": "Moana Sailing"
+      },
+      {
+        "id": "monkeypod",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/5 Ko Olina晚餐（19:00）",
+        "due": "2026-12-20",
+        "lead": "提前约2周"
+      },
+      {
+        "id": "weather",
+        "group": "before",
+        "who": "我",
+        "title": "看1/4、1/7傍晚和1/5晚上的天气与海况，决定帆船哪天坐",
+        "due": "2027-01-02",
+        "lead": "出发前一天",
+        "note": "1/4和1/7哪天风浪小、云少，帆船就放哪天；1/6傍晚也可以当后备。云多的话，看星星由运营方短信通知改期。"
       }
     ]
   }

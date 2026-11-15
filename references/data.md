@@ -71,7 +71,7 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 | `mapTitle` | `{text,lng,lat}`，地图上的大字（如岛名） |
 | `seaLabel` | 海面文字（如 PACIFIC OCEAN） |
 
-海报只用页面已有数据在浏览器里绘制，不上传；托管环境不允许下载时，用户截图或长按保存。
+海报只用页面已有数据在浏览器里绘制，不上传。「保存图片」按环境选择：Claude Artifact 里用 `downloads` 能力（查看者确认后保存），手机用系统分享面板（可存到相册），其他浏览器直接下载；都不行时提示截图。
 
 未知信息可保留待确认，校验警告不要求补造事实；已填引用和数字必须有效。
 
