@@ -367,3 +367,32 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
 .check-group li a{margin-left:24px;font-size:13px}
 .check-summary .due{padding:0 7px;border:1.5px solid var(--line);border-radius:var(--r3)}
 .flight-price small{font:14px var(--sans);color:var(--ink2);font-weight:400}
+
+/* ---------- 旅游羊驼 ---------- */
+.alp-line{stroke:var(--ink)}
+.alp-fill{fill:var(--card)}
+.alp-eye{fill:var(--ink)}
+.brand{display:inline-flex;align-items:flex-end;gap:4px}
+.brand-alpaca{width:40px;height:40px;flex:none;margin:-10px 0 -6px;transform-origin:50% 90%}
+.brand:hover .brand-alpaca{animation:alpaca-hop .6s ease-in-out}
+@keyframes alpaca-hop{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-5px) rotate(-6deg)}70%{transform:translateY(0) rotate(4deg)}}
+footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
+
+/* ---------- 做一份自己的攻略 ---------- */
+.own-card{display:flex;gap:22px;align-items:flex-start;padding:22px;background:var(--card);border:2.5px solid var(--ink);border-radius:var(--r1);box-shadow:5px 5px 0 var(--shadow)}
+.own-alpaca{width:120px;height:120px;flex:none;transform:rotate(-4deg)}
+.own-body{min-width:0;flex:1}
+.own-body p{color:var(--ink2);max-width:46em}
+.own-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:14px 0 6px}
+#copy-prompt{border:2.5px solid var(--ink);border-radius:var(--r3);background:var(--hl);color:var(--ink);padding:6px 18px;font:20px/1.3 var(--hand);box-shadow:3px 3px 0 var(--shadow);transform:rotate(-1deg)}
+#copy-prompt:active{transform:translate(2px,2px) rotate(-1deg);box-shadow:1px 1px 0 var(--shadow)}
+#copy-prompt::before{content:"📋 "}
+#copy-status{font:16px var(--hand);color:var(--green)}
+.own-preview summary{cursor:pointer;font:16px var(--hand);color:var(--ink2)}
+#own-prompt{display:block;width:100%;margin-top:8px;padding:10px 12px;font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--paper);border:2px dashed var(--ink2);border-radius:var(--r3);resize:vertical}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+.footer-links a{font-family:var(--hand);font-size:16px;color:var(--ink2);text-decoration:none}
+@media (max-width:760px){.own-card{flex-direction:column;align-items:center;text-align:left}.own-alpaca{width:96px;height:96px}.brand-alpaca{width:30px;height:30px}}
+@media (prefers-reduced-motion: reduce){.brand:hover .brand-alpaca{animation:none}}
+.brand>.brand-text{color:var(--ink)}

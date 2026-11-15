@@ -6,6 +6,7 @@ const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(
 const link=(label,value)=>url(value)?`<a href="${escape(url(value))}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`:'';
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
 let data,selection,key,basemap,cachedRoads=[];
+const SKILL_REPO='https://github.com/stevensun1005/travel-plan';
 const money=value=>`${data.trip.currency||'CAD'} ${Number(value).toLocaleString('en-CA',{maximumFractionDigits:2})}`;
 const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#2a70cf','#e07a12','#1f9652','#d2402f','#2b9c9a','#9b6dd0','#c99a1c','#8a958c'][index%8];
 function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save-status').textContent='已自动保存到当前浏览器';}catch{$('#save-status').textContent='本次选择有效，浏览器未能保存';}}
@@ -173,6 +174,30 @@ function renderChecklist(){
   $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
   draw();
 }
+function renderOwnPrompt(){
+  // "Make your own" card: a ready-to-paste prompt that installs the skill and starts a new plan.
+  const box=$('#own-prompt');if(!box)return;
+  box.value=[
+    '请先安装 travel-plan 旅行规划 skill：',SKILL_REPO,'',
+    '安装方法（按你用的工具选一种）：',
+    `- Claude Code：git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
+    '- Codex：git clone 这个仓库，然后在仓库目录运行 python scripts/install.py','',
+    `装好后，用 travel-plan 帮我做一份像「${data.trip.title}」这样的旅行攻略网页：可选机票酒店和实时预算、真实路线地图、每日行程、出发前待办清单和分享路线图。`,'',
+    '我的情况：',
+    '- 出发地 → 目的地：',
+    '- 出发和回家的日期：',
+    '- 几个人，每个人的护照国籍、居留身份和已有签证：',
+    '- 预算上限和币种：',
+    '- 一定要去的 / 不想做的：',
+    '- 饮食、体力和节奏上的要求：','',
+    '先用我给的信息开始，只问真正缺的。',
+  ].join('\n');
+  const status=$('#copy-status');
+  $('#copy-prompt').onclick=async()=>{
+    try{await navigator.clipboard.writeText(box.value);status.textContent='已复制，粘贴给 Claude Code 或 Codex 就能开始';}
+    catch{box.closest('details').open=true;box.focus();box.select();status.textContent='浏览器不让直接复制：已经帮你选中，按 Ctrl+C（手机长按）复制';}
+  };
+}
 function renderTodo(){
   const storage=`travel-plan:todo:v1:${data.trip.id}`;let todos=read(storage,null);
   if(!Array.isArray(todos)||todos.some(t=>typeof t.text!=='string'))todos=(data.todo||[]).map(text=>({text,done:false}));
@@ -187,7 +212,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderMap();
+    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');
