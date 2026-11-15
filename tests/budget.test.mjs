@@ -31,6 +31,10 @@ test('a package locks the bundled category and releases it when unselected',()=>
   assert.equal(pkg.selections.hotel.optionId,'in-package');
   assert.deepEqual(pkg.locked,['hotel']);
   assert.equal(pkg.total,3960);
+  // the package price is shared out by standalone prices (1600 : 900), total unchanged
+  assert.equal(pkg.rows.find(r=>r.id==='flights').amount,1472);
+  assert.equal(pkg.rows.find(r=>r.id==='hotel').amount,828);
+  assert.equal(pkg.rows.find(r=>r.id==='hotel').splitFrom,'flights');
   const back={...pkg,selections:{...pkg.selections,flights:{optionId:'economy',customAmount:0}}};
   const released=calculate(data.budget,back);
   assert.equal(released.selections.hotel.optionId,'harbour');

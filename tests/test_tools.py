@@ -42,12 +42,13 @@ class ToolsTest(unittest.TestCase):
             self.assertEqual(validate(project)[0],[])
             flights=data['budget']['categories'][0]
             next(o for o in flights['options'] if o['id']=='package')['bundles']={'hotel':'missing-option'}
+            next(o for o in flights['options'] if o['id']=='package')['split']={'flights':100,'car':-5}
             hotel=next(c for c in data['budget']['categories'] if c['id']=='hotel');hotel['defaultOption']='in-package'
             data['share']={'pois':[{'placeId':'nowhere'}],'days':[{'day':99}],'bbox':[1,1,0,0]}
             data['map']['basemapFile']='../outside.json'
             path.write_text(json.dumps(data),encoding='utf-8')
             errors,_=validate(project)
-            for text in ['bundles unknown option','bundle-only','unknown place','unknown day','share.bbox','Base map file escapes']:
+            for text in ['bundles unknown option','bundle-only','unknown place','unknown day','share.bbox','Base map file escapes','does not bundle','positive amount']:
                 self.assertTrue(any(text in e for e in errors),text)
     def test_checklist_items_are_checked(self):
         with tempfile.TemporaryDirectory() as folder:

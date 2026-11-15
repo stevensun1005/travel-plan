@@ -27,7 +27,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 - 航班option可带 `fareFamily,bagPerPerson,journeys[]`；有不同班次时提供完整替代journeys。
 - 行李option可带 `bagCount`，在已给出航班行李价时联动；否则使用明示预留，不猜收费。
 - preset：`{id,label,selections:{类别ID:选项ID},note}`；估算状态不会因组合而变成报价。
-- 套餐：option可带 `bundles:{类别ID:选项ID}`，例如机票选项 `{"hotel":"in-package"}`。选中它时被包含的类别锁定为该选项（下拉框禁用）；被包含的选项标 `bundleOnly:true`、金额通常为0，没有套餐选中时隐藏并回到默认。默认选项不能是bundleOnly；交通等其他类别也可以一起打包（例如套餐含接送时 `{"hotel":"in-package","transport":"no-airport"}`）。
+- 套餐：option可带 `bundles:{类别ID:选项ID}`，例如机票选项 `{"hotel":"in-package"}`。选中它时被包含的类别锁定为该选项（下拉框禁用）；被包含的选项标 `bundleOnly:true`、金额通常为0，没有套餐选中时隐藏并回到默认。默认选项不能是bundleOnly。套餐要按单独购买价拆分时加 `split:{类别ID:单买参考价}`（含自己的类别，如 `{"flights":1931,"hotel":5918.92}`）：套餐价按这些价格的比例分给各类别，饼图和卡片显示拆分后的金额，总额不变；参考价要同口径（都含税、同人数同晚数）并在note里写来源。交通等其他类别也可以一起打包（例如套餐含接送时 `{"hotel":"in-package","transport":"no-airport"}`）。
 - 前端选择用于预算比较。下方日程和已缓存道路按原排定行程；变更真实酒店后应由Agent更新POI与缓存，不暗示选择费用就完成全部重新规划。
 
 ## 地点与路线

@@ -28,6 +28,19 @@ export function calculate(budget,saved) {
     const amount=option.bagCount && validMoney(flight?.bagPerPerson)?option.bagCount*flight.bagPerPerson:option.amount;
     return {...category,option,amount:cents(amount)/100};
   });
+  // Package split: a bundling option may carry `split` = standalone reference prices per category
+  // (its own and the categories it bundles). Its price is spread over them in that proportion, so the
+  // chart shows what the money buys; the total stays exactly the package price.
+  for(const row of rows){
+    const split=row.option?.split;if(!split||row.option.id==='custom')continue;
+    const parts=Object.entries(split).filter(([id,weight])=>validMoney(weight)&&weight>0&&(id===row.id||(row.option.bundles?.[id]&&rows.find(r=>r.id===id)?.option?.id===row.option.bundles[id])));
+    const sum=parts.reduce((total,[,weight])=>total+weight,0);if(!sum||!parts.some(([id])=>id===row.id))continue;
+    const price=cents(row.amount);let left=price;
+    parts.forEach(([id,weight],index)=>{
+      const share=index===parts.length-1?left:Math.round(price*weight/sum);left-=share;
+      Object.assign(rows.find(r=>r.id===id),{amount:share/100,splitFrom:row.id,splitShare:weight/sum,packageTotal:price/100});
+    });
+  }
   const total=rows.reduce((sum,row)=>sum+cents(row.amount),0)/100;
   return {...selection,rows,total,remaining:(cents(selection.target)-cents(total))/100};
 }

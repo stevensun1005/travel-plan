@@ -366,3 +366,4 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
 .check-group li p{margin:5px 0 0 24px;font-size:13.5px;color:var(--ink2);line-height:1.6}
 .check-group li a{margin-left:24px;font-size:13px}
 .check-summary .due{padding:0 7px;border:1.5px solid var(--line);border-radius:var(--r3)}
+.flight-price small{font:14px var(--sans);color:var(--ink2);font-weight:400}

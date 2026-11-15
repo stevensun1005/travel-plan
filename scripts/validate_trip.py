@@ -54,6 +54,13 @@ def validate(folder):
                 target=next((c for c in categories if c['id']==target_id),None)
                 check(target is not None and target_id!=category['id'],f'{category["id"]}/{option.get("id")}: bundles unknown category {target_id}')
                 check(target is not None and any(o['id']==target_option for o in target.get('options',[])),f'{category["id"]}/{option.get("id")}: bundles unknown option {target_option}')
+            # split: standalone reference prices that share out the package price
+            split=option.get('split')
+            if split is not None:
+                check(isinstance(split,dict) and category['id'] in split,f'{category["id"]}/{option.get("id")}: split must include its own category')
+                for part_id,weight in (split.items() if isinstance(split,dict) else []):
+                    check(part_id==category['id'] or part_id in (option.get('bundles') or {}),f'{category["id"]}/{option.get("id")}: split names {part_id}, which the option does not bundle')
+                    check(money(weight) and weight>0,f'{category["id"]}/{option.get("id")}: split reference for {part_id} must be a positive amount')
     for preset in budget.get('presets',[]):
         for category_id,option_id in preset.get('selections',{}).items():
             check(category_id in category_ids,f'Preset {preset.get("id")}: unknown category')
