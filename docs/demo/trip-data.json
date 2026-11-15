@@ -10,7 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "demo": false,
-    "notice": "全部未预订。机票和部分酒店价格来自你11/15截图的结算页或套餐页，其他为搜索页记录；门票按官方或公开常规价折算（按1 USD≈1.45 CAD预算假设，不是锁定汇率）。回程是1/9凌晨00:10的直飞，所以1/8晚上去机场。单独订的酒店都按5晚（1/3–1/8）、Vio含税费价格算；Expedia机酒套餐维持Expedia给的6晚。",
+    "notice": "全部未预订。机票和酒店都在多个平台比过价（AC官网、Trip.com、携程、Booking.com、Expedia、Vio），每项选最便宜的，后面标了是哪个平台的价；外币按加拿大央行2026-11-13汇率换成加币（1 USD = 1.4257 CAD，1 CNY = 0.2137 CAD）。机票都按每人可带1件随身行李箱的票价算。门票和餐饮仍是官方或公开常规价折算。回程是1/9凌晨00:10的直飞，所以1/8晚上去机场。单独订的酒店都按5晚（1/3–1/8）算；Expedia机酒套餐维持Expedia给的6晚。",
     "constraints": [
       "两人 · 一间房",
       "不冲浪、不安排hiking（钻石山改外围观景）",
@@ -33,54 +33,74 @@
         "options": [
           {
             "id": "ac-standard",
-            "label": "Air Canada Standard · 往返直飞",
-            "amount": 2128.64,
-            "status": "11/15 AC官网结算页（你的截图）",
-            "note": "两人往返含税CA$2,128.64（票价1,754＋税费374.64）。去程1/3 17:35直飞，回程1/9 00:10直飞，13:51到多伦多。Standard每人可带1件随身行李；购票24小时内可全额退款，之后按票规。",
-            "fareFamily": "Standard",
+            "label": "Air Canada 直飞往返 · 含随身行李",
+            "amount": 2062,
+            "status": "11/15 多平台比价（含税）",
+            "note": "去程1/3 AC589 17:35→22:38，回程1/9 AC588 00:10→13:51，两人往返含税。同一班直飞比了5个平台，都按每人可带1件随身行李箱的票价算：Trip.com最便宜（不能改期，24小时内免费取消）；AC官网Standard贵CA$70，但可以付费改期。AC的Basic票不能带随身行李箱，所以不算。",
+            "fareFamily": "经济舱 · 每人1件随身行李",
             "bagPerPerson": 90,
-            "url": "https://www.aircanada.com/",
+            "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
             "items": [
               {
-                "label": "机票票价 · 两人往返",
-                "amount": 1754,
-                "note": "AC589去程，回程1/9 00:10"
+                "label": "AC589去程 + AC588回程 · 两人",
+                "amount": 2062,
+                "note": "含税，每人1件随身行李箱，托运另算"
+              }
+            ],
+            "carryOn": true,
+            "quotes": [
+              {
+                "platform": "Trip.com",
+                "amount": 2062,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "含1件随身行李；不能改期，24小时内免费取消",
+                "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+                "converted": 2062
               },
               {
-                "label": "税费",
-                "amount": 374.64
-              }
-            ]
-          },
-          {
-            "id": "ac-basic",
-            "label": "Air Canada Basic · 往返直飞",
-            "amount": 1928.64,
-            "status": "11/15 Expedia单买价（你的截图）",
-            "note": "同样的直飞航班，比Standard省200。不可退、不可改，不含随身行李箱（只能带个人小包），不能免费选座。",
-            "fareFamily": "Basic",
-            "bagPerPerson": 90,
-            "url": "https://www.expedia.ca/",
-            "items": [
-              {
-                "label": "机票票价 · 两人往返",
-                "amount": 1554,
-                "note": "Basic比Standard便宜200"
+                "platform": "Air Canada官网",
+                "amount": 2132,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Standard：每人(587+479)，可付费改期",
+                "url": "https://www.aircanada.com/ca/en/aco/home/app.html#/search?org1=YYZ&dest1=HNL&departureDate1=2027-01-03&org2=HNL&dest2=YYZ&departureDate2=2027-01-09&ADT=2&YTH=0&CHD=0&INF=0&INS=0&lang=en-CA&tripType=R&marketCode=TNB",
+                "converted": 2132
               },
               {
-                "label": "税费",
-                "amount": 374.64,
-                "note": "按Standard的税费估"
+                "platform": "Booking.com",
+                "amount": 2210,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Standard票价",
+                "url": "https://flights.booking.com/flights/YYZ.AIRPORT-HNL.AIRPORT/?type=ROUNDTRIP&adults=2&cabinClass=ECONOMY&depart=2027-01-03&return=2027-01-09&stops=0",
+                "converted": 2210
+              },
+              {
+                "platform": "携程",
+                "amount": 11104,
+                "currency": "CNY",
+                "checkedOn": "2026-11-15",
+                "note": "¥5,552×2，含随身行李那一档",
+                "url": "https://flights.ctrip.com/online/list/round-yto-hnl?depdate=2027-01-03_2027-01-09&cabin=y_s&adult=2&child=0&infant=0&containstax=1&direct=true",
+                "converted": 2372.92
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "这条线没有直飞",
+                "url": "https://www.expedia.ca/Flights-Search?trip=roundtrip&leg1=from:YYZ,to:HNL,departure:1/3/2027TANYT&leg2=from:HNL,to:YYZ,departure:1/9/2027TANYT&passengers=adults:2&mode=search"
               }
-            ]
+            ],
+            "source": "Trip.com"
           },
           {
             "id": "expedia-pkg",
             "label": "Expedia机酒套餐 · 含Sheraton 6晚",
-            "amount": 5178.4,
-            "status": "11/15 Expedia套餐页（你的截图）",
-            "note": "机票（AC直飞Basic）加Sheraton Waikiki Beach Resort King城景6晚（1/3–1/9，按Expedia套餐给的晚数，第6晚等于晚班机前一直有房间可用），含税合计CA$5,178.40。预算和饼图按单独购买价的比例拆分：机票单买CA$1,931（11/15 Google Flights两人往返）、酒店单买CA$5,918.92（Expedia单订6晚含税，与Google Hotels每晚约CA$830加夏威夷税相符），所以套餐里约24.6%算机票（约CA$1,274）、75.4%算酒店（约CA$3,905）。选中时酒店自动切成「已含在机酒套餐」，交通自动去掉机场往返打车。机票不可退、不可改；酒店12/20前可退。",
-            "fareFamily": "Basic",
+            "amount": 5278.4,
+            "status": "11/15 Expedia套餐页（你的截图）＋随身行李补差",
+            "note": "机票（AC直飞）加Sheraton Waikiki Beach Resort King城景6晚（1/3–1/9，按Expedia套餐给的晚数），截图里含税CA$5,178.40，但套餐里的去程是Basic票、不能带随身行李箱；按AC官网去程Basic→Standard每人差CA$50，补到含随身行李的价格约CA$5,278.40（回程最低就是Standard）。预算和饼图按单独买的最低价拆分：机票单买最低CA$2,062（Trip.com），Sheraton单订最低是Trip.com 5晚CA$3,056，折成6晚约CA$3,667.20。选中时酒店自动切成「已含在机酒套餐」，交通自动去掉机场往返打车。机票不可退；酒店12/20前可退。",
+            "fareFamily": "去程补到Standard · 含随身行李",
             "bagPerPerson": 90,
             "url": "https://www.expedia.ca/",
             "bundles": {
@@ -88,16 +108,29 @@
               "transport": "ground-pkg"
             },
             "split": {
-              "flights": 1931,
-              "hotel": 5918.92
+              "flights": 2062,
+              "hotel": 3667.2
             },
             "items": [
               {
                 "label": "套餐里的AC直飞往返 · 两人",
-                "amount": 1931,
-                "note": "单买约CA$1,931（Google Flights）"
+                "amount": 2062,
+                "note": "单买最低：Trip.com CA$2,062"
               }
-            ]
+            ],
+            "carryOn": true,
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 5278.4,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "套餐CA$5,178.40＋去程补到Standard约CA$100",
+                "url": "https://www.expedia.ca/",
+                "converted": 5278.4
+              }
+            ],
+            "source": "Expedia"
           }
         ],
         "icon": "✈️"
@@ -112,76 +145,256 @@
             "id": "renew",
             "label": "Hotel Renew · 离海滩2分钟 · 最省",
             "amount": 1223,
-            "status": "11/15 Vio查价（含税费）",
-            "note": "1/3–1/8共5晚，Vio含税费总价CA$1,223，可免费取消、先订后付（截止日以订单页为准）。同样日期Google/Expedia约CA$1,605。1/8上午退房后寄存行李。",
+            "status": "11/15 多平台比价（含税）",
+            "note": "5晚含税，约CA$245/晚。Vio最便宜，可免费取消、先订后付（截止日以订单页为准）；Trip.com海景King CA$1,448。1/8上午退房后寄存行李。",
             "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
             "items": [
               {
                 "label": "Hotel Renew · 5晚",
                 "amount": 1223,
-                "note": "Vio含税费，约CA$245/晚"
+                "note": "Vio含税总价"
               }
-            ]
+            ],
+            "quotes": [
+              {
+                "platform": "Vio",
+                "amount": 1223,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "可免费取消、先订后付",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1223
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 1448,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "海景King，可免费取消",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hotel%20Renew",
+                "converted": 1448
+              },
+              {
+                "platform": "Expedia",
+                "amount": 1483,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "可全额退",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Renew",
+                "converted": 1483
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "这几天显示没房",
+                "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Renew%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Vio"
           },
           {
             "id": "hyatt",
             "label": "Hyatt Place · 含早餐",
-            "amount": 1745,
-            "status": "11/15 Vio查价（含税费）",
-            "note": "5晚Vio含税费CA$1,745，含早餐；可免费取消的价格是CA$2,090。含早餐的话，餐饮可以选简单档。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "amount": 1730,
+            "status": "11/15 多平台比价（含税）",
+            "note": "5晚含税，约CA$346/晚，Hyatt Place房价含早餐，餐饮可以选简单档。Expedia最便宜（看起来不可退）；要免费取消的话Trip.com是CA$2,090。",
+            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
             "items": [
               {
-                "label": "Hyatt Place · 5晚含早",
-                "amount": 1745,
-                "note": "Vio含税费，约CA$349/晚"
+                "label": "Hyatt Place · 5晚",
+                "amount": 1730,
+                "note": "Expedia含税总价"
               }
-            ]
+            ],
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 1730,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "含早餐",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+                "converted": 1730
+              },
+              {
+                "platform": "Booking.com",
+                "amount": 1743,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "CA$1,169＋税费574",
+                "url": "https://www.booking.com/searchresults.html?ss=Hyatt%20Place%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD",
+                "converted": 1743
+              },
+              {
+                "platform": "Vio",
+                "amount": 1745,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "含早餐；免费取消价CA$2,090",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1745
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2090,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "含早餐，可免费取消",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hyatt%20Place%20Waikiki%20Beach",
+                "converted": 2090
+              }
+            ],
+            "source": "Expedia"
           },
           {
             "id": "kaimana",
             "label": "Kaimana Beach Hotel · 在海滩上",
             "amount": 1763,
-            "status": "11/15 Vio查价（含税费）",
-            "note": "5晚Vio含税费CA$1,763；要免费取消、先订后付的价格是CA$2,096。就在海滩上，在Kapiʻolani公园旁边，比Waikīkī中心安静。之前Costco的含双早价格是按6晚报的，不再使用。",
+            "status": "11/15 多平台比价（含税）",
+            "note": "5晚含税，约CA$353/晚。就在海滩上，在Kapiʻolani公园旁边，比Waikīkī中心安静。Vio最便宜；要免费取消、先订后付的Vio价是CA$2,096。",
             "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
             "items": [
               {
                 "label": "Kaimana Beach Hotel · 5晚",
                 "amount": 1763,
-                "note": "Vio含税费，约CA$353/晚"
+                "note": "Vio含税总价"
               }
-            ]
+            ],
+            "quotes": [
+              {
+                "platform": "Vio",
+                "amount": 1763,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "免费取消价CA$2,096",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1763
+              },
+              {
+                "platform": "Expedia",
+                "amount": 1909,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Kaimana",
+                "converted": 1909
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2458,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Queen房，可免费取消",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Kaimana%20Beach%20Hotel",
+                "converted": 2458
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "这几天显示没房",
+                "url": "https://www.booking.com/searchresults.html?ss=Kaimana%20Beach%20Hotel%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Vio"
           },
           {
             "id": "alohilani",
             "label": "ʻAlohilani · 海滩对面",
-            "amount": 2082,
-            "status": "11/15 Vio查价（含税费）",
-            "note": "5晚Vio含税费CA$2,082（另一档报价CA$1,905，房型和退改以订单页为准）。之前Costco送购物卡和酒店额度的价格是按6晚报的，不再使用。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "amount": 2067,
+            "status": "11/15 多平台比价（含税）",
+            "note": "5晚含税，约CA$413/晚。海滩对面的五星度假酒店，Expedia比Vio便宜一点；房型和退改以订单页为准。",
+            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
             "items": [
               {
                 "label": "ʻAlohilani · 5晚",
-                "amount": 2082,
-                "note": "Vio含税费，约CA$416/晚"
+                "amount": 2067,
+                "note": "Expedia含税总价"
               }
-            ]
+            ],
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 2067,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+                "converted": 2067
+              },
+              {
+                "platform": "Vio",
+                "amount": 2082,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 2082
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2854,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "两张Queen床，可免费取消",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Alohilani%20Resort",
+                "converted": 2854
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "这几天显示没房",
+                "url": "https://www.booking.com/searchresults.html?ss=Alohilani%20Resort%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Expedia"
           },
           {
             "id": "sheraton",
-            "label": "Sheraton Waikiki · Vio单订",
-            "amount": 3438,
-            "status": "11/15 Vio查价（含税费）",
-            "note": "5晚Vio含税费CA$3,438（原价CA$4,752），可免费取消、先订后付；但Vio标注「需要换房」，即住到一半要换一次房间。不想换房就选Expedia机酒套餐里的Sheraton。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "label": "Sheraton Waikiki · 城景King",
+            "amount": 3056,
+            "status": "11/15 多平台比价（含税）",
+            "note": "5晚含税，约CA$611/晚。Trip.com的城景King可免费取消、不用中途换房，比Vio（要换一次房）和Expedia都便宜。",
+            "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
             "items": [
               {
                 "label": "Sheraton Waikiki · 5晚",
-                "amount": 3438,
-                "note": "Vio含税费，约CA$688/晚，中途要换房"
+                "amount": 3056,
+                "note": "Trip.com含税总价"
               }
-            ]
+            ],
+            "quotes": [
+              {
+                "platform": "Trip.com",
+                "amount": 3056,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "城景King，可免费取消",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+                "converted": 3056
+              },
+              {
+                "platform": "Vio",
+                "amount": 3438,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Vio标注要中途换一次房",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 3438
+              },
+              {
+                "platform": "Expedia",
+                "amount": 4904,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "可全额退",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Sheraton%20Waikiki",
+                "converted": 4904
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "这几天显示没房",
+                "url": "https://www.booking.com/searchresults.html?ss=Sheraton%20Waikiki%20Beach%20Resort&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Trip.com"
           },
           {
             "id": "in-package",
@@ -193,8 +406,8 @@
             "items": [
               {
                 "label": "套餐里的Sheraton King城景 · 6晚",
-                "amount": 5918.92,
-                "note": "单订约CA$5,918.92（Expedia）"
+                "amount": 3667.2,
+                "note": "单订最低：Trip.com 5晚CA$3,056，折成6晚估算"
               }
             ]
           }
@@ -719,7 +932,7 @@
             "label": "不托运",
             "amount": 0,
             "status": "按所选票价",
-            "note": "Standard每人可带1件随身行李箱；Basic和套餐里的Basic不行。"
+            "note": "所有机票都按每人1件随身行李箱算，不托运也够5晚用。"
           },
           {
             "id": "one",
@@ -815,13 +1028,12 @@
         "id": "save",
         "label": "能省则省",
         "selections": {
-          "flights": "ac-basic",
+          "flights": "ac-standard",
           "hotel": "renew",
           "food": "lean",
-          "activities": "movie-only",
-          "bags": "one"
+          "activities": "movie-only"
         },
-        "note": "Basic票不能带随身行李箱，所以托运一件；牧场只去90分钟的团。"
+        "note": "最便宜的酒店和简单吃；牧场只去90分钟的团。机票按含随身行李的最低价，不托运也够用。"
       },
       {
         "id": "kaimana",
@@ -830,7 +1042,7 @@
           "flights": "ac-standard",
           "hotel": "kaimana"
         },
-        "note": "在海滩上的酒店，Vio价不含早餐。"
+        "note": "在海滩上的酒店，Vio价最低，不含早餐。"
       },
       {
         "id": "alohilani",
@@ -849,7 +1061,7 @@
           "hotel": "in-package",
           "bags": "two"
         },
-        "note": "Sheraton 6晚加直飞Basic机票，酒店和机场打车自动不重复计算。机票不能退改，也不能带随身行李箱。"
+        "note": "Sheraton 6晚加AC直飞（补到含随身行李），酒店和机场打车自动不重复计算。机票不可退。"
       },
       {
         "id": "treat",
@@ -871,7 +1083,7 @@
       "title": "去程｜多伦多 → 檀香山",
       "proposal": {
         "airline": "Air Canada AC589 · 直飞",
-        "fareFamily": "Standard",
+        "fareFamily": "经济舱 · 每人1件随身行李",
         "departure": {
           "airport": "YYZ",
           "date": "2027-01-03",
@@ -893,7 +1105,7 @@
       "id": "return",
       "title": "回程｜檀香山 → 多伦多",
       "proposal": {
-        "airline": "Air Canada · 直飞",
+        "airline": "Air Canada AC588 · 直飞",
         "departure": {
           "airport": "HNL",
           "date": "2027-01-09",
@@ -907,8 +1119,8 @@
         "route": "HNL → YYZ",
         "duration": "8小时41分",
         "connection": "直飞",
-        "note": "1/9凌晨00:10起飞，也就是1/8晚上要去机场。航班号以出票页为准。",
-        "fareFamily": "Standard",
+        "note": "1/9凌晨00:10起飞，也就是1/8晚上要去机场。",
+        "fareFamily": "经济舱 · 每人1件随身行李",
         "url": "https://www.aircanada.com/"
       }
     }
@@ -1733,10 +1945,28 @@
   "todo": [],
   "sources": [
     {
+      "label": "11/15 多平台比价：机票（AC直飞，两人往返，含随身行李）",
+      "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Trip.com CA$2,062；AC官网Standard CA$2,132；Booking.com Standard CA$2,210；携程¥11,104≈CA$2,372.92；Expedia没有直飞。去哪儿网页版查不了国际机票、飞猪要登录，没有比。"
+    },
+    {
+      "label": "11/15 多平台比价：酒店（1/3–1/8五晚，两人一间，含税）",
+      "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+      "checkedOn": "2026-11-15",
+      "note": "Vio、Expedia、Trip.com、Booking.com四个平台；Booking.com这几天四家显示没房。携程中文站酒店要登录才显示价格，没有比。"
+    },
+    {
+      "label": "加拿大央行汇率（2026-11-13）",
+      "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/",
+      "checkedOn": "2026-11-15",
+      "note": "1 USD = 1.4257 CAD，1 CNY = 0.2137 CAD。用于把外币报价换成加币。"
+    },
+    {
       "label": "11/15 复查：单独购买价（用于拆分机酒套餐）",
       "url": "https://www.google.com/travel/search?q=Sheraton%20Waikiki%20Beach%20Resort%20Jan%203%20to%20Jan%209%202027&hl=en&gl=ca&curr=CAD",
       "checkedOn": "2026-11-15",
-      "note": "Google Flights AC直飞往返两人从CA$1,931；Google Hotels Sheraton King城景可退约CA$830/晚（未含夏威夷税），6晚加税约CA$5,920，与Expedia单订CA$5,918.92一致。"
+      "note": "套餐拆分用的单买参考价：机票按11/15多平台最低CA$2,062（Trip.com），Sheraton按Trip.com 5晚CA$3,056折6晚约CA$3,667.20。"
     },
     {
       "label": "11/15 Vio：1/3–1/8 五晚含税费总价",
@@ -1745,28 +1975,16 @@
       "note": "Hotel Renew CA$1,223（原CA$1,605，可免费取消、先订后付）；Hyatt Place CA$1,745含早（可免费取消CA$2,090）；Kaimana CA$1,763（可免费取消CA$2,096）；ʻAlohilani CA$2,082；Sheraton CA$3,438（原CA$4,752，需中途换房）。"
     },
     {
-      "label": "你的截图：Air Canada官网 YYZ⇄HNL 1/3–1/9 Standard直飞",
-      "url": "https://www.aircanada.com/",
-      "checkedOn": "2026-11-15",
-      "note": "两人含税CA$2,128.64，回程1/9 00:10–13:51。"
-    },
-    {
       "label": "你的截图：Expedia机酒套餐（Sheraton 6晚＋AC直飞Basic）",
       "url": "https://www.expedia.ca/",
       "checkedOn": "2026-11-15",
-      "note": "套餐CA$5,178.40；分开买酒店5,918.92、机票1,928.64。"
+      "note": "套餐CA$5,178.40；套餐里的去程是Basic票，补到含随身行李约加CA$100。"
     },
     {
       "label": "你的截图：Costco Travel 酒店",
       "url": "https://www.costcotravel.ca/",
       "checkedOn": "2026-11-15",
       "note": "Kaimana Beach Hotel含双早CA$2,302.02；ʻAlohilani部分海景King CA$2,707.08（另有CA$177购物卡和USD150酒店额度）。截图未显示晚数。 这两个价格按6晚报，单独订酒店改按5晚后不再使用。"
-    },
-    {
-      "label": "Google Flights：YYZ–HNL 1/3–1/8 两人",
-      "url": "https://www.google.com/travel/flights/booking?tfs=CBwQAho_EgoyMDI3LTAxLTAzIh8KA1lZWhIKMjAyNy0wMS0wMxoDSE5MKgJBQzIDNTg5agcIARIDWVlacgcIARIDSE5MGmESCjIwMjctMDEtMDgiIAoDSE5MEgoyMDI3LTAxLTA4GgNTRk8qAlVBMgQxMzQ2Ih8KA1NGTxIKMjAyNy0wMS0wORoDWVlaKgJVQTIDNjA4agcIARIDSE5McgcIARIDWVlaQAFAAUgBcAGCAQsI____________AZgBAQ&hl=en&gl=ca&curr=CAD",
-      "checkedOn": "2026-11-15",
-      "note": "早前用1/8回程查的记录（经SFO的AC Standard 2,467等），已被1/9凌晨的直飞报价取代。"
     },
     {
       "label": "Google Hotels：Waikīkī 1/3–1/8",
@@ -2159,7 +2377,7 @@
         "title": "订机票：AC往返直飞（或Expedia机酒套餐）",
         "due": "2026-11-22",
         "lead": "越早越好",
-        "note": "Google Flights显示这个日期价格偏高。在AC官网购票，24小时内可全额退款；Expedia套餐里的机票是Basic，不能退改。"
+        "note": "AC直飞含随身行李：Trip.com两人CA$2,062最便宜，但不能改期（24小时内免费取消）；AC官网Standard CA$2,132可以付费改期。Basic票不能带随身行李箱，不要买。"
       },
       {
         "id": "hotel",
@@ -2168,7 +2386,7 @@
         "title": "订5晚酒店（1/3–1/8），记下免费取消截止日",
         "due": "2026-11-30",
         "lead": "越早越好",
-        "note": "Vio含税费价：Hotel Renew CA$1,223（可免费取消、先订后付），Hyatt Place CA$1,745（含早），Kaimana CA$1,763，ʻAlohilani CA$2,082，Sheraton CA$3,438（需中途换房）。免费取消截止日以订单页为准。"
+        "note": "各平台最低（5晚含税）：Hotel Renew CA$1,223（Vio）、Hyatt Place CA$1,730（Expedia，含早）、Kaimana CA$1,763（Vio）、ʻAlohilani CA$2,067（Expedia）、Sheraton CA$3,056（Trip.com，不用换房）。订之前看清免费取消截止日。"
       },
       {
         "id": "arizona",
@@ -2349,5 +2567,14 @@
         "note": "1/4和1/7哪天风浪小、云少，帆船就放哪天；1/6傍晚也可以当后备。云多的话，看星星由运营方短信通知改期。"
       }
     ]
+  },
+  "fx": {
+    "base": "CAD",
+    "date": "2026-11-13",
+    "source": "Bank of Canada",
+    "rates": {
+      "USD": 1.4257,
+      "CNY": 0.2137
+    }
   }
 }

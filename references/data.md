@@ -26,6 +26,8 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 
 - 航班option可带 `fareFamily,bagPerPerson,journeys[]`；有不同班次时提供完整替代journeys。
 - 明细：option可带 `items:[{label,amount,note?}]`，预算饼图下的分类行点「+」展开成记账式的一笔笔。金额同币种，加起来必须等于option的amount（校验器会查）；套餐拆分、行李联动这类实际金额会变的选项，明细按比例折算到当前金额。没有items时整项算一笔。category可带 `icon`（一个emoji）显示在分类行前。
+- 多平台比价：option可带 `quotes:[{platform,amount,currency,checkedOn,url?,note?}]`，平台上没有这个产品时写 `{platform,available:false,note}`。外币汇率放在顶层 `fx:{base,date,source,rates:{USD:1.4257,...}}`（1单位外币=rate×旅行币种）。跑 `python scripts/apply_quotes.py <trip> --fetch-fx` 会写入每条报价的 `converted`、按价格排序，并把option的 `amount`、`source`（平台名）和 `url` 设成最便宜那家；校验器会检查金额是不是最便宜那条。页面把 `source` 显示在下拉选项后，卡片里列出「各平台比价」。
+- 机票option要写 `carryOn:true`，表示这个价含每人1件随身行李箱；没写校验器会提醒。
 - 待办分组：`checklist.groups[]` 可带 `open:false`，手机上这一组默认收起（点标题展开）；不写就是展开。电脑上各组总是全部展开，不折叠。通常把要抢票、有截止日的预订组展开，证件和出发前杂事收起。
 - 行李option可带 `bagCount`，在已给出航班行李价时联动；否则使用明示预留，不猜收费。
 - preset：`{id,label,selections:{类别ID:选项ID},note}`；估算状态不会因组合而变成报价。

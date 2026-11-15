@@ -54,6 +54,26 @@ def validate(folder):
                 if isinstance(items,list) and items and not scaled and all(isinstance(i,dict) and money(i.get('amount')) for i in items):
                     total=round(sum(round(i['amount']*100) for i in items))
                     check(total==round(option['amount']*100),f'{where}: items add up to {total/100:g}, not the option amount {option["amount"]:g}')
+            # quotes: the same product on several platforms; amount must be the cheapest converted quote
+            quotes=option.get('quotes')
+            if quotes is not None:
+                where=f'{category["id"]}/{option.get("id")}'
+                currency=(trip.get('currency') or 'CAD').upper();rates=(data.get('fx') or {}).get('rates') or {}
+                check(isinstance(quotes,list) and quotes,f'{where}: quotes must be a non-empty list')
+                live=[]
+                for q in quotes if isinstance(quotes,list) else []:
+                    check(isinstance(q,dict) and isinstance(q.get('platform'),str) and q['platform'].strip(),f'{where}: every quote needs a platform')
+                    if not isinstance(q,dict) or q.get('available',True) is False:continue
+                    check(money(q.get('amount')),f'{where}/{q.get("platform")}: invalid quote amount')
+                    qc=(q.get('currency') or currency).upper()
+                    check(qc==currency or qc in rates,f'{where}/{q.get("platform")}: no fx rate for {qc} (run apply_quotes.py --fetch-fx)')
+                    check(money(q.get('converted')),f'{where}/{q.get("platform")}: not converted yet (run apply_quotes.py)')
+                    if money(q.get('converted')):live.append(q)
+                if live:
+                    best=min(live,key=lambda q:q['converted'])
+                    check(abs(best['converted']-option.get('amount',-1))<0.005 and option.get('source')==best['platform'],f'{where}: amount/source should be the cheapest quote ({best["platform"]} {best["converted"]:g}); run apply_quotes.py')
+            if category.get('id')=='flights' and not option.get('bundleOnly') and option.get('carryOn') is not True:
+                warnings.append(f'flights/{option.get("id")}: carryOn not confirmed (price flights with one carry-on bag per traveler)')
         if 'icon' in category:check(isinstance(category['icon'],str) and 0<len(category['icon'])<=4,f'{category["id"]}: icon must be a short string (an emoji)')
         default=next((o for o in options if o.get('id')==category.get('defaultOption')),{})
         check(not default.get('bundleOnly'),f'{category["id"]}: default option cannot be bundle-only')

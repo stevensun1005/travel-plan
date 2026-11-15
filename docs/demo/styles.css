@@ -144,6 +144,18 @@ h3{font:700 21px/1.35 var(--hand);margin:0 0 6px}
 .custom{display:grid;gap:4px;font-size:13px;margin-top:10px}
 .price-status{display:inline-block;margin-top:10px;padding:0 8px;font:14px/1.6 var(--hand);color:var(--orange);border:1.5px solid var(--orange);border-radius:var(--r3);background:var(--orange-f)}
 .choice p{font-size:13.5px;line-height:1.65;color:var(--ink2);margin:8px 0 0}
+.quotes{margin:10px 0 4px;padding:6px 10px;border:1.5px dashed var(--ink2);border-radius:var(--r3);background:var(--paper)}
+.quotes summary{cursor:pointer;font:15px var(--hand);color:var(--ink2)}
+.quotes ul{list-style:none;margin:6px 0 0;padding:0}
+.quotes li{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:5px 0;border-top:1px dotted var(--line);font-size:13px;line-height:1.35}
+.quotes li span{min-width:0}
+.quotes li small{display:block;color:var(--ink2);font-size:11.5px;font-weight:400}
+.quotes li b{flex:none;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.quotes li.best b{color:var(--green)}
+.quotes li i{margin-left:6px;padding:0 6px;font:12px/1.5 var(--hand);font-style:normal;color:var(--green);border:1.5px solid var(--green);border-radius:var(--r3);background:var(--green-f)}
+.quotes li.na{color:var(--ink2)}
+.quotes li.na b{font-weight:400;color:var(--ink2)}
+.quotes .fx{margin:4px 0 0;font-size:11.5px}
 .choice a{font-size:13px;display:inline-block;margin-top:6px}
 .chart-panel{
   position:sticky;top:calc(env(safe-area-inset-top,0px) + 120px);padding:16px;background:var(--paper);

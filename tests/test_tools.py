@@ -61,6 +61,22 @@ class ToolsTest(unittest.TestCase):
             errors,_=validate(project)
             for text in ['duplicate id','unknown group','invalid due date','url must be http','status must be']:
                 self.assertTrue(any(text in e for e in errors),text)
+    def test_quotes_convert_pick_cheapest_and_are_validated(self):
+        from apply_quotes import apply
+        with tempfile.TemporaryDirectory() as folder:
+            project=create(Path(folder)/'trip',True);path=project/'trip-data.json';data=json.loads(path.read_text(encoding='utf-8'))
+            hotel=next(c for c in data['budget']['categories'] if c['id']=='hotel');option=hotel['options'][0]
+            option['quotes']=[{'platform':'A','amount':1000,'currency':'CAD'},{'platform':'B','amount':4000,'currency':'CNY'},{'platform':'C','available':False,'note':'sold out'}]
+            data['fx']={'base':'CAD','rates':{'CNY':0.2}};option.pop('items',None)
+            expected=f'hotel/{option["id"]}: {option["amount"]} -> 800.0 (B)'
+            self.assertEqual(apply(data),[expected])
+            self.assertEqual((option['amount'],option['source']),(800.0,'B'))
+            self.assertEqual([q['platform'] for q in option['quotes']],['B','A','C'])
+            path.write_text(json.dumps(data),encoding='utf-8');self.assertEqual(validate(project)[0],[])
+            option['amount']=1000;option['source']='A';path.write_text(json.dumps(data),encoding='utf-8')
+            self.assertTrue(any('cheapest quote' in e for e in validate(project)[0]))
+            del data['fx']['rates']['CNY']
+            with self.assertRaises(SystemExit):apply(data)
     def test_basemap_builds_offline_from_osm_elements(self):
         spec=importlib.util.spec_from_file_location('fetch_basemap',ROOT/'scripts/fetch_basemap.py');basemap=importlib.util.module_from_spec(spec);spec.loader.exec_module(basemap)
         geo=lambda pts:[{'lon':x,'lat':y} for x,y in pts]

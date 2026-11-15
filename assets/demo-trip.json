@@ -34,7 +34,8 @@
             "status": "虚构演示 · 不可预订",
             "note": "仅示例金额；实际航班、行李和退改待查。",
             "fareFamily": "Basic · 演示",
-            "bagPerPerson": 60
+            "bagPerPerson": 60,
+            "carryOn": true
           },
           {
             "id": "economy",
@@ -55,7 +56,8 @@
                 "amount": 300,
                 "note": "虚构"
               }
-            ]
+            ],
+            "carryOn": true
           },
           {
             "id": "comfort",
@@ -64,7 +66,8 @@
             "status": "虚构演示 · 不可预订",
             "note": "演示舱位升级和行李费用联动，不是可购买的产品。",
             "fareFamily": "Comfort · 演示",
-            "bagPerPerson": 80
+            "bagPerPerson": 80,
+            "carryOn": true
           },
           {
             "id": "package",
@@ -80,7 +83,8 @@
             "split": {
               "flights": 1600,
               "hotel": 900
-            }
+            },
+            "carryOn": true
           }
         ],
         "color": "#2a70cf",
