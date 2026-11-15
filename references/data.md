@@ -22,6 +22,8 @@
 
 category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amount,status,note,url?}`，每项都是全程合计。金额非负、最多两位小数、不超过1,000,000。
 
+**选项名要说清楚这个金额包含什么**，别只写选项之间不同的那一部分。例如门票类的金额是全程所有门票，选项只差在牧场选哪个团，就写成「全部8项门票 · 牧场选Jurassic Adventure（牧场CA$438）」，而不是「牧场Jurassic Adventure」——否则看的人会以为去牧场就要花这么多。分类名也写上范围（如「门票与体验｜两人全程8项」），note开头列出包含哪几项，明细用 `items` 拆开。
+
 常用类别ID：`flights,hotel,car,food,transport,activities,bags,buffer`，不强制凑满八类。每类自动支持自定义。
 
 - 航班option可带 `fareFamily,bagPerPerson,journeys[]`；有不同班次时提供完整替代journeys。

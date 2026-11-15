@@ -704,16 +704,16 @@
       },
       {
         "id": "activities",
-        "label": "门票与体验",
+        "label": "门票与体验｜两人全程8项",
         "color": "#9b6dd0",
         "defaultOption": "jurassic",
         "options": [
           {
             "id": "jurassic",
-            "label": "牧场Jurassic Adventure 2.5小时",
+            "label": "全部8项门票 · 牧场选Jurassic Adventure（牧场CA$438）",
             "amount": 1140,
             "status": "官方/公开常规价折算",
-            "note": "两人：古兰尼牧场Jurassic Adventure USD300；珍珠港Passport USD200＋亚利桑那号约$2；恐龙湾Roberts Hawaii接送＋门票USD130＋浮潜装备约USD40；Dole小火车约USD38＋迷宫约USD18；ʻIolani Palace约USD56。合计约USD784。PCC和平等院这次不去。",
+            "note": "两人全程8项门票合计，不只是牧场：古兰尼牧场、珍珠港Passport、亚利桑那号预约费、恐龙湾Roberts Hawaii接送＋门票、浮潜装备、Dole小火车、Dole迷宫、ʻIolani王宫。三个选项只差在牧场选哪个团，其余7项一样（共CA$702）。点预算饼图下「门票与体验」的「+」看每一项。牧场Jurassic Adventure 2.5小时约USD300。 PCC和平等院这次不去。",
             "items": [
               {
                 "label": "古兰尼牧场 Jurassic Adventure · 两人",
@@ -759,10 +759,10 @@
           },
           {
             "id": "two-tours",
-            "label": "牧场两个90分钟团",
+            "label": "全部8项门票 · 牧场改两个90分钟团（牧场CA$348）",
             "amount": 1050,
             "status": "官方/公开常规价折算",
-            "note": "Movie Sites（Kaʻaʻawa山谷）加Jungle Expedition（Hakipuʻu雨林），每人各USD59.95，要订两个相连的场次，共3小时，植物园就要缩短。合计约USD724。",
+            "note": "两人全程8项门票合计，不只是牧场：古兰尼牧场、珍珠港Passport、亚利桑那号预约费、恐龙湾Roberts Hawaii接送＋门票、浮潜装备、Dole小火车、Dole迷宫、ʻIolani王宫。三个选项只差在牧场选哪个团，其余7项一样（共CA$702）。点预算饼图下「门票与体验」的「+」看每一项。牧场改Movie Sites＋Jungle Expedition两个90分钟团（每人各USD59.95），要订两个相连场次，植物园就要缩短。 PCC和平等院这次不去。",
             "items": [
               {
                 "label": "古兰尼牧场 Movie Sites＋Jungle · 两人",
@@ -808,10 +808,10 @@
           },
           {
             "id": "movie-only",
-            "label": "牧场只去Movie Sites",
+            "label": "全部8项门票 · 牧场只去Movie Sites（牧场CA$178）",
             "amount": 880,
             "status": "官方/公开常规价折算",
-            "note": "只保留90分钟的Movie Sites团，最省。合计约USD604。",
+            "note": "两人全程8项门票合计，不只是牧场：古兰尼牧场、珍珠港Passport、亚利桑那号预约费、恐龙湾Roberts Hawaii接送＋门票、浮潜装备、Dole小火车、Dole迷宫、ʻIolani王宫。三个选项只差在牧场选哪个团，其余7项一样（共CA$702）。点预算饼图下「门票与体验」的「+」看每一项。牧场只保留90分钟的Movie Sites团，最省。 PCC和平等院这次不去。",
             "items": [
               {
                 "label": "古兰尼牧场 Movie Sites · 两人",
