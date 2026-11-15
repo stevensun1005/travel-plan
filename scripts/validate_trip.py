@@ -83,6 +83,24 @@ def validate(folder):
         for label in base.get('labels',[])+base.get('shields',[]):
             check(isinstance(label.get('lat'),(int,float)) and isinstance(label.get('lng'),(int,float)),'Invalid base map label')
     elif data.get('map',{}).get('places'):warnings.append('Base map pending: run fetch_basemap.py so the map reads without online tiles')
+    checklist=data.get('checklist')
+    if checklist is not None:
+        check(isinstance(checklist,dict),'checklist must be an object')
+        checklist=checklist if isinstance(checklist,dict) else {}
+        group_ids={g.get('id') for g in checklist.get('groups',[])}
+        items=checklist.get('items',[]);unique(items,'id','checklist')
+        for item in items:
+            check(bool(item.get('title')),f'Checklist {item.get("id")}: missing title')
+            if group_ids:check(item.get('group') in group_ids,f'Checklist {item.get("id")}: unknown group {item.get("group")}')
+            if item.get('due'):
+                try:dt.date.fromisoformat(item['due'])
+                except (ValueError,TypeError):errors.append(f'Checklist {item.get("id")}: invalid due date')
+            if item.get('url'):check(str(item['url']).startswith(('https://','http://')),f'Checklist {item.get("id")}: url must be http(s)')
+            check(item.get('status','todo') in ('todo','booked','done'),f'Checklist {item.get("id")}: status must be todo/booked/done')
+        if checklist.get('asOf'):
+            try:dt.date.fromisoformat(checklist['asOf'])
+            except (ValueError,TypeError):errors.append('checklist.asOf must be an ISO date')
+    elif trip.get('startDate') and not trip.get('demo'):warnings.append('Checklist pending: add bookings, deadlines and travel documents')
     share=data.get('share')
     if share is not None:
         check(isinstance(share,dict),'share must be an object')

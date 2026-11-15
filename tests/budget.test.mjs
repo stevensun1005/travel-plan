@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {calculate,normalize,validMoney,nearestIndex} from '../assets/starter/budget.mjs';
+import {calculate,normalize,validMoney,nearestIndex,daysUntil} from '../assets/starter/budget.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../assets/demo-trip.json',import.meta.url)));
 test('presets sum independently and preserve selected conditions',()=>{
   assert.equal(calculate(data.budget).total,4160);
@@ -42,4 +42,11 @@ test('carousel positions are relative to the actual viewport',()=>{
   const rect=(left,width)=>({getBoundingClientRect:()=>({left,width})});
   assert.equal(nearestIndex(rect(125,600),[rect(-489,600),rect(125,600)]),1);
   assert.equal(nearestIndex(rect(18,340),[rect(-336,340),rect(18,340)]),1);
+});
+test('checklist countdown counts whole days and rejects bad dates',()=>{
+  const today=new Date(2026,10,15,23,30);
+  assert.equal(daysUntil('2026-11-15',today),0);
+  assert.equal(daysUntil('2026-12-07',today),22);
+  assert.equal(daysUntil('2026-11-09',today),-6);
+  for(const bad of ['', '2026-02-30', '12/07/2026', undefined])assert.equal(daysUntil(bad,today),null);
 });

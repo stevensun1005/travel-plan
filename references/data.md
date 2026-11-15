@@ -14,6 +14,7 @@
 | `coverage` | `{item,when,note}` |
 | `rental` | `{title,summary,details:[{label,value}],notes[],links:[{label,url}]}` |
 | `todo` | 用户明确提供的提醒文字数组，可以为空 |
+| `checklist` | 出发前待办：`{asOf,groups[],items[]}`，见下方「待办清单」 |
 | `sources` | `{label,url,checkedOn,note}` |
 | `events` | `{title,status,priceLabel,description,conflict,url}`，节日活动或特别晚餐备选；不暗示已加入预算 |
 
@@ -40,6 +41,22 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 `routesFile`默认`routes.json`，内容为 `{provider,generatedOn,routes:[{day,placeIds,geometry,distance,duration,legs,snappedWaypoints,source}]}`。距离米、时间秒；legs数量等于途经点数减一。几何来自实际路由结果，不手画。估时不含实时拥堵和停留。
 
 `basemapFile`默认`basemap.json`，由 `fetch_basemap.py` 生成：`{provider,generatedOn,bbox,detail,land[],coast[],green[],roads:{motorway,trunk,primary,secondary},shields[],labels[]}`。坐标为 `[lng,lat]`；`land/green` 是多边形环列表，`coast` 是没能闭合成陆地时保留的海岸线；`shields` 为 `{ref,cls,lat,lng}`，`labels` 为 `{name,lat,lng,rank,kind}`（kind：town/peak/bay/range）。数据来自OpenStreetMap（ODbL），保留页面上的OSM标注。
+
+## 待办清单
+
+`checklist.groups[]` 为 `{id,label}`，常用 documents（证件签证）/ bookings（要预订的）/ before（出发前）。`checklist.items[]`：
+
+| 字段 | 说明 |
+| --- | --- |
+| `id,group,title` | 必填；id 唯一，group 对应 groups |
+| `who` | 谁来办，例如「我」「同伴」「两人」 |
+| `due` | ISO 截止日；页面显示倒计时，过期变红，14天内变橙 |
+| `dueLabel` | 可选，替代日期文字，例如「12/7 起开放」 |
+| `lead` | 提前多久，例如「提前8周放票」「至少72小时前」 |
+| `note,url,urlLabel` | 说明和官方入口（http/https） |
+| `status` | todo / booked / done；用户勾选保存在浏览器，不改数据 |
+
+`asOf` 写资料核对日期。证件要求以官方来源为准；会变的规定（费用、有效期规则、放票窗口）写进 note 并附来源。
 
 ## 分享路线图
 

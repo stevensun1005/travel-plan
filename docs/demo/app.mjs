@@ -1,4 +1,4 @@
-import {calculate,normalize,validMoney,nearestIndex} from './budget.mjs';
+import {calculate,normalize,validMoney,nearestIndex,daysUntil} from './budget.mjs';
 
 const $=selector=>document.querySelector(selector);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -147,6 +147,32 @@ function renderRental(){
   const r=data.rental;if(!r?.title){$('#drive').hidden=true;return;}
   $('#rental').innerHTML=`<article class="rental"><h3>${escape(r.title)}</h3><p>${escape(r.summary)}</p><dl>${(r.details||[]).map(d=>`<div><dt>${escape(d.label)}</dt><dd>${escape(d.value)}</dd></div>`).join('')}</dl><ul>${(r.notes||[]).map(n=>`<li>${escape(n)}</li>`).join('')}</ul>${(r.links||[]).map(l=>link(l.label,l.url)).join(' ')}</article>`;
 }
+function renderChecklist(){
+  // Pre-departure checklist: documents, bookings with release windows/deadlines, and other to-dos.
+  const list=data.checklist;if(!list?.items?.length){$('#checklist').hidden=true;$('a[href="#checklist"]')?.setAttribute('hidden','');return;}
+  const storage=`travel-plan:checklist:v1:${data.trip.id}`,saved=read(storage,{});const done=saved&&typeof saved==='object'?saved:{};
+  const groups=list.groups?.length?list.groups:[{id:'',label:'待办'}];
+  const sortKey=item=>daysUntil(item.due)??1e6;
+  const isDone=item=>done[item.id]??(item.status==='done'||item.status==='booked');
+  const chip=item=>{
+    const n=daysUntil(item.due);if(n===null)return item.dueLabel?`<span class="due">${escape(item.dueLabel)}</span>`:'';
+    const when=n<0?`已过 ${-n} 天`:n===0?'今天':`还有 ${n} 天`,state=isDone(item)?'done':n<0?'late':n<=14?'soon':'later';
+    return `<span class="due ${state}" title="${escape(item.due)}">${escape(item.dueLabel||item.due.slice(5).replace('-','/'))} · ${when}</span>`;
+  };
+  const draw=()=>{
+    const open=list.items.filter(i=>!isDone(i)),next=[...open].sort((a,b)=>sortKey(a)-sortKey(b))[0];
+    $('#checklist-summary').innerHTML=`<strong>还有 ${open.length} / ${list.items.length} 项</strong>${next?` · 最近：${escape(next.title)} ${chip(next)}`:' · 全部完成'}${list.asOf?`<small>资料核对于 ${escape(list.asOf)}</small>`:''}`;
+    $('#checklist-groups').innerHTML=groups.map(g=>{
+      const items=list.items.filter(i=>(i.group||'')===(g.id||'')||(!g.id&&!groups.some(x=>x.id===i.group))).sort((a,b)=>sortKey(a)-sortKey(b));
+      if(!items.length)return '';
+      return `<section class="check-group"><h3>${escape(g.label)}<small>${items.filter(i=>!isDone(i)).length} 项待办</small></h3><ul>${items.map(i=>`<li class="${isDone(i)?'is-done':''}"><label><input type="checkbox" data-check="${escape(i.id)}" ${isDone(i)?'checked':''}><span class="check-title">${escape(i.title)}</span></label><div class="check-meta">${i.who?`<span class="who">${escape(i.who)}</span>`:''}${chip(i)}${i.lead?`<span class="lead">${escape(i.lead)}</span>`:''}</div>${i.note?`<p>${escape(i.note)}</p>`:''}${link(i.urlLabel||'官方入口',i.url)}</li>`).join('')}</ul></section>`;
+    }).join('');
+    const facts=$('#trip-facts');if(facts&&!facts.querySelector('.todo-fact'))facts.insertAdjacentHTML('beforeend','<a class="todo-fact" href="#checklist"></a>');
+    const fact=facts?.querySelector('.todo-fact');if(fact)fact.textContent=open.length?`待办 ${open.length} 项`:'待办已完成';
+  };
+  $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
+  draw();
+}
 function renderTodo(){
   const storage=`travel-plan:todo:v1:${data.trip.id}`;let todos=read(storage,null);
   if(!Array.isArray(todos)||todos.some(t=>typeof t.text!=='string'))todos=(data.todo||[]).map(text=>({text,done:false}));
@@ -161,7 +187,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderFlights();renderDays();renderRental();renderTodo();renderMap();
+    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');
