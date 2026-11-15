@@ -25,6 +25,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 常用类别ID：`flights,hotel,car,food,transport,activities,bags,buffer`，不强制凑满八类。每类自动支持自定义。
 
 - 航班option可带 `fareFamily,bagPerPerson,journeys[]`；有不同班次时提供完整替代journeys。
+- 明细：option可带 `items:[{label,amount,note?}]`，预算饼图下的分类行点「+」展开成记账式的一笔笔。金额同币种，加起来必须等于option的amount（校验器会查）；套餐拆分、行李联动这类实际金额会变的选项，明细按比例折算到当前金额。没有items时整项算一笔。category可带 `icon`（一个emoji）显示在分类行前。
 - 行李option可带 `bagCount`，在已给出航班行李价时联动；否则使用明示预留，不猜收费。
 - preset：`{id,label,selections:{类别ID:选项ID},note}`；估算状态不会因组合而变成报价。
 - 套餐：option可带 `bundles:{类别ID:选项ID}`，例如机票选项 `{"hotel":"in-package"}`。选中它时被包含的类别锁定为该选项（下拉框禁用）；被包含的选项标 `bundleOnly:true`、金额通常为0，没有套餐选中时隐藏并回到默认。默认选项不能是bundleOnly。套餐要按单独购买价拆分时加 `split:{类别ID:单买参考价}`（含自己的类别，如 `{"flights":1931,"hotel":5918.92}`）：套餐价按这些价格的比例分给各类别，饼图和卡片显示拆分后的金额，总额不变；参考价要同口径（都含税、同人数同晚数）并在note里写来源。交通等其他类别也可以一起打包（例如套餐含接送时 `{"hotel":"in-package","transport":"no-airport"}`）。

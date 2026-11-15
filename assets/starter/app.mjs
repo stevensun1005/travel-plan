@@ -1,4 +1,4 @@
-import {calculate,normalize,validMoney,nearestIndex,daysUntil} from './budget.mjs';
+import {calculate,normalize,validMoney,nearestIndex,daysUntil,itemize} from './budget.mjs';
 
 const $=selector=>document.querySelector(selector);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -6,6 +6,7 @@ const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(
 const link=(label,value)=>url(value)?`<a href="${escape(url(value))}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`:'';
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
 let data,selection,key,basemap,cachedRoads=[];
+const ledgerOpen=new Set();
 const SKILL_REPO='https://github.com/stevensun1005/travel-plan';
 const PHONE=matchMedia('(max-width:760px)');
 const money=value=>`${data.trip.currency||'CAD'} ${Number(value).toLocaleString('en-CA',{maximumFractionDigits:2})}`;
@@ -16,7 +17,7 @@ function renderBudget(){
   const budget=data.budget;
   if(!budget?.categories?.length){$('#budget').hidden=true;return;}
   key=`travel-plan:budget:v1:${data.trip.id}`;selection=normalize(budget,read(key,{}));
-  $('#budget-planner').innerHTML=`<div class="budget-shell"><div class="budget-heading"><div><small>${data.trip.travelers}人 · 全程合计</small><strong class="budget-total" id="budget-total"></strong></div><label class="target">预算上限 · ${escape(data.trip.currency)}<input id="budget-target" aria-label="预算上限" type="number" min="1" max="1000000" step="0.01" value="${selection.target}"></label></div><div class="balance" id="budget-balance" role="status" aria-live="polite"></div><div class="presets"><button data-reset>恢复初始方案</button>${(budget.presets||[]).map(p=>`<button data-preset="${escape(p.id)}">${escape(p.label)}</button>`).join('')}<span class="saved" id="save-status">选择保存在当前浏览器</span></div><div class="budget-layout"><div class="choices">${budget.categories.map(c=>`<article class="choice" data-category="${escape(c.id)}"><header><label for="choice-${escape(c.id)}">${escape(c.label)}</label><strong data-amount></strong></header><select id="choice-${escape(c.id)}" data-select="${escape(c.id)}" aria-describedby="note-${escape(c.id)}">${c.options.map(o=>`<option value="${escape(o.id)}">${escape(o.label)} · ${money(o.amount)}</option>`).join('')}<option value="custom">自定义总额…</option></select><label class="custom" hidden>自定义全程合计 · ${escape(data.trip.currency)}<input data-custom="${escape(c.id)}" aria-label="${escape(c.label)}自定义金额" type="number" min="0" max="1000000" step="0.01" value="0"></label><span class="price-status"></span><p id="note-${escape(c.id)}" data-note></p><div data-source></div></article>`).join('')}</div><aside class="chart-panel"><h3>预算都花在哪？</h3><p>占当前总支出的百分比</p><svg id="budget-chart" viewBox="0 0 220 220" role="img" aria-label="分类支出占比，详见图例"></svg><ul class="legend" id="budget-legend"></ul></aside></div><p class="fine">所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。预算选择各自保存在浏览器，不自动同步；日程与地图仍按原排定方案参考。</p><p class="quote-warning" id="budget-warning"></p></div>`;
+  $('#budget-planner').innerHTML=`<div class="budget-shell"><div class="budget-heading"><div><small>${data.trip.travelers}人 · 全程合计</small><strong class="budget-total" id="budget-total"></strong></div><label class="target">预算上限 · ${escape(data.trip.currency)}<input id="budget-target" aria-label="预算上限" type="number" min="1" max="1000000" step="0.01" value="${selection.target}"></label></div><div class="balance" id="budget-balance" role="status" aria-live="polite"></div><div class="presets"><button data-reset>恢复初始方案</button>${(budget.presets||[]).map(p=>`<button data-preset="${escape(p.id)}">${escape(p.label)}</button>`).join('')}<span class="saved" id="save-status">选择保存在当前浏览器</span></div><div class="budget-layout"><div class="choices">${budget.categories.map(c=>`<article class="choice" data-category="${escape(c.id)}"><header><label for="choice-${escape(c.id)}">${escape(c.label)}</label><strong data-amount></strong></header><select id="choice-${escape(c.id)}" data-select="${escape(c.id)}" aria-describedby="note-${escape(c.id)}">${c.options.map(o=>`<option value="${escape(o.id)}">${escape(o.label)} · ${money(o.amount)}</option>`).join('')}<option value="custom">自定义总额…</option></select><label class="custom" hidden>自定义全程合计 · ${escape(data.trip.currency)}<input data-custom="${escape(c.id)}" aria-label="${escape(c.label)}自定义金额" type="number" min="0" max="1000000" step="0.01" value="0"></label><span class="price-status"></span><p id="note-${escape(c.id)}" data-note></p><div data-source></div></article>`).join('')}</div><aside class="chart-panel"><h3>预算都花在哪？</h3><p>占当前总支出的百分比 · 点 + 看每一笔</p><svg id="budget-chart" viewBox="0 0 220 220" role="img" aria-label="分类支出占比，详见图例"></svg><ul class="ledger" id="budget-legend"></ul></aside></div><p class="fine">所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。预算选择各自保存在浏览器，不自动同步；日程与地图仍按原排定方案参考。</p><p class="quote-warning" id="budget-warning"></p></div>`;
   $('#budget-planner').addEventListener('change',e=>{const id=e.target.dataset.select;if(!id)return;selection.selections[id].optionId=e.target.value;updateBudget(true);if(id==='flights')syncFlights();});
   $('#budget-planner').addEventListener('input',e=>{
     if(!e.target.matches('#budget-target,[data-custom]') || !e.target.validity.valid || !e.target.value.trim())return;
@@ -25,6 +26,13 @@ function renderBudget(){
     updateBudget();if(e.target.dataset.custom==='flights')syncFlights();
   });
   $('#budget-planner').addEventListener('click',e=>{
+    const ledger=e.target.closest('[data-ledger]');
+    if(ledger){
+      const id=ledger.dataset.ledger,open=!ledgerOpen.has(id),row=ledger.closest('.ledger-row');
+      if(open)ledgerOpen.add(id);else ledgerOpen.delete(id);
+      row.classList.toggle('open',open);ledger.setAttribute('aria-expanded',open);row.querySelector('.ledger-items').hidden=!open;row.querySelector('.ledger-toggle').textContent=open?'−':'+';
+      return;
+    }
     const reset=e.target.closest('[data-reset]'),button=e.target.closest('[data-preset]');if(!reset&&!button)return;
     selection=normalize(budget,{target:selection.target});
     const preset=button?budget.presets.find(p=>p.id===button.dataset.preset):null;
@@ -57,7 +65,12 @@ function updateBudget(sync=false,persist=true){
     if(!row.amount||!result.total)return '';
     const length=row.amount/result.total*circumference;const mark=`<circle class="slice" cx="110" cy="110" r="80" fill="none" stroke="${color(row.color,i)}" stroke-width="32" stroke-dasharray="${length} ${circumference-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 110 110)" tabindex="0"><title>${escape(row.label)} · ${money(row.amount)} · ${(row.amount/result.total*100).toFixed(1)}%</title></circle>`;offset+=length;return mark;
   }).join('')}<text class="chart-label" x="110" y="103" text-anchor="middle">全程合计 · ${escape(data.trip.currency)}</text><text class="chart-value" x="110" y="130" text-anchor="middle">${result.total.toLocaleString('en-CA',{maximumFractionDigits:2})}</text>`;
-  $('#budget-legend').innerHTML=result.rows.map((row,i)=>`<li><span><i style="background:${color(row.color,i)}"></i>${escape(row.label.split('｜')[0])}</span><b>${money(row.amount)}<small>${result.total?(row.amount/result.total*100).toFixed(1):'0.0'}%</small></b></li>`).join('');
+  // 记账式明细：每个分类一行，点 + 展开这一类里的每一笔。
+  $('#budget-legend').innerHTML=result.rows.map((row,i)=>{
+    const items=itemize(row),pct=result.total?row.amount/result.total*100:0,name=row.label.split('｜')[0],open=ledgerOpen.has(row.id),id=escape(row.id);
+    const fine=items.some(it=>it.scaled)?`<li class="ledger-fine">${row.splitFrom?(items.length>1?'套餐价按单买价比例折到这一类，明细同比例折算':'套餐总价按单买价比例折到这一类'):'明细按当前选择同比例折算'}</li>`:'';
+    return `<li class="ledger-row${open?' open':''}" style="--c:${color(row.color,i)}"><button type="button" class="ledger-head" data-ledger="${id}" aria-expanded="${open}" aria-controls="ledger-${id}"><span class="ledger-icon" aria-hidden="true">${escape(row.icon||name.slice(0,1))}</span><span class="ledger-name">${escape(name)}</span><span class="ledger-amount">${money(row.amount)}</span><span class="ledger-meta">${pct.toFixed(1)}%</span><span class="ledger-count">${items.length} 笔</span><span class="ledger-toggle" aria-hidden="true">${open?'−':'+'}</span><span class="ledger-bar" aria-hidden="true"><i style="width:${pct.toFixed(1)}%"></i></span></button><ul class="ledger-items" id="ledger-${id}"${open?'':' hidden'}>${items.map(it=>`<li><span>${escape(it.label)}${it.note?`<small>${escape(it.note)}</small>`:''}</span><b>${money(it.amount)}<small>${(it.share*100).toFixed(1)}%</small></b></li>`).join('')}${fine}</ul></li>`;
+  }).join('');
   const pending=result.rows.filter(row=>/尚无|未取得/.test(row.option.status||''));
   $('#budget-warning').textContent=result.total===0?'所有支出为0，填写金额后显示占比。':pending.length?`${pending.map(r=>r.option.label).join('、')}尚无实际报价；试算低于上限不等于能按此价格预订。`:'机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。';
   if(persist)save();

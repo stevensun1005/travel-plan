@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {calculate,normalize,validMoney,nearestIndex,daysUntil} from '../assets/starter/budget.mjs';
+import {calculate,normalize,validMoney,nearestIndex,daysUntil,itemize} from '../assets/starter/budget.mjs';
 const data=JSON.parse(fs.readFileSync(new URL('../assets/demo-trip.json',import.meta.url)));
 test('presets sum independently and preserve selected conditions',()=>{
   assert.equal(calculate(data.budget).total,4160);
@@ -53,4 +53,16 @@ test('checklist countdown counts whole days and rejects bad dates',()=>{
   assert.equal(daysUntil('2026-12-07',today),22);
   assert.equal(daysUntil('2026-11-09',today),-6);
   for(const bad of ['', '2026-02-30', '12/07/2026', undefined])assert.equal(daysUntil(bad,today),null);
+});
+
+test('ledger items add up to the row, scaling for package splits and bag counts',()=>{
+  const sum=items=>Math.round(items.reduce((t,i)=>t+i.amount*100,0));
+  const exact=itemize({amount:100.5,option:{id:'a',items:[{label:'x',amount:60.25},{label:'y',amount:40.25}]}});
+  assert.deepEqual(exact.map(i=>i.amount),[60.25,40.25]);assert.equal(exact[0].scaled,false);
+  const scaled=itemize({amount:1000,option:{id:'pkg',items:[{label:'a',amount:1931},{label:'b',amount:5918.92}]}});
+  assert.equal(sum(scaled),100000);assert.ok(scaled.every(i=>i.scaled));
+  assert.deepEqual(itemize({amount:42,option:{id:'plain',label:'Plain'}}).map(i=>[i.label,i.amount,i.share]),[['Plain',42,1]]);
+  assert.equal(itemize({amount:7,option:{id:'custom',items:[{label:'ignored',amount:1}]}})[0].label,'自定义总额');
+  assert.deepEqual(itemize({amount:0,option:{id:'none',items:[{label:'z',amount:0}]}}).map(i=>i.share),[0]);
+  assert.equal(sum(itemize({amount:5,option:{id:'bad',items:[{label:'q',amount:-3},{label:'r',amount:2}]}})),500);
 });

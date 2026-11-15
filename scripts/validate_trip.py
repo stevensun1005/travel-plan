@@ -45,6 +45,16 @@ def validate(folder):
             if not option.get('status'):warnings.append(f'{category["id"]}/{option.get("id")}: price status missing')
             if 'bagPerPerson' in option:check(money(option['bagPerPerson']),'Invalid baggage rate')
             if 'bagCount' in option:check(isinstance(option['bagCount'],int) and option['bagCount']>=0,'Invalid bag count')
+            # items: line-item breakdown shown when a budget category is expanded
+            items=option.get('items')
+            if items is not None:
+                where=f'{category["id"]}/{option.get("id")}'
+                check(isinstance(items,list) and all(isinstance(i,dict) and isinstance(i.get('label'),str) and i['label'].strip() and money(i.get('amount')) for i in items),f'{where}: items need a label and a valid amount')
+                scaled=option.get('split') or option.get('bundleOnly') or 'bagCount' in option
+                if isinstance(items,list) and items and not scaled and all(isinstance(i,dict) and money(i.get('amount')) for i in items):
+                    total=round(sum(round(i['amount']*100) for i in items))
+                    check(total==round(option['amount']*100),f'{where}: items add up to {total/100:g}, not the option amount {option["amount"]:g}')
+        if 'icon' in category:check(isinstance(category['icon'],str) and 0<len(category['icon'])<=4,f'{category["id"]}: icon must be a short string (an emoji)')
         default=next((o for o in options if o.get('id')==category.get('defaultOption')),{})
         check(not default.get('bundleOnly'),f'{category["id"]}: default option cannot be bundle-only')
     # Bundles: e.g. a flight+hotel package locks the hotel to an included (bundle-only) option

@@ -43,7 +43,19 @@
             "status": "虚构演示 · 不可预订",
             "note": "两人完整往返的虚构总价，不代表任何航空公司的报价。",
             "fareFamily": "Economy · 演示",
-            "bagPerPerson": 60
+            "bagPerPerson": 60,
+            "items": [
+              {
+                "label": "票价 · 两人往返",
+                "amount": 1300,
+                "note": "虚构"
+              },
+              {
+                "label": "税费",
+                "amount": 300,
+                "note": "虚构"
+              }
+            ]
           },
           {
             "id": "comfort",
@@ -71,7 +83,8 @@
             }
           }
         ],
-        "color": "#2a70cf"
+        "color": "#2a70cf",
+        "icon": "✈️"
       },
       {
         "id": "hotel",
@@ -83,7 +96,14 @@
             "label": "Harbour House · King（虚构）",
             "amount": 900,
             "status": "虚构演示 · 不可预订",
-            "note": "酒店与价格虚构；用于演示全住期合计和房型比较。"
+            "note": "酒店与价格虚构；用于演示全住期合计和房型比较。",
+            "items": [
+              {
+                "label": "Harbour House · 3晚",
+                "amount": 900,
+                "note": "约300/晚，虚构"
+              }
+            ]
           },
           {
             "id": "garden",
@@ -108,7 +128,8 @@
             "bundleOnly": true
           }
         ],
-        "color": "#e07a12"
+        "color": "#e07a12",
+        "icon": "🏨"
       },
       {
         "id": "car",
@@ -137,7 +158,8 @@
             "note": "虚构升级额度，不能当作租车报价。"
           }
         ],
-        "color": "#1f9652"
+        "color": "#1f9652",
+        "icon": "🚗"
       },
       {
         "id": "food",
@@ -156,7 +178,29 @@
             "label": "海鲜好好吃（演示）",
             "amount": 600,
             "status": "虚构演示 · 不可预订",
-            "note": "几顿正式餐加本地简餐的演示额度，没有真实菜单报价。"
+            "note": "几顿正式餐加本地简餐的演示额度，没有真实菜单报价。",
+            "items": [
+              {
+                "label": "早餐和咖啡 · 3天",
+                "amount": 90
+              },
+              {
+                "label": "海鲜晚餐 · 第1晚",
+                "amount": 180
+              },
+              {
+                "label": "市场午餐",
+                "amount": 80
+              },
+              {
+                "label": "海边晚餐 · 第2晚",
+                "amount": 150
+              },
+              {
+                "label": "其余简餐和小吃",
+                "amount": 100
+              }
+            ]
           },
           {
             "id": "treat",
@@ -166,7 +210,8 @@
             "note": "为菜单升级留额度；仅供预算交互演示。"
           }
         ],
-        "color": "#d2402f"
+        "color": "#d2402f",
+        "icon": "🍽️"
       },
       {
         "id": "transport",
@@ -178,10 +223,26 @@
             "label": "接送＋停车油费（演示）",
             "amount": 180,
             "status": "虚构演示 · 不可预订",
-            "note": "不含已经计入租车类别的车费。"
+            "note": "不含已经计入租车类别的车费。",
+            "items": [
+              {
+                "label": "机场接送",
+                "amount": 90,
+                "note": "虚构"
+              },
+              {
+                "label": "停车",
+                "amount": 50
+              },
+              {
+                "label": "油费",
+                "amount": 40
+              }
+            ]
           }
         ],
-        "color": "#2b9c9a"
+        "color": "#2b9c9a",
+        "icon": "🚌"
       },
       {
         "id": "activities",
@@ -193,10 +254,26 @@
             "label": "景点与体验（演示）",
             "amount": 300,
             "status": "虚构演示 · 不可预订",
-            "note": "全部虚构费用，真实项目和票种需要另查。"
+            "note": "全部虚构费用，真实项目和票种需要另查。",
+            "items": [
+              {
+                "label": "观景缆车 · 两人",
+                "amount": 160,
+                "note": "虚构"
+              },
+              {
+                "label": "博物馆 · 两人",
+                "amount": 60
+              },
+              {
+                "label": "皮划艇体验 · 两人",
+                "amount": 80
+              }
+            ]
           }
         ],
-        "color": "#9b6dd0"
+        "color": "#9b6dd0",
+        "icon": "🎟️"
       },
       {
         "id": "bags",
@@ -219,7 +296,8 @@
             "bagCount": 2
           }
         ],
-        "color": "#c99a1c"
+        "color": "#c99a1c",
+        "icon": "🧳"
       },
       {
         "id": "buffer",
@@ -231,7 +309,21 @@
             "label": "预留一点弹性",
             "amount": 200,
             "status": "虚构演示 · 不可预订",
-            "note": "已计入总额，不再额外加收。"
+            "note": "已计入总额，不再额外加收。",
+            "items": [
+              {
+                "label": "税费差价",
+                "amount": 80
+              },
+              {
+                "label": "汇率波动",
+                "amount": 60
+              },
+              {
+                "label": "小费和零碎",
+                "amount": 60
+              }
+            ]
           },
           {
             "id": "more",
@@ -241,7 +333,8 @@
             "note": "额外留200缓冲。"
           }
         ],
-        "color": "#8a958c"
+        "color": "#8a958c",
+        "icon": "🛟"
       }
     ],
     "presets": [
