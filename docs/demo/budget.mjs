@@ -44,6 +44,19 @@ export function calculate(budget,saved) {
   const total=rows.reduce((sum,row)=>sum+cents(row.amount),0)/100;
   return {...selection,rows,total,remaining:(cents(selection.target)-cents(total))/100};
 }
+// Line items for the expanded budget ledger. `option.items` = [{label,amount,note?}] in the trip currency.
+// When the row amount differs from their sum (package split, bag count), they are scaled to the row so the
+// ledger always adds up to what the chart shows. Without items the option itself is the one line.
+export function itemize(row){
+  const target=cents(row.amount||0);
+  const items=row.option?.id!=='custom'&&Array.isArray(row.option?.items)?row.option.items.filter(i=>i&&typeof i.label==='string'&&validMoney(i.amount)):[];
+  if(!items.length)return [{label:row.option?.id==='custom'?'自定义总额':row.option?.label||row.label||'',note:'',amount:target/100,share:target?1:0,scaled:false}];
+  const sum=items.reduce((total,i)=>total+cents(i.amount),0),scaled=sum!==target;let left=target;
+  return items.map((item,index)=>{
+    const value=!scaled?cents(item.amount):index===items.length-1?left:sum?Math.round(target*cents(item.amount)/sum):0;left-=value;
+    return {label:item.label,note:item.note||'',amount:value/100,share:target?value/target:0,scaled};
+  });
+}
 export function nearestIndex(container,cards) {
   const bounds=container.getBoundingClientRect(),center=bounds.left+bounds.width/2;
   return cards.reduce((best,card,index)=>{

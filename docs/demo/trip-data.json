@@ -39,7 +39,18 @@
             "note": "两人往返含税CA$2,128.64（票价1,754＋税费374.64）。去程1/3 17:35直飞，回程1/9 00:10直飞，13:51到多伦多。Standard每人可带1件随身行李；购票24小时内可全额退款，之后按票规。",
             "fareFamily": "Standard",
             "bagPerPerson": 90,
-            "url": "https://www.aircanada.com/"
+            "url": "https://www.aircanada.com/",
+            "items": [
+              {
+                "label": "机票票价 · 两人往返",
+                "amount": 1754,
+                "note": "AC589去程，回程1/9 00:10"
+              },
+              {
+                "label": "税费",
+                "amount": 374.64
+              }
+            ]
           },
           {
             "id": "ac-basic",
@@ -49,7 +60,19 @@
             "note": "同样的直飞航班，比Standard省200。不可退、不可改，不含随身行李箱（只能带个人小包），不能免费选座。",
             "fareFamily": "Basic",
             "bagPerPerson": 90,
-            "url": "https://www.expedia.ca/"
+            "url": "https://www.expedia.ca/",
+            "items": [
+              {
+                "label": "机票票价 · 两人往返",
+                "amount": 1554,
+                "note": "Basic比Standard便宜200"
+              },
+              {
+                "label": "税费",
+                "amount": 374.64,
+                "note": "按Standard的税费估"
+              }
+            ]
           },
           {
             "id": "expedia-pkg",
@@ -67,9 +90,17 @@
             "split": {
               "flights": 1931,
               "hotel": 5918.92
-            }
+            },
+            "items": [
+              {
+                "label": "套餐里的AC直飞往返 · 两人",
+                "amount": 1931,
+                "note": "单买约CA$1,931（Google Flights）"
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "✈️"
       },
       {
         "id": "hotel",
@@ -83,7 +114,14 @@
             "amount": 1223,
             "status": "11/15 Vio查价（含税费）",
             "note": "1/3–1/8共5晚，Vio含税费总价CA$1,223，可免费取消、先订后付（截止日以订单页为准）。同样日期Google/Expedia约CA$1,605。1/8上午退房后寄存行李。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Hotel Renew · 5晚",
+                "amount": 1223,
+                "note": "Vio含税费，约CA$245/晚"
+              }
+            ]
           },
           {
             "id": "hyatt",
@@ -91,7 +129,14 @@
             "amount": 1745,
             "status": "11/15 Vio查价（含税费）",
             "note": "5晚Vio含税费CA$1,745，含早餐；可免费取消的价格是CA$2,090。含早餐的话，餐饮可以选简单档。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Hyatt Place · 5晚含早",
+                "amount": 1745,
+                "note": "Vio含税费，约CA$349/晚"
+              }
+            ]
           },
           {
             "id": "kaimana",
@@ -99,7 +144,14 @@
             "amount": 1763,
             "status": "11/15 Vio查价（含税费）",
             "note": "5晚Vio含税费CA$1,763；要免费取消、先订后付的价格是CA$2,096。就在海滩上，在Kapiʻolani公园旁边，比Waikīkī中心安静。之前Costco的含双早价格是按6晚报的，不再使用。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Kaimana Beach Hotel · 5晚",
+                "amount": 1763,
+                "note": "Vio含税费，约CA$353/晚"
+              }
+            ]
           },
           {
             "id": "alohilani",
@@ -107,7 +159,14 @@
             "amount": 2082,
             "status": "11/15 Vio查价（含税费）",
             "note": "5晚Vio含税费CA$2,082（另一档报价CA$1,905，房型和退改以订单页为准）。之前Costco送购物卡和酒店额度的价格是按6晚报的，不再使用。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "ʻAlohilani · 5晚",
+                "amount": 2082,
+                "note": "Vio含税费，约CA$416/晚"
+              }
+            ]
           },
           {
             "id": "sheraton",
@@ -115,7 +174,14 @@
             "amount": 3438,
             "status": "11/15 Vio查价（含税费）",
             "note": "5晚Vio含税费CA$3,438（原价CA$4,752），可免费取消、先订后付；但Vio标注「需要换房」，即住到一半要换一次房间。不想换房就选Expedia机酒套餐里的Sheraton。",
-            "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1"
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Sheraton Waikiki · 5晚",
+                "amount": 3438,
+                "note": "Vio含税费，约CA$688/晚，中途要换房"
+              }
+            ]
           },
           {
             "id": "in-package",
@@ -123,9 +189,17 @@
             "amount": 0,
             "status": "配合Expedia套餐",
             "note": "机票选了「Expedia机酒套餐」时自动使用。这里显示的是套餐价按单独购买价拆给酒店的部分，不另外收费。",
-            "bundleOnly": true
+            "bundleOnly": true,
+            "items": [
+              {
+                "label": "套餐里的Sheraton King城景 · 6晚",
+                "amount": 5918.92,
+                "note": "单订约CA$5,918.92（Expedia）"
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🏨"
       },
       {
         "id": "car",
@@ -139,7 +213,23 @@
             "amount": 180,
             "status": "Kayak搜索页＋估算",
             "note": "Kayak上HNL机场1/5 07:00–1/6 07:00小车约CA$75–88（按25岁以上显示）。在Waikīkī门店取车通常更贵，另加未满25岁附加费约CA$40，预算留CA$180。",
-            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+            "items": [
+              {
+                "label": "小车租一天 · 1/5",
+                "amount": 85,
+                "note": "Kayak HNL机场约CA$75–88"
+              },
+              {
+                "label": "未满25岁附加费",
+                "amount": 40
+              },
+              {
+                "label": "门店加价、税费余量",
+                "amount": 55,
+                "note": "Waikīkī门店通常比机场贵"
+              }
+            ]
           },
           {
             "id": "jeep",
@@ -147,7 +237,23 @@
             "amount": 190,
             "status": "Kayak搜索页＋估算",
             "note": "Kayak上HNL机场的Open-air Jeep一天约CA$86，和小车差不多。环岛一天开敞篷很合适，但未满25岁能不能租这个车型要看租车公司的规定。",
-            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+            "items": [
+              {
+                "label": "Jeep Wrangler 敞篷一天 · 1/5",
+                "amount": 86,
+                "note": "Kayak HNL机场"
+              },
+              {
+                "label": "未满25岁附加费",
+                "amount": 40,
+                "note": "先确认这个车型收不收未满25岁"
+              },
+              {
+                "label": "门店加价、税费余量",
+                "amount": 64
+              }
+            ]
           },
           {
             "id": "z4",
@@ -155,9 +261,17 @@
             "amount": 430,
             "status": "按旧报价推算 · 尚无新报价",
             "note": "之前查到的Z4 48小时含保障USD574.85，按一天推算约USD300。新日期还没有报价，车源和交车地址都没确认。",
-            "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI"
+            "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI",
+            "items": [
+              {
+                "label": "Turo BMW Z4 一天",
+                "amount": 430,
+                "note": "约USD300，含保障，按48小时报价推算"
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🚗"
       },
       {
         "id": "food",
@@ -170,23 +284,119 @@
             "label": "简单吃（含早餐酒店适用）",
             "amount": 850,
             "status": "预算估算",
-            "note": "5天两人，含税和小费。以poke、餐车和便利店早餐为主，有一两顿正式晚餐。"
+            "note": "5天两人，含税和小费。以poke、餐车和便利店早餐为主，有一两顿正式晚餐。",
+            "items": [
+              {
+                "label": "早餐 · 5天",
+                "amount": 100,
+                "note": "便利店、面包店或酒店附近咖啡"
+              },
+              {
+                "label": "午餐：poke、餐车、便利店",
+                "amount": 300,
+                "note": "5天"
+              },
+              {
+                "label": "晚餐：一两顿正式，其余简单",
+                "amount": 450
+              }
+            ]
           },
           {
             "id": "seafood",
             "label": "海鲜好好吃",
             "amount": 1100,
             "status": "预算估算",
-            "note": "约每天CA$220两人：Duke's、Nico's Pier 38、Giovanni's虾饭、日落晚餐。PCC套票自带晚餐。"
+            "note": "约每天CA$220两人：Duke's、Nico's Pier 38、Giovanni's虾饭、日落晚餐。PCC套票自带晚餐。",
+            "items": [
+              {
+                "label": "早餐 · 5天",
+                "amount": 100,
+                "note": "便利店、面包店或酒店附近咖啡"
+              },
+              {
+                "label": "Duke's 海边晚餐 · 1/4",
+                "amount": 180,
+                "note": "两人含税和小费"
+              },
+              {
+                "label": "Giovanni's 蒜蓉虾饭 · 1/5",
+                "amount": 50,
+                "note": "餐车，两份"
+              },
+              {
+                "label": "Ko Olina 晚餐 · 1/5",
+                "amount": 140,
+                "note": "看星星之前"
+              },
+              {
+                "label": "Nico's Pier 38 海鲜 · 1/6",
+                "amount": 90,
+                "note": "poke和炸鱼"
+              },
+              {
+                "label": "House Without A Key 日落晚餐 · 1/8",
+                "amount": 220,
+                "note": "草裙舞和日落"
+              },
+              {
+                "label": "其余午餐、poke和小吃",
+                "amount": 320,
+                "note": "约每天CA$64"
+              }
+            ]
           },
           {
             "id": "treat",
             "label": "多吃几顿正式海鲜",
             "amount": 1400,
             "status": "预算估算",
-            "note": "多加1–2顿Roy's或House Without A Key这种档次的晚餐。"
+            "note": "多加1–2顿Roy's或House Without A Key这种档次的晚餐。",
+            "items": [
+              {
+                "label": "早餐 · 5天",
+                "amount": 100,
+                "note": "便利店、面包店或酒店附近咖啡"
+              },
+              {
+                "label": "Duke's 海边晚餐 · 1/4",
+                "amount": 180,
+                "note": "两人含税和小费"
+              },
+              {
+                "label": "Giovanni's 蒜蓉虾饭 · 1/5",
+                "amount": 50,
+                "note": "餐车，两份"
+              },
+              {
+                "label": "Ko Olina 晚餐 · 1/5",
+                "amount": 140,
+                "note": "看星星之前"
+              },
+              {
+                "label": "Nico's Pier 38 海鲜 · 1/6",
+                "amount": 90,
+                "note": "poke和炸鱼"
+              },
+              {
+                "label": "House Without A Key 日落晚餐 · 1/8",
+                "amount": 220,
+                "note": "草裙舞和日落"
+              },
+              {
+                "label": "其余午餐、poke和小吃",
+                "amount": 320,
+                "note": "约每天CA$64"
+              },
+              {
+                "label": "Roy's 正式晚餐",
+                "amount": 300,
+                "note": "多加的一顿"
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🍽️"
       },
       {
         "id": "transport",
@@ -199,7 +409,43 @@
             "label": "Uber＋观光巴士4日票＋停车油费",
             "amount": 570,
             "status": "预算估算",
-            "note": "机场往返打车约USD90，珍珠港往返约USD70；Waikiki Trolley四日全线票两人约USD150（1/6市区和Ala Moana、1/7钻石山、1/8海岸线都用它）；酒店停车一晚约USD45，景点停车约USD5，油费约USD25。合计约USD390。"
+            "note": "机场往返打车约USD90，珍珠港往返约USD70；Waikiki Trolley四日全线票两人约USD150（1/6市区和Ala Moana、1/7钻石山、1/8海岸线都用它）；酒店停车一晚约USD45，景点停车约USD5，油费约USD25。合计约USD390。",
+            "items": [
+              {
+                "label": "机场 ↔ 酒店打车",
+                "amount": 130,
+                "note": "往返约USD90"
+              },
+              {
+                "label": "珍珠港往返 Uber · 1/4",
+                "amount": 102,
+                "note": "约USD70"
+              },
+              {
+                "label": "Waikiki Trolley 四日票 · 两人",
+                "amount": 218,
+                "note": "约USD150，1/6–1/8都用它"
+              },
+              {
+                "label": "酒店停车一晚 · 1/5",
+                "amount": 65,
+                "note": "约USD45"
+              },
+              {
+                "label": "景点停车",
+                "amount": 7,
+                "note": "约USD5"
+              },
+              {
+                "label": "油费",
+                "amount": 36,
+                "note": "约USD25"
+              },
+              {
+                "label": "汇率和小费余量",
+                "amount": 12
+              }
+            ]
           },
           {
             "id": "ground-pkg",
@@ -207,9 +453,41 @@
             "amount": 440,
             "bundleOnly": true,
             "status": "配合Expedia机酒套餐",
-            "note": "按你的要求，选机酒套餐时不计机场↔酒店打车（约USD90）。你截图里的套餐只列了机票和酒店；如果Expedia订单其实不含接送，请改成自定义金额，加回约CA$130。"
+            "note": "按你的要求，选机酒套餐时不计机场↔酒店打车（约USD90）。你截图里的套餐只列了机票和酒店；如果Expedia订单其实不含接送，请改成自定义金额，加回约CA$130。",
+            "items": [
+              {
+                "label": "珍珠港往返 Uber · 1/4",
+                "amount": 102,
+                "note": "约USD70"
+              },
+              {
+                "label": "Waikiki Trolley 四日票 · 两人",
+                "amount": 218,
+                "note": "约USD150"
+              },
+              {
+                "label": "酒店停车一晚 · 1/5",
+                "amount": 65,
+                "note": "约USD45"
+              },
+              {
+                "label": "景点停车",
+                "amount": 7,
+                "note": "约USD5"
+              },
+              {
+                "label": "油费",
+                "amount": 36,
+                "note": "约USD25"
+              },
+              {
+                "label": "汇率和小费余量",
+                "amount": 12
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🚌"
       },
       {
         "id": "activities",
@@ -222,23 +500,150 @@
             "label": "牧场Jurassic Adventure 2.5小时",
             "amount": 1140,
             "status": "官方/公开常规价折算",
-            "note": "两人：古兰尼牧场Jurassic Adventure USD300；珍珠港Passport USD200＋亚利桑那号约$2；恐龙湾Roberts Hawaii接送＋门票USD130＋浮潜装备约USD40；Dole小火车约USD38＋迷宫约USD18；ʻIolani Palace约USD56。合计约USD784。PCC和平等院这次不去。"
+            "note": "两人：古兰尼牧场Jurassic Adventure USD300；珍珠港Passport USD200＋亚利桑那号约$2；恐龙湾Roberts Hawaii接送＋门票USD130＋浮潜装备约USD40；Dole小火车约USD38＋迷宫约USD18；ʻIolani Palace约USD56。合计约USD784。PCC和平等院这次不去。",
+            "items": [
+              {
+                "label": "古兰尼牧场 Jurassic Adventure · 两人",
+                "amount": 438,
+                "note": "约USD300，2.5小时"
+              },
+              {
+                "label": "珍珠港 Passport · 两人",
+                "amount": 290,
+                "note": "约USD200，四个馆"
+              },
+              {
+                "label": "亚利桑那号预约费",
+                "amount": 3,
+                "note": "约USD2"
+              },
+              {
+                "label": "恐龙湾 Roberts Hawaii 接送＋门票",
+                "amount": 189,
+                "note": "约USD130"
+              },
+              {
+                "label": "浮潜装备",
+                "amount": 58,
+                "note": "约USD40"
+              },
+              {
+                "label": "Dole 菠萝园小火车",
+                "amount": 55,
+                "note": "约USD38"
+              },
+              {
+                "label": "Dole 菠萝迷宫",
+                "amount": 26,
+                "note": "约USD18"
+              },
+              {
+                "label": "ʻIolani 王宫",
+                "amount": 81,
+                "note": "约USD56"
+              }
+            ]
           },
           {
             "id": "two-tours",
             "label": "牧场两个90分钟团",
             "amount": 1050,
             "status": "官方/公开常规价折算",
-            "note": "Movie Sites（Kaʻaʻawa山谷）加Jungle Expedition（Hakipuʻu雨林），每人各USD59.95，要订两个相连的场次，共3小时，植物园就要缩短。合计约USD724。"
+            "note": "Movie Sites（Kaʻaʻawa山谷）加Jungle Expedition（Hakipuʻu雨林），每人各USD59.95，要订两个相连的场次，共3小时，植物园就要缩短。合计约USD724。",
+            "items": [
+              {
+                "label": "古兰尼牧场 Movie Sites＋Jungle · 两人",
+                "amount": 348,
+                "note": "约USD240，两个90分钟团"
+              },
+              {
+                "label": "珍珠港 Passport · 两人",
+                "amount": 290,
+                "note": "约USD200，四个馆"
+              },
+              {
+                "label": "亚利桑那号预约费",
+                "amount": 3,
+                "note": "约USD2"
+              },
+              {
+                "label": "恐龙湾 Roberts Hawaii 接送＋门票",
+                "amount": 189,
+                "note": "约USD130"
+              },
+              {
+                "label": "浮潜装备",
+                "amount": 58,
+                "note": "约USD40"
+              },
+              {
+                "label": "Dole 菠萝园小火车",
+                "amount": 55,
+                "note": "约USD38"
+              },
+              {
+                "label": "Dole 菠萝迷宫",
+                "amount": 26,
+                "note": "约USD18"
+              },
+              {
+                "label": "ʻIolani 王宫",
+                "amount": 81,
+                "note": "约USD56"
+              }
+            ]
           },
           {
             "id": "movie-only",
             "label": "牧场只去Movie Sites",
             "amount": 880,
             "status": "官方/公开常规价折算",
-            "note": "只保留90分钟的Movie Sites团，最省。合计约USD604。"
+            "note": "只保留90分钟的Movie Sites团，最省。合计约USD604。",
+            "items": [
+              {
+                "label": "古兰尼牧场 Movie Sites · 两人",
+                "amount": 178,
+                "note": "约USD120，90分钟"
+              },
+              {
+                "label": "珍珠港 Passport · 两人",
+                "amount": 290,
+                "note": "约USD200，四个馆"
+              },
+              {
+                "label": "亚利桑那号预约费",
+                "amount": 3,
+                "note": "约USD2"
+              },
+              {
+                "label": "恐龙湾 Roberts Hawaii 接送＋门票",
+                "amount": 189,
+                "note": "约USD130"
+              },
+              {
+                "label": "浮潜装备",
+                "amount": 58,
+                "note": "约USD40"
+              },
+              {
+                "label": "Dole 菠萝园小火车",
+                "amount": 55,
+                "note": "约USD38"
+              },
+              {
+                "label": "Dole 菠萝迷宫",
+                "amount": 26,
+                "note": "约USD18"
+              },
+              {
+                "label": "ʻIolani 王宫",
+                "amount": 81,
+                "note": "约USD56"
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🎟️"
       },
       {
         "id": "evening",
@@ -251,21 +656,47 @@
             "label": "日落帆船 + Ko Olina看星星",
             "amount": 395,
             "status": "公开常规价折算",
-            "note": "两人：Moana Sailing日落帆船约USD162（2×80.99）＋Stars Above Hawaii星空讲解约USD108.50（2×54.25），合计约USD270.50。不含船上加点的饮料、Ko Olina晚餐和停车。"
+            "note": "两人：Moana Sailing日落帆船约USD162（2×80.99）＋Stars Above Hawaii星空讲解约USD108.50（2×54.25），合计约USD270.50。不含船上加点的饮料、Ko Olina晚餐和停车。",
+            "items": [
+              {
+                "label": "Moana Sailing 日落帆船 · 两人",
+                "amount": 235,
+                "note": "约USD162，1/4或1/7"
+              },
+              {
+                "label": "Stars Above Hawaii 星空讲解 · 两人",
+                "amount": 160,
+                "note": "约USD108.50，1/5晚上"
+              }
+            ]
           },
           {
             "id": "sail",
             "label": "只坐日落帆船",
             "amount": 235,
             "status": "公开常规价折算",
-            "note": "两人约USD162。"
+            "note": "两人约USD162。",
+            "items": [
+              {
+                "label": "Moana Sailing 日落帆船 · 两人",
+                "amount": 235,
+                "note": "约USD162"
+              }
+            ]
           },
           {
             "id": "sail-budget",
             "label": "便宜的1.5小时日落船",
             "amount": 165,
             "status": "公开常规价折算",
-            "note": "Manu Kai happy hour帆船两人约USD113，不含看星星。"
+            "note": "Manu Kai happy hour帆船两人约USD113，不含看星星。",
+            "items": [
+              {
+                "label": "Manu Kai 1.5小时日落船 · 两人",
+                "amount": 165,
+                "note": "约USD113"
+              }
+            ]
           },
           {
             "id": "none",
@@ -274,7 +705,8 @@
             "status": "—",
             "note": "在海边自己看日落。"
           }
-        ]
+        ],
+        "icon": "🌅"
       },
       {
         "id": "bags",
@@ -295,7 +727,14 @@
             "amount": 90,
             "status": "按所选票价联动",
             "note": "跟着上面选的票价自动换算。",
-            "bagCount": 1
+            "bagCount": 1,
+            "items": [
+              {
+                "label": "两人合托一件",
+                "amount": 90,
+                "note": "按所选机票的首件托运价"
+              }
+            ]
           },
           {
             "id": "two",
@@ -303,9 +742,20 @@
             "amount": 180,
             "status": "按所选票价联动",
             "note": "按AC首件托运每人约CA$90估算（Google显示）。最终以出票页的行李规定为准。",
-            "bagCount": 2
+            "bagCount": 2,
+            "items": [
+              {
+                "label": "第一个人托运一件",
+                "amount": 90
+              },
+              {
+                "label": "第二个人托运一件",
+                "amount": 90
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🧳"
       },
       {
         "id": "buffer",
@@ -318,16 +768,46 @@
             "label": "预留一点弹性",
             "amount": 300,
             "status": "已含在总额",
-            "note": "用来兜酒店税费差价、汇率波动、行李寄存和小费。"
+            "note": "用来兜酒店税费差价、汇率波动、行李寄存和小费。",
+            "items": [
+              {
+                "label": "酒店税费差价",
+                "amount": 100
+              },
+              {
+                "label": "汇率波动",
+                "amount": 100
+              },
+              {
+                "label": "行李寄存、小费和零碎",
+                "amount": 100
+              }
+            ]
           },
           {
             "id": "more",
             "label": "多留一点弹性",
             "amount": 500,
             "status": "已含在总额",
-            "note": "如果Hotel Renew或Hyatt结算页显示还要另加约19%的夏威夷税，建议选这一档。"
+            "note": "如果Hotel Renew或Hyatt结算页显示还要另加约19%的夏威夷税，建议选这一档。",
+            "items": [
+              {
+                "label": "酒店税费差价",
+                "amount": 250,
+                "note": "结算页另加约19%夏威夷税时"
+              },
+              {
+                "label": "汇率波动",
+                "amount": 150
+              },
+              {
+                "label": "行李寄存、小费和零碎",
+                "amount": 100
+              }
+            ]
           }
-        ]
+        ],
+        "icon": "🛟"
       }
     ],
     "presets": [
