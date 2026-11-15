@@ -38,3 +38,11 @@ export function nearestIndex(container,cards) {
     return Math.abs(r.left+r.width/2-center)<Math.abs(b.left+b.width/2-center)?index:best;
   },0);
 }
+
+// Whole days from `today` to an ISO date (negative = overdue); null for missing or invalid dates.
+export function daysUntil(date,today=new Date()){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(date||''))return null;
+  const [y,m,d]=date.split('-').map(Number),due=Date.UTC(y,m-1,d);
+  if(Number.isNaN(due)||new Date(due).getUTCDate()!==d)return null;
+  return Math.round((due-Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()))/864e5);
+}

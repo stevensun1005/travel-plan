@@ -11,7 +11,7 @@
   <script src="vendor/leaflet/leaflet.js" defer></script><script type="module" src="app.mjs"></script>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="#top">travel<span>—</span>plan<span class="brand-dot">●</span></a><nav aria-label="旅行导航"><a href="#budget">预算</a><a href="#flights">航班</a><a href="#route">地图</a><a href="#itinerary">行程</a><button class="theme-btn" id="theme-btn" type="button" aria-label="切换浅色或深色">黑板</button></nav></header>
+  <header class="topbar"><a class="brand" href="#top">travel<span>—</span>plan<span class="brand-dot">●</span></a><nav aria-label="旅行导航"><a href="#budget">预算</a><a href="#flights">航班</a><a href="#route">地图</a><a href="#itinerary">行程</a><a href="#checklist">清单</a><button class="theme-btn" id="theme-btn" type="button" aria-label="切换浅色或深色">黑板</button></nav></header>
   <main>
     <section class="hero wrap" id="top"><p class="eyebrow" id="trip-kicker">一份计划 · 一起出发</p><h1 id="trip-title">你的下一次旅行</h1><p id="trip-subtitle"></p>
       <ul class="key" aria-label="颜色说明"><li><i class="k-green"></i>已排好的行程</li><li><i class="k-blue"></i>价格和花费</li><li><i class="k-orange"></i>待确认、要提前订</li><li><i class="k-red"></i>超预算、已取消</li></ul>
@@ -21,6 +21,7 @@
     <section class="wrap section" id="events"><div class="section-head"><div><p class="eyebrow">有空再加</p><h2>特别活动与备选</h2></div></div><div id="event-cards"></div></section>
     <section class="wrap section" id="route" aria-labelledby="route-title"><div class="section-head"><div><p class="eyebrow">在哪里</p><h2 id="route-title">地图是真的，<em>路线也是</em></h2></div><button class="share-btn" id="share-map" type="button">分享路线图</button></div><div id="map-days" class="map-days"></div><div class="map-layout"><div id="map" aria-label="真实旅行地图"></div><aside id="map-details"></aside></div><p class="fine">路线为路网估算，不含实时拥堵和游玩。预算中的住宿选择用于费用比较；改变实际住宿后，需同步更新地点与路线缓存。</p></section>
     <section class="wrap section" id="itinerary" aria-labelledby="itinerary-title"><div class="section-head"><div><p class="eyebrow">每天做什么</p><h2 id="itinerary-title">把每一天<em>安排明白</em></h2></div></div><div id="coverage"></div><div id="days"></div></section>
+    <section class="wrap section" id="checklist" aria-labelledby="checklist-title"><div class="section-head"><div><p class="eyebrow">出发前要做的</p><h2 id="checklist-title">待办清单：<em>证件和预订</em></h2></div><span class="capsule">勾选只存在本机</span></div><p class="check-summary" id="checklist-summary"></p><div id="checklist-groups" class="check-groups"></div><p class="fine">截止日按放票、退改和办理时间倒推，越近越靠前；入境要求以官方页面为准，出发前再核对一次。</p></section>
     <section class="wrap section" id="drive"><div class="section-head"><div><p class="eyebrow">怎么移动</p><h2>租车与交通</h2></div></div><div id="rental"></div></section>
     <section class="wrap section" id="prep"><div class="section-head"><div><p class="eyebrow">自己的笔记</p><h2>小提醒</h2></div></div><form id="todo-form"><label for="todo-text">添加自己的提醒</label><div><input id="todo-text" maxlength="300" placeholder="想记下什么？"><button>添加</button></div></form><ul id="todos"></ul></section>
     <section class="wrap section" id="research"><h2>来源与待确认</h2><div id="sources"></div></section>

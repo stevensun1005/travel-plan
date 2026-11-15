@@ -549,5 +549,65 @@
       "note": "缓存道路为路网估算，不含实时拥堵。"
     }
   ],
-  "events": []
+  "events": [],
+  "checklist": {
+    "asOf": "2030-04-15",
+    "groups": [
+      {
+        "id": "documents",
+        "label": "证件"
+      },
+      {
+        "id": "bookings",
+        "label": "要预订的"
+      },
+      {
+        "id": "before",
+        "label": "出发前"
+      }
+    ],
+    "items": [
+      {
+        "id": "id-check",
+        "group": "documents",
+        "title": "检查两人的带照片证件（国内航班）",
+        "who": "两人",
+        "due": "2030-06-01",
+        "lead": "提前4周",
+        "note": "演示：国际行程会在这里列护照有效期、签证/电子旅行许可和办理时间。"
+      },
+      {
+        "id": "hotel",
+        "group": "bookings",
+        "title": "订 Harbour House（虚构）",
+        "who": "两人",
+        "due": "2030-05-15",
+        "lead": "越早越好",
+        "note": "演示酒店，不能预订。"
+      },
+      {
+        "id": "car",
+        "group": "bookings",
+        "title": "订两天敞篷车（虚构）",
+        "due": "2030-05-31",
+        "lead": "提前4周",
+        "note": "按驾驶人实际年龄和驾照查价。"
+      },
+      {
+        "id": "dinner",
+        "group": "bookings",
+        "title": "海鲜晚餐订位",
+        "due": "2030-06-14",
+        "lead": "提前2周"
+      },
+      {
+        "id": "insurance",
+        "group": "before",
+        "title": "买旅行保险",
+        "who": "两人",
+        "due": "2030-06-27",
+        "lead": "出发前"
+      }
+    ]
+  }
 }

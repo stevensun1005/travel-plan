@@ -49,6 +49,17 @@ class ToolsTest(unittest.TestCase):
             errors,_=validate(project)
             for text in ['bundles unknown option','bundle-only','unknown place','unknown day','share.bbox','Base map file escapes']:
                 self.assertTrue(any(text in e for e in errors),text)
+    def test_checklist_items_are_checked(self):
+        with tempfile.TemporaryDirectory() as folder:
+            project=create(Path(folder)/'trip',True);path=project/'trip-data.json';data=json.loads(path.read_text(encoding='utf-8'))
+            self.assertEqual(validate(project)[0],[])
+            items=data['checklist']['items']
+            items.append(dict(items[0]))
+            items[1].update(group='nowhere',due='2030-13-01',url='javascript:alert(1)',status='maybe')
+            path.write_text(json.dumps(data),encoding='utf-8')
+            errors,_=validate(project)
+            for text in ['duplicate id','unknown group','invalid due date','url must be http','status must be']:
+                self.assertTrue(any(text in e for e in errors),text)
     def test_basemap_builds_offline_from_osm_elements(self):
         spec=importlib.util.spec_from_file_location('fetch_basemap',ROOT/'scripts/fetch_basemap.py');basemap=importlib.util.module_from_spec(spec);spec.loader.exec_module(basemap)
         geo=lambda pts:[{'lon':x,'lat':y} for x,y in pts]
