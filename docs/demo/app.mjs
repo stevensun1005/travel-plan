@@ -172,8 +172,9 @@ function renderChecklist(){
   const list=data.checklist;if(!list?.items?.length){$('#checklist').hidden=true;$('a[href="#checklist"]')?.setAttribute('hidden','');return;}
   const storage=`travel-plan:checklist:v1:${data.trip.id}`,saved=read(storage,{});const done=saved&&typeof saved==='object'?saved:{};
   const groups=list.groups?.length?list.groups:[{id:'',label:'待办'}];
-  // 每组可以收起；group.open:false 表示默认收起。勾选后重画时保留当前展开状态。
-  const opened=new Map(groups.map(g=>[g.id||'',g.open!==false]));
+  // 只在手机上折叠（电脑上全部展开）；group.open:false 表示手机上默认收起。勾选后重画时保留当前展开状态。
+  const defaults=()=>new Map(groups.map(g=>[g.id||'',!PHONE.matches||g.open!==false]));
+  let opened=defaults();
   const sortKey=item=>daysUntil(item.due)??1e6;
   const isDone=item=>done[item.id]??(item.status==='done'||item.status==='booked');
   const chip=item=>{
@@ -194,6 +195,8 @@ function renderChecklist(){
     const fact=facts?.querySelector('.todo-fact');if(fact)fact.textContent=open.length?`待办 ${open.length} 项`:'待办已完成';
   };
   $('#checklist-groups').addEventListener('toggle',e=>{const g=e.target.closest?.('[data-group]');if(g)opened.set(g.dataset.group,g.open);},true);
+  $('#checklist-groups').addEventListener('click',e=>{if(!PHONE.matches&&e.target.closest('summary'))e.preventDefault();});
+  PHONE.addEventListener?.('change',()=>{opened=defaults();draw();});
   $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
   draw();
 }

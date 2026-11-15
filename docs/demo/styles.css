@@ -384,6 +384,7 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
 .check-group[open] .fold::before{content:"−"}
 .check-group[open]>summary{margin-bottom:4px}
 .check-group summary:hover .fold{background:var(--hl)}
+@media (min-width:761px){.check-group summary{cursor:default}.check-group .fold{display:none}}
 .check-group h3 small{font:14px var(--hand);color:var(--ink2)}
 .check-group ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:0 28px}
 .check-group li{padding:9px 0;border-top:1.5px dashed var(--line)}
