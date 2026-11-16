@@ -6,7 +6,7 @@
 | --- | --- |
 | `version` | `1` |
 | `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,demo,notice,constraints[]`，ISO日期；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
-| `budget` | `target,categories[],presets[]` |
+| `budget` | `target,categories[],presets[],chartGroups?` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,fareFamily,departure,arrival,route,duration,connection,note,url` |
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `time,title,text,placeId,links[]` |
 | `map` | `places[],dailyRoutes[],routesFile,basemapFile` |
@@ -17,6 +17,7 @@
 | `checklist` | 出发前待办：`{asOf,groups[],items[]}`，见下方「待办清单」 |
 | `sources` | `{label,url,checkedOn,note}` |
 | `events` | `{title,status,priceLabel,description,conflict,url}`，节日活动或特别晚餐备选；不暗示已加入预算 |
+| `cash` | 可选：换钱建议，见下方「带多少现金」 |
 
 ## 预算选项
 
@@ -33,6 +34,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 - 待办分组：`checklist.groups[]` 可带 `open:false`，手机上这一组默认收起（点标题展开）；不写就是展开。电脑上各组总是全部展开，不折叠。通常把要抢票、有截止日的预订组展开，证件和出发前杂事收起。
 - 行李option可带 `bagCount`，在已给出航班行李价时联动；否则使用明示预留，不猜收费。
 - preset：`{id,label,selections:{类别ID:选项ID},note}`；估算状态不会因组合而变成报价。
+- 饼图分组：几个类别左边分开选、右边饼图合成一块时，类别加 `chartGroup:"组ID"`，并在 `budget.chartGroups` 里写 `{组ID:{label,icon?,color?}}`。例如海边酒店和火山酒店都写 `chartGroup:"hotel"`，饼图只显示一块「酒店」，点开按类别列出每一项（类别有 `items` 时列出它的明细）；租车和油费停车同理。没写 `chartGroups` 时每个类别各占一块。
 - 套餐：option可带 `bundles:{类别ID:选项ID}`，例如机票选项 `{"hotel":"in-package"}`。选中它时被包含的类别锁定为该选项（下拉框禁用）；被包含的选项标 `bundleOnly:true`、金额通常为0，没有套餐选中时隐藏并回到默认。默认选项不能是bundleOnly。套餐要按单独购买价拆分时加 `split:{类别ID:单买参考价}`（含自己的类别，如 `{"flights":1931,"hotel":5918.92}`）：套餐价按这些价格的比例分给各类别，饼图和卡片显示拆分后的金额，总额不变；参考价要同口径（都含税、同人数同晚数）并在note里写来源。交通等其他类别也可以一起打包（例如套餐含接送时 `{"hotel":"in-package","transport":"no-airport"}`）。
 - 前端选择用于预算比较。下方日程和已缓存道路按原排定行程；变更真实酒店后应由Agent更新POI与缓存，不暗示选择费用就完成全部重新规划。
 
@@ -63,6 +65,20 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 | `status` | todo / booked / done；用户勾选保存在浏览器，不改数据 |
 
 `asOf` 写资料核对日期。证件要求以官方来源为准；会变的规定（费用、有效期规则、放票窗口）写进 note 并附来源。
+
+## 带多少现金
+
+`cash` 在预算下面显示一块「换钱」，缺省时整块隐藏：
+
+| 字段 | 说明 |
+| --- | --- |
+| `summary` | 一段话：哪些能刷卡、现金用在哪 |
+| `currencies[]` | `{code,label,symbol,amount,usd?,cad?,how}`：每种要带的钱一张卡片。`amount` 是建议带的数（按面额凑整），`usd/cad` 是折算参考，`how` 写在哪换、要什么面额 |
+| `items[]` | `{label,currency,amount,note}`：每笔现金用途，`currency` 对应上面的 `code`；用途合计和 `amount` 不一样时页面会显示合计 |
+| `tips[]` | 汇率、刷卡选本币、ATM手续费这类提醒 |
+| `asOf` | 核对日期 |
+
+只列真正要用现金的地方（只收现金的门票、小费、小摊、停车看车、应急），刷卡能付的不算。当地货币不好在出发地换时，写明落地后在哪取；用美元的目的地只列美元。金额是建议，不是已发生的花费，不进预算饼图。
 
 ## 分享路线图
 

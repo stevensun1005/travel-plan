@@ -61,13 +61,13 @@ function updateBudget(sync=false,persist=true){
     }
   }
   let offset=0;const circumference=2*Math.PI*80;
-  $('#budget-chart').innerHTML=`<title>分类支出占比，总额${money(result.total)}</title><circle cx="110" cy="110" r="80" fill="none" stroke="#e5eadf" stroke-width="32"/>${result.rows.map((row,i)=>{
+  $('#budget-chart').innerHTML=`<title>分类支出占比，总额${money(result.total)}</title><circle cx="110" cy="110" r="80" fill="none" stroke="#e5eadf" stroke-width="32"/>${chartRows(result).map((row,i)=>{
     if(!row.amount||!result.total)return '';
     const length=row.amount/result.total*circumference;const mark=`<circle class="slice" cx="110" cy="110" r="80" fill="none" stroke="${color(row.color,i)}" stroke-width="32" stroke-dasharray="${length} ${circumference-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 110 110)" tabindex="0"><title>${escape(row.label)} · ${money(row.amount)} · ${(row.amount/result.total*100).toFixed(1)}%</title></circle>`;offset+=length;return mark;
   }).join('')}<text class="chart-label" x="110" y="103" text-anchor="middle">全程合计 · ${escape(data.trip.currency)}</text><text class="chart-value" x="110" y="130" text-anchor="middle">${result.total.toLocaleString('en-CA',{maximumFractionDigits:2})}</text>`;
   // 记账式明细：每个分类一行，点 + 展开这一类里的每一笔。
-  $('#budget-legend').innerHTML=result.rows.map((row,i)=>{
-    const items=itemize(row),pct=result.total?row.amount/result.total*100:0,name=row.label.split('｜')[0],open=ledgerOpen.has(row.id),id=escape(row.id);
+  $('#budget-legend').innerHTML=chartRows(result).map((row,i)=>{
+    const items=ledgerItems(row),pct=result.total?row.amount/result.total*100:0,name=row.label.split('｜')[0],open=ledgerOpen.has(row.id),id=escape(row.id);
     const fine=items.some(it=>it.scaled)?`<li class="ledger-fine">${row.splitFrom?(items.length>1?'套餐价按单买价比例折到这一类，明细同比例折算':'套餐总价按单买价比例折到这一类'):'明细按当前选择同比例折算'}</li>`:'';
     return `<li class="ledger-row${open?' open':''}" style="--c:${color(row.color,i)}"><button type="button" class="ledger-head" data-ledger="${id}" aria-expanded="${open}" aria-controls="ledger-${id}"><span class="ledger-icon" aria-hidden="true">${escape(row.icon||name.slice(0,1))}</span><span class="ledger-name">${escape(name)}</span><span class="ledger-amount">${money(row.amount)}</span><span class="ledger-meta">${pct.toFixed(1)}%</span><span class="ledger-count">${items.length} 笔</span><span class="ledger-toggle" aria-hidden="true">${open?'−':'+'}</span><span class="ledger-bar" aria-hidden="true"><i style="width:${pct.toFixed(1)}%"></i></span></button><ul class="ledger-items" id="ledger-${id}"${open?'':' hidden'}>${items.map(it=>`<li><span>${escape(it.label)}${it.note?`<small>${escape(it.note)}</small>`:''}</span><b>${money(it.amount)}<small>${(it.share*100).toFixed(1)}%</small></b></li>`).join('')}${fine}</ul></li>`;
   }).join('');
@@ -76,13 +76,48 @@ function updateBudget(sync=false,persist=true){
   if(persist)save();
 }
 
+// 饼图分组：budget.chartGroups 里定义的组（例如两家酒店），左边分开选，右边饼图和明细合成一块，点开看每一项。
+function chartRows(result){
+  const groups=data.budget.chartGroups||{},out=[],byGroup=new Map();
+  for(const row of result.rows){
+    const g=row.chartGroup&&groups[row.chartGroup];
+    if(!g){out.push(row);continue;}
+    let agg=byGroup.get(row.chartGroup);
+    if(!agg){agg={id:`group-${row.chartGroup}`,label:g.label||row.label,icon:g.icon||row.icon,color:g.color||row.color,amount:0,parts:[],option:{}};byGroup.set(row.chartGroup,agg);out.push(agg);}
+    agg.amount=Math.round((agg.amount+row.amount)*100)/100;agg.parts.push(row);
+  }
+  return out;
+}
+function ledgerItems(row){
+  if(!row.parts)return itemize(row);
+  const total=row.amount;
+  return row.parts.flatMap(part=>{
+    const items=itemize(part),single=!(part.option?.items||[]).length;
+    return items.map(it=>({...it,label:single?`${part.label.split('｜')[0]} · ${it.label}`:it.label,share:total?it.amount/total:0}));
+  });
+}
+function renderCash(){
+  // 换钱建议：data.cash = {summary,currencies[{code,label,symbol,amount,usd?,cad?,how}],items[{label,currency,amount,note}],tips[]}
+  const c=data.cash,sec=$('#cash');if(!sec)return;if(!c?.currencies?.length){sec.hidden=true;return;}
+  sec.hidden=false;
+  const fmt=(sym,n)=>`${sym}${Number(n).toLocaleString('en-CA',{maximumFractionDigits:2})}`;
+  const sym=Object.fromEntries(c.currencies.map(x=>[x.code,x.symbol||x.code+' ']));
+  const cards=c.currencies.map(x=>{
+    const mine=(c.items||[]).filter(i=>i.currency===x.code),used=mine.reduce((s,i)=>s+Number(i.amount||0),0);
+    const eq=[x.usd&&`≈ US$${Number(x.usd).toLocaleString('en-CA',{maximumFractionDigits:0})}`,x.cad&&`≈ CA$${Number(x.cad).toLocaleString('en-CA',{maximumFractionDigits:0})}`].filter(Boolean).join(' · ');
+    const rows=mine.map(i=>`<li><span>${escape(i.label)}${i.note?`<small>${escape(i.note)}</small>`:''}</span><b>${fmt(sym[i.currency],i.amount)}</b></li>`).join('');
+    const sum=used&&used!==Number(x.amount)?`<li class="cash-sum"><span>用途合计（带的钱按面额凑整）</span><b>${fmt(x.symbol||'',used)}</b></li>`:'';
+    return `<article class="cash-card"><p class="cash-label">${escape(x.label)}</p><p class="cash-amount">${fmt(x.symbol||'',x.amount)}</p>${eq?`<p class="cash-eq">${escape(eq)}</p>`:''}<p class="cash-how">${escape(x.how||'')}</p>${rows?`<ul class="cash-items">${rows}${sum}</ul>`:''}</article>`;
+  }).join('');
+  $('#cash-body').innerHTML=`${c.summary?`<p class="cash-summary">${escape(c.summary)}</p>`:''}<div class="cash-grid">${cards}</div>${c.tips?.length?`<ul class="cash-tips">${c.tips.map(t=>`<li>${escape(t)}</li>`).join('')}</ul>`:''}${c.asOf?`<p class="cash-asof">资料核对于 ${escape(c.asOf)}</p>`:''}`;
+}
 function quotesHtml(option){
   // 各平台比价：同一个产品在不同平台的含税总价，已按 fx 换算成旅行币种，最便宜的在最上面。
   const quotes=option?.id!=='custom'&&Array.isArray(option?.quotes)?option.quotes:[];if(!quotes.length)return '';
   const cur=data.trip.currency,fx=data.fx;
   const rows=quotes.map(q=>{
     const name=q.url?`<a href="${escape(q.url)}" target="_blank" rel="noopener">${escape(q.platform)}</a>`:escape(q.platform);
-    if(q.available===false)return `<li class="na"><span>${name}</span><b>${escape(q.note||'没有可订的')}</b></li>`;
+    if(q.available===false)return `<li class="na"><span>${name}<small>${escape(q.note||'没有可订的')}</small></span><b>—</b></li>`;
     const original=q.currency&&q.currency!==cur?`<small>${escape(q.currency)} ${Number(q.amount).toLocaleString('en-CA')}</small>`:'';
     const best=option.source===q.platform&&validMoney(q.converted)&&q.converted===option.amount;
     return `<li class="${best?'best':''}"><span>${name}${best?'<i>最低</i>':''}${q.note?`<small>${escape(q.note)}</small>`:''}</span><b>${validMoney(q.converted)?money(q.converted):'—'}${original}</b></li>`;
@@ -276,7 +311,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();navSpy();renderMap();
+    renderBudget();renderCash();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();navSpy();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');
