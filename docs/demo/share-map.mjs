@@ -3,6 +3,43 @@
 // routes.json 的道路几何、basemap.json 的陆地/山区/公路。不下载、不上传任何东西。
 
 const W = 1200, SCALE = 2;
+const QR_URL = 'https://github.com/stevensun1005/travel-plan';
+// 预先生成的二维码（QR version 4, M 纠错, 不含留白），1 = 黑格
+const QR_ROWS = [
+  '111111100111110111110111001111111',
+  '100000100000011100100001101000001',
+  '101110100101010010101111001011101',
+  '101110100000011111111111001011101',
+  '101110100010111000111000101011101',
+  '100000101110111110110000001000001',
+  '111111101010101010101010101111111',
+  '000000000110100111100110100000000',
+  '100101101000010000001110010100000',
+  '001011011100111001101100111100001',
+  '011110100101111000110000100110101',
+  '110101011000010010101110011011000',
+  '100010100010101110101011101001010',
+  '010001000000101101101000101010011',
+  '100101110110010110010101011111110',
+  '111111011111100011001101001000010',
+  '100111111000010101000110101011010',
+  '110110000001010011000001110101010',
+  '001011111011101001000100110000101',
+  '011000011101001100011011110100010',
+  '100011101000110001011001110000010',
+  '010111011001101101010100101001011',
+  '111001111101101010010100101010001',
+  '010000000010111100111110100001011',
+  '101110100011100001001101111110010',
+  '000000001100010001010110100011011',
+  '111111100101110001101010101011100',
+  '100000101111001001111110100010010',
+  '101110100011110000101000111111011',
+  '101110101100011111110011001010010',
+  '101110100111100111011100000011101',
+  '100000100101111001011101100000000',
+  '111111101110010100010100100010010',
+];
 const HAND = '"Patrick Hand","Ma Shan Zheng","Comic Sans MS","KaiTi","STKaiti",cursive';
 const SANS = '-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI","Segoe UI Emoji","Apple Color Emoji",sans-serif';
 const INK = '#2a2a2e', INK2 = '#62626b', PAPER = '#fbf7ec', CARD = '#fffdf5', HL = '#fff0a0';
@@ -38,6 +75,15 @@ function fit(ctx, str, font, maxW) { // shorten to the measured width, ending wi
   while (t.length > 1 && ctx.measureText(t + '…').width > maxW) t = t.slice(0, -1);
   return t + '…';
 }
+// 页头右上角的小二维码：扫码打开 travel-plan 的 GitHub 仓库
+function drawQr(ctx, x, y, size, caption) {
+  const n = QR_ROWS.length, pad = 8, cell = (size - pad * 2) / n;
+  sketchBox(ctx, x, y, size, size, { fill: '#fff', shadow: 3, lw: 2, r: [10, 4, 10, 4] });
+  ctx.fillStyle = INK;
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (QR_ROWS[r][c] === '1') ctx.fillRect(x + pad + c * cell, y + pad + r * cell, cell + .3, cell + .3);
+  text(ctx, fit(ctx, caption, `15px ${SANS}`, size + 40), x + size / 2, y + size + 20, { font: `15px ${SANS}`, color: INK2, align: 'center' });
+}
+
 function dateLabel(date) {
   if (!date) return '';
   const d = new Date(`${date}T12:00:00`);
@@ -90,10 +136,12 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
   ctx.restore();
   const title = share.title || `${data.trip.title} · ${i18n.lang === 'en' ? 'route map' : '路线图'}`;
   let size = 62; ctx.font = `bold ${size}px ${HAND}`;
-  while (size > 38 && ctx.measureText(title).width > W - 120) { size -= 2; ctx.font = `bold ${size}px ${HAND}`; }
-  const tw = text(ctx, fit(ctx, title, `bold ${size}px ${HAND}`, W - 120), 60, 142, { font: `bold ${size}px ${HAND}` });
+  while (size > 38 && ctx.measureText(title).width > W - 270) { size -= 2; ctx.font = `bold ${size}px ${HAND}`; }
+  const tw = text(ctx, fit(ctx, title, `bold ${size}px ${HAND}`, W - 270), 60, 142, { font: `bold ${size}px ${HAND}` });
   ctx.fillStyle = HL; ctx.globalCompositeOperation = 'multiply'; ctx.fillRect(60 + tw * .45, 118, tw * .56, 26); ctx.globalCompositeOperation = 'source-over';
-  text(ctx, fit(ctx, share.subtitle || data.trip.subtitle || '', `24px ${SANS}`, W - 124), 62, 186, { font: `24px ${SANS}`, color: INK2 });
+  text(ctx, fit(ctx, share.subtitle || data.trip.subtitle || '', `24px ${SANS}`, W - 274), 62, 186, { font: `24px ${SANS}`, color: INK2 });
+
+  drawQr(ctx, W - 172, 28, 132, i18n.lang === 'en' ? 'Scan to make your own' : '扫码做同款');
 
   // ---- 地图面板
   const MX = 40, MY = 210, MW = W - 80, MH = 860;
