@@ -9,7 +9,7 @@
 | `budget` | `target,categories[],presets[],chartGroups?` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,fareFamily,departure,arrival,route,duration,connection,note,url` |
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `time,title,text,placeId,links[]` |
-| `map` | `places[],dailyRoutes[],routesFile,basemapFile` |
+| `map` | `places[],dailyRoutes[],routesFile,basemapFile,home?` |
 | `share` | 可选：分享路线图海报，见下方「分享路线图」 |
 | `coverage` | `{item,when,note}` |
 | `rental` | `{title,summary,details:[{label,value}],notes[],links:[{label,url}]}` |
@@ -48,7 +48,11 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 
 `routesFile`默认`routes.json`，内容为 `{provider,generatedOn,routes:[{day,placeIds,geometry,distance,duration,legs,snappedWaypoints,source}]}`。距离米、时间秒；legs数量等于途经点数减一。几何来自实际路由结果，不手画。估时不含实时拥堵和停留。
 
-`basemapFile`默认`basemap.json`，由 `fetch_basemap.py` 生成：`{provider,generatedOn,bbox,detail,land[],coast[],green[],roads:{motorway,trunk,primary,secondary},shields[],labels[]}`。坐标为 `[lng,lat]`；`land/green` 是多边形环列表，`coast` 是没能闭合成陆地时保留的海岸线；`shields` 为 `{ref,cls,lat,lng}`，`labels` 为 `{name,lat,lng,rank,kind}`（kind：town/peak/bay/range）。数据来自OpenStreetMap（ODbL），保留页面上的OSM标注。
+世界底图：页面自带 `vendor/world/countries-110m.json`（Natural Earth 1:110m，公有领域），始终画在最下面，缩小或在线图块被拦截时也能看到各国轮廓和中文国名。`map.home` 可选：`{name,lat,lng}`，例如 `{"name":"多伦多（出发地）","lat":43.6532,"lng":-79.3832}`；写了它，地图上会标出出发地，并多一个「和多伦多一起看」按钮，一键缩放到出发地和旅行地都在画面里。
+
+`fetch_basemap.py` 的范围要盖住地图常看的画面：沿海或狭长的线路，南北方向多留一些，不然画面上下超出底图的部分会显示成海。
+
+`basemapFile`默认`basemap.json`，由 `fetch_basemap.py` 生成：`{provider,generatedOn,bbox,detail,land[],coast[],green[],water[],roads:{motorway,trunk,primary,secondary,tertiary},shields[],labels[]}`。坐标为 `[lng,lat]`；`land/green/water` 是多边形环列表（`water` 是看得见的湖和水库，河流不算；`tertiary` 三级公路只在 full 细节下抓），`coast` 是没能闭合成陆地时保留的海岸线；`shields` 为 `{ref,cls,lat,lng}`，`labels` 为 `{name,lat,lng,rank,kind}`（kind：town/peak/bay/range）。数据来自OpenStreetMap（ODbL），保留页面上的OSM标注。
 
 ## 待办清单
 

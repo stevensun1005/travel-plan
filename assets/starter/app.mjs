@@ -158,19 +158,36 @@ function directions(places,mode='driving'){
 async function renderMap(){
   const config=data.map;if(!config?.places?.length){$('#route').hidden=true;return;}
   if(!window.L){$('#map-details').innerHTML='<p>地图组件未能加载，请刷新。</p>';return;}
-  const map=L.map('map',{scrollWheelZoom:false,zoomSnap:.25,zoomDelta:.5});L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',e=>{e.tile.style.visibility='hidden';}).addTo(map);L.control.scale({imperial:false}).addTo(map);
+  const map=L.map('map',{scrollWheelZoom:false,zoomSnap:.25,zoomDelta:1});L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).on('tileerror',e=>{e.tile.style.visibility='hidden';}).addTo(map);L.control.scale({imperial:false}).addTo(map);
+  // World outline (Natural Earth 1:110m, bundled): countries and their names stay visible when zoomed out,
+  // even where online tiles are blocked. Names thin out by rank as you zoom in and hide once the trip map takes over.
+  map.createPane('world').style.zIndex=140;
+  const worldLabels=L.layerGroup().addTo(map);
+  const syncWorld=()=>{const z=map.getZoom(),max=z<=2?2:z<=3?3:z<=4?4:z<=5?5:z<=6?7:0;worldLabels.eachLayer(m=>m.getElement()?.classList.toggle('hide',m.options.rank>max));};
+  fetch('vendor/world/countries-110m.json').then(r=>r.ok?r.json():null).then(w=>{
+    if(!w?.countries)return;const ring=pts=>pts.map(([x,y])=>[y,x]);
+    L.polygon(w.countries.flatMap(c=>c.p.map(ring)),{pane:'world',interactive:false,color:'#b9b19b',weight:.8,fillColor:'#f3f0e2',fillOpacity:1}).addTo(map);
+    w.countries.forEach(c=>L.marker([c.y,c.x],{pane:'world',interactive:false,keyboard:false,rank:c.r,icon:L.divIcon({className:'world-label',html:`<span>${escape(c.n)}</span>`,iconSize:null})}).addTo(worldLabels));
+    syncWorld();
+  }).catch(()=>{});
+  map.on('zoomend',syncWorld);
+  if(config.home&&Number.isFinite(config.home.lat)&&Number.isFinite(config.home.lng)){
+    map.createPane('home').style.zIndex=450;
+    L.marker([config.home.lat,config.home.lng],{pane:'home',interactive:false,keyboard:false,icon:L.divIcon({className:'home-label',html:`<span>★ ${escape(config.home.name||'出发地')}</span>`,iconSize:null})}).addTo(map);
+  }
   // Offline base map (land, forests, roads by class, shields, place names) drawn under the tiles.
   // It shows wherever online tiles are blocked (some hosts' CSP) — see scripts/fetch_basemap.py.
   map.createPane('base').style.zIndex=150;
   fetch(config.basemapFile||'basemap.json').then(r=>r.ok?r.json():null).then(b=>{
     if(!b)return;basemap=b;const ll=line=>line.map(([x,y])=>[y,x]),flat={pane:'base',interactive:false};
-    if(b.land?.length)L.polygon(b.land.map(poly=>poly.map(ll)),{...flat,color:'#9fb39a',weight:1.2,fillColor:'#f3f0e2',fillOpacity:1}).addTo(map);
+    if(b.land?.length)L.polygon(b.land.map(poly=>poly.map(ll)),{...flat,stroke:false,fillColor:'#f3f0e2',fillOpacity:1}).addTo(map);
     else{$('#map').classList.add('base-land');if(b.coast?.length)L.polyline(b.coast.map(ll),{...flat,color:'#6f9fb3',weight:2}).addTo(map);}
     if(b.green?.length)L.polygon(b.green.map(poly=>poly.map(ll)),{...flat,stroke:false,fillColor:'#cfe2bd',fillOpacity:.85}).addTo(map);
-    // Roads from small to big: secondary, primary, trunk, motorway — each with a soft casing so it reads on the paper.
-    for(const [cls,w,c] of [['secondary',1.3,'#d3cdb8'],['primary',2,'#f2d48c'],['trunk',2.6,'#efb36b'],['motorway',3.2,'#e38f4a']]){
+    if(b.water?.length)L.polygon(b.water.map(poly=>poly.map(ll)),{...flat,color:'#8fb6c9',weight:1,fillColor:'#bcd8e6',fillOpacity:1}).addTo(map);
+    // Roads from small to big: tertiary, secondary, primary, trunk, motorway — the big ones with a soft casing so they read on the paper.
+    for(const [cls,w,c] of [['tertiary',.9,'#ddd6c2'],['secondary',1.3,'#d3cdb8'],['primary',2,'#f2d48c'],['trunk',2.6,'#efb36b'],['motorway',3.2,'#e38f4a']]){
       const lines=b.roads?.[cls];if(!lines?.length)continue;
-      if(cls!=='secondary')L.polyline(lines.map(ll),{...flat,color:'#8c7a5e',weight:w+1.6,opacity:.35}).addTo(map);
+      if(cls!=='secondary'&&cls!=='tertiary')L.polyline(lines.map(ll),{...flat,color:'#8c7a5e',weight:w+1.6,opacity:.35}).addTo(map);
       L.polyline(lines.map(ll),{...flat,color:c,weight:w}).addTo(map);
     }
     const tag=(lat,lng,cls,html)=>L.marker([lat,lng],{pane:'base',interactive:false,keyboard:false,icon:L.divIcon({className:cls,html:`<span>${html}</span>`,iconSize:null})}).addTo(map);
@@ -190,7 +207,7 @@ async function renderMap(){
     visible.forEach((p,index)=>{const marker=L.marker([p.lat,p.lng],{title:p.name,icon:L.divIcon({className:'map-pin',html:String(index+1),iconSize:[30,30],iconAnchor:[15,15]})}).bindPopup(`<b>${escape(p.name)}</b><br>${escape(p.address||'')}<br>${escape(p.note||'')}<br>${link('Google Maps',`https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`)}`).addTo(layer);markers.set(p.id,marker);});
     const special=route&&!['driving','transfer','walking'].includes(route.transport);const navigation=route&&!special?directions(route.placeIds.map(get),route.transport==='walking'?'walking':'driving'):'';
     const distance=lines.reduce((sum,r)=>sum+r.distance,0),duration=lines.reduce((sum,r)=>sum+r.duration,0);
-    $('#map-details').innerHTML=`<h3>${escape(route?data.days.find(d=>d.day===day)?.title||route.label:data.trip.title)}</h3><p>${escape(route?.note||'按日期查看地点、道路和导航。')}</p><p>${lines.length?`道路约${(distance/1000).toFixed(1)} km · 路网估时${Math.round(duration/60)}分钟`:special?'此日使用专用交通，以官方线路为准，不画汽车最短路线。':'道路缓存待补充；先显示准确地点，不画示意连线。'}</p><div class="map-actions">${link(special?'官方线路':'当天导航',special?route.officialUrl:navigation)}<button data-fit>完整范围</button><button data-fullscreen>全屏地图</button></div><p class="swipe-hint">${visible.length}个地点 · 左右滑动，点一下在地图上定位</p><ol class="map-stops">${visible.map((p,i)=>`<li><button data-pin="${escape(p.id)}">${i+1}. ${escape(p.name)}</button><small>${escape(p.address||p.note||'')}</small></li>`).join('')}</ol>${legsHtml(lines)}`;fit();
+    $('#map-details').innerHTML=`<h3>${escape(route?data.days.find(d=>d.day===day)?.title||route.label:data.trip.title)}</h3><p>${escape(route?.note||'按日期查看地点、道路和导航。')}</p><p>${lines.length?`道路约${(distance/1000).toFixed(1)} km · 路网估时${Math.round(duration/60)}分钟`:special?'此日使用专用交通，以官方线路为准，不画汽车最短路线。':'道路缓存待补充；先显示准确地点，不画示意连线。'}</p><div class="map-actions">${link(special?'官方线路':'当天导航',special?route.officialUrl:navigation)}<button data-fit>完整范围</button>${config.home?`<button data-home>和${escape((config.home.name||'出发地').replace(/（.*?）|\(.*?\)/g,''))}一起看</button>`:''}<button data-fullscreen>全屏地图</button></div><p class="swipe-hint">${visible.length}个地点 · 左右滑动，点一下在地图上定位</p><ol class="map-stops">${visible.map((p,i)=>`<li><button data-pin="${escape(p.id)}">${i+1}. ${escape(p.name)}</button><small>${escape(p.address||p.note||'')}</small></li>`).join('')}</ol>${legsHtml(lines)}`;fit();
   }
   function legsHtml(lines){
     // 分段路程：电脑上默认展开，手机上收起，免得把页面拉得很长。
@@ -201,6 +218,7 @@ async function renderMap(){
     const day=e.target.closest('[data-map-day]'),pin=e.target.closest('[data-pin]');
     if(day)show(Number(day.dataset.mapDay));if(pin){const marker=markers.get(pin.dataset.pin);if(marker){if(PHONE.matches)$('#map').scrollIntoView({block:'nearest',behavior:'smooth'});map.setView(marker.getLatLng(),16);marker.openPopup();}}
     if(e.target.closest('[data-fit]'))fit();
+    if(e.target.closest('[data-home]')&&config.home){const b=L.latLngBounds(config.places.map(p=>[p.lat,p.lng]));b.extend([config.home.lat,config.home.lng]);map.invalidateSize();map.fitBounds(b,{padding:[40,40]});}
     if(e.target.closest('[data-fullscreen]')){const panel=document.querySelector('.map-layout');if(document.fullscreenElement)document.exitFullscreen();else panel.requestFullscreen?.().catch(()=>fit());}
   });
   $('#share-map').onclick=async()=>{const btn=$('#share-map');btn.disabled=true;btn.textContent='正在画…';try{const m=await import('./share-map.mjs');await m.openShareMap({data,roads:cachedRoads,basemap,color});}catch(error){console.error(error);}finally{btn.disabled=false;btn.textContent='分享路线图';}};

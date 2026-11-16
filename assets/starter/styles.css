@@ -260,6 +260,11 @@ h3{font:700 21px/1.35 var(--hand);margin:0 0 6px}
 .map-stops button:hover{background:linear-gradient(transparent 58%,var(--hl) 58%)}
 .map-stops small{display:block;color:var(--ink2);font-size:12px;margin-top:2px}
 .map-pin{background:#fffdf5;color:#2a2a2e;border:2.5px solid #2a2a2e;border-radius:50% 46% 52% 44% / 46% 52% 44% 50%;text-align:center;font:700 15px/24px "Patrick Hand","Comic Sans MS",sans-serif;box-shadow:2px 2px 0 #2a2a2e}
+.world-label{font:600 11px/1.2 var(--sans);color:#8a826d;white-space:nowrap;text-shadow:0 0 3px #f3f0e2,0 0 3px #f3f0e2}
+.world-label span{display:inline-block;transform:translate(-50%,-50%)}
+.world-label.hide{display:none}
+.home-label{white-space:nowrap}
+.home-label span{display:inline-block;transform:translate(-8px,-50%);font:700 12px/1 var(--sans);color:#fff;background:#d2402f;border:1.5px solid #8f2a1f;border-radius:10px;padding:3px 7px;box-shadow:1px 1px 0 rgba(0,0,0,.25)}
 .base-label{font:600 11px/1.2 var(--sans);color:#5d6b60;white-space:nowrap;text-shadow:0 0 3px #f3f0e2,0 0 3px #f3f0e2,0 0 2px #f3f0e2}
 .base-label span{display:inline-block;transform:translate(-50%,-50%)}
 .base-label.rank-1{font:700 14px/1.2 var(--hand);color:#3f4c43}

@@ -1,4 +1,4 @@
-"""Cache an offline base map from OpenStreetMap: land, forests, roads by class, route shields and place names.
+"""Cache an offline base map from OpenStreetMap: land, forests, lakes, roads by class, route shields and place names.
 
 The page draws it under the online tiles, so the map still reads where tiles are blocked (for example a
 hosting CSP). One Overpass request per run, with backoff across public mirrors. Optional: with `shapely`
@@ -19,7 +19,7 @@ from validate_trip import validate
 ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter',
              'https://maps.mail.ru/osm/tools/overpass/api/interpreter']
 USER_AGENT = 'travel-plan/1.0 (personal itinerary basemap)'
-ROAD_CLASSES = ['motorway', 'trunk', 'primary', 'secondary']
+ROAD_CLASSES = ['motorway', 'trunk', 'primary', 'secondary', 'tertiary']
 MARINE_WORDS = ('Fisheries', 'MLCD', 'Marine', 'Wildlife Refuge', 'Lagoon')
 
 try:  # optional, improves mainland coastlines
@@ -138,14 +138,14 @@ def detail_for(bbox):
 
 def build_query(bbox, detail):
     b = f'({bbox[1]},{bbox[0]},{bbox[3]},{bbox[2]})'
-    roads = 'motorway|trunk|primary|secondary' if detail == 'full' else 'motorway|trunk|primary' if detail == 'medium' else 'motorway|trunk'
+    roads = 'motorway|trunk|primary|secondary|tertiary' if detail == 'full' else 'motorway|trunk|primary' if detail == 'medium' else 'motorway|trunk'
     area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1])
     places = 'city|town|village|suburb|neighbourhood|quarter' if area < .05 else 'city|town|village' if detail == 'full' else 'city|town'
     parts = [f'way["natural"="coastline"]{b};', f'way["highway"~"^({roads})$"]{b};', f'node["place"~"^({places})$"]{b};']
     if detail != 'light':
         parts += [f'way["landuse"="forest"]{b};', f'relation["landuse"="forest"]{b};', f'way["leisure"="nature_reserve"]{b};',
                   f'relation["leisure"="nature_reserve"]{b};', f'node["natural"="peak"]["name"]{b};', f'node["natural"="bay"]["name"]{b};',
-                  f'nwr["natural"="mountain_range"]["name"]{b};']
+                  f'nwr["natural"="mountain_range"]["name"]{b};', f'way["natural"="water"]{b};', f'relation["natural"="water"]{b};']
     if detail == 'full':
         parts += [f'way["natural"="wood"]{b};', f'relation["natural"="wood"]{b};']
     return '[out:json][timeout:180];(' + ''.join(parts) + ');out geom;'
@@ -179,7 +179,7 @@ def build(elements, bbox, use_shapely=None):
     tol = max(e - w, n - s) / 1500
     min_area = (e - w) * (n - s) * 2e-5
     ways = [x for x in elements if x['type'] == 'way']
-    payload = {'land': [], 'coast': [], 'green': [], 'roads': {}, 'shields': [], 'labels': []}
+    payload = {'land': [], 'coast': [], 'green': [], 'water': [], 'roads': {}, 'shields': [], 'labels': []}
 
     # land
     coast = merge_lines([coords(x.get('geometry')) for x in ways if x.get('tags', {}).get('natural') == 'coastline'])
@@ -234,6 +234,17 @@ def build(elements, bbox, use_shapely=None):
         payload['green'] = [[rnd(simplify(list(g.exterior.coords), tol * 1.5))] for g in geoms if g.area > min_area]
     else:
         payload['green'] = [[rnd(simplify(r, tol * 1.5))] for r in rings]
+
+    # water: lakes and reservoirs big enough to see (rivers and ponds are left out)
+    lakes = []
+    for x in elements:
+        if x.get('tags', {}).get('natural') != 'water' or x.get('tags', {}).get('water') in ('river', 'canal', 'stream', 'pond', 'wastewater'):
+            continue
+        if x['type'] == 'way':
+            lakes.append(coords(x.get('geometry')))
+        elif x['type'] == 'relation':
+            lakes += merge_lines([coords(m.get('geometry')) for m in x.get('members', []) if m.get('type') == 'way' and m.get('role') in ('outer', '')])
+    payload['water'] = [[rnd(simplify(r, tol))] for r in lakes if len(r) >= 4 and r[0] == r[-1] and abs(ring_area(r)) > min_area * 5]
 
     # roads by class
     for cls in ROAD_CLASSES:
@@ -323,7 +334,7 @@ def fetch(folder, bbox=None, detail=None, pad=.15, endpoints=ENDPOINTS, raw_out=
     if not target.is_relative_to(folder):
         raise ValueError('Base map output escapes project')
     target.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-    print(f'land {len(payload["land"])} · coast {len(payload["coast"])} · green {len(payload["green"])} · roads '
+    print(f'land {len(payload["land"])} · coast {len(payload["coast"])} · green {len(payload["green"])} · water {len(payload["water"])} · roads '
           f'{ {k: len(v) for k, v in payload["roads"].items()} } · shields {len(payload["shields"])} · labels {len(payload["labels"])} · {target.stat().st_size // 1024} KB')
     return target
 

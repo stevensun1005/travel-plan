@@ -142,6 +142,8 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
     ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd');
     ctx.beginPath(); (basemap.green || []).forEach(poly => poly.forEach(r => ring(r)));
     ctx.fillStyle = '#c9e0b4'; ctx.fill('evenodd');
+    ctx.beginPath(); (basemap.water || []).forEach(poly => poly.forEach(r => ring(r)));
+    ctx.fillStyle = '#bcd8e6'; ctx.fill('evenodd');
     ctx.beginPath(); (basemap.land || []).forEach(poly => poly.forEach(r => ring(r))); (basemap.coast || []).forEach(l => ring(l, false));
     ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 2.2; ctx.stroke();
     for (const [cls, w, c] of [['primary', 1.6, '#e9c77d'], ['trunk', 2.4, '#e2a35f'], ['motorway', 3, '#d98a45']]) {
