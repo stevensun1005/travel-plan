@@ -302,11 +302,11 @@ function renderOwnPrompt(){
   // "Make your own" card: a ready-to-paste prompt that installs the skill and starts a new plan.
   const box=$('#own-prompt');if(!box)return;
   box.value=i18n.lang==='en'?[
-    'Please install the travel-plan skill first:',SKILL_REPO,'',
-    'How to install (pick the tool you use):',
-    `- Claude Code: git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
-    '- Codex: git clone this repository, then run python scripts/install.py in it','',
-    `Then use travel-plan to make me a trip page like "${data.trip.title}": flight and hotel options with a live budget, a real route map, a day-by-day plan, a pre-departure checklist and a shareable route poster.`,'',
+    `Please install the travel-plan skill: ${SKILL_REPO}`,
+    `- If you are Claude Code: run git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
+    '- If you are Codex: git clone the repository into a temporary folder, then run python scripts/install.py inside it',
+    '- If it is already installed, git pull in the installed folder to update it',
+    `Then read its SKILL.md and use it to make me a trip page like "${data.trip.title}": flights and hotels compared across booking sites, a budget that follows our choices, a real route map, a day-by-day plan, a pre-departure checklist and a shareable route poster, in Chinese and English.`,'',
     'About my trip:',
     '- From → to:',
     '- Departure and return dates:',
@@ -316,11 +316,11 @@ function renderOwnPrompt(){
     '- Food, fitness and pace:','',
     'Start with what I have given you and only ask about what is really missing.',
   ].join('\n'):[
-    '请先安装 travel-plan 旅行规划 skill：',SKILL_REPO,'',
-    '安装方法（按你用的工具选一种）：',
-    `- Claude Code：git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
-    '- Codex：git clone 这个仓库，然后在仓库目录运行 python scripts/install.py','',
-    `装好后，用 travel-plan 帮我做一份像「${data.trip.title}」这样的旅行攻略网页：可选机票酒店和实时预算、真实路线地图、每日行程、出发前待办清单和分享路线图。`,'',
+    `帮我安装 travel-plan 旅行规划 skill：${SKILL_REPO}`,
+    `- 如果你是 Claude Code：运行 git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
+    '- 如果你是 Codex：把仓库 git clone 到一个临时文件夹，进去运行 python scripts/install.py',
+    '- 已经装过的话，就进安装好的文件夹 git pull 更新到最新版',
+    `装好后读一遍里面的 SKILL.md，再用它帮我做一份像「${data.trip.title}」这样的旅行攻略网页：机票酒店多平台比价、跟着选择变的预算、真实路线地图、每日行程、出发前清单和分享路线图，中英文都能看。`,'',
     '我的情况：',
     '- 出发地 → 目的地：',
     '- 出发和回家的日期：',
