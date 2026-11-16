@@ -389,7 +389,7 @@
               {
                 "label": "Peñas Blancas river float wildlife tour",
                 "amount": 225.55,
-                "note": "~USD70/person (reseller price), tax estimated at 13%; no paddling"
+                "note": "Fortuna Welcome official price USD70/person with transfers, tax estimated at 13%; little or no paddling"
               },
               {
                 "label": "Mistico Hanging Bridges Park (self-guided)",
@@ -433,7 +433,7 @@
               {
                 "label": "Peñas Blancas river float wildlife tour",
                 "amount": 225.55,
-                "note": "~USD70/person (reseller price), tax estimated at 13%; no paddling"
+                "note": "Fortuna Welcome official price USD70/person with transfers, tax estimated at 13%; little or no paddling"
               },
               {
                 "label": "Mistico Hanging Bridges Park (self-guided)",
@@ -874,6 +874,14 @@
             {
               "label": "Marlin del Rey",
               "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
+            },
+            {
+              "label": "Alternative: Tour Guanacaste morning catamaran · from USD79 · 8:00–12:00, leaves from Flamingo (about 1 hour drive from Coco)",
+              "url": "https://www.tourguanacaste.com/en/activity/100654/morning-snorkel-catamaran-tour"
+            },
+            {
+              "label": "Alternative: Blue Marlin private Papagayo catamaran · 8:00–12:00 · priced per boat (about USD400 for 5), pricey for two",
+              "url": "https://sportfishingbluemarlin.com/catamaran-tours-papagayo/"
             }
           ]
         },
@@ -974,6 +982,18 @@
             {
               "label": "Bogarín Trail",
               "url": "https://bogarintrail.com/"
+            },
+            {
+              "label": "Alternative: Mistico night walk · USD54 + tax · starts 18:00, about 2.5 hours",
+              "url": "https://misticopark.com/tours/mistico-night-walk/"
+            },
+            {
+              "label": "Alternative: Ecocentro Danaus night walk · starts 17:30, about 2 hours, flat trail",
+              "url": "https://arenal.net/tours/ecocentro-danaus-night-tour"
+            },
+            {
+              "label": "Alternative: Fortuna Welcome night hike with wood-fired dinner · USD100 with transfers · leaves 16:30, about 4 hours",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/night-hike-arenal-fortuna/"
             }
           ]
         },
@@ -1002,8 +1022,22 @@
         {
           "time": "07:30",
           "title": "Peñas Blancas safari float",
-          "text": "Hotel pickup; you sit in an inflatable raft steered by the guide, no paddling, for about 2 hours spotting sloths, monkeys, caimans and birds; back around 11:00. You get on and off at the riverbank, which may be muddy and rocky, so watch your step and wear non-slip, closed-toe water shoes.",
-          "placeId": "penas-blancas"
+          "text": "Hotel pickup; you sit in an inflatable raft steered by the guide, with little or no paddling (some operators ask for a few light strokes), for about 2 hours spotting sloths, monkeys, caimans and birds; back around 11:00. You get on and off at the riverbank, which may be muddy and rocky, so watch your step and wear non-slip, closed-toe water shoes.",
+          "placeId": "penas-blancas",
+          "links": [
+            {
+              "label": "Fortuna Welcome safari float · USD70 with transfers · leaves 7:30, about 4 hours",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/safari-float-penas-blancas-river/"
+            },
+            {
+              "label": "Alternative: Desafío safari float · USD72 + tax with transfers · starts 8:00, about 3 hours, some light paddling",
+              "url": "https://www.desafiocostarica.com/service/safari-float-penas-blancas/"
+            },
+            {
+              "label": "Alternative: Two Weeks in Costa Rica safari float · USD69 + tax from January, with transfers · leaves 7:30, about 4.5 hours",
+              "url": "https://www.twoweeksincostarica.com/product/safari-float-penas-blancas-river-group-tour/"
+            }
+          ]
         },
         {
           "time": "12:00",
@@ -1020,6 +1054,18 @@
             {
               "label": "Mistico official site",
               "url": "https://misticopark.com/"
+            },
+            {
+              "label": "Alternative: Mistico guided natural history walk · USD44 + tax · about 2.5 hours, a guide spots wildlife for you",
+              "url": "https://misticopark.com/tours/natural-history-walk/"
+            },
+            {
+              "label": "Alternative: Fortuna Welcome hanging bridges tour · USD70 with transfers and entry · leaves 14:00, about 4 hours",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-hanging-bridges-tour/"
+            },
+            {
+              "label": "Alternative: Sky Adventures hanging bridges (El Castillo, about 40 minutes by car) · booking required",
+              "url": "https://skyadventures.travel/hanging-bridges/"
             }
           ]
         },
@@ -1060,6 +1106,14 @@
             {
               "label": "Fortuna Welcome horseback tour",
               "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour"
+            },
+            {
+              "label": "Alternative: Mistico Paco’s Horses ride · USD58 + tax · starts 8:15, about 2.5 hours, crosses a river on horseback",
+              "url": "https://misticopark.com/tours/pacos-horses/"
+            },
+            {
+              "label": "Alternative: Don Tobias ride to a volcano lookout · starts 8:30, about 3 hours, transfers included, ask for the price",
+              "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
           ]
         },

@@ -389,7 +389,7 @@
               {
                 "label": "Peñas Blancas 河上漂流看动物",
                 "amount": 225.55,
-                "note": "约USD70/人（转售价），税按13%估；不用划船"
+                "note": "Fortuna Welcome官网USD70/人含接送，税按13%估；基本不用划船"
               },
               {
                 "label": "Mistico 吊桥公园（自助）",
@@ -433,7 +433,7 @@
               {
                 "label": "Peñas Blancas 河上漂流看动物",
                 "amount": 225.55,
-                "note": "约USD70/人（转售价），税按13%估；不用划船"
+                "note": "Fortuna Welcome官网USD70/人含接送，税按13%估；基本不用划船"
               },
               {
                 "label": "Mistico 吊桥公园（自助）",
@@ -874,6 +874,14 @@
             {
               "label": "Marlin del Rey",
               "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
+            },
+            {
+              "label": "备选：Tour Guanacaste 早班双体船 · USD79起 · 8:00–12:00，从Flamingo出发（Coco开车约1小时）",
+              "url": "https://www.tourguanacaste.com/en/activity/100654/morning-snorkel-catamaran-tour"
+            },
+            {
+              "label": "备选：Blue Marlin 包船游Papagayo · 上午8:00–12:00 · 整船价（约USD400/5人），两人偏贵",
+              "url": "https://sportfishingbluemarlin.com/catamaran-tours-papagayo/"
             }
           ]
         },
@@ -974,6 +982,18 @@
             {
               "label": "Bogarín Trail",
               "url": "https://bogarintrail.com/"
+            },
+            {
+              "label": "备选：Mistico 夜间徒步 · USD54＋税 · 18:00开始约2.5小时",
+              "url": "https://misticopark.com/tours/mistico-night-walk/"
+            },
+            {
+              "label": "备选：Ecocentro Danaus 夜间徒步 · 17:30开始约2小时，平路",
+              "url": "https://arenal.net/tours/ecocentro-danaus-night-tour"
+            },
+            {
+              "label": "备选：Fortuna Welcome 夜间徒步＋柴火晚餐 · USD100含接送 · 16:30出发约4小时",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/night-hike-arenal-fortuna/"
             }
           ]
         },
@@ -1002,8 +1022,22 @@
         {
           "time": "07:30",
           "title": "Peñas Blancas 安全漂流",
-          "text": "酒店接送；坐在充气筏上由导游掌舵，不用划，约2小时看树懒、猴子、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上可能有泥和石头，注意脚下，穿防滑包脚的水鞋。",
-          "placeId": "penas-blancas"
+          "text": "酒店接送；坐在充气筏上由导游掌舵，基本不用划（有的团会让你轻轻划几下），约2小时看树懒、猴子、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上可能有泥和石头，注意脚下，穿防滑包脚的水鞋。",
+          "placeId": "penas-blancas",
+          "links": [
+            {
+              "label": "Fortuna Welcome 河上漂流 · USD70含接送 · 7:30出发约4小时",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/safari-float-penas-blancas-river/"
+            },
+            {
+              "label": "备选：Desafío 河上漂流 · USD72＋税含接送 · 8:00开始约3小时，要轻轻划几下",
+              "url": "https://www.desafiocostarica.com/service/safari-float-penas-blancas/"
+            },
+            {
+              "label": "备选：Two Weeks in Costa Rica 河上漂流 · 1月起USD69＋税含接送 · 7:30出发约4.5小时",
+              "url": "https://www.twoweeksincostarica.com/product/safari-float-penas-blancas-river-group-tour/"
+            }
+          ]
         },
         {
           "time": "12:00",
@@ -1020,6 +1054,18 @@
             {
               "label": "Mistico官网",
               "url": "https://misticopark.com/"
+            },
+            {
+              "label": "备选：Mistico 向导团（自然史步道） · USD44＋税 · 约2.5小时，向导带着找动物",
+              "url": "https://misticopark.com/tours/natural-history-walk/"
+            },
+            {
+              "label": "备选：Fortuna Welcome 吊桥向导团 · USD70含接送和门票 · 14:00出发约4小时",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-hanging-bridges-tour/"
+            },
+            {
+              "label": "备选：Sky Adventures 吊桥（El Castillo，开车约40分钟） · 要提前预约",
+              "url": "https://skyadventures.travel/hanging-bridges/"
             }
           ]
         },
@@ -1060,6 +1106,14 @@
             {
               "label": "Fortuna Welcome 骑马团",
               "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour"
+            },
+            {
+              "label": "备选：Mistico「Paco’s Horses」骑马 · USD58＋税 · 8:15开始约2.5小时，会骑马过河",
+              "url": "https://misticopark.com/tours/pacos-horses/"
+            },
+            {
+              "label": "备选：Don Tobias 骑马上火山观景点 · 8:30开始约3小时，含接送，价格要问",
+              "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
           ]
         },
