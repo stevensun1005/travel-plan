@@ -6,6 +6,22 @@
 import {calculate,normalize,validMoney,nearestIndex,daysUntil,itemize} from './budget.mjs';
 import {i18n,wantedLang,switchLang,startI18n} from './i18n.mjs';
 
+// 链接预览：claude.ai 在服务器上用无头浏览器给 Artifact 页面顶部截一张 1200×630 的图当预览。认出这种截图时
+// （自动化/无头浏览器，或窗口正好 1200×630；也可加 ?preview-card 自己看），整屏只显示 make_card.py 生成的 og.png，
+// 预览就是那张卡片。万一认错了真人，点一下、滚一下或按任意键卡片就消失；没有 og.png 时什么也不做。
+const PREVIEW=(()=>{try{
+  if(new URLSearchParams(location.search).has('preview-card'))return true;
+  if(!/\.claudeusercontent\.com$/.test(location.hostname))return false;
+  return navigator.webdriver===true||/HeadlessChrome/.test(navigator.userAgent)||(innerWidth===1200&&innerHeight===630);
+}catch{return false;}})();
+if(PREVIEW){
+  const cover=document.createElement('div');cover.style.cssText='position:fixed;inset:0;z-index:2147483647;background:#fbf7ec;cursor:pointer';
+  const img=new Image();img.alt='';img.style.cssText='display:block;width:100%;height:auto';img.onerror=()=>cover.remove();img.src='og.png';
+  cover.append(img);document.body.append(cover);
+  const off=()=>{cover.remove();for(const t of ['pointerdown','keydown','wheel','touchstart'])removeEventListener(t,off,true);};
+  for(const t of ['pointerdown','keydown','wheel','touchstart'])addEventListener(t,off,{capture:true,passive:true});
+}
+
 const $=selector=>document.querySelector(selector);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:'';}catch{return '';}};

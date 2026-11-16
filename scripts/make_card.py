@@ -110,4 +110,4 @@ if __name__ == '__main__':
     if png_size(out) != (1200, 630):
         sys.exit(f'og.png missing or not 1200x630: {png_size(out) if out.is_file() else "missing"}')
     index.write_text(inject(index.read_text(encoding='utf-8'), args.url), encoding='utf-8', newline='\n')
-    print(f'Card: {out}' + ('' if args.url else '  (no --url: og:image is relative, many apps will skip the image)'))
+    print(f'Card: {out}' + ('' if args.url else '  (no --url: fine for a claude.ai Artifact, which captures og.png itself; other hosts need --url)'))
