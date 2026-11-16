@@ -347,6 +347,14 @@ function wrap(ctx, str, font, maxW, lines) {
   return out;
 }
 
+// 页面里的小羊驼（index.html 的 <symbol id="alpaca">）转成图片，画到卡片上；页面没有它就不画
+async function alpacaImage() {
+  const sym = document.getElementById('alpaca'); if (!sym) return null;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${sym.getAttribute('viewBox') || '0 0 48 48'}" width="240" height="240"><style>.alp-line{stroke:${INK}}.alp-fill{fill:${CARD}}.alp-eye{fill:${INK}}</style>${sym.innerHTML}</svg>`;
+  const img = new Image(); img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  try { await img.decode(); return img; } catch { return null; }
+}
+
 // 分享卡片：1200×630，发链接时聊天软件和社交网站显示的预览图（og:image）。
 // 左边标题、日期、人数、预算，右边是海报里的路线地图。由 scripts/make_card.py 用无头浏览器截图保存成 og.png。
 export async function drawCard({ data, roads, basemap, color, total }) {
@@ -415,9 +423,12 @@ export async function drawCard({ data, roads, basemap, color, total }) {
   }
 
   // 左下角：品牌
-  text(ctx, 'travel—plan', LX, CH - 38, { font: `bold 30px ${HAND}` });
-  ctx.beginPath(); ctx.arc(LX + 172, CH - 48, 6, 0, Math.PI * 2); ctx.fillStyle = '#e07a12'; ctx.fill();
-  text(ctx, en ? 'Interactive trip page · budget · map · day by day' : '互动攻略 · 预算 · 地图 · 每日行程', LX + 190, CH - 40, { font: `18px ${SANS}`, color: INK2 });
+  const alpaca = await alpacaImage();
+  const bx = alpaca ? LX + 62 : LX;
+  if (alpaca) ctx.drawImage(alpaca, LX - 4, CH - 92, 60, 60);
+  const bw = text(ctx, 'travel—plan', bx, CH - 46, { font: `bold 30px ${HAND}` });
+  ctx.beginPath(); ctx.arc(bx + bw + 10, CH - 58, 6, 0, Math.PI * 2); ctx.fillStyle = '#e07a12'; ctx.fill();
+  text(ctx, en ? 'Interactive trip page · budget · map · day by day' : '互动攻略 · 预算 · 地图 · 每日行程', bx + bw + 28, CH - 48, { font: `18px ${SANS}`, color: INK2 });
   return canvas;
 }
 
