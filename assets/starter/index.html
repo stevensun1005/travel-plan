@@ -57,7 +57,7 @@
   /* 默认方格纸；按钮切换到黑板，选择存在本机（读不到也不影响页面） */
   (function(){
     var root=document.documentElement,btn=document.getElementById('theme-btn'),KEY='travel-plan-skin';
-    try{if(localStorage.getItem(KEY)==='chalk')root.setAttribute('data-skin','chalk');}catch(e){}
+    try{if(localStorage.getItem(KEY)==='chalk'&&!matchMedia('(max-width:760px)').matches)root.setAttribute('data-skin','chalk');}catch(e){}
     function label(){btn.textContent=root.getAttribute('data-skin')==='chalk'?'方格纸':'黑板';}
     btn.addEventListener('click',function(){var chalk=root.getAttribute('data-skin')!=='chalk';if(chalk)root.setAttribute('data-skin','chalk');else root.removeAttribute('data-skin');try{localStorage.setItem(KEY,chalk?'chalk':'paper');}catch(e){}label();});
     label();

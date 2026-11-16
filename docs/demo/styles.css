@@ -475,3 +475,6 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:300;width:max-content;max-width:min(92vw,460px);padding:10px 16px;background:var(--card);color:var(--ink);border:2.5px solid var(--ink);border-radius:var(--r3);box-shadow:4px 4px 0 var(--shadow);font:16px/1.4 var(--hand);opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .2s,transform .2s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media (max-width:380px){.own-btn svg,.own-more{display:none}.brand{font-size:17px}.brand-alpaca{width:26px;height:26px}}
+
+/* 手机上不显示黑板/方格纸切换，固定用方格纸 */
+@media (max-width:760px){#theme-btn{display:none}}
