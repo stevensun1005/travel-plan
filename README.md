@@ -248,6 +248,6 @@ node --check assets/starter/share-map.mjs
 
 > Based on travel-plan by Steven Sun — https://github.com/stevensun1005/travel-plan
 
-每个源文件开头都有这段出处注释，[AGENTS.md](AGENTS.md)（Claude Code 通过 `CLAUDE.md` 读到它）也会提醒帮人照抄的 AI 保留署名。用 skill 给自己做攻略不需要额外操作：生成的页面自带出处注释、页脚 GitHub 链接、海报二维码和小羊驼。
+用 skill 给自己做攻略不需要额外操作：生成的页面自带出处注释、页脚 GitHub 链接、海报二维码和小羊驼。
 
 2026-11-16 之前发布的版本是 MIT 许可，那些版本的副本仍按 MIT（同样要保留版权声明）。地图数据和随包组件遵循各自的许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

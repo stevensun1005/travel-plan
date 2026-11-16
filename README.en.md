@@ -248,6 +248,6 @@ Specific issues, reproducible itinerary edge cases and small complete PRs are we
 
 > Based on travel-plan by Steven Sun — https://github.com/stevensun1005/travel-plan
 
-Every source file starts with that credit, and [AGENTS.md](AGENTS.md) (read by Claude Code through `CLAUDE.md`) reminds AI assistants that copy the project to keep it. Making your own trip page with the skill needs nothing extra: generated pages carry the header, a footer GitHub link, the poster QR code and the alpaca.
+Making your own trip page with the skill needs nothing extra: generated pages carry the header, a footer GitHub link, the poster QR code and the alpaca.
 
 Versions published before 2026-11-16 were MIT licensed, and copies of those versions stay under MIT (which also requires keeping the copyright notice). Map data and bundled components keep their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
