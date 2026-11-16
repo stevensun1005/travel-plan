@@ -12,7 +12,7 @@
 ![Budget](https://img.shields.io/badge/budget-interactive-6d8c64)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-153b3d)](LICENSE)
 
-[**打开欧胡岛演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [一句话安装](#一句话让-ai-帮你装) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
+[**打开欧胡岛演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [哥斯达黎加演示](https://stevensun1005.github.io/travel-plan/costa-rica/) · [一句话安装](#一句话让-ai-帮你装) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
 
 </div>
 
@@ -56,6 +56,10 @@ Air Canada 直飞和 Expedia 机酒套餐二选一（选套餐时酒店和接送
 > 价格是 2026-11-15 查到的报价记录和估算，**都还没有预订**，实际价格以下单页面为准。想要一份不含真实行程的空白样例，可以运行 `create_trip.py --demo`（虚构的温哥华行程）。
 
 [**打开无需登录的欧胡岛演示 →**](https://stevensun1005.github.io/travel-plan/demo/)
+
+**再来一份：多伦多直飞哥斯达黎加，1/6–1/11 五晚。** 海边两晚加阿雷纳尔火山三晚的自驾线：机票、两段酒店、租车油费停车分开选，饼图里合并显示；夜间雨林徒步、骑马、温泉、看星星都有，晚上不安排长途山路；还有要带多少美元和科朗。同样都是查价记录和估算，没有预订。
+
+[**打开哥斯达黎加演示 →**](https://stevensun1005.github.io/travel-plan/costa-rica/)
 
 ## 这份 skill 会多做哪一步
 

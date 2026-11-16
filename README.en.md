@@ -2,7 +2,7 @@
 
 **Turn scattered travel notes into a page you can plan together.**
 
-[Live demo: Toronto → Oʻahu](https://stevensun1005.github.io/travel-plan/demo/) · [Install in one message](#install-in-one-message) · [中文 README](README.md) · [Skill instructions](SKILL.md)
+[Live demo: Toronto → Oʻahu](https://stevensun1005.github.io/travel-plan/demo/) · [Costa Rica demo](https://stevensun1005.github.io/travel-plan/costa-rica/) · [Install in one message](#install-in-one-message) · [中文 README](README.md) · [Skill instructions](SKILL.md)
 
 ![Interactive budget](docs/assets/budget.png)
 
@@ -25,6 +25,8 @@ A Codex skill with a buildless website starter. Merge PDFs and previous plans, r
 - **Shareable output:** validate, package only required files, publish through available authorized hosting tools.
 
 The live demo is a real plan made with travel-plan: Toronto to Oʻahu for five nights in January, with a nonstop flight or an Expedia flight+hotel package, one rental-car day, tours instead of a second car day, and a pre-departure checklist for two different passports. Prices are records and estimates from 2026-11-15; **nothing is booked**. `create_trip.py --demo` still creates a fictional Vancouver sample.
+
+A second real plan: [Toronto → Costa Rica, Jan 6–11](https://stevensun1005.github.io/travel-plan/costa-rica/) — two beach nights and three nights by Arenal volcano by rental car, with flights, two hotels and car/fuel/parking chosen separately but grouped in the chart, a night rainforest walk, horseback riding, hot springs and stargazing, no long mountain drives after dark, and how many US dollars and colones to bring. Also records and estimates only; nothing is booked. Add `?lang=en` to any demo URL to open it in English.
 
 | Offline base map | Share route poster |
 | :---: | :---: |

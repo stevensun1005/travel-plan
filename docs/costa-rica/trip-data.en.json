@@ -1,0 +1,1770 @@
+{
+  "version": 1,
+  "trip": {
+    "id": "costa-rica-2027-jan-6-11",
+    "title": "Costa Rica, 5 nights · 1/6–1/11",
+    "subtitle": "Nonstop from Toronto to Liberia, then five days of self-driving with all long drives in daylight. First two nights by the sea in Playas del Coco with a catamaran snorkel trip; then around Lake Arenal to the foot of the volcano for three nights at Termales del Arenal, which has its own hot springs: a river float to spot sloths and crocodiles, hanging bridges, and an optional soak in Tabacón's hot river. No surfing.",
+    "startDate": "2027-01-06",
+    "endDate": "2027-01-11",
+    "nights": 5,
+    "travelers": 2,
+    "currency": "CAD",
+    "demo": false,
+    "notice": "Nothing is booked yet. Flight and hotel prices were re-checked on Nov 15 for 1/6–1/11; for the rental car we only have the rules and daily insurance rates, so the car price is an estimate. USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica's VAT is 13%. January is local school holidays, so beaches are still fairly busy around 1/6.",
+    "constraints": [
+      "2 people · 1 room",
+      "No surfing. Her Achilles is in late-stage rehab (already jogging and doing weight training), so regular tours are fine; just take a little care on rocky paths, getting on and off boats, and horseback riding",
+      "Loves seafood",
+      "Driver is 23 at time of travel · Canadian G licence",
+      "Target budget around CAD 6000",
+      "Dates: depart 1/6 (Wed), return 1/11 (Mon)",
+      "Finish long and mountain drives in daylight (sunset ~17:30); at night only short drives of a few km in town"
+    ],
+    "kicker": "YYZ ✈ LIR · Costa Rica for two"
+  },
+  "budget": {
+    "target": 6000,
+    "categories": [
+      {
+        "id": "flights",
+        "label": "Flights | nonstop round trip for two, 1/6–1/11",
+        "icon": "✈️",
+        "color": "#2a70cf",
+        "defaultOption": "porter",
+        "options": [
+          {
+            "id": "porter",
+            "label": "Porter nonstop round trip · carry-on included",
+            "amount": 2076,
+            "status": "Compared across sites, Nov 15 (incl. tax)",
+            "carryOn": true,
+            "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+            "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+            "note": "Outbound 1/6 10:40→15:24, return 1/11 14:40→20:58, both Porter nonstop (codeshare with Air Transat). Trip.com lists this fare as including a carry-on: CA$2,076 for two. Porter's own site has the same flights at CA$2,302, but Google Flights says that fare excludes a carry-on. The sources disagree, so open the fare details when booking and confirm the baggage. WestJet on the same dates starts at about CA$1,399 per person with no baggage listed, much more expensive.",
+            "items": [
+              {
+                "label": "Porter outbound + return · 2 people",
+                "amount": 2076,
+                "note": "Incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Trip.com",
+                "amount": 2076,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+                "note": "Carry-on listed as included; outbound from CA$1,026 per person",
+                "converted": 2076
+              },
+              {
+                "platform": "Porter (official site)",
+                "available": false,
+                "note": "CA$2,302; Google shows this fare excludes a carry-on, so it's not the same fare"
+              },
+              {
+                "platform": "ly.com / Kiwi",
+                "available": false,
+                "note": "CA$2,073 / CA$2,091, no carry-on, not counted"
+              }
+            ],
+            "source": "Trip.com"
+          }
+        ]
+      },
+      {
+        "id": "hotel-beach",
+        "label": "Beach hotel | 2 nights (1/6–1/8)",
+        "icon": "🏖️",
+        "color": "#e07a12",
+        "defaultOption": "villa-sol",
+        "options": [
+          {
+            "id": "villa-sol",
+            "label": "Villa Del Sol Boutique · in Coco · breakfast included",
+            "amount": 440,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.6, in Playas del Coco, 150 m from the beach; walk to dinner and to the boat. Breakfast included, free cancellation.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 440,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$389 + CA$51 taxes and fees",
+                "converted": 440
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "mm-beach",
+            "label": "Hotel M&M Beach House · right on the sand · breakfast included",
+            "amount": 312,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.2, right on Playa Hermosa beach, breakfast included, free cancellation; rooms are basic.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 312,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$276 + CA$36 taxes and fees",
+                "converted": 312
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "huetares",
+            "label": "Hotel & Villas Huetares · Hermosa · with kitchen",
+            "amount": 504,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.6, 300 m from the beach, has a pool; no breakfast, free cancellation not shown on the page.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 504,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$446 + CA$58 taxes and fees",
+                "converted": 504
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          }
+        ],
+        "chartGroup": "hotel"
+      },
+      {
+        "id": "hotel-arenal",
+        "label": "Volcano hotel | 3 nights (1/8–1/11)",
+        "icon": "🌋",
+        "color": "#c2410c",
+        "defaultOption": "termales",
+        "options": [
+          {
+            "id": "termales",
+            "label": "Termales del Arenal · own hot-spring pools · breakfast included",
+            "amount": 777,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.7. The hotel has its own hot-spring pools you can use any time during the three nights, so no need to buy separate Ecotermales tickets (Ecotermales is right next door). Breakfast included. Free cancellation isn't shown on the page, so check carefully before booking.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 777,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$688 + CA$89 taxes and fees",
+                "converted": 777
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "lavas",
+            "label": "Hotel Lavas Tacotal · volcano views · breakfast included",
+            "amount": 425,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.6, on the hot-springs road, close to both Ecotermales and Tabacón; breakfast included. Free cancellation not shown for these dates.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 425,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$376 + CA$49 taxes and fees",
+                "converted": 425
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "loma-real",
+            "label": "Loma Real Hot Springs B&B · own hot-spring pools",
+            "amount": 597,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Rated 8.8, guests can use the property's own hot-spring pools; breakfast included, free cancellation.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 597,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$528 + CA$69 taxes and fees",
+                "converted": 597
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "campo-verde",
+            "label": "Hotel Campo Verde · rated 9.0 · breakfast included",
+            "amount": 1329,
+            "status": "Booking.com, Nov 15 (incl. tax)",
+            "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "Cabin-style and quiet; breakfast included, free cancellation. Twice the price of the 1/10 week for these dates.",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 1329,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$1,176 + CA$153 taxes and fees",
+                "converted": 1329
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
+              }
+            ],
+            "source": "Booking.com"
+          }
+        ],
+        "chartGroup": "hotel"
+      },
+      {
+        "id": "car",
+        "label": "Car rental | 5 days (incl. mandatory insurance and CDW)",
+        "icon": "🚗",
+        "color": "#1f9652",
+        "defaultOption": "adobe",
+        "options": [
+          {
+            "id": "adobe",
+            "label": "Adobe 5 days · no young-driver fee at 23 · incl. mandatory insurance and CDW",
+            "amount": 491.87,
+            "status": "Budget estimate · no quote yet",
+            "note": "Costa Rica rental prices must include mandatory liability insurance; most low prices on third-party sites leave it out. Adobe's minimum age is 23 with a licence held 2+ years, and there's no young-driver fee. Insurance is estimated from Vamos's published rates (liability USD15.95/day, CDW USD18/day). No actual quote for the car itself yet; enter age 23 and get a fresh quote before booking.",
+            "items": [
+              {
+                "label": "Compact SUV or sedan, 5 days (~USD35/day, estimate)",
+                "amount": 249.5
+              },
+              {
+                "label": "Mandatory third-party liability ~USD16/day",
+                "amount": 114.06
+              },
+              {
+                "label": "Collision damage waiver (CDW) ~USD18/day",
+                "amount": 128.31
+              }
+            ],
+            "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+          }
+        ],
+        "chartGroup": "drive"
+      },
+      {
+        "id": "transport",
+        "label": "Gas and parking",
+        "icon": "⛽",
+        "color": "#2b9c9a",
+        "defaultOption": "gas",
+        "options": [
+          {
+            "id": "gas",
+            "label": "Gas for ~480 km + parking",
+            "amount": 128.31,
+            "status": "Budget estimate",
+            "note": "Gas estimated at ~₡806/L (~USD1.80) as of Nov 2026. No toll roads on this route.",
+            "items": [
+              {
+                "label": "Gas ~40 L × USD1.75",
+                "amount": 99.8
+              },
+              {
+                "label": "Parking at sights/beaches, tips",
+                "amount": 28.51
+              }
+            ]
+          }
+        ],
+        "chartGroup": "drive"
+      },
+      {
+        "id": "food",
+        "label": "Food | 2 people, 5 days (both hotels include breakfast)",
+        "icon": "🦐",
+        "color": "#d2402f",
+        "defaultOption": "seafood",
+        "options": [
+          {
+            "id": "lean",
+            "label": "Simple: local sodas + a few seafood meals",
+            "amount": 500,
+            "status": "Budget estimate",
+            "note": "A casado at a local soda (home-style diner) is about USD10."
+          },
+          {
+            "id": "seafood",
+            "label": "Seafood focus: one seafood restaurant meal a day",
+            "amount": 700,
+            "status": "Budget estimate",
+            "note": "Restaurant bills add a 10% service charge and 13% tax; when menu prices don't include them, you pay about 23% more."
+          },
+          {
+            "id": "treat",
+            "label": "Plus one nice restaurant meal",
+            "amount": 900,
+            "status": "Budget estimate",
+            "note": "E.g. Don Rufino in La Fortuna, or dinner as part of a Tabacón hot-springs package."
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "label": "Tickets and experiences | both, whole trip",
+        "icon": "🎟️",
+        "color": "#9b6dd0",
+        "defaultOption": "full",
+        "options": [
+          {
+            "id": "full",
+            "label": "All 7 · incl. night walk, horseback riding, Tabacón",
+            "amount": 1508.28,
+            "status": "Converted from official/public standard prices",
+            "note": "Includes: catamaran snorkel, Llanos de Cortés waterfall, Bogarín night walk, river float, hanging bridges park, horseback ride with volcano views, Tabacón hot springs (with lunch). USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD).",
+            "items": [
+              {
+                "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
+                "amount": 289.99,
+                "note": "Marlin del Rey from USD90/person, tax estimated at 13%"
+              },
+              {
+                "label": "Llanos de Cortés waterfall",
+                "amount": 25.66,
+                "note": "₡4,000/person, cash only"
+              },
+              {
+                "label": "Bogarín night walk (guided, 2 hours)",
+                "amount": 171.08,
+                "note": "USD60/person (official price, tax not stated)"
+              },
+              {
+                "label": "Peñas Blancas river float wildlife tour",
+                "amount": 225.55,
+                "note": "~USD70/person (reseller price), tax estimated at 13%; no paddling"
+              },
+              {
+                "label": "Mistico Hanging Bridges Park (self-guided)",
+                "amount": 103.11,
+                "note": "USD32 + 13% tax"
+              },
+              {
+                "label": "Horseback ride with Arenal Volcano views (~3 hours, incl. transfers)",
+                "amount": 213.85,
+                "note": "Fortuna Welcome USD75/person incl. tax"
+              },
+              {
+                "label": "Tabacón hot springs day pass (with lunch)",
+                "amount": 479.04,
+                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
+              }
+            ]
+          },
+          {
+            "id": "no-horse",
+            "label": "6 activities · no horseback riding",
+            "amount": 1294.43,
+            "status": "Converted from official/public standard prices",
+            "note": "Without the horseback ride, spend the morning of 1/10 soaking and resting at the hotel, then go to Tabacón at noon as planned.",
+            "items": [
+              {
+                "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
+                "amount": 289.99,
+                "note": "Marlin del Rey from USD90/person, tax estimated at 13%"
+              },
+              {
+                "label": "Llanos de Cortés waterfall",
+                "amount": 25.66,
+                "note": "₡4,000/person, cash only"
+              },
+              {
+                "label": "Bogarín night walk (guided, 2 hours)",
+                "amount": 171.08,
+                "note": "USD60/person (official price, tax not stated)"
+              },
+              {
+                "label": "Peñas Blancas river float wildlife tour",
+                "amount": 225.55,
+                "note": "~USD70/person (reseller price), tax estimated at 13%; no paddling"
+              },
+              {
+                "label": "Mistico Hanging Bridges Park (self-guided)",
+                "amount": 103.11,
+                "note": "USD32 + 13% tax"
+              },
+              {
+                "label": "Tabacón hot springs day pass (with lunch)",
+                "amount": 479.04,
+                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
+              }
+            ]
+          },
+          {
+            "id": "lite",
+            "label": "4 activities · no float, bridges or horseback riding",
+            "amount": 965.77,
+            "status": "Converted from official/public standard prices",
+            "note": "The lowest-effort tier: wildlife from the night walk, hot springs at Tabacón.",
+            "items": [
+              {
+                "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
+                "amount": 289.99,
+                "note": "Marlin del Rey from USD90/person, tax estimated at 13%"
+              },
+              {
+                "label": "Llanos de Cortés waterfall",
+                "amount": 25.66,
+                "note": "₡4,000/person, cash only"
+              },
+              {
+                "label": "Bogarín night walk (guided, 2 hours)",
+                "amount": 171.08,
+                "note": "USD60/person (official price, tax not stated)"
+              },
+              {
+                "label": "Tabacón hot springs day pass (with lunch)",
+                "amount": 479.04,
+                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "buffer",
+        "label": "Buffer",
+        "icon": "🛟",
+        "color": "#8a958c",
+        "defaultOption": "buffer",
+        "options": [
+          {
+            "id": "buffer",
+            "label": "Keep a little flexibility",
+            "amount": 250,
+            "status": "Included in total"
+          },
+          {
+            "id": "none",
+            "label": "None",
+            "amount": 0,
+            "status": "—"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "id": "default",
+        "label": "Default",
+        "selections": {
+          "flights": "porter",
+          "hotel-beach": "villa-sol",
+          "hotel-arenal": "termales",
+          "food": "seafood",
+          "activities": "full"
+        },
+        "note": "Villa Del Sol in Coco + Termales del Arenal with its own hot springs, 7 activities (incl. night walk, horseback riding, Tabacón)."
+      },
+      {
+        "id": "no-horse",
+        "label": "No horseback riding",
+        "selections": {
+          "activities": "no-horse"
+        },
+        "note": "Use this if you'd rather skip the horseback ride."
+      },
+      {
+        "id": "hermosa",
+        "label": "Stay on the sand at Hermosa",
+        "selections": {
+          "hotel-beach": "mm-beach"
+        },
+        "note": "Switch the two beach nights to M&M, right on Playa Hermosa."
+      },
+      {
+        "id": "save",
+        "label": "Cheapest",
+        "selections": {
+          "hotel-beach": "mm-beach",
+          "hotel-arenal": "lavas",
+          "food": "lean",
+          "activities": "lite",
+          "buffer": "none"
+        },
+        "note": "Cheapest option at both hotels, eat at sodas, 4 activities."
+      }
+    ],
+    "chartGroups": {
+      "hotel": {
+        "label": "Hotels",
+        "icon": "🏨",
+        "color": "#e07a12"
+      },
+      "drive": {
+        "label": "Car and gas",
+        "icon": "🚗",
+        "color": "#1f9652"
+      }
+    }
+  },
+  "journeys": [
+    {
+      "id": "outbound",
+      "title": "Outbound | Toronto → Liberia",
+      "proposal": {
+        "airline": "Porter · nonstop (codeshare with Air Transat)",
+        "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+        "departure": {
+          "airport": "YYZ",
+          "date": "2027-01-06",
+          "time": "10:40"
+        },
+        "arrival": {
+          "airport": "LIR",
+          "date": "2027-01-06",
+          "time": "15:24"
+        },
+        "route": "YYZ → LIR",
+        "duration": "5h 44m",
+        "connection": "Nonstop",
+        "note": "Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Adobe shuttle to pick up the car. Confirm flight numbers on the booking page.",
+        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
+      }
+    },
+    {
+      "id": "return",
+      "title": "Return | Liberia → Toronto",
+      "proposal": {
+        "airline": "Porter · nonstop (codeshare with Air Transat)",
+        "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+        "departure": {
+          "airport": "LIR",
+          "date": "2027-01-11",
+          "time": "14:40"
+        },
+        "arrival": {
+          "airport": "YYZ",
+          "date": "2027-01-11",
+          "time": "20:58"
+        },
+        "route": "LIR → YYZ",
+        "duration": "5h 18m",
+        "connection": "Nonstop",
+        "note": "Return the car by 12:00 and take the shuttle to the terminal.",
+        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
+      }
+    }
+  ],
+  "map": {
+    "places": [
+      {
+        "id": "lir",
+        "name": "LIR Liberia Airport",
+        "lat": 10.5917,
+        "lng": -85.5411,
+        "address": "Daniel Oduber Quirós International Airport",
+        "note": "The Adobe office is ~7 km outside the airport (off Route 21), reached by free shuttle; the map draws routes from the terminal."
+      },
+      {
+        "id": "hotel-beach",
+        "name": "Hotel Villa Del Sol (Playas del Coco, default, not booked)",
+        "lat": 10.55894,
+        "lng": -85.690166,
+        "address": "North end of Playas del Coco",
+        "note": "Rated 8.6, 150 m from the beach, at the quieter north end of Coco; ~15 min walk (~1.2 km) to the beach boardwalk and restaurants."
+      },
+      {
+        "id": "coco-beach",
+        "name": "Playas del Coco beach, north end",
+        "lat": 10.5585,
+        "lng": -85.6915,
+        "address": "Playas del Coco",
+        "note": "The beach in front of the hotel, darker than downtown: sunsets in the evening, stargazing at night."
+      },
+      {
+        "id": "coco",
+        "name": "Playas del Coco boardwalk (catamaran meeting point)",
+        "lat": 10.5505,
+        "lng": -85.6995,
+        "address": "Playas del Coco, Guanacaste",
+        "note": "Marlin del Rey meets under the big banyan tree in front of Bar El Ancla on the boardwalk; plenty of seafood restaurants in town (Papagayo Seafood, Mar Azul).",
+        "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
+      },
+      {
+        "id": "llanos",
+        "name": "Llanos de Cortés waterfall",
+        "lat": 10.524302,
+        "lng": -85.298602,
+        "address": "Off Route 1, Bagaces",
+        "note": "About 30 concrete steps down from the parking lot, with a rope handrail; sandy below the falls and rocky at the water's edge, so watch your footing. 8:00–16:00, cash only.",
+        "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
+      },
+      {
+        "id": "nuevo-arenal",
+        "name": "Lake Arenal · Nuevo Arenal",
+        "lat": 10.547,
+        "lng": -84.863736,
+        "address": "Route 142, Tilarán",
+        "note": "Winding road along the north shore with roadside viewpoints; on clear days you can see the volcano reflected in the lake."
+      },
+      {
+        "id": "hotel-arenal",
+        "name": "Termales del Arenal (default hotel, not booked)",
+        "lat": 10.478292,
+        "lng": -84.672823,
+        "address": "Vía 142, La Fortuna",
+        "note": "Own hot-spring pools, ~3 km west of La Fortuna; ~5 min drive to town and ~10 min to Tabacón."
+      },
+      {
+        "id": "fortuna",
+        "name": "La Fortuna town center",
+        "lat": 10.471683,
+        "lng": -84.644436,
+        "address": "La Fortuna, San Carlos",
+        "note": "The float tour picks you up at the hotel; seafood in town: Cevichería D'Mora, Snapper's House. ~5 min drive from the hotel."
+      },
+      {
+        "id": "mistico",
+        "name": "Mistico Hanging Bridges Park",
+        "lat": 10.488049,
+        "lng": -84.753777,
+        "address": "Calle Sangregado (dam road)",
+        "note": "3.2 km loop with 16 bridges (6 hanging), listed as an accessible trail on the official site (whether it's paved throughout is unverified); gentle slopes and some steps, ~2 hours; the hanging bridges sway. Last entry 15:50.",
+        "url": "https://misticopark.com/"
+      },
+      {
+        "id": "penas-blancas",
+        "name": "Peñas Blancas river float (put-in)",
+        "lat": 10.39,
+        "lng": -84.58,
+        "address": "~25 min southeast of La Fortuna",
+        "note": "Tour provides transfers; the map shows an approximate location only."
+      },
+      {
+        "id": "bogarin",
+        "name": "Bogarín Trail · night walk",
+        "lat": 10.47,
+        "lng": -84.638,
+        "address": "In La Fortuna town",
+        "note": "A 2.5 km trail in town, mostly flat. The night walk takes ~2 hours, with the guide using a flashlight to find frogs, snakes, spiders and sleeping birds; start time per your booking. ~10 min drive from the hotel.",
+        "url": "https://bogarintrail.com/"
+      },
+      {
+        "id": "tabacon",
+        "name": "Tabacón Hot Springs (optional)",
+        "lat": 10.492,
+        "lng": -84.721,
+        "address": "Vía 142, La Fortuna",
+        "note": "Hot-river springs at the foot of the volcano; the day pass includes lunch, 8:00–22:00. Soak from noon to early evening on 1/10. The natural pools in the river have rocky bottoms; the flat-bottomed built pools are steadier. Reservation required.",
+        "url": "https://www.tabacon.com/day-pass/"
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 1,
+        "label": "01/06 Arrival · beach",
+        "placeIds": [
+          "lir",
+          "hotel-beach"
+        ],
+        "extraPlaceIds": [
+          "coco-beach",
+          "coco"
+        ],
+        "transport": "driving",
+        "note": "Airport to Coco ~30 min, arrive by 17:00; walk into town for dinner."
+      },
+      {
+        "day": 2,
+        "label": "01/07 Catamaran snorkel",
+        "placeIds": [
+          "hotel-beach",
+          "coco",
+          "hotel-beach"
+        ],
+        "transport": "driving",
+        "note": "Morning: ~5 min drive to the Coco boardwalk to board; drive back to the hotel at midday. Boat route not drawn. Walk or drive to dinner; stargazing is on the beach right in front of the hotel.",
+        "extraPlaceIds": [
+          "coco-beach"
+        ]
+      },
+      {
+        "day": 3,
+        "label": "01/08 Waterfall · lake · volcano",
+        "placeIds": [
+          "hotel-beach",
+          "llanos",
+          "nuevo-arenal",
+          "hotel-arenal",
+          "bogarin",
+          "hotel-arenal"
+        ],
+        "transport": "driving",
+        "note": "Via Liberia, Bagaces, Cañas and Tilarán, then along the north shore of Lake Arenal to La Fortuna; arrive at the hotel ~14:30, all long driving in daylight. In the evening, drive yourselves ~10 min to the night walk in town.",
+        "extraPlaceIds": []
+      },
+      {
+        "day": 4,
+        "label": "01/09 Float · hanging bridges",
+        "placeIds": [
+          "hotel-arenal",
+          "mistico",
+          "fortuna",
+          "hotel-arenal"
+        ],
+        "extraPlaceIds": [
+          "penas-blancas"
+        ],
+        "transport": "driving",
+        "note": "Morning float tour with hotel pickup (not drawn); in the afternoon drive yourselves to the bridges, dinner in town, then a 5 min drive back to the hotel."
+      },
+      {
+        "day": 5,
+        "label": "01/10 Sloths · slow day",
+        "placeIds": [
+          "hotel-arenal",
+          "tabacon",
+          "hotel-arenal"
+        ],
+        "transport": "driving",
+        "note": "Morning horseback tour with hotel pickup (not drawn); at noon drive 10 min to Tabacón, leave at 17:00, back at the hotel before dark.",
+        "extraPlaceIds": []
+      },
+      {
+        "day": 6,
+        "label": "01/11 Back to the airport",
+        "placeIds": [
+          "hotel-arenal",
+          "nuevo-arenal",
+          "lir"
+        ],
+        "transport": "driving",
+        "note": "About 3 hours; leave at 8:45, return the car by 12:00."
+      }
+    ],
+    "routesFile": "routes.json",
+    "basemapFile": "basemap.json",
+    "home": {
+      "name": "Toronto (home)",
+      "lat": 43.6532,
+      "lng": -79.3832
+    }
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2027-01-06",
+      "title": "Wed · Nonstop to Liberia, sunset on the beach in Coco",
+      "locations": [
+        "Toronto YYZ",
+        "Liberia LIR",
+        "Playas del Coco"
+      ],
+      "schedule": [
+        {
+          "time": "By 07:40",
+          "title": "Arrive at Pearson Terminal 3",
+          "text": "Arrive 3 hours early for international flights. Partner: bring Chinese passport, US visa (confirm it's multiple-entry, M) and PR card."
+        },
+        {
+          "time": "10:40",
+          "title": "Porter nonstop departs",
+          "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto."
+        },
+        {
+          "time": "15:24",
+          "title": "Land in Liberia",
+          "text": "Get the entry stamp (check it's in your passport), collect bags, then head to the Adobe shuttle stop.",
+          "placeId": "lir"
+        },
+        {
+          "time": "16:15",
+          "title": "Pick up the car",
+          "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here."
+        },
+        {
+          "time": "17:00",
+          "title": "Check in at Playas del Coco",
+          "text": "About 30 min, arrive before dark.",
+          "placeId": "hotel-beach"
+        },
+        {
+          "time": "17:30",
+          "title": "Sunset on the beach",
+          "text": "The beach in front of the hotel faces west, so the sun sets right over the water.",
+          "placeId": "coco-beach"
+        },
+        {
+          "time": "19:00",
+          "title": "Seafood by the sea",
+          "text": "Walk into Coco town (~15 min): Papagayo Seafood (often live music) or Mar Azul; take a taxi back if you don't feel like walking. If it's clear after dinner, stargaze for a bit on the beach in front of the hotel (no moon these nights); the proper stargazing night is tomorrow's new moon.",
+          "placeId": "coco"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2027-01-07",
+      "title": "Thu · Drive to the catamaran snorkel trip, seafood in Coco and stargazing on the beach at night",
+      "locations": [
+        "Playas del Coco",
+        "Gulf of Papagayo"
+      ],
+      "schedule": [
+        {
+          "time": "07:30",
+          "title": "Drive to the boardwalk",
+          "text": "About 5 min; park on the street in town or in a paid lot. Leave nothing in the car, and pull the door handle to make sure it's locked.",
+          "placeId": "coco"
+        },
+        {
+          "time": "07:45",
+          "title": "Catamaran check-in",
+          "text": "Marlin del Rey's 8:00 morning departure, about 4 hours: one snorkel stop, lunch, open bar. Strong Papagayo winds often pick up on dry-season afternoons, so the morning trip means calmer water. Boarding depends on the operator (sometimes you wade from the beach to a small shuttle boat), so ask before booking and get a hand from the crew if needed.",
+          "placeId": "coco",
+          "links": [
+            {
+              "label": "Marlin del Rey",
+              "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
+            }
+          ]
+        },
+        {
+          "time": "12:30",
+          "title": "Stroll around Coco",
+          "text": "Lunch was on the boat; walk the boardwalk and grab some ice cream.",
+          "placeId": "coco"
+        },
+        {
+          "time": "14:00",
+          "title": "Back to the hotel to rest",
+          "text": "5 min drive back to the hotel: pool, nap.",
+          "placeId": "hotel-beach"
+        },
+        {
+          "time": "17:30",
+          "title": "Sunset on the beach",
+          "text": "",
+          "placeId": "coco-beach"
+        },
+        {
+          "time": "18:30",
+          "title": "Dinner: Coco town",
+          "text": "Papagayo Seafood or Mar Azul; ~15 min walk or 5 min drive.",
+          "placeId": "coco"
+        },
+        {
+          "time": "20:00",
+          "title": "Stargazing on the beach (new moon)",
+          "placeId": "coco-beach",
+          "text": "1/7 is exactly the new moon, so there's no moonlight all night; Guanacaste's dry season has lots of clear skies, and it's fully dark by 19:00. Right in front of the hotel is the darker north end of Coco beach: walk a little away from the streetlights and lie on a towel. Orion is high in the southeast, and the brightest star below it is Sirius; after 21:00, look low in the south for Canopus (the second-brightest star in the night sky, not visible from Toronto). Point Stellarium or SkyView on your phone at the sky to identify stars. Bring only your phone and a towel, no valuables, and don't wander far.",
+          "links": [
+            {
+              "label": "Moon phases (timeanddate)",
+              "url": "https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2027-01-08",
+      "title": "Fri · Waterfall on the way, around Lake Arenal, hot springs in the afternoon, night walk in the evening",
+      "locations": [
+        "Llanos de Cortés",
+        "Lake Arenal",
+        "Termales del Arenal",
+        "Bogarín night walk"
+      ],
+      "schedule": [
+        {
+          "time": "08:30",
+          "title": "Check out and hit the road",
+          "text": "Bring some cash (the waterfall is cash only)."
+        },
+        {
+          "time": "09:45",
+          "title": "Llanos de Cortés waterfall",
+          "text": "About 30 concrete steps with a rope handrail; sandy at the bottom, rocky at the edge and in the water. You can take a dip; watch your step on the rocks so you don't roll an ankle.",
+          "placeId": "llanos"
+        },
+        {
+          "time": "11:00",
+          "title": "Via Cañas and Tilarán to Lake Arenal",
+          "text": "Lunch in Cañas or Tilarán. Between Cañas and Tilarán, don't follow the GPS left onto the dirt-road shortcut."
+        },
+        {
+          "time": "13:30",
+          "title": "North shore of Lake Arenal",
+          "text": "Drive the winding Route 142 and stop at roadside viewpoints for photos of the lake and volcano.",
+          "placeId": "nuevo-arenal"
+        },
+        {
+          "time": "14:30",
+          "title": "Check in at Termales del Arenal",
+          "text": "All driving done in daylight. Once the room is ready, head straight for the hotel's hot-spring pools.",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "15:00",
+          "title": "Soak in the hotel hot springs",
+          "text": "Soak for a while; be ready to go by 17:00.",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "17:30",
+          "title": "Drive to Bogarín",
+          "text": "About 10 min, all in town, easy driving just after dark."
+        },
+        {
+          "time": "~17:45–19:45",
+          "title": "Bogarín night walk",
+          "text": "A guide leads with a flashlight to find nocturnal frogs, snakes, scorpions and spiders, plus sleeping birds and sloths. The path is mostly flat; wear closed-toe shoes and bring a light jacket and bug spray. Start time per your booking.",
+          "placeId": "bogarin",
+          "links": [
+            {
+              "label": "Bogarín Trail",
+              "url": "https://bogarintrail.com/"
+            }
+          ]
+        },
+        {
+          "time": "20:00",
+          "title": "Dinner in town, drive back to the hotel",
+          "text": "Snapper's House is right downtown; 5 min drive back to the hotel afterwards."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2027-01-09",
+      "title": "Sat · River float for sloths and crocodiles, hanging bridges in the afternoon",
+      "locations": [
+        "Peñas Blancas River",
+        "Mistico Hanging Bridges",
+        "La Fortuna town"
+      ],
+      "schedule": [
+        {
+          "time": "06:00",
+          "title": "Early volcano viewing",
+          "text": "The volcano is most likely to show itself 6–9 am, and you can see it from the hotel."
+        },
+        {
+          "time": "07:30",
+          "title": "Peñas Blancas safari float",
+          "text": "Hotel pickup; you sit in an inflatable raft steered by the guide, no paddling, for about 2 hours spotting sloths, monkeys, caimans and birds; back around 11:00. You get on and off at the riverbank, which may be muddy and rocky, so watch your step and wear non-slip, closed-toe water shoes.",
+          "placeId": "penas-blancas"
+        },
+        {
+          "time": "12:00",
+          "title": "Lunch in town",
+          "text": "Ceviche at Cevichería D'Mora.",
+          "placeId": "fortuna"
+        },
+        {
+          "time": "14:00",
+          "title": "Mistico Hanging Bridges Park",
+          "text": "About 25 min drive. 3.2 km loop with gentle slopes and steps; the hanging bridges sway; ~2 hours. Tag along behind a guided group and you'll often spot small creatures like eyelash vipers. Watch your footing on the slopes. Last entry 15:50.",
+          "placeId": "mistico",
+          "links": [
+            {
+              "label": "Mistico official site",
+              "url": "https://misticopark.com/"
+            }
+          ]
+        },
+        {
+          "time": "16:30",
+          "title": "Back to the hotel for the hot springs",
+          "text": "After the bridges, soak for a while before heading out to dinner.",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "18:30",
+          "title": "Dinner in town",
+          "text": "5 min drive to town: Snapper's House (marlin ceviche, seafood soup) or Cevichería D'Mora; drive back to the hotel afterwards.",
+          "placeId": "fortuna"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2027-01-10",
+      "title": "Sun · Morning horseback ride with volcano views, Tabacón from noon to early evening",
+      "locations": [
+        "Horseback ride, volcano views",
+        "Tabacón Hot Springs"
+      ],
+      "schedule": [
+        {
+          "time": "07:30",
+          "title": "Hotel pickup (horseback tour)",
+          "text": "The volcano is most likely to be visible in the morning.",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "08:00–11:00",
+          "title": "Horseback ride with Arenal Volcano views",
+          "text": "About 2.5 hours of riding through forest and pasture to a volcano viewpoint and Los Lirios lake; the guide gives a lesson first. Note: keeping heels down in the stirrups and pushing off one foot to mount and dismount put some strain on the Achilles; if it feels tight, keep the horse at a walk.",
+          "links": [
+            {
+              "label": "Fortuna Welcome horseback tour",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour"
+            }
+          ]
+        },
+        {
+          "time": "11:30",
+          "title": "Back to the hotel to change",
+          "text": "",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "12:00–17:00",
+          "title": "Tabacón hot river + lunch",
+          "text": "About 10 min drive. Hot rivers, waterfalls and gardens at the foot of the volcano; the day pass includes lunch. The natural pools in the river have rocky bottoms; the flat-bottomed built pools are steadier. Still lovely in the rain. Leave at 17:00 and get back to the hotel before dark.",
+          "placeId": "tabacon",
+          "links": [
+            {
+              "label": "Tabacón day pass",
+              "url": "https://www.tabacon.com/day-pass/"
+            }
+          ]
+        },
+        {
+          "time": "Evening",
+          "title": "Dinner at the hotel",
+          "text": "Eat at the hotel, or drive 5 min into town.",
+          "placeId": "hotel-arenal"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2027-01-11",
+      "title": "Mon · Drive back to Liberia, nonstop flight home",
+      "locations": [
+        "La Fortuna",
+        "Lake Arenal",
+        "LIR"
+      ],
+      "schedule": [
+        {
+          "time": "06:30",
+          "title": "One last look at the volcano, breakfast",
+          "text": "",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "08:45",
+          "title": "Head to the airport",
+          "text": "Along the lake via Tilarán and Cañas, about 3 hours on the road; allow time to fill up (the car must be returned full) and arrive by 12:00.",
+          "placeId": "nuevo-arenal"
+        },
+        {
+          "time": "12:00",
+          "title": "Return the car, shuttle to the airport",
+          "text": "The departure tax is usually included in the airfare.",
+          "placeId": "lir"
+        },
+        {
+          "time": "14:40",
+          "title": "Porter nonstop back to Toronto",
+          "text": "Arrive 20:58. Partner shows PR card when entering Canada."
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "item": "La Fortuna Waterfall",
+      "when": "Not scheduled",
+      "note": "About 530 steps down, and the climb back up is harder; not great value just for a look at the falls."
+    },
+    {
+      "item": "Arenal 1968 lava trails / national park trails",
+      "when": "Dropped",
+      "note": "These are hiking trails; enjoying volcano views from the lake and the hotel instead."
+    },
+    {
+      "item": "Rincón de la Vieja mud bath and hot springs",
+      "when": "Backup",
+      "note": "About 1 hour from Hermosa; Guachipelín hot springs + volcanic mud USD45. For an extra soak, fit it into the afternoon of 1/7. The mud bath area is reached on a stretch of dirt path, so ask about conditions before going."
+    },
+    {
+      "item": "Palo Verde boat tour for crocodiles",
+      "when": "Not scheduled",
+      "note": "Overlaps with the Peñas Blancas float; private tour USD178 + tax, fairly pricey."
+    },
+    {
+      "item": "The Springs hot springs",
+      "when": "Not scheduled",
+      "note": "Day passes are paused for the Christmas season until 1/5 and available from 1/6; the hotel's own hot springs plus optional Tabacón are plenty."
+    },
+    {
+      "item": "Tamarindo / surfing",
+      "when": "Dropped",
+      "note": "No surfing; Tamarindo is 1.5 hours from the airport and mostly about surfing and nightlife."
+    },
+    {
+      "item": "1/10–1/15 alternate version",
+      "when": "Separate guide",
+      "note": "Same route; flights with carry-on cost about CA$670 more, but hotels like Villa del Sueño have availability."
+    },
+    {
+      "item": "Ecotermales hot springs",
+      "when": "Not buying separately",
+      "note": "Termales del Arenal has its own hot-spring pools and is right next door to Ecotermales; for a change of scene, go during the day (10:00–16:00 session)."
+    },
+    {
+      "item": "Bogarín daytime sloth trail",
+      "when": "Swapped for night walk",
+      "note": "The night walk shows you more animals; the morning of 1/10 is now horseback riding."
+    },
+    {
+      "item": "Other spots from the RedNote posts",
+      "when": "Not scheduled",
+      "note": "Poás Volcano, La Paz Waterfall Gardens and the Starbucks coffee farm are near San José, 2–3 hours from La Fortuna; Maquique canyoning and the Finca Modelo tree climb aren't suitable for Achilles rehab; Monteverde is too far to fit into five nights."
+    },
+    {
+      "item": "Achilles rehab",
+      "when": "Adjusted",
+      "note": "Late-stage rehab, already jogging and weight training: all the regular tours are included; rocky paths, boarding boats and horseback riding are flagged with 'take care' in the itinerary. La Fortuna Waterfall (~530 steps, mixed reviews in the posts) is not scheduled."
+    },
+    {
+      "item": "Night driving",
+      "when": "Short trips only",
+      "note": "The long legs (airport to Coco, Coco to the volcano, volcano back to the airport) are all in daylight; at night only 3–10 min drives in town (Coco, La Fortuna)."
+    }
+  ],
+  "rental": {
+    "title": "Car rental: pick up 1/6 16:15 – return 1/11 12:00 (5 days)",
+    "summary": "There's no convenient public transit between the two regions, so we drive all five days. Recommended: Adobe, minimum age 23 with no young-driver fee; pick-up and return are at the office outside the airport, with a free shuttle.",
+    "details": [
+      {
+        "label": "Driver",
+        "value": "23 at time of travel, Canadian G licence (Adobe requires a licence held 2+ years)"
+      },
+      {
+        "label": "Pick-up / return",
+        "value": "Adobe Liberia Airport branch (~7 km outside the airport, shuttle)"
+      },
+      {
+        "label": "Default vehicle",
+        "value": "Sedan or compact SUV, ~CA$492 (incl. mandatory insurance and CDW, estimate)"
+      },
+      {
+        "label": "Current status",
+        "value": "Not booked · no full checkout price for a 23-year-old yet"
+      }
+    ],
+    "notes": [
+      "Mandatory third-party liability (TPL/SLI) can't be waived, and most low prices on third-party sites exclude it; go by the rental office's quote.",
+      "Other companies: Vamos also has no young-driver fee; Europcar charges USD6/day; Alamo, Enterprise and National charge drivers aged 21–24 but don't publish the amount.",
+      "A Canadian licence is valid as is; bring your original passport (copies aren't accepted).",
+      "Leave nothing in the car, and after parking pull the door handle to confirm it's locked (thieves sometimes jam key-fob signals).",
+      "Do long drives in daylight: sunset is ~17:30, and Route 142 along the lake is winding and dark; at night only short drives in town."
+    ],
+    "links": [
+      {
+        "label": "Adobe Liberia",
+        "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+      },
+      {
+        "label": "Vamos insurance explained",
+        "url": "https://vamosrentacar.com/car-rental-insurance-explained/"
+      },
+      {
+        "label": "Government of Canada travel advice",
+        "url": "https://travel.gc.ca/destinations/costa-rica"
+      }
+    ]
+  },
+  "todo": [],
+  "sources": [
+    {
+      "label": "Flight price comparison, Nov 15 (YYZ⇄LIR nonstop, 1/6–1/11, round trip for two)",
+      "url": "https://www.google.com/travel/flights?q=Flights%20from%20YYZ%20to%20LIR%20on%202027-01-06%20through%202027-01-11%20nonstop%202%20adults&curr=CAD&hl=en&gl=ca",
+      "checkedOn": "2026-11-15",
+      "note": "Trip.com Porter round trip with carry-on CA$2,076; Porter official site CA$2,302 (Google shows no carry-on); ly.com CA$2,073, Kiwi CA$2,091 (no carry-on); WestJet from about CA$1,399 per person."
+    },
+    {
+      "label": "Booking.com hotels, Nov 15 (Playa Hermosa 1/6–1/8, La Fortuna 1/8–1/11, incl. tax)",
+      "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Villa del Sueño and Good Life didn't appear in the listings for these nights, possibly sold out; Expedia not compared."
+    },
+    {
+      "label": "Bank of Canada exchange rate (2026-11-13)",
+      "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/",
+      "checkedOn": "2026-11-15",
+      "note": "1 USD = 1.4257 CAD."
+    },
+    {
+      "label": "Costa Rica's new visa rules, Nov 2025",
+      "url": "https://www.elfinancierocr.com/economia-y-politica/costa-rica-actualiza-requisitos-de-ingreso-estos/N2IIWWNEDFBJ7NUUMBOKET4KIA/story/",
+      "checkedOn": "2026-11-15",
+      "note": "Group 3 nationals with a US multiple-entry visa or Canadian residency are visa-exempt; automated access to the DGME site failed, so the original text wasn't read."
+    },
+    {
+      "label": "Adobe rental rules",
+      "url": "https://www.adobecar.com/en/insurances/adobe-rent-a-car-insurance-coverage/",
+      "checkedOn": "2026-11-15",
+      "note": "Minimum age 23, licence held 2+ years, no young-driver fee; deposit USD1,000."
+    },
+    {
+      "label": "Vamos insurance prices",
+      "url": "https://vamosrentacar.com/car-rental-insurance-explained/",
+      "checkedOn": "2026-11-15",
+      "note": "Liability USD15.95/day, basic CDW USD9/day, full CDW USD18/day; used for estimates."
+    },
+    {
+      "label": "Marlin del Rey catamaran (Coco)",
+      "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
+      "checkedOn": "2026-11-15",
+      "note": "From USD90, 8:00 and 13:30 departures, 4 hours, includes lunch, drinks and snorkeling."
+    },
+    {
+      "label": "Ecotermales",
+      "url": "https://ecotermalesfortuna.cr/en/reservation/",
+      "checkedOn": "2026-11-15",
+      "note": "10:00–16:00 or 17:00–21:45; about USD81 with a meal."
+    },
+    {
+      "label": "Mistico Hanging Bridges",
+      "url": "https://misticopark.com/",
+      "checkedOn": "2026-11-15",
+      "note": "3.2 km, USD32 + tax, last entry 15:50."
+    },
+    {
+      "label": "LIR→La Fortuna driving route",
+      "url": "https://www.twoweeksincostarica.com/driving-liberia-airport-la-fortuna/",
+      "checkedOn": "2026-11-15",
+      "note": "About 3–3.5 hours, winding lakeside road; skip the Cañas–Tilarán dirt-road shortcut."
+    },
+    {
+      "label": "Sunrise and sunset (Liberia)",
+      "url": "https://www.timeanddate.com/sun/costa-rica/liberia?month=1&year=2027",
+      "checkedOn": "2026-11-15",
+      "note": "Mid-January sunset is around 17:35–17:38."
+    }
+  ],
+  "events": [
+    {
+      "title": "Papagayo winds",
+      "status": "Affects boat trips",
+      "priceLabel": "—",
+      "description": "From December to April, strong winds often blow across the Gulf of Papagayo, usually lasting a few days and stronger in the afternoon.",
+      "conflict": "Take the morning catamaran; if it's cancelled for wind, switch to the Rincón de la Vieja mud bath and hot springs (day trip, ~1 hour drive).",
+      "url": "https://thedaily.lascatalinascr.com/the-papagayo-winds"
+    },
+    {
+      "title": "1/7 New moon · stargazing",
+      "status": "Scheduled for the evening of 1/7",
+      "priceLabel": "Free",
+      "description": "Almost no moonlight on the nights of 1/6–1/10. Guanacaste's dry season has lots of clear skies: on 1/7, stargaze from the north end of the beach in front of the Coco hotel; look up during the 1/8 night walk too; on other nights, stargaze from the hotel hot springs, though Arenal is often cloudy, so it's down to luck.",
+      "conflict": "No driving: walk to the beach in front of the hotel; bring only your phone and a towel.",
+      "url": "https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027"
+    },
+    {
+      "title": "Santa Cruz / Palmares festivals",
+      "status": "To be confirmed",
+      "priceLabel": "Free to watch",
+      "description": "The Santa Cruz traditional festival is usually 1/14–1/18, and the Palmares festival runs mid-to-late January; both are after this trip.",
+      "conflict": "No impact.",
+      "url": "https://ticotimes.net/2026/01/06/the-palmares-2026-festival-is-costa-ricas-biggest-january-event"
+    }
+  ],
+  "share": {
+    "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
+    "title": "Costa Rica 6 days / 5 nights route map",
+    "subtitle": "Beach + volcano · 5-day road trip · wildlife without hiking",
+    "footer": "Routes drawn from OpenStreetMap road data · nothing booked yet · prices checked 2026-11-15",
+    "days": [
+      {
+        "day": 1,
+        "tag": "Arrival · beach",
+        "short": "Arrive",
+        "items": [
+          "✈️ Porter 10:40 → 15:24",
+          "🚗 Pick up car at the airport",
+          "🌅 Sunset on Coco beach"
+        ],
+        "badgeAt": 0.5
+      },
+      {
+        "day": 2,
+        "tag": "Snorkel · stars",
+        "short": "At sea",
+        "items": [
+          "🚗 Drive to the boat",
+          "⛵ Catamaran snorkel + lunch",
+          "🦐 Seafood dinner in Coco",
+          "🌌 New-moon stargazing on the beach"
+        ],
+        "badgeAt": 0.5
+      },
+      {
+        "day": 3,
+        "tag": "Falls · lake · springs",
+        "short": "Transfer",
+        "items": [
+          "💦 Llanos de Cortés waterfall",
+          "🏞️ Lake Arenal north shore",
+          "♨️ Afternoon soak at the hotel",
+          "🔦 Night walk to spot wildlife"
+        ],
+        "badgeAt": 0.45
+      },
+      {
+        "day": 4,
+        "tag": "Float · bridges",
+        "short": "Wildlife",
+        "items": [
+          "🦥 River float wildlife tour",
+          "🌉 Mistico Hanging Bridges",
+          "🐟 Seafood in town"
+        ],
+        "badgeAt": 0.5
+      },
+      {
+        "day": 5,
+        "tag": "Horses · springs",
+        "short": "Hot springs",
+        "items": [
+          "🐴 Horseback ride, volcano views",
+          "♨️ Tabacón hot river",
+          "🍽️ Evening at the hotel"
+        ],
+        "badgeAt": 0.5
+      },
+      {
+        "day": 6,
+        "tag": "Home",
+        "short": "Home",
+        "items": [
+          "🌋 Morning volcano views",
+          "✈️ 14:40 nonstop to Toronto"
+        ],
+        "badgeAt": 0.6
+      }
+    ],
+    "pois": [
+      {
+        "placeId": "lir",
+        "icon": "✈️",
+        "label": "Liberia Airport",
+        "side": "above"
+      },
+      {
+        "placeId": "coco",
+        "icon": "⛵",
+        "label": "Catamaran snorkel",
+        "side": "below"
+      },
+      {
+        "placeId": "llanos",
+        "icon": "💦",
+        "label": "Llanos de Cortés",
+        "side": "below"
+      },
+      {
+        "placeId": "nuevo-arenal",
+        "icon": "🏞️",
+        "label": "Lake Arenal",
+        "side": "above"
+      },
+      {
+        "placeId": "hotel-arenal",
+        "icon": "🌋",
+        "label": "Stay: Termales del Arenal",
+        "side": "above"
+      },
+      {
+        "placeId": "mistico",
+        "icon": "🌉",
+        "label": "Hanging bridges",
+        "side": "below"
+      },
+      {
+        "placeId": "tabacon",
+        "icon": "♨️",
+        "label": "Tabacón (optional)",
+        "side": "above"
+      },
+      {
+        "placeId": "hotel-beach",
+        "icon": "🏖️",
+        "label": "Stay: Coco",
+        "side": "above"
+      },
+      {
+        "placeId": "bogarin",
+        "icon": "🔦",
+        "label": "Night walk",
+        "side": "below"
+      }
+    ],
+    "bbox": [
+      -85.78,
+      10.33,
+      -84.52,
+      10.7
+    ],
+    "mapTitle": {
+      "text": "Costa Rica",
+      "lng": -85.05,
+      "lat": 10.36
+    }
+  },
+  "checklist": {
+    "asOf": "2026-11-15",
+    "groups": [
+      {
+        "id": "documents",
+        "label": "Documents and entry",
+        "open": false
+      },
+      {
+        "id": "bookings",
+        "label": "To book"
+      },
+      {
+        "id": "before",
+        "label": "Before departure",
+        "open": false
+      }
+    ],
+    "items": [
+      {
+        "id": "me-passport",
+        "group": "documents",
+        "who": "Me",
+        "title": "Confirm your Canadian passport is valid for the whole trip",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "note": "Canadian citizens are visa-free for up to 180 days; make sure you get an entry stamp in your passport. Bring your return itinerary.",
+        "url": "https://travel.gc.ca/destinations/costa-rica",
+        "urlLabel": "Government of Canada travel advice"
+      },
+      {
+        "id": "gf-entry",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Confirm visa-free entry: US visa is multiple-entry, or bring Canadian PR card",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "note": "Chinese passports are in Group 3 (visa required), but holders of a valid US multiple-entry visa or Canadian permanent residency are exempt (new rule from 2025-11: at least 1 day of validity left on entry, and the stay can't go beyond that validity). The official site couldn't be fetched automatically, so check the immigration page in a browser before departure or ask the airline.",
+        "url": "https://ticotimes.net/2025/11/24/costa-rica-updates-visa-requirements-for-foreign-visitors",
+        "urlLabel": "Report on the Nov 2025 rule change"
+      },
+      {
+        "id": "gf-passport",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Chinese passport should ideally be valid beyond 2027-07-11",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "note": "Group 3 countries require 180 days of passport validity; it's unclear whether this applies to visa-exempt travellers, so planning for 180 days is safest."
+      },
+      {
+        "id": "gf-prcard",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Confirm the PR card is still valid when returning to Canada on 1/11",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html",
+        "urlLabel": "IRCC: PR card"
+      },
+      {
+        "id": "insurance",
+        "group": "documents",
+        "who": "Both",
+        "title": "Buy travel medical insurance",
+        "due": "2026-12-20",
+        "lead": "Buy before departure"
+      },
+      {
+        "id": "book-flight",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the Porter nonstop round trip 1/6–1/11",
+        "due": "2026-11-30",
+        "lead": "Prices are high now; the sooner the better",
+        "note": "Trip.com CA$2,076 for two (carry-on listed as included). When booking, open the fare details to confirm a carry-on bag is allowed.",
+        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+        "urlLabel": "Trip.com"
+      },
+      {
+        "id": "book-hotels",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book both hotels (Villa Del Sol in Coco, 2 nights + Termales del Arenal, 3 nights)",
+        "due": "2026-11-30",
+        "lead": "January is local school holidays; book early",
+        "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+        "urlLabel": "Booking.com",
+        "note": "Termales del Arenal's page doesn't show free cancellation; check the change and cancellation policy before booking."
+      },
+      {
+        "id": "book-car",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the car on Adobe's site; enter your real age to see the total with mandatory insurance",
+        "due": "2026-12-10",
+        "lead": "4 weeks ahead",
+        "note": "Deposit ~USD1,000, credit card only.",
+        "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
+        "urlLabel": "Adobe"
+      },
+      {
+        "id": "book-cat",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/7 8:00 morning catamaran",
+        "due": "2026-12-20",
+        "lead": "2–3 weeks ahead",
+        "note": "Runs with a minimum of 15 people; free cancellation up to 24 hours before.",
+        "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
+        "urlLabel": "Marlin del Rey"
+      },
+      {
+        "id": "book-float",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/9 morning Peñas Blancas float (with hotel pickup)",
+        "due": "2026-12-27",
+        "lead": "2 weeks ahead",
+        "url": "https://vamosrentacar.com/blog/rio-penas-blancas-safari-float/",
+        "urlLabel": "About the float"
+      },
+      {
+        "id": "book-mistico",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/9 14:00 Mistico Hanging Bridges entry slot",
+        "due": "2026-12-30",
+        "lead": "1 week ahead",
+        "url": "https://misticopark.com/",
+        "urlLabel": "Mistico"
+      },
+      {
+        "id": "book-tabacon",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/10 Tabacón day pass (with lunch, 12:00 entry)",
+        "due": "2026-12-27",
+        "lead": "2–3 weeks ahead",
+        "note": "1/10 is outside the holiday blackout period (12/18–1/8); check the cancellation policy before booking.",
+        "url": "https://www.tabacon.com/day-pass/",
+        "urlLabel": "Tabacón"
+      },
+      {
+        "id": "cash",
+        "group": "before",
+        "who": "Me",
+        "title": "Get US$150 in small bills before leaving (withdraw colones after landing)",
+        "due": "2027-01-09",
+        "lead": "Before departure",
+        "note": "$1×10, $5×6, $10×3, $20×4, in crisp, undamaged bills. Don't buy colones in Canada; after landing, withdraw about ₡30,000 from an ATM at the airport or in town. See 'Cash to bring' on this page for details."
+      },
+      {
+        "id": "roaming",
+        "group": "before",
+        "who": "Both",
+        "title": "Set up roaming or buy an eSIM (needs to support Waze navigation)",
+        "due": "2027-01-09",
+        "lead": "Before departure"
+      },
+      {
+        "id": "yyz",
+        "group": "before",
+        "who": "Both",
+        "title": "Arrive at Pearson Terminal 3 by 07:40 on 1/6",
+        "due": "2027-01-06",
+        "lead": "3 hours before departure"
+      },
+      {
+        "id": "wind",
+        "group": "before",
+        "who": "Me",
+        "title": "Check the wind on 1/6 and confirm the 1/7 catamaran is running",
+        "due": "2027-01-06",
+        "lead": "Day before",
+        "note": "If it's cancelled for wind, go to the Rincón de la Vieja mud bath and hot springs instead."
+      },
+      {
+        "id": "shoes",
+        "group": "before",
+        "who": "Partner",
+        "title": "Pack non-slip, closed-toe water shoes or sport sandals",
+        "due": "2027-01-01",
+        "lead": "Before departure",
+        "note": "Handy for boarding boats, getting out of the raft, and around the hot-spring pools; steadier than flip-flops."
+      },
+      {
+        "id": "stars",
+        "group": "before",
+        "who": "Both",
+        "title": "Install a stargazing app (Stellarium or SkyView) and pack a large towel",
+        "due": "2027-01-05",
+        "lead": "Before departure",
+        "note": "For the 1/7 new-moon night on the beach; ideally an app that works offline."
+      },
+      {
+        "id": "book-night",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/8 evening Bogarín night walk",
+        "due": "2026-12-27",
+        "lead": "1–2 weeks ahead",
+        "note": "USD60/person, about 2 hours; confirm the start time; ~10 min drive.",
+        "url": "https://bogarintrail.com/",
+        "urlLabel": "Bogarín Trail"
+      },
+      {
+        "id": "book-horse",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/10 8:00 morning horseback ride with volcano views",
+        "due": "2026-12-27",
+        "lead": "1–2 weeks ahead",
+        "note": "Fortuna Welcome USD75/person incl. tax, with hotel pickup around La Fortuna, minimum 2 people; before booking, confirm Termales del Arenal is within the free pickup area and check the cancellation policy.",
+        "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour",
+        "urlLabel": "Fortuna Welcome"
+      }
+    ]
+  },
+  "fx": {
+    "base": "CAD",
+    "date": "2026-11-13",
+    "source": "Bank of Canada",
+    "rates": {
+      "USD": 1.4257
+    }
+  },
+  "cash": {
+    "asOf": "2026-11-15",
+    "summary": "Hotels, tours, gas stations and most restaurants take cards (Visa/Mastercard). Cash is only needed for the items below: US dollars mainly for tips and emergencies, colones for small places that only take local currency. Most of it is already counted in the food and tickets budgets; tips of about US$45 come out of the buffer.",
+    "currencies": [
+      {
+        "code": "USD",
+        "label": "US dollars",
+        "amount": 150,
+        "symbol": "US$",
+        "cad": 213.85,
+        "how": "Exchange CAD at a Canadian bank or currency exchange before leaving. Get small, crisp, undamaged bills (damaged US bills are often refused locally): $1×10, $5×6, $10×3, $20×4."
+      },
+      {
+        "code": "CRC",
+        "label": "Costa Rican colones",
+        "amount": 30000,
+        "symbol": "₡",
+        "usd": 66.67,
+        "cad": 95.05,
+        "how": "Don't exchange in Canada. After landing, withdraw about ₡30,000 from a bank ATM (BCR, BN, BAC) in the Liberia Airport arrivals hall or in Coco or La Fortuna; some ATMs don't work from 11 pm to 5 am."
+      }
+    ],
+    "items": [
+      {
+        "label": "Llanos de Cortés waterfall entry",
+        "currency": "CRC",
+        "amount": 8000,
+        "note": "₡4,000/person, cash only (1/8)"
+      },
+      {
+        "label": "Parking attendants (cuidacarros)",
+        "currency": "CRC",
+        "amount": 4000,
+        "note": "Informal attendants watch cars at beaches and on town streets, ₡500–1,000 each time"
+      },
+      {
+        "label": "Sodas, fruit stands, ice cream",
+        "currency": "CRC",
+        "amount": 14000,
+        "note": "Small shops may not take cards; already in the food budget"
+      },
+      {
+        "label": "Evening taxi in Coco (optional)",
+        "currency": "CRC",
+        "amount": 4000,
+        "note": "Taxi from town back to Villa Del Sol if you don't feel like walking, about ₡2,000 per ride"
+      },
+      {
+        "label": "Tips for guides and crew",
+        "currency": "USD",
+        "amount": 35,
+        "note": "About US$10 each for the catamaran, float and sloth guides; a few dollars for shuttle drivers"
+      },
+      {
+        "label": "Housekeeping tips",
+        "currency": "USD",
+        "amount": 10,
+        "note": "About US$2/night × 5 nights; restaurant bills already include a 10% service charge, so no extra tip needed"
+      },
+      {
+        "label": "Emergency cash",
+        "currency": "USD",
+        "amount": 100,
+        "note": "For when cards or ATMs don't work; bring it home if unused"
+      }
+    ],
+    "tips": [
+      "Exchange rate about ₡450 = US$1 (Nov 2026); US$1 is about 1.4257 CAD (Bank of Canada, 11/13).",
+      "US dollars are accepted everywhere, but change often comes back in colones at a poor rate; paying in colones at small places is better value.",
+      "When the card machine asks whether to pay in CAD or colones, choose colones (local currency); don't let the merchant convert it to CAD.",
+      "Use a credit card with no foreign transaction fee; ATM withdrawals charge a fee, so take out enough at once rather than several times."
+    ]
+  }
+}
