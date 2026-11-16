@@ -77,7 +77,7 @@ const EXACT = {
   '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions',
   // itinerary, coverage, checklist, events
   '原攻略项目核对 · 安排与取舍': 'Original items · what was kept or changed', '原项目': 'Item', '安排': 'Plan', '说明': 'Notes',
-  '待办': 'To do', '今天': 'Today', '都办好了': 'All done', '官方入口': 'Official site', '待办已完成': 'Checklist done', '· 全部完成': '· all done',
+  '已预订 ✓': 'Booked ✓', '自定义方案': 'custom option', '待办': 'To do', '今天': 'Today', '都办好了': 'All done', '官方入口': 'Official site', '待办已完成': 'Checklist done', '· 全部完成': '· all done',
   '费用待确认': 'Cost to confirm', '按实际行程安排，不重复预订。': 'Arrange by the actual plan; do not double-book.', '官方详情': 'Official details',
   // copy prompt
   '已复制，粘贴给 Claude Code 或 Codex 就能开始': 'Copied. Paste it into Claude Code or Codex to start',
@@ -102,7 +102,7 @@ const PATTERNS = [
   [/^· 套餐共 (.+)$/, '· package total $1'], [/^全程往返 (.+)$/, 'Round trip $1'], [/^(.*) · 同一往返总价，不重复计费$/, '$1 · one round-trip price, counted once'],
   [/^道路约(.+) km · 路网估时(\d+)分钟$/, 'About $1 km by road · about $2 min'], [/^(.+) km · 约(\d+)分钟$/, '$1 km · about $2 min'],
   [/^和(.+?)\s*一起看$/, 'View with $1'], [/^(\d+)个地点 · 左右滑动，点一下在地图上定位$/, '$1 places · swipe, tap one to find it on the map'],
-  [/^分段路程 · (\d+)段$/, 'Legs · $1'], [/^已过 (\d+) 天$/, '$1 days ago'], [/^还有 (\d+) 天$/, 'in $1 days'],
+  [/^分段路程 · (\d+)段$/, 'Legs · $1'], [/^已过 (\d+) 天$/, '$1 days ago'], [/^已订 (\d+)\/(\d+)$/, 'Booked $1/$2'], [/^还有 (\d+) 天$/, 'in $1 days'],
   [/^还有 (\d+) \/ (\d+) 项$/, '$1 of $2 left'], [/^· 最近：(.*)$/, '· next: $1'], [/^(\d+) 项待办$/, '$1 to do'], [/^待办 (\d+) 项$/, '$1 to do'],
   [/^(.*) · 路线图$/, '$1 · route map'],
   [/^(.*) · 还有 (\d+) 天$/, '$1 · in $2 days'], [/^(.*) · 已过 (\d+) 天$/, '$1 · $2 days ago'], [/^(.*) · 今天$/, '$1 · today'],

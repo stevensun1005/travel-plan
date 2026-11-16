@@ -140,6 +140,11 @@ def validate(folder):
                 except (ValueError,TypeError):errors.append(f'Checklist {item.get("id")}: invalid due date')
             if item.get('url'):check(str(item['url']).startswith(('https://','http://')),f'Checklist {item.get("id")}: url must be http(s)')
             check(item.get('status','todo') in ('todo','booked','done'),f'Checklist {item.get("id")}: status must be todo/booked/done')
+            if item.get('budget') is not None:
+                cats={c.get('id'):c for c in (data.get('budget') or {}).get('categories',[])}
+                cat=cats.get(item['budget']);check(cat is not None,f'Checklist {item.get("id")}: unknown budget category {item["budget"]}')
+                ids={o.get('id') for o in (cat or {}).get('options',[])}
+                for oid in item.get('budgetOptions') or []:check(oid in ids,f'Checklist {item.get("id")}: unknown budget option {oid}')
         if checklist.get('asOf'):
             try:dt.date.fromisoformat(checklist['asOf'])
             except (ValueError,TypeError):errors.append('checklist.asOf must be an ISO date')

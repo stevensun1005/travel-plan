@@ -410,7 +410,8 @@
                 "amount": 3667.2,
                 "note": "单订最低：Trip.com 5晚CA$3,056，折成6晚估算"
               }
-            ]
+            ],
+            "booking": false
           }
         ],
         "icon": "🏨"
@@ -807,7 +808,12 @@
                 "amount": 81,
                 "note": "约USD56"
               }
-            ]
+            ],
+            "booking": {
+              "kualoa": {
+                "title": "订古兰尼牧场两个90分钟团（1/5，Movie Sites＋Ocean Voyage）"
+              }
+            }
           },
           {
             "id": "movie-only",
@@ -856,7 +862,12 @@
                 "amount": 81,
                 "note": "约USD56"
               }
-            ]
+            ],
+            "booking": {
+              "kualoa": {
+                "title": "订古兰尼牧场 Movie Sites 团（1/5）"
+              }
+            }
           }
         ],
         "icon": "🎟️",
@@ -913,7 +924,12 @@
                 "amount": 165,
                 "note": "约USD113"
               }
-            ]
+            ],
+            "booking": {
+              "sail": {
+                "title": "订便宜的1.5小时日落船：1/4或1/7（看天气）"
+              }
+            }
           },
           {
             "id": "none",
@@ -2402,19 +2418,21 @@
         "id": "flight",
         "group": "bookings",
         "who": "我",
-        "title": "订机票：AC往返直飞（或Expedia机酒套餐）",
+        "title": "订机票：{option}",
         "due": "2026-11-22",
         "lead": "越早越好",
-        "note": "AC直飞含随身行李：Trip.com两人CA$2,062最便宜，但不能改期（24小时内免费取消）；AC官网Standard CA$2,132可以付费改期。Basic票不能带随身行李箱，不要买。"
+        "note": "AC直飞含随身行李：Trip.com两人CA$2,062最便宜，但不能改期（24小时内免费取消）；AC官网Standard CA$2,132可以付费改期。Basic票不能带随身行李箱，不要买。",
+        "budget": "flights"
       },
       {
         "id": "hotel",
         "group": "bookings",
         "who": "我",
-        "title": "订5晚酒店（1/3–1/8），记下免费取消截止日",
+        "title": "订5晚酒店：{option}（1/3–1/8），记下免费取消截止日",
         "due": "2026-11-30",
         "lead": "越早越好",
-        "note": "各平台最低（5晚含税）：Hotel Renew CA$1,223（Vio）、Hyatt Place CA$1,730（Expedia，含早）、Kaimana CA$1,763（Vio）、ʻAlohilani CA$2,067（Expedia）、Sheraton CA$3,056（Trip.com，不用换房）。订之前看清免费取消截止日。"
+        "note": "各平台最低（5晚含税）：Hotel Renew CA$1,223（Vio）、Hyatt Place CA$1,730（Expedia，含早）、Kaimana CA$1,763（Vio）、ʻAlohilani CA$2,067（Expedia）、Sheraton CA$3,056（Trip.com，不用换房）。订之前看清免费取消截止日。",
+        "budget": "hotel"
       },
       {
         "id": "arizona",
@@ -2426,7 +2444,8 @@
         "lead": "提前8周放票，每天15:00夏威夷时间（多伦多20:00）",
         "note": "免费，每张收$1手续费，订了不能改也不能退。如果没抢到，前一天15:00还会放出24小时内的票，但1/3那时我们还在飞机上，所以最好现在就订。",
         "url": "https://www.recreation.gov/ticket/facility/233338",
-        "urlLabel": "Recreation.gov"
+        "urlLabel": "Recreation.gov",
+        "budget": "activities"
       },
       {
         "id": "kualoa",
@@ -2437,16 +2456,18 @@
         "lead": "提前3–4周",
         "note": "热门场次会订满。订11:00左右的场次：太早赶不及植物园，太晚菠萝园的时间就不够。",
         "url": "https://www.kualoa.com/tours/",
-        "urlLabel": "Kualoa官网"
+        "urlLabel": "Kualoa官网",
+        "budget": "activities"
       },
       {
         "id": "car",
         "group": "bookings",
         "who": "我",
-        "title": "订1/5一天租车",
+        "title": "订1/5一天租车：{option}",
         "due": "2026-12-05",
         "lead": "提前约1个月",
-        "note": "按23岁、加拿大G牌查完整价格，含未满25岁附加费、保险和Waikīkī门店取还车。确认这个车型23岁能不能租。"
+        "note": "按23岁、加拿大G牌查完整价格，含未满25岁附加费、保险和Waikīkī门店取还车。确认这个车型23岁能不能租。",
+        "budget": "car"
       },
       {
         "id": "roberts",
@@ -2458,7 +2479,8 @@
         "lead": "最多提前一个月开放",
         "note": "含门票和Waikīkī往返车，约USD65/人；浮潜装备不含。",
         "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
-        "urlLabel": "Roberts Hawaii"
+        "urlLabel": "Roberts Hawaii",
+        "budget": "activities"
       },
       {
         "id": "house",
@@ -2477,7 +2499,8 @@
         "due": "2026-12-20",
         "lead": "随时可买",
         "url": "https://www.pearlharborhistoricsites.org/tickets",
-        "urlLabel": "Pearl Harbor Historic Sites"
+        "urlLabel": "Pearl Harbor Historic Sites",
+        "budget": "activities"
       },
       {
         "id": "iolani",
@@ -2487,7 +2510,8 @@
         "due": "2026-12-20",
         "lead": "提前约2周；只能网上买",
         "url": "https://www.iolanipalace.org/visit/",
-        "urlLabel": "ʻIolani Palace"
+        "urlLabel": "ʻIolani Palace",
+        "budget": "activities"
       },
       {
         "id": "dukes",
@@ -2505,7 +2529,8 @@
         "due": "2027-01-05",
         "lead": "1/6用之前买好",
         "url": "https://waikikitrolley.com/",
-        "urlLabel": "Waikiki Trolley"
+        "urlLabel": "Waikiki Trolley",
+        "budget": "transport"
       },
       {
         "id": "hanauma-backup",
@@ -2564,7 +2589,11 @@
         "lead": "提前3–4周；24小时前可免费取消",
         "note": "订票页没写哪几晚有、几点开始（其他平台写过20:00/21:00/22:00），订的时候确认周二有没有场次，最好订20:00。因天气取消可全额退款或改期。",
         "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
-        "urlLabel": "Stars Above Hawaii"
+        "urlLabel": "Stars Above Hawaii",
+        "budget": "evening",
+        "budgetOptions": [
+          "both"
+        ]
       },
       {
         "id": "sail",
@@ -2575,7 +2604,13 @@
         "lead": "先订1/7占位，出发前按预报决定是否改到1/4",
         "note": "Moana Sailing 2小时约USD81/人；Manu Kai 1.5小时约USD56/人。订之前看清改期和取消规则（很多船公司出发前24小时内不能退），订的时候确认上船点。",
         "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
-        "urlLabel": "Moana Sailing"
+        "urlLabel": "Moana Sailing",
+        "budget": "evening",
+        "budgetOptions": [
+          "both",
+          "sail",
+          "sail-budget"
+        ]
       },
       {
         "id": "monkeypod",

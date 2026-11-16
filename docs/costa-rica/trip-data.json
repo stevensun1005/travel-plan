@@ -1598,18 +1598,28 @@
         "lead": "现在是高价期，越早越好",
         "note": "Trip.com两人CA$2,076（标明含随身行李）。下单时点开票价详情确认能带随身行李箱。",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-        "urlLabel": "Trip.com"
+        "urlLabel": "Trip.com",
+        "budget": "flights"
       },
       {
-        "id": "book-hotels",
         "group": "bookings",
         "who": "我",
-        "title": "订两家酒店（Coco Villa Del Sol 2晚＋Termales del Arenal 3晚）",
         "due": "2026-11-30",
         "lead": "一月是当地学校假期，尽早",
-        "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-        "urlLabel": "Booking.com",
-        "note": "Termales del Arenal页面没标免费取消，订之前看清楚退改。"
+        "id": "book-hotel-beach",
+        "title": "订海边酒店：{option}（1/6–1/8 两晚）",
+        "budget": "hotel-beach",
+        "urlLabel": "Booking.com"
+      },
+      {
+        "group": "bookings",
+        "who": "我",
+        "due": "2026-11-30",
+        "lead": "一月是当地学校假期，尽早",
+        "id": "book-hotel-arenal",
+        "title": "订火山酒店：{option}（1/8–1/11 三晚）",
+        "budget": "hotel-arenal",
+        "urlLabel": "Booking.com"
       },
       {
         "id": "book-car",
@@ -1620,7 +1630,8 @@
         "lead": "提前4周",
         "note": "押金约USD1,000，只收信用卡。",
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
-        "urlLabel": "Adobe"
+        "urlLabel": "Adobe",
+        "budget": "car"
       },
       {
         "id": "book-cat",
@@ -1631,7 +1642,8 @@
         "lead": "提前2–3周",
         "note": "最少15人成团，24小时前免费取消。",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
-        "urlLabel": "Marlin del Rey"
+        "urlLabel": "Marlin del Rey",
+        "budget": "activities"
       },
       {
         "id": "book-float",
@@ -1641,7 +1653,12 @@
         "due": "2026-12-27",
         "lead": "提前2周",
         "url": "https://vamosrentacar.com/blog/rio-penas-blancas-safari-float/",
-        "urlLabel": "漂流介绍"
+        "urlLabel": "漂流介绍",
+        "budget": "activities",
+        "budgetOptions": [
+          "full",
+          "no-horse"
+        ]
       },
       {
         "id": "book-mistico",
@@ -1651,7 +1668,12 @@
         "due": "2026-12-30",
         "lead": "提前一周",
         "url": "https://misticopark.com/",
-        "urlLabel": "Mistico"
+        "urlLabel": "Mistico",
+        "budget": "activities",
+        "budgetOptions": [
+          "full",
+          "no-horse"
+        ]
       },
       {
         "id": "book-tabacon",
@@ -1662,7 +1684,8 @@
         "lead": "提前2–3周",
         "note": "1/10不在节日限制期（12/18–1/8），订之前看清取消规则。",
         "url": "https://www.tabacon.com/day-pass/",
-        "urlLabel": "Tabacón"
+        "urlLabel": "Tabacón",
+        "budget": "activities"
       },
       {
         "id": "cash",
@@ -1725,7 +1748,8 @@
         "lead": "提前1–2周",
         "note": "USD60/人，约2小时；确认开始时间，开车约10分钟。",
         "url": "https://bogarintrail.com/",
-        "urlLabel": "Bogarín Trail"
+        "urlLabel": "Bogarín Trail",
+        "budget": "activities"
       },
       {
         "id": "book-horse",
@@ -1736,7 +1760,11 @@
         "lead": "提前1–2周",
         "note": "Fortuna Welcome USD75/人含税，含La Fortuna一带酒店接送，最少2人；订之前确认Termales del Arenal在免费接送范围内、看清取消规则。",
         "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour",
-        "urlLabel": "Fortuna Welcome"
+        "urlLabel": "Fortuna Welcome",
+        "budget": "activities",
+        "budgetOptions": [
+          "full"
+        ]
       }
     ]
   },

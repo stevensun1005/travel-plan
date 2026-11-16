@@ -129,7 +129,8 @@
             "amount": 0,
             "status": "配合机酒套餐",
             "note": "只在机票选「机酒套餐」时自动使用。",
-            "bundleOnly": true
+            "bundleOnly": true,
+            "booking": false
           }
         ],
         "color": "#e07a12",
@@ -680,21 +681,32 @@
         "note": "演示：国际行程会在这里列护照有效期、签证/电子旅行许可和办理时间。"
       },
       {
-        "id": "hotel",
         "group": "bookings",
-        "title": "订 Harbour House（虚构）",
         "who": "两人",
         "due": "2030-05-15",
         "lead": "越早越好",
-        "note": "演示酒店，不能预订。"
+        "id": "flight",
+        "title": "订机票：{option}（虚构）",
+        "budget": "flights"
+      },
+      {
+        "id": "hotel",
+        "group": "bookings",
+        "title": "订酒店：{option}（虚构）",
+        "who": "两人",
+        "due": "2030-05-15",
+        "lead": "越早越好",
+        "note": "演示酒店，不能预订。",
+        "budget": "hotel"
       },
       {
         "id": "car",
         "group": "bookings",
-        "title": "订两天敞篷车（虚构）",
+        "title": "订两天租车：{option}（虚构）",
         "due": "2030-05-31",
         "lead": "提前4周",
-        "note": "按驾驶人实际年龄和驾照查价。"
+        "note": "按驾驶人实际年龄和驾照查价。",
+        "budget": "car"
       },
       {
         "id": "dinner",

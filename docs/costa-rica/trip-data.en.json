@@ -1598,18 +1598,28 @@
         "lead": "Prices are high now; the sooner the better",
         "note": "Trip.com CA$2,076 for two (carry-on listed as included). When booking, open the fare details to confirm a carry-on bag is allowed.",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-        "urlLabel": "Trip.com"
+        "urlLabel": "Trip.com",
+        "budget": "flights"
       },
       {
-        "id": "book-hotels",
         "group": "bookings",
         "who": "Me",
-        "title": "Book both hotels (Villa Del Sol in Coco, 2 nights + Termales del Arenal, 3 nights)",
         "due": "2026-11-30",
         "lead": "January is local school holidays; book early",
-        "url": "https://www.booking.com/searchresults.en-gb.html?ss=Playa+Hermosa%2C+Guanacaste%2C+Costa+Rica&checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-        "urlLabel": "Booking.com",
-        "note": "Termales del Arenal's page doesn't show free cancellation; check the change and cancellation policy before booking."
+        "id": "book-hotel-beach",
+        "title": "Book the beach hotel: {option} (1/6–1/8, 2 nights)",
+        "budget": "hotel-beach",
+        "urlLabel": "Booking.com"
+      },
+      {
+        "group": "bookings",
+        "who": "Me",
+        "due": "2026-11-30",
+        "lead": "January is local school holidays; book early",
+        "id": "book-hotel-arenal",
+        "title": "Book the volcano hotel: {option} (1/8–1/11, 3 nights)",
+        "budget": "hotel-arenal",
+        "urlLabel": "Booking.com"
       },
       {
         "id": "book-car",
@@ -1620,7 +1630,8 @@
         "lead": "4 weeks ahead",
         "note": "Deposit ~USD1,000, credit card only.",
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
-        "urlLabel": "Adobe"
+        "urlLabel": "Adobe",
+        "budget": "car"
       },
       {
         "id": "book-cat",
@@ -1631,7 +1642,8 @@
         "lead": "2–3 weeks ahead",
         "note": "Runs with a minimum of 15 people; free cancellation up to 24 hours before.",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
-        "urlLabel": "Marlin del Rey"
+        "urlLabel": "Marlin del Rey",
+        "budget": "activities"
       },
       {
         "id": "book-float",
@@ -1641,7 +1653,12 @@
         "due": "2026-12-27",
         "lead": "2 weeks ahead",
         "url": "https://vamosrentacar.com/blog/rio-penas-blancas-safari-float/",
-        "urlLabel": "About the float"
+        "urlLabel": "About the float",
+        "budget": "activities",
+        "budgetOptions": [
+          "full",
+          "no-horse"
+        ]
       },
       {
         "id": "book-mistico",
@@ -1651,7 +1668,12 @@
         "due": "2026-12-30",
         "lead": "1 week ahead",
         "url": "https://misticopark.com/",
-        "urlLabel": "Mistico"
+        "urlLabel": "Mistico",
+        "budget": "activities",
+        "budgetOptions": [
+          "full",
+          "no-horse"
+        ]
       },
       {
         "id": "book-tabacon",
@@ -1662,7 +1684,8 @@
         "lead": "2–3 weeks ahead",
         "note": "1/10 is outside the holiday blackout period (12/18–1/8); check the cancellation policy before booking.",
         "url": "https://www.tabacon.com/day-pass/",
-        "urlLabel": "Tabacón"
+        "urlLabel": "Tabacón",
+        "budget": "activities"
       },
       {
         "id": "cash",
@@ -1725,7 +1748,8 @@
         "lead": "1–2 weeks ahead",
         "note": "USD60/person, about 2 hours; confirm the start time; ~10 min drive.",
         "url": "https://bogarintrail.com/",
-        "urlLabel": "Bogarín Trail"
+        "urlLabel": "Bogarín Trail",
+        "budget": "activities"
       },
       {
         "id": "book-horse",
@@ -1736,7 +1760,11 @@
         "lead": "1–2 weeks ahead",
         "note": "Fortuna Welcome USD75/person incl. tax, with hotel pickup around La Fortuna, minimum 2 people; before booking, confirm Termales del Arenal is within the free pickup area and check the cancellation policy.",
         "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-volcano-horseback-riding-tour",
-        "urlLabel": "Fortuna Welcome"
+        "urlLabel": "Fortuna Welcome",
+        "budget": "activities",
+        "budgetOptions": [
+          "full"
+        ]
       }
     ]
   },

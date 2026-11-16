@@ -410,7 +410,8 @@
                 "amount": 3667.2,
                 "note": "Cheapest standalone: Trip.com CA$3,056 for 5 nights, scaled to 6 nights"
               }
-            ]
+            ],
+            "booking": false
           }
         ],
         "icon": "🏨"
@@ -807,7 +808,12 @@
                 "amount": 81,
                 "note": "~USD56"
               }
-            ]
+            ],
+            "booking": {
+              "kualoa": {
+                "title": "Book two 90-minute Kualoa Ranch tours (Jan 5, Movie Sites + Ocean Voyage)"
+              }
+            }
           },
           {
             "id": "movie-only",
@@ -856,7 +862,12 @@
                 "amount": 81,
                 "note": "~USD56"
               }
-            ]
+            ],
+            "booking": {
+              "kualoa": {
+                "title": "Book the Kualoa Ranch Movie Sites tour (Jan 5)"
+              }
+            }
           }
         ],
         "icon": "🎟️",
@@ -913,7 +924,12 @@
                 "amount": 165,
                 "note": "~USD113"
               }
-            ]
+            ],
+            "booking": {
+              "sail": {
+                "title": "Book the budget 1.5-hour sunset cruise: Jan 4 or Jan 7 (weather)"
+              }
+            }
           },
           {
             "id": "none",
@@ -2402,19 +2418,21 @@
         "id": "flight",
         "group": "bookings",
         "who": "Me",
-        "title": "Book flights: AC round-trip nonstop (or Expedia flight + hotel bundle)",
+        "title": "Book flights: {option}",
         "due": "2026-11-22",
         "lead": "The sooner the better",
-        "note": "AC nonstop with carry-on: Trip.com at CA$2,062 for two is cheapest but allows no changes (free cancellation within 24 hours); Air Canada's site Standard CA$2,132 allows paid changes. Basic fares don't allow a carry-on bag; don't buy them."
+        "note": "AC nonstop with carry-on: Trip.com at CA$2,062 for two is cheapest but allows no changes (free cancellation within 24 hours); Air Canada's site Standard CA$2,132 allows paid changes. Basic fares don't allow a carry-on bag; don't buy them.",
+        "budget": "flights"
       },
       {
         "id": "hotel",
         "group": "bookings",
         "who": "Me",
-        "title": "Book 5 hotel nights (Jan 3–8) and note the free-cancellation deadline",
+        "title": "Book 5 hotel nights: {option} (Jan 3–8), and note the free-cancellation deadline",
         "due": "2026-11-30",
         "lead": "The sooner the better",
-        "note": "Lowest per hotel (5 nights incl. tax): Hotel Renew CA$1,223 (Vio), Hyatt Place CA$1,730 (Expedia, breakfast incl.), Kaimana CA$1,763 (Vio), ʻAlohilani CA$2,067 (Expedia), Sheraton CA$3,056 (Trip.com, no room change). Check the free-cancellation deadline before booking."
+        "note": "Lowest per hotel (5 nights incl. tax): Hotel Renew CA$1,223 (Vio), Hyatt Place CA$1,730 (Expedia, breakfast incl.), Kaimana CA$1,763 (Vio), ʻAlohilani CA$2,067 (Expedia), Sheraton CA$3,056 (Trip.com, no room change). Check the free-cancellation deadline before booking.",
+        "budget": "hotel"
       },
       {
         "id": "arizona",
@@ -2426,7 +2444,8 @@
         "lead": "Released 8 weeks ahead, daily at 15:00 Hawaii time (20:00 Toronto)",
         "note": "Free, $1 fee per ticket, no changes or refunds. If you miss out, more tickets are released at 15:00 the day before for the next 24 hours, but on Jan 3 we'll still be on the plane, so best to book now.",
         "url": "https://www.recreation.gov/ticket/facility/233338",
-        "urlLabel": "Recreation.gov"
+        "urlLabel": "Recreation.gov",
+        "budget": "activities"
       },
       {
         "id": "kualoa",
@@ -2437,16 +2456,18 @@
         "lead": "3–4 weeks ahead",
         "note": "Popular slots sell out. Book around 11:00: too early and there's no time for the botanical garden, too late and there's not enough time for Dole.",
         "url": "https://www.kualoa.com/tours/",
-        "urlLabel": "Kualoa official site"
+        "urlLabel": "Kualoa official site",
+        "budget": "activities"
       },
       {
         "id": "car",
         "group": "bookings",
         "who": "Me",
-        "title": "Book the one-day car rental for Jan 5",
+        "title": "Book the one-day car rental for Jan 5: {option}",
         "due": "2026-12-05",
         "lead": "~1 month ahead",
-        "note": "Get the full price for a 23-year-old with a Canadian G licence, incl. the under-25 surcharge, insurance and Waikīkī pickup/return. Confirm a 23-year-old can rent this model."
+        "note": "Get the full price for a 23-year-old with a Canadian G licence, incl. the under-25 surcharge, insurance and Waikīkī pickup/return. Confirm a 23-year-old can rent this model.",
+        "budget": "car"
       },
       {
         "id": "roberts",
@@ -2458,7 +2479,8 @@
         "lead": "Opens up to one month ahead",
         "note": "Includes entry and round-trip Waikīkī transport, ~USD65/person; snorkel gear not included.",
         "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
-        "urlLabel": "Roberts Hawaii"
+        "urlLabel": "Roberts Hawaii",
+        "budget": "activities"
       },
       {
         "id": "house",
@@ -2477,7 +2499,8 @@
         "due": "2026-12-20",
         "lead": "Buy anytime",
         "url": "https://www.pearlharborhistoricsites.org/tickets",
-        "urlLabel": "Pearl Harbor Historic Sites"
+        "urlLabel": "Pearl Harbor Historic Sites",
+        "budget": "activities"
       },
       {
         "id": "iolani",
@@ -2487,7 +2510,8 @@
         "due": "2026-12-20",
         "lead": "~2 weeks ahead; online only",
         "url": "https://www.iolanipalace.org/visit/",
-        "urlLabel": "ʻIolani Palace"
+        "urlLabel": "ʻIolani Palace",
+        "budget": "activities"
       },
       {
         "id": "dukes",
@@ -2505,7 +2529,8 @@
         "due": "2027-01-05",
         "lead": "Buy before using it on Jan 6",
         "url": "https://waikikitrolley.com/",
-        "urlLabel": "Waikiki Trolley"
+        "urlLabel": "Waikiki Trolley",
+        "budget": "transport"
       },
       {
         "id": "hanauma-backup",
@@ -2564,7 +2589,11 @@
         "lead": "3–4 weeks ahead; free cancellation up to 24 hours before",
         "note": "The booking page doesn't say which nights it runs or when it starts (other sites have listed 20:00/21:00/22:00); confirm there's a Tuesday slot when booking, ideally 20:00. Weather cancellations get a full refund or rebooking.",
         "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
-        "urlLabel": "Stars Above Hawaii"
+        "urlLabel": "Stars Above Hawaii",
+        "budget": "evening",
+        "budgetOptions": [
+          "both"
+        ]
       },
       {
         "id": "sail",
@@ -2575,7 +2604,13 @@
         "lead": "Book Jan 7 to hold a spot, then decide before the trip whether to move to Jan 4 based on the forecast",
         "note": "Moana Sailing 2 hours ~USD81/person; Manu Kai 1.5 hours ~USD56/person. Check change and cancellation rules before booking (many operators don't refund within 24 hours of departure), and confirm the boarding spot.",
         "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
-        "urlLabel": "Moana Sailing"
+        "urlLabel": "Moana Sailing",
+        "budget": "evening",
+        "budgetOptions": [
+          "both",
+          "sail",
+          "sail-budget"
+        ]
       },
       {
         "id": "monkeypod",

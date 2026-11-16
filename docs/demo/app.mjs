@@ -36,6 +36,25 @@ const money=value=>{const n=Number(value);return `${data.trip.currency||'CAD'} $
 const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#2a70cf','#e07a12','#1f9652','#d2402f','#2b9c9a','#9b6dd0','#c99a1c','#8a958c'][index%8];
 function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save-status').textContent='已自动保存到当前浏览器';}catch{$('#save-status').textContent='本次选择有效，浏览器未能保存';}}
 
+// 预算和出发前清单联动：清单项写 budget: 预算分类 id（可再写 budgetOptions: [方案 id]，只在选了这些方案时出现）。
+// 标题里的 {option} 换成当前选中的方案名；方案上的 booking:{title,note,url,urlLabel,due,lead} 会覆盖清单项，booking:false 表示这个方案不用单独订；
+// 一个分类关联了好几项时，booking 可以按清单项 id 分开写：{"清单项id":{title…}|false}。
+// 勾选按「清单项@方案」记，换了方案就是一项新的待订；某一类关联的待订全部勾上，预算卡片显示「已预订」并变绿。
+let checks=null,redrawChecklist=()=>{};
+const checkState=()=>checks??=(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{})(read(`travel-plan:checklist:v1:${data.trip.id}`,{}));
+function checkItems(){
+  return (data.checklist?.items||[]).flatMap(item=>{
+    if(!item.budget)return [item];
+    const cat=data.budget?.categories?.find(c=>c.id===item.budget),id=selection?.selections?.[item.budget]?.optionId,opt=cat?.options.find(o=>o.id===id);
+    if(item.budgetOptions&&!item.budgetOptions.includes(id))return [];
+    const raw=opt?.booking,own=raw&&typeof raw==='object'&&Object.prototype.hasOwnProperty.call(raw,item.id)?raw[item.id]:raw;
+    if(own===false)return [];
+    const b=own&&typeof own==='object'&&['title','note','url','urlLabel','due','lead'].some(k=>k in own)?own:{},name=opt?String(opt.label).split(' · ')[0]:'自定义方案';
+    return [{...item,...b,title:String(b.title||item.title).replace('{option}',name),url:b.url||item.url||opt?.url,urlLabel:b.urlLabel||item.urlLabel,key:`${item.id}@${id||''}`}];
+  });
+}
+const isChecked=item=>checkState()[item.key||item.id]??(item.status==='done'||item.status==='booked');
+function bookingState(catId){const items=checkItems().filter(i=>i.budget===catId);return {n:items.length,done:items.filter(isChecked).length};}
 function renderBudget(){
   const budget=data.budget;
   if(!budget?.categories?.length){$('#budget').hidden=true;return;}
@@ -77,7 +96,10 @@ function updateBudget(sync=false,persist=true){
     const isLocked=result.locked.includes(row.id),select=card.querySelector('select');select.disabled=isLocked;
     for(const o of row.options.filter(o=>o.bundleOnly))select.querySelector(`option[value="${o.id}"]`).hidden=!isLocked;
     if(isLocked)select.value=row.option.id;
-    card.querySelector('.price-status').textContent=(row.option.status||'待确认')+(row.splitFrom?` · 套餐按单买价拆分 ${Math.round(row.splitShare*100)}%`:'');card.querySelector('[data-note]').textContent=row.option.note||'';card.querySelector('[data-quotes]').innerHTML=quotesHtml(row.option);card.querySelector('[data-source]').innerHTML=link('查价入口',row.option.url);
+    const owner=isLocked?data.budget.categories.find(c=>c.options.find(o=>o.id===result.selections[c.id]?.optionId)?.bundles?.[row.id]):null;// 被套餐包含的类别跟着套餐的预订状态走
+    const booked=bookingState(owner?owner.id:row.id),pill=card.querySelector('.price-status'),all=booked.n&&booked.done===booked.n;
+    pill.textContent=all?'已预订 ✓':booked.done?`已订 ${booked.done}/${booked.n}`:(row.option.status||'待确认')+(row.splitFrom?` · 套餐按单买价拆分 ${Math.round(row.splitShare*100)}%`:'');
+    pill.classList.toggle('booked',!!all);pill.classList.toggle('part',!all&&booked.done>0);card.classList.toggle('is-booked',!!all);card.querySelector('[data-note]').textContent=row.option.note||'';card.querySelector('[data-quotes]').innerHTML=quotesHtml(row.option);card.querySelector('[data-source]').innerHTML=link('查价入口',row.option.url);
     if(row.id==='bags')for(const o of row.options.filter(o=>o.bagCount)){
       const flight=result.rows.find(r=>r.id==='flights');const rate=flight?.option.bagPerPerson;
       card.querySelector(`option[value="${o.id}"]`).textContent=`${o.label} · ${money(validMoney(rate)?rate*o.bagCount:o.amount)}`;
@@ -96,6 +118,7 @@ function updateBudget(sync=false,persist=true){
   }).join('');
   const pending=result.rows.filter(row=>/尚无|未取得|no (actual )?quote|not (yet )?quoted/i.test(row.option.status||''));
   $('#budget-warning').textContent=result.total===0?'所有支出为0，填写金额后显示占比。':pending.length?`${pending.map(r=>r.option.label).join('、')}尚无实际报价；试算低于上限不等于能按此价格预订。`:'机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。';
+  redrawChecklist();
   if(persist)save();
 }
 
@@ -261,26 +284,26 @@ function renderRental(){
 function renderChecklist(){
   // Pre-departure checklist: documents, bookings with release windows/deadlines, and other to-dos.
   const list=data.checklist;if(!list?.items?.length){$('#checklist').hidden=true;$('a[href="#checklist"]')?.setAttribute('hidden','');return;}
-  const storage=`travel-plan:checklist:v1:${data.trip.id}`,saved=read(storage,{});const done=saved&&typeof saved==='object'?saved:{};
+  const storage=`travel-plan:checklist:v1:${data.trip.id}`,done=checkState();
   const groups=list.groups?.length?list.groups:[{id:'',label:'待办'}];
   // 只在手机上折叠（电脑上全部展开）；group.open:false 表示手机上默认收起。勾选后重画时保留当前展开状态。
   const defaults=()=>new Map(groups.map(g=>[g.id||'',!PHONE.matches||g.open!==false]));
   let opened=defaults();
   const sortKey=item=>daysUntil(item.due)??1e6;
-  const isDone=item=>done[item.id]??(item.status==='done'||item.status==='booked');
+  const isDone=isChecked;
   const chip=item=>{
     const n=daysUntil(item.due);if(n===null)return item.dueLabel?`<span class="due">${escape(item.dueLabel)}</span>`:'';
     const when=n<0?`已过 ${-n} 天`:n===0?'今天':`还有 ${n} 天`,state=isDone(item)?'done':n<0?'late':n<=14?'soon':'later';
     return `<span class="due ${state}" title="${escape(item.due)}">${escape(item.dueLabel||item.due.slice(5).replace('-','/'))} · ${when}</span>`;
   };
   const draw=()=>{
-    const open=list.items.filter(i=>!isDone(i)),next=[...open].sort((a,b)=>sortKey(a)-sortKey(b))[0];
-    $('#checklist-summary').innerHTML=`<strong>还有 ${open.length} / ${list.items.length} 项</strong>${next?` · 最近：${escape(next.title)} ${chip(next)}`:' · 全部完成'}${list.asOf?`<small>资料核对于 ${escape(list.asOf)}</small>`:''}`;
+    const all=checkItems(),open=all.filter(i=>!isDone(i)),next=[...open].sort((a,b)=>sortKey(a)-sortKey(b))[0];
+    $('#checklist-summary').innerHTML=`<strong>还有 ${open.length} / ${all.length} 项</strong>${next?` · 最近：${escape(next.title)} ${chip(next)}`:' · 全部完成'}${list.asOf?`<small>资料核对于 ${escape(list.asOf)}</small>`:''}`;
     $('#checklist-groups').innerHTML=groups.map(g=>{
-      const items=list.items.filter(i=>(i.group||'')===(g.id||'')||(!g.id&&!groups.some(x=>x.id===i.group))).sort((a,b)=>sortKey(a)-sortKey(b));
+      const items=all.filter(i=>(i.group||'')===(g.id||'')||(!g.id&&!groups.some(x=>x.id===i.group))).sort((a,b)=>sortKey(a)-sortKey(b));
       if(!items.length)return '';
       const left=items.filter(i=>!isDone(i)).length;
-      return `<details class="check-group" data-group="${escape(g.id||'')}"${opened.get(g.id||'')?' open':''}><summary><h3>${escape(g.label)}<small>${left?`${left} 项待办`:'都办好了'}</small></h3><span class="fold" aria-hidden="true"></span></summary><ul>${items.map(i=>`<li class="${isDone(i)?'is-done':''}"><label><input type="checkbox" data-check="${escape(i.id)}" ${isDone(i)?'checked':''}><span class="check-title">${escape(i.title)}</span></label><div class="check-meta">${i.who?`<span class="who">${escape(i.who)}</span>`:''}${chip(i)}${i.lead?`<span class="lead">${escape(i.lead)}</span>`:''}</div>${i.note?`<p>${escape(i.note)}</p>`:''}${link(i.urlLabel||'官方入口',i.url)}</li>`).join('')}</ul></details>`;
+      return `<details class="check-group" data-group="${escape(g.id||'')}"${opened.get(g.id||'')?' open':''}><summary><h3>${escape(g.label)}<small>${left?`${left} 项待办`:'都办好了'}</small></h3><span class="fold" aria-hidden="true"></span></summary><ul>${items.map(i=>`<li class="${isDone(i)?'is-done':''}"><label><input type="checkbox" data-check="${escape(i.key||i.id)}" ${isDone(i)?'checked':''}><span class="check-title">${escape(i.title)}</span></label><div class="check-meta">${i.who?`<span class="who">${escape(i.who)}</span>`:''}${chip(i)}${i.lead?`<span class="lead">${escape(i.lead)}</span>`:''}</div>${i.note?`<p>${escape(i.note)}</p>`:''}${link(i.urlLabel||'官方入口',i.url)}</li>`).join('')}</ul></details>`;
     }).join('');
     const facts=$('#trip-facts');if(facts&&!facts.querySelector('.todo-fact'))facts.insertAdjacentHTML('beforeend','<a class="todo-fact" href="#checklist"></a>');
     const fact=facts?.querySelector('.todo-fact');if(fact)fact.textContent=open.length?`待办 ${open.length} 项`:'待办已完成';
@@ -288,8 +311,8 @@ function renderChecklist(){
   $('#checklist-groups').addEventListener('toggle',e=>{const g=e.target.closest?.('[data-group]');if(g)opened.set(g.dataset.group,g.open);},true);
   $('#checklist-groups').addEventListener('click',e=>{if(!PHONE.matches&&e.target.closest('summary'))e.preventDefault();});
   PHONE.addEventListener?.('change',()=>{opened=defaults();draw();});
-  $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();};
-  draw();
+  $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();if(data.budget?.categories?.length)updateBudget(false,false);};
+  redrawChecklist=draw;draw();
 }
 function navSpy(){
   // 顶栏高亮当前看到的区块。

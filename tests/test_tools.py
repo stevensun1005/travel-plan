@@ -57,9 +57,12 @@ class ToolsTest(unittest.TestCase):
             items=data['checklist']['items']
             items.append(dict(items[0]))
             items[1].update(group='nowhere',due='2030-13-01',url='javascript:alert(1)',status='maybe')
+            items.append({**items[0],'id':'linked-bad-cat','budget':'no-such-category'})
+            cat=data['budget']['categories'][0]
+            items.append({**items[0],'id':'linked-bad-opt','budget':cat['id'],'budgetOptions':[cat['options'][0]['id'],'no-such-option']})
             path.write_text(json.dumps(data),encoding='utf-8')
             errors,_=validate(project)
-            for text in ['duplicate id','unknown group','invalid due date','url must be http','status must be']:
+            for text in ['duplicate id','unknown group','invalid due date','url must be http','status must be','unknown budget category','unknown budget option']:
                 self.assertTrue(any(text in e for e in errors),text)
     def test_quotes_convert_pick_cheapest_and_are_validated(self):
         from apply_quotes import apply

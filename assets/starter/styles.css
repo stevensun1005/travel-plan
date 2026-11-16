@@ -147,6 +147,9 @@ h3{font:700 21px/1.35 var(--hand);margin:0 0 6px}
 .choice select:disabled{opacity:1;border-style:dashed;background:var(--hl)}
 .custom{display:grid;gap:4px;font-size:13px;margin-top:10px}
 .price-status{display:inline-block;margin-top:10px;padding:0 8px;font:14px/1.6 var(--hand);color:var(--orange);border:1.5px solid var(--orange);border-radius:var(--r3);background:var(--orange-f)}
+.choice.is-booked{border-color:var(--green);background:var(--green-f);box-shadow:3px 3px 0 var(--green)}
+.price-status.booked{color:var(--green);border-color:var(--green);background:var(--green-f)}
+.price-status.part{color:var(--green);border-style:dashed;border-color:var(--green)}
 .choice p{font-size:13.5px;line-height:1.65;color:var(--ink2);margin:8px 0 0}
 .quotes{margin:10px 0 4px;padding:6px 10px;border:1.5px dashed var(--ink2);border-radius:var(--r3);background:var(--paper)}
 .quotes summary{cursor:pointer;font:15px var(--hand);color:var(--ink2)}
