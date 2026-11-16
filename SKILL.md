@@ -94,6 +94,8 @@ python scripts/fetch_basemap.py /absolute/path/to/trip
 python scripts/validate_trip.py /absolute/path/to/trip
 python scripts/serve.py /absolute/path/to/trip
 python scripts/package_site.py /absolute/path/to/trip /absolute/path/to/site-output
+# 发到有固定公开网址的地方（GitHub Pages、自己的域名）时，生成链接预览卡片：
+python scripts/make_card.py /absolute/path/to/trip --url https://公开地址/
 ```
 
 校验日期/晚数、引用、预算与路线；从服务器实际输出取得地址。浏览器可用时真实切换方案、自定义金额、刷新验证保存、切换航班及地图日期，并检查小窗口。补充检查围绕已发现问题，不扩成无关审计。

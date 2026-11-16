@@ -343,6 +343,13 @@ function renderTodo(){
   $('#todo-form').onsubmit=e=>{e.preventDefault();const text=$('#todo-text').value.trim();if(!text)return;todos.push({text,done:false});$('#todo-text').value='';store();draw();};
   $('#todos').onchange=e=>{if(e.target.dataset.todo===undefined)return;todos[Number(e.target.dataset.todo)].done=e.target.checked;store();};draw();
 }
+// ?card：只画 1200×630 的分享卡片（scripts/make_card.py 截图存成 og.png），不渲染攻略页
+async function renderCard(){
+  const m=await import('./share-map.mjs');let total=0;try{total=calculate(data.budget||{categories:[]},null).total;}catch{}
+  const canvas=await m.drawCard({data,color,total});
+  canvas.style.cssText='display:block;width:1200px;height:630px';document.body.replaceChildren(canvas);document.body.style.cssText='margin:0;background:#fbf7ec;overflow:hidden';
+  document.documentElement.dataset.card='ready';
+}
 async function init(){
   try{
     // 中英文：有 trip-data.en.json 才显示切换按钮；默认中文。
@@ -351,6 +358,7 @@ async function init(){
     const langBtn=$('#lang-btn');if(langBtn&&hasEn){langBtn.hidden=false;langBtn.textContent=lang==='en'?'ZH':'EN';langBtn.setAttribute('aria-label',lang==='en'?'Switch to Chinese':'切换到英文');langBtn.onclick=()=>switchLang(lang==='en'?'zh':'en');}
     const response=lang==='en'?enRes:await fetch('trip-data.json',{cache:'no-store'});if(!response.ok)throw Error('Trip missing');data=await response.json();
     if(lang==='en')document.querySelector('meta[name="description"]')?.setAttribute('content',data.trip.subtitle||data.trip.title);
+    if(new URLSearchParams(location.search).has('card'))return renderCard();
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');

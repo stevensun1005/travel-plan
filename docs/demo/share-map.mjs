@@ -102,7 +102,13 @@ async function loadFonts(strings) {
   await Promise.race([wait, new Promise(r => setTimeout(r, 4000))]);
 }
 
-export async function openShareMap({ data, roads = [], basemap, color }) {
+export async function openShareMap(args) {
+  const { canvas, title } = await drawPoster(args);
+  const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+  showModal(canvas.toDataURL('image/png'), title, blob);
+}
+
+async function drawPoster({ data, roads = [], basemap, color }) {
   const share = data.share || {};
   if (!basemap) basemap = await fetch('basemap.json').then(r => r.ok ? r.json() : null).catch(() => null);
   if (!roads.length) roads = await fetch(data.map?.routesFile || 'routes.json').then(r => r.ok ? r.json() : { routes: [] }).then(c => c.routes || []).catch(() => []);
@@ -325,8 +331,94 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
   });
   text(ctx, share.footer || (i18n.lang === 'en' ? 'Roads drawn from OpenStreetMap data · prices and bookings per the trip page' : '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准'), W / 2, H - 22, { font: `15px ${SANS}`, color: INK2, align: 'center' });
 
-  const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-  showModal(canvas.toDataURL('image/png'), title, blob);
+  return { canvas, title, days, dayColor, map: { MX, MY, MW, MH } };
+}
+
+// 文字按宽度换行（中文逐字、英文按词），最多 lines 行，最后一行放不下就用 … 收尾
+function wrap(ctx, str, font, maxW, lines) {
+  ctx.font = font;
+  const tokens = String(str || '').match(/[⺀-鿿＀-￯]|[^\s⺀-鿿＀-￯]+\s*|\s+/g) || [];
+  const out = []; let cur = '';
+  for (const t of tokens) {
+    if (cur && !/^[，。、；：！？）」』”’,.;:!?)]/.test(t) && ctx.measureText(cur + t.trimEnd()).width > maxW) { out.push(cur.replace(/[\s·・,，、]+$/, '')); cur = t.trimStart(); } else cur += t;
+  }
+  if (cur.trim()) out.push(cur.trimEnd());
+  if (out.length > lines) { out.length = lines; out[lines - 1] = fit(ctx, out[lines - 1].replace(/[\s·・,，、;；:：]+$/, '') + '…', font, maxW).replace(/[\s·・,，、;；:：]+…$/, '…'); }
+  return out;
+}
+
+// 分享卡片：1200×630，发链接时聊天软件和社交网站显示的预览图（og:image）。
+// 左边标题、日期、人数、预算，右边是海报里的路线地图。由 scripts/make_card.py 用无头浏览器截图保存成 og.png。
+export async function drawCard({ data, roads, basemap, color, total }) {
+  const en = i18n.lang === 'en', t = data.trip || {};
+  const poster = await drawPoster({ data, roads, basemap, color });
+  const CW = 1200, CH = 630;
+  const canvas = document.createElement('canvas');
+  canvas.width = CW * SCALE; canvas.height = CH * SCALE;
+  const ctx = canvas.getContext('2d'); ctx.scale(SCALE, SCALE);
+  ctx.fillStyle = PAPER; ctx.fillRect(0, 0, CW, CH);
+  for (let x = 0; x <= CW; x += 20) { ctx.strokeStyle = x % 100 ? 'rgba(70,110,170,.08)' : 'rgba(70,110,170,.18)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x + .5, 0); ctx.lineTo(x + .5, CH); ctx.stroke(); }
+  for (let y = 0; y <= CH; y += 20) { ctx.strokeStyle = y % 100 ? 'rgba(70,110,170,.08)' : 'rgba(70,110,170,.18)'; ctx.beginPath(); ctx.moveTo(0, y + .5); ctx.lineTo(CW, y + .5); ctx.stroke(); }
+
+  // 右边：路线地图（从海报里裁出地图面板）
+  const { MX, MY, MW, MH } = poster.map, BX = 588, BY = 36, BW = 576, BH = Math.round(576 * (MH - 8) / (MW - 8));
+  sketchBox(ctx, BX, BY, BW, BH, { fill: '#cfe6ec' });
+  ctx.save(); roundPath(ctx, BX + 2, BY + 2, BW - 4, BH - 4, [16, 5, 18, 7]); ctx.clip();
+  ctx.drawImage(poster.canvas, (MX + 4) * SCALE, (MY + 4) * SCALE, (MW - 8) * SCALE, (MH - 8) * SCALE, BX, BY, BW, BH);
+  ctx.restore();
+  ctx.save(); roundPath(ctx, BX, BY, BW, BH, [18, 6, 20, 8]); ctx.strokeStyle = INK; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
+
+  // 地图下面：每天一个彩色圆点 + 短标签
+  const days = poster.days.slice(0, 8), step = BW / Math.max(1, days.length), sy = BY + BH + 38;
+  days.forEach((d, i) => {
+    const x = BX + i * step + 16;
+    ctx.beginPath(); ctx.arc(x, sy, 13, 0, Math.PI * 2); ctx.fillStyle = poster.dayColor(d.day); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();
+    text(ctx, String(d.day), x, sy + 1, { font: `bold 17px ${HAND}`, color: '#fff', align: 'center', base: 'middle' });
+    text(ctx, fit(ctx, d.short || d.tag, `18px ${HAND}`, step - 38), x + 19, sy + 1, { font: `18px ${HAND}`, base: 'middle' });
+  });
+
+  // 左边：标签、标题、副标题、要点
+  const LX = 48, LW = 500;
+  const kicker = t.kicker || [t.startDate, t.endDate].filter(Boolean).join(' – ');
+  let y = 52;
+  if (kicker) {
+    ctx.save(); ctx.translate(LX, y); ctx.rotate(-.025);
+    const k = fit(ctx, kicker, `22px ${HAND}`, LW - 40); ctx.font = `22px ${HAND}`; const kw = ctx.measureText(k).width + 28;
+    sketchBox(ctx, 0, 0, kw, 38, { fill: HL, shadow: 0, lw: 2, r: [12, 4, 10, 5] });
+    text(ctx, k, 14, 27, { font: `22px ${HAND}` });
+    ctx.restore(); y += 66;
+  }
+  let size = 64, lines;
+  for (; size >= 40; size -= 4) { lines = wrap(ctx, t.title || 'travel-plan', `bold ${size}px ${HAND}`, LW, 3); if (lines.length <= 2 || size === 40) break; }
+  lines.forEach((line, i) => {
+    const lw = text(ctx, line, LX, y + size * .9 + i * size * 1.12, { font: `bold ${size}px ${HAND}` });
+    if (i === lines.length - 1) { ctx.fillStyle = HL; ctx.globalCompositeOperation = 'multiply'; ctx.fillRect(LX + lw * .4, y + size * .62 + i * size * 1.12, lw * .62, size * .36); ctx.globalCompositeOperation = 'source-over'; }
+  });
+  y += lines.length * size * 1.12 + 26;
+  wrap(ctx, t.subtitle, `24px ${SANS}`, LW, 3).forEach((line, i) => text(ctx, line, LX, y + i * 34, { font: `24px ${SANS}`, color: INK2 }));
+  y += Math.min(3, wrap(ctx, t.subtitle, `24px ${SANS}`, LW, 3).length) * 34 + 22;
+
+  const money = n => `${t.currency || ''} ${Math.round(n).toLocaleString('en-US')}`.trim();
+  const facts = [
+    t.startDate && t.endDate && `${dateLabel(t.startDate)} – ${dateLabel(t.endDate)}`,
+    t.travelers && (en ? `${t.travelers} travelers` : `${t.travelers}人`),
+    t.nights && (en ? `${t.nights} nights` : `${t.nights}晚`),
+    total > 0 && (en ? `about ${money(total)}` : `约 ${money(total)}`),
+  ].filter(Boolean);
+  let fx = LX, fy = Math.min(y, 470);
+  for (const f of facts) {
+    ctx.font = `bold 22px ${SANS}`; const w = ctx.measureText(f).width + 30;
+    if (fx + w > LX + LW) { fx = LX; fy += 52; }
+    sketchBox(ctx, fx, fy, w, 40, { fill: CARD, shadow: 3, lw: 2, r: [12, 5, 12, 5] });
+    text(ctx, f, fx + 15, fy + 21, { font: `bold 22px ${SANS}`, base: 'middle' });
+    fx += w + 14;
+  }
+
+  // 左下角：品牌
+  text(ctx, 'travel—plan', LX, CH - 38, { font: `bold 30px ${HAND}` });
+  ctx.beginPath(); ctx.arc(LX + 172, CH - 48, 6, 0, Math.PI * 2); ctx.fillStyle = '#e07a12'; ctx.fill();
+  text(ctx, en ? 'Interactive trip page · budget · map · day by day' : '互动攻略 · 预算 · 地图 · 每日行程', LX + 190, CH - 40, { font: `18px ${SANS}`, color: INK2 });
+  return canvas;
 }
 
 function fileName(title) {

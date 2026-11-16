@@ -12,4 +12,6 @@ pending/building/publishing继续跟进同一部署，成功且返回生产URL�
 
 更新站点时重新生成同一静态输出，验证并部署新版本。区分本地校验、浏览器、Git推送、远端CI和生产部署的状态，不混用结论。
 
+链接预览卡片：发到 GitHub Pages、自己域名等有固定公开地址的地方后，运行 `make_card.py 旅行目录 --url 公开地址`。它用本机的 Chrome/Edge/Chromium 无头截图页面自己画的 1200×630 卡片（`index.html?card`，左边标题、日期、人数、默认预算，右边路线地图），存成 `og.png`，并在 `index.html` 里写入 Open Graph / Twitter 标签（重复运行会替换，不会叠加）。之后再 `package_site.py`，`og.png` 会一起打包。`og:image` 必须是绝对网址，所以没有 `--url` 时多数应用不显示图片。iMessage、WhatsApp、Telegram、Slack、Discord、X、Facebook、LinkedIn 会读这些标签；微信聊天里的普通网页链接一般不显示自定义图片。Artifact 链接由 claude.ai 自己生成预览，不需要这一步。改了标题、日期或路线后重新运行。
+
 托管环境的CSP可能拦截OpenStreetMap在线图块（例如 Artifact）。发布前先跑 `fetch_basemap.py`，`package_site.py` 会把 `basemap.json` 和 `share-map.mjs` 一起打包，地图在图块被拦截时仍显示陆地、公路和地名。分享海报只在浏览器里绘制。发布到 Artifact 时声明 `capabilities: {downloads: true}`，否则沙箱会拦住下载、长按和右键保存，「保存图片」按钮只能提示截图；其他托管不需要额外设置。
