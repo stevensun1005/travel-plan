@@ -10,9 +10,9 @@
 ![Buildless](https://img.shields.io/badge/build-zero-326b74)
 ![Maps](https://img.shields.io/badge/maps-real_roads-d49c56)
 ![Budget](https://img.shields.io/badge/budget-interactive-6d8c64)
-[![License: MIT](https://img.shields.io/badge/license-MIT-153b3d)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-153b3d)](LICENSE)
 
-[**打开欧胡岛演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
+[**打开欧胡岛演示 →**](https://stevensun1005.github.io/travel-plan/demo/) · [一句话安装](#一句话让-ai-帮你装) · [三步安装](#三步安装) · [复制一句话开始](#复制一句话开始) · [English](README.en.md)
 
 </div>
 
@@ -21,6 +21,20 @@
 你有一份旧PDF、几张机票截图、一串想去的地方，还有「别太赶」「吃好一点」「预算别爆」这些真实需求。
 
 **travel-plan** 是给 Claude 和 Codex 使用的旅行规划 skill。它把这些资料整理成一份能看地图、切换机酒方案、实时算预算、发给同伴的网页。交付包含可编辑数据、网页和校验工具，不只是一段聊天记录。
+
+## 一句话让 AI 帮你装
+
+不想自己敲命令？把下面这段整段复制，发给你正在用的 Claude Code 或 Codex，它会自己装好：
+
+```text
+帮我安装 travel-plan 旅行规划 skill：https://github.com/stevensun1005/travel-plan
+- 如果你是 Claude Code：运行 git clone https://github.com/stevensun1005/travel-plan ~/.claude/skills/travel-plan
+- 如果你是 Codex：把仓库 git clone 到一个临时文件夹，进去运行 python scripts/install.py
+- 已经装过的话，就进安装好的文件夹 git pull 更新到最新版
+装好后读一遍里面的 SKILL.md，告诉我怎么开始做第一份旅行攻略。
+```
+
+在 claude.ai 网页或桌面 App 里用，请看下面的[三步安装](#三步安装)上传 skill。
 
 ## 先看看成品
 
@@ -246,4 +260,10 @@ node --check assets/starter/share-map.mjs
 
 ## License
 
-[MIT](LICENSE)。地图与随包组件遵循各自许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+[Apache-2.0](LICENSE)，附署名要求（[NOTICE](NOTICE)）。可以自由使用、修改和再发布，包括商用；**但任何复制、fork、移植或改写（包括用 AI 照着重写的版本）都必须保留 `LICENSE`、`NOTICE` 和源文件顶部的出处注释，并在 README 或页面上写明：**
+
+> Based on travel-plan by Steven Sun — https://github.com/stevensun1005/travel-plan
+
+每个源文件顶部都带着这段出处注释，仓库里的 [AGENTS.md](AGENTS.md)（Claude Code 通过 `CLAUDE.md` 读到它）也会告诉帮人照抄的 AI：保留署名、在新项目里写上出处。用 skill 给自己做攻略不需要额外操作，生成的页面自带出处注释、页脚 GitHub 链接和海报二维码。
+
+2026-11-16 之前发布的版本是 MIT 许可，那些版本的副本仍按 MIT（同样要保留版权声明）。地图与随包组件遵循各自许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

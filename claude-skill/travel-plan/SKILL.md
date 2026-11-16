@@ -44,3 +44,7 @@ git -C "$TP_DIR" log -1 --format='当前版本：%h %cd' --date=short 2>/dev/nul
 - 机票一律按每人可带1件随身行李箱的票价比较；不含随身行李箱的基础票不算。
 - 选项名要说清楚金额包含什么，不要只写选项之间不同的那一部分。
 - 价格写明查价日期，区分查价记录、估算和已预订；不编造报价、余位或地址。
+
+## 署名
+
+travel-plan 由 Steven Sun 制作（https://github.com/stevensun1005/travel-plan），Apache-2.0 许可，附署名要求。做攻略时保留页面里的出处注释、GitHub 链接和海报二维码；照着它另做 skill 或项目时，保留 `LICENSE`、`NOTICE`，并写明 `Based on travel-plan by Steven Sun — https://github.com/stevensun1005/travel-plan`。

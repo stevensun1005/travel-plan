@@ -1,3 +1,8 @@
+// travel-plan — https://github.com/stevensun1005/travel-plan
+// Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
+// Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
+// and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
+
 // 中英文切换。默认中文；切到英文时：行程内容读 trip-data.en.json，界面上的固定文字按下面的对照表换成英文。
 // Language switch. Chinese by default; in English the trip content comes from trip-data.en.json and every
 // fixed interface string is translated through the tables below (exact phrases first, then patterns).

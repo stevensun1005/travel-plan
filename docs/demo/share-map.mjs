@@ -1,3 +1,8 @@
+// travel-plan — https://github.com/stevensun1005/travel-plan
+// Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
+// Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
+// and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
+
 // 分享路线图：把每天的路线、景点和亮点画成一张手绘风海报（canvas），在弹窗里显示，截图或长按保存。
 // 只用本页已有的数据：trip-data.json 的 share 配置（可选，缺省时从 days / places 自动生成）、
 // routes.json 的道路几何、basemap.json 的陆地/山区/公路。不下载、不上传任何东西。

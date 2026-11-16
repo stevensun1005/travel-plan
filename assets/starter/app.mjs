@@ -1,3 +1,8 @@
+// travel-plan — https://github.com/stevensun1005/travel-plan
+// Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
+// Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
+// and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
+
 import {calculate,normalize,validMoney,nearestIndex,daysUntil,itemize} from './budget.mjs';
 import {i18n,wantedLang,switchLang,startI18n} from './i18n.mjs';
 

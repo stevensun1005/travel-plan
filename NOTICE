@@ -1,0 +1,34 @@
+travel-plan
+Copyright 2026 Steven Sun (stevensun1005)
+https://github.com/stevensun1005/travel-plan
+
+This product includes software, page templates, scripts and skill
+instructions created by Steven Sun as part of travel-plan, licensed under
+the Apache License, Version 2.0 (see LICENSE).
+
+Attribution required
+--------------------
+Any copy, fork, port or derivative work of travel-plan -- including code,
+page templates, styles, scripts, SKILL.md / reference instructions, and
+versions rewritten, translated or regenerated with AI assistants -- must,
+as required by Section 4 of the License:
+
+  1. keep this NOTICE file and the copyright / license headers in the
+     source files, and
+  2. visibly credit the original project, for example in its README and
+     on any About / credits page or footer:
+
+       Based on travel-plan by Steven Sun
+       https://github.com/stevensun1005/travel-plan
+
+Versions published before 2026-11-16 were released under the MIT License;
+the MIT terms, including keeping the copyright notice, continue to apply to
+copies of those versions.
+
+Third-party components
+----------------------
+The Apache License covers only the original travel-plan code and assets.
+Leaflet, OpenStreetMap data, Natural Earth data, fonts and other third-party
+content remain under their own licenses; see THIRD_PARTY_NOTICES.md.
+Retained travel-template portions remain under the MIT notice in
+licenses/travel-template-MIT.txt.

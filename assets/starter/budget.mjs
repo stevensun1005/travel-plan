@@ -1,3 +1,8 @@
+// travel-plan — https://github.com/stevensun1005/travel-plan
+// Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
+// Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
+// and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
+
 export const validMoney = (value,min=0) => typeof value==='number' && Number.isFinite(value) && value>=min && value<=1000000;
 const cents=value=>Math.round(value*100);
 export function normalize(budget,saved) {

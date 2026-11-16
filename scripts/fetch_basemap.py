@@ -1,3 +1,7 @@
+# travel-plan — https://github.com/stevensun1005/travel-plan
+# Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
+# Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
+# and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
 """Cache an offline base map from OpenStreetMap: land, forests, lakes, roads by class, route shields and place names.
 
 The page draws it under the online tiles, so the map still reads where tiles are blocked (for example a

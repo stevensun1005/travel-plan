@@ -2,7 +2,7 @@
 
 **Turn scattered travel notes into a page you can plan together.**
 
-[Live demo: Toronto → Oʻahu](https://stevensun1005.github.io/travel-plan/demo/) · [中文 README](README.md) · [Skill instructions](SKILL.md)
+[Live demo: Toronto → Oʻahu](https://stevensun1005.github.io/travel-plan/demo/) · [Install in one message](#install-in-one-message) · [中文 README](README.md) · [Skill instructions](SKILL.md)
 
 ![Interactive budget](docs/assets/budget.png)
 
@@ -31,6 +31,20 @@ The live demo is a real plan made with travel-plan: Toronto to Oʻahu for five n
 | [![Land, forests, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers and highlights](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
 
 For multi-city requests, the agent can extend the starter with city/night/order choices, rail-versus-flight options, event-anchored scheduling, and linked dates, lodging, maps and costs. Attraction details include photos, reasons to visit, duration and ticket information across every route. Expedia research follows the requested itinerary; mismatched quotes become estimates again while manual budgets survive. See [multi-city workflow](references/multi-city.md). These extensions are task-specific; the Oʻahu demo uses the single-city starter.
+
+## Install in one message
+
+Copy this whole block and send it to the Claude Code or Codex session you already use; it will install the skill for you:
+
+```text
+Please install the travel-plan skill: https://github.com/stevensun1005/travel-plan
+- If you are Claude Code: run git clone https://github.com/stevensun1005/travel-plan ~/.claude/skills/travel-plan
+- If you are Codex: git clone the repository into a temporary folder, then run python scripts/install.py inside it
+- If it is already installed, git pull in the installed folder to update it
+Then read its SKILL.md and tell me how to start my first trip plan.
+```
+
+For claude.ai or the Claude desktop app, upload the skill as described below.
 
 ## Install
 
@@ -78,4 +92,12 @@ node --check assets/starter/app.mjs
 node --check assets/starter/share-map.mjs
 ```
 
-MIT licensed. Component and map licenses are retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+## License
+
+[Apache-2.0](LICENSE) with an attribution [NOTICE](NOTICE). You may use, modify and redistribute it, commercially too; **any copy, fork, port or rewrite (including versions regenerated with an AI assistant) must keep `LICENSE`, `NOTICE` and the header comment in each source file, and credit:**
+
+> Based on travel-plan by Steven Sun — https://github.com/stevensun1005/travel-plan
+
+Every source file starts with that credit, and [AGENTS.md](AGENTS.md) (read by Claude Code through `CLAUDE.md`) tells AI assistants that copy the project to keep it and add it to the new project. Making your own trip page with the skill needs nothing extra: generated pages carry the header, a footer GitHub link and the poster QR code.
+
+Versions published before 2026-11-16 were MIT licensed, and copies of those versions stay under MIT (which also requires keeping the copyright notice). Component and map licenses are retained in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
