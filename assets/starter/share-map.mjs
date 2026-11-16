@@ -343,7 +343,7 @@ function wrap(ctx, str, font, maxW, lines) {
     if (cur && !/^[，。、；：！？）」』”’,.;:!?)]/.test(t) && ctx.measureText(cur + t.trimEnd()).width > maxW) { out.push(cur.replace(/[\s·・,，、]+$/, '')); cur = t.trimStart(); } else cur += t;
   }
   if (cur.trim()) out.push(cur.trimEnd());
-  if (out.length > lines) { out.length = lines; out[lines - 1] = fit(ctx, out[lines - 1].replace(/[\s·・,，、;；:：]+$/, '') + '…', font, maxW).replace(/[\s·・,，、;；:：]+…$/, '…'); }
+  if (out.length > lines) { out.length = lines; out[lines - 1] = fit(ctx, out[lines - 1].replace(/[\s·・,，、;；:：。.!！?？]+$/, '') + '…', font, maxW).replace(/[\s·・,，、;；:：。.!！?？]+…$/, '…'); }
   return out;
 }
 
