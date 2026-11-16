@@ -9,6 +9,7 @@
 A Codex skill with a buildless website starter. Merge PDFs and previous plans, research date-specific flight/hotel/car options, build realistic daily schedules, and let travelers compare choices with a live budget and spending chart.
 
 - **Real geography:** Leaflet, OpenStreetMap, cached OSRM road geometry, daily filters and directions — plus an offline OSM base map (land, forests, lakes, road classes down to tertiary roads, route shields, place names) so the map still reads when a host blocks map tiles.
+- **Chinese / English switch:** an "EN / ZH" button in the top bar flips the whole page; Chinese is the default. English content lives in `trip-data.en.json` (same ids, amounts and dates), interface strings in `i18n.mjs`, and the validator rejects any Chinese character left in the English file.
 - **Where in the world:** a bundled world outline (Natural Earth 1:110m, public domain) with country names stays visible when you zoom out. Set `map.home` to mark the departure city and add a button that frames home and the trip together.
 - **Share a route poster:** one button draws a hand-drawn poster of every day's route, place stickers and highlights, with a save-image button.
 - **Hand-drawn look:** graph-paper and chalkboard themes, handwriting headings, highlighter marks, boarding-pass flight cards and a little travelling alpaca.

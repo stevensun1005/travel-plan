@@ -6,7 +6,9 @@ const W = 1200, SCALE = 2;
 const HAND = '"Patrick Hand","Ma Shan Zheng","Comic Sans MS","KaiTi","STKaiti",cursive';
 const SANS = '-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI","Segoe UI Emoji","Apple Color Emoji",sans-serif';
 const INK = '#2a2a2e', INK2 = '#62626b', PAPER = '#fbf7ec', CARD = '#fffdf5', HL = '#fff0a0';
-const WEEK = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+import { i18n } from './i18n.mjs';
+const WEEK_ZH = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+const WEEK_EN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 function rng(seed) { // small deterministic random, so the sketchy wobble is the same every time
   return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
@@ -39,7 +41,7 @@ function fit(ctx, str, font, maxW) { // shorten to the measured width, ending wi
 function dateLabel(date) {
   if (!date) return '';
   const d = new Date(`${date}T12:00:00`);
-  return `${d.getMonth() + 1}/${d.getDate()} ${WEEK[d.getDay()]}`;
+  return `${d.getMonth() + 1}/${d.getDate()} ${(i18n.lang === 'en' ? WEEK_EN : WEEK_ZH)[d.getDay()]}`;
 }
 
 async function loadFonts(strings) {
@@ -86,7 +88,7 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
   sketchBox(ctx, 0, 0, kw, 38, { fill: HL, shadow: 0, lw: 2, r: [12, 4, 10, 5] });
   text(ctx, kicker, 14, 27, { font: `22px ${HAND}` });
   ctx.restore();
-  const title = share.title || `${data.trip.title} · 路线图`;
+  const title = share.title || `${data.trip.title} · ${i18n.lang === 'en' ? 'route map' : '路线图'}`;
   let size = 62; ctx.font = `bold ${size}px ${HAND}`;
   while (size > 38 && ctx.measureText(title).width > W - 120) { size -= 2; ctx.font = `bold ${size}px ${HAND}`; }
   const tw = text(ctx, fit(ctx, title, `bold ${size}px ${HAND}`, W - 120), 60, 142, { font: `bold ${size}px ${HAND}` });
@@ -268,7 +270,7 @@ export async function openShareMap({ data, roads = [], basemap, color }) {
     text(ctx, tag, x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
     if (i < days.length - 1) text(ctx, '→', x + step - 18, y + 1, { font: `20px ${HAND}`, color: INK2, align: 'center', base: 'middle' });
   });
-  text(ctx, share.footer || '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准', W / 2, H - 22, { font: `15px ${SANS}`, color: INK2, align: 'center' });
+  text(ctx, share.footer || (i18n.lang === 'en' ? 'Roads drawn from OpenStreetMap data · prices and bookings per the trip page' : '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准'), W / 2, H - 22, { font: `15px ${SANS}`, color: INK2, align: 'center' });
 
   const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
   showModal(canvas.toDataURL('image/png'), title, blob);

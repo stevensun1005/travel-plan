@@ -19,6 +19,8 @@
 | `events` | `{title,status,priceLabel,description,conflict,url}`，节日活动或特别晚餐备选；不暗示已加入预算 |
 | `cash` | 可选：换钱建议，见下方「带多少现金」 |
 
+**英文版**：同目录可放 `trip-data.en.json`，结构与上表完全相同；`id`、`placeId(s)`、金额、日期、链接、坐标、颜色、币种这些值必须和中文版一致，只翻译文字，且整份文件不能有中日韩字符或全角标点（校验器会查）。有这份文件时页面顶栏出现「EN / ZH」切换，默认中文；世界底图在英文模式下显示英文国名。
+
 ## 预算选项
 
 category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amount,status,note,url?}`，每项都是全程合计。金额非负、最多两位小数、不超过1,000,000。

@@ -1,4 +1,5 @@
 import {calculate,normalize,validMoney,nearestIndex,daysUntil,itemize} from './budget.mjs';
+import {i18n,wantedLang,switchLang,startI18n} from './i18n.mjs';
 
 const $=selector=>document.querySelector(selector);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -67,11 +68,11 @@ function updateBudget(sync=false,persist=true){
   }).join('')}<text class="chart-label" x="110" y="103" text-anchor="middle">全程合计 · ${escape(data.trip.currency)}</text><text class="chart-value" x="110" y="130" text-anchor="middle">${result.total.toLocaleString('en-CA',{maximumFractionDigits:2})}</text>`;
   // 记账式明细：每个分类一行，点 + 展开这一类里的每一笔。
   $('#budget-legend').innerHTML=chartRows(result).map((row,i)=>{
-    const items=ledgerItems(row),pct=result.total?row.amount/result.total*100:0,name=row.label.split('｜')[0],open=ledgerOpen.has(row.id),id=escape(row.id);
+    const items=ledgerItems(row),pct=result.total?row.amount/result.total*100:0,name=row.label.split(/[｜|]/)[0].trim(),open=ledgerOpen.has(row.id),id=escape(row.id);
     const fine=items.some(it=>it.scaled)?`<li class="ledger-fine">${row.splitFrom?(items.length>1?'套餐价按单买价比例折到这一类，明细同比例折算':'套餐总价按单买价比例折到这一类'):'明细按当前选择同比例折算'}</li>`:'';
     return `<li class="ledger-row${open?' open':''}" style="--c:${color(row.color,i)}"><button type="button" class="ledger-head" data-ledger="${id}" aria-expanded="${open}" aria-controls="ledger-${id}"><span class="ledger-icon" aria-hidden="true">${escape(row.icon||name.slice(0,1))}</span><span class="ledger-name">${escape(name)}</span><span class="ledger-amount">${money(row.amount)}</span><span class="ledger-meta">${pct.toFixed(1)}%</span><span class="ledger-count">${items.length} 笔</span><span class="ledger-toggle" aria-hidden="true">${open?'−':'+'}</span><span class="ledger-bar" aria-hidden="true"><i style="width:${pct.toFixed(1)}%"></i></span></button><ul class="ledger-items" id="ledger-${id}"${open?'':' hidden'}>${items.map(it=>`<li><span>${escape(it.label)}${it.note?`<small>${escape(it.note)}</small>`:''}</span><b>${money(it.amount)}<small>${(it.share*100).toFixed(1)}%</small></b></li>`).join('')}${fine}</ul></li>`;
   }).join('');
-  const pending=result.rows.filter(row=>/尚无|未取得/.test(row.option.status||''));
+  const pending=result.rows.filter(row=>/尚无|未取得|no (actual )?quote|not (yet )?quoted/i.test(row.option.status||''));
   $('#budget-warning').textContent=result.total===0?'所有支出为0，填写金额后显示占比。':pending.length?`${pending.map(r=>r.option.label).join('、')}尚无实际报价；试算低于上限不等于能按此价格预订。`:'机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。';
   if(persist)save();
 }
@@ -93,7 +94,7 @@ function ledgerItems(row){
   const total=row.amount;
   return row.parts.flatMap(part=>{
     const items=itemize(part),single=!(part.option?.items||[]).length;
-    return items.map(it=>({...it,label:single?`${part.label.split('｜')[0]} · ${it.label}`:it.label,share:total?it.amount/total:0}));
+    return items.map(it=>({...it,label:single?`${part.label.split(/[｜|]/)[0].trim()} · ${it.label}`:it.label,share:total?it.amount/total:0}));
   });
 }
 function renderCash(){
@@ -167,7 +168,7 @@ async function renderMap(){
   fetch('vendor/world/countries-110m.json').then(r=>r.ok?r.json():null).then(w=>{
     if(!w?.countries)return;const ring=pts=>pts.map(([x,y])=>[y,x]);
     L.polygon(w.countries.flatMap(c=>c.p.map(ring)),{pane:'world',interactive:false,color:'#b9b19b',weight:.8,fillColor:'#f3f0e2',fillOpacity:1}).addTo(map);
-    w.countries.forEach(c=>L.marker([c.y,c.x],{pane:'world',interactive:false,keyboard:false,rank:c.r,icon:L.divIcon({className:'world-label',html:`<span>${escape(c.n)}</span>`,iconSize:null})}).addTo(worldLabels));
+    w.countries.forEach(c=>L.marker([c.y,c.x],{pane:'world',interactive:false,keyboard:false,rank:c.r,icon:L.divIcon({className:'world-label',html:`<span>${escape(i18n.lang==='en'&&c.e?c.e:c.n)}</span>`,iconSize:null})}).addTo(worldLabels));
     syncWorld();
   }).catch(()=>{});
   map.on('zoomend',syncWorld);
@@ -278,7 +279,21 @@ function navSpy(){
 function renderOwnPrompt(){
   // "Make your own" card: a ready-to-paste prompt that installs the skill and starts a new plan.
   const box=$('#own-prompt');if(!box)return;
-  box.value=[
+  box.value=i18n.lang==='en'?[
+    'Please install the travel-plan skill first:',SKILL_REPO,'',
+    'How to install (pick the tool you use):',
+    `- Claude Code: git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
+    '- Codex: git clone this repository, then run python scripts/install.py in it','',
+    `Then use travel-plan to make me a trip page like "${data.trip.title}": flight and hotel options with a live budget, a real route map, a day-by-day plan, a pre-departure checklist and a shareable route poster.`,'',
+    'About my trip:',
+    '- From → to:',
+    '- Departure and return dates:',
+    '- Travelers, each one\'s passport, residency and existing visas:',
+    '- Budget limit and currency:',
+    '- Must-dos / things we do not want:',
+    '- Food, fitness and pace:','',
+    'Start with what I have given you and only ask about what is really missing.',
+  ].join('\n'):[
     '请先安装 travel-plan 旅行规划 skill：',SKILL_REPO,'',
     '安装方法（按你用的工具选一种）：',
     `- Claude Code：git clone ${SKILL_REPO} ~/.claude/skills/travel-plan`,
@@ -325,7 +340,12 @@ function renderTodo(){
 }
 async function init(){
   try{
-    const response=await fetch('trip-data.json',{cache:'no-store'});if(!response.ok)throw Error('Trip missing');data=await response.json();
+    // 中英文：有 trip-data.en.json 才显示切换按钮；默认中文。
+    const enRes=await fetch('trip-data.en.json',{cache:'no-store'}).catch(()=>null);const hasEn=!!enRes?.ok;
+    const lang=hasEn?wantedLang():'zh';startI18n(lang);
+    const langBtn=$('#lang-btn');if(langBtn&&hasEn){langBtn.hidden=false;langBtn.textContent=lang==='en'?'ZH':'EN';langBtn.setAttribute('aria-label',lang==='en'?'Switch to Chinese':'切换到英文');langBtn.onclick=()=>switchLang(lang==='en'?'zh':'en');}
+    const response=lang==='en'?enRes:await fetch('trip-data.json',{cache:'no-store'});if(!response.ok)throw Error('Trip missing');data=await response.json();
+    if(lang==='en')document.querySelector('meta[name="description"]')?.setAttribute('content',data.trip.subtitle||data.trip.title);
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');

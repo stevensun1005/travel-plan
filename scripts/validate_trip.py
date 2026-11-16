@@ -3,6 +3,7 @@ import argparse
 import datetime as dt
 import json
 import math
+import re
 from pathlib import Path
 
 def validate(folder):
@@ -150,7 +151,33 @@ def validate(folder):
         if share.get('mapTitle'):
             title=share['mapTitle'];check(isinstance(title.get('lat'),(int,float)) and isinstance(title.get('lng'),(int,float)),'share.mapTitle needs lat and lng')
     if trip.get('demo'):warnings.append('FICTIONAL DEMO: prices/hotels/flights are not bookable quotes')
+    errors+=check_english(folder,data)
     return errors,warnings
+
+CJK=re.compile(r'[　-〿㐀-鿿豈-﫿＀-￯]')
+SAME_KEYS={'id','placeId','placeIds','extraPlaceIds','defaultOption','selections','chartGroup','url','officialUrl','date','startDate','endDate','due','checkedOn','asOf',
+           'currency','code','symbol','color','icon','transport','group','kind','rank','lat','lng','amount','converted','bagCount','bagPerPerson','carryOn','bundleOnly','bundles','split',
+           'target','travelers','nights','day','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
+def check_english(folder,data):
+    """trip-data.en.json (optional): same structure, same ids/numbers/dates/links, and not a single CJK character."""
+    path=Path(folder)/'trip-data.en.json'
+    if not path.is_file():return []
+    text=path.read_text(encoding='utf-8');problems=[]
+    hits=sorted({m.group(0) for m in CJK.finditer(text)})
+    if hits:problems.append(f'trip-data.en.json still has Chinese characters: {"".join(hits[:20])}')
+    en=json.loads(text)
+    def walk(a,b,where,key=None):
+        if type(a)!=type(b) and not (isinstance(a,(int,float)) and isinstance(b,(int,float))):problems.append(f'{where}: type differs from trip-data.json');return
+        if isinstance(a,dict):
+            if set(a)!=set(b):problems.append(f'{where}: keys differ ({sorted(set(a)^set(b))[:5]})');return
+            for k in a:walk(a[k],b[k],f'{where}.{k}',k)
+        elif isinstance(a,list):
+            if len(a)!=len(b):problems.append(f'{where}: list length differs');return
+            for i,(x,y) in enumerate(zip(a,b)):walk(x,y,f'{where}[{i}]',key)
+        elif not isinstance(a,str) or key in SAME_KEYS:
+            if a!=b:problems.append(f'{where}: must match trip-data.json ({a!r} vs {b!r})')
+    walk(data,en,'en')
+    return problems[:30]
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('folder');args=parser.parse_args()

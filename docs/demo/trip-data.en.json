@@ -1,0 +1,2653 @@
+{
+  "version": 1,
+  "trip": {
+    "id": "oahu-2027-jan-five-nights",
+    "title": "Oʻahu, 5 nights · Jan 3–9",
+    "subtitle": "Nonstop from Toronto to Honolulu. A full day at Pearl Harbor; a car for just one day to loop the island: Jurassic valleys at the ranch, turtles and garlic shrimp on the North Shore, the Dole Plantation train, then stargazing at Ko Olina in the evening. A guided snorkel tour at Hanauma Bay and a sunset sail in the early evening.",
+    "startDate": "2027-01-03",
+    "endDate": "2027-01-09",
+    "nights": 5,
+    "travelers": 2,
+    "currency": "CAD",
+    "demo": false,
+    "notice": "Nothing is booked yet. Flights and hotels were compared across several sites (Air Canada's official site, Trip.com, Ctrip, Booking.com, Expedia, Vio); each item uses the cheapest, with the site noted. Foreign currencies are converted to CAD at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD, 1 CNY = 0.2137 CAD). All flight fares include one carry-on bag per person. Tickets and meals are still converted from official or published standard prices. The return is a nonstop at 00:10 on Jan 9, so you head to the airport on the evening of Jan 8. Standalone hotels are priced for 5 nights (Jan 3–8); the Expedia flight + hotel bundle keeps the 6 nights Expedia quoted.",
+    "constraints": [
+      "Two people · one room",
+      "No surfing, no hiking (Diamond Head from a lookout instead)",
+      "Fine with normal walking and getting in and out of vehicles",
+      "Love seafood",
+      "Driver will be 23 at travel time · Canadian G licence",
+      "Target budget under CAD 8,000",
+      "Car rental for one day only"
+    ],
+    "kicker": "YYZ ✈ HNL · Oʻahu for two"
+  },
+  "budget": {
+    "target": 8000,
+    "categories": [
+      {
+        "id": "flights",
+        "label": "Flights | round trip for two",
+        "color": "#2a70cf",
+        "defaultOption": "ac-standard",
+        "options": [
+          {
+            "id": "ac-standard",
+            "label": "Air Canada nonstop round trip · carry-on included",
+            "amount": 2062,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "Outbound Jan 3 AC589 17:35→22:38, return Jan 9 AC588 00:10→13:51, round trip for two incl. tax. Compared the same nonstop on 5 sites, all at fares that include one carry-on bag per person: Trip.com is cheapest (no date changes, free cancellation within 24 hours); Air Canada's Standard fare is CA$70 more but allows paid changes. AC Basic fares don't allow a carry-on bag, so they're excluded.",
+            "fareFamily": "Economy · 1 carry-on per person",
+            "bagPerPerson": 90,
+            "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+            "items": [
+              {
+                "label": "AC589 outbound + AC588 return · two people",
+                "amount": 2062,
+                "note": "Incl. tax, 1 carry-on bag per person; checked bags extra"
+              }
+            ],
+            "carryOn": true,
+            "quotes": [
+              {
+                "platform": "Trip.com",
+                "amount": 2062,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Includes 1 carry-on; no changes, free cancellation within 24 hours",
+                "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+                "converted": 2062
+              },
+              {
+                "platform": "Air Canada (official site)",
+                "amount": 2132,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Standard: (587+479) per person, paid changes allowed",
+                "url": "https://www.aircanada.com/ca/en/aco/home/app.html#/search?org1=YYZ&dest1=HNL&departureDate1=2027-01-03&org2=HNL&dest2=YYZ&departureDate2=2027-01-09&ADT=2&YTH=0&CHD=0&INF=0&INS=0&lang=en-CA&tripType=R&marketCode=TNB",
+                "converted": 2132
+              },
+              {
+                "platform": "Booking.com",
+                "amount": 2210,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Standard fare",
+                "url": "https://flights.booking.com/flights/YYZ.AIRPORT-HNL.AIRPORT/?type=ROUNDTRIP&adults=2&cabinClass=ECONOMY&depart=2027-01-03&return=2027-01-09&stops=0",
+                "converted": 2210
+              },
+              {
+                "platform": "Ctrip",
+                "amount": 11104,
+                "currency": "CNY",
+                "checkedOn": "2026-11-15",
+                "note": "¥5,552×2, fare tier with carry-on",
+                "url": "https://flights.ctrip.com/online/list/round-yto-hnl?depdate=2027-01-03_2027-01-09&cabin=y_s&adult=2&child=0&infant=0&containstax=1&direct=true",
+                "converted": 2372.92
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "No nonstop on this route",
+                "url": "https://www.expedia.ca/Flights-Search?trip=roundtrip&leg1=from:YYZ,to:HNL,departure:1/3/2027TANYT&leg2=from:HNL,to:YYZ,departure:1/9/2027TANYT&passengers=adults:2&mode=search"
+              }
+            ],
+            "source": "Trip.com"
+          },
+          {
+            "id": "expedia-pkg",
+            "label": "Expedia flight + hotel bundle · Sheraton 6 nights",
+            "amount": 5278.4,
+            "status": "Expedia bundle page, Nov 15 (your screenshot) + carry-on upgrade",
+            "note": "Flights (AC nonstop) plus Sheraton Waikiki Beach Resort King city view for 6 nights (Jan 3–9, the nights Expedia's bundle gives). The screenshot shows CA$5,178.40 incl. tax, but the bundle's outbound is a Basic fare with no carry-on bag; upgrading the outbound from Basic to Standard on Air Canada's site costs CA$50 more per person, bringing it to ~CA$5,278.40 with carry-ons (the cheapest return is already Standard). The budget and pie chart split the bundle using the cheapest standalone prices: flights CA$2,062 (Trip.com); the cheapest standalone Sheraton is Trip.com at CA$3,056 for 5 nights, ~CA$3,667.20 scaled to 6 nights. When selected, the hotel switches to “Included in flight + hotel bundle” and the airport taxi rides are dropped from transport. Flights are non-refundable; the hotel is refundable before Dec 20.",
+            "fareFamily": "Outbound upgraded to Standard · carry-on included",
+            "bagPerPerson": 90,
+            "url": "https://www.expedia.ca/",
+            "bundles": {
+              "hotel": "in-package",
+              "transport": "ground-pkg"
+            },
+            "split": {
+              "flights": 2062,
+              "hotel": 3667.2
+            },
+            "items": [
+              {
+                "label": "AC nonstop round trip in the bundle · two people",
+                "amount": 2062,
+                "note": "Cheapest standalone: Trip.com CA$2,062"
+              }
+            ],
+            "carryOn": true,
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 5278.4,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Bundle CA$5,178.40 + ~CA$100 to upgrade outbound to Standard",
+                "url": "https://www.expedia.ca/",
+                "converted": 5278.4
+              }
+            ],
+            "source": "Expedia"
+          }
+        ],
+        "icon": "✈️",
+        "chartGroup": "fly"
+      },
+      {
+        "id": "hotel",
+        "label": "Hotel | one room, 5 nights (Jan 3–8)",
+        "color": "#e07a12",
+        "defaultOption": "renew",
+        "options": [
+          {
+            "id": "renew",
+            "label": "Hotel Renew · 2 min to the beach · best value",
+            "amount": 1223,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "5 nights incl. tax, ~CA$245/night. Vio is cheapest, with free cancellation and book now, pay later (check the booking page for the deadline); Trip.com ocean-view King CA$1,448. Check out the morning of Jan 8 and store your bags.",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Hotel Renew · 5 nights",
+                "amount": 1223,
+                "note": "Vio total incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Vio",
+                "amount": 1223,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Free cancellation, book now pay later",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1223
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 1448,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Ocean-view King, free cancellation",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hotel%20Renew",
+                "converted": 1448
+              },
+              {
+                "platform": "Expedia",
+                "amount": 1483,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Fully refundable",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Renew",
+                "converted": 1483
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "No availability shown for these dates",
+                "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Renew%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Vio"
+          },
+          {
+            "id": "hyatt",
+            "label": "Hyatt Place · breakfast included",
+            "amount": 1730,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "5 nights incl. tax, ~CA$346/night. Hyatt Place rates include breakfast, so the simple food plan works. Expedia is cheapest (looks non-refundable); for free cancellation, Trip.com is CA$2,090.",
+            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+            "items": [
+              {
+                "label": "Hyatt Place · 5 nights",
+                "amount": 1730,
+                "note": "Expedia total incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 1730,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Breakfast included",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+                "converted": 1730
+              },
+              {
+                "platform": "Booking.com",
+                "amount": 1743,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "CA$1,169 + 574 taxes & fees",
+                "url": "https://www.booking.com/searchresults.html?ss=Hyatt%20Place%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD",
+                "converted": 1743
+              },
+              {
+                "platform": "Vio",
+                "amount": 1745,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Breakfast included; free-cancellation rate CA$2,090",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335447&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1745
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2090,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Breakfast included, free cancellation",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hyatt%20Place%20Waikiki%20Beach",
+                "converted": 2090
+              }
+            ],
+            "source": "Expedia"
+          },
+          {
+            "id": "kaimana",
+            "label": "Kaimana Beach Hotel · right on the beach",
+            "amount": 1763,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "5 nights incl. tax, ~CA$353/night. Right on the beach next to Kapiʻolani Park, quieter than central Waikīkī. Vio is cheapest; Vio's free-cancellation, pay-later rate is CA$2,096.",
+            "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+            "items": [
+              {
+                "label": "Kaimana Beach Hotel · 5 nights",
+                "amount": 1763,
+                "note": "Vio total incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Vio",
+                "amount": 1763,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Free-cancellation rate CA$2,096",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335386&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 1763
+              },
+              {
+                "platform": "Expedia",
+                "amount": 1909,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Kaimana",
+                "converted": 1909
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2458,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Queen room, free cancellation",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Kaimana%20Beach%20Hotel",
+                "converted": 2458
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "No availability shown for these dates",
+                "url": "https://www.booking.com/searchresults.html?ss=Kaimana%20Beach%20Hotel%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Vio"
+          },
+          {
+            "id": "alohilani",
+            "label": "ʻAlohilani · across from the beach",
+            "amount": 2067,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "5 nights incl. tax, ~CA$413/night. Five-star resort across from the beach; Expedia is a bit cheaper than Vio. Check the booking page for room type and cancellation terms.",
+            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+            "items": [
+              {
+                "label": "ʻAlohilani · 5 nights",
+                "amount": 2067,
+                "note": "Expedia total incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Expedia",
+                "amount": 2067,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+                "converted": 2067
+              },
+              {
+                "platform": "Vio",
+                "amount": 2082,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335406&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 2082
+              },
+              {
+                "platform": "Trip.com",
+                "amount": 2854,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Two Queen beds, free cancellation",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Alohilani%20Resort",
+                "converted": 2854
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "No availability shown for these dates",
+                "url": "https://www.booking.com/searchresults.html?ss=Alohilani%20Resort%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Expedia"
+          },
+          {
+            "id": "sheraton",
+            "label": "Sheraton Waikiki · city-view King",
+            "amount": 3056,
+            "status": "Multi-site price check, Nov 15 (incl. tax)",
+            "note": "5 nights incl. tax, ~CA$611/night. Trip.com's city-view King has free cancellation and no mid-stay room change, cheaper than Vio (one room change) and Expedia.",
+            "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+            "items": [
+              {
+                "label": "Sheraton Waikiki · 5 nights",
+                "amount": 3056,
+                "note": "Trip.com total incl. tax"
+              }
+            ],
+            "quotes": [
+              {
+                "platform": "Trip.com",
+                "amount": 3056,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "City-view King, free cancellation",
+                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+                "converted": 3056
+              },
+              {
+                "platform": "Vio",
+                "amount": 3438,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Vio notes one mid-stay room change",
+                "url": "https://www.vio.com/Hotel/Search?hotelId=1335409&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+                "converted": 3438
+              },
+              {
+                "platform": "Expedia",
+                "amount": 4904,
+                "currency": "CAD",
+                "checkedOn": "2026-11-15",
+                "note": "Fully refundable",
+                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Sheraton%20Waikiki",
+                "converted": 4904
+              },
+              {
+                "platform": "Booking.com",
+                "available": false,
+                "note": "No availability shown for these dates",
+                "url": "https://www.booking.com/searchresults.html?ss=Sheraton%20Waikiki%20Beach%20Resort&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+              }
+            ],
+            "source": "Trip.com"
+          },
+          {
+            "id": "in-package",
+            "label": "Included in flight + hotel bundle (prorated)",
+            "amount": 0,
+            "status": "Goes with the Expedia bundle",
+            "note": "Used automatically when flights are set to “Expedia flight + hotel bundle”. Shows the hotel's share of the bundle price, split by standalone prices; no extra charge.",
+            "bundleOnly": true,
+            "items": [
+              {
+                "label": "Sheraton King city view in the bundle · 6 nights",
+                "amount": 3667.2,
+                "note": "Cheapest standalone: Trip.com CA$3,056 for 5 nights, scaled to 6 nights"
+              }
+            ]
+          }
+        ],
+        "icon": "🏨"
+      },
+      {
+        "id": "car",
+        "label": "Car rental | Jan 5 only",
+        "color": "#1f9652",
+        "defaultOption": "compact",
+        "options": [
+          {
+            "id": "compact",
+            "label": "Compact car · one day",
+            "amount": 180,
+            "status": "Kayak search + estimate",
+            "note": "On Kayak, a compact at HNL airport for Jan 5 07:00–Jan 6 07:00 is ~CA$75–88 (shown for drivers 25+). Picking up at a Waikīkī location is usually pricier, plus an under-25 surcharge of ~CA$40; budget CA$180.",
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+            "items": [
+              {
+                "label": "Compact car, one day · Jan 5",
+                "amount": 85,
+                "note": "Kayak HNL airport ~CA$75–88"
+              },
+              {
+                "label": "Under-25 surcharge",
+                "amount": 40
+              },
+              {
+                "label": "Buffer for location markup and taxes",
+                "amount": 55,
+                "note": "Waikīkī locations are usually pricier than the airport"
+              }
+            ]
+          },
+          {
+            "id": "jeep",
+            "label": "Jeep Wrangler convertible · one day",
+            "amount": 190,
+            "status": "Kayak search + estimate",
+            "note": "Kayak shows an open-air Jeep at HNL airport for ~CA$86 a day, about the same as a compact. A convertible is perfect for the island loop, but whether under-25 drivers can rent this model depends on the rental company.",
+            "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+            "items": [
+              {
+                "label": "Jeep Wrangler convertible, one day · Jan 5",
+                "amount": 86,
+                "note": "Kayak HNL airport"
+              },
+              {
+                "label": "Under-25 surcharge",
+                "amount": 40,
+                "note": "Check first whether under-25 drivers can rent this model"
+              },
+              {
+                "label": "Buffer for location markup and taxes",
+                "amount": 64
+              }
+            ]
+          },
+          {
+            "id": "z4",
+            "label": "Turo BMW Z4 · one day",
+            "amount": 430,
+            "status": "Estimated from an old quote · no new quote yet",
+            "note": "An earlier quote for the Z4 was USD574.85 for 48 hours incl. protection, so ~USD300 for one day. No quote for the new dates yet; car availability and handoff address not confirmed.",
+            "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI",
+            "items": [
+              {
+                "label": "Turo BMW Z4, one day",
+                "amount": 430,
+                "note": "~USD300 incl. protection, estimated from a 48-hour quote"
+              }
+            ]
+          }
+        ],
+        "icon": "🚗",
+        "chartGroup": "drive"
+      },
+      {
+        "id": "food",
+        "label": "Food | two people, whole trip",
+        "color": "#d2402f",
+        "defaultOption": "seafood",
+        "options": [
+          {
+            "id": "lean",
+            "label": "Eat simple (good with breakfast-included hotels)",
+            "amount": 850,
+            "status": "Budget estimate",
+            "note": "5 days for two, incl. tax and tips. Mostly poke, food trucks and convenience-store breakfasts, with one or two sit-down dinners.",
+            "items": [
+              {
+                "label": "Breakfast · 5 days",
+                "amount": 100,
+                "note": "Convenience store, bakery or coffee near the hotel"
+              },
+              {
+                "label": "Lunch: poke, food trucks, convenience stores",
+                "amount": 300,
+                "note": "5 days"
+              },
+              {
+                "label": "Dinner: one or two sit-down, the rest simple",
+                "amount": 450
+              }
+            ]
+          },
+          {
+            "id": "seafood",
+            "label": "Seafood splurge",
+            "amount": 1100,
+            "status": "Budget estimate",
+            "note": "~CA$220 a day for two: Duke's, Nico's Pier 38, Giovanni's shrimp, a sunset dinner. The PCC package includes dinner.",
+            "items": [
+              {
+                "label": "Breakfast · 5 days",
+                "amount": 100,
+                "note": "Convenience store, bakery or coffee near the hotel"
+              },
+              {
+                "label": "Duke's oceanfront dinner · Jan 4",
+                "amount": 180,
+                "note": "For two, incl. tax and tip"
+              },
+              {
+                "label": "Giovanni's garlic shrimp · Jan 5",
+                "amount": 50,
+                "note": "Food truck, two plates"
+              },
+              {
+                "label": "Ko Olina dinner · Jan 5",
+                "amount": 140,
+                "note": "Before stargazing"
+              },
+              {
+                "label": "Nico's Pier 38 seafood · Jan 6",
+                "amount": 90,
+                "note": "Poke and fried fish"
+              },
+              {
+                "label": "House Without A Key sunset dinner · Jan 8",
+                "amount": 220,
+                "note": "Hula and sunset"
+              },
+              {
+                "label": "Other lunches, poke and snacks",
+                "amount": 320,
+                "note": "~CA$64 a day"
+              }
+            ]
+          },
+          {
+            "id": "treat",
+            "label": "A few more nice seafood dinners",
+            "amount": 1400,
+            "status": "Budget estimate",
+            "note": "Add 1–2 more dinners at the level of Roy's or House Without A Key.",
+            "items": [
+              {
+                "label": "Breakfast · 5 days",
+                "amount": 100,
+                "note": "Convenience store, bakery or coffee near the hotel"
+              },
+              {
+                "label": "Duke's oceanfront dinner · Jan 4",
+                "amount": 180,
+                "note": "For two, incl. tax and tip"
+              },
+              {
+                "label": "Giovanni's garlic shrimp · Jan 5",
+                "amount": 50,
+                "note": "Food truck, two plates"
+              },
+              {
+                "label": "Ko Olina dinner · Jan 5",
+                "amount": 140,
+                "note": "Before stargazing"
+              },
+              {
+                "label": "Nico's Pier 38 seafood · Jan 6",
+                "amount": 90,
+                "note": "Poke and fried fish"
+              },
+              {
+                "label": "House Without A Key sunset dinner · Jan 8",
+                "amount": 220,
+                "note": "Hula and sunset"
+              },
+              {
+                "label": "Other lunches, poke and snacks",
+                "amount": 320,
+                "note": "~CA$64 a day"
+              },
+              {
+                "label": "Roy's sit-down dinner",
+                "amount": 300,
+                "note": "The extra one"
+              }
+            ]
+          }
+        ],
+        "icon": "🍽️"
+      },
+      {
+        "id": "transport",
+        "label": "Transport | rideshare, trolley, parking & gas",
+        "color": "#2b9c9a",
+        "defaultOption": "ground",
+        "options": [
+          {
+            "id": "ground",
+            "label": "Uber + 4-day trolley pass + parking & gas",
+            "amount": 570,
+            "status": "Budget estimate",
+            "note": "Airport round-trip rides ~USD90, Pearl Harbor round trip ~USD70; Waikiki Trolley 4-day all-line pass ~USD150 for two (used Jan 6 for downtown and Ala Moana, Jan 7 for Diamond Head, Jan 8 for the coastline); hotel parking ~USD45 for one night, attraction parking ~USD5, gas ~USD25. Total ~USD390.",
+            "items": [
+              {
+                "label": "Airport ↔ hotel rides",
+                "amount": 130,
+                "note": "~USD90 round trip"
+              },
+              {
+                "label": "Pearl Harbor round-trip Uber · Jan 4",
+                "amount": 102,
+                "note": "~USD70"
+              },
+              {
+                "label": "Waikiki Trolley 4-day pass · two people",
+                "amount": 218,
+                "note": "~USD150, used Jan 6–8"
+              },
+              {
+                "label": "Hotel parking, one night · Jan 5",
+                "amount": 65,
+                "note": "~USD45"
+              },
+              {
+                "label": "Attraction parking",
+                "amount": 7,
+                "note": "~USD5"
+              },
+              {
+                "label": "Gas",
+                "amount": 36,
+                "note": "~USD25"
+              },
+              {
+                "label": "Buffer for exchange rate and tips",
+                "amount": 12
+              }
+            ]
+          },
+          {
+            "id": "ground-pkg",
+            "label": "Same as above, minus airport rides",
+            "amount": 440,
+            "bundleOnly": true,
+            "status": "Goes with the Expedia flight + hotel bundle",
+            "note": "As you asked, airport ↔ hotel rides (~USD90) aren't counted when the bundle is selected. The bundle in your screenshot only lists flights and hotel; if the Expedia booking doesn't actually include transfers, switch to a custom amount and add back ~CA$130.",
+            "items": [
+              {
+                "label": "Pearl Harbor round-trip Uber · Jan 4",
+                "amount": 102,
+                "note": "~USD70"
+              },
+              {
+                "label": "Waikiki Trolley 4-day pass · two people",
+                "amount": 218,
+                "note": "~USD150"
+              },
+              {
+                "label": "Hotel parking, one night · Jan 5",
+                "amount": 65,
+                "note": "~USD45"
+              },
+              {
+                "label": "Attraction parking",
+                "amount": 7,
+                "note": "~USD5"
+              },
+              {
+                "label": "Gas",
+                "amount": 36,
+                "note": "~USD25"
+              },
+              {
+                "label": "Buffer for exchange rate and tips",
+                "amount": 12
+              }
+            ]
+          }
+        ],
+        "icon": "🚌",
+        "chartGroup": "drive"
+      },
+      {
+        "id": "activities",
+        "label": "Tickets & experiences | 8 items for two",
+        "color": "#9b6dd0",
+        "defaultOption": "jurassic",
+        "options": [
+          {
+            "id": "jurassic",
+            "label": "All 8 tickets · ranch: Jurassic Adventure (ranch CA$438)",
+            "amount": 1140,
+            "status": "Converted from official/published standard prices",
+            "note": "Total for all 8 tickets for two, not just the ranch: Kualoa Ranch, Pearl Harbor Passport, USS Arizona reservation fee, Hanauma Bay Roberts Hawaii transfer + entry, snorkel gear, Dole train, Dole maze, ʻIolani Palace. The three options differ only in the ranch tour; the other 7 items are the same (CA$702 total). Tap “+” on “Tickets & experiences” under the budget pie chart to see each item. Ranch Jurassic Adventure, 2.5 hours, ~USD300. Skipping PCC and Byodo-In this trip.",
+            "items": [
+              {
+                "label": "Kualoa Ranch Jurassic Adventure · two people",
+                "amount": 438,
+                "note": "~USD300, 2.5 hours"
+              },
+              {
+                "label": "Pearl Harbor Passport · two people",
+                "amount": 290,
+                "note": "~USD200, four sites"
+              },
+              {
+                "label": "USS Arizona reservation fee",
+                "amount": 3,
+                "note": "~USD2"
+              },
+              {
+                "label": "Hanauma Bay Roberts Hawaii transfer + entry",
+                "amount": 189,
+                "note": "~USD130"
+              },
+              {
+                "label": "Snorkel gear",
+                "amount": 58,
+                "note": "~USD40"
+              },
+              {
+                "label": "Dole Plantation train",
+                "amount": 55,
+                "note": "~USD38"
+              },
+              {
+                "label": "Dole pineapple maze",
+                "amount": 26,
+                "note": "~USD18"
+              },
+              {
+                "label": "ʻIolani Palace",
+                "amount": 81,
+                "note": "~USD56"
+              }
+            ]
+          },
+          {
+            "id": "two-tours",
+            "label": "All 8 tickets · ranch: two 90-min tours (ranch CA$348)",
+            "amount": 1050,
+            "status": "Converted from official/published standard prices",
+            "note": "Total for all 8 tickets for two, not just the ranch: Kualoa Ranch, Pearl Harbor Passport, USS Arizona reservation fee, Hanauma Bay Roberts Hawaii transfer + entry, snorkel gear, Dole train, Dole maze, ʻIolani Palace. The three options differ only in the ranch tour; the other 7 items are the same (CA$702 total). Tap “+” on “Tickets & experiences” under the budget pie chart to see each item. Ranch swaps to two 90-minute tours, Movie Sites + Jungle Expedition (USD59.95 each per person); you'll need back-to-back slots, which shortens the botanical garden stop. Skipping PCC and Byodo-In this trip.",
+            "items": [
+              {
+                "label": "Kualoa Ranch Movie Sites + Jungle · two people",
+                "amount": 348,
+                "note": "~USD240, two 90-min tours"
+              },
+              {
+                "label": "Pearl Harbor Passport · two people",
+                "amount": 290,
+                "note": "~USD200, four sites"
+              },
+              {
+                "label": "USS Arizona reservation fee",
+                "amount": 3,
+                "note": "~USD2"
+              },
+              {
+                "label": "Hanauma Bay Roberts Hawaii transfer + entry",
+                "amount": 189,
+                "note": "~USD130"
+              },
+              {
+                "label": "Snorkel gear",
+                "amount": 58,
+                "note": "~USD40"
+              },
+              {
+                "label": "Dole Plantation train",
+                "amount": 55,
+                "note": "~USD38"
+              },
+              {
+                "label": "Dole pineapple maze",
+                "amount": 26,
+                "note": "~USD18"
+              },
+              {
+                "label": "ʻIolani Palace",
+                "amount": 81,
+                "note": "~USD56"
+              }
+            ]
+          },
+          {
+            "id": "movie-only",
+            "label": "All 8 tickets · ranch: Movie Sites only (ranch CA$178)",
+            "amount": 880,
+            "status": "Converted from official/published standard prices",
+            "note": "Total for all 8 tickets for two, not just the ranch: Kualoa Ranch, Pearl Harbor Passport, USS Arizona reservation fee, Hanauma Bay Roberts Hawaii transfer + entry, snorkel gear, Dole train, Dole maze, ʻIolani Palace. The three options differ only in the ranch tour; the other 7 items are the same (CA$702 total). Tap “+” on “Tickets & experiences” under the budget pie chart to see each item. Ranch keeps only the 90-minute Movie Sites tour, the cheapest option. Skipping PCC and Byodo-In this trip.",
+            "items": [
+              {
+                "label": "Kualoa Ranch Movie Sites · two people",
+                "amount": 178,
+                "note": "~USD120, 90 minutes"
+              },
+              {
+                "label": "Pearl Harbor Passport · two people",
+                "amount": 290,
+                "note": "~USD200, four sites"
+              },
+              {
+                "label": "USS Arizona reservation fee",
+                "amount": 3,
+                "note": "~USD2"
+              },
+              {
+                "label": "Hanauma Bay Roberts Hawaii transfer + entry",
+                "amount": 189,
+                "note": "~USD130"
+              },
+              {
+                "label": "Snorkel gear",
+                "amount": 58,
+                "note": "~USD40"
+              },
+              {
+                "label": "Dole Plantation train",
+                "amount": 55,
+                "note": "~USD38"
+              },
+              {
+                "label": "Dole pineapple maze",
+                "amount": 26,
+                "note": "~USD18"
+              },
+              {
+                "label": "ʻIolani Palace",
+                "amount": 81,
+                "note": "~USD56"
+              }
+            ]
+          }
+        ],
+        "icon": "🎟️",
+        "chartGroup": "fun"
+      },
+      {
+        "id": "evening",
+        "label": "Evenings | sunsets and stars",
+        "color": "#4b5fb3",
+        "defaultOption": "both",
+        "options": [
+          {
+            "id": "both",
+            "label": "Sunset sail + Ko Olina stargazing",
+            "amount": 395,
+            "status": "Converted from published standard prices",
+            "note": "For two: Moana Sailing sunset sail ~USD162 (2×80.99) + Stars Above Hawaii stargazing ~USD108.50 (2×54.25), ~USD270.50 total. Excludes extra drinks on board, Ko Olina dinner and parking.",
+            "items": [
+              {
+                "label": "Moana Sailing sunset sail · two people",
+                "amount": 235,
+                "note": "~USD162, Jan 4 or Jan 7"
+              },
+              {
+                "label": "Stars Above Hawaii stargazing · two people",
+                "amount": 160,
+                "note": "~USD108.50, evening of Jan 5"
+              }
+            ]
+          },
+          {
+            "id": "sail",
+            "label": "Sunset sail only",
+            "amount": 235,
+            "status": "Converted from published standard prices",
+            "note": "~USD162 for two.",
+            "items": [
+              {
+                "label": "Moana Sailing sunset sail · two people",
+                "amount": 235,
+                "note": "~USD162"
+              }
+            ]
+          },
+          {
+            "id": "sail-budget",
+            "label": "Budget 1.5-hour sunset cruise",
+            "amount": 165,
+            "status": "Converted from published standard prices",
+            "note": "Manu Kai happy hour sail ~USD113 for two, no stargazing.",
+            "items": [
+              {
+                "label": "Manu Kai 1.5-hour sunset cruise · two people",
+                "amount": 165,
+                "note": "~USD113"
+              }
+            ]
+          },
+          {
+            "id": "none",
+            "label": "Nothing planned",
+            "amount": 0,
+            "status": "—",
+            "note": "Watch the sunset from the beach on your own."
+          }
+        ],
+        "icon": "🌅",
+        "chartGroup": "fun"
+      },
+      {
+        "id": "bags",
+        "label": "Checked bags",
+        "color": "#c99a1c",
+        "defaultOption": "two",
+        "options": [
+          {
+            "id": "none",
+            "label": "No checked bags",
+            "amount": 0,
+            "status": "Based on selected fare",
+            "note": "All fares include one carry-on bag per person, enough for 5 nights without checking anything."
+          },
+          {
+            "id": "one",
+            "label": "One shared checked bag",
+            "amount": 90,
+            "status": "Linked to the selected fare",
+            "note": "Recalculated automatically from the fare chosen above.",
+            "bagCount": 1,
+            "items": [
+              {
+                "label": "One shared checked bag",
+                "amount": 90,
+                "note": "First checked bag fee for the selected fare"
+              }
+            ]
+          },
+          {
+            "id": "two",
+            "label": "One checked bag each",
+            "amount": 180,
+            "status": "Linked to the selected fare",
+            "note": "Estimated at ~CA$90 per person for AC's first checked bag (per Google). Final fees per the baggage rules at ticketing.",
+            "bagCount": 2,
+            "items": [
+              {
+                "label": "First person's checked bag",
+                "amount": 90
+              },
+              {
+                "label": "Second person's checked bag",
+                "amount": 90
+              }
+            ]
+          }
+        ],
+        "icon": "🧳",
+        "chartGroup": "fly"
+      },
+      {
+        "id": "buffer",
+        "label": "Contingency",
+        "color": "#8a958c",
+        "defaultOption": "buffer",
+        "options": [
+          {
+            "id": "buffer",
+            "label": "A little wiggle room",
+            "amount": 300,
+            "status": "Included in total",
+            "note": "Covers hotel tax differences, exchange-rate swings, bag storage and tips.",
+            "items": [
+              {
+                "label": "Hotel tax difference",
+                "amount": 100
+              },
+              {
+                "label": "Exchange-rate swings",
+                "amount": 100
+              },
+              {
+                "label": "Bag storage, tips and odds & ends",
+                "amount": 100
+              }
+            ]
+          },
+          {
+            "id": "more",
+            "label": "More wiggle room",
+            "amount": 500,
+            "status": "Included in total",
+            "note": "Pick this tier if the Hotel Renew or Hyatt checkout page adds ~19% Hawaii tax on top.",
+            "items": [
+              {
+                "label": "Hotel tax difference",
+                "amount": 250,
+                "note": "If checkout adds ~19% Hawaii tax"
+              },
+              {
+                "label": "Exchange-rate swings",
+                "amount": 150
+              },
+              {
+                "label": "Bag storage, tips and odds & ends",
+                "amount": 100
+              }
+            ]
+          }
+        ],
+        "icon": "🛟"
+      }
+    ],
+    "presets": [
+      {
+        "id": "save",
+        "label": "Save where possible",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "renew",
+          "food": "lean",
+          "activities": "movie-only"
+        },
+        "note": "Cheapest hotel and simple meals; ranch with the 90-minute tour only. Flights at the lowest fare with carry-on; no checked bags needed."
+      },
+      {
+        "id": "kaimana",
+        "label": "Beach · Kaimana",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "kaimana"
+        },
+        "note": "Right-on-the-beach hotel, lowest price on Vio, no breakfast."
+      },
+      {
+        "id": "alohilani",
+        "label": "Ocean view · ʻAlohilani",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "alohilani"
+        },
+        "note": "Five-star resort across from the beach."
+      },
+      {
+        "id": "package",
+        "label": "Expedia flight + hotel bundle",
+        "selections": {
+          "flights": "expedia-pkg",
+          "hotel": "in-package",
+          "bags": "two"
+        },
+        "note": "Sheraton 6 nights + AC nonstop (upgraded to include carry-on); hotel and airport rides aren't double-counted. Flights non-refundable."
+      },
+      {
+        "id": "treat",
+        "label": "Z4 convertible + ocean view",
+        "selections": {
+          "flights": "ac-standard",
+          "hotel": "alohilani",
+          "car": "z4",
+          "food": "treat",
+          "buffer": "more"
+        },
+        "note": "Goes over 8,000. The Z4 is estimated from an old quote; no new quote yet."
+      }
+    ],
+    "chartGroups": {
+      "fly": {
+        "label": "Flights & bags",
+        "icon": "✈️",
+        "color": "#2a70cf"
+      },
+      "drive": {
+        "label": "Car & transport",
+        "icon": "🚗",
+        "color": "#1f9652"
+      },
+      "fun": {
+        "label": "Tickets & activities",
+        "icon": "🎟️",
+        "color": "#9b6dd0"
+      }
+    }
+  },
+  "journeys": [
+    {
+      "id": "outbound",
+      "title": "Outbound | Toronto → Honolulu",
+      "proposal": {
+        "airline": "Air Canada AC589 · nonstop",
+        "fareFamily": "Economy · 1 carry-on per person",
+        "departure": {
+          "airport": "YYZ",
+          "date": "2027-01-03",
+          "time": "17:35"
+        },
+        "arrival": {
+          "airport": "HNL",
+          "date": "2027-01-03",
+          "time": "22:38"
+        },
+        "route": "YYZ → HNL",
+        "duration": "10h 3m",
+        "connection": "Nonstop",
+        "note": "Arrival is in Hawaii time, 5 hours behind Toronto. Taxi to Waikīkī ~25–30 min after landing.",
+        "url": "https://www.aircanada.com/"
+      }
+    },
+    {
+      "id": "return",
+      "title": "Return | Honolulu → Toronto",
+      "proposal": {
+        "airline": "Air Canada AC588 · nonstop",
+        "departure": {
+          "airport": "HNL",
+          "date": "2027-01-09",
+          "time": "00:10"
+        },
+        "arrival": {
+          "airport": "YYZ",
+          "date": "2027-01-09",
+          "time": "13:51"
+        },
+        "route": "HNL → YYZ",
+        "duration": "8h 41m",
+        "connection": "Nonstop",
+        "note": "Departs 00:10 on Jan 9, so you head to the airport the evening of Jan 8.",
+        "fareFamily": "Economy · 1 carry-on per person",
+        "url": "https://www.aircanada.com/"
+      }
+    }
+  ],
+  "map": {
+    "places": [
+      {
+        "id": "hnl",
+        "name": "HNL Honolulu Airport",
+        "lat": 21.3330717,
+        "lng": -157.9196383,
+        "address": "Daniel K. Inouye International Airport",
+        "note": "Pinned near the terminal parking garage; use your terminal's pickup/drop-off area."
+      },
+      {
+        "id": "hotel",
+        "name": "Waikīkī hotel (default Hotel Renew, not booked)",
+        "lat": 21.2727845,
+        "lng": -157.8222219,
+        "address": "129 Paoakalani Ave, Honolulu, HI 96815",
+        "note": "All other candidate hotels are within 1.5 km, so daily routes barely change if you switch."
+      },
+      {
+        "id": "waikiki-beach",
+        "name": "Kūhiō Beach | Waikīkī Beach",
+        "lat": 21.275,
+        "lng": -157.82694,
+        "address": "Kalākaua Ave, Waikīkī",
+        "note": "A few minutes' walk from the hotel; the Jan 7 sunset sail boards from the beach, exact spot per your booking."
+      },
+      {
+        "id": "dukes",
+        "name": "Duke's Waikiki",
+        "lat": 21.2768421,
+        "lng": -157.8277917,
+        "address": "2335 Kalākaua Ave, Honolulu",
+        "note": "Oceanfront restaurant; dinner reservations recommended."
+      },
+      {
+        "id": "pearl-harbor",
+        "name": "Pearl Harbor Visitor Center",
+        "lat": 21.3674843,
+        "lng": -157.9384488,
+        "address": "1 Arizona Memorial Pl, Honolulu",
+        "note": "No bags allowed; paid bag storage available. Take the official shuttle to Ford Island (USS Missouri, aviation museum)."
+      },
+      {
+        "id": "arizona",
+        "name": "USS Arizona Memorial",
+        "lat": 21.364906,
+        "lng": -157.9500297,
+        "address": "Pearl Harbor (official boat only)",
+        "note": "Out on the harbor, reachable only by National Park Service boat; the map just marks its location."
+      },
+      {
+        "id": "bowfin",
+        "name": "Submarine Museum / USS Bowfin",
+        "lat": 21.368732,
+        "lng": -157.9394436,
+        "address": "11 Arizona Memorial Dr, Honolulu",
+        "note": "Right next to the visitor center; walk over."
+      },
+      {
+        "id": "missouri",
+        "name": "Battleship Missouri",
+        "lat": 21.3621708,
+        "lng": -157.9533179,
+        "address": "63 Cowpens St, Ford Island",
+        "note": "Ford Island is an active military base; no private cars, shuttle only."
+      },
+      {
+        "id": "aviation",
+        "name": "Pearl Harbor Aviation Museum",
+        "lat": 21.3588442,
+        "lng": -157.9629042,
+        "address": "319 Lexington Blvd, Ford Island",
+        "note": "By shuttle, same line as the Missouri."
+      },
+      {
+        "id": "car-pickup",
+        "name": "Waikīkī rental office (sample location)",
+        "lat": 21.2734513,
+        "lng": -157.8222713,
+        "address": "Kalākaua Ave, east end",
+        "note": "Exact office confirmed after booking. Pick up the morning of Jan 5, return the morning of Jan 6."
+      },
+      {
+        "id": "hoomaluhia",
+        "name": "Hoʻomaluhia Botanical Garden",
+        "lat": 21.3882747,
+        "lng": -157.8070148,
+        "address": "45-680 Luluku Rd, Kāneʻohe",
+        "note": "9:00–16:00, free; closed Thursdays and New Year's Day. You can drive through the garden and also walk a short stretch."
+      },
+      {
+        "id": "kualoa",
+        "name": "Kualoa Ranch",
+        "lat": 21.5208318,
+        "lng": -157.8372577,
+        "address": "49-560 Kamehameha Hwy, Kāneʻohe",
+        "note": "Jurassic Adventure ~2.5 hours, riding into three valleys; check in early."
+      },
+      {
+        "id": "kualoa-beach",
+        "name": "Kualoa Regional Park beach",
+        "lat": 21.5129704,
+        "lng": -157.8367475,
+        "address": "49-479 Kamehameha Hwy",
+        "note": "Views of Mokoliʻi island; stroll along the shore."
+      },
+      {
+        "id": "dole",
+        "name": "Dole Plantation",
+        "lat": 21.5259081,
+        "lng": -158.0378039,
+        "address": "64-1550 Kamehameha Hwy, Wahiawā",
+        "note": "Daily 9:30–17:30. Train ~20 min, roughly every 10 min; maze averages 40 min. Call to confirm the last departure."
+      },
+      {
+        "id": "laniakea",
+        "name": "Laniakea Turtle Beach",
+        "lat": 21.6187,
+        "lng": -158.0853,
+        "address": "Kamehameha Hwy, Haleʻiwa",
+        "note": "Watch turtles from the shore and keep your distance; big winter surf, so stay out of the water. Roadside parking is tight."
+      },
+      {
+        "id": "giovanni",
+        "name": "Giovanni's Kahuku shrimp",
+        "lat": 21.677198,
+        "lng": -157.9484211,
+        "address": "56-505 Kamehameha Hwy, Kahuku",
+        "note": "If there's a line, Romy's and Fumi's next door are good too."
+      },
+      {
+        "id": "hanauma",
+        "name": "Hanauma Bay",
+        "lat": 21.2734227,
+        "lng": -157.6948549,
+        "address": "7455 Kalanianaʻole Hwy, Honolulu",
+        "note": "Open Wed–Sun, closed Mon and Tue. Going with the Roberts Hawaii transfer tour this time, no driving."
+      },
+      {
+        "id": "halona",
+        "name": "Hālona Blowhole Lookout",
+        "lat": 21.2827,
+        "lng": -157.6776,
+        "address": "8483 Kalanianaʻole Hwy",
+        "note": "Photo stop on the Blue Line trolley."
+      },
+      {
+        "id": "makapuu",
+        "name": "Makapuʻu roadside lookout",
+        "lat": 21.3115,
+        "lng": -157.6609,
+        "address": "Kalanianaʻole Hwy",
+        "note": "Roadside viewpoint; skipping the lighthouse trail."
+      },
+      {
+        "id": "waimanalo",
+        "name": "Waimānalo Beach Park",
+        "lat": 21.3325,
+        "lng": -157.6942,
+        "address": "41-741 Kalanianaʻole Hwy, Waimānalo",
+        "note": "Long white-sand beach, great for a slow walk."
+      },
+      {
+        "id": "diamond-head",
+        "name": "Diamond Head Kahala Lookout",
+        "lat": 21.2557,
+        "lng": -157.807,
+        "address": "Diamond Head Rd",
+        "note": "Photo stop on the Green Line trolley; step off and you're there, no climbing."
+      },
+      {
+        "id": "iolani",
+        "name": "ʻIolani Palace",
+        "lat": 21.3068147,
+        "lng": -157.8587655,
+        "address": "364 S King St, Honolulu",
+        "note": "Open Tue–Sat; tickets online only."
+      },
+      {
+        "id": "nicos",
+        "name": "Nico's Pier 38 seafood",
+        "lat": 21.3175754,
+        "lng": -157.8775063,
+        "address": "1129 N Nimitz Hwy, Honolulu",
+        "note": "Next to the fish market; poke and fried fish."
+      },
+      {
+        "id": "ala-moana",
+        "name": "Ala Moana Center / Magic Island",
+        "lat": 21.2911,
+        "lng": -157.8435,
+        "address": "1450 Ala Moana Blvd, Honolulu",
+        "note": "Shopping, with Magic Island beach park next door."
+      },
+      {
+        "id": "house",
+        "name": "House Without A Key sunset dinner",
+        "lat": 21.2774759,
+        "lng": -157.8318823,
+        "address": "2199 Kālia Rd, Honolulu",
+        "note": "Oceanfront restaurant at the Halekulani with sunset views and hula; reservations recommended."
+      },
+      {
+        "id": "kaimana-hotel",
+        "name": "Option: Kaimana Beach Hotel",
+        "lat": 21.2645,
+        "lng": -157.8213,
+        "address": "2863 Kalākaua Ave, Honolulu",
+        "note": "On the beach, next to Kapiʻolani Park."
+      },
+      {
+        "id": "alohilani-hotel",
+        "name": "Option: ʻAlohilani Resort",
+        "lat": 21.2741,
+        "lng": -157.824,
+        "address": "2490 Kalākaua Ave, Honolulu",
+        "note": "Across from Kūhiō Beach."
+      },
+      {
+        "id": "sheraton-hotel",
+        "name": "Option: Sheraton Waikiki",
+        "lat": 21.2775,
+        "lng": -157.8306,
+        "address": "2255 Kalākaua Ave, Honolulu",
+        "note": "Central Waikīkī, right on the water."
+      },
+      {
+        "id": "trolley-hub",
+        "name": "Waikiki Trolley main stop (DFS Galleria)",
+        "lat": 21.28,
+        "lng": -157.8296,
+        "address": "330 Royal Hawaiian Ave, Honolulu",
+        "note": "One of the main boarding points for all lines; check the official site for each line's stops and times."
+      },
+      {
+        "id": "waikele",
+        "name": "Waikele Premium Outlets",
+        "lat": 21.4017617,
+        "lng": -158.0068567,
+        "address": "94-790 Lumiaina St, Waipahu, HI 96797",
+        "note": "Mon–Thu 10:00–19:00, Fri–Sat 10:00–20:00, Sun 11:00–18:00; free parking. Where H-1 and H-2 meet, on the way back to Waikīkī."
+      },
+      {
+        "id": "ko-olina",
+        "name": "Ko Olina stargazing (Four Seasons)",
+        "lat": 21.3392955,
+        "lng": -158.125741,
+        "address": "92-1001 Olani St, Kapolei, HI 96707",
+        "note": "Stars Above Hawaii meets at the hotel's Naupaka Spa gold elevator; viewing is on the pool deck or the tennis-court rooftop."
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 1,
+        "label": "01/03 Arrival",
+        "placeIds": [
+          "hnl",
+          "hotel"
+        ],
+        "transport": "transfer",
+        "note": "Late-night taxi, ~25–30 min."
+      },
+      {
+        "day": 2,
+        "label": "01/04 Pearl Harbor",
+        "placeIds": [
+          "hotel",
+          "pearl-harbor",
+          "hotel"
+        ],
+        "extraPlaceIds": [
+          "bowfin",
+          "arizona",
+          "aviation",
+          "missouri",
+          "waikiki-beach"
+        ],
+        "transport": "transfer",
+        "note": "Uber both ways. Official boat to the Arizona; official shuttle to the Missouri and aviation museum, as private cars can't enter Ford Island.",
+        "officialUrl": "https://www.nps.gov/perl/planyourvisit/index.htm"
+      },
+      {
+        "day": 3,
+        "label": "01/05 Island loop drive",
+        "placeIds": [
+          "car-pickup",
+          "hoomaluhia",
+          "kualoa",
+          "giovanni",
+          "laniakea",
+          "dole",
+          "waikele",
+          "ko-olina",
+          "hotel"
+        ],
+        "transport": "driving",
+        "note": "Clockwise around the island, ending west at Ko Olina for stargazing; the outlets are optional. Drive times exclude stops and traffic."
+      },
+      {
+        "day": 4,
+        "label": "01/06 Downtown (trolley)",
+        "placeIds": [
+          "trolley-hub",
+          "iolani",
+          "ala-moana"
+        ],
+        "extraPlaceIds": [
+          "car-pickup",
+          "nicos"
+        ],
+        "transport": "trolley",
+        "note": "Red Line to the palace and Chinatown, Pink Line to Ala Moana; the map marks stops only, not trolley routes. Uber to Nico's.",
+        "officialUrl": "https://waikikitrolley.com/"
+      },
+      {
+        "day": 5,
+        "label": "01/07 Hanauma Bay + sunset sail",
+        "placeIds": [
+          "hotel",
+          "hanauma"
+        ],
+        "extraPlaceIds": [
+          "diamond-head",
+          "waikiki-beach"
+        ],
+        "transport": "shuttle",
+        "note": "Roberts Hawaii shuttle in the morning, Green Line trolley in the afternoon, boarding from the beach in the early evening; locations only, no driving routes.",
+        "officialUrl": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package"
+      },
+      {
+        "day": 6,
+        "label": "01/08 Departure",
+        "placeIds": [
+          "hotel",
+          "house",
+          "hnl"
+        ],
+        "transport": "transfer",
+        "note": "Optional Blue Line to Hālona in the morning; taxi to the airport in the evening.",
+        "extraPlaceIds": [
+          "halona"
+        ]
+      }
+    ],
+    "routesFile": "routes.json",
+    "home": {
+      "name": "Toronto (home)",
+      "lat": 43.6532,
+      "lng": -79.3832
+    }
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2027-01-03",
+      "title": "Sun · Nonstop to Honolulu, late check-in",
+      "locations": [
+        "Toronto YYZ",
+        "Honolulu HNL",
+        "Waikīkī"
+      ],
+      "schedule": [
+        {
+          "time": "Before 15:00",
+          "title": "Arrive at Pearson",
+          "text": "Nonstop flights to the US clear US preclearance in Toronto, so arrive 2.5–3 hours before departure. Even if you don't need a visa, double-check passport validity."
+        },
+        {
+          "time": "17:35",
+          "title": "AC589 departs",
+          "text": "~10 hours nonstop. Try to sleep on Hawaii time on the plane; Hawaii is 5 hours behind Toronto."
+        },
+        {
+          "time": "22:38",
+          "title": "Land in Honolulu",
+          "text": "Domestic arrival, no immigration again. After baggage claim, taxi or Uber to the hotel, ~25–30 min, ~USD40–50.",
+          "placeId": "hnl"
+        },
+        {
+          "time": "~23:30",
+          "title": "Hotel check-in",
+          "text": "Let the hotel know you'll arrive late so the room isn't released.",
+          "placeId": "hotel"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2027-01-04",
+      "title": "Mon · Full day at Pearl Harbor's four sites; sunset sail in the early evening if the weather's good",
+      "locations": [
+        "Pearl Harbor Visitor Center",
+        "USS Arizona",
+        "Submarine Museum",
+        "USS Missouri",
+        "Aviation Museum",
+        "Waikīkī"
+      ],
+      "schedule": [
+        {
+          "time": "06:30",
+          "title": "Jet-lagged early start, breakfast",
+          "text": "You'll wake up early the first few days, perfect for Pearl Harbor. No driving."
+        },
+        {
+          "time": "07:15",
+          "title": "Uber to Pearl Harbor",
+          "text": "~25 min. No bags allowed, only small clear bags or phone wallets; paid bag storage available.",
+          "placeId": "pearl-harbor"
+        },
+        {
+          "time": "~08:00",
+          "title": "USS Arizona Memorial",
+          "text": "Reservations are free, with only a small booking fee. Released on Recreation.gov; book the earliest slot. Includes a film and boat ride, ~75 min.",
+          "placeId": "arizona",
+          "links": [
+            {
+              "label": "Recreation.gov reservations",
+              "url": "https://www.recreation.gov/ticket/facility/233338"
+            }
+          ]
+        },
+        {
+          "time": "09:30",
+          "title": "Submarine Museum / USS Bowfin",
+          "text": "Right next to the visitor center; included in the Passport.",
+          "placeId": "bowfin"
+        },
+        {
+          "time": "11:00",
+          "title": "Shuttle to Ford Island · USS Missouri",
+          "text": "The deck where Japan signed the surrender; grab a simple lunch on the island afterwards.",
+          "placeId": "missouri"
+        },
+        {
+          "time": "13:30",
+          "title": "Pearl Harbor Aviation Museum",
+          "text": "Two hangars, ~1.5 hours. Shuttle back to the visitor center afterwards.",
+          "placeId": "aviation",
+          "links": [
+            {
+              "label": "Passport to Pearl Harbor",
+              "url": "https://www.pearlharborhistoricsites.org/tickets"
+            }
+          ]
+        },
+        {
+          "time": "15:30",
+          "title": "Back to Waikīkī",
+          "text": "After the aviation museum, shuttle back to the visitor center, then Uber ~25 min, arriving around 16:00.",
+          "placeId": "hotel"
+        },
+        {
+          "time": "16:30–19:00 (weather permitting)",
+          "title": "Backup: Waikīkī sunset sail",
+          "text": "The sunset sail can be today or Jan 7: check the weather and sea conditions before the trip and pick whichever day is calmer with fewer clouds. If today, be at the beach boarding spot at 16:30, sailing 17:00–19:00; you'll still be adjusting to the time change, so if you're tired save it for Jan 7. No sail? Stroll Kūhiō Beach and watch the sunset (~18:05 in January).",
+          "placeId": "waikiki-beach",
+          "links": [
+            {
+              "label": "Book Moana Sailing",
+              "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
+            }
+          ]
+        },
+        {
+          "time": "18:30 (19:15 if sailing)",
+          "title": "Dinner: Duke's Waikiki",
+          "text": "Oceanfront; fish and Hula Pie. Reserve ahead; if you sail today, book 19:15.",
+          "placeId": "dukes"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2027-01-05",
+      "title": "Tue · The only driving day: botanical garden, Jurassic ranch tour, shrimp and turtles, Dole Plantation, then stargazing at Ko Olina",
+      "locations": [
+        "Hoʻomaluhia",
+        "Kualoa Ranch",
+        "Kahuku shrimp",
+        "Turtle beach",
+        "Dole Plantation",
+        "(Optional) Waikele outlets",
+        "Ko Olina stargazing"
+      ],
+      "schedule": [
+        {
+          "time": "08:15",
+          "title": "Pick up the car in Waikīkī",
+          "text": "Bring your G licence and credit card; inspect the car and take photos. Clockwise loop today: the northeast valleys first, then back along the North Shore.",
+          "placeId": "car-pickup"
+        },
+        {
+          "time": "09:00–10:05",
+          "title": "Hoʻomaluhia Botanical Garden",
+          "text": "Opens at 9:00. Drive in, park by the lake for mountain photos, and walk a short stretch. Skipping Byodo-In this time, so you can linger here.",
+          "placeId": "hoomaluhia"
+        },
+        {
+          "time": "11:00–13:30",
+          "title": "Kualoa Ranch Jurassic Adventure",
+          "text": "Check in at the ranch around 10:40. Ride an off-road vehicle into the Kualoa, Hakipuʻu and Kaʻaʻawa valleys to see filming spots from Jurassic Park, Jurassic World and more. Bumpy ride, only short walks. Book your slot ahead.",
+          "placeId": "kualoa",
+          "links": [
+            {
+              "label": "Kualoa official site",
+              "url": "https://www.kualoa.com/tours/"
+            }
+          ]
+        },
+        {
+          "time": "14:05–14:40",
+          "title": "Giovanni's garlic shrimp",
+          "text": "Lunch. If the line is too long, try Romy's or Fumi's next door. Then head west on Kamehameha Hwy; just glance at Shark's Cove and Waimea Bay from the car: North Shore surf is big on winter afternoons, so no dedicated stops.",
+          "placeId": "giovanni"
+        },
+        {
+          "time": "15:05–15:20",
+          "title": "Turtle watching at Laniakea",
+          "text": "Turtles often haul out to bask in the afternoon; watch from shore for 15 min and keep your distance. Roadside parking is tight; if there's no spot, go straight to Dole.",
+          "placeId": "laniakea"
+        },
+        {
+          "time": "15:40–17:30",
+          "title": "Dole Plantation: train + maze",
+          "text": "Ride the Pineapple Express train first (~20 min, roughly every 10 min; the official site suggests 1 hour including the pineapple-cutting demo), then the Pineapple Garden Maze (40 min on average), and finish with Dole Whip. Park hours 9:30–17:30; the last train and last maze entry aren't listed online, so call 808-621-8408 before you go. If the last train is early, do the maze first.",
+          "placeId": "dole",
+          "links": [
+            {
+              "label": "Dole Plantation official site",
+              "url": "https://www.doleplantation.com/"
+            }
+          ]
+        },
+        {
+          "time": "17:50–18:40 (optional)",
+          "title": "Waikele Premium Outlets",
+          "text": "~20 min from Dole via H-2. Shop for ~50 min only; if you run late at Dole, skip it and go straight to Ko Olina for dinner.",
+          "placeId": "waikele",
+          "links": [
+            {
+              "label": "Outlets official site",
+              "url": "https://www.premiumoutlets.com/outlet/waikele"
+            }
+          ]
+        },
+        {
+          "time": "19:00–19:50",
+          "title": "Ko Olina dinner",
+          "text": "~18 min drive from the outlets (~35 min straight from Dole). Eat inside the Ko Olina resort area, e.g. Monkeypod Kitchen; reservations recommended.",
+          "placeId": "ko-olina"
+        },
+        {
+          "time": "20:00–21:00",
+          "title": "Stargazing · Stars Above Hawaii",
+          "text": "An astronomy guide with a computerized telescope talks about Hawaiian star navigation, ~1 hour, and photos are sent to your phone. Jan 7 is the new moon, so these are the darkest nights. Start time depends on the slot you book; you'll get a text that afternoon about weather and the viewing spot. Weather cancellations get a full refund or rebooking.",
+          "placeId": "ko-olina",
+          "links": [
+            {
+              "label": "Booking page",
+              "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort"
+            }
+          ]
+        },
+        {
+          "time": "21:00",
+          "title": "Drive back to Waikīkī",
+          "text": "~45 min, back at the hotel around 21:45. Take it easy on the roads at night; it's a long day. Park at the hotel overnight (~USD45) and return the car tomorrow morning.",
+          "placeId": "hotel"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2027-01-06",
+      "title": "Wed · Return the car, downtown by trolley",
+      "locations": [
+        "ʻIolani Palace",
+        "Chinatown",
+        "Nico's Pier 38",
+        "Ala Moana"
+      ],
+      "schedule": [
+        {
+          "time": "08:00",
+          "title": "Fill up and return the car",
+          "text": "Return by the time on your booking; being late may cost an extra day.",
+          "placeId": "car-pickup"
+        },
+        {
+          "time": "09:00",
+          "title": "Start the Waikiki Trolley 4-day pass",
+          "text": "4-day all-line pass ~USD150 for two, hop on/hop off, good for Jan 6–8. Take the Red Line (downtown history line) to the palace.",
+          "placeId": "trolley-hub",
+          "links": [
+            {
+              "label": "Waikiki Trolley official site",
+              "url": "https://waikikitrolley.com/"
+            }
+          ]
+        },
+        {
+          "time": "10:00",
+          "title": "ʻIolani Palace",
+          "text": "The only royal palace in the US; open Tue–Sat, tickets online only.",
+          "placeId": "iolani",
+          "links": [
+            {
+              "label": "ʻIolani Palace official site",
+              "url": "https://www.iolanipalace.org/visit/"
+            }
+          ]
+        },
+        {
+          "time": "11:30",
+          "title": "King Kamehameha Statue, Chinatown",
+          "text": "The statue is right across from the palace; take the Red Line or walk to Chinatown."
+        },
+        {
+          "time": "12:30",
+          "title": "Seafood lunch at Nico's Pier 38",
+          "text": "Not on a trolley line; Uber ~10 min. Poke bowls and fried fish.",
+          "placeId": "nicos"
+        },
+        {
+          "time": "14:30",
+          "title": "Ala Moana Center",
+          "text": "Pink Line (Ala Moana shopping line) both ways.",
+          "placeId": "ala-moana"
+        },
+        {
+          "time": "18:00",
+          "title": "Dinner in Waikīkī",
+          "text": "Hanauma Bay tomorrow morning, so turn in early.",
+          "placeId": "waikiki-beach"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2027-01-07",
+      "title": "Thu · Guided snorkel tour, Diamond Head lookout, sunset sail in the early evening",
+      "locations": [
+        "Hanauma Bay",
+        "Diamond Head Kahala Lookout",
+        "Waikīkī sunset at sea"
+      ],
+      "schedule": [
+        {
+          "time": "Morning (per tour pickup time)",
+          "title": "Roberts Hawaii Hanauma Bay transfer tour",
+          "text": "Includes entry and round-trip transport from Waikīkī, ~USD65/person; snorkel gear not included, rent it at the bay. Bookable up to one month ahead.",
+          "placeId": "hanauma",
+          "links": [
+            {
+              "label": "Roberts Hawaii",
+              "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package"
+            },
+            {
+              "label": "Hanauma Bay official site",
+              "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/"
+            }
+          ]
+        },
+        {
+          "time": "Morning",
+          "title": "Snorkeling",
+          "text": "Watch the preserve video first, then snorkel in the inner bay. Decide on swimming and fins based on your own fitness, lifeguard guidance and the day's conditions. If it's closed or conditions are bad, it's also open Jan 8, so you can switch.",
+          "placeId": "hanauma"
+        },
+        {
+          "time": "Noon",
+          "title": "Back to the hotel to rest, lunch",
+          "text": "The tour bus drops you back in Waikīkī.",
+          "placeId": "hotel"
+        },
+        {
+          "time": "13:30",
+          "title": "Green Line to the Diamond Head lookout",
+          "text": "The Green Line (Diamond Head Line) has a photo stop at Kahala Lookout; step off and you'll see Diamond Head and the ocean, no hiking. A loop takes ~70 min, and the last afternoon run heads back from the Diamond Head area around 15:10–15:40, so don't set out too late. Not going into the crater: that needs a separate state park reservation, and without the summit there isn't much to see.",
+          "placeId": "diamond-head",
+          "links": [
+            {
+              "label": "Green Line schedule and stops",
+              "url": "https://waikikitrolley.com/green-line/"
+            }
+          ]
+        },
+        {
+          "time": "16:30",
+          "title": "Meet at the beach boarding spot",
+          "text": "Usually arrive 20–30 min early. Wear shoes that are easy to board in and bring a light jacket; it's breezy on the water in the evening.",
+          "placeId": "waikiki-beach"
+        },
+        {
+          "time": "17:00–19:00",
+          "title": "Waikīkī sunset sail (or move to Jan 4)",
+          "text": "E.g. Moana Sailing's 2-hour sail (~USD81/person, one drink included); Manu Kai's 1.5-hour happy hour ~USD56/person. January sunset is ~18:05, and heading back after dark you'll see Waikīkī and Diamond Head lit up. Operators may cancel in rough seas. The sail can also go on the evening of Jan 4: check the forecast before the trip and pick the calmer, less cloudy day; if you already sailed on Jan 4, just watch the sunset from the beach and eat early.",
+          "placeId": "waikiki-beach",
+          "links": [
+            {
+              "label": "Book Moana Sailing",
+              "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
+            }
+          ]
+        },
+        {
+          "time": "19:15",
+          "title": "Dinner: Waikīkī seafood",
+          "text": "Eat nearby after the sail; if you missed Duke's on Jan 4, go there.",
+          "placeId": "dukes"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2027-01-08",
+      "title": "Fri · Slow day, sunset dinner, midnight departure",
+      "locations": [
+        "Waikīkī",
+        "House Without A Key",
+        "HNL"
+      ],
+      "schedule": [
+        {
+          "time": "Morning (backup)",
+          "title": "Hanauma Bay backup",
+          "text": "Only if Jan 7 gets canceled; open Fridays."
+        },
+        {
+          "time": "Morning",
+          "title": "Check out, store bags",
+          "text": "Check out in the morning, leave bags at the front desk and pick them up in the evening. To shower before the airport, ask if you can use the gym or pool showers. If you went with the Expedia flight + hotel bundle, the room is booked through Jan 9, so you can use it until you leave for the airport.",
+          "placeId": "hotel"
+        },
+        {
+          "time": "Morning",
+          "title": "Optional: Blue Line along the southeast coast",
+          "text": "The Blue Line (Ocean View Line) runs along the coast to Hālona Blowhole (photo stop) and Sea Life Park, ~1h 50m per loop, every ~40 min from 8:30. If you'd rather not, relax on the beach or go shopping.",
+          "placeId": "halona",
+          "links": [
+            {
+              "label": "Blue Line schedule and stops",
+              "url": "https://waikikitrolley.com/blue-line/"
+            }
+          ]
+        },
+        {
+          "time": "17:30",
+          "title": "House Without A Key sunset dinner",
+          "text": "Sunset and hula show; reservations recommended.",
+          "placeId": "house"
+        },
+        {
+          "time": "21:00",
+          "title": "Head to the airport",
+          "text": "~25–30 min. The return is the Air Canada nonstop at 00:10 on Jan 9; arrive 2.5–3 hours early. If you booked the bundle, follow its transfer arrangements.",
+          "placeId": "hnl"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2027-01-09",
+      "title": "Sat · Nonstop back to Toronto",
+      "locations": [
+        "HNL",
+        "YYZ"
+      ],
+      "schedule": [
+        {
+          "time": "00:10",
+          "title": "Air Canada nonstop departs",
+          "text": "Red-eye, ~8h 41m; try to sleep on the plane."
+        },
+        {
+          "time": "13:51",
+          "title": "Arrive in Toronto",
+          "text": "Toronto time. Clear Canadian customs on the way back from the US."
+        }
+      ]
+    }
+  ],
+  "coverage": [],
+  "rental": {
+    "title": "Car rental: Jan 5 only (pick up 08:15 – return morning of Jan 6)",
+    "summary": "Driving only on Jan 5, the island loop day. Uber to Pearl Harbor, the Roberts Hawaii transfer tour for Hanauma Bay, and the Waikiki Trolley for downtown and the coast Jan 6–8.",
+    "details": [
+      {
+        "label": "Driver",
+        "value": "23 at travel time, Canadian G licence, 5–6 years of driving"
+      },
+      {
+        "label": "Pickup / return",
+        "value": "Waikīkī location recommended; Kayak prices are for the airport location"
+      },
+      {
+        "label": "Default car",
+        "value": "Compact, ~CA$180 (incl. young-driver fee buffer)"
+      },
+      {
+        "label": "Current status",
+        "value": "Not booked · no full checkout price for a 23-year-old yet"
+      }
+    ],
+    "notes": [
+      "Under 25 usually means a young-driver surcharge, even with years of experience; some models may be off-limits.",
+      "A Canadian G licence is fine for driving in Hawaii, usually no IDP needed; bring your physical licence and a credit card in your own name to pick up.",
+      "Don't assume your own auto insurance or credit card covers rentals; confirm coverage and deductible before booking.",
+      "Jan 5 is built around the ranch tour: the botanical garden opens at 9:00, the ranch tour is around 11:00, and Dole runs until closing. If the ranch slot is later, shorten the garden or skip the turtles."
+    ],
+    "links": [
+      {
+        "label": "Kayak one-day price check",
+        "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a"
+      },
+      {
+        "label": "Turo Honolulu",
+        "url": "https://turo.com/us/en/search?location=Honolulu%2C%20HI"
+      }
+    ]
+  },
+  "todo": [],
+  "sources": [
+    {
+      "label": "Multi-site price check, Nov 15: flights (AC nonstop, round trip for two, carry-on included)",
+      "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=hnl&ddate=2027-01-03&rdate=2027-01-09&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Trip.com CA$2,062; Air Canada site Standard CA$2,132; Booking.com Standard CA$2,210; Ctrip ¥11,104 ≈ CA$2,372.92; Expedia had no nonstop. Qunar's website can't search international flights and Fliggy requires login, so they weren't compared."
+    },
+    {
+      "label": "Multi-site price check, Nov 15: hotels (5 nights Jan 3–8, one room for two, incl. tax)",
+      "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+      "checkedOn": "2026-11-15",
+      "note": "Four sites: Vio, Expedia, Trip.com, Booking.com; Booking.com showed no availability at all four hotels for these dates. Ctrip's Chinese site requires login to show hotel prices, so it wasn't compared."
+    },
+    {
+      "label": "Bank of Canada exchange rates (2026-11-13)",
+      "url": "https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/",
+      "checkedOn": "2026-11-15",
+      "note": "1 USD = 1.4257 CAD, 1 CNY = 0.2137 CAD. Used to convert foreign-currency quotes to CAD."
+    },
+    {
+      "label": "Nov 15 recheck: standalone prices (for splitting the bundle)",
+      "url": "https://www.google.com/travel/search?q=Sheraton%20Waikiki%20Beach%20Resort%20Jan%203%20to%20Jan%209%202027&hl=en&gl=ca&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Standalone reference prices for splitting the bundle: flights at the Nov 15 multi-site low of CA$2,062 (Trip.com); Sheraton at Trip.com's CA$3,056 for 5 nights, ~CA$3,667.20 scaled to 6 nights."
+    },
+    {
+      "label": "Vio, Nov 15: 5-night totals incl. taxes & fees, Jan 3–8",
+      "url": "https://www.vio.com/Hotel/Search?hotelId=1335482&checkIn=2027-01-03&checkOut=2027-01-08&rooms=2&optimizeRooms=1",
+      "checkedOn": "2026-11-15",
+      "note": "Hotel Renew CA$1,223 (was CA$1,605; free cancellation, book now pay later); Hyatt Place CA$1,745 with breakfast (free cancellation CA$2,090); Kaimana CA$1,763 (free cancellation CA$2,096); ʻAlohilani CA$2,082; Sheraton CA$3,438 (was CA$4,752; requires a mid-stay room change)."
+    },
+    {
+      "label": "Your screenshot: Expedia flight + hotel bundle (Sheraton 6 nights + AC nonstop Basic)",
+      "url": "https://www.expedia.ca/",
+      "checkedOn": "2026-11-15",
+      "note": "Bundle CA$5,178.40; the bundle's outbound is a Basic fare, ~CA$100 more to add carry-ons."
+    },
+    {
+      "label": "Your screenshot: Costco Travel hotels",
+      "url": "https://www.costcotravel.ca/",
+      "checkedOn": "2026-11-15",
+      "note": "Kaimana Beach Hotel with breakfast for two CA$2,302.02; ʻAlohilani partial ocean-view King CA$2,707.08 (plus a CA$177 shop card and a USD150 hotel credit). The screenshot doesn't show the number of nights. These prices were for 6 nights and are no longer used now that standalone hotels are priced for 5."
+    },
+    {
+      "label": "Google Hotels: Waikīkī Jan 3–8",
+      "url": "https://www.google.com/travel/search?q=hotels%20in%20Waikiki%20Jan%203%20to%20Jan%208%202027&hl=en&gl=ca&curr=CAD",
+      "checkedOn": "2026-11-15",
+      "note": "Google shows nightly rates with fees but without the ~19% Hawaii tax; standalone hotels now use Vio's totals incl. taxes & fees."
+    },
+    {
+      "label": "Kayak: HNL car rental Jan 5–8",
+      "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-08h/2027-01-08-08h?sort=price_a",
+      "checkedOn": "2026-11-15",
+      "note": "Three-day total from the search page, without the under-25 surcharge for a 23-year-old."
+    },
+    {
+      "label": "Hanauma Bay · City and County of Honolulu Parks",
+      "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/",
+      "checkedOn": "2026-11-15",
+      "note": "Open Wed–Sun, entry 6:45–13:30; non-residents USD25 (+2.35% online); parking $3 cash; reservations open two days ahead at 7:00 HST."
+    },
+    {
+      "label": "PCC opening hours",
+      "url": "https://www.polynesia.com/faq/hours-of-operation",
+      "checkedOn": "2026-11-15",
+      "note": "Closed Sun and Wed; Mon, Tue, Thu, Fri, Sat 12:00–21:00. Reference prices: Aliʻi Luau ~USD198/person, Gateway ~USD150/person."
+    },
+    {
+      "label": "Hoʻomaluhia Botanical Garden",
+      "url": "https://www.honolulu.gov/dpr/honolulu-botanical-gardens/hoomaluhia-botanical-garden/",
+      "checkedOn": "2026-11-15",
+      "note": "9:00–16:00; closed Thursdays, Christmas and New Year's Day."
+    },
+    {
+      "label": "Pearl Harbor Historic Sites",
+      "url": "https://www.pearlharborhistoricsites.org/tickets",
+      "checkedOn": "2026-11-15",
+      "note": "Passport ~USD99.99/person, covers the Missouri, aviation museum and submarine museum; the Arizona is a separate free reservation."
+    },
+    {
+      "label": "ʻIolani Palace",
+      "url": "https://www.iolanipalace.org/visit/",
+      "checkedOn": "2026-11-15",
+      "note": "Open Tue–Sat, tickets online only; adults ~USD28 (2026 published price)."
+    },
+    {
+      "label": "Kualoa Ranch",
+      "url": "https://www.kualoa.com/tours/",
+      "checkedOn": "2026-11-15",
+      "note": "Jurassic Adventure 2.5 hours USD149.95; Movie Sites and Jungle Expedition, 90 min each, USD59.95. Specific time slots not shown."
+    },
+    {
+      "label": "Roberts Hawaii · Hanauma Bay Experience",
+      "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
+      "checkedOn": "2026-11-15",
+      "note": "Includes entry and round-trip Waikīkī transfers, adults ~USD65; doesn't say snorkel gear is included."
+    },
+    {
+      "label": "Byodo-In Temple",
+      "url": "https://byodo-in.com/visit/",
+      "checkedOn": "2026-11-15",
+      "note": "8:30–16:30, last entry 16:15; adults USD10, parking $6/hour."
+    },
+    {
+      "label": "Kayak: HNL car rental Jan 5–6, one day",
+      "url": "https://www.ca.kayak.com/cars/HNL/2027-01-05-07h/2027-01-06-07h?sort=price_a",
+      "checkedOn": "2026-11-15",
+      "note": "Compact ~CA$75–88, open-air Jeep ~CA$86, before the under-25 surcharge."
+    },
+    {
+      "label": "Waikiki Trolley",
+      "url": "https://waikikitrolley.com/green-line/",
+      "checkedOn": "2026-11-15",
+      "note": "Green Line: Diamond Head crater (separate reservation needed) and Kahala Lookout photo stop, ~70 min per loop. Blue Line: Hālona Blowhole photo stop and Sea Life Park, every ~40 min, ~1h 50m per loop, no stop at the Diamond Head lookout. 4-day all-line passes ~USD65–76/person depending on the site."
+    },
+    {
+      "label": "Waikele Premium Outlets",
+      "url": "https://www.premiumoutlets.com/outlet/waikele",
+      "checkedOn": "2026-11-15",
+      "note": "Mon–Thu 10:00–19:00, Fri–Sat 10:00–20:00, Sun 11:00–18:00 (per the official store page)."
+    },
+    {
+      "label": "Dole Plantation official site & FAQ",
+      "url": "https://www.doleplantation.com/",
+      "checkedOn": "2026-11-15",
+      "note": "Park 9:30–17:30; train ~20 min, booking page says roughly every 10 min; maze averages 40 min; allow at least 1 hour for the train plus the pineapple-cutting demo. Last departure time not published."
+    },
+    {
+      "label": "Stars Above Hawaii · Ko Olina Polynesian Star Navigation Show",
+      "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
+      "checkedOn": "2026-11-15",
+      "note": "Adults USD54.25, ~1 hour, meets at Four Seasons Ko Olina; weather cancellations refundable or rebookable; time slots not listed on the page."
+    },
+    {
+      "label": "Waikīkī sunset sails",
+      "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
+      "checkedOn": "2026-11-15",
+      "note": "Moana Sailing 2 hours ~USD80.99/person with one drink, departs 17:00; Waikīkī sunset cruises usually depart 17:00–17:30, USD56–149/person. Jan 7 is the new moon (2027-01-07 20:24 UTC)."
+    }
+  ],
+  "events": [
+    {
+      "title": "Hilton Hawaiian Village Friday fireworks",
+      "status": "To be confirmed",
+      "priceLabel": "Free · watch from the beach",
+      "description": "The hotel traditionally puts on fireworks on Friday nights, and Jan 8 is a Friday.",
+      "conflict": "Check before the trip whether they're on this year and at what time. It's close to the House Without A Key dinner time; pick one based on the actual times.",
+      "url": "https://www.hiltonhawaiianvillage.com/"
+    },
+    {
+      "title": "PCC afternoon + evening (if you still want to go)",
+      "status": "Not in budget",
+      "priceLabel": "Packages ~USD150–198/person, plus transport",
+      "description": "Closed Sundays and Wednesdays, 12:00–21:00. The villages, dinner and the HĀ evening show take a full afternoon plus evening.",
+      "conflict": "The current plan has no free afternoon + evening; it would have to replace the open daytime on Jan 8, using PCC's shuttle bus, and be timed to make the 00:10 flight.",
+      "url": "https://www.polynesia.com/"
+    }
+  ],
+  "share": {
+    "kicker": "YYZ ✈ HNL · 2027.1.3 – 1.9",
+    "title": "Oʻahu 6 days / 5 nights route map",
+    "subtitle": "Nonstop from Toronto · one-day car rental · see it all without hiking",
+    "footer": "Routes drawn from OpenStreetMap road data · nothing booked · prices checked 2026-11-15",
+    "days": [
+      {
+        "day": 1,
+        "tag": "Arrive",
+        "items": [
+          "✈️ AC nonstop 17:35 → 22:38",
+          "🏨 Late check-in, Waikīkī"
+        ],
+        "short": "Arrive",
+        "badgeAt": 0.15
+      },
+      {
+        "day": 2,
+        "tag": "Pearl Harbor",
+        "items": [
+          "⚓ USS Arizona Memorial",
+          "🚢 Battleship Missouri",
+          "🛩️ Aviation museum + submarine",
+          "⛵ Sunset sail (weather permitting, or Jan 7)",
+          "🦞 Duke's oceanfront dinner"
+        ],
+        "short": "Pearl Harbor",
+        "badgeAt": 0.5
+      },
+      {
+        "day": 3,
+        "tag": "Island loop drive",
+        "items": [
+          "🌺 Hoʻomaluhia Botanical Garden",
+          "🦖 Kualoa Ranch Jurassic tour",
+          "🍤 Shrimp · 🐢 Turtles",
+          "🍍 Dole Plantation train + maze",
+          "🌌 Ko Olina stargazing"
+        ],
+        "short": "Loop",
+        "badgeAt": 0.4
+      },
+      {
+        "day": 4,
+        "tag": "Downtown trolley",
+        "items": [
+          "🚋 Waikiki Trolley Red Line",
+          "👑 ʻIolani Palace · Chinatown",
+          "🐟 Nico's Pier 38 seafood",
+          "🛍️ Ala Moana Center"
+        ],
+        "short": "Downtown",
+        "badgeAt": 0.55
+      },
+      {
+        "day": 5,
+        "tag": "Snorkel · Diamond Head · sunset",
+        "items": [
+          "🤿 Hanauma Bay snorkel tour",
+          "🚋 Green Line to Diamond Head lookout",
+          "⛵ Sunset sail (or Jan 4)"
+        ],
+        "short": "Snorkeling",
+        "badgeAt": 0.55
+      },
+      {
+        "day": 6,
+        "tag": "Slow day · departure",
+        "items": [
+          "🌊 Blue Line coast ride (optional)",
+          "🏖️ Waikīkī Beach",
+          "🌇 Sunset dinner + hula",
+          "✈️ 00:10 nonstop home to Toronto"
+        ],
+        "short": "Depart",
+        "badgeAt": 0.92
+      },
+      {
+        "day": 7,
+        "tag": "Home",
+        "items": [],
+        "short": "Home"
+      }
+    ],
+    "pois": [
+      {
+        "placeId": "hotel",
+        "icon": "🏨",
+        "label": "Waikīkī · staying here",
+        "dx": -215,
+        "dy": 34
+      },
+      {
+        "placeId": "pearl-harbor",
+        "icon": "⚓",
+        "label": "Pearl Harbor",
+        "side": "left"
+      },
+      {
+        "placeId": "iolani",
+        "icon": "👑",
+        "label": "Palace",
+        "dx": -40,
+        "dy": -66
+      },
+      {
+        "placeId": "diamond-head",
+        "icon": "🌋",
+        "label": "Diamond Head lookout",
+        "dx": 6,
+        "dy": 34
+      },
+      {
+        "placeId": "hanauma",
+        "icon": "🤿",
+        "label": "Hanauma Bay snorkel",
+        "side": "above"
+      },
+      {
+        "placeId": "hoomaluhia",
+        "icon": "🌺",
+        "label": "Botanical garden",
+        "side": "right"
+      },
+      {
+        "placeId": "kualoa",
+        "icon": "🦖",
+        "label": "Kualoa Ranch",
+        "side": "right"
+      },
+      {
+        "placeId": "giovanni",
+        "icon": "🍤",
+        "label": "Garlic shrimp",
+        "side": "right"
+      },
+      {
+        "placeId": "laniakea",
+        "icon": "🐢",
+        "label": "Turtle beach",
+        "side": "left"
+      },
+      {
+        "placeId": "dole",
+        "icon": "🍍",
+        "label": "Dole train + maze",
+        "side": "right"
+      },
+      {
+        "placeId": "waikele",
+        "icon": "🛍️",
+        "label": "Outlets (optional)",
+        "side": "left"
+      },
+      {
+        "placeId": "ko-olina",
+        "icon": "🌌",
+        "label": "Ko Olina stargazing",
+        "side": "below"
+      }
+    ],
+    "bbox": [
+      -158.29,
+      21.245,
+      -157.64,
+      21.72
+    ],
+    "mapTitle": {
+      "text": "O‘ahu",
+      "lng": -158.035,
+      "lat": 21.6
+    },
+    "seaLabel": "PACIFIC OCEAN"
+  },
+  "checklist": {
+    "asOf": "2026-11-15",
+    "groups": [
+      {
+        "id": "documents",
+        "label": "Documents & entry",
+        "open": false
+      },
+      {
+        "id": "bookings",
+        "label": "To book"
+      },
+      {
+        "id": "before",
+        "label": "Before you go",
+        "open": false
+      }
+    ],
+    "items": [
+      {
+        "id": "me-passport",
+        "group": "documents",
+        "who": "Me",
+        "title": "Check your Canadian passport is valid for the whole trip",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "note": "Canadians don't need a visa or ESTA for the US, but you must fly on a passport. If validity is short, airlines may apply a “6 months after leaving the US” rule, so to be safe, renew first.",
+        "url": "https://travel.gc.ca/destinations/united-states",
+        "urlLabel": "Government of Canada travel advice"
+      },
+      {
+        "id": "gf-passport",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Check Chinese passport validity: ideally 6+ months left after leaving the US",
+        "due": "2026-11-30",
+        "lead": "Check now; renewing in Canada takes weeks",
+        "note": "The US generally requires passports to be valid for 6 months beyond departure; countries on CBP's “Six-Month Club” list are exempt (latest version 2025-12-18). Check that list to see whether China is on it. If under 6 months, renew ASAP through the Chinese consulate in Canada.",
+        "url": "https://www.cbp.gov/document/bulletins/six-month-club-update",
+        "urlLabel": "CBP Six-Month Club list"
+      },
+      {
+        "id": "gf-visa",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Check the US B1/B2 visa is still valid on entry Jan 3",
+        "due": "2026-11-30",
+        "lead": "Check now",
+        "note": "If the visa is in the old passport, bring both the old and new passports. Canadian PR status doesn't replace a US visa.",
+        "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html",
+        "urlLabel": "US State Department visitor visas"
+      },
+      {
+        "id": "gf-evus",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Complete EVUS enrollment (or confirm it's still valid)",
+        "due": "2026-12-20",
+        "lead": "2 weeks ahead recommended; at least 72 hours before departure",
+        "note": "Chinese passport holders with a 10-year B1/B2 visa must enroll in EVUS or they'll be denied boarding. Fee USD30.75 (from Jan 2026, may rise slightly), valid 2 years; re-enroll after getting a new passport or visa. Only use the official site evus.gov; watch out for fee-charging agent sites.",
+        "url": "https://www.evus.gov/",
+        "urlLabel": "EVUS official site"
+      },
+      {
+        "id": "gf-prcard",
+        "group": "documents",
+        "who": "Partner",
+        "title": "Check the Canadian PR card is still valid when returning Jan 9",
+        "due": "2026-11-30",
+        "lead": "Check now; PR card renewals take months",
+        "note": "Flying back to Canada requires a valid PR card or PR travel document (PRTD); airlines don't accept an electronic COPR. If the PR card expires before Jan 9, it can only be renewed from inside Canada, and a PRTD must be applied for from abroad and takes time, so assess the trip first.",
+        "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/pr-card.html",
+        "urlLabel": "IRCC PR card"
+      },
+      {
+        "id": "insurance",
+        "group": "documents",
+        "who": "Both",
+        "title": "Buy travel medical insurance",
+        "due": "2026-12-20",
+        "lead": "Buy before you leave",
+        "note": "Ontario's OHIP covers very little in the US, and US healthcare is expensive. If relying on credit-card insurance, confirm days covered, limits, and whether you must pay for the flights with that card."
+      },
+      {
+        "id": "hawaii-ag",
+        "group": "documents",
+        "who": "Both",
+        "title": "Fill out the Hawaii plants & animals declaration form",
+        "due": "2027-01-03",
+        "dueLabel": "Jan 3 on the plane",
+        "lead": "Fill out before arrival",
+        "note": "All travelers to Hawaii must declare plants and animals they bring. You may get a paper form on board or use the official digital Akamai Arrival, depending on the flight; one per family is enough.",
+        "url": "https://akamaiarrival.hawaii.gov/",
+        "urlLabel": "Akamai Arrival"
+      },
+      {
+        "id": "flight",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book flights: AC round-trip nonstop (or Expedia flight + hotel bundle)",
+        "due": "2026-11-22",
+        "lead": "The sooner the better",
+        "note": "AC nonstop with carry-on: Trip.com at CA$2,062 for two is cheapest but allows no changes (free cancellation within 24 hours); Air Canada's site Standard CA$2,132 allows paid changes. Basic fares don't allow a carry-on bag; don't buy them."
+      },
+      {
+        "id": "hotel",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book 5 hotel nights (Jan 3–8) and note the free-cancellation deadline",
+        "due": "2026-11-30",
+        "lead": "The sooner the better",
+        "note": "Lowest per hotel (5 nights incl. tax): Hotel Renew CA$1,223 (Vio), Hyatt Place CA$1,730 (Expedia, breakfast incl.), Kaimana CA$1,763 (Vio), ʻAlohilani CA$2,067 (Expedia), Sheraton CA$3,056 (Trip.com, no room change). Check the free-cancellation deadline before booking."
+      },
+      {
+        "id": "arizona",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Reserve the earliest USS Arizona Memorial slot on Jan 4",
+        "due": "2026-11-20",
+        "dueLabel": "Open now · book ASAP",
+        "lead": "Released 8 weeks ahead, daily at 15:00 Hawaii time (20:00 Toronto)",
+        "note": "Free, $1 fee per ticket, no changes or refunds. If you miss out, more tickets are released at 15:00 the day before for the next 24 hours, but on Jan 3 we'll still be on the plane, so best to book now.",
+        "url": "https://www.recreation.gov/ticket/facility/233338",
+        "urlLabel": "Recreation.gov"
+      },
+      {
+        "id": "kualoa",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book Kualoa Ranch Jurassic Adventure (Jan 5, around 11:00)",
+        "due": "2026-12-01",
+        "lead": "3–4 weeks ahead",
+        "note": "Popular slots sell out. Book around 11:00: too early and there's no time for the botanical garden, too late and there's not enough time for Dole.",
+        "url": "https://www.kualoa.com/tours/",
+        "urlLabel": "Kualoa official site"
+      },
+      {
+        "id": "car",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the one-day car rental for Jan 5",
+        "due": "2026-12-05",
+        "lead": "~1 month ahead",
+        "note": "Get the full price for a 23-year-old with a Canadian G licence, incl. the under-25 surcharge, insurance and Waikīkī pickup/return. Confirm a 23-year-old can rent this model."
+      },
+      {
+        "id": "roberts",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the Roberts Hawaii Hanauma Bay transfer tour for Jan 7",
+        "due": "2026-12-07",
+        "dueLabel": "Bookable from Dec 7",
+        "lead": "Opens up to one month ahead",
+        "note": "Includes entry and round-trip Waikīkī transport, ~USD65/person; snorkel gear not included.",
+        "url": "https://www.robertshawaii.com/oahu-excursions/hanauma-bay-experience-package",
+        "urlLabel": "Roberts Hawaii"
+      },
+      {
+        "id": "house",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book House Without A Key sunset dinner for Jan 8",
+        "due": "2026-12-08",
+        "lead": "~4 weeks ahead (depends on when the booking platform releases tables)",
+        "note": "Oceanfront seats are best for the sunset; add a note when booking."
+      },
+      {
+        "id": "pearl-passport",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Buy the Pearl Harbor Passport (Missouri, aviation museum, submarine museum)",
+        "due": "2026-12-20",
+        "lead": "Buy anytime",
+        "url": "https://www.pearlharborhistoricsites.org/tickets",
+        "urlLabel": "Pearl Harbor Historic Sites"
+      },
+      {
+        "id": "iolani",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Buy ʻIolani Palace tickets for Jan 6",
+        "due": "2026-12-20",
+        "lead": "~2 weeks ahead; online only",
+        "url": "https://www.iolanipalace.org/visit/",
+        "urlLabel": "ʻIolani Palace"
+      },
+      {
+        "id": "dukes",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book Duke's dinner for Jan 4",
+        "due": "2026-12-20",
+        "lead": "~2 weeks ahead"
+      },
+      {
+        "id": "trolley",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Buy the Waikiki Trolley 4-day all-line pass",
+        "due": "2027-01-05",
+        "lead": "Buy before using it on Jan 6",
+        "url": "https://waikikitrolley.com/",
+        "urlLabel": "Waikiki Trolley"
+      },
+      {
+        "id": "hanauma-backup",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Backup: book Hanauma Bay entry yourself for Jan 8 (only if Jan 7 is canceled)",
+        "due": "2027-01-06",
+        "dueLabel": "Jan 6 07:00 Hawaii time",
+        "lead": "Released 2 days ahead at 7:00 (12:00 Toronto)",
+        "url": "https://www.honolulu.gov/dpr/hanauma-bay-nature-preserve/",
+        "urlLabel": "Hanauma Bay official site"
+      },
+      {
+        "id": "roaming",
+        "group": "before",
+        "who": "Both",
+        "title": "Set up US roaming or buy an eSIM",
+        "due": "2027-01-02",
+        "lead": "Day before departure"
+      },
+      {
+        "id": "yyz",
+        "group": "before",
+        "who": "Both",
+        "title": "Be at Pearson before 15:00 on Jan 3 (US preclearance in Toronto)",
+        "due": "2027-01-03",
+        "lead": "2.5–3 hours before departure",
+        "note": "Partner: Chinese passport (plus the old one with the visa) and PR card; you: Canadian passport."
+      },
+      {
+        "id": "late-checkout",
+        "group": "before",
+        "who": "Me",
+        "title": "Ask the hotel about storing bags on Jan 8 and using a shower",
+        "due": "2027-01-05",
+        "lead": "Ask at check-in",
+        "note": "The return is a red-eye at 00:10 on Jan 9; leave bags at the front desk after checking out during the day, and ask whether the gym or pool showers are available to freshen up before the airport."
+      },
+      {
+        "id": "dole-call",
+        "group": "before",
+        "who": "Me",
+        "title": "Call Dole Plantation about the last train and last maze entry on Jan 5",
+        "due": "2027-01-04",
+        "lead": "Day before",
+        "note": "The official site only lists park hours 9:30–17:30. Phone 808-621-8408; if the last train is before 16:30, do the maze first, then the train.",
+        "url": "https://www.doleplantation.com/",
+        "urlLabel": "Dole Plantation official site"
+      },
+      {
+        "id": "stars",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book Ko Olina stargazing for Jan 5; confirm that night's slots and start time",
+        "due": "2026-12-15",
+        "lead": "3–4 weeks ahead; free cancellation up to 24 hours before",
+        "note": "The booking page doesn't say which nights it runs or when it starts (other sites have listed 20:00/21:00/22:00); confirm there's a Tuesday slot when booking, ideally 20:00. Weather cancellations get a full refund or rebooking.",
+        "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort",
+        "urlLabel": "Stars Above Hawaii"
+      },
+      {
+        "id": "sail",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book a Waikīkī sunset sail: Jan 4 or Jan 7 (weather), departing around 17:00",
+        "due": "2026-12-20",
+        "lead": "Book Jan 7 to hold a spot, then decide before the trip whether to move to Jan 4 based on the forecast",
+        "note": "Moana Sailing 2 hours ~USD81/person; Manu Kai 1.5 hours ~USD56/person. Check change and cancellation rules before booking (many operators don't refund within 24 hours of departure), and confirm the boarding spot.",
+        "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886",
+        "urlLabel": "Moana Sailing"
+      },
+      {
+        "id": "monkeypod",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book Ko Olina dinner for Jan 5 (19:00)",
+        "due": "2026-12-20",
+        "lead": "~2 weeks ahead"
+      },
+      {
+        "id": "weather",
+        "group": "before",
+        "who": "Me",
+        "title": "Check weather and sea conditions for the evenings of Jan 4 and Jan 7 and the night of Jan 5 to pick the sailing day",
+        "due": "2027-01-02",
+        "lead": "Day before departure",
+        "note": "Sail on whichever of Jan 4 or Jan 7 is calmer with fewer clouds; the evening of Jan 6 works as a backup. If it's cloudy, the stargazing operator will text about rescheduling."
+      }
+    ]
+  },
+  "fx": {
+    "base": "CAD",
+    "date": "2026-11-13",
+    "source": "Bank of Canada",
+    "rates": {
+      "USD": 1.4257,
+      "CNY": 0.2137
+    }
+  },
+  "cash": {
+    "asOf": "2026-11-15",
+    "summary": "Hawaii uses US dollars, so no other local currency needed. Hotels, tours, restaurants, Uber and the trolley all take cards; cash is mainly for tips and cash-only stalls, plus a bit for emergencies. Restaurant tips are usually 18–20%, added to the card bill, no cash needed.",
+    "currencies": [
+      {
+        "code": "USD",
+        "label": "US dollars",
+        "amount": 200,
+        "symbol": "US$",
+        "cad": 285.14,
+        "how": "Exchange CAD at a Canadian bank or currency exchange before you go. Get small bills: $1×10, $5×6, $10×4, $20×6. ATMs in Hawaii charge fees, so exchange before you leave if you can."
+      }
+    ],
+    "items": [
+      {
+        "label": "Housekeeping tips",
+        "currency": "USD",
+        "amount": 20,
+        "note": "~US$2–5/night × 5 nights, left on the pillow"
+      },
+      {
+        "label": "Guide, driver and crew tips",
+        "currency": "USD",
+        "amount": 30,
+        "note": "Ranch tour, Hanauma Bay transfer, sunset sail, stargazing guide, ~US$5–10 each"
+      },
+      {
+        "label": "Cash-only stalls",
+        "currency": "USD",
+        "amount": 40,
+        "note": "North Shore shrimp trucks, shave ice, malasadas, farmers' markets, etc.; some don't take cards"
+      },
+      {
+        "label": "Emergency cash",
+        "currency": "USD",
+        "amount": 100,
+        "note": "For when cards don't work; bring it home if unused"
+      }
+    ],
+    "tips": [
+      "1 USD ≈ 1.4257 CAD (Bank of Canada, 2026-11-13).",
+      "Use a credit card with no foreign transaction fee; if the terminal asks whether to pay in CAD or USD, choose USD.",
+      "Most tips are added to the card bill; cash is only for in-person tips like housekeeping and guides."
+    ]
+  }
+}
