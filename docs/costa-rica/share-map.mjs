@@ -127,7 +127,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
   const cards = days.filter(d => d.items?.length).slice(0, 9);
   const most = Math.max(1, ...cards.map(d => Math.min(5, d.items.length)));
   const rows = Math.max(1, Math.ceil(cards.length / 3)), CH = Math.max(170, 104 + most * 34 + 16), GAP = 24;
-  const H = 1100 + rows * (CH + GAP) + 140;
+  const H = 1100 + rows * (CH + GAP) + 190;
   const canvas = document.createElement('canvas');
   canvas.width = W * SCALE; canvas.height = H * SCALE;
   const ctx = canvas.getContext('2d');
@@ -329,7 +329,12 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     text(ctx, tag, x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
     if (i < days.length - 1) text(ctx, '→', x + step - 18, y + 1, { font: `20px ${HAND}`, color: INK2, align: 'center', base: 'middle' });
   });
-  text(ctx, share.footer || (i18n.lang === 'en' ? 'Roads drawn from OpenStreetMap data · prices and bookings per the trip page' : '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准'), W / 2, H - 22, { font: `15px ${SANS}`, color: INK2, align: 'center' });
+  // ---- 底部品牌栏：小羊驼 + travel—plan，右边是数据说明
+  const alpaca = await alpacaImage(), fy = H - 30;
+  if (alpaca) ctx.drawImage(alpaca, 36, fy - 46, 60, 60);
+  const bx = alpaca ? 100 : 44, bw = text(ctx, 'travel—plan', bx, fy, { font: `bold 30px ${HAND}` });
+  ctx.beginPath(); ctx.arc(bx + bw + 10, fy - 12, 6, 0, Math.PI * 2); ctx.fillStyle = '#e07a12'; ctx.fill();
+  text(ctx, fit(ctx, share.footer || (i18n.lang === 'en' ? 'Roads drawn from OpenStreetMap data · prices and bookings per the trip page' : '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准'), `15px ${SANS}`, W - bx - bw - 90), W - 40, fy - 2, { font: `15px ${SANS}`, color: INK2, align: 'right' });
 
   return { canvas, title, days, dayColor, map: { MX, MY, MW, MH } };
 }
