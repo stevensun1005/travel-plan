@@ -1171,6 +1171,7 @@
         "name": "HNL Honolulu Airport",
         "lat": 21.3330717,
         "lng": -157.9196383,
+        "maps": "Daniel K. Inouye International Airport",
         "address": "Daniel K. Inouye International Airport",
         "note": "Pinned near the terminal parking garage; use your terminal's pickup/drop-off area."
       },
@@ -1179,6 +1180,7 @@
         "name": "Waikīkī hotel (default Hotel Renew, not booked)",
         "lat": 21.2727845,
         "lng": -157.8222219,
+        "maps": "Hotel Renew, 129 Paoakalani Ave, Honolulu",
         "address": "129 Paoakalani Ave, Honolulu, HI 96815",
         "note": "All other candidate hotels are within 1.5 km, so daily routes barely change if you switch."
       },
@@ -1187,6 +1189,8 @@
         "name": "Kūhiō Beach | Waikīkī Beach",
         "lat": 21.275,
         "lng": -157.82694,
+        "maps": "Kūhiō Beach, Honolulu",
+        "photos": "Waikiki beach sunset Diamond Head",
         "address": "Kalākaua Ave, Waikīkī",
         "note": "A few minutes' walk from the hotel; the Jan 7 sunset sail boards from the beach, exact spot per your booking."
       },
@@ -1195,6 +1199,7 @@
         "name": "Duke's Waikiki",
         "lat": 21.2768421,
         "lng": -157.8277917,
+        "maps": "Duke's Waikiki",
         "address": "2335 Kalākaua Ave, Honolulu",
         "note": "Oceanfront restaurant; dinner reservations recommended."
       },
@@ -1203,6 +1208,7 @@
         "name": "Pearl Harbor Visitor Center",
         "lat": 21.3674843,
         "lng": -157.9384488,
+        "maps": "Pearl Harbor Visitor Center",
         "address": "1 Arizona Memorial Pl, Honolulu",
         "note": "No bags allowed; paid bag storage available. Take the official shuttle to Ford Island (USS Missouri, aviation museum)."
       },
@@ -1211,6 +1217,7 @@
         "name": "USS Arizona Memorial",
         "lat": 21.364906,
         "lng": -157.9500297,
+        "maps": "USS Arizona Memorial",
         "address": "Pearl Harbor (official boat only)",
         "note": "Out on the harbor, reachable only by National Park Service boat; the map just marks its location."
       },
@@ -1219,6 +1226,7 @@
         "name": "Submarine Museum / USS Bowfin",
         "lat": 21.368732,
         "lng": -157.9394436,
+        "maps": "Pearl Harbor Bowfin Submarine Museum",
         "address": "11 Arizona Memorial Dr, Honolulu",
         "note": "Right next to the visitor center; walk over."
       },
@@ -1227,6 +1235,7 @@
         "name": "Battleship Missouri",
         "lat": 21.3621708,
         "lng": -157.9533179,
+        "maps": "Battleship Missouri Memorial",
         "address": "63 Cowpens St, Ford Island",
         "note": "Ford Island is an active military base; no private cars, shuttle only."
       },
@@ -1235,6 +1244,7 @@
         "name": "Pearl Harbor Aviation Museum",
         "lat": 21.3588442,
         "lng": -157.9629042,
+        "maps": "Pearl Harbor Aviation Museum",
         "address": "319 Lexington Blvd, Ford Island",
         "note": "By shuttle, same line as the Missouri."
       },
@@ -1251,6 +1261,7 @@
         "name": "Hoʻomaluhia Botanical Garden",
         "lat": 21.3882747,
         "lng": -157.8070148,
+        "maps": "Hoʻomaluhia Botanical Garden",
         "address": "45-680 Luluku Rd, Kāneʻohe",
         "note": "9:00–16:00, free; closed Thursdays and New Year's Day. You can drive through the garden and also walk a short stretch."
       },
@@ -1259,6 +1270,7 @@
         "name": "Kualoa Ranch",
         "lat": 21.5208318,
         "lng": -157.8372577,
+        "maps": "Kualoa Ranch",
         "address": "49-560 Kamehameha Hwy, Kāneʻohe",
         "note": "Jurassic Adventure ~2.5 hours, riding into three valleys; check in early."
       },
@@ -1267,6 +1279,8 @@
         "name": "Kualoa Regional Park beach",
         "lat": 21.5129704,
         "lng": -157.8367475,
+        "maps": "Kualoa Regional Park",
+        "photos": "Kualoa Regional Park Mokoliʻi",
         "address": "49-479 Kamehameha Hwy",
         "note": "Views of Mokoliʻi island; stroll along the shore."
       },
@@ -1275,6 +1289,7 @@
         "name": "Dole Plantation",
         "lat": 21.5259081,
         "lng": -158.0378039,
+        "maps": "Dole Plantation",
         "address": "64-1550 Kamehameha Hwy, Wahiawā",
         "note": "Daily 9:30–17:30. Train ~20 min, roughly every 10 min; maze averages 40 min. Call to confirm the last departure."
       },
@@ -1283,6 +1298,8 @@
         "name": "Laniakea Turtle Beach",
         "lat": 21.6187,
         "lng": -158.0853,
+        "maps": "Laniakea Beach",
+        "photos": "Laniakea Beach sea turtles",
         "address": "Kamehameha Hwy, Haleʻiwa",
         "note": "Watch turtles from the shore and keep your distance; big winter surf, so stay out of the water. Roadside parking is tight."
       },
@@ -1291,6 +1308,7 @@
         "name": "Giovanni's Kahuku shrimp",
         "lat": 21.677198,
         "lng": -157.9484211,
+        "maps": "Giovanni's Shrimp Truck, Kahuku",
         "address": "56-505 Kamehameha Hwy, Kahuku",
         "note": "If there's a line, Romy's and Fumi's next door are good too."
       },
@@ -1299,6 +1317,7 @@
         "name": "Hanauma Bay",
         "lat": 21.2734227,
         "lng": -157.6948549,
+        "maps": "Hanauma Bay Nature Preserve",
         "address": "7455 Kalanianaʻole Hwy, Honolulu",
         "note": "Open Wed–Sun, closed Mon and Tue. Going with the Roberts Hawaii transfer tour this time, no driving."
       },
@@ -1307,6 +1326,8 @@
         "name": "Hālona Blowhole Lookout",
         "lat": 21.2827,
         "lng": -157.6776,
+        "maps": "Hālona Blowhole Lookout",
+        "photos": "Halona Blowhole lookout",
         "address": "8483 Kalanianaʻole Hwy",
         "note": "Photo stop on the Blue Line trolley."
       },
@@ -1315,6 +1336,8 @@
         "name": "Makapuʻu roadside lookout",
         "lat": 21.3115,
         "lng": -157.6609,
+        "maps": "Makapuʻu Lookout",
+        "photos": "Makapuu lookout",
         "address": "Kalanianaʻole Hwy",
         "note": "Roadside viewpoint; skipping the lighthouse trail."
       },
@@ -1323,6 +1346,8 @@
         "name": "Waimānalo Beach Park",
         "lat": 21.3325,
         "lng": -157.6942,
+        "maps": "Waimānalo Beach Park",
+        "photos": "Waimanalo Beach",
         "address": "41-741 Kalanianaʻole Hwy, Waimānalo",
         "note": "Long white-sand beach, great for a slow walk."
       },
@@ -1331,6 +1356,8 @@
         "name": "Diamond Head Kahala Lookout",
         "lat": 21.2557,
         "lng": -157.807,
+        "maps": "Diamond Head Lookout, Diamond Head Rd, Honolulu",
+        "photos": "Diamond Head lookout Kahala ocean view",
         "address": "Diamond Head Rd",
         "note": "Photo stop on the Green Line trolley; step off and you're there, no climbing."
       },
@@ -1339,6 +1366,7 @@
         "name": "ʻIolani Palace",
         "lat": 21.3068147,
         "lng": -157.8587655,
+        "maps": "ʻIolani Palace",
         "address": "364 S King St, Honolulu",
         "note": "Open Tue–Sat; tickets online only."
       },
@@ -1347,6 +1375,7 @@
         "name": "Nico's Pier 38 seafood",
         "lat": 21.3175754,
         "lng": -157.8775063,
+        "maps": "Nico's Pier 38",
         "address": "1129 N Nimitz Hwy, Honolulu",
         "note": "Next to the fish market; poke and fried fish."
       },
@@ -1355,6 +1384,7 @@
         "name": "Ala Moana Center / Magic Island",
         "lat": 21.2911,
         "lng": -157.8435,
+        "maps": "Ala Moana Center",
         "address": "1450 Ala Moana Blvd, Honolulu",
         "note": "Shopping, with Magic Island beach park next door."
       },
@@ -1363,6 +1393,7 @@
         "name": "House Without A Key sunset dinner",
         "lat": 21.2774759,
         "lng": -157.8318823,
+        "maps": "House Without A Key, Halekulani",
         "address": "2199 Kālia Rd, Honolulu",
         "note": "Oceanfront restaurant at the Halekulani with sunset views and hula; reservations recommended."
       },
@@ -1371,6 +1402,7 @@
         "name": "Option: Kaimana Beach Hotel",
         "lat": 21.2645,
         "lng": -157.8213,
+        "maps": "Kaimana Beach Hotel",
         "address": "2863 Kalākaua Ave, Honolulu",
         "note": "On the beach, next to Kapiʻolani Park."
       },
@@ -1379,6 +1411,7 @@
         "name": "Option: ʻAlohilani Resort",
         "lat": 21.2741,
         "lng": -157.824,
+        "maps": "ʻAlohilani Resort Waikiki Beach",
         "address": "2490 Kalākaua Ave, Honolulu",
         "note": "Across from Kūhiō Beach."
       },
@@ -1387,6 +1420,7 @@
         "name": "Option: Sheraton Waikiki",
         "lat": 21.2775,
         "lng": -157.8306,
+        "maps": "Sheraton Waikiki Beach Resort",
         "address": "2255 Kalākaua Ave, Honolulu",
         "note": "Central Waikīkī, right on the water."
       },
@@ -1395,6 +1429,7 @@
         "name": "Waikiki Trolley main stop (DFS Galleria)",
         "lat": 21.28,
         "lng": -157.8296,
+        "maps": "T Galleria by DFS, Waikiki",
         "address": "330 Royal Hawaiian Ave, Honolulu",
         "note": "One of the main boarding points for all lines; check the official site for each line's stops and times."
       },
@@ -1403,6 +1438,7 @@
         "name": "Waikele Premium Outlets",
         "lat": 21.4017617,
         "lng": -158.0068567,
+        "maps": "Waikele Premium Outlets",
         "address": "94-790 Lumiaina St, Waipahu, HI 96797",
         "note": "Mon–Thu 10:00–19:00, Fri–Sat 10:00–20:00, Sun 11:00–18:00; free parking. Where H-1 and H-2 meet, on the way back to Waikīkī."
       },
@@ -1411,6 +1447,7 @@
         "name": "Ko Olina stargazing (Four Seasons)",
         "lat": 21.3392955,
         "lng": -158.125741,
+        "maps": "Four Seasons Resort Oahu at Ko Olina",
         "address": "92-1001 Olani St, Kapolei, HI 96707",
         "note": "Stars Above Hawaii meets at the hotel's Naupaka Spa gold elevator; viewing is on the pool deck or the tennis-court rooftop."
       }

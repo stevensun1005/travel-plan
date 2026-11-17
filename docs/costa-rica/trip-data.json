@@ -703,6 +703,7 @@
         "name": "LIR 利比里亚机场",
         "lat": 10.5917,
         "lng": -85.5411,
+        "maps": "Daniel Oduber Quirós International Airport",
         "address": "Daniel Oduber Quirós International Airport",
         "note": "Adobe门店在机场外约7公里（Route 21旁），坐免费接驳车；地图按航站楼画线。"
       },
@@ -711,6 +712,7 @@
         "name": "Hotel Villa Del Sol（Playas del Coco，默认，未订）",
         "lat": 10.55894,
         "lng": -85.690166,
+        "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
         "address": "Playas del Coco北头",
         "note": "评分8.6，离海滩150米，在Coco比较安静的北头；走到海边步道和餐厅约15分钟（约1.2公里）。"
       },
@@ -719,6 +721,8 @@
         "name": "Playas del Coco 海滩北头",
         "lat": 10.5585,
         "lng": -85.6915,
+        "maps": "Playas del Coco Beach, Guanacaste",
+        "photos": "Playas del Coco beach sunset",
         "address": "Playas del Coco",
         "note": "酒店前面的海滩，比镇中心暗，晚上看星星、傍晚看日落。"
       },
@@ -727,6 +731,7 @@
         "name": "Playas del Coco 海边步道（双体船集合）",
         "lat": 10.5505,
         "lng": -85.6995,
+        "maps": "Playas del Coco, Guanacaste, Costa Rica",
         "address": "Playas del Coco, Guanacaste",
         "note": "Marlin del Rey在步道上Bar El Ancla前的大榕树下集合；镇上海鲜餐厅多（Papagayo Seafood、Mar Azul）。",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
@@ -736,6 +741,8 @@
         "name": "Llanos de Cortés 瀑布",
         "lat": 10.524302,
         "lng": -85.298602,
+        "maps": "Llanos de Cortés Waterfall, Bagaces",
+        "photos": "Llanos de Cortés waterfall",
         "address": "Route 1旁, Bagaces",
         "note": "停车场下去约30级水泥台阶，有扶绳；瀑布下面是沙地，水边是石头，注意脚下。8:00–16:00，只收现金。",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
@@ -745,6 +752,8 @@
         "name": "Arenal湖 · Nuevo Arenal",
         "lat": 10.547,
         "lng": -84.863736,
+        "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
+        "photos": "Lake Arenal volcano view",
         "address": "Route 142, Tilarán",
         "note": "沿湖北岸的弯路，路边有观景停车处，天气好能看到火山倒影。"
       },
@@ -753,6 +762,7 @@
         "name": "Termales del Arenal（默认酒店，未订）",
         "lat": 10.478292,
         "lng": -84.672823,
+        "maps": "Termales del Arenal, La Fortuna",
         "address": "Vía 142, La Fortuna",
         "note": "自带温泉池，在La Fortuna镇西边约3公里，开车到镇上约5分钟、到Tabacón约10分钟。"
       },
@@ -761,6 +771,7 @@
         "name": "La Fortuna 镇中心",
         "lat": 10.471683,
         "lng": -84.644436,
+        "maps": "La Fortuna, San Carlos, Costa Rica",
         "address": "La Fortuna, San Carlos",
         "note": "漂流团在酒店接人；镇上海鲜：Cevichería D'Mora、Snapper's House。离酒店开车约5分钟。"
       },
@@ -769,6 +780,7 @@
         "name": "Mistico 吊桥公园",
         "lat": 10.488049,
         "lng": -84.753777,
+        "maps": "Mistico Arenal Hanging Bridges Park",
         "address": "Calle Sangregado（大坝路）",
         "note": "3.2公里环线、16座桥（6座吊桥），官网标为无障碍步道（是否全程铺装未核实），有缓坡和台阶，约2小时；吊桥会晃。最后入园15:50。",
         "url": "https://misticopark.com/"
@@ -778,6 +790,7 @@
         "name": "Peñas Blancas 河漂流（下水点）",
         "lat": 10.39,
         "lng": -84.58,
+        "maps": "Peñas Blancas River, San Carlos, Costa Rica",
         "address": "La Fortuna东南约25分钟",
         "note": "团里接送，地图只标大概位置。"
       },
@@ -786,6 +799,7 @@
         "name": "Bogarín 步道 · 夜间徒步",
         "lat": 10.47,
         "lng": -84.638,
+        "maps": "Bogarin Trail, La Fortuna",
         "address": "La Fortuna镇上",
         "note": "镇上的2.5公里小路，大部分平缓。夜间徒步约2小时，向导打手电找蛙、蛇、蜘蛛和睡觉的鸟；开始时间以订单为准。离酒店开车约10分钟。",
         "url": "https://bogarintrail.com/"
@@ -795,6 +809,7 @@
         "name": "Tabacón 温泉（可选）",
         "lat": 10.492,
         "lng": -84.721,
+        "maps": "Tabacón Thermal Resort & Spa",
         "address": "Vía 142, La Fortuna",
         "note": "火山脚下的热河温泉，日票含午餐，8:00–22:00；1/10中午到傍晚泡。河道里的天然池底是石头，泡平底的人工池更稳。要预订。",
         "url": "https://www.tabacon.com/day-pass/"

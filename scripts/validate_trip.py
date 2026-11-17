@@ -37,6 +37,8 @@ def validate(folder):
     for place in places:
         check(isinstance(place.get('lat'),(int,float)) and -90<=place['lat']<=90,f'{place.get("id")}: invalid latitude')
         check(isinstance(place.get('lng'),(int,float)) and -180<=place['lng']<=180,f'{place.get("id")}: invalid longitude')
+        check('maps' not in place or (isinstance(place['maps'],str) and place['maps'].strip()),f'{place.get("id")}: maps must be the place name to search in Google Maps')
+        check('photos' not in place or isinstance(place['photos'],bool) or (isinstance(place['photos'],str) and place['photos'].strip()),f'{place.get("id")}: photos must be true or a search phrase')
     day_ids=unique(days,'day','days')
     for day in days:
         try:dt.date.fromisoformat(day['date'])
@@ -174,7 +176,7 @@ def validate(folder):
 CJK=re.compile(r'[　-〿㐀-鿿豈-﫿＀-￯]')
 SAME_KEYS={'id','placeId','placeIds','extraPlaceIds','defaultOption','selections','chartGroup','url','officialUrl','date','startDate','endDate','due','checkedOn','asOf',
            'currency','code','symbol','color','icon','transport','group','kind','rank','lat','lng','amount','converted','bagCount','bagPerPerson','carryOn','bundleOnly','bundles','split',
-           'target','travelers','nights','day','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
+           'target','travelers','nights','day','maps','photos','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
 def check_english(folder,data):
     """trip-data.en.json (optional): same structure, same ids/numbers/dates/links, and not a single CJK character."""
     path=Path(folder)/'trip-data.en.json'

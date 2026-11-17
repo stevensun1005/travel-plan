@@ -42,7 +42,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 
 ## 地点与路线
 
-place：`{id,name,lat,lng,address,note,url}`，WGS84坐标。入口与中心不同要说明，未知交车点不填假点。
+place：`{id,name,lat,lng,maps,photos,address,note,url}`，WGS84坐标。入口与中心不同要说明，未知交车点不填假点。`maps` 是在 Google Maps 里搜的地名（英文或当地文字，如 `"Llanos de Cortés Waterfall, Bagaces"`、`"Hotel Renew, 129 Paoakalani Ave, Honolulu"`），「地点导航」和当天路线导航都按它搜，没写才退回坐标；只有示例位置、私人交车点这类没有名字可搜的点不写。`photos` 是「看照片」链接的搜索词（如 `"Llanos de Cortés waterfall"`，写 `true` 就用 `maps`），给没有门票、没有官网的经典景点用：瀑布、观景台、海滩、看日落的地方，链接打开 Google 图片看风景照和游客实拍。中英文两份文件里这两个值相同。
 
 dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`。
 

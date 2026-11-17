@@ -703,6 +703,7 @@
         "name": "LIR Liberia Airport",
         "lat": 10.5917,
         "lng": -85.5411,
+        "maps": "Daniel Oduber Quirós International Airport",
         "address": "Daniel Oduber Quirós International Airport",
         "note": "The Adobe office is ~7 km outside the airport (off Route 21), reached by free shuttle; the map draws routes from the terminal."
       },
@@ -711,6 +712,7 @@
         "name": "Hotel Villa Del Sol (Playas del Coco, default, not booked)",
         "lat": 10.55894,
         "lng": -85.690166,
+        "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
         "address": "North end of Playas del Coco",
         "note": "Rated 8.6, 150 m from the beach, at the quieter north end of Coco; ~15 min walk (~1.2 km) to the beach boardwalk and restaurants."
       },
@@ -719,6 +721,8 @@
         "name": "Playas del Coco beach, north end",
         "lat": 10.5585,
         "lng": -85.6915,
+        "maps": "Playas del Coco Beach, Guanacaste",
+        "photos": "Playas del Coco beach sunset",
         "address": "Playas del Coco",
         "note": "The beach in front of the hotel, darker than downtown: sunsets in the evening, stargazing at night."
       },
@@ -727,6 +731,7 @@
         "name": "Playas del Coco boardwalk (catamaran meeting point)",
         "lat": 10.5505,
         "lng": -85.6995,
+        "maps": "Playas del Coco, Guanacaste, Costa Rica",
         "address": "Playas del Coco, Guanacaste",
         "note": "Marlin del Rey meets under the big banyan tree in front of Bar El Ancla on the boardwalk; plenty of seafood restaurants in town (Papagayo Seafood, Mar Azul).",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
@@ -736,6 +741,8 @@
         "name": "Llanos de Cortés waterfall",
         "lat": 10.524302,
         "lng": -85.298602,
+        "maps": "Llanos de Cortés Waterfall, Bagaces",
+        "photos": "Llanos de Cortés waterfall",
         "address": "Off Route 1, Bagaces",
         "note": "About 30 concrete steps down from the parking lot, with a rope handrail; sandy below the falls and rocky at the water's edge, so watch your footing. 8:00–16:00, cash only.",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
@@ -745,6 +752,8 @@
         "name": "Lake Arenal · Nuevo Arenal",
         "lat": 10.547,
         "lng": -84.863736,
+        "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
+        "photos": "Lake Arenal volcano view",
         "address": "Route 142, Tilarán",
         "note": "Winding road along the north shore with roadside viewpoints; on clear days you can see the volcano reflected in the lake."
       },
@@ -753,6 +762,7 @@
         "name": "Termales del Arenal (default hotel, not booked)",
         "lat": 10.478292,
         "lng": -84.672823,
+        "maps": "Termales del Arenal, La Fortuna",
         "address": "Vía 142, La Fortuna",
         "note": "Own hot-spring pools, ~3 km west of La Fortuna; ~5 min drive to town and ~10 min to Tabacón."
       },
@@ -761,6 +771,7 @@
         "name": "La Fortuna town center",
         "lat": 10.471683,
         "lng": -84.644436,
+        "maps": "La Fortuna, San Carlos, Costa Rica",
         "address": "La Fortuna, San Carlos",
         "note": "The float tour picks you up at the hotel; seafood in town: Cevichería D'Mora, Snapper's House. ~5 min drive from the hotel."
       },
@@ -769,6 +780,7 @@
         "name": "Mistico Hanging Bridges Park",
         "lat": 10.488049,
         "lng": -84.753777,
+        "maps": "Mistico Arenal Hanging Bridges Park",
         "address": "Calle Sangregado (dam road)",
         "note": "3.2 km loop with 16 bridges (6 hanging), listed as an accessible trail on the official site (whether it's paved throughout is unverified); gentle slopes and some steps, ~2 hours; the hanging bridges sway. Last entry 15:50.",
         "url": "https://misticopark.com/"
@@ -778,6 +790,7 @@
         "name": "Peñas Blancas river float (put-in)",
         "lat": 10.39,
         "lng": -84.58,
+        "maps": "Peñas Blancas River, San Carlos, Costa Rica",
         "address": "~25 min southeast of La Fortuna",
         "note": "Tour provides transfers; the map shows an approximate location only."
       },
@@ -786,6 +799,7 @@
         "name": "Bogarín Trail · night walk",
         "lat": 10.47,
         "lng": -84.638,
+        "maps": "Bogarin Trail, La Fortuna",
         "address": "In La Fortuna town",
         "note": "A 2.5 km trail in town, mostly flat. The night walk takes ~2 hours, with the guide using a flashlight to find frogs, snakes, spiders and sleeping birds; start time per your booking. ~10 min drive from the hotel.",
         "url": "https://bogarintrail.com/"
@@ -795,6 +809,7 @@
         "name": "Tabacón Hot Springs (optional)",
         "lat": 10.492,
         "lng": -84.721,
+        "maps": "Tabacón Thermal Resort & Spa",
         "address": "Vía 142, La Fortuna",
         "note": "Hot-river springs at the foot of the volcano; the day pass includes lunch, 8:00–22:00. Soak from noon to early evening on 1/10. The natural pools in the river have rocky bottoms; the flat-bottomed built pools are steadier. Reservation required.",
         "url": "https://www.tabacon.com/day-pass/"

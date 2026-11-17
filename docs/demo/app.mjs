@@ -27,6 +27,10 @@ const $=selector=>document.querySelector(selector);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const url=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:'';}catch{return '';}};
 const link=(label,value)=>url(value)?`<a href="${escape(url(value))}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`:'';
+// Google Maps 按地名搜（place.maps），没写才退回坐标；place.photos 是看照片的搜索词（没门票的景点、观景台、海滩）
+const mapsQuery=p=>typeof p.maps==='string'&&p.maps.trim()?p.maps.trim():`${p.lat},${p.lng}`;
+const mapsLink=p=>`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery(p))}`;
+const photosLink=p=>p.photos?link('看照片',`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(typeof p.photos==='string'?p.photos:mapsQuery(p))}`):'';
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
 let data,selection,key,basemap,cachedRoads=[];
 const ledgerOpen=new Set();
@@ -197,7 +201,7 @@ function renderFlights(){
 
 function directions(places,mode='driving'){
   if(places.length<2)return '';
-  const coord=p=>`${p.lat},${p.lng}`;const params=new URLSearchParams({api:'1',origin:coord(places[0]),destination:coord(places.at(-1)),travelmode:mode});
+  const coord=mapsQuery;const params=new URLSearchParams({api:'1',origin:coord(places[0]),destination:coord(places.at(-1)),travelmode:mode});
   if(places.length>2)params.set('waypoints',places.slice(1,-1).map(coord).join('|'));
   return `https://www.google.com/maps/dir/?${params}`;
 }
@@ -250,7 +254,7 @@ async function renderMap(){
     const visible=route?[...new Set([...route.placeIds,...(route.extraPlaceIds||[])])].map(get):config.places;
     const lines=roads.filter(r=>!day||r.day===day);
     for(const line of lines){L.geoJSON(line.geometry,{style:{color:'#2a2a2e',weight:7,opacity:.85}}).addTo(layer);L.geoJSON(line.geometry,{style:{color:color(null,line.day-1),weight:4}}).addTo(layer);}
-    visible.forEach((p,index)=>{const marker=L.marker([p.lat,p.lng],{title:p.name,icon:L.divIcon({className:'map-pin',html:String(index+1),iconSize:[30,30],iconAnchor:[15,15]})}).bindPopup(`<b>${escape(p.name)}</b><br>${escape(p.address||'')}<br>${escape(p.note||'')}<br>${link('Google Maps',`https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`)}`).addTo(layer);markers.set(p.id,marker);});
+    visible.forEach((p,index)=>{const marker=L.marker([p.lat,p.lng],{title:p.name,icon:L.divIcon({className:'map-pin',html:String(index+1),iconSize:[30,30],iconAnchor:[15,15]})}).bindPopup(`<b>${escape(p.name)}</b><br>${escape(p.address||'')}<br>${escape(p.note||'')}<br>${link('Google Maps',mapsLink(p))+photosLink(p)}`).addTo(layer);markers.set(p.id,marker);});
     const special=route&&!['driving','transfer','walking'].includes(route.transport);const navigation=route&&!special?directions(route.placeIds.map(get),route.transport==='walking'?'walking':'driving'):'';
     const distance=lines.reduce((sum,r)=>sum+r.distance,0),duration=lines.reduce((sum,r)=>sum+r.duration,0);
     $('#map-details').innerHTML=`<h3>${escape(route?data.days.find(d=>d.day===day)?.title||route.label:data.trip.title)}</h3><p>${escape(route?.note||'按日期查看地点、道路和导航。')}</p><p>${lines.length?`道路约${(distance/1000).toFixed(1)} km · 路网估时${Math.round(duration/60)}分钟`:special?'此日使用专用交通，以官方线路为准，不画汽车最短路线。':'道路缓存待补充；先显示准确地点，不画示意连线。'}</p><div class="map-actions">${link(special?'官方线路':'当天导航',special?route.officialUrl:navigation)}<button data-fit>完整范围</button>${config.home?`<button data-home>和${escape((config.home.name||'出发地').replace(/（.*?）|\(.*?\)/g,''))}一起看</button>`:''}<button data-fullscreen>全屏地图</button></div><p class="swipe-hint">${visible.length}个地点 · 左右滑动，点一下在地图上定位</p><ol class="map-stops">${visible.map((p,i)=>`<li><button data-pin="${escape(p.id)}">${i+1}. ${escape(p.name)}</button><small>${escape(p.address||p.note||'')}</small></li>`).join('')}</ol>${legsHtml(lines)}`;fit();
@@ -275,7 +279,7 @@ async function renderMap(){
 function renderDays(){
   if(!data.days?.length){$('#itinerary').hidden=true;return;}
   $('#coverage').innerHTML=data.coverage?.length?`<details class="coverage"><summary>原攻略项目核对 · 安排与取舍</summary><div class="table-scroll"><table><thead><tr><th>原项目</th><th>安排</th><th>说明</th></tr></thead><tbody>${data.coverage.map(r=>`<tr><td>${escape(r.item)}</td><td>${escape(r.when)}</td><td>${escape(r.note)}</td></tr>`).join('')}</tbody></table></div></details>`:'';
-  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small></div></summary><ol class="schedule">${(day.schedule||[]).map(item=>{const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}</div></li>`;}).join('')}</ol></details>`).join('');
+  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small></div></summary><ol class="schedule">${(day.schedule||[]).map(item=>{const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',mapsLink(place))+photosLink(place):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}</div></li>`;}).join('')}</ol></details>`).join('');
 }
 function renderRental(){
   const r=data.rental;if(!r?.title){$('#drive').hidden=true;return;}

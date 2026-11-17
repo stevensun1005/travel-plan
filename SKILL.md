@@ -86,7 +86,7 @@ python scripts/create_trip.py /absolute/path/to/demo --demo
 
 航班支持上一程/下一程、触摸、拖动和方向键。按卡片与容器的实际位置计算当前卡片，防止容器偏移造成无法切换。已知替代航班同步时刻与舱等；自定义费用不能编造航班时刻。
 
-地图用WGS84坐标、可缩放底图、日期筛选和导航，不画曲线示意。道路几何缓存：
+地图用WGS84坐标、可缩放底图、日期筛选和导航，不画曲线示意。每个地点写 `maps`（Google Maps 里能搜到的地名），导航链接按名字打开那个地方，而不是一串经纬度；瀑布、观景台、海滩这类没门票的经典景点再写 `photos`，行程里多一个「看照片」链接，见 [数据契约](references/data.md)。道路几何缓存：
 
 ```bash
 python scripts/fetch_routes.py /absolute/path/to/trip

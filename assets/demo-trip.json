@@ -434,6 +434,7 @@
         "name": "Canada Place",
         "lat": 49.2888,
         "lng": -123.1111,
+        "maps": "Canada Place, Vancouver",
         "address": "Canada Place, Vancouver",
         "note": "真实公共地标，行程时刻和费用仅为演示。"
       },
@@ -442,6 +443,8 @@
         "name": "Stanley Park 海岸",
         "lat": 49.3017,
         "lng": -123.1307,
+        "maps": "Stanley Park Seawall, Vancouver",
+        "photos": "Stanley Park seawall",
         "address": "Stanley Park, Vancouver",
         "note": "公园道路附近的示例停靠点，具体合法停车入口需出发前核对。"
       },
@@ -450,6 +453,7 @@
         "name": "Granville Island",
         "lat": 49.2712,
         "lng": -123.134,
+        "maps": "Granville Island Public Market",
         "address": "Granville Island, Vancouver",
         "note": "市场附近公共参考点。"
       },
@@ -458,6 +462,8 @@
         "name": "Kitsilano Beach",
         "lat": 49.2735,
         "lng": -123.1534,
+        "maps": "Kitsilano Beach, Vancouver",
+        "photos": "Kitsilano Beach sunset",
         "address": "Kitsilano Beach, Vancouver",
         "note": "海滩附近公共参考点，不保证当日海况。"
       }

@@ -74,7 +74,7 @@ const EXACT = {
   '按日期查看地点、道路和导航。': 'Pick a day to see its places, roads and directions.',
   '此日使用专用交通，以官方线路为准，不画汽车最短路线。': 'This day uses dedicated transport; follow the official route. No car route is drawn.',
   '道路缓存待补充；先显示准确地点，不画示意连线。': 'Road data pending; places are shown without a drawn line.',
-  '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions',
+  '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions', '看照片': 'Photos',
   // itinerary, coverage, checklist, events
   '原攻略项目核对 · 安排与取舍': 'Original items · what was kept or changed', '原项目': 'Item', '安排': 'Plan', '说明': 'Notes',
   '已预订 ✓': 'Booked ✓', '自定义方案': 'custom option', '待办': 'To do', '今天': 'Today', '都办好了': 'All done', '官方入口': 'Official site', '待办已完成': 'Checklist done', '· 全部完成': '· all done',
