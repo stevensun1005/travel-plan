@@ -10,6 +10,9 @@ import math
 import re
 from pathlib import Path
 
+# City/keyword result pages mix in other properties; booking links should open the property itself.
+SEARCH_PAGE=re.compile(r'booking\.com/searchresults|expedia\.[a-z.]+/Hotel-Search|trip\.com/hotels/list|[?&]searchWord=|hotels\.com/Hotel-Search|agoda\.com/search',re.I)
+
 def validate(folder):
     folder=Path(folder);data=json.loads((folder/'trip-data.json').read_text(encoding='utf-8'))
     errors=[];warnings=[]
@@ -77,6 +80,11 @@ def validate(folder):
                 if live:
                     best=min(live,key=lambda q:q['converted'])
                     check(abs(best['converted']-option.get('amount',-1))<0.005 and option.get('source')==best['platform'],f'{where}: amount/source should be the cheapest quote ({best["platform"]} {best["converted"]:g}); run apply_quotes.py')
+            # booking links should land on this exact product, not a city search or a homepage
+            for link in [option.get('url')]+[q.get('url') for q in (quotes if isinstance(quotes,list) else []) if isinstance(q,dict)]:
+                if not isinstance(link,str):continue
+                if SEARCH_PAGE.search(link):warnings.append(f'{category["id"]}/{option.get("id")}: link is a search page, link the property page with dates ({link[:60]}…)')
+                elif re.fullmatch(r'https?://[^/?#]+/?',link):warnings.append(f'{category["id"]}/{option.get("id")}: link is a homepage, link the exact product ({link})')
             if category.get('id')=='flights' and not option.get('bundleOnly') and option.get('carryOn') is not True:
                 warnings.append(f'flights/{option.get("id")}: carryOn not confirmed (price flights with one carry-on bag per traveler)')
         if 'icon' in category:check(isinstance(category['icon'],str) and 0<len(category['icon'])<=4,f'{category["id"]}: icon must be a short string (an emoji)')

@@ -172,7 +172,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "海景King，可免费取消",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hotel%20Renew",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=731406&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 1448
               },
               {
@@ -181,14 +181,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "可全额退",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Renew",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Hotel-Renew.h1399669.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1483
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "这几天显示没房",
-                "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Renew%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/renew.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Vio"
@@ -199,7 +199,7 @@
             "amount": 1730,
             "status": "11/15 多平台比价（含税）",
             "note": "5晚含税，约CA$346/晚，Hyatt Place房价含早餐，餐饮可以选简单档。Expedia最便宜（看起来不可退）；要免费取消的话Trip.com是CA$2,090。",
-            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+            "url": "https://www.expedia.ca/Honolulu-Hotels-Hyatt-Place-Waikiki-Beach.h2766.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
             "items": [
               {
                 "label": "Hyatt Place · 5晚",
@@ -214,7 +214,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "含早餐",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Hyatt-Place-Waikiki-Beach.h2766.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1730
               },
               {
@@ -223,7 +223,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "CA$1,169＋税费574",
-                "url": "https://www.booking.com/searchresults.html?ss=Hyatt%20Place%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD",
+                "url": "https://www.booking.com/hotel/us/hyatt-place-waikiki-beach.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "converted": 1743
               },
               {
@@ -241,7 +241,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "含早餐，可免费取消",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hyatt%20Place%20Waikiki%20Beach",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=731498&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2090
               }
             ],
@@ -276,7 +276,7 @@
                 "amount": 1909,
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Kaimana",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Kaimana-Beach-Hotel.h59957607.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1909
               },
               {
@@ -285,14 +285,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Queen房，可免费取消",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Kaimana%20Beach%20Hotel",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=737103&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2458
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "这几天显示没房",
-                "url": "https://www.booking.com/searchresults.html?ss=Kaimana%20Beach%20Hotel%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/the-new-otani-kaimana-beach.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Vio"
@@ -303,7 +303,7 @@
             "amount": 2067,
             "status": "11/15 多平台比价（含税）",
             "note": "5晚含税，约CA$413/晚。海滩对面的五星度假酒店，Expedia比Vio便宜一点；房型和退改以订单页为准。",
-            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+            "url": "https://www.expedia.ca/Honolulu-Hotels-Alohilani-Resort-Waikiki-Beach.h21781.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
             "items": [
               {
                 "label": "ʻAlohilani · 5晚",
@@ -317,7 +317,7 @@
                 "amount": 2067,
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Alohilani-Resort-Waikiki-Beach.h21781.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 2067
               },
               {
@@ -334,14 +334,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "两张Queen床，可免费取消",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Alohilani%20Resort",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=732988&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2854
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "这几天显示没房",
-                "url": "https://www.booking.com/searchresults.html?ss=Alohilani%20Resort%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/alohilani-resort.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Expedia"
@@ -352,7 +352,7 @@
             "amount": 3056,
             "status": "11/15 多平台比价（含税）",
             "note": "5晚含税，约CA$611/晚。Trip.com的城景King可免费取消、不用中途换房，比Vio（要换一次房）和Expedia都便宜。",
-            "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+            "url": "https://ca.trip.com/hotels/detail/?hotelId=1504760&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
             "items": [
               {
                 "label": "Sheraton Waikiki · 5晚",
@@ -367,7 +367,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "城景King，可免费取消",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=1504760&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 3056
               },
               {
@@ -385,14 +385,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "可全额退",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Sheraton%20Waikiki",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Sheraton-Waikiki.h7385.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 4904
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "这几天显示没房",
-                "url": "https://www.booking.com/searchresults.html?ss=Sheraton%20Waikiki%20Beach%20Resort&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/sheraton-waikiki.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Trip.com"

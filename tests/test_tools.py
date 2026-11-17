@@ -76,6 +76,11 @@ class ToolsTest(unittest.TestCase):
             self.assertEqual((option['amount'],option['source']),(800.0,'B'))
             self.assertEqual([q['platform'] for q in option['quotes']],['B','A','C'])
             path.write_text(json.dumps(data),encoding='utf-8');self.assertEqual(validate(project)[0],[])
+            option['quotes'][1]['url']='https://www.booking.com/searchresults.html?ss=Somewhere';option['url']='https://www.expedia.ca/'
+            path.write_text(json.dumps(data),encoding='utf-8');warnings=validate(project)[1]
+            self.assertTrue(any('search page' in w for w in warnings));self.assertTrue(any('homepage' in w for w in warnings))
+            option['quotes'][1]['url']='https://www.booking.com/hotel/us/sample.html?checkin=2030-01-01&checkout=2030-01-03&group_adults=2';option.pop('url')
+            path.write_text(json.dumps(data),encoding='utf-8');self.assertFalse(any('search page' in w or 'homepage' in w for w in validate(project)[1]))
             option['amount']=1000;option['source']='A';path.write_text(json.dumps(data),encoding='utf-8')
             self.assertTrue(any('cheapest quote' in e for e in validate(project)[0]))
             del data['fx']['rates']['CNY']

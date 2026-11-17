@@ -28,6 +28,12 @@
 - 随身行李：票价档写着不含随身行李箱（如 AC/美航/联航的 Basic）就不算这个档，取含随身行李的最低档；平台只给一个价时，点开票价详情确认行李。套餐里的机票是这种票时，按航司官网两档差价补上，在 note 里写清楚是补差估算。
 - 汇率：外币报价按央行当日汇率换成旅行币种（加币用加拿大央行 Valet API），记下日期和来源；页面上同时显示原币价。`apply_quotes.py --fetch-fx` 会自动取汇率、换算、排序，并把选项金额设成最便宜那家、在 `source` 写上平台名。
 - 记录：每个平台一条 `quotes`，含平台、金额、币种、查价日、链接和条件差异（可退/不可退、含早、要换房、不能改期）；平台上没有这个产品或没房也写一条 `available:false`。选项金额永远是最便宜那条，条件更差的便宜价要在 note 里说清楚（例如不能改期）。
+- 链接直达那一家：点进去就是这家酒店、这趟航班组合或这个团，日期、人数、房间数和币种都已填好，不用再搜。酒店用平台的详情页，不用城市搜索页或按名字搜的结果页（会混进别家，排序也乱）：
+  - Booking.com `https://www.booking.com/hotel/<国家码>/<slug>.html?checkin=YYYY-MM-DD&checkout=YYYY-MM-DD&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD`
+  - Expedia `https://www.expedia.ca/<城市>-Hotels-<名字>.h<ID>.Hotel-Information?chkin=YYYY-MM-DD&chkout=YYYY-MM-DD&rm1=a2`
+  - Trip.com `https://ca.trip.com/hotels/detail/?hotelId=<ID>&checkIn=YYYY-MM-DD&checkOut=YYYY-MM-DD&adult=2&crn=1&curr=CAD`
+  - Vio `https://www.vio.com/Hotel/Search?hotelId=<ID>&checkIn=…&checkOut=…`
+  slug 和 ID 从平台搜索结果里该酒店的链接取，打开核对名字和地址（同名酒店、旧名很常见）。找不到详情页时退而用搜索页，并在 note 里说明。`validate_trip.py` 看到搜索页或首页链接会提醒。
 - 套餐拆分用的单买参考价也取各平台最低，并且同口径（同晚数、同人数、都含税）。
 
 ## 限制与特殊日期

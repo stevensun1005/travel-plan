@@ -172,7 +172,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Ocean-view King, free cancellation",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hotel%20Renew",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=731406&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 1448
               },
               {
@@ -181,14 +181,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Fully refundable",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Renew",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Hotel-Renew.h1399669.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1483
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "No availability shown for these dates",
-                "url": "https://www.booking.com/searchresults.html?ss=Hotel%20Renew%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/renew.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Vio"
@@ -199,7 +199,7 @@
             "amount": 1730,
             "status": "Multi-site price check, Nov 15 (incl. tax)",
             "note": "5 nights incl. tax, ~CA$346/night. Hyatt Place rates include breakfast, so the simple food plan works. Expedia is cheapest (looks non-refundable); for free cancellation, Trip.com is CA$2,090.",
-            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+            "url": "https://www.expedia.ca/Honolulu-Hotels-Hyatt-Place-Waikiki-Beach.h2766.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
             "items": [
               {
                 "label": "Hyatt Place · 5 nights",
@@ -214,7 +214,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Breakfast included",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Hyatt%20Place%20Waikiki",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Hyatt-Place-Waikiki-Beach.h2766.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1730
               },
               {
@@ -223,7 +223,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "CA$1,169 + 574 taxes & fees",
-                "url": "https://www.booking.com/searchresults.html?ss=Hyatt%20Place%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD",
+                "url": "https://www.booking.com/hotel/us/hyatt-place-waikiki-beach.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "converted": 1743
               },
               {
@@ -241,7 +241,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Breakfast included, free cancellation",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Hyatt%20Place%20Waikiki%20Beach",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=731498&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2090
               }
             ],
@@ -276,7 +276,7 @@
                 "amount": 1909,
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Kaimana",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Kaimana-Beach-Hotel.h59957607.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 1909
               },
               {
@@ -285,14 +285,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Queen room, free cancellation",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Kaimana%20Beach%20Hotel",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=737103&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2458
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "No availability shown for these dates",
-                "url": "https://www.booking.com/searchresults.html?ss=Kaimana%20Beach%20Hotel%20Honolulu&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/the-new-otani-kaimana-beach.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Vio"
@@ -303,7 +303,7 @@
             "amount": 2067,
             "status": "Multi-site price check, Nov 15 (incl. tax)",
             "note": "5 nights incl. tax, ~CA$413/night. Five-star resort across from the beach; Expedia is a bit cheaper than Vio. Check the booking page for room type and cancellation terms.",
-            "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+            "url": "https://www.expedia.ca/Honolulu-Hotels-Alohilani-Resort-Waikiki-Beach.h21781.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
             "items": [
               {
                 "label": "ʻAlohilani · 5 nights",
@@ -317,7 +317,7 @@
                 "amount": 2067,
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Alohilani",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Alohilani-Resort-Waikiki-Beach.h21781.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 2067
               },
               {
@@ -334,14 +334,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Two Queen beds, free cancellation",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Alohilani%20Resort",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=732988&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 2854
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "No availability shown for these dates",
-                "url": "https://www.booking.com/searchresults.html?ss=Alohilani%20Resort%20Waikiki%20Beach&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/alohilani-resort.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Expedia"
@@ -352,7 +352,7 @@
             "amount": 3056,
             "status": "Multi-site price check, Nov 15 (incl. tax)",
             "note": "5 nights incl. tax, ~CA$611/night. Trip.com's city-view King has free cancellation and no mid-stay room change, cheaper than Vio (one room change) and Expedia.",
-            "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+            "url": "https://ca.trip.com/hotels/detail/?hotelId=1504760&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
             "items": [
               {
                 "label": "Sheraton Waikiki · 5 nights",
@@ -367,7 +367,7 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "City-view King, free cancellation",
-                "url": "https://ca.trip.com/hotels/list?cityId=757&checkin=2027-01-03&checkout=2027-01-08&crn=1&adult=2&curr=CAD&searchWord=Sheraton%20Waikiki%20Beach%20Resort",
+                "url": "https://ca.trip.com/hotels/detail/?hotelId=1504760&checkIn=2027-01-03&checkOut=2027-01-08&adult=2&crn=1&curr=CAD",
                 "converted": 3056
               },
               {
@@ -385,14 +385,14 @@
                 "currency": "CAD",
                 "checkedOn": "2026-11-15",
                 "note": "Fully refundable",
-                "url": "https://www.expedia.ca/Hotel-Search?destination=Honolulu%2C%20Hawaii&regionId=1488&startDate=2027-01-03&endDate=2027-01-08&rooms=1&adults=2&hotelName=Sheraton%20Waikiki",
+                "url": "https://www.expedia.ca/Honolulu-Hotels-Sheraton-Waikiki.h7385.Hotel-Information?chkin=2027-01-03&chkout=2027-01-08&rm1=a2",
                 "converted": 4904
               },
               {
                 "platform": "Booking.com",
                 "available": false,
                 "note": "No availability shown for these dates",
-                "url": "https://www.booking.com/searchresults.html?ss=Sheraton%20Waikiki%20Beach%20Resort&checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=CAD"
+                "url": "https://www.booking.com/hotel/us/sheraton-waikiki.html?checkin=2027-01-03&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD"
               }
             ],
             "source": "Trip.com"
