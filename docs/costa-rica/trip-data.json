@@ -3,14 +3,14 @@
   "trip": {
     "id": "costa-rica-2027-jan-6-11",
     "title": "哥斯达黎加五晚 · 1/6–1/11",
-    "subtitle": "逃离多伦多的冰雪，一路向南，落进太平洋的盛夏。头两晚枕着Coco湾的海浪：乘船出海浮潜，看落日沉入海湾，新月夜里，满天星斗都留给沙滩。再绕湖东行，到阿雷纳尔火山脚下住三晚，温泉就在门前。白天泛舟河上，看树懒在枝头打盹、鳄鱼在岸边晒太阳；走过林间吊桥，骑马远眺火山。入夜提一盏手电走进雨林，听万物醒来。离开前一天，在Tabacón温热的河水里，把一个下午泡得很慢很慢。",
+    "subtitle": "逃离多伦多的冰雪，一路向南，落进太平洋的盛夏。第一晚枕着Coco湾的海浪，看落日沉入海湾，满天星斗都留给沙滩。第二天往山里去，路过林间的瀑布，再爬上云雾缭绕的Monteverde，从森林上空飞过一千多米；入夜提一盏手电走进雨林，听万物醒来。最后三晚住在阿雷纳尔火山脚下，温泉就在门前：泛舟河上，看鳄鱼在岸边晒太阳；骑马远眺火山，再跟着向导，去枝头找一只慢吞吞的树懒。",
     "startDate": "2027-01-06",
     "endDate": "2027-01-11",
     "nights": 5,
     "travelers": 2,
     "currency": "CAD",
     "demo": false,
-    "notice": "全部未预订。机票、酒店是11/15按1/6–1/11重新查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
+    "notice": "全部未预订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [
       "两人 · 一间房",
       "不冲浪；她跟腱在复健后期（已能慢跑和负重训练），正常的团都能去，乱石路、上下船、骑马注意一点",
@@ -75,7 +75,7 @@
       },
       {
         "id": "hotel-beach",
-        "label": "海边酒店｜2晚（1/6–1/8）",
+        "label": "海边酒店｜1晚（1/6–1/7）",
         "icon": "🏖️",
         "color": "#e07a12",
         "defaultOption": "villa-sol",
@@ -83,19 +83,19 @@
           {
             "id": "villa-sol",
             "label": "Villa Del Sol Boutique · 住Coco · 含早餐",
-            "amount": 440,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.6，在Playas del Coco，离海滩150米，晚上吃饭、坐船都走路；含早，可免费取消。",
+            "amount": 197,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "评分8.6，在Playas del Coco，离海滩150米，晚上吃饭走路；含早，可免费取消。",
             "quotes": [
               {
                 "platform": "Booking.com",
-                "amount": 440,
+                "amount": 197,
                 "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$389＋税费CA$51",
-                "converted": 440
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$174＋税费CA$23",
+                "converted": 197
               },
               {
                 "platform": "Expedia",
@@ -108,19 +108,19 @@
           {
             "id": "mm-beach",
             "label": "Hotel M&M Beach House · 在沙滩上 · 含早餐",
-            "amount": 312,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "amount": 138,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "评分8.2，就在Coco镇中心的海滩上，含早餐，可免费取消；房间简单。",
             "quotes": [
               {
                 "platform": "Booking.com",
-                "amount": 312,
+                "amount": 138,
                 "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$276＋税费CA$36",
-                "converted": 312
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$122＋税费CA$16",
+                "converted": 138
               },
               {
                 "platform": "Expedia",
@@ -133,19 +133,19 @@
           {
             "id": "huetares",
             "label": "Hotel & Villas Huetares · Hermosa · 带厨房",
-            "amount": 504,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "amount": 253,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "评分8.6，离海滩300米，有泳池；不含早，页面没标免费取消。",
             "quotes": [
               {
                 "platform": "Booking.com",
-                "amount": 504,
+                "amount": 253,
                 "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$446＋税费CA$58",
-                "converted": 504
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$224＋税费CA$29",
+                "converted": 253
               },
               {
                 "platform": "Expedia",
@@ -157,6 +157,91 @@
           }
         ],
         "chartGroup": "hotel"
+      },
+      {
+        "id": "hotel-monteverde",
+        "label": "Monteverde酒店｜1晚（1/7–1/8）",
+        "icon": "🌲",
+        "color": "#7a4bb5",
+        "defaultOption": "montana",
+        "chartGroup": "hotel",
+        "options": [
+          {
+            "id": "montana",
+            "label": "Hotel Montaña Monteverde · 离镇中心近 · 含早餐",
+            "amount": 194,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "评分9.0，离Santa Elena镇中心0.8公里，晚上去吃饭、去夜间徒步都近；含早，可免费取消、到店付款。",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 194,
+                "currency": "CAD",
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$172＋税费CA$22",
+                "converted": 194
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "没比（这次只查了Booking.com）"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "corazon",
+            "label": "Hotel con Corazón · 评分9.0 · 含早餐",
+            "amount": 199,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "评分9.0，离镇中心2公里；含早，可免费取消、到店付款。",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 199,
+                "currency": "CAD",
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$176＋税费CA$23（原价CA$195）",
+                "converted": 199
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "没比（这次只查了Booking.com）"
+              }
+            ],
+            "source": "Booking.com"
+          },
+          {
+            "id": "green-tree",
+            "label": "The Green Tree Lodge · 评分9.2 · 最省",
+            "amount": 109,
+            "status": "11/16 Booking.com（含税）",
+            "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+            "note": "评分9.2，性价比高，离镇中心3公里，房间带阳台；含早、到店付款，页面没标免费取消。",
+            "quotes": [
+              {
+                "platform": "Booking.com",
+                "amount": 109,
+                "currency": "CAD",
+                "checkedOn": "2026-11-16",
+                "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
+                "note": "CA$109含税（原价CA$122）",
+                "converted": 109
+              },
+              {
+                "platform": "Expedia",
+                "available": false,
+                "note": "没比（这次只查了Booking.com）"
+              }
+            ],
+            "source": "Booking.com"
+          }
+        ]
       },
       {
         "id": "hotel-arenal",
@@ -270,7 +355,7 @@
       },
       {
         "id": "car",
-        "label": "租车或坐接驳｜5天",
+        "label": "租车｜5天（含强制险和CDW）",
         "icon": "🚗",
         "color": "#1f9652",
         "defaultOption": "adobe",
@@ -296,84 +381,6 @@
               }
             ],
             "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
-          },
-          {
-            "id": "shuttle",
-            "label": "不租车 · 拼车接驳＋打车",
-            "amount": 777.01,
-            "status": "公开价折算 · 待确认",
-            "note": "不开车：落地打车去Coco；1/8坐拼车接驳去La Fortuna（7:00–8:00到酒店接，约5.5–6.5小时，下午才到，中途不能停瀑布和湖边）；1/11坐8:00的拼车，约11:45到机场，赶得上14:40的航班。火山这几天漂流、骑马都含酒店接送，夜间徒步、吊桥、Tabacón和镇上吃饭打车。比租车贵约CA$160，但不用开山路，也不用押USD1,000的信用卡。拼车价来自Bus Costa Rica公开页面（每人USD95、USD85），下单后商家确认有没有位，是否另加税以确认单为准；机场出租车打表，镇上打车按约₡700/公里估算。",
-            "items": [
-              {
-                "label": "1/6 机场→Coco 正规出租车（打表，约USD45，估算）",
-                "amount": 64.16
-              },
-              {
-                "label": "1/8 Coco→La Fortuna 拼车 USD95×2",
-                "amount": 270.88
-              },
-              {
-                "label": "1/11 La Fortuna→利比里亚机场 8:00拼车 USD85×2",
-                "amount": 242.37
-              },
-              {
-                "label": "火山这几天打车（夜间徒步、吊桥、Tabacón、镇上吃饭，约USD140，估算）",
-                "amount": 199.6
-              }
-            ],
-            "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
-            "bundles": {
-              "transport": "no-car"
-            },
-            "booking": {
-              "book-car": {
-                "title": "订1/8 Coco→La Fortuna拼车接驳",
-                "note": "下单后商家邮件确认有没有位子，看清接人时间和是否另加税。1/6落地直接在机场排正规出租车（红色车身、车门上有黄色三角），上车确认打表。",
-                "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
-                "urlLabel": "Bus Costa Rica",
-                "due": "2026-12-10",
-                "lead": "提前4周"
-              }
-            }
-          },
-          {
-            "id": "private",
-            "label": "不租车 · 包车去火山（路上停瀑布）＋拼车回机场",
-            "amount": 1021.66,
-            "status": "公开价折算 · 待确认",
-            "note": "想在路上看瀑布就选这个：1/8包一辆车从Coco去La Fortuna（Two Weeks in Costa Rica，按出行日期12/15起每车USD320＋13%税），出发时间自己定，车程约3小时，含1小时中途停车，够停Llanos de Cortés；想在湖边观景点停，下单时写上。其余同拼车方案：落地打车、1/11坐8:00拼车去机场、火山这几天打车。比租车贵约CA$400。24小时前取消退款扣USD30。",
-            "items": [
-              {
-                "label": "1/6 机场→Coco 正规出租车（打表，约USD45，估算）",
-                "amount": 64.16
-              },
-              {
-                "label": "1/8 Coco→La Fortuna 包车（停瀑布）USD320＋13%税",
-                "amount": 515.53
-              },
-              {
-                "label": "1/11 La Fortuna→利比里亚机场 8:00拼车 USD85×2",
-                "amount": 242.37
-              },
-              {
-                "label": "火山这几天打车（夜间徒步、吊桥、Tabacón、镇上吃饭，约USD140，估算）",
-                "amount": 199.6
-              }
-            ],
-            "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
-            "bundles": {
-              "transport": "no-car"
-            },
-            "booking": {
-              "book-car": {
-                "title": "订1/8 Coco→La Fortuna包车，备注停Llanos de Cortés瀑布",
-                "note": "出发时间建议8:30；下单时写明要在瀑布停约1小时（只收现金门票）。1/6落地直接在机场排正规出租车，上车确认打表。",
-                "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
-                "urlLabel": "Two Weeks in Costa Rica",
-                "due": "2026-12-10",
-                "lead": "提前4周"
-              }
-            }
           }
         ],
         "chartGroup": "drive"
@@ -387,34 +394,27 @@
         "options": [
           {
             "id": "gas",
-            "label": "约480公里油费＋停车",
-            "amount": 128.31,
+            "label": "约530公里油费＋停车",
+            "amount": 138.29,
             "status": "预算估算",
-            "note": "油价按2026年11月约₡806/升（约USD1.80）估。这条路线没有收费公路。",
+            "note": "油价按2026年11月约₡806/升（约USD1.80）估。这条路线没有收费公路；Monteverde的606号路上坡多，上山前在Cañas加满油。",
             "items": [
               {
-                "label": "油费 约40升×USD1.75",
-                "amount": 99.8
+                "label": "油费 约44升×USD1.75",
+                "amount": 109.78
               },
               {
                 "label": "景点/海滩停车、小费",
                 "amount": 28.51
               }
             ]
-          },
-          {
-            "id": "no-car",
-            "label": "不开车，没有油费",
-            "amount": 0,
-            "bundleOnly": true,
-            "status": "—"
           }
         ],
         "chartGroup": "drive"
       },
       {
         "id": "food",
-        "label": "餐饮｜两人5天（两家酒店都含早）",
+        "label": "餐饮｜两人5天（三家酒店都含早）",
         "icon": "🦐",
         "color": "#d2402f",
         "defaultOption": "seafood",
@@ -438,7 +438,7 @@
             "label": "再加一顿好餐厅",
             "amount": 900,
             "status": "预算估算",
-            "note": "例如La Fortuna的Don Rufino，或Tabacón温泉套票里的晚餐。"
+            "note": "例如La Fortuna的Don Rufino。"
           }
         ]
       },
@@ -451,25 +451,23 @@
         "options": [
           {
             "id": "full",
-            "label": "6项 · 含夜间徒步、骑马",
-            "amount": 1029.24,
+            "label": "6项 · 瀑布、滑索、夜间徒步、漂流、吊桥、骑马",
+            "amount": 896.82,
             "status": "官方/公开常规价折算",
-            "note": "包含：双体船浮潜、Llanos de Cortés瀑布、Bogarín夜间徒步、河上漂流、吊桥公园、骑马看火山。1/10下午泡Tabacón还是换别的，在下面「1/10下午」里选。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD）。",
+            "note": "包含：Llanos de Cortés瀑布、100% Aventura滑索、Monteverde夜间徒步、河上漂流、Mistico吊桥、骑马看火山。1/8、1/10下午的安排在下面单独选。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD）。",
             "items": [
-              {
-                "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
-                "amount": 289.99,
-                "note": "Marlin del Rey USD90/人起，税按13%估"
-              },
               {
                 "label": "Llanos de Cortés 瀑布",
                 "amount": 25.66,
                 "note": "₡4,000/人，只收现金"
               },
               {
-                "label": "Bogarín 夜间徒步（向导带，2小时）",
-                "amount": 171.08,
-                "note": "USD60/人（官网价，税未写明）"
+                "label": "100% Aventura 滑索（含Superman线）USD72＋税×2",
+                "amount": 231.99
+              },
+              {
+                "label": "Bajo del Tigre 夜间徒步 USD30＋税×2",
+                "amount": 96.66
               },
               {
                 "label": "Peñas Blancas 河上漂流看动物",
@@ -491,24 +489,22 @@
           {
             "id": "no-horse",
             "label": "5项 · 不骑马",
-            "amount": 815.39,
+            "amount": 682.97,
             "status": "官方/公开常规价折算",
             "note": "不骑马的话，1/10上午在酒店休息，下午照下面「1/10下午」选的安排。",
             "items": [
-              {
-                "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
-                "amount": 289.99,
-                "note": "Marlin del Rey USD90/人起，税按13%估"
-              },
               {
                 "label": "Llanos de Cortés 瀑布",
                 "amount": 25.66,
                 "note": "₡4,000/人，只收现金"
               },
               {
-                "label": "Bogarín 夜间徒步（向导带，2小时）",
-                "amount": 171.08,
-                "note": "USD60/人（官网价，税未写明）"
+                "label": "100% Aventura 滑索（含Superman线）USD72＋税×2",
+                "amount": 231.99
+              },
+              {
+                "label": "Bajo del Tigre 夜间徒步 USD30＋税×2",
+                "amount": 96.66
               },
               {
                 "label": "Peñas Blancas 河上漂流看动物",
@@ -524,25 +520,23 @@
           },
           {
             "id": "lite",
-            "label": "3项 · 不漂流、不吊桥、不骑马",
-            "amount": 486.73,
+            "label": "3项 · 瀑布、滑索、夜间徒步",
+            "amount": 354.31,
             "status": "官方/公开常规价折算",
-            "note": "最省力的一档：看动物靠夜间徒步；1/10下午照下面「1/10下午」选的安排。",
+            "note": "最省力的一档：不漂流、不去吊桥、不骑马；看动物靠夜间徒步和1/10下午的树懒团。",
             "items": [
-              {
-                "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
-                "amount": 289.99,
-                "note": "Marlin del Rey USD90/人起，税按13%估"
-              },
               {
                 "label": "Llanos de Cortés 瀑布",
                 "amount": 25.66,
                 "note": "₡4,000/人，只收现金"
               },
               {
-                "label": "Bogarín 夜间徒步（向导带，2小时）",
-                "amount": 171.08,
-                "note": "USD60/人（官网价，税未写明）"
+                "label": "100% Aventura 滑索（含Superman线）USD72＋税×2",
+                "amount": 231.99
+              },
+              {
+                "label": "Bajo del Tigre 夜间徒步 USD30＋税×2",
+                "amount": 96.66
               }
             ]
           }
@@ -585,23 +579,9 @@
         "label": "1/10下午｜两人",
         "icon": "♨️",
         "color": "#2b9c9a",
-        "defaultOption": "tabacon",
+        "defaultOption": "sloth",
         "chartGroup": "fun",
         "options": [
-          {
-            "id": "tabacon",
-            "label": "Tabacón 热河温泉日票 · 含午餐",
-            "amount": 479.04,
-            "status": "官方/公开常规价折算",
-            "note": "火山脚下的热河、瀑布和园林，12:00入园，含午餐。",
-            "items": [
-              {
-                "label": "Tabacón 温泉日票（含午餐）",
-                "amount": 479.04
-              }
-            ],
-            "url": "https://www.tabacon.com/day-pass/"
-          },
           {
             "id": "sloth",
             "label": "Fortuna Welcome 树懒团 · 13:00场 · 含接送",
@@ -621,32 +601,6 @@
               "urlLabel": "Fortuna Welcome",
               "lead": "提前1–2周",
               "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
-              "due": "2026-12-27"
-            }
-          },
-          {
-            "id": "zipline",
-            "label": "Sky Adventures 滑索 · 13:30场 · 含接送",
-            "amount": 374.16,
-            "status": "官方/公开常规价折算",
-            "note": "先坐缆车上山，再滑7条线下来，最长750多米，约2小时。1/6以后USD94＋13%税/人，La Fortuna接送USD25/人。公司写明近一年做过手术、骨骼或肌肉有问题的人不建议参加，她的跟腱先问康复师。",
-            "items": [
-              {
-                "label": "滑索 USD94＋13%税 ×2",
-                "amount": 302.88
-              },
-              {
-                "label": "La Fortuna往返接送 USD25×2",
-                "amount": 71.28
-              }
-            ],
-            "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
-            "booking": {
-              "title": "订1/10 13:30 Sky Adventures 滑索，加选La Fortuna接送",
-              "note": "先问康复师她的跟腱能不能玩；48小时前取消扣USD25，之后不退。",
-              "urlLabel": "Two Weeks in Costa Rica",
-              "lead": "提前1–2周",
-              "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
               "due": "2026-12-27"
             }
           },
@@ -671,6 +625,14 @@
               "url": "https://rainforestchocolatetour.com/book-tour/",
               "due": "2026-12-27"
             }
+          },
+          {
+            "id": "rest",
+            "label": "回酒店泡温泉、休息 · 含在房费里",
+            "amount": 0,
+            "status": "已含在总额",
+            "note": "不出门，下午在酒店的温泉池泡着，晚上去镇上吃饭。",
+            "booking": false
           }
         ]
       },
@@ -707,9 +669,10 @@
           "food": "seafood",
           "activities": "full",
           "d3-pm": "hotel",
-          "d5-pm": "tabacon"
+          "d5-pm": "sloth",
+          "hotel-monteverde": "montana"
         },
-        "note": "Coco的Villa Del Sol＋自带温泉的Termales del Arenal，6项活动（含夜间徒步、骑马），1/10下午泡Tabacón。"
+        "note": "Coco的Villa Del Sol、Monteverde的Hotel Montaña、自带温泉的Termales del Arenal，6项活动（瀑布、滑索、夜间徒步、漂流、吊桥、骑马），1/10下午树懒团。"
       },
       {
         "id": "no-horse",
@@ -725,7 +688,7 @@
         "selections": {
           "hotel-beach": "mm-beach"
         },
-        "note": "海边两晚改住Coco镇中心、就在沙滩上的M&M。"
+        "note": "海边那晚改住Coco镇中心、就在沙滩上的M&M。"
       },
       {
         "id": "save",
@@ -735,17 +698,10 @@
           "hotel-arenal": "lavas",
           "food": "lean",
           "activities": "lite",
-          "buffer": "none"
+          "buffer": "none",
+          "hotel-monteverde": "green-tree"
         },
-        "note": "两家都选最便宜的，吃soda小馆，活动4项。"
-      },
-      {
-        "id": "no-car",
-        "label": "不租车",
-        "selections": {
-          "car": "shuttle"
-        },
-        "note": "全程坐拼车接驳和出租车，不开车。"
+        "note": "三家都选最便宜的，吃soda小馆，活动3项。"
       }
     ],
     "chartGroups": {
@@ -755,7 +711,7 @@
         "color": "#e07a12"
       },
       "drive": {
-        "label": "交通（租车/接驳）",
+        "label": "租车与油费",
         "icon": "🚗",
         "color": "#1f9652"
       },
@@ -846,7 +802,7 @@
       },
       {
         "id": "coco",
-        "name": "Playas del Coco 海边步道（双体船集合）",
+        "name": "Playas del Coco 镇上海边步道",
         "lat": 10.5505,
         "lng": -85.6995,
         "maps": "Playas del Coco, Guanacaste, Costa Rica",
@@ -864,6 +820,54 @@
         "address": "Route 1旁, Bagaces",
         "note": "停车场下去约30级水泥台阶，有扶绳；瀑布下面是沙地，水边是石头，注意脚下。8:00–16:00，只收现金。",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
+      },
+      {
+        "id": "r606",
+        "name": "606号路（路过）",
+        "lat": 10.2495,
+        "lng": -84.8392,
+        "maps": "Ruta 606, Guacimal, Puntarenas, Costa Rica",
+        "address": "Guacimal–Santa Elena",
+        "note": "上下Monteverde都走这条铺装路，不走Tilarán那边的土路。"
+      },
+      {
+        "id": "aventura",
+        "name": "100% Aventura 滑索",
+        "lat": 10.3388806,
+        "lng": -84.8241529,
+        "maps": "100% Aventura Zipline, Monteverde",
+        "photos": "100% Aventura superman zipline Monteverde",
+        "address": "Santa Elena北边约3公里",
+        "note": "园区位置，不是镇上的售票处。",
+        "url": "https://www.aventuracanopytour.com/"
+      },
+      {
+        "id": "hotel-monteverde",
+        "name": "Hotel Montaña Monteverde（默认，未订）",
+        "lat": 10.3115843,
+        "lng": -84.816105,
+        "maps": "Hotel Montaña Monteverde",
+        "address": "Vía 620, Cerro Plano, Santa Elena",
+        "note": "离Santa Elena镇中心0.8公里。"
+      },
+      {
+        "id": "night-walk",
+        "name": "Bajo del Tigre · 夜间徒步",
+        "lat": 10.3056389,
+        "lng": -84.8144494,
+        "maps": "Bajo del Tigre, Bosque Eterno de los Niños, Monteverde",
+        "address": "Bosque Eterno de los Niños, Monteverde",
+        "note": "儿童永恒雨林的Bajo del Tigre站，离酒店开车约5分钟。",
+        "url": "https://acmcr.org/en/rates-and-reservations/"
+      },
+      {
+        "id": "canas",
+        "name": "Cañas（路过）",
+        "lat": 10.446361,
+        "lng": -85.0934226,
+        "maps": "Cañas, Guanacaste, Costa Rica",
+        "address": "1号公路",
+        "note": "1/8从Monteverde下山后经这里转去Tilarán，走全程铺装的路；可以在这里加油。"
       },
       {
         "id": "nuevo-arenal",
@@ -911,26 +915,6 @@
         "maps": "Peñas Blancas River, San Carlos, Costa Rica",
         "address": "La Fortuna东南约25分钟",
         "note": "团里接送，地图只标大概位置。"
-      },
-      {
-        "id": "bogarin",
-        "name": "Bogarín 步道 · 夜间徒步",
-        "lat": 10.47,
-        "lng": -84.638,
-        "maps": "Bogarin Trail, La Fortuna",
-        "address": "La Fortuna镇上",
-        "note": "镇上的2.5公里小路，大部分平缓。夜间徒步约2小时，向导打手电找蛙、蛇、蜘蛛和睡觉的鸟；开始时间以订单为准。离酒店开车约10分钟。",
-        "url": "https://bogarintrail.com/"
-      },
-      {
-        "id": "tabacon",
-        "name": "Tabacón 温泉（可选）",
-        "lat": 10.492,
-        "lng": -84.721,
-        "maps": "Tabacón Thermal Resort & Spa",
-        "address": "Vía 142, La Fortuna",
-        "note": "火山脚下的热河温泉，日票含午餐，8:00–22:00；1/10中午到傍晚泡。河道里的天然池底是石头，泡平底的人工池更稳。要预订。",
-        "url": "https://www.tabacon.com/day-pass/"
       }
     ],
     "dailyRoutes": [
@@ -950,31 +934,34 @@
       },
       {
         "day": 2,
-        "label": "01/07 双体船浮潜",
-        "placeIds": [
-          "hotel-beach",
-          "coco",
-          "hotel-beach"
-        ],
-        "transport": "driving",
-        "note": "早上开约5分钟到Coco海边步道上船，中午开回酒店；船线不画。晚上吃饭走路或开车都行，看星星就在酒店前的海滩。",
-        "extraPlaceIds": [
-          "coco-beach"
-        ]
-      },
-      {
-        "day": 3,
-        "label": "01/08 瀑布·湖边·火山",
+        "label": "01/07 瀑布·滑索·夜探",
         "placeIds": [
           "hotel-beach",
           "llanos",
+          "r606",
+          "aventura",
+          "hotel-monteverde",
+          "night-walk",
+          "hotel-monteverde"
+        ],
+        "transport": "driving",
+        "note": "经Liberia、Bagaces（瀑布）、Cañas，转606号路上山，约4小时车程，长途都在白天。晚上开约5分钟去夜间徒步。",
+        "extraPlaceIds": []
+      },
+      {
+        "day": 3,
+        "label": "01/08 下山·湖边·火山",
+        "placeIds": [
+          "hotel-monteverde",
+          "r606",
+          "canas",
           "nuevo-arenal",
           "hotel-arenal",
-          "bogarin",
+          "fortuna",
           "hotel-arenal"
         ],
         "transport": "driving",
-        "note": "经Liberia、Bagaces、Cañas、Tilarán，沿Arenal湖北岸开到La Fortuna，约14:30到酒店，长途全在白天。晚上自己开约10分钟去镇上的夜间徒步。",
+        "note": "沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸到La Fortuna，开车约4小时，13:30左右到酒店。晚上开5分钟去镇上吃饭。",
         "extraPlaceIds": []
       },
       {
@@ -994,14 +981,14 @@
       },
       {
         "day": 5,
-        "label": "01/10 树懒·慢一天",
+        "label": "01/10 骑马·树懒",
         "placeIds": [
           "hotel-arenal",
-          "tabacon",
+          "fortuna",
           "hotel-arenal"
         ],
         "transport": "driving",
-        "note": "上午骑马团酒店接送（不画线）；中午自己开10分钟去Tabacón，17:00离开，天黑前回酒店。",
+        "note": "上午骑马、下午树懒团都在酒店接送（不画线）；晚上开5分钟去镇上吃饭。",
         "extraPlaceIds": []
       },
       {
@@ -1028,7 +1015,7 @@
     {
       "day": 1,
       "date": "2027-01-06",
-      "title": "周三 · 直飞利比里亚，傍晚在Coco海边看日落",
+      "title": "周三 · 直飞利比里亚，傍晚在Coco海边看日落和星星",
       "locations": [
         "多伦多YYZ",
         "利比里亚LIR",
@@ -1073,78 +1060,15 @@
         {
           "time": "19:00",
           "title": "海边吃海鲜",
-          "text": "走路去Coco镇上（约15分钟），Papagayo Seafood（常有现场音乐）或Mar Azul；回来不想走就打车。吃完要是天晴，在酒店前的海滩看一会儿星星（这几晚都没有月亮），正式看星星排在明晚新月。",
-          "placeId": "coco"
-        }
-      ]
-    },
-    {
-      "day": 2,
-      "date": "2027-01-07",
-      "title": "周四 · 开车去坐双体船浮潜，晚上Coco吃海鲜、沙滩看星星",
-      "locations": [
-        "Playas del Coco",
-        "帕帕加约湾"
-      ],
-      "schedule": [
-        {
-          "time": "07:30",
-          "title": "开车去海边步道",
-          "text": "约5分钟，在镇上路边或付费停车场停车；车里别留东西，手动拉门确认锁好。",
+          "text": "走路去Coco镇上（约15分钟），Papagayo Seafood（常有现场音乐）或Mar Azul；回来不想走就打车。",
           "placeId": "coco"
         },
         {
-          "id": "d2-coco",
-          "time": "07:45",
-          "title": "双体船签到",
-          "text": "Marlin del Rey上午8:00班，约4小时：浮潜一站、午餐、开放酒吧。旱季下午常刮Papagayo大风，所以选上午班，水面更稳。上船方式以船公司为准（有时要从沙滩蹚水上接驳小艇），订之前问清楚，需要时请船员扶一把。",
-          "placeId": "coco",
-          "links": [
-            {
-              "label": "Marlin del Rey",
-              "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
-            },
-            {
-              "label": "备选：Tour Guanacaste 早班双体船 · USD79起 · 8:00–12:00，从Flamingo出发（Coco开车约1小时）",
-              "url": "https://www.tourguanacaste.com/en/activity/100654/morning-snorkel-catamaran-tour"
-            },
-            {
-              "label": "备选：Blue Marlin 包船游Papagayo · 上午8:00–12:00 · 整船价（约USD400/5人），两人偏贵",
-              "url": "https://sportfishingbluemarlin.com/catamaran-tours-papagayo/"
-            }
-          ],
-          "rate": true
-        },
-        {
-          "time": "12:30",
-          "title": "逛一下Coco",
-          "text": "船上吃过午饭；在海边步道走走、买点冰淇淋。",
-          "placeId": "coco"
-        },
-        {
-          "time": "14:00",
-          "title": "回酒店休息",
-          "text": "开5分钟回酒店，泳池、午睡。",
-          "placeId": "hotel-beach"
-        },
-        {
-          "time": "17:30",
-          "title": "海滩看日落",
-          "text": "",
-          "placeId": "coco-beach"
-        },
-        {
-          "time": "18:30",
-          "title": "晚餐：Coco镇上",
-          "text": "Papagayo Seafood或Mar Azul；走路约15分钟，或开车5分钟。",
-          "placeId": "coco"
-        },
-        {
-          "id": "d2-coco-beach",
+          "id": "d1-stars",
           "time": "20:00",
-          "title": "沙滩上看星星（新月夜）",
+          "title": "沙滩上看星星",
           "placeId": "coco-beach",
-          "text": "1/7正好是新月，整晚没有月光；Guanacaste旱季晴天多，19:00天就全黑了。酒店前面就是Coco海滩比较暗的北头，走到离路灯远一点的地方，躺在毛巾上看：东南方高处是猎户座，下面最亮的是天狼星；21:00后往南方低处找老人星（全天第二亮的星，在多伦多看不到）。手机装Stellarium或SkyView对着天空认星。只带手机和毛巾，别带贵重物品，不走远。",
+          "text": "明天1/7是新月，今晚几乎没有月光；Guanacaste旱季晴天多，19:00天就全黑了。酒店前面就是Coco海滩比较暗的北头，走到离路灯远一点的地方，躺在毛巾上看：东南方高处是猎户座，下面最亮的是天狼星；21:00后往南方低处找老人星（全天第二亮的星，在多伦多看不到）。手机装Stellarium或SkyView对着天空认星。只带手机和毛巾，别带贵重物品，不走远；明天要早起开山路，别熬太晚。",
           "links": [
             {
               "label": "月相（timeanddate）",
@@ -1156,44 +1080,118 @@
       ]
     },
     {
-      "day": 3,
-      "date": "2027-01-08",
-      "title": "周五 · 路上看瀑布、绕Arenal湖，下午泡温泉，晚上夜间徒步",
+      "day": 2,
+      "date": "2027-01-07",
+      "title": "周四 · 路上看瀑布，下午飞越云雾森林，晚上夜探雨林",
       "locations": [
         "Llanos de Cortés",
-        "Arenal湖",
-        "Termales del Arenal",
-        "Bogarín夜间徒步"
+        "Monteverde",
+        "100% Aventura",
+        "夜间徒步"
       ],
       "schedule": [
         {
-          "time": "08:30",
+          "time": "07:00",
           "title": "退房出发",
-          "text": "带点现金（瀑布只收现金）。"
+          "text": "带点现金（瀑布只收现金）。经Liberia、Bagaces南下，约1小时15分钟到瀑布。"
         },
         {
-          "id": "d3-llanos",
-          "time": "09:45",
+          "id": "d2-llanos",
+          "time": "08:20",
           "title": "Llanos de Cortés 瀑布",
           "text": "水泥台阶约30级、有扶绳，下面是沙地，水边和水里是石头。可以下水泡一会儿，踩石头时注意脚下别崴。",
           "placeId": "llanos",
           "rate": true
         },
         {
-          "time": "11:00",
-          "title": "经Cañas、Tilarán去Arenal湖",
-          "text": "在Cañas或Tilarán吃午饭。Cañas到Tilarán之间别跟GPS左转走土路捷径。"
+          "time": "09:20",
+          "title": "沿1号公路去Monteverde",
+          "text": "经Cañas，转606号路上山，约2.5小时；606号路已铺好，上坡和急弯多，慢慢开。12:00左右到Santa Elena镇上，简单吃个午饭。"
+        },
+        {
+          "id": "d2-aventura",
+          "time": "13:00",
+          "title": "100% Aventura 滑索",
+          "text": "约2.5–3小时：10条滑索，最长一条1,590米，是哥斯达黎加最长的；最后两条是趴着飞的Superman线，还有一次Tarzan大秋千（可以不荡）。官网USD72起/人（另加税），不含接送，从镇上开车约10分钟。场次以订票页为准（常见8:00、11:00、13:00、15:00）。她的跟腱还在复健，Superman线着陆和Tarzan秋千对脚踝有冲击，订之前先问康复师。",
+          "placeId": "aventura",
+          "links": [
+            {
+              "label": "100% Aventura 订票（官网）",
+              "url": "https://fareharbor.com/embeds/book/aventuracanopytour/items/39178/calendar/?ref=https%3A%2F%2Fwww.aventuracanopytour.com&language=en-us"
+            },
+            {
+              "label": "100% Aventura 官网",
+              "url": "https://www.aventuracanopytour.com/"
+            },
+            {
+              "label": "备选：Selvatura 滑索（也有Superman线）",
+              "url": "https://selvatura.com/packages/"
+            }
+          ],
+          "rate": true
+        },
+        {
+          "time": "16:00",
+          "title": "入住Monteverde酒店",
+          "text": "离镇中心0.8公里；歇一会儿，换件外套：Monteverde晚上只有十几度，常有风和毛毛雨。",
+          "placeId": "hotel-monteverde"
+        },
+        {
+          "id": "d2-night-walk",
+          "time": "17:30–19:30",
+          "title": "雨林夜间徒步",
+          "text": "Bajo del Tigre（儿童永恒雨林）的向导打手电带着走，找树蛙、蛇、蜘蛛、睡着的鸟，运气好能看到树懒和刺豚鼠。USD30＋税/人，最少2人；从酒店开车约5分钟。是林间土路，穿防滑包脚的鞋，带雨衣和驱蚊水。",
+          "placeId": "night-walk",
+          "links": [
+            {
+              "label": "Bajo del Tigre 价格与预订",
+              "url": "https://acmcr.org/en/rates-and-reservations/"
+            },
+            {
+              "label": "备选：Monteverde云雾森林保护区夜间徒步",
+              "url": "https://mytanfeet.com/booking/monteverde-cloud-forest-reserve-night-walk/"
+            }
+          ],
+          "rate": true
+        },
+        {
+          "time": "19:45",
+          "title": "镇上吃晚饭",
+          "text": "在Santa Elena镇上吃，开几分钟回酒店。"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2027-01-08",
+      "title": "周五 · 下山绕湖去火山，下午泡温泉",
+      "locations": [
+        "Monteverde",
+        "Arenal湖",
+        "Termales del Arenal"
+      ],
+      "schedule": [
+        {
+          "time": "07:00",
+          "title": "早餐",
+          "text": "酒店含早；早上山里最清透，能看到云从山谷里升起来。",
+          "placeId": "hotel-monteverde"
+        },
+        {
+          "time": "08:30",
+          "title": "下山去La Fortuna",
+          "text": "沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸开，全程铺装路，开车约4小时；别走Monteverde–Tilarán的土路捷径。"
         },
         {
           "id": "d3-nuevo-arenal",
-          "time": "13:30",
+          "time": "11:30",
           "title": "Arenal湖北岸",
-          "text": "沿Route 142的弯路开，路边观景停车处拍湖和火山。",
+          "text": "沿Route 142的弯路开，路边观景停车处拍湖和火山；在Nuevo Arenal吃午饭。",
           "placeId": "nuevo-arenal",
           "rate": true
         },
         {
-          "time": "14:30",
+          "time": "13:30",
           "title": "到Termales del Arenal入住",
           "text": "全程白天开完。房间收拾好就先泡酒店的温泉池。",
           "placeId": "hotel-arenal"
@@ -1202,13 +1200,13 @@
           "id": "d3-hotel-springs",
           "time": "15:00",
           "title": "泡酒店温泉",
-          "text": "先泡一会儿，17:00前收拾好。",
+          "text": "先泡一会儿，傍晚去镇上吃饭。",
           "placeId": "hotel-arenal",
           "rate": "maybe",
           "alternatives": [
             {
               "title": "Rainforest 巧克力工坊（15:00场）",
-              "text": "在La Fortuna镇上，约2小时：看可可树，自己磨可可豆，尝刚做好的热巧克力，基本是平路，坐着的时候多。英文场8:00、10:00、13:00、15:00，约USD34/人（两人约CA$97）。从酒店打车约10分钟，结束后离Bogarín夜间徒步很近。",
+              "text": "在La Fortuna镇上，约2小时：看可可树，自己磨可可豆，尝刚做好的热巧克力，基本是平路，坐着的时候多。英文场8:00、10:00、13:00、15:00，约USD34/人（两人约CA$97）。从酒店开车约10分钟，结束后在镇上吃晚饭。",
               "links": [
                 {
                   "label": "Rainforest Chocolate Tour 订票",
@@ -1222,40 +1220,10 @@
           "option": "hotel"
         },
         {
-          "time": "17:30",
-          "title": "开车去Bogarín",
-          "text": "约10分钟，都在镇上，天刚黑也好开。"
-        },
-        {
-          "id": "d3-bogarin",
-          "time": "约17:45–19:45",
-          "title": "Bogarín 夜间徒步",
-          "text": "向导打手电带着走，找夜里出来的蛙、蛇、蝎子、蜘蛛和睡觉的鸟、树懒。路大部分平缓，穿包脚的鞋，带件薄外套和驱蚊水。开始时间以订单为准。",
-          "placeId": "bogarin",
-          "links": [
-            {
-              "label": "Bogarín Trail",
-              "url": "https://bogarintrail.com/"
-            },
-            {
-              "label": "备选：Mistico 夜间徒步 · USD54＋税 · 18:00开始约2.5小时",
-              "url": "https://misticopark.com/tours/mistico-night-walk/"
-            },
-            {
-              "label": "备选：Ecocentro Danaus 夜间徒步 · 17:30开始约2小时，平路",
-              "url": "https://arenal.net/tours/ecocentro-danaus-night-tour"
-            },
-            {
-              "label": "备选：Fortuna Welcome 夜间徒步＋柴火晚餐 · USD100含接送 · 16:30出发约4小时",
-              "url": "https://www.fortunawelcome.com/la-fortuna-tours/night-hike-arenal-fortuna/"
-            }
-          ],
-          "rate": true
-        },
-        {
-          "time": "20:00",
-          "title": "镇上吃晚饭，开回酒店",
-          "text": "Snapper's House就在镇中心；吃完开5分钟回酒店。"
+          "time": "18:30",
+          "title": "镇上吃晚饭",
+          "text": "Snapper's House就在镇中心；吃完开5分钟回酒店。",
+          "placeId": "fortuna"
         }
       ]
     },
@@ -1355,10 +1323,10 @@
     {
       "day": 5,
       "date": "2027-01-10",
-      "title": "周日 · 早上骑马看火山，中午到傍晚泡Tabacón",
+      "title": "周日 · 早上骑马看火山，下午找树懒",
       "locations": [
         "骑马看火山",
-        "Tabacón温泉"
+        "树懒团"
       ],
       "schedule": [
         {
@@ -1390,53 +1358,32 @@
         },
         {
           "time": "11:30",
-          "title": "回酒店换衣服",
-          "text": "",
+          "title": "回酒店换衣服、吃午饭",
+          "text": "在酒店或镇上吃个简单的午饭，13:00树懒团来接。",
           "placeId": "hotel-arenal"
         },
         {
-          "id": "d5-tabacon",
-          "time": "12:00–17:00",
-          "title": "Tabacón 热河温泉＋午餐",
-          "text": "开车约10分钟。火山脚下的热河、瀑布和园林，日票含午餐。河道里的天然池底是石头，泡平底的人工池更稳。下雨天泡也很舒服。17:00离开，天黑前回到酒店。",
-          "placeId": "tabacon",
+          "id": "d5-sloth",
+          "time": "13:00–16:00",
+          "title": "树懒团",
+          "text": "向导带着在农场林间的平缓小路上找树懒，常能看到二趾和三趾树懒，还有鸟、蛙和蜂鸟；约2.5–3小时，难度标为「容易」，含酒店接送。USD90/人含税，最少2人成团。",
           "links": [
             {
-              "label": "Tabacón日票",
-              "url": "https://www.tabacon.com/day-pass/"
+              "label": "Fortuna Welcome 树懒团",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
+            },
+            {
+              "label": "备选：Fortuna Welcome 树懒＋农场午餐（约6小时）",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/sloth-watching-campesino-farmer-tour"
             }
           ],
-          "rate": "maybe",
+          "rate": true,
+          "budget": "d5-pm",
+          "option": "sloth",
           "alternatives": [
             {
-              "title": "Fortuna Welcome 树懒团（13:00场）",
-              "text": "约2.5–3小时，向导带着在农场林间的平缓小路上找树懒、鸟和蛙，难度标为「容易」。USD90/人含税，含La Fortuna酒店接送，两人约CA$257，比Tabacón省约CA$220。最少2人成团。",
-              "links": [
-                {
-                  "label": "Fortuna Welcome 树懒团",
-                  "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
-                }
-              ],
-              "option": "sloth"
-            },
-            {
-              "title": "Sky Adventures 滑索（13:30场）",
-              "text": "先坐缆车上山看湖和火山，再顺着7条滑索滑下来，最长一条750多米，全程约2小时。1/6以后USD94＋13%税/人，La Fortuna接送另加USD25/人，两人约CA$374。公司写明近一年做过手术、骨骼或肌肉有问题的人不建议参加；她的跟腱还在复健，先问康复师再订。你看到的100% Aventura在Monteverde，离这里单程约3小时，这几天排不下。",
-              "links": [
-                {
-                  "label": "Sky Adventures 滑索（含接送选项）",
-                  "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/"
-                },
-                {
-                  "label": "Sky Adventures 官网",
-                  "url": "https://skyadventures.travel/skytrek/"
-                }
-              ],
-              "option": "zipline"
-            },
-            {
               "title": "Rainforest 巧克力工坊（13:00场）",
-              "text": "1/8下午没去的话放在这里，约2小时，USD34/人；之后回酒店休息，晚上去镇上吃饭。",
+              "text": "约2小时，USD34/人：看可可树，自己磨可可豆，尝热巧克力；之后回酒店休息。",
               "links": [
                 {
                   "label": "Rainforest Chocolate Tour 订票",
@@ -1444,10 +1391,13 @@
                 }
               ],
               "option": "chocolate"
+            },
+            {
+              "title": "回酒店泡温泉、休息",
+              "text": "不出门，下午就在酒店的温泉池泡着，晚上去镇上吃饭。",
+              "option": "rest"
             }
-          ],
-          "budget": "d5-pm",
-          "option": "tabacon"
+          ]
         },
         {
           "time": "晚上",
@@ -1506,8 +1456,8 @@
     },
     {
       "item": "Rincón de la Vieja 泥浴温泉",
-      "when": "备选",
-      "note": "离Coco约1小时，Guachipelín温泉＋火山泥USD45；想多泡一次可以放在1/7下午。 泥浴区要走一段土路，去之前问清楚路况。"
+      "when": "没排",
+      "note": "离Coco约1小时；这版1/7要去Monteverde，排不下。"
     },
     {
       "item": "Palo Verde 坐船看鳄鱼",
@@ -1517,7 +1467,7 @@
     {
       "item": "The Springs 温泉",
       "when": "没排",
-      "note": "圣诞季日票停售到1/5，1/6之后可以买；酒店自带温泉加可选的Tabacón已够。"
+      "note": "圣诞季日票停售到1/5，1/6之后可以买；酒店自带温泉已够。"
     },
     {
       "item": "Tamarindo / 冲浪",
@@ -1535,24 +1485,39 @@
       "note": "酒店Termales del Arenal自带温泉池，就在Ecotermales隔壁；想换个地方泡可以白天去（10:00–16:00场）。"
     },
     {
-      "item": "Bogarín 白天树懒步道",
-      "when": "换成夜间徒步",
-      "note": "夜间徒步看到的动物更多；1/10上午改成骑马。"
+      "item": "Bogarín 夜间徒步 / 白天树懒步道",
+      "when": "换成Monteverde夜间徒步和树懒团",
+      "note": "夜间看动物放在Monteverde（云雾森林里的物种和火山这边不一样）；看树懒在1/10下午的树懒团。"
     },
     {
       "item": "小红书帖子里的其他地方",
       "when": "没排",
-      "note": "Poás火山、La Paz瀑布花园、星巴克咖啡庄园在圣何塞附近，离La Fortuna 2–3小时；Maquique溪降和Finca Modelo爬树不适合跟腱复健；Monteverde离得远，五晚排不下。"
+      "note": "Poás火山、La Paz瀑布花园、星巴克咖啡庄园在圣何塞附近，离La Fortuna 2–3小时；Maquique溪降和Finca Modelo爬树不适合跟腱复健；Monteverde这版排了一晚：100% Aventura滑索＋夜间徒步。"
     },
     {
       "item": "跟腱复健",
       "when": "已调整",
-      "note": "复健后期，已能慢跑和负重训练：正常的团都排进来了；乱石路、上下船、骑马在行程里标了「注意」。La Fortuna大瀑布约530级台阶、帖子评价一般，没排。"
+      "note": "复健后期，已能慢跑和负重训练：正常的团都排进来了；乱石路、骑马、滑索在行程里标了「注意」，滑索订之前先问康复师。La Fortuna大瀑布约530级台阶、帖子评价一般，没排。"
     },
     {
       "item": "夜间开车",
       "when": "只开短途",
-      "note": "机场到Coco、Coco到火山、火山回机场这几段长路都在白天；晚上只开镇上3–10分钟的短途（Coco、La Fortuna）。"
+      "note": "机场到Coco、Coco到Monteverde、Monteverde到火山、火山回机场这几段长路都在白天；晚上只开镇上几分钟的短途（Coco、Santa Elena、La Fortuna）。"
+    },
+    {
+      "item": "双体船浮潜",
+      "when": "取消",
+      "note": "为了去Monteverde玩100% Aventura，Coco只住一晚；1月Papagayo季风季下午风大，出海本来也要看天气。"
+    },
+    {
+      "item": "Tabacón 热河温泉",
+      "when": "取消",
+      "note": "酒店自带温泉池，三晚随时泡；1/10下午换成树懒团。"
+    },
+    {
+      "item": "Sky Adventures 滑索（Arenal）",
+      "when": "没排",
+      "note": "已经在Monteverde玩100% Aventura（有Superman线），不重复。"
     }
   ],
   "rental": {
@@ -1581,7 +1546,7 @@
       "其他公司：Vamos也不收青年费；Europcar每天USD6；Alamo、Enterprise、National对21–24岁收费但没公布金额。",
       "加拿大驾照可以直接开，带护照原件（复印件不行）。",
       "车里不留任何东西，停车后手动拉门确认锁好（有人用信号干扰遥控锁）。",
-      "长途在白天开：日落约17:30，湖边的Route 142又弯又黑；晚上只在镇上开短途。"
+      "长途在白天开：日落约17:30，湖边的Route 142又弯又黑，Monteverde的606号路坡陡弯急；晚上只在镇上开短途。"
     ],
     "links": [
       {
@@ -1607,9 +1572,9 @@
       "note": "Trip.com Porter往返含随身行李CA$2,076；Porter官网CA$2,302（Google显示不含随身行李）；ly.com CA$2,073、Kiwi CA$2,091（不含随身行李）；WestJet每人约CA$1,399起。"
     },
     {
-      "label": "11/15 Booking.com 酒店（Coco/Playa Hermosa 1/6–1/8、La Fortuna 1/8–1/11，含税）",
+      "label": "11/15–11/16 Booking.com 酒店（Coco 1/6–1/7、Monteverde 1/7–1/8、La Fortuna 1/8–1/11，含税）",
       "url": "https://www.booking.com/searchresults.en-gb.html?ss=La+Fortuna%2C+Alajuela%2C+Costa+Rica&checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-      "checkedOn": "2026-11-15",
+      "checkedOn": "2026-11-16",
       "note": "Villa del Sueño、Good Life这两晚没出现在列表里，可能已满；Expedia没比。"
     },
     {
@@ -1637,12 +1602,6 @@
       "note": "责任险USD15.95/天，基本CDW USD9/天，全额CDW USD18/天；用于估算。"
     },
     {
-      "label": "Marlin del Rey 双体船（Coco）",
-      "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
-      "checkedOn": "2026-11-15",
-      "note": "USD90起，8:00和13:30，4小时，含午餐、酒水、浮潜。"
-    },
-    {
       "label": "Ecotermales",
       "url": "https://ecotermalesfortuna.cr/en/reservation/",
       "checkedOn": "2026-11-15",
@@ -1665,22 +1624,32 @@
       "url": "https://www.timeanddate.com/sun/costa-rica/liberia?month=1&year=2027",
       "checkedOn": "2026-11-15",
       "note": "1月中旬日落约17:35–17:38。"
+    },
+    {
+      "label": "100% Aventura 滑索",
+      "url": "https://www.aventuracanopytour.com/",
+      "checkedOn": "2026-11-16",
+      "note": "官网USD72起/人（不含税、不含接送），10条滑索，最长1,590米，含Tarzan秋千。"
+    },
+    {
+      "label": "Bajo del Tigre 夜间徒步",
+      "url": "https://acmcr.org/en/rates-and-reservations/",
+      "checkedOn": "2026-11-16",
+      "note": "2026年国际游客USD30/人（不含税），酒店接送USD8/人，最少2人。"
+    },
+    {
+      "label": "开车去Monteverde的路况",
+      "url": "https://www.twoweeksincostarica.com/driving-monteverde/",
+      "checkedOn": "2026-11-16",
+      "note": "从Guanacaste走1号公路转606号路，大部分已铺装；Monteverde–Tilarán的土路不走。"
     }
   ],
   "events": [
     {
-      "title": "Papagayo 季风",
-      "status": "影响出海",
-      "priceLabel": "—",
-      "description": "12月到4月帕帕加约湾常刮大风，一般持续几天，下午更大。",
-      "conflict": "双体船选上午班；遇到大风取消，可以换成去Rincón de la Vieja泥浴温泉（白天往返，约1小时车程）。",
-      "url": "https://thedaily.lascatalinascr.com/the-papagayo-winds"
-    },
-    {
       "title": "1/7 新月 · 看星星",
-      "status": "已排入1/7晚上",
+      "status": "已排入1/6晚上",
       "priceLabel": "免费",
-      "description": "1/6–1/10晚上都几乎没有月光。Guanacaste旱季晴天多，1/7晚上在Coco酒店前的海滩北头看；1/8夜间徒步时也能抬头看；其余晚上在酒店泡温泉时看，Arenal云多看运气。",
+      "description": "1/6–1/10晚上都几乎没有月光。Guanacaste旱季晴天多，1/6晚上在Coco酒店前的海滩北头看；1/7在Monteverde夜间徒步时也能抬头看，山里云多看运气；在火山那几晚泡温泉时看。",
       "conflict": "不开车，走路到酒店前的沙滩；只带手机和毛巾。",
       "url": "https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027"
     },
@@ -1696,7 +1665,7 @@
   "share": {
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "哥斯达黎加 5晚6天 路线图",
-    "subtitle": "海边＋火山 · 自驾5天 · 不爬山也能看动物",
+    "subtitle": "海边＋云雾森林＋火山 · 自驾5天 · 不爬山也能看动物",
     "footer": "路线按 OpenStreetMap 道路数据绘制 · 全部未预订 · 查价 2026-11-15",
     "days": [
       {
@@ -1706,31 +1675,30 @@
         "items": [
           "✈️ Porter 10:40 → 15:24",
           "🚗 机场取车",
-          "🌅 Coco 海边日落"
+          "🌅 Coco 海边日落",
+          "🌌 沙滩看星星"
         ],
         "badgeAt": 0.5
       },
       {
         "day": 2,
-        "tag": "浮潜·看星星",
-        "short": "出海",
+        "tag": "瀑布·滑索",
+        "short": "上山",
         "items": [
-          "🚗 开车去上船",
-          "⛵ 双体船浮潜＋午餐",
-          "🦐 Coco 海鲜晚餐",
-          "🌌 新月夜沙滩看星星"
+          "💦 Llanos de Cortés 瀑布",
+          "🪂 100% Aventura 滑索",
+          "🔦 雨林夜间徒步"
         ],
         "badgeAt": 0.5
       },
       {
         "day": 3,
-        "tag": "瀑布·湖·温泉",
+        "tag": "湖边·温泉",
         "short": "转场",
         "items": [
-          "💦 Llanos de Cortés 瀑布",
           "🏞️ Arenal湖北岸",
           "♨️ 下午泡酒店温泉",
-          "🔦 夜间徒步找动物"
+          "🐟 镇上海鲜"
         ],
         "badgeAt": 0.45
       },
@@ -1747,12 +1715,12 @@
       },
       {
         "day": 5,
-        "tag": "骑马·温泉",
-        "short": "温泉",
+        "tag": "骑马·树懒",
+        "short": "动物",
         "items": [
           "🐴 骑马看火山",
-          "♨️ Tabacón 热河温泉",
-          "🍽️ 晚上在酒店"
+          "🦥 树懒团",
+          "🍽️ 镇上晚餐"
         ],
         "badgeAt": 0.5
       },
@@ -1775,15 +1743,27 @@
         "side": "above"
       },
       {
-        "placeId": "coco",
-        "icon": "⛵",
-        "label": "双体船浮潜",
-        "side": "below"
+        "placeId": "hotel-beach",
+        "icon": "🏖️",
+        "label": "住Coco",
+        "side": "above"
       },
       {
         "placeId": "llanos",
         "icon": "💦",
         "label": "Llanos de Cortés",
+        "side": "left"
+      },
+      {
+        "placeId": "aventura",
+        "icon": "🪂",
+        "label": "100% Aventura 滑索",
+        "side": "above"
+      },
+      {
+        "placeId": "hotel-monteverde",
+        "icon": "🌲",
+        "label": "住Monteverde",
         "side": "below"
       },
       {
@@ -1803,36 +1783,18 @@
         "icon": "🌉",
         "label": "吊桥",
         "side": "below"
-      },
-      {
-        "placeId": "tabacon",
-        "icon": "♨️",
-        "label": "Tabacón（可选）",
-        "side": "above"
-      },
-      {
-        "placeId": "hotel-beach",
-        "icon": "🏖️",
-        "label": "住Coco",
-        "side": "above"
-      },
-      {
-        "placeId": "bogarin",
-        "icon": "🔦",
-        "label": "夜间徒步",
-        "side": "below"
       }
     ],
     "bbox": [
       -85.78,
-      10.33,
+      10.2,
       -84.52,
       10.7
     ],
     "mapTitle": {
       "text": "Costa Rica",
-      "lng": -85.05,
-      "lat": 10.36
+      "lng": -85.5,
+      "lat": 10.29
     }
   },
   "checklist": {
@@ -1921,8 +1883,18 @@
         "due": "2026-11-30",
         "lead": "一月是当地学校假期，尽早",
         "id": "book-hotel-beach",
-        "title": "订海边酒店：{option}（1/6–1/8 两晚）",
+        "title": "订海边酒店：{option}（1/6–1/7 一晚）",
         "budget": "hotel-beach",
+        "urlLabel": "Booking.com"
+      },
+      {
+        "group": "bookings",
+        "who": "我",
+        "due": "2026-11-30",
+        "lead": "一月是当地学校假期，尽早",
+        "id": "book-hotel-monteverde",
+        "title": "订Monteverde酒店：{option}（1/7–1/8 一晚）",
+        "budget": "hotel-monteverde",
         "urlLabel": "Booking.com"
       },
       {
@@ -1946,34 +1918,6 @@
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
         "urlLabel": "Adobe",
         "budget": "car"
-      },
-      {
-        "id": "book-shuttle-out",
-        "group": "bookings",
-        "who": "我",
-        "title": "订1/11 La Fortuna→利比里亚机场 8:00拼车",
-        "due": "2026-12-10",
-        "lead": "提前4周",
-        "note": "约11:45到机场，赶14:40的航班。下单后商家确认有没有位子。",
-        "url": "https://buscostarica.rezdy.com/81989/la-fortuna-arenal-volcano-to-liberia-airport-morning-shared-shuttles-transportation",
-        "urlLabel": "Bus Costa Rica",
-        "budget": "car",
-        "budgetOptions": [
-          "shuttle",
-          "private"
-        ]
-      },
-      {
-        "id": "book-cat",
-        "group": "bookings",
-        "who": "我",
-        "title": "订1/7上午8:00双体船",
-        "due": "2026-12-20",
-        "lead": "提前2–3周",
-        "note": "最少15人成团，24小时前免费取消。",
-        "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/",
-        "urlLabel": "Marlin del Rey",
-        "budget": "activities"
       },
       {
         "id": "book-float",
@@ -2012,25 +1956,13 @@
         "title": "订1/8 15:00 Rainforest巧克力工坊",
         "due": "2026-12-27",
         "lead": "提前一周",
-        "note": "选英文场；结束后离Bogarín夜间徒步很近。",
+        "note": "选英文场；结束后在镇上吃晚饭。",
         "url": "https://rainforestchocolatetour.com/book-tour/",
         "urlLabel": "Rainforest Chocolate Tour",
         "budget": "d3-pm",
         "budgetOptions": [
           "chocolate"
         ]
-      },
-      {
-        "id": "book-tabacon",
-        "group": "bookings",
-        "who": "我",
-        "title": "订1/10 Tabacón日票（含午餐，12:00入园）",
-        "due": "2026-12-27",
-        "lead": "提前2–3周",
-        "note": "1/10不在节日限制期（12/18–1/8），订之前看清取消规则。",
-        "url": "https://www.tabacon.com/day-pass/",
-        "urlLabel": "Tabacón",
-        "budget": "d5-pm"
       },
       {
         "id": "cash",
@@ -2058,22 +1990,13 @@
         "lead": "起飞前3小时"
       },
       {
-        "id": "wind",
-        "group": "before",
-        "who": "我",
-        "title": "1/6看风力，确认1/7双体船照常",
-        "due": "2027-01-06",
-        "lead": "前一天",
-        "note": "大风取消就改去Rincón de la Vieja泥浴温泉。"
-      },
-      {
         "id": "shoes",
         "group": "before",
         "who": "女朋友",
         "title": "带一双防滑、包脚的水鞋或运动凉鞋",
         "due": "2027-01-01",
         "lead": "出发前",
-        "note": "上下船、漂流上岸、温泉池边都用得上，比人字拖稳。"
+        "note": "漂流上岸、雨林土路、温泉池边都用得上，比人字拖稳。"
       },
       {
         "id": "stars",
@@ -2082,18 +2005,30 @@
         "title": "手机装一个认星App（Stellarium或SkyView），带条大毛巾",
         "due": "2027-01-05",
         "lead": "出发前",
-        "note": "1/7新月晚上在沙滩上用；App能离线用最好。"
+        "note": "1/6晚上在Coco沙滩上用；App能离线用最好。"
+      },
+      {
+        "id": "book-aventura",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/7 13:00 100% Aventura滑索",
+        "due": "2026-12-20",
+        "lead": "提前2–3周",
+        "note": "官网FareHarbor订；不含接送，自己开车去。订之前问康复师她的跟腱能不能玩Superman线和Tarzan秋千。",
+        "url": "https://fareharbor.com/embeds/book/aventuracanopytour/items/39178/calendar/?ref=https%3A%2F%2Fwww.aventuracanopytour.com&language=en-us",
+        "urlLabel": "100% Aventura",
+        "budget": "activities"
       },
       {
         "id": "book-night",
         "group": "bookings",
         "who": "我",
-        "title": "订1/8晚上Bogarín夜间徒步",
+        "title": "订1/7 17:30 Bajo del Tigre夜间徒步",
         "due": "2026-12-27",
         "lead": "提前1–2周",
-        "note": "USD60/人，约2小时；确认开始时间，开车约10分钟。",
-        "url": "https://bogarintrail.com/",
-        "urlLabel": "Bogarín Trail",
+        "note": "官网预订，或发邮件reservationbt@acmcr.org、WhatsApp +506 8895-2529；USD30＋税/人，最少2人，开始时间以确认为准。",
+        "url": "https://acmcr.org/en/rates-and-reservations/",
+        "urlLabel": "Bajo del Tigre",
         "budget": "activities"
       },
       {
@@ -2109,6 +2044,22 @@
         "budget": "activities",
         "budgetOptions": [
           "full"
+        ]
+      },
+      {
+        "id": "book-d5-pm",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/10 13:00 Fortuna Welcome 树懒团（含接送）",
+        "due": "2026-12-27",
+        "lead": "提前1–2周",
+        "note": "最少2人成团；订的时候写上住哪家酒店，确认在免费接送范围内。",
+        "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
+        "urlLabel": "Fortuna Welcome",
+        "budget": "d5-pm",
+        "budgetOptions": [
+          "sloth",
+          "chocolate"
         ]
       }
     ]
@@ -2148,7 +2099,7 @@
         "label": "Llanos de Cortés 瀑布门票",
         "currency": "CRC",
         "amount": 8000,
-        "note": "₡4,000/人，只收现金（1/8）"
+        "note": "₡4,000/人，只收现金（1/7）"
       },
       {
         "label": "停车看车费（cuidacarros）",
@@ -2172,7 +2123,7 @@
         "label": "导游、船员小费",
         "currency": "USD",
         "amount": 35,
-        "note": "双体船、漂流、树懒导游各约US$10，接驳车司机几块"
+        "note": "滑索、漂流、树懒导游各约US$10"
       },
       {
         "label": "酒店打扫小费",
