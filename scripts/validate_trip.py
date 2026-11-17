@@ -47,6 +47,12 @@ def validate(folder):
             check(not item.get('placeId') or item['placeId'] in place_ids,'Schedule references missing place')
             check(item.get('rate') in (None,True,False,'hot','maybe','meh'),f'Day {day.get("day")}: rate must be true or hot/maybe/meh')
             alts=item.get('alternatives')
+            if item.get('budget'):
+                cat=next((c for c in budget.get('categories',[]) if c.get('id')==item['budget']),None) if isinstance(data.get('budget'),dict) else None
+                check(cat is not None,f'Day {day.get("day")}: schedule budget {item["budget"]} is an unknown budget category')
+                ids={o.get('id') for o in (cat or {}).get('options',[])}
+                for o in [item.get('option')]+[x.get('option') for x in (alts or []) if isinstance(x,dict)]:
+                    check(o is None or o in ids,f'Day {day.get("day")}: schedule option {o} is not in budget category {item["budget"]}')
             check(alts is None or (isinstance(alts,list) and all(isinstance(a,dict) and isinstance(a.get('title'),str) and a['title'].strip() and all(isinstance(l,dict) and l.get('url','').startswith('http') for l in a.get('links',[])) for a in alts)),f'Day {day.get("day")}: alternatives need a title and http links')
     categories=budget.get('categories',[]);category_ids=unique(categories,'id','categories')
     check(not categories or (money(budget.get('target')) and budget['target']>0),'Invalid budget target')

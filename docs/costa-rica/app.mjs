@@ -53,7 +53,7 @@ const checkState=()=>checks??=(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{}
 // 2) 同步码：把整份状态编码成一段文字，复制到另一台设备粘贴导入（哪里都能用）。
 // 3) 同步链接：独立网页（GitHub Pages 等）上再给一条带 #sync= 的链接，打开就导入。
 // 同一份数据以最后保存的为准（savedAt）。
-const KINDS=['budget','checklist','todo','votes'];
+const KINDS=['budget','checklist','todo','votes','swaps'];
 const stateKey=kind=>`travel-plan:${kind}:v1:${data.trip.id}`;
 const savedAt=()=>Number(read(stateKey('saved'),0))||0;
 let applying=false,cloud=null;
@@ -78,7 +78,7 @@ function applyState(body,stamp){
 // 别处的数据写进来以后，只重画受影响的部分，不重复绑定事件
 function refreshSaved(){
   if(data.budget?.categories?.length){selection=normalize(data.budget,read(key,{}));updateBudget(false,false);$('#budget-target').value=selection.target;syncFlights();}
-  checks=null;redrawChecklist();renderTodo();drawVotes();
+  checks=null;redrawChecklist();renderTodo();drawVotes();drawSwaps();
 }
 const encodeState=s=>{const bytes=new TextEncoder().encode(JSON.stringify(s));let bin='';for(const b of bytes)bin+=String.fromCharCode(b);return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');};
 const decodeState=code=>{const b=atob(code.trim().replace(/^.*#sync=/,'').replace(/-/g,'+').replace(/_/g,'/'));return JSON.parse(new TextDecoder().decode(Uint8Array.from(b,c=>c.charCodeAt(0))));};
@@ -143,6 +143,36 @@ function cloudPush(){
   },800);
 }
 
+// ---------- 打勾「改为去这儿」 ----------
+// 行程项的 alternatives 每一项前面有个勾；勾上就改为去那儿，再勾掉回到原安排。
+// 行程项写 budget（预算分类 id）和 option（原安排对应的方案），替代项写 option 时，勾选直接切换那个预算分类，
+// 预算和底下的出发前清单（清单项写同一个 budget）跟着换；没接预算的替代项只记在 swaps 里，一起同步。
+const swapItems={};
+const swaps=()=>(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{})(read(stateKey('swaps'),{}));
+const linked=it=>it.budget&&data.budget?.categories?.some(c=>c.id===it.budget)&&it.alts.some(a=>a.option);
+function chosenAlt(key){
+  const it=swapItems[key];if(!it)return -1;
+  if(linked(it)){const cur=selection?.selections?.[it.budget]?.optionId;return it.alts.findIndex(a=>a.option&&a.option===cur);}
+  const v=swaps()[key];return Number.isInteger(v)&&v>=0&&v<it.alts.length?v:-1;
+}
+function drawSwaps(){
+  for(const key of Object.keys(swapItems)){
+    const i=chosenAlt(key),row=document.querySelector(`[data-swap-row="${CSS.escape(key)}"]`);if(!row)continue;
+    row.classList.toggle('swapped',i>=0);
+    const note=row.querySelector('.swap-note');if(note){note.hidden=i<0;note.textContent=i>=0?`已换成：${swapItems[key].alts[i].title}`:'';}
+    for(const box of row.querySelectorAll('[data-swap]')){const on=Number(box.dataset.alt)===i;box.checked=on;box.closest('li')?.classList.toggle('chosen',on);}
+  }
+}
+function pickSwap(key,index,on){
+  const it=swapItems[key];if(!it)return;
+  if(linked(it)){
+    const alt=it.alts[index];if(on&&!alt?.option)return drawSwaps();
+    selection.selections[it.budget].optionId=on?alt.option:(it.option||data.budget.categories.find(c=>c.id===it.budget).defaultOption);
+    updateBudget(false);syncFlights();
+  }else{const all=swaps();if(on)all[key]=index;else delete all[key];persist('swaps',all);}
+  drawSwaps();
+}
+
 // ---------- 行程里的「夯 / 待定 / 额」 ----------
 // 行程项写 rate:true 就在右边出现三个按钮；记在 votes 里（键是行程项的 id，没写 id 用「第几天-第几项」），和其他选择一起同步。
 const VOTES=[['hot','夯'],['maybe','待定'],['meh','额']];
@@ -151,7 +181,7 @@ const voteKey=(day,item,index)=>String(item.id||`${day.day}-${index}`);
 const voteDefaults={};
 const voteOf=(all,key)=>Object.prototype.hasOwnProperty.call(all,key)?all[key]:voteDefaults[key];
 // 行程项写 alternatives:[{title,text,links}]，下面折叠显示「不想去的话可以换成」
-const alternatives=item=>Array.isArray(item.alternatives)&&item.alternatives.length?`<details class="alts"><summary>不想去的话，可以换成 ${item.alternatives.length} 个项目</summary><ul>${item.alternatives.map(a=>`<li><strong>${escape(a.title)}</strong>${a.text?`<p>${escape(a.text)}</p>`:''}${(a.links||[]).map(l=>link(l.label,l.url)).join('')}</li>`).join('')}</ul></details>`:'';
+const alternatives=(item,key)=>Array.isArray(item.alternatives)&&item.alternatives.length?`<p class="swap-note" hidden></p><details class="alts"><summary>不想去的话，可以换成 ${item.alternatives.length} 个项目</summary><ul>${item.alternatives.map((a,i)=>`<li><label class="alt-pick"><input type="checkbox" data-swap="${escape(key)}" data-alt="${i}">改为去这儿</label><strong>${escape(a.title)}</strong>${a.text?`<p>${escape(a.text)}</p>`:''}${(a.links||[]).map(l=>link(l.label,l.url)).join('')}</li>`).join('')}</ul></details>`:'';
 const votes=()=>(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{})(read(stateKey('votes'),{}));
 const voteButtons=key=>`<div class="rate" role="group" aria-label="想不想去">${VOTES.map(([v,label])=>`<button type="button" data-vote="${escape(key)}" data-val="${v}" aria-pressed="false">${label}</button>`).join('')}</div>`;
 function drawVotes(){
@@ -239,7 +269,7 @@ function updateBudget(sync=false,persist=true){
   }).join('');
   const pending=result.rows.filter(row=>/尚无|未取得|no (actual )?quote|not (yet )?quoted/i.test(row.option.status||''));
   $('#budget-warning').textContent=result.total===0?'所有支出为0，填写金额后显示占比。':pending.length?`${pending.map(r=>r.option.label).join('、')}尚无实际报价；试算低于上限不等于能按此价格预订。`:'机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。';
-  redrawChecklist();
+  redrawChecklist();drawSwaps();
   if(persist)save();
 }
 
@@ -396,9 +426,10 @@ async function renderMap(){
 function renderDays(){
   if(!data.days?.length){$('#itinerary').hidden=true;return;}
   $('#coverage').innerHTML=data.coverage?.length?`<details class="coverage"><summary>原攻略项目核对 · 安排与取舍</summary><div class="table-scroll"><table><thead><tr><th>原项目</th><th>安排</th><th>说明</th></tr></thead><tbody>${data.coverage.map(r=>`<tr><td>${escape(r.item)}</td><td>${escape(r.when)}</td><td>${escape(r.note)}</td></tr>`).join('')}</tbody></table></div></details>`:'';
-  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small>${(day.schedule||[]).some(i=>i.rate)?'<small class="vote-tally"></small>':''}</div></summary><ol class="schedule">${(day.schedule||[]).map((item,index)=>{if(typeof item.rate==='string')voteDefaults[voteKey(day,item,index)]=item.rate;const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li${item.rate?' class="has-rate"':''}><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',mapsLink(place))+photosLink(place):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}${alternatives(item)}</div>${item.rate?voteButtons(voteKey(day,item,index)):''}</li>`;}).join('')}</ol></details>`).join('');
+  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small>${(day.schedule||[]).some(i=>i.rate)?'<small class="vote-tally"></small>':''}</div></summary><ol class="schedule">${(day.schedule||[]).map((item,index)=>{const key=voteKey(day,item,index);if(typeof item.rate==='string')voteDefaults[key]=item.rate;if(item.alternatives?.length)swapItems[key]={budget:item.budget,option:item.option,alts:item.alternatives};const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li${item.rate?' class="has-rate"':''}${item.alternatives?.length?` data-swap-row="${escape(key)}"`:''}><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',mapsLink(place))+photosLink(place):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}${alternatives(item,key)}</div>${item.rate?voteButtons(key):''}</li>`;}).join('')}</ol></details>`).join('');
   $('#days').onclick=e=>{const b=e.target.closest('[data-vote]');if(!b)return;const all=votes();all[b.dataset.vote]=voteOf(all,b.dataset.vote)===b.dataset.val?'':b.dataset.val;persist('votes',all);drawVotes();};
-  drawVotes();
+  $('#days').onchange=e=>{const box=e.target.closest('[data-swap]');if(box)pickSwap(box.dataset.swap,Number(box.dataset.alt),box.checked);};
+  drawVotes();drawSwaps();
 }
 function renderRental(){
   const r=data.rental;if(!r?.title){$('#drive').hidden=true;return;}

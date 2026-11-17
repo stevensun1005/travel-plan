@@ -451,10 +451,10 @@
         "options": [
           {
             "id": "full",
-            "label": "全部7项 · 含夜间徒步、骑马、Tabacón",
-            "amount": 1508.28,
+            "label": "6项 · 含夜间徒步、骑马",
+            "amount": 1029.24,
             "status": "官方/公开常规价折算",
-            "note": "包含：双体船浮潜、Llanos de Cortés瀑布、Bogarín夜间徒步、河上漂流、吊桥公园、骑马看火山、Tabacón温泉（含午餐）。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD）。",
+            "note": "包含：双体船浮潜、Llanos de Cortés瀑布、Bogarín夜间徒步、河上漂流、吊桥公园、骑马看火山。1/10下午泡Tabacón还是换别的，在下面「1/10下午」里选。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD）。",
             "items": [
               {
                 "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
@@ -485,20 +485,15 @@
                 "label": "骑马看Arenal火山（约3小时，含接送）",
                 "amount": 213.85,
                 "note": "Fortuna Welcome USD75/人含税"
-              },
-              {
-                "label": "Tabacón 温泉日票（含午餐）",
-                "amount": 479.04,
-                "note": "USD168/人起，含税（官网动态价，未核实）"
               }
             ]
           },
           {
             "id": "no-horse",
-            "label": "6项 · 不骑马",
-            "amount": 1294.43,
+            "label": "5项 · 不骑马",
+            "amount": 815.39,
             "status": "官方/公开常规价折算",
-            "note": "不骑马的话，1/10上午在酒店泡温泉、休息，中午照常去Tabacón。",
+            "note": "不骑马的话，1/10上午在酒店休息，下午照下面「1/10下午」选的安排。",
             "items": [
               {
                 "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
@@ -524,20 +519,15 @@
                 "label": "Mistico 吊桥公园（自助）",
                 "amount": 103.11,
                 "note": "USD32＋13%税"
-              },
-              {
-                "label": "Tabacón 温泉日票（含午餐）",
-                "amount": 479.04,
-                "note": "USD168/人起，含税（官网动态价，未核实）"
               }
             ]
           },
           {
             "id": "lite",
-            "label": "4项 · 不漂流、不吊桥、不骑马",
-            "amount": 965.77,
+            "label": "3项 · 不漂流、不吊桥、不骑马",
+            "amount": 486.73,
             "status": "官方/公开常规价折算",
-            "note": "最省力的一档：看动物靠夜间徒步，温泉去Tabacón。",
+            "note": "最省力的一档：看动物靠夜间徒步；1/10下午照下面「1/10下午」选的安排。",
             "items": [
               {
                 "label": "Coco 双体船半日游（浮潜＋午餐＋酒水）",
@@ -553,13 +543,134 @@
                 "label": "Bogarín 夜间徒步（向导带，2小时）",
                 "amount": 171.08,
                 "note": "USD60/人（官网价，税未写明）"
-              },
-              {
-                "label": "Tabacón 温泉日票（含午餐）",
-                "amount": 479.04,
-                "note": "USD168/人起，含税（官网动态价，未核实）"
               }
             ]
+          }
+        ],
+        "chartGroup": "fun"
+      },
+      {
+        "id": "d3-pm",
+        "label": "1/8下午｜两人",
+        "icon": "🍫",
+        "color": "#c99a1c",
+        "defaultOption": "hotel",
+        "chartGroup": "fun",
+        "options": [
+          {
+            "id": "hotel",
+            "label": "泡酒店温泉 · 含在房费里",
+            "amount": 0,
+            "status": "已含在总额",
+            "note": "Termales del Arenal（或Loma Real）自带温泉池，住客免费；住别家就改成去镇上走走。"
+          },
+          {
+            "id": "chocolate",
+            "label": "Rainforest巧克力工坊 · 15:00场",
+            "amount": 96.95,
+            "status": "官方/公开常规价折算",
+            "note": "在La Fortuna镇上，约2小时：看可可树、自己磨可可豆、尝热巧克力。约USD34/人。",
+            "items": [
+              {
+                "label": "巧克力工坊 USD34×2",
+                "amount": 96.95
+              }
+            ],
+            "url": "https://rainforestchocolatetour.com/book-tour/"
+          }
+        ]
+      },
+      {
+        "id": "d5-pm",
+        "label": "1/10下午｜两人",
+        "icon": "♨️",
+        "color": "#2b9c9a",
+        "defaultOption": "tabacon",
+        "chartGroup": "fun",
+        "options": [
+          {
+            "id": "tabacon",
+            "label": "Tabacón 热河温泉日票 · 含午餐",
+            "amount": 479.04,
+            "status": "官方/公开常规价折算",
+            "note": "火山脚下的热河、瀑布和园林，12:00入园，含午餐。",
+            "items": [
+              {
+                "label": "Tabacón 温泉日票（含午餐）",
+                "amount": 479.04
+              }
+            ],
+            "url": "https://www.tabacon.com/day-pass/"
+          },
+          {
+            "id": "sloth",
+            "label": "Fortuna Welcome 树懒团 · 13:00场 · 含接送",
+            "amount": 256.63,
+            "status": "官方/公开常规价折算",
+            "note": "约2.5–3小时，向导带着在农场林间平缓小路上找树懒、鸟和蛙，难度「容易」。USD90/人含税。最少2人成团。",
+            "items": [
+              {
+                "label": "树懒团 USD90×2（含税、接送）",
+                "amount": 256.63
+              }
+            ],
+            "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
+            "booking": {
+              "title": "订1/10 13:00 Fortuna Welcome 树懒团（含接送）",
+              "note": "最少2人成团；订的时候写上住哪家酒店，确认在免费接送范围内。",
+              "urlLabel": "Fortuna Welcome",
+              "lead": "提前1–2周",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
+              "due": "2026-12-27"
+            }
+          },
+          {
+            "id": "zipline",
+            "label": "Sky Adventures 滑索 · 13:30场 · 含接送",
+            "amount": 374.16,
+            "status": "官方/公开常规价折算",
+            "note": "先坐缆车上山，再滑7条线下来，最长750多米，约2小时。1/6以后USD94＋13%税/人，La Fortuna接送USD25/人。公司写明近一年做过手术、骨骼或肌肉有问题的人不建议参加，她的跟腱先问康复师。",
+            "items": [
+              {
+                "label": "滑索 USD94＋13%税 ×2",
+                "amount": 302.88
+              },
+              {
+                "label": "La Fortuna往返接送 USD25×2",
+                "amount": 71.28
+              }
+            ],
+            "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
+            "booking": {
+              "title": "订1/10 13:30 Sky Adventures 滑索，加选La Fortuna接送",
+              "note": "先问康复师她的跟腱能不能玩；48小时前取消扣USD25，之后不退。",
+              "urlLabel": "Two Weeks in Costa Rica",
+              "lead": "提前1–2周",
+              "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
+              "due": "2026-12-27"
+            }
+          },
+          {
+            "id": "chocolate",
+            "label": "Rainforest巧克力工坊 · 13:00场",
+            "amount": 96.95,
+            "status": "官方/公开常规价折算",
+            "note": "约2小时，USD34/人；之后回酒店休息，晚上去镇上吃饭。",
+            "items": [
+              {
+                "label": "巧克力工坊 USD34×2",
+                "amount": 96.95
+              }
+            ],
+            "url": "https://rainforestchocolatetour.com/book-tour/",
+            "booking": {
+              "title": "订1/10 13:00 Rainforest巧克力工坊",
+              "note": "选英文场；在镇上，从酒店打车约10分钟。",
+              "urlLabel": "Rainforest Chocolate Tour",
+              "lead": "提前一周",
+              "url": "https://rainforestchocolatetour.com/book-tour/",
+              "due": "2026-12-27"
+            }
           }
         ]
       },
@@ -594,9 +705,11 @@
           "hotel-beach": "villa-sol",
           "hotel-arenal": "termales",
           "food": "seafood",
-          "activities": "full"
+          "activities": "full",
+          "d3-pm": "hotel",
+          "d5-pm": "tabacon"
         },
-        "note": "Coco的Villa Del Sol＋自带温泉的Termales del Arenal，7项活动（含夜间徒步、骑马、Tabacón）。"
+        "note": "Coco的Villa Del Sol＋自带温泉的Termales del Arenal，6项活动（含夜间徒步、骑马），1/10下午泡Tabacón。"
       },
       {
         "id": "no-horse",
@@ -645,6 +758,11 @@
         "label": "交通（租车/接驳）",
         "icon": "🚗",
         "color": "#1f9652"
+      },
+      "fun": {
+        "label": "门票与体验",
+        "icon": "🎟️",
+        "color": "#9b6dd0"
       }
     }
   },
@@ -1096,9 +1214,12 @@
                   "label": "Rainforest Chocolate Tour 订票",
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
-              ]
+              ],
+              "option": "chocolate"
             }
-          ]
+          ],
+          "budget": "d3-pm",
+          "option": "hotel"
         },
         {
           "time": "17:30",
@@ -1295,7 +1416,8 @@
                   "label": "Fortuna Welcome 树懒团",
                   "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
                 }
-              ]
+              ],
+              "option": "sloth"
             },
             {
               "title": "Sky Adventures 滑索（13:30场）",
@@ -1309,7 +1431,8 @@
                   "label": "Sky Adventures 官网",
                   "url": "https://skyadventures.travel/skytrek/"
                 }
-              ]
+              ],
+              "option": "zipline"
             },
             {
               "title": "Rainforest 巧克力工坊（13:00场）",
@@ -1319,9 +1442,12 @@
                   "label": "Rainforest Chocolate Tour 订票",
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
-              ]
+              ],
+              "option": "chocolate"
             }
-          ]
+          ],
+          "budget": "d5-pm",
+          "option": "tabacon"
         },
         {
           "time": "晚上",
@@ -1880,6 +2006,21 @@
         ]
       },
       {
+        "id": "book-d3-pm",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/8 15:00 Rainforest巧克力工坊",
+        "due": "2026-12-27",
+        "lead": "提前一周",
+        "note": "选英文场；结束后离Bogarín夜间徒步很近。",
+        "url": "https://rainforestchocolatetour.com/book-tour/",
+        "urlLabel": "Rainforest Chocolate Tour",
+        "budget": "d3-pm",
+        "budgetOptions": [
+          "chocolate"
+        ]
+      },
+      {
         "id": "book-tabacon",
         "group": "bookings",
         "who": "我",
@@ -1889,7 +2030,7 @@
         "note": "1/10不在节日限制期（12/18–1/8），订之前看清取消规则。",
         "url": "https://www.tabacon.com/day-pass/",
         "urlLabel": "Tabacón",
-        "budget": "activities"
+        "budget": "d5-pm"
       },
       {
         "id": "cash",

@@ -33,11 +33,11 @@ class ToolsTest(unittest.TestCase):
             data['budget']['categories'][0]['options'][0]['amount']=-20
             data['map']['dailyRoutes'][0]['placeIds'].append('missing-place')
             data['map']['routesFile']='../secret.json'
-            data['days'][0]['schedule'][0].update(rate='wow',alternatives=[{'title':''}])
+            data['days'][0]['schedule'][0].update(rate='wow',alternatives=[{'title':''}],budget='nowhere')
             path.write_text(json.dumps(data),encoding='utf-8')
             errors,_=validate(project)
             self.assertGreaterEqual(len(errors),3)
-            self.assertTrue(any('rate must be' in e for e in errors));self.assertTrue(any('alternatives need' in e for e in errors))
+            self.assertTrue(any('rate must be' in e for e in errors));self.assertTrue(any('alternatives need' in e for e in errors));self.assertTrue(any('unknown budget category' in e for e in errors))
     def test_bundles_share_and_basemap_references_are_checked(self):
         with tempfile.TemporaryDirectory() as folder:
             project=create(Path(folder)/'trip',True);path=project/'trip-data.json';data=json.loads(path.read_text(encoding='utf-8'))

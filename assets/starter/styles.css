@@ -517,3 +517,9 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 .schedule .alts li:last-child{border-bottom:0}
 .schedule .alts p{margin:2px 0 4px}
 .alts strong{font-size:15px}
+/* ---------- 打勾「改为去这儿」 ---------- */
+.alt-pick{display:inline-flex;align-items:center;gap:5px;margin-right:10px;padding:0 8px;border:1.5px solid var(--green);border-radius:var(--r3);font:600 13px/1.8 var(--sans);color:var(--green);cursor:pointer;white-space:nowrap}
+.alt-pick input{accent-color:var(--green);margin:0}
+.schedule .alts li.chosen{background:var(--green-f);border-radius:8px;padding-inline:8px;border-bottom-color:transparent}
+.schedule li.swapped>div>strong,.schedule li.swapped>div>p:not(.swap-note){text-decoration:line-through;opacity:.55}
+.swap-note{display:inline-block;margin:6px 0 0!important;padding:0 10px;border:2px solid var(--green);border-radius:var(--r3);background:var(--green-f);color:var(--ink)!important;font:600 14px/1.8 var(--sans)}

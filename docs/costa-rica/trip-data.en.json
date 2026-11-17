@@ -451,10 +451,10 @@
         "options": [
           {
             "id": "full",
-            "label": "All 7 · incl. night walk, horseback riding, Tabacón",
-            "amount": 1508.28,
+            "label": "6 activities · incl. night walk, horseback riding",
+            "amount": 1029.24,
             "status": "Converted from official/public standard prices",
-            "note": "Includes: catamaran snorkel, Llanos de Cortés waterfall, Bogarín night walk, river float, hanging bridges park, horseback ride with volcano views, Tabacón hot springs (with lunch). USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD).",
+            "note": "Includes: catamaran snorkel, Llanos de Cortés waterfall, Bogarín night walk, river float, hanging bridges park, horseback ride with volcano views. Choose Tabacón or something else for the afternoon of 1/10 under \"1/10 afternoon\" below. USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD).",
             "items": [
               {
                 "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
@@ -485,20 +485,15 @@
                 "label": "Horseback ride with Arenal Volcano views (~3 hours, incl. transfers)",
                 "amount": 213.85,
                 "note": "Fortuna Welcome USD75/person incl. tax"
-              },
-              {
-                "label": "Tabacón hot springs day pass (with lunch)",
-                "amount": 479.04,
-                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
               }
             ]
           },
           {
             "id": "no-horse",
-            "label": "6 activities · no horseback riding",
-            "amount": 1294.43,
+            "label": "5 activities · no horseback riding",
+            "amount": 815.39,
             "status": "Converted from official/public standard prices",
-            "note": "Without the horseback ride, spend the morning of 1/10 soaking and resting at the hotel, then go to Tabacón at noon as planned.",
+            "note": "Without the horseback ride, rest at the hotel on the morning of 1/10; the afternoon follows your pick under \"1/10 afternoon\" below.",
             "items": [
               {
                 "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
@@ -524,20 +519,15 @@
                 "label": "Mistico Hanging Bridges Park (self-guided)",
                 "amount": 103.11,
                 "note": "USD32 + 13% tax"
-              },
-              {
-                "label": "Tabacón hot springs day pass (with lunch)",
-                "amount": 479.04,
-                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
               }
             ]
           },
           {
             "id": "lite",
-            "label": "4 activities · no float, bridges or horseback riding",
-            "amount": 965.77,
+            "label": "3 activities · no float, bridges or horseback riding",
+            "amount": 486.73,
             "status": "Converted from official/public standard prices",
-            "note": "The lowest-effort tier: wildlife from the night walk, hot springs at Tabacón.",
+            "note": "The lowest-effort tier: wildlife from the night walk; the afternoon of 1/10 follows your pick under \"1/10 afternoon\" below.",
             "items": [
               {
                 "label": "Coco half-day catamaran (snorkel + lunch + drinks)",
@@ -553,13 +543,134 @@
                 "label": "Bogarín night walk (guided, 2 hours)",
                 "amount": 171.08,
                 "note": "USD60/person (official price, tax not stated)"
-              },
-              {
-                "label": "Tabacón hot springs day pass (with lunch)",
-                "amount": 479.04,
-                "note": "From USD168/person incl. tax (dynamic pricing on the official site, not verified)"
               }
             ]
+          }
+        ],
+        "chartGroup": "fun"
+      },
+      {
+        "id": "d3-pm",
+        "label": "1/8 afternoon | both",
+        "icon": "🍫",
+        "color": "#c99a1c",
+        "defaultOption": "hotel",
+        "chartGroup": "fun",
+        "options": [
+          {
+            "id": "hotel",
+            "label": "Soak in the hotel hot springs · included in the room",
+            "amount": 0,
+            "status": "Included in total",
+            "note": "Termales del Arenal (or Loma Real) has its own hot spring pools, free for guests; at another hotel, take a walk in town instead."
+          },
+          {
+            "id": "chocolate",
+            "label": "Rainforest Chocolate Tour · 15:00",
+            "amount": 96.95,
+            "status": "Converted from official/public standard prices",
+            "note": "In La Fortuna town, about 2 hours: see cacao trees, grind the beans yourself and taste hot chocolate. About USD34 per person.",
+            "items": [
+              {
+                "label": "Chocolate tour USD34×2",
+                "amount": 96.95
+              }
+            ],
+            "url": "https://rainforestchocolatetour.com/book-tour/"
+          }
+        ]
+      },
+      {
+        "id": "d5-pm",
+        "label": "1/10 afternoon | both",
+        "icon": "♨️",
+        "color": "#2b9c9a",
+        "defaultOption": "tabacon",
+        "chartGroup": "fun",
+        "options": [
+          {
+            "id": "tabacon",
+            "label": "Tabacón hot river day pass · with lunch",
+            "amount": 479.04,
+            "status": "Converted from official/public standard prices",
+            "note": "Hot river, waterfalls and gardens at the foot of the volcano; 12:00 entry, lunch included.",
+            "items": [
+              {
+                "label": "Tabacón hot springs day pass (with lunch)",
+                "amount": 479.04
+              }
+            ],
+            "url": "https://www.tabacon.com/day-pass/"
+          },
+          {
+            "id": "sloth",
+            "label": "Fortuna Welcome sloth tour · 13:00 · with pickup",
+            "amount": 256.63,
+            "status": "Converted from official/public standard prices",
+            "note": "About 2.5–3 hours: a guide leads you along gentle trails through farm forest looking for sloths, birds and frogs, rated \"easy\". USD90 per person incl. tax. Runs with at least 2 people.",
+            "items": [
+              {
+                "label": "Sloth tour USD90×2 (incl. tax and pickup)",
+                "amount": 256.63
+              }
+            ],
+            "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
+            "booking": {
+              "title": "Book the 1/10 13:00 Fortuna Welcome sloth tour (with pickup)",
+              "note": "Runs with at least 2 people; give your hotel when booking and confirm it is inside the free pickup area.",
+              "urlLabel": "Fortuna Welcome",
+              "lead": "1–2 weeks ahead",
+              "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/",
+              "due": "2026-12-27"
+            }
+          },
+          {
+            "id": "zipline",
+            "label": "Sky Adventures ziplines · 13:30 · with transport",
+            "amount": 374.16,
+            "status": "Converted from official/public standard prices",
+            "note": "Ride a gondola up, then zip down 7 lines, the longest over 750 m; about 2 hours. After 1/6, USD94 + 13% tax per person, La Fortuna transport USD25 per person. The company advises against it for anyone with surgery in the past year or bone or muscle problems; ask her physio about the Achilles first.",
+            "items": [
+              {
+                "label": "Ziplines USD94 + 13% tax ×2",
+                "amount": 302.88
+              },
+              {
+                "label": "La Fortuna round-trip transport USD25×2",
+                "amount": 71.28
+              }
+            ],
+            "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
+            "booking": {
+              "title": "Book the 1/10 13:30 Sky Adventures ziplines, adding La Fortuna transport",
+              "note": "Ask her physio about the Achilles first; cancelling 48+ hours ahead costs USD25, later is non-refundable.",
+              "urlLabel": "Two Weeks in Costa Rica",
+              "lead": "1–2 weeks ahead",
+              "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/",
+              "due": "2026-12-27"
+            }
+          },
+          {
+            "id": "chocolate",
+            "label": "Rainforest Chocolate Tour · 13:00",
+            "amount": 96.95,
+            "status": "Converted from official/public standard prices",
+            "note": "About 2 hours, USD34 per person; then rest at the hotel and head into town for dinner.",
+            "items": [
+              {
+                "label": "Chocolate tour USD34×2",
+                "amount": 96.95
+              }
+            ],
+            "url": "https://rainforestchocolatetour.com/book-tour/",
+            "booking": {
+              "title": "Book the 1/10 13:00 Rainforest Chocolate Tour",
+              "note": "Pick the English tour; it is in town, about 10 minutes by taxi from the hotel.",
+              "urlLabel": "Rainforest Chocolate Tour",
+              "lead": "1 week ahead",
+              "url": "https://rainforestchocolatetour.com/book-tour/",
+              "due": "2026-12-27"
+            }
           }
         ]
       },
@@ -594,9 +705,11 @@
           "hotel-beach": "villa-sol",
           "hotel-arenal": "termales",
           "food": "seafood",
-          "activities": "full"
+          "activities": "full",
+          "d3-pm": "hotel",
+          "d5-pm": "tabacon"
         },
-        "note": "Villa Del Sol in Coco + Termales del Arenal with its own hot springs, 7 activities (incl. night walk, horseback riding, Tabacón)."
+        "note": "Villa Del Sol in Coco + Termales del Arenal with its own hot springs, 6 activities (incl. night walk, horseback riding), Tabacón on the afternoon of 1/10."
       },
       {
         "id": "no-horse",
@@ -645,6 +758,11 @@
         "label": "Getting around",
         "icon": "🚗",
         "color": "#1f9652"
+      },
+      "fun": {
+        "label": "Tickets and experiences",
+        "icon": "🎟️",
+        "color": "#9b6dd0"
       }
     }
   },
@@ -1096,9 +1214,12 @@
                   "label": "Book the Rainforest Chocolate Tour",
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
-              ]
+              ],
+              "option": "chocolate"
             }
-          ]
+          ],
+          "budget": "d3-pm",
+          "option": "hotel"
         },
         {
           "time": "17:30",
@@ -1295,7 +1416,8 @@
                   "label": "Fortuna Welcome sloth tour",
                   "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
                 }
-              ]
+              ],
+              "option": "sloth"
             },
             {
               "title": "Sky Adventures ziplines (13:30)",
@@ -1309,7 +1431,8 @@
                   "label": "Sky Adventures official site",
                   "url": "https://skyadventures.travel/skytrek/"
                 }
-              ]
+              ],
+              "option": "zipline"
             },
             {
               "title": "Rainforest Chocolate Tour (13:00)",
@@ -1319,9 +1442,12 @@
                   "label": "Book the Rainforest Chocolate Tour",
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
-              ]
+              ],
+              "option": "chocolate"
             }
-          ]
+          ],
+          "budget": "d5-pm",
+          "option": "tabacon"
         },
         {
           "time": "Evening",
@@ -1880,6 +2006,21 @@
         ]
       },
       {
+        "id": "book-d3-pm",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/8 15:00 Rainforest Chocolate Tour",
+        "due": "2026-12-27",
+        "lead": "1 week ahead",
+        "note": "Pick the English tour; it ends close to the Bogarín night walk.",
+        "url": "https://rainforestchocolatetour.com/book-tour/",
+        "urlLabel": "Rainforest Chocolate Tour",
+        "budget": "d3-pm",
+        "budgetOptions": [
+          "chocolate"
+        ]
+      },
+      {
         "id": "book-tabacon",
         "group": "bookings",
         "who": "Me",
@@ -1889,7 +2030,7 @@
         "note": "1/10 is outside the holiday blackout period (12/18–1/8); check the cancellation policy before booking.",
         "url": "https://www.tabacon.com/day-pass/",
         "urlLabel": "Tabacón",
-        "budget": "activities"
+        "budget": "d5-pm"
       },
       {
         "id": "cash",
