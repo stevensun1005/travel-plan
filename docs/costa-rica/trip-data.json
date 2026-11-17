@@ -270,7 +270,7 @@
       },
       {
         "id": "car",
-        "label": "租车｜5天（含强制险和CDW）",
+        "label": "租车或坐接驳｜5天",
         "icon": "🚗",
         "color": "#1f9652",
         "defaultOption": "adobe",
@@ -296,6 +296,84 @@
               }
             ],
             "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+          },
+          {
+            "id": "shuttle",
+            "label": "不租车 · 拼车接驳＋打车",
+            "amount": 777.01,
+            "status": "公开价折算 · 待确认",
+            "note": "不开车：落地打车去Coco；1/8坐拼车接驳去La Fortuna（7:00–8:00到酒店接，约5.5–6.5小时，下午才到，中途不能停瀑布和湖边）；1/11坐8:00的拼车，约11:45到机场，赶得上14:40的航班。火山这几天漂流、骑马都含酒店接送，夜间徒步、吊桥、Tabacón和镇上吃饭打车。比租车贵约CA$160，但不用开山路，也不用押USD1,000的信用卡。拼车价来自Bus Costa Rica公开页面（每人USD95、USD85），下单后商家确认有没有位，是否另加税以确认单为准；机场出租车打表，镇上打车按约₡700/公里估算。",
+            "items": [
+              {
+                "label": "1/6 机场→Coco 正规出租车（打表，约USD45，估算）",
+                "amount": 64.16
+              },
+              {
+                "label": "1/8 Coco→La Fortuna 拼车 USD95×2",
+                "amount": 270.88
+              },
+              {
+                "label": "1/11 La Fortuna→利比里亚机场 8:00拼车 USD85×2",
+                "amount": 242.37
+              },
+              {
+                "label": "火山这几天打车（夜间徒步、吊桥、Tabacón、镇上吃饭，约USD140，估算）",
+                "amount": 199.6
+              }
+            ],
+            "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
+            "bundles": {
+              "transport": "no-car"
+            },
+            "booking": {
+              "book-car": {
+                "title": "订1/8 Coco→La Fortuna拼车接驳",
+                "note": "下单后商家邮件确认有没有位子，看清接人时间和是否另加税。1/6落地直接在机场排正规出租车（红色车身、车门上有黄色三角），上车确认打表。",
+                "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
+                "urlLabel": "Bus Costa Rica",
+                "due": "2026-12-10",
+                "lead": "提前4周"
+              }
+            }
+          },
+          {
+            "id": "private",
+            "label": "不租车 · 包车去火山（路上停瀑布）＋拼车回机场",
+            "amount": 1021.66,
+            "status": "公开价折算 · 待确认",
+            "note": "想在路上看瀑布就选这个：1/8包一辆车从Coco去La Fortuna（Two Weeks in Costa Rica，按出行日期12/15起每车USD320＋13%税），出发时间自己定，车程约3小时，含1小时中途停车，够停Llanos de Cortés；想在湖边观景点停，下单时写上。其余同拼车方案：落地打车、1/11坐8:00拼车去机场、火山这几天打车。比租车贵约CA$400。24小时前取消退款扣USD30。",
+            "items": [
+              {
+                "label": "1/6 机场→Coco 正规出租车（打表，约USD45，估算）",
+                "amount": 64.16
+              },
+              {
+                "label": "1/8 Coco→La Fortuna 包车（停瀑布）USD320＋13%税",
+                "amount": 515.53
+              },
+              {
+                "label": "1/11 La Fortuna→利比里亚机场 8:00拼车 USD85×2",
+                "amount": 242.37
+              },
+              {
+                "label": "火山这几天打车（夜间徒步、吊桥、Tabacón、镇上吃饭，约USD140，估算）",
+                "amount": 199.6
+              }
+            ],
+            "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
+            "bundles": {
+              "transport": "no-car"
+            },
+            "booking": {
+              "book-car": {
+                "title": "订1/8 Coco→La Fortuna包车，备注停Llanos de Cortés瀑布",
+                "note": "出发时间建议8:30；下单时写明要在瀑布停约1小时（只收现金门票）。1/6落地直接在机场排正规出租车，上车确认打表。",
+                "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
+                "urlLabel": "Two Weeks in Costa Rica",
+                "due": "2026-12-10",
+                "lead": "提前4周"
+              }
+            }
           }
         ],
         "chartGroup": "drive"
@@ -323,6 +401,13 @@
                 "amount": 28.51
               }
             ]
+          },
+          {
+            "id": "no-car",
+            "label": "不开车，没有油费",
+            "amount": 0,
+            "bundleOnly": true,
+            "status": "—"
           }
         ],
         "chartGroup": "drive"
@@ -540,6 +625,14 @@
           "buffer": "none"
         },
         "note": "两家都选最便宜的，吃soda小馆，活动4项。"
+      },
+      {
+        "id": "no-car",
+        "label": "不租车",
+        "selections": {
+          "car": "shuttle"
+        },
+        "note": "全程坐拼车接驳和出租车，不开车。"
       }
     ],
     "chartGroups": {
@@ -549,7 +642,7 @@
         "color": "#e07a12"
       },
       "drive": {
-        "label": "租车与油费",
+        "label": "交通（租车/接驳）",
         "icon": "🚗",
         "color": "#1f9652"
       }
@@ -1632,6 +1725,22 @@
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
         "urlLabel": "Adobe",
         "budget": "car"
+      },
+      {
+        "id": "book-shuttle-out",
+        "group": "bookings",
+        "who": "我",
+        "title": "订1/11 La Fortuna→利比里亚机场 8:00拼车",
+        "due": "2026-12-10",
+        "lead": "提前4周",
+        "note": "约11:45到机场，赶14:40的航班。下单后商家确认有没有位子。",
+        "url": "https://buscostarica.rezdy.com/81989/la-fortuna-arenal-volcano-to-liberia-airport-morning-shared-shuttles-transportation",
+        "urlLabel": "Bus Costa Rica",
+        "budget": "car",
+        "budgetOptions": [
+          "shuttle",
+          "private"
+        ]
       },
       {
         "id": "book-cat",

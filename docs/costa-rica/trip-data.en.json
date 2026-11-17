@@ -270,7 +270,7 @@
       },
       {
         "id": "car",
-        "label": "Car rental | 5 days (incl. mandatory insurance and CDW)",
+        "label": "Rental car or shuttles | 5 days",
         "icon": "🚗",
         "color": "#1f9652",
         "defaultOption": "adobe",
@@ -296,6 +296,84 @@
               }
             ],
             "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+          },
+          {
+            "id": "shuttle",
+            "label": "No car · shared shuttles + taxis",
+            "amount": 777.01,
+            "status": "Converted from public prices · to confirm",
+            "note": "No driving: taxi from the airport to Coco; on 1/8 a shared shuttle to La Fortuna (hotel pickup 7:00–8:00, about 5.5–6.5 hours, arriving mid-afternoon, no stops at the waterfall or the lake); on 1/11 the 8:00 shared shuttle reaches the airport around 11:45, in time for the 14:40 flight. In Arenal, the float and horseback tours include hotel pickup; take taxis to the night walk, the hanging bridges, Tabacón and dinners in town. About CA$160 more than renting, but no mountain driving and no USD1,000 credit-card hold. Shuttle fares are from Bus Costa Rica's public pages (USD95 and USD85 per person); the operator confirms seats after you book, and the confirmation shows whether tax is extra. Airport taxis are metered; town taxis estimated at about ₡700/km.",
+            "items": [
+              {
+                "label": "1/6 airport → Coco, official taxi (metered, ~USD45, estimate)",
+                "amount": 64.16
+              },
+              {
+                "label": "1/8 Coco → La Fortuna shared shuttle USD95×2",
+                "amount": 270.88
+              },
+              {
+                "label": "1/11 La Fortuna → Liberia airport, 8:00 shared shuttle USD85×2",
+                "amount": 242.37
+              },
+              {
+                "label": "Taxis around Arenal (night walk, bridges, Tabacón, dinners; ~USD140, estimate)",
+                "amount": 199.6
+              }
+            ],
+            "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
+            "bundles": {
+              "transport": "no-car"
+            },
+            "booking": {
+              "book-car": {
+                "title": "Book the 1/8 Coco → La Fortuna shared shuttle",
+                "note": "The operator emails to confirm seats; check the pickup time and whether tax is extra. On 1/6 just queue for an official airport taxi (red, yellow triangle on the doors) and make sure the meter is on.",
+                "url": "https://buscostarica.rezdy.com/87008/playas-del-coco-to-la-fortuna-shared-shuttle-transportation-services",
+                "urlLabel": "Bus Costa Rica",
+                "due": "2026-12-10",
+                "lead": "4 weeks ahead"
+              }
+            }
+          },
+          {
+            "id": "private",
+            "label": "No car · private van to Arenal (waterfall stop) + shuttle to the airport",
+            "amount": 1021.66,
+            "status": "Converted from public prices · to confirm",
+            "note": "Pick this to see the waterfall on the way: on 1/8 a private van from Coco to La Fortuna (Two Weeks in Costa Rica, USD320 + 13% tax per van for travel from Dec 15), leaving whenever you like, about 3 hours of driving with 1 hour of stops included, enough for Llanos de Cortés; add a lake viewpoint stop in the booking notes. Everything else as the shuttle option: taxi from the airport, the 8:00 shared shuttle to the airport on 1/11, taxis around Arenal. About CA$400 more than renting. Free cancellation up to 24 hours before, minus USD30.",
+            "items": [
+              {
+                "label": "1/6 airport → Coco, official taxi (metered, ~USD45, estimate)",
+                "amount": 64.16
+              },
+              {
+                "label": "1/8 Coco → La Fortuna private van (waterfall stop) USD320 + 13% tax",
+                "amount": 515.53
+              },
+              {
+                "label": "1/11 La Fortuna → Liberia airport, 8:00 shared shuttle USD85×2",
+                "amount": 242.37
+              },
+              {
+                "label": "Taxis around Arenal (night walk, bridges, Tabacón, dinners; ~USD140, estimate)",
+                "amount": 199.6
+              }
+            ],
+            "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
+            "bundles": {
+              "transport": "no-car"
+            },
+            "booking": {
+              "book-car": {
+                "title": "Book the 1/8 Coco → La Fortuna private van; ask for a Llanos de Cortés stop",
+                "note": "Suggest leaving at 8:30; note in the booking that you want about an hour at the waterfall (cash-only entry). On 1/6 just queue for an official airport taxi and make sure the meter is on.",
+                "url": "https://twoweeksincostarica.com/product/coco-ocotal-la-fortuna-private-shuttle",
+                "urlLabel": "Two Weeks in Costa Rica",
+                "due": "2026-12-10",
+                "lead": "4 weeks ahead"
+              }
+            }
           }
         ],
         "chartGroup": "drive"
@@ -323,6 +401,13 @@
                 "amount": 28.51
               }
             ]
+          },
+          {
+            "id": "no-car",
+            "label": "No car, no gas",
+            "amount": 0,
+            "bundleOnly": true,
+            "status": "—"
           }
         ],
         "chartGroup": "drive"
@@ -540,6 +625,14 @@
           "buffer": "none"
         },
         "note": "Cheapest option at both hotels, eat at sodas, 4 activities."
+      },
+      {
+        "id": "no-car",
+        "label": "No car",
+        "selections": {
+          "car": "shuttle"
+        },
+        "note": "Shared shuttles and taxis the whole way, no driving."
       }
     ],
     "chartGroups": {
@@ -549,7 +642,7 @@
         "color": "#e07a12"
       },
       "drive": {
-        "label": "Car and gas",
+        "label": "Getting around",
         "icon": "🚗",
         "color": "#1f9652"
       }
@@ -1632,6 +1725,22 @@
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
         "urlLabel": "Adobe",
         "budget": "car"
+      },
+      {
+        "id": "book-shuttle-out",
+        "group": "bookings",
+        "who": "Me",
+        "title": "Book the 1/11 La Fortuna → Liberia airport 8:00 shared shuttle",
+        "due": "2026-12-10",
+        "lead": "4 weeks ahead",
+        "note": "Arrives around 11:45, in time for the 14:40 flight. The operator confirms seats after you book.",
+        "url": "https://buscostarica.rezdy.com/81989/la-fortuna-arenal-volcano-to-liberia-airport-morning-shared-shuttles-transportation",
+        "urlLabel": "Bus Costa Rica",
+        "budget": "car",
+        "budgetOptions": [
+          "shuttle",
+          "private"
+        ]
       },
       {
         "id": "book-cat",
