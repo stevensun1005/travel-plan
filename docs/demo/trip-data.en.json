@@ -1612,6 +1612,7 @@
           "placeId": "pearl-harbor"
         },
         {
+          "id": "d2-arizona",
           "time": "~08:00",
           "title": "USS Arizona Memorial",
           "text": "Reservations are free, with only a small booking fee. Released on Recreation.gov; book the earliest slot. Includes a film and boat ride, ~75 min.",
@@ -1621,21 +1622,27 @@
               "label": "Recreation.gov reservations",
               "url": "https://www.recreation.gov/ticket/facility/233338"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d2-bowfin",
           "time": "09:30",
           "title": "Submarine Museum / USS Bowfin",
           "text": "Right next to the visitor center; included in the Passport.",
-          "placeId": "bowfin"
+          "placeId": "bowfin",
+          "rate": true
         },
         {
+          "id": "d2-missouri",
           "time": "11:00",
           "title": "Shuttle to Ford Island · USS Missouri",
           "text": "The deck where Japan signed the surrender; grab a simple lunch on the island afterwards.",
-          "placeId": "missouri"
+          "placeId": "missouri",
+          "rate": true
         },
         {
+          "id": "d2-aviation",
           "time": "13:30",
           "title": "Pearl Harbor Aviation Museum",
           "text": "Two hangars, ~1.5 hours. Shuttle back to the visitor center afterwards.",
@@ -1645,7 +1652,8 @@
               "label": "Passport to Pearl Harbor",
               "url": "https://www.pearlharborhistoricsites.org/tickets"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "15:30",
@@ -1654,6 +1662,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d2-waikiki-beach",
           "time": "16:30–19:00 (weather permitting)",
           "title": "Backup: Waikīkī sunset sail",
           "text": "The sunset sail can be today or Jan 7: check the weather and sea conditions before the trip and pick whichever day is calmer with fewer clouds. If today, be at the beach boarding spot at 16:30, sailing 17:00–19:00; you'll still be adjusting to the time change, so if you're tired save it for Jan 7. No sail? Stroll Kūhiō Beach and watch the sunset (~18:05 in January).",
@@ -1663,7 +1672,8 @@
               "label": "Book Moana Sailing",
               "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "18:30 (19:15 if sailing)",
@@ -1694,12 +1704,15 @@
           "placeId": "car-pickup"
         },
         {
+          "id": "d3-hoomaluhia",
           "time": "09:00–10:05",
           "title": "Hoʻomaluhia Botanical Garden",
           "text": "Opens at 9:00. Drive in, park by the lake for mountain photos, and walk a short stretch. Skipping Byodo-In this time, so you can linger here.",
-          "placeId": "hoomaluhia"
+          "placeId": "hoomaluhia",
+          "rate": true
         },
         {
+          "id": "d3-kualoa",
           "time": "11:00–13:30",
           "title": "Kualoa Ranch Jurassic Adventure",
           "text": "Check in at the ranch around 10:40. Ride an off-road vehicle into the Kualoa, Hakipuʻu and Kaʻaʻawa valleys to see filming spots from Jurassic Park, Jurassic World and more. Bumpy ride, only short walks. Book your slot ahead.",
@@ -1709,21 +1722,27 @@
               "label": "Kualoa official site",
               "url": "https://www.kualoa.com/tours/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d3-giovanni",
           "time": "14:05–14:40",
           "title": "Giovanni's garlic shrimp",
           "text": "Lunch. If the line is too long, try Romy's or Fumi's next door. Then head west on Kamehameha Hwy; just glance at Shark's Cove and Waimea Bay from the car: North Shore surf is big on winter afternoons, so no dedicated stops.",
-          "placeId": "giovanni"
+          "placeId": "giovanni",
+          "rate": true
         },
         {
+          "id": "d3-laniakea",
           "time": "15:05–15:20",
           "title": "Turtle watching at Laniakea",
           "text": "Turtles often haul out to bask in the afternoon; watch from shore for 15 min and keep your distance. Roadside parking is tight; if there's no spot, go straight to Dole.",
-          "placeId": "laniakea"
+          "placeId": "laniakea",
+          "rate": true
         },
         {
+          "id": "d3-dole",
           "time": "15:40–17:30",
           "title": "Dole Plantation: train + maze",
           "text": "Ride the Pineapple Express train first (~20 min, roughly every 10 min; the official site suggests 1 hour including the pineapple-cutting demo), then the Pineapple Garden Maze (40 min on average), and finish with Dole Whip. Park hours 9:30–17:30; the last train and last maze entry aren't listed online, so call 808-621-8408 before you go. If the last train is early, do the maze first.",
@@ -1733,9 +1752,11 @@
               "label": "Dole Plantation official site",
               "url": "https://www.doleplantation.com/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d3-waikele",
           "time": "17:50–18:40 (optional)",
           "title": "Waikele Premium Outlets",
           "text": "~20 min from Dole via H-2. Shop for ~50 min only; if you run late at Dole, skip it and go straight to Ko Olina for dinner.",
@@ -1745,7 +1766,8 @@
               "label": "Outlets official site",
               "url": "https://www.premiumoutlets.com/outlet/waikele"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "19:00–19:50",
@@ -1754,6 +1776,7 @@
           "placeId": "ko-olina"
         },
         {
+          "id": "d3-ko-olina",
           "time": "20:00–21:00",
           "title": "Stargazing · Stars Above Hawaii",
           "text": "An astronomy guide with a computerized telescope talks about Hawaiian star navigation, ~1 hour, and photos are sent to your phone. Jan 7 is the new moon, so these are the darkest nights. Start time depends on the slot you book; you'll get a text that afternoon about weather and the viewing spot. Weather cancellations get a full refund or rebooking.",
@@ -1763,7 +1786,8 @@
               "label": "Booking page",
               "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "21:00",
@@ -1803,6 +1827,7 @@
           ]
         },
         {
+          "id": "d4-iolani",
           "time": "10:00",
           "title": "ʻIolani Palace",
           "text": "The only royal palace in the US; open Tue–Sat, tickets online only.",
@@ -1812,7 +1837,8 @@
               "label": "ʻIolani Palace official site",
               "url": "https://www.iolanipalace.org/visit/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "11:30",
@@ -1826,10 +1852,12 @@
           "placeId": "nicos"
         },
         {
+          "id": "d4-ala-moana",
           "time": "14:30",
           "title": "Ala Moana Center",
           "text": "Pink Line (Ala Moana shopping line) both ways.",
-          "placeId": "ala-moana"
+          "placeId": "ala-moana",
+          "rate": true
         },
         {
           "time": "18:00",
@@ -1866,10 +1894,12 @@
           ]
         },
         {
+          "id": "d5-hanauma",
           "time": "Morning",
           "title": "Snorkeling",
           "text": "Watch the preserve video first, then snorkel in the inner bay. Decide on swimming and fins based on your own fitness, lifeguard guidance and the day's conditions. If it's closed or conditions are bad, it's also open Jan 8, so you can switch.",
-          "placeId": "hanauma"
+          "placeId": "hanauma",
+          "rate": true
         },
         {
           "time": "Noon",
@@ -1878,6 +1908,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d5-diamond-head",
           "time": "13:30",
           "title": "Green Line to the Diamond Head lookout",
           "text": "The Green Line (Diamond Head Line) has a photo stop at Kahala Lookout; step off and you'll see Diamond Head and the ocean, no hiking. A loop takes ~70 min, and the last afternoon run heads back from the Diamond Head area around 15:10–15:40, so don't set out too late. Not going into the crater: that needs a separate state park reservation, and without the summit there isn't much to see.",
@@ -1887,7 +1918,8 @@
               "label": "Green Line schedule and stops",
               "url": "https://waikikitrolley.com/green-line/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "16:30",
@@ -1896,6 +1928,7 @@
           "placeId": "waikiki-beach"
         },
         {
+          "id": "d5-waikiki-beach",
           "time": "17:00–19:00",
           "title": "Waikīkī sunset sail (or move to Jan 4)",
           "text": "E.g. Moana Sailing's 2-hour sail (~USD81/person, one drink included); Manu Kai's 1.5-hour happy hour ~USD56/person. January sunset is ~18:05, and heading back after dark you'll see Waikīkī and Diamond Head lit up. Operators may cancel in rough seas. The sail can also go on the evening of Jan 4: check the forecast before the trip and pick the calmer, less cloudy day; if you already sailed on Jan 4, just watch the sunset from the beach and eat early.",
@@ -1905,7 +1938,8 @@
               "label": "Book Moana Sailing",
               "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "19:15",
@@ -1937,6 +1971,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d6-halona",
           "time": "Morning",
           "title": "Optional: Blue Line along the southeast coast",
           "text": "The Blue Line (Ocean View Line) runs along the coast to Hālona Blowhole (photo stop) and Sea Life Park, ~1h 50m per loop, every ~40 min from 8:30. If you'd rather not, relax on the beach or go shopping.",
@@ -1946,13 +1981,16 @@
               "label": "Blue Line schedule and stops",
               "url": "https://waikikitrolley.com/blue-line/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d6-house",
           "time": "17:30",
           "title": "House Without A Key sunset dinner",
           "text": "Sunset and hula show; reservations recommended.",
-          "placeId": "house"
+          "placeId": "house",
+          "rate": true
         },
         {
           "time": "21:00",

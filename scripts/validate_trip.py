@@ -45,6 +45,9 @@ def validate(folder):
         except (ValueError,KeyError):errors.append(f'Day {day.get("day")}: invalid date')
         for item in day.get('schedule',[]):
             check(not item.get('placeId') or item['placeId'] in place_ids,'Schedule references missing place')
+            check(item.get('rate') in (None,True,False,'hot','maybe','meh'),f'Day {day.get("day")}: rate must be true or hot/maybe/meh')
+            alts=item.get('alternatives')
+            check(alts is None or (isinstance(alts,list) and all(isinstance(a,dict) and isinstance(a.get('title'),str) and a['title'].strip() and all(isinstance(l,dict) and l.get('url','').startswith('http') for l in a.get('links',[])) for a in alts)),f'Day {day.get("day")}: alternatives need a title and http links')
     categories=budget.get('categories',[]);category_ids=unique(categories,'id','categories')
     check(not categories or (money(budget.get('target')) and budget['target']>0),'Invalid budget target')
     for category in categories:

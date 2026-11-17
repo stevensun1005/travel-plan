@@ -1612,6 +1612,7 @@
           "placeId": "pearl-harbor"
         },
         {
+          "id": "d2-arizona",
           "time": "08:00左右",
           "title": "USS Arizona 亚利桑那号纪念馆",
           "text": "预约免费，只收少量订票费。预约在Recreation.gov放出，订最早的场次。包括影片和乘船，约75分钟。",
@@ -1621,21 +1622,27 @@
               "label": "Recreation.gov预约",
               "url": "https://www.recreation.gov/ticket/facility/233338"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d2-bowfin",
           "time": "09:30",
           "title": "潜艇博物馆 / USS Bowfin",
           "text": "就在游客中心旁边，Passport通票包含。",
-          "placeId": "bowfin"
+          "placeId": "bowfin",
+          "rate": true
         },
         {
+          "id": "d2-missouri",
           "time": "11:00",
           "title": "接驳车去福特岛 · 密苏里号",
           "text": "日本投降签字的甲板就在这里，看完在岛上吃简单午餐。",
-          "placeId": "missouri"
+          "placeId": "missouri",
+          "rate": true
         },
         {
+          "id": "d2-aviation",
           "time": "13:30",
           "title": "珍珠港航空博物馆",
           "text": "两个机库，约1.5小时。看完坐接驳车回游客中心。",
@@ -1645,7 +1652,8 @@
               "label": "Passport to Pearl Harbor",
               "url": "https://www.pearlharborhistoricsites.org/tickets"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "15:30",
@@ -1654,6 +1662,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d2-waikiki-beach",
           "time": "16:30–19:00（看天气）",
           "title": "备选：Waikīkī 日落帆船",
           "text": "日落帆船可以安排在今天或1/7，看出发前的天气和海况，哪天风浪小、云少就选哪天。选今天的话，16:30到海滩上船点，17:00–19:00出海；时差刚倒，累的话就留给1/7。不坐船就在Kūhiō Beach散步看日落（1月约18:05）。",
@@ -1663,7 +1672,8 @@
               "label": "Moana Sailing 订票",
               "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "18:30（坐船就改19:15）",
@@ -1694,12 +1704,15 @@
           "placeId": "car-pickup"
         },
         {
+          "id": "d3-hoomaluhia",
           "time": "09:00–10:05",
           "title": "Hoʻomaluhia 植物园",
           "text": "9:00开门。开车进园，在湖边停车拍山，下车走一小段。这次不去平等院，所以这里可以多待一会儿。",
-          "placeId": "hoomaluhia"
+          "placeId": "hoomaluhia",
+          "rate": true
         },
         {
+          "id": "d3-kualoa",
           "time": "11:00–13:30",
           "title": "古兰尼牧场 Jurassic Adventure",
           "text": "10:40左右到牧场签到。坐越野车进Kualoa、Hakipuʻu、Kaʻaʻawa三条山谷，看《侏罗纪公园》《侏罗纪世界》等拍摄地。路面颠簸，只有短距离步行。场次要提前订。",
@@ -1709,21 +1722,27 @@
               "label": "Kualoa官方",
               "url": "https://www.kualoa.com/tours/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d3-giovanni",
           "time": "14:05–14:40",
           "title": "Giovanni's 蒜蓉虾饭",
           "text": "午餐。排队太长就换旁边的Romy's或Fumi's。之后沿Kamehameha Hwy往西开，经过鲨鱼湾和威美亚湾时在车上看一眼就好：冬天下午北岸浪大，不专门停。",
-          "placeId": "giovanni"
+          "placeId": "giovanni",
+          "rate": true
         },
         {
+          "id": "d3-laniakea",
           "time": "15:05–15:20",
           "title": "Laniakea 看海龟",
           "text": "下午常有海龟上岸晒太阳，在岸边看15分钟，保持距离。路边停车紧，找不到车位就直接去菠萝园。",
-          "placeId": "laniakea"
+          "placeId": "laniakea",
+          "rate": true
         },
         {
+          "id": "d3-dole",
           "time": "15:40–17:30",
           "title": "Dole Plantation：小火车 + 迷宫",
           "text": "先坐Pineapple Express小火车（约20分钟，大约每10分钟一班；官方建议连菠萝切片表演留1小时），再走Pineapple Garden Maze（平均40分钟），最后吃Dole Whip。全园9:30–17:30，末班车和迷宫最后入场时间官网没写，出发前打电话808-621-8408确认；如果末班较早，就先走迷宫。",
@@ -1733,9 +1752,11 @@
               "label": "Dole Plantation官方",
               "url": "https://www.doleplantation.com/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d3-waikele",
           "time": "17:50–18:40（可选）",
           "title": "Waikele Premium Outlets 奥莱",
           "text": "从菠萝园沿H-2开约20分钟。只逛50分钟左右；在菠萝园玩得晚，就跳过，直接去Ko Olina吃晚饭。",
@@ -1745,7 +1766,8 @@
               "label": "奥莱官方",
               "url": "https://www.premiumoutlets.com/outlet/waikele"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "19:00–19:50",
@@ -1754,6 +1776,7 @@
           "placeId": "ko-olina"
         },
         {
+          "id": "d3-ko-olina",
           "time": "20:00–21:00",
           "title": "星空讲解 · Stars Above Hawaii",
           "text": "天文讲解员带电脑望远镜，讲夏威夷星空导航，约1小时，照片会发到手机。1/7是新月，这几天月光最暗。开场时间按订到的场次为准，当天下午会发短信说明天气和观测位置；因天气取消可全额退款或改期。",
@@ -1763,7 +1786,8 @@
               "label": "订票页",
               "url": "https://www.greetwell.com/us/direct/stargazing-star-show-ko-olina-resort"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "21:00",
@@ -1803,6 +1827,7 @@
           ]
         },
         {
+          "id": "d4-iolani",
           "time": "10:00",
           "title": "ʻIolani Palace 王宫",
           "text": "美国唯一的王宫，周二至周六开放，只能网上买票。",
@@ -1812,7 +1837,8 @@
               "label": "ʻIolani Palace官方",
               "url": "https://www.iolanipalace.org/visit/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "11:30",
@@ -1826,10 +1852,12 @@
           "placeId": "nicos"
         },
         {
+          "id": "d4-ala-moana",
           "time": "14:30",
           "title": "Ala Moana 商场",
           "text": "坐粉线（Ala Moana购物线）来回。",
-          "placeId": "ala-moana"
+          "placeId": "ala-moana",
+          "rate": true
         },
         {
           "time": "18:00",
@@ -1866,10 +1894,12 @@
           ]
         },
         {
+          "id": "d5-hanauma",
           "time": "上午",
           "title": "浮潜",
           "text": "先看保护区影片，再在内湾浮潜。是否适合游泳和用脚蹼，按自己的身体状况、救生员指示和当天海况决定。如果当天关闭或海况不好，1/8也开放，可以改期。",
-          "placeId": "hanauma"
+          "placeId": "hanauma",
+          "rate": true
         },
         {
           "time": "中午",
@@ -1878,6 +1908,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d5-diamond-head",
           "time": "13:30",
           "title": "坐绿线去钻石山观景台",
           "text": "绿线（Diamond Head Line）在Kahala Lookout有拍照停靠，下车就能看到钻石山和海，不用走路爬山。绿线一圈约70分钟，下午最后一班约15:10–15:40从钻石山一带返回，别太晚出发。不进火山口：进火山口要另外预约州立公园门票，而且不登顶也没什么可看。",
@@ -1887,7 +1918,8 @@
               "label": "绿线时刻和站点",
               "url": "https://waikikitrolley.com/green-line/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "16:30",
@@ -1896,6 +1928,7 @@
           "placeId": "waikiki-beach"
         },
         {
+          "id": "d5-waikiki-beach",
           "time": "17:00–19:00",
           "title": "Waikīkī 日落帆船（或改到1/4）",
           "text": "例如Moana Sailing 2小时帆船（约USD81/人，含一杯饮料）；Manu Kai的1.5小时happy hour约USD56/人。1月日落约18:05，回程天黑后能看到Waikīkī和钻石山的夜景。风浪大时船公司可能取消。帆船也可以放在1/4傍晚，按出发前的天气预报选风浪小、云少的一天；如果已经在1/4坐过，今天就在海边看日落、早点吃饭。",
@@ -1905,7 +1938,8 @@
               "label": "Moana Sailing 订票",
               "url": "https://www.hawaiiactivities.com/en/hawaii/oahu/a/166886"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "19:15",
@@ -1937,6 +1971,7 @@
           "placeId": "hotel"
         },
         {
+          "id": "d6-halona",
           "time": "上午",
           "title": "可选：坐蓝线看东南海岸",
           "text": "蓝线（Ocean View Line）沿海边开到Hālona喷泉孔（拍照停靠）和Sea Life Park，一圈约1小时50分钟，早上8:30起约40分钟一班。不想坐就在海滩休息、购物。",
@@ -1946,13 +1981,16 @@
               "label": "蓝线时刻和站点",
               "url": "https://waikikitrolley.com/blue-line/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d6-house",
           "time": "17:30",
           "title": "House Without A Key 日落晚餐",
           "text": "看日落和草裙舞表演，建议预订。",
-          "placeId": "house"
+          "placeId": "house",
+          "rate": true
         },
         {
           "time": "21:00",

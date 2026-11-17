@@ -526,7 +526,9 @@
           "time": "傍晚建议",
           "title": "海边散步与第一顿海鲜",
           "text": "只演示轻松抵达日，不加入远途景点或山径。",
-          "placeId": "canada"
+          "placeId": "canada",
+          "id": "d1-canada",
+          "rate": true
         }
       ]
     },
@@ -549,13 +551,17 @@
           "time": "上午建议",
           "title": "海岸公园",
           "text": "车览与正常短走，不安排hiking；停车点按现场合法车位选择。",
-          "placeId": "stanley"
+          "placeId": "stanley",
+          "id": "d2-stanley",
+          "rate": true
         },
         {
           "time": "下午建议",
           "title": "市场与海鲜",
           "text": "给午餐、停车、休息留时间，具体店铺待查。",
-          "placeId": "granville"
+          "placeId": "granville",
+          "id": "d2-granville",
+          "rate": true
         }
       ]
     },
@@ -572,7 +578,9 @@
           "time": "午后建议",
           "title": "海边休息",
           "text": "正常步行、拍照和看海，不把海滩到访写成必能下水。",
-          "placeId": "kits"
+          "placeId": "kits",
+          "id": "d3-kits",
+          "rate": true
         },
         {
           "time": "傍晚建议",

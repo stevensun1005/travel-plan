@@ -38,7 +38,7 @@ const SKILL_REPO='https://github.com/stevensun1005/travel-plan';
 const PHONE=matchMedia('(max-width:760px)');
 const money=value=>{const n=Number(value);return `${data.trip.currency||'CAD'} ${n.toLocaleString('en-CA',Number.isInteger(n)?{maximumFractionDigits:0}:{minimumFractionDigits:2,maximumFractionDigits:2})}`;};
 const color=(value,index)=>/^#[0-9a-f]{6}$/i.test(value||'')?value:['#2a70cf','#e07a12','#1f9652','#d2402f','#2b9c9a','#9b6dd0','#c99a1c','#8a958c'][index%8];
-function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save-status').textContent='已自动保存到当前浏览器';}catch{$('#save-status').textContent='本次选择有效，浏览器未能保存';}}
+function save(){$('#save-status').textContent=persist('budget',selection)?(cloud&&!cloud.readonly?'已保存，并同步到云端':'已自动保存到当前浏览器'):'本次选择有效，浏览器未能保存';}
 
 // 预算和出发前清单联动：清单项写 budget: 预算分类 id（可再写 budgetOptions: [方案 id]，只在选了这些方案时出现）。
 // 标题里的 {option} 换成当前选中的方案名；方案上的 booking:{title,note,url,urlLabel,due,lead} 会覆盖清单项，booking:false 表示这个方案不用单独订；
@@ -46,6 +46,123 @@ function save(){try{localStorage.setItem(key,JSON.stringify(selection));$('#save
 // 勾选按「清单项@方案」记，换了方案就是一项新的待订；某一类关联的待订全部勾上，预算卡片显示「已预订」并变绿。
 let checks=null,redrawChecklist=()=>{};
 const checkState=()=>checks??=(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{})(read(`travel-plan:checklist:v1:${data.trip.id}`,{}));
+// ---------- 保存与同步 ----------
+// 页面上点的东西（预算方案、清单打勾、待办、行程的「夯/待定/额」）都先存进本机 localStorage，再三条路带到别处：
+// 1) 发布成 claude.ai Artifact 并声明 capabilities:{db:{}} 时，整份状态存进 Artifact 的共享数据（trips/<行程id>），
+//    同一个账号在手机、电脑上打开会自动同步；没有写权限的人看到主人的选择，自己的改动只留在本机。
+// 2) 同步码：把整份状态编码成一段文字，复制到另一台设备粘贴导入（哪里都能用）。
+// 3) 同步链接：独立网页（GitHub Pages 等）上再给一条带 #sync= 的链接，打开就导入。
+// 同一份数据以最后保存的为准（savedAt）。
+const KINDS=['budget','checklist','todo','votes'];
+const stateKey=kind=>`travel-plan:${kind}:v1:${data.trip.id}`;
+const savedAt=()=>Number(read(stateKey('saved'),0))||0;
+let applying=false,cloud=null;
+function persist(kind,value){
+  const k=stateKey(kind),text=JSON.stringify(value);
+  try{if(localStorage.getItem(k)===text)return true;localStorage.setItem(k,text);localStorage.setItem(stateKey('saved'),String(Date.now()));}catch{return false;}
+  cloudPush();return true;
+}
+function snapshot(){
+  const s={trip:data.trip.id,savedAt:savedAt()};
+  for(const kind of KINDS){const v=read(stateKey(kind),null);if(v!=null)s[kind]=v;}
+  return s;
+}
+function applyState(body,stamp){
+  applying=true;
+  try{
+    for(const kind of KINDS)if(body[kind]!=null)localStorage.setItem(stateKey(kind),JSON.stringify(body[kind]));
+    localStorage.setItem(stateKey('saved'),String(stamp??body.savedAt??Date.now()));
+  }catch{}
+  try{refreshSaved();}finally{applying=false;}
+}
+// 别处的数据写进来以后，只重画受影响的部分，不重复绑定事件
+function refreshSaved(){
+  if(data.budget?.categories?.length){selection=normalize(data.budget,read(key,{}));updateBudget(false,false);$('#budget-target').value=selection.target;syncFlights();}
+  checks=null;redrawChecklist();renderTodo();drawVotes();
+}
+const encodeState=s=>{const bytes=new TextEncoder().encode(JSON.stringify(s));let bin='';for(const b of bytes)bin+=String.fromCharCode(b);return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');};
+const decodeState=code=>{const b=atob(code.trim().replace(/^.*#sync=/,'').replace(/-/g,'+').replace(/_/g,'/'));return JSON.parse(new TextDecoder().decode(Uint8Array.from(b,c=>c.charCodeAt(0))));};
+function importCode(code){
+  let body;try{body=decodeState(code);}catch{return '同步码不完整，复制时要整段复制';}
+  if(!body||typeof body!=='object'||body.trip!==data.trip.id)return '这段同步码不是这份攻略的';
+  applyState(body,Date.now());cloudPush();return '';
+}
+const standalone=(()=>{try{return window.top===window&&/^https?:$/.test(location.protocol);}catch{return false;}})();
+function syncStatus(){
+  if(!cloud)return {short:'同步',long:'选择存在这台设备的浏览器里。换设备时，用下面的同步码（或同步链接）带过去。'};
+  if(cloud.state==='connecting')return {short:'同步',long:'正在连接云端…'};
+  if(cloud.state==='offline')return {short:'同步',long:'云端暂时连不上，选择先存在本机，连上后会自动同步。'};
+  if(cloud.readonly)return {short:'☁ 只读',long:'显示的是攻略主人的选择；你在这里的改动只存在本机，可以把同步码发给 TA 导入。'};
+  return {short:'☁ 已同步',long:'已同步：在这里点的选择会存进这个 Artifact，登录 claude.ai 的手机、电脑打开都能看到。'};
+}
+function drawSync(){
+  const btn=$('#sync-btn');if(!btn)return;const st=syncStatus();
+  btn.textContent=st.short;btn.title=st.long;
+  const panel=$('#sync-panel');if(!panel||panel.hidden)return;
+  $('#sync-state').textContent=st.long;$('#sync-code').value=encodeState(snapshot());
+}
+function renderSync(){
+  const btn=$('#sync-btn');if(!btn)return;
+  const panel=document.createElement('div');panel.className='sync-panel';panel.id='sync-panel';panel.hidden=true;
+  panel.innerHTML=`<p id="sync-state"></p><label for="sync-code">同步码：复制下来，在另一台设备打开这份攻略，粘贴到下面导入</label><textarea id="sync-code" rows="3" readonly></textarea><div class="sync-row"><button type="button" id="sync-copy">复制同步码</button>${standalone?'<button type="button" id="sync-link">复制同步链接</button>':''}</div><label for="sync-paste">导入别处的同步码</label><textarea id="sync-paste" rows="2" placeholder="粘贴同步码"></textarea><div class="sync-row"><button type="button" id="sync-import">导入</button><span id="sync-msg" role="status"></span></div>`;
+  document.body.append(panel);
+  const msg=t=>$('#sync-msg').textContent=t;
+  const copy=async(text,done)=>{try{await navigator.clipboard.writeText(text);msg(done);}catch{const box=$('#sync-code');box.focus();box.select();msg('浏览器不让直接复制：已经选中，按 Ctrl+C（手机长按）复制');}};
+  btn.onclick=()=>{panel.hidden=!panel.hidden;btn.setAttribute('aria-expanded',String(!panel.hidden));msg('');drawSync();};
+  $('#sync-copy').onclick=()=>copy($('#sync-code').value,'已复制同步码');
+  const linkBtn=$('#sync-link');if(linkBtn)linkBtn.onclick=()=>copy(`${location.origin}${location.pathname}${location.search}#sync=${$('#sync-code').value}`,'已复制同步链接：在别的设备打开它就能看到这些选择');
+  $('#sync-import').onclick=()=>{const err=importCode($('#sync-paste').value);msg(err||'已导入');if(!err){$('#sync-paste').value='';drawSync();toast('已导入别处的选择');}};
+  document.addEventListener('pointerdown',e=>{if(!panel.hidden&&!panel.contains(e.target)&&!btn.contains(e.target)){panel.hidden=true;btn.setAttribute('aria-expanded','false');}});
+  if(location.hash.startsWith('#sync=')){const err=importCode(location.hash);history.replaceState(null,'',location.pathname+location.search);toast(err||'已导入同步链接里的选择');}
+  drawSync();startCloud();
+}
+async function startCloud(){
+  // Artifact 里 window.claude 由外层注入，稍等一下；其他地方没有它就只用本机保存
+  const inArtifact=location.href==='about:srcdoc'||/\.claudeusercontent\.com$/.test(location.hostname);
+  for(let i=0;inArtifact&&i<30&&typeof globalThis.claude?.use!=='function';i++)await new Promise(r=>setTimeout(r,100));
+  if(typeof globalThis.claude?.use!=='function')return;
+  let db=null;try{db=await globalThis.claude.use('db');}catch{}
+  if(!db)return;
+  let ref;try{ref=db.doc(`trips/${String(data.trip.id).replace(/[^A-Za-z0-9_\-.~:@+]/g,'-')||'trip'}`);}catch{return;}
+  cloud={ref,state:'connecting',readonly:false,chain:Promise.resolve(),timer:0};drawSync();
+  const late=setTimeout(()=>{if(cloud.state==='connecting'){cloud.state='offline';drawSync();}},10000);
+  ref.onSnapshot(snap=>{
+    if(!snap.metadata.fromCache){clearTimeout(late);cloud.state='live';}
+    if(snap.metadata.hasPendingWrites)return drawSync();
+    const body=snap.exists?snap.data():null,remote=Number(body?.savedAt)||0,local=savedAt();
+    if(body&&body.trip===data.trip.id&&remote>local)applyState(body);
+    else if(local>remote&&!snap.metadata.fromCache)cloudPush();
+    drawSync();
+  },()=>{clearTimeout(late);cloud.state='offline';drawSync();});
+}
+function cloudPush(){
+  if(!cloud||applying||cloud.readonly)return;
+  clearTimeout(cloud.timer);
+  cloud.timer=setTimeout(()=>{
+    cloud.chain=cloud.chain.then(()=>cloud.ref.set(snapshot())).catch(e=>{if(e?.code==='invalid_argument'||e?.code==='not_granted')cloud.readonly=true;drawSync();});
+  },800);
+}
+
+// ---------- 行程里的「夯 / 待定 / 额」 ----------
+// 行程项写 rate:true 就在右边出现三个按钮；记在 votes 里（键是行程项的 id，没写 id 用「第几天-第几项」），和其他选择一起同步。
+const VOTES=[['hot','夯'],['maybe','待定'],['meh','额']];
+const voteKey=(day,item,index)=>String(item.id||`${day.day}-${index}`);
+// rate 也可以直接写默认值 "hot" / "maybe" / "meh"（例如温泉先标「待定」）；自己点过就以点的为准，再点一次取消
+const voteDefaults={};
+const voteOf=(all,key)=>Object.prototype.hasOwnProperty.call(all,key)?all[key]:voteDefaults[key];
+// 行程项写 alternatives:[{title,text,links}]，下面折叠显示「不想去的话可以换成」
+const alternatives=item=>Array.isArray(item.alternatives)&&item.alternatives.length?`<details class="alts"><summary>不想去的话，可以换成 ${item.alternatives.length} 个项目</summary><ul>${item.alternatives.map(a=>`<li><strong>${escape(a.title)}</strong>${a.text?`<p>${escape(a.text)}</p>`:''}${(a.links||[]).map(l=>link(l.label,l.url)).join('')}</li>`).join('')}</ul></details>`:'';
+const votes=()=>(o=>o&&typeof o==='object'&&!Array.isArray(o)?o:{})(read(stateKey('votes'),{}));
+const voteButtons=key=>`<div class="rate" role="group" aria-label="想不想去">${VOTES.map(([v,label])=>`<button type="button" data-vote="${escape(key)}" data-val="${v}" aria-pressed="false">${label}</button>`).join('')}</div>`;
+function drawVotes(){
+  const all=votes();
+  for(const b of document.querySelectorAll('[data-vote]'))b.setAttribute('aria-pressed',String(voteOf(all,b.dataset.vote)===b.dataset.val));
+  for(const d of document.querySelectorAll('#days .day')){
+    const picked=[...d.querySelectorAll('[data-vote][aria-pressed="true"]')].map(b=>b.dataset.val);
+    const tag=d.querySelector('.vote-tally');if(tag)tag.textContent=VOTES.map(([v,label])=>{const n=picked.filter(x=>x===v).length;return n?`${label} ${n}`:'';}).filter(Boolean).join(' · ');
+  }
+}
+
 function checkItems(){
   return (data.checklist?.items||[]).flatMap(item=>{
     if(!item.budget)return [item];
@@ -63,7 +180,7 @@ function renderBudget(){
   const budget=data.budget;
   if(!budget?.categories?.length){$('#budget').hidden=true;return;}
   key=`travel-plan:budget:v1:${data.trip.id}`;selection=normalize(budget,read(key,{}));
-  $('#budget-planner').innerHTML=`<div class="budget-shell"><div class="budget-heading"><div><small>${data.trip.travelers}人 · 全程合计</small><strong class="budget-total" id="budget-total"></strong></div><label class="target">预算上限 · ${escape(data.trip.currency)}<input id="budget-target" aria-label="预算上限" type="number" min="1" max="1000000" step="0.01" value="${selection.target}"></label></div><div class="balance" id="budget-balance" role="status" aria-live="polite"></div><div class="presets"><button data-reset>恢复初始方案</button>${(budget.presets||[]).map(p=>`<button data-preset="${escape(p.id)}">${escape(p.label)}</button>`).join('')}<span class="saved" id="save-status">选择保存在当前浏览器</span></div><div class="budget-layout"><div class="choices">${budget.categories.map(c=>`<article class="choice" data-category="${escape(c.id)}"><header><label for="choice-${escape(c.id)}">${escape(c.label)}</label><strong data-amount></strong></header><select id="choice-${escape(c.id)}" data-select="${escape(c.id)}" aria-describedby="note-${escape(c.id)}">${c.options.map(o=>`<option value="${escape(o.id)}">${escape(o.label)}${o.source?` · ${escape(o.source)}`:''} · ${money(o.amount)}</option>`).join('')}<option value="custom">自定义总额…</option></select><label class="custom" hidden>自定义全程合计 · ${escape(data.trip.currency)}<input data-custom="${escape(c.id)}" aria-label="${escape(c.label)}自定义金额" type="number" min="0" max="1000000" step="0.01" value="0"></label><span class="price-status"></span><p id="note-${escape(c.id)}" data-note></p><div data-quotes></div><div data-source></div></article>`).join('')}</div><aside class="chart-panel"><h3>预算都花在哪？</h3><p>占当前总支出的百分比 · 点 + 看每一笔</p><svg id="budget-chart" viewBox="0 0 220 220" role="img" aria-label="分类支出占比，详见图例"></svg><ul class="ledger" id="budget-legend"></ul></aside></div><p class="fine">所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。预算选择各自保存在浏览器，不自动同步；日程与地图仍按原排定方案参考。</p><p class="quote-warning" id="budget-warning"></p></div>`;
+  $('#budget-planner').innerHTML=`<div class="budget-shell"><div class="budget-heading"><div><small>${data.trip.travelers}人 · 全程合计</small><strong class="budget-total" id="budget-total"></strong></div><label class="target">预算上限 · ${escape(data.trip.currency)}<input id="budget-target" aria-label="预算上限" type="number" min="1" max="1000000" step="0.01" value="${selection.target}"></label></div><div class="balance" id="budget-balance" role="status" aria-live="polite"></div><div class="presets"><button data-reset>恢复初始方案</button>${(budget.presets||[]).map(p=>`<button data-preset="${escape(p.id)}">${escape(p.label)}</button>`).join('')}<span class="saved" id="save-status">选择保存在当前浏览器</span></div><div class="budget-layout"><div class="choices">${budget.categories.map(c=>`<article class="choice" data-category="${escape(c.id)}"><header><label for="choice-${escape(c.id)}">${escape(c.label)}</label><strong data-amount></strong></header><select id="choice-${escape(c.id)}" data-select="${escape(c.id)}" aria-describedby="note-${escape(c.id)}">${c.options.map(o=>`<option value="${escape(o.id)}">${escape(o.label)}${o.source?` · ${escape(o.source)}`:''} · ${money(o.amount)}</option>`).join('')}<option value="custom">自定义总额…</option></select><label class="custom" hidden>自定义全程合计 · ${escape(data.trip.currency)}<input data-custom="${escape(c.id)}" aria-label="${escape(c.label)}自定义金额" type="number" min="0" max="1000000" step="0.01" value="0"></label><span class="price-status"></span><p id="note-${escape(c.id)}" data-note></p><div data-quotes></div><div data-source></div></article>`).join('')}</div><aside class="chart-panel"><h3>预算都花在哪？</h3><p>占当前总支出的百分比 · 点 + 看每一笔</p><svg id="budget-chart" viewBox="0 0 220 220" role="img" aria-label="分类支出占比，详见图例"></svg><ul class="ledger" id="budget-legend"></ul></aside></div><p class="fine">所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。选择保存在浏览器，点顶栏「同步」可以带到别的设备；日程与地图仍按原排定方案参考。</p><p class="quote-warning" id="budget-warning"></p></div>`;
   $('#budget-planner').addEventListener('change',e=>{const id=e.target.dataset.select;if(!id)return;selection.selections[id].optionId=e.target.value;updateBudget(true);if(id==='flights')syncFlights();});
   $('#budget-planner').addEventListener('input',e=>{
     if(!e.target.matches('#budget-target,[data-custom]') || !e.target.validity.valid || !e.target.value.trim())return;
@@ -279,7 +396,9 @@ async function renderMap(){
 function renderDays(){
   if(!data.days?.length){$('#itinerary').hidden=true;return;}
   $('#coverage').innerHTML=data.coverage?.length?`<details class="coverage"><summary>原攻略项目核对 · 安排与取舍</summary><div class="table-scroll"><table><thead><tr><th>原项目</th><th>安排</th><th>说明</th></tr></thead><tbody>${data.coverage.map(r=>`<tr><td>${escape(r.item)}</td><td>${escape(r.when)}</td><td>${escape(r.note)}</td></tr>`).join('')}</tbody></table></div></details>`:'';
-  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small></div></summary><ol class="schedule">${(day.schedule||[]).map(item=>{const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',mapsLink(place))+photosLink(place):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}</div></li>`;}).join('')}</ol></details>`).join('');
+  $('#days').innerHTML=data.days.map(day=>`<details class="day"><summary><span>DAY ${String(day.day).padStart(2,'0')}<br>${escape(day.date)}</span><div><strong>${escape(day.title)}</strong><small>${escape((day.locations||[]).join(' → '))}</small>${(day.schedule||[]).some(i=>i.rate)?'<small class="vote-tally"></small>':''}</div></summary><ol class="schedule">${(day.schedule||[]).map((item,index)=>{if(typeof item.rate==='string')voteDefaults[voteKey(day,item,index)]=item.rate;const place=data.map?.places?.find(p=>p.id===item.placeId);return `<li${item.rate?' class="has-rate"':''}><time>${escape(item.time||'待确认')}</time><div><strong>${escape(item.title||'')}</strong><p>${escape(item.text)}</p>${place?link('地点导航',mapsLink(place))+photosLink(place):''}${(item.links||[]).map(l=>link(l.label,l.url)).join('')}${alternatives(item)}</div>${item.rate?voteButtons(voteKey(day,item,index)):''}</li>`;}).join('')}</ol></details>`).join('');
+  $('#days').onclick=e=>{const b=e.target.closest('[data-vote]');if(!b)return;const all=votes();all[b.dataset.vote]=voteOf(all,b.dataset.vote)===b.dataset.val?'':b.dataset.val;persist('votes',all);drawVotes();};
+  drawVotes();
 }
 function renderRental(){
   const r=data.rental;if(!r?.title){$('#drive').hidden=true;return;}
@@ -288,7 +407,7 @@ function renderRental(){
 function renderChecklist(){
   // Pre-departure checklist: documents, bookings with release windows/deadlines, and other to-dos.
   const list=data.checklist;if(!list?.items?.length){$('#checklist').hidden=true;$('a[href="#checklist"]')?.setAttribute('hidden','');return;}
-  const storage=`travel-plan:checklist:v1:${data.trip.id}`,done=checkState();
+  const done=checkState();
   const groups=list.groups?.length?list.groups:[{id:'',label:'待办'}];
   // 只在手机上折叠（电脑上全部展开）；group.open:false 表示手机上默认收起。勾选后重画时保留当前展开状态。
   const defaults=()=>new Map(groups.map(g=>[g.id||'',!PHONE.matches||g.open!==false]));
@@ -315,7 +434,7 @@ function renderChecklist(){
   $('#checklist-groups').addEventListener('toggle',e=>{const g=e.target.closest?.('[data-group]');if(g)opened.set(g.dataset.group,g.open);},true);
   $('#checklist-groups').addEventListener('click',e=>{if(!PHONE.matches&&e.target.closest('summary'))e.preventDefault();});
   PHONE.addEventListener?.('change',()=>{opened=defaults();draw();});
-  $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;done[id]=e.target.checked;try{localStorage.setItem(storage,JSON.stringify(done));}catch{}draw();if(data.budget?.categories?.length)updateBudget(false,false);};
+  $('#checklist-groups').onchange=e=>{const id=e.target.dataset.check;if(!id)return;const state=checkState();state[id]=e.target.checked;persist('checklist',state);draw();if(data.budget?.categories?.length)updateBudget(false,false);};
   redrawChecklist=draw;draw();
 }
 function navSpy(){
@@ -383,7 +502,7 @@ function renderTodo(){
   const storage=`travel-plan:todo:v1:${data.trip.id}`;let todos=read(storage,null);
   if(!Array.isArray(todos)||todos.some(t=>typeof t.text!=='string'))todos=(data.todo||[]).map(text=>({text,done:false}));
   const draw=()=>$('#todos').innerHTML=todos.map((todo,index)=>`<li><label><input type="checkbox" data-todo="${index}" ${todo.done?'checked':''}><span>${escape(todo.text)}</span></label></li>`).join('');
-  const store=()=>{try{localStorage.setItem(storage,JSON.stringify(todos));}catch{}};
+  const store=()=>persist('todo',todos);
   $('#todo-form').onsubmit=e=>{e.preventDefault();const text=$('#todo-text').value.trim();if(!text)return;todos.push({text,done:false});$('#todo-text').value='';store();draw();};
   $('#todos').onchange=e=>{if(e.target.dataset.todo===undefined)return;todos[Number(e.target.dataset.todo)].done=e.target.checked;store();};draw();
 }
@@ -406,7 +525,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderCash();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderOwnPrompt();navSpy();renderMap();
+    renderBudget();renderCash();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderSync();renderOwnPrompt();navSpy();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');

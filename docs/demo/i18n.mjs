@@ -37,7 +37,7 @@ const EXACT = {
   '路线为路网估算，不含实时拥堵和游玩。预算中的住宿选择用于费用比较；改变实际住宿后，需同步更新地点与路线缓存。':
     'Drive times are road-network estimates without live traffic or stops. Hotel choices in the budget compare costs; if the actual hotel changes, update the places and cached routes too.',
   '每天做什么': 'Day by day', '把每一天': 'Every day, ', '安排明白': 'planned out',
-  '出发前要做的': 'Before you go', '待办清单：': 'Checklist: ', '证件和预订': 'documents and bookings', '勾选只存在本机': 'Ticks stay on this device',
+  '出发前要做的': 'Before you go', '待办清单：': 'Checklist: ', '证件和预订': 'documents and bookings', '勾选会自动保存': 'Ticks are saved automatically',
   '截止日按放票、退改和办理时间倒推，越近越靠前；入境要求以官方页面为准，出发前再核对一次。':
     'Due dates work back from release dates, cancellation windows and processing times, soonest first. Entry rules follow the official pages; check them again before you go.',
   '怎么移动': 'Getting around', '租车与交通': 'Car and transport', '自己的笔记': 'Your notes', '小提醒': 'Reminders',
@@ -48,15 +48,15 @@ const EXACT = {
   '复制提示词': 'Copy prompt', '看看会复制什么': 'See what gets copied', '提示词': 'Prompt',
   '页面数据未能载入，请使用本地服务器打开，并检查trip-data.json。': 'The trip data did not load. Open the page through a local server and check trip-data.json.',
   '一起选，一起出发。': 'Choose together, go together.',
-  '浏览器保存各自的预算选择，不代表已经预订，也不自动跨设备同步。': 'Each browser keeps its own budget choices. Nothing here is booked, and choices do not sync across devices.',
+  '页面上的选择保存在浏览器里，点顶栏「同步」可以带到别的设备；这些选择不代表已经预订。': 'Choices are saved in this browser; use Sync in the top bar to carry them to another device. Nothing here is booked.',
   '做一份自己的 →': 'Make your own →', '回到顶部 ↑': 'Back to top ↑',
   // budget
   '已自动保存到当前浏览器': 'Saved in this browser', '本次选择有效，浏览器未能保存': 'Applied for now; this browser could not save it',
   '预算上限': 'Budget limit', '恢复初始方案': 'Reset to defaults', '选择保存在当前浏览器': 'Choices are saved in this browser',
   '自定义总额…': 'Custom total…', '自定义总额': 'Custom total', '自定义金额': 'Custom amount', '预算都花在哪？': 'Where the money goes',
   '占当前总支出的百分比 · 点 + 看每一笔': 'Share of current spending · tap + for each item', '分类支出占比，详见图例': 'Spending by category, see the legend',
-  '所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。预算选择各自保存在浏览器，不自动同步；日程与地图仍按原排定方案参考。':
-    'All amounts use the same trip basis. Price checks and estimates are not locked prices; the live total recalculates your choices, not merchant prices. Budget choices stay in each browser and do not sync; the schedule and map follow the original plan.',
+  '所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。选择保存在浏览器，点顶栏「同步」可以带到别的设备；日程与地图仍按原排定方案参考。':
+    'All amounts use the same trip basis. Price checks and estimates are not locked prices; the live total recalculates your choices, not merchant prices. Choices are saved in this browser; use Sync in the top bar to carry them to another device. The schedule and map follow the original plan.',
   '手动输入的全程合计，用于试算，不是商家报价。': 'A whole-trip total you typed in for planning, not a quote.',
   '待确认': 'To confirm', '查价入口': 'Check prices', '所有支出为0，填写金额后显示占比。': 'Spending is 0. Enter amounts to see the shares.',
   '机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。':
@@ -74,7 +74,21 @@ const EXACT = {
   '按日期查看地点、道路和导航。': 'Pick a day to see its places, roads and directions.',
   '此日使用专用交通，以官方线路为准，不画汽车最短路线。': 'This day uses dedicated transport; follow the official route. No car route is drawn.',
   '道路缓存待补充；先显示准确地点，不画示意连线。': 'Road data pending; places are shown without a drawn line.',
-  '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions', '看照片': 'Photos',
+  '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions',
+  '夯': 'Love it', '待定': 'Maybe', '额': 'Meh', '想不想去': 'Want to go?',
+  '同步': 'Sync', '☁ 已同步': '☁ Synced', '☁ 只读': '☁ Read-only',
+  '选择存在这台设备的浏览器里。换设备时，用下面的同步码（或同步链接）带过去。': 'Your choices are saved in this browser. To move them to another device, use the sync code (or sync link) below.',
+  '正在连接云端…': 'Connecting to the cloud…',
+  '云端暂时连不上，选择先存在本机，连上后会自动同步。': 'Can’t reach the cloud right now. Choices are saved on this device and will sync once it connects.',
+  '显示的是攻略主人的选择；你在这里的改动只存在本机，可以把同步码发给 TA 导入。': 'You’re seeing the owner’s choices. Your changes here stay on this device; send them your sync code to import.',
+  '已同步：在这里点的选择会存进这个 Artifact，登录 claude.ai 的手机、电脑打开都能看到。': 'Synced: your choices are saved to this Artifact, so they show up on any phone or computer signed in to claude.ai.',
+  '同步码：复制下来，在另一台设备打开这份攻略，粘贴到下面导入': 'Sync code: copy it, open this guide on another device and paste it below',
+  '复制同步码': 'Copy sync code', '复制同步链接': 'Copy sync link', '导入别处的同步码': 'Import a sync code', '粘贴同步码': 'Paste a sync code', '导入': 'Import',
+  '已复制同步码': 'Sync code copied', '已复制同步链接：在别的设备打开它就能看到这些选择': 'Sync link copied: open it on another device to see these choices',
+  '浏览器不让直接复制：已经选中，按 Ctrl+C（手机长按）复制': 'The browser blocked copying: it’s selected, press Ctrl+C (or long-press on a phone)',
+  '同步码不完整，复制时要整段复制': 'That sync code is incomplete; copy the whole thing', '这段同步码不是这份攻略的': 'That sync code is for a different guide',
+  '已导入': 'Imported', '已导入别处的选择': 'Imported choices from another device', '已导入同步链接里的选择': 'Imported the choices from the sync link',
+  '已保存，并同步到云端': 'Saved and synced to the cloud', '看照片': 'Photos',
   // itinerary, coverage, checklist, events
   '原攻略项目核对 · 安排与取舍': 'Original items · what was kept or changed', '原项目': 'Item', '安排': 'Plan', '说明': 'Notes',
   '已预订 ✓': 'Booked ✓', '自定义方案': 'custom option', '待办': 'To do', '今天': 'Today', '都办好了': 'All done', '官方入口': 'Official site', '待办已完成': 'Checklist done', '· 全部完成': '· all done',
@@ -105,6 +119,8 @@ const PATTERNS = [
   [/^分段路程 · (\d+)段$/, 'Legs · $1'], [/^已过 (\d+) 天$/, '$1 days ago'], [/^已订 (\d+)\/(\d+)$/, 'Booked $1/$2'], [/^还有 (\d+) 天$/, 'in $1 days'],
   [/^还有 (\d+) \/ (\d+) 项$/, '$1 of $2 left'], [/^· 最近：(.*)$/, '· next: $1'], [/^(\d+) 项待办$/, '$1 to do'], [/^待办 (\d+) 项$/, '$1 to do'],
   [/^(.*) · 路线图$/, '$1 · route map'],
+  [/^不想去的话，可以换成 (\d+) 个项目$/, (m, n) => `Rather skip it? ${n} alternative${n === '1' ? '' : 's'}`],
+  [/^(?:(?:夯|待定|额) \d+(?: · )?)+$/, m => m.replace(/夯/g, 'Love it').replace(/待定/g, 'Maybe').replace(/额/g, 'Meh')],
   [/^(.*) · 还有 (\d+) 天$/, '$1 · in $2 days'], [/^(.*) · 已过 (\d+) 天$/, '$1 · $2 days ago'], [/^(.*) · 今天$/, '$1 · today'],
   [/^(.+?) ↗$/, (m, a) => `${Object.prototype.hasOwnProperty.call(EXACT, a) ? EXACT[a] : a} ↗`],
 ];

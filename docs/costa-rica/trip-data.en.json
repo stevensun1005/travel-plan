@@ -945,10 +945,12 @@
           "placeId": "hotel-beach"
         },
         {
+          "id": "d1-coco-beach",
           "time": "17:30",
           "title": "Sunset on the beach",
           "text": "The beach in front of the hotel faces west, so the sun sets right over the water.",
-          "placeId": "coco-beach"
+          "placeId": "coco-beach",
+          "rate": true
         },
         {
           "time": "19:00",
@@ -974,6 +976,7 @@
           "placeId": "coco"
         },
         {
+          "id": "d2-coco",
           "time": "07:45",
           "title": "Catamaran check-in",
           "text": "Marlin del Rey's 8:00 morning departure, about 4 hours: one snorkel stop, lunch, open bar. Strong Papagayo winds often pick up on dry-season afternoons, so the morning trip means calmer water. Boarding depends on the operator (sometimes you wade from the beach to a small shuttle boat), so ask before booking and get a hand from the crew if needed.",
@@ -991,7 +994,8 @@
               "label": "Alternative: Blue Marlin private Papagayo catamaran · 8:00–12:00 · priced per boat (about USD400 for 5), pricey for two",
               "url": "https://sportfishingbluemarlin.com/catamaran-tours-papagayo/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "12:30",
@@ -1018,6 +1022,7 @@
           "placeId": "coco"
         },
         {
+          "id": "d2-coco-beach",
           "time": "20:00",
           "title": "Stargazing on the beach (new moon)",
           "placeId": "coco-beach",
@@ -1027,7 +1032,8 @@
               "label": "Moon phases (timeanddate)",
               "url": "https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027"
             }
-          ]
+          ],
+          "rate": true
         }
       ]
     },
@@ -1048,10 +1054,12 @@
           "text": "Bring some cash (the waterfall is cash only)."
         },
         {
+          "id": "d3-llanos",
           "time": "09:45",
           "title": "Llanos de Cortés waterfall",
           "text": "About 30 concrete steps with a rope handrail; sandy at the bottom, rocky at the edge and in the water. You can take a dip; watch your step on the rocks so you don't roll an ankle.",
-          "placeId": "llanos"
+          "placeId": "llanos",
+          "rate": true
         },
         {
           "time": "11:00",
@@ -1059,10 +1067,12 @@
           "text": "Lunch in Cañas or Tilarán. Between Cañas and Tilarán, don't follow the GPS left onto the dirt-road shortcut."
         },
         {
+          "id": "d3-nuevo-arenal",
           "time": "13:30",
           "title": "North shore of Lake Arenal",
           "text": "Drive the winding Route 142 and stop at roadside viewpoints for photos of the lake and volcano.",
-          "placeId": "nuevo-arenal"
+          "placeId": "nuevo-arenal",
+          "rate": true
         },
         {
           "time": "14:30",
@@ -1071,10 +1081,24 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d3-hotel-springs",
           "time": "15:00",
           "title": "Soak in the hotel hot springs",
           "text": "Soak for a while; be ready to go by 17:00.",
-          "placeId": "hotel-arenal"
+          "placeId": "hotel-arenal",
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "Rainforest Chocolate Tour (15:00)",
+              "text": "In La Fortuna town, about 2 hours: see cacao trees, grind the beans yourself and taste fresh hot chocolate. Mostly flat, with plenty of sitting. English tours at 8:00, 10:00, 13:00 and 15:00, about USD34 per person (about CA$97 for two). About 10 minutes by taxi from the hotel, and close to the Bogarín night walk afterwards.",
+              "links": [
+                {
+                  "label": "Book the Rainforest Chocolate Tour",
+                  "url": "https://rainforestchocolatetour.com/book-tour/"
+                }
+              ]
+            }
+          ]
         },
         {
           "time": "17:30",
@@ -1082,6 +1106,7 @@
           "text": "About 10 min, all in town, easy driving just after dark."
         },
         {
+          "id": "d3-bogarin",
           "time": "~17:45–19:45",
           "title": "Bogarín night walk",
           "text": "A guide leads with a flashlight to find nocturnal frogs, snakes, scorpions and spiders, plus sleeping birds and sloths. The path is mostly flat; wear closed-toe shoes and bring a light jacket and bug spray. Start time per your booking.",
@@ -1103,7 +1128,8 @@
               "label": "Alternative: Fortuna Welcome night hike with wood-fired dinner · USD100 with transfers · leaves 16:30, about 4 hours",
               "url": "https://www.fortunawelcome.com/la-fortuna-tours/night-hike-arenal-fortuna/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "20:00",
@@ -1123,11 +1149,14 @@
       ],
       "schedule": [
         {
+          "id": "d4-0",
           "time": "06:00",
           "title": "Early volcano viewing",
-          "text": "The volcano is most likely to show itself 6–9 am, and you can see it from the hotel."
+          "text": "The volcano is most likely to show itself 6–9 am, and you can see it from the hotel.",
+          "rate": true
         },
         {
+          "id": "d4-penas-blancas",
           "time": "07:30",
           "title": "Peñas Blancas safari float",
           "text": "Hotel pickup; you sit in an inflatable raft steered by the guide, with little or no paddling (some operators ask for a few light strokes), for about 2 hours spotting sloths, monkeys, caimans and birds; back around 11:00. You get on and off at the riverbank, which may be muddy and rocky, so watch your step and wear non-slip, closed-toe water shoes.",
@@ -1145,7 +1174,8 @@
               "label": "Alternative: Two Weeks in Costa Rica safari float · USD69 + tax from January, with transfers · leaves 7:30, about 4.5 hours",
               "url": "https://www.twoweeksincostarica.com/product/safari-float-penas-blancas-river-group-tour/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "12:00",
@@ -1154,6 +1184,7 @@
           "placeId": "fortuna"
         },
         {
+          "id": "d4-mistico",
           "time": "14:00",
           "title": "Mistico Hanging Bridges Park",
           "text": "About 25 min drive. 3.2 km loop with gentle slopes and steps; the hanging bridges sway; ~2 hours. Tag along behind a guided group and you'll often spot small creatures like eyelash vipers. Watch your footing on the slopes. Last entry 15:50.",
@@ -1175,13 +1206,22 @@
               "label": "Alternative: Sky Adventures hanging bridges (El Castillo, about 40 minutes by car) · booking required",
               "url": "https://skyadventures.travel/hanging-bridges/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d4-hotel-springs",
           "time": "16:30",
           "title": "Back to the hotel for the hot springs",
           "text": "After the bridges, soak for a while before heading out to dinner.",
-          "placeId": "hotel-arenal"
+          "placeId": "hotel-arenal",
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "Rest at the hotel, or stroll the town centre",
+              "text": "If you skip the hot springs after the bridges, rest in the room for a bit; around sunset walk to the little park in front of the church in town, with the volcano straight ahead, grab a coffee, then go to dinner."
+            }
+          ]
         },
         {
           "time": "18:30",
@@ -1207,6 +1247,7 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d5-1",
           "time": "08:00–11:00",
           "title": "Horseback ride with Arenal Volcano views",
           "text": "About 2.5 hours of riding through forest and pasture to a volcano viewpoint and Los Lirios lake; the guide gives a lesson first. Note: keeping heels down in the stirrups and pushing off one foot to mount and dismount put some strain on the Achilles; if it feels tight, keep the horse at a walk.",
@@ -1223,7 +1264,8 @@
               "label": "Alternative: Don Tobias ride to a volcano lookout · starts 8:30, about 3 hours, transfers included, ask for the price",
               "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "11:30",
@@ -1232,6 +1274,7 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d5-tabacon",
           "time": "12:00–17:00",
           "title": "Tabacón hot river + lunch",
           "text": "About 10 min drive. Hot rivers, waterfalls and gardens at the foot of the volcano; the day pass includes lunch. The natural pools in the river have rocky bottoms; the flat-bottomed built pools are steadier. Still lovely in the rain. Leave at 17:00 and get back to the hotel before dark.",
@@ -1240,6 +1283,43 @@
             {
               "label": "Tabacón day pass",
               "url": "https://www.tabacon.com/day-pass/"
+            }
+          ],
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "Fortuna Welcome sloth tour (13:00)",
+              "text": "About 2.5–3 hours: a guide leads you along gentle trails through farm forest looking for sloths, birds and frogs, rated \"easy\". USD90 per person incl. tax, with La Fortuna hotel pickup: about CA$257 for two, about CA$220 less than Tabacón. Runs with at least 2 people.",
+              "links": [
+                {
+                  "label": "Fortuna Welcome sloth tour",
+                  "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
+                }
+              ]
+            },
+            {
+              "title": "Sky Adventures ziplines (13:30)",
+              "text": "Ride a gondola up for views of the lake and volcano, then zip down 7 lines, the longest over 750 m; about 2 hours in all. After 1/6, USD94 + 13% tax per person, plus USD25 per person for La Fortuna transport: about CA$374 for two. The company advises against it for anyone with surgery in the past year or bone or muscle problems; her Achilles is still in rehab, so ask her physio before booking. The 100% Aventura you saw is in Monteverde, about 3 hours away each way, so it doesn’t fit these days.",
+              "links": [
+                {
+                  "label": "Sky Adventures ziplines (with transport option)",
+                  "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/"
+                },
+                {
+                  "label": "Sky Adventures official site",
+                  "url": "https://skyadventures.travel/skytrek/"
+                }
+              ]
+            },
+            {
+              "title": "Rainforest Chocolate Tour (13:00)",
+              "text": "If you didn’t go on the afternoon of 1/8, do it here: about 2 hours, USD34 per person; then rest at the hotel and head into town for dinner.",
+              "links": [
+                {
+                  "label": "Book the Rainforest Chocolate Tour",
+                  "url": "https://rainforestchocolatetour.com/book-tour/"
+                }
+              ]
             }
           ]
         },

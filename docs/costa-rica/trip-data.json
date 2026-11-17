@@ -945,10 +945,12 @@
           "placeId": "hotel-beach"
         },
         {
+          "id": "d1-coco-beach",
           "time": "17:30",
           "title": "海滩看日落",
           "text": "酒店前面的海滩朝西，日落正对海面。",
-          "placeId": "coco-beach"
+          "placeId": "coco-beach",
+          "rate": true
         },
         {
           "time": "19:00",
@@ -974,6 +976,7 @@
           "placeId": "coco"
         },
         {
+          "id": "d2-coco",
           "time": "07:45",
           "title": "双体船签到",
           "text": "Marlin del Rey上午8:00班，约4小时：浮潜一站、午餐、开放酒吧。旱季下午常刮Papagayo大风，所以选上午班，水面更稳。上船方式以船公司为准（有时要从沙滩蹚水上接驳小艇），订之前问清楚，需要时请船员扶一把。",
@@ -991,7 +994,8 @@
               "label": "备选：Blue Marlin 包船游Papagayo · 上午8:00–12:00 · 整船价（约USD400/5人），两人偏贵",
               "url": "https://sportfishingbluemarlin.com/catamaran-tours-papagayo/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "12:30",
@@ -1018,6 +1022,7 @@
           "placeId": "coco"
         },
         {
+          "id": "d2-coco-beach",
           "time": "20:00",
           "title": "沙滩上看星星（新月夜）",
           "placeId": "coco-beach",
@@ -1027,7 +1032,8 @@
               "label": "月相（timeanddate）",
               "url": "https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027"
             }
-          ]
+          ],
+          "rate": true
         }
       ]
     },
@@ -1048,10 +1054,12 @@
           "text": "带点现金（瀑布只收现金）。"
         },
         {
+          "id": "d3-llanos",
           "time": "09:45",
           "title": "Llanos de Cortés 瀑布",
           "text": "水泥台阶约30级、有扶绳，下面是沙地，水边和水里是石头。可以下水泡一会儿，踩石头时注意脚下别崴。",
-          "placeId": "llanos"
+          "placeId": "llanos",
+          "rate": true
         },
         {
           "time": "11:00",
@@ -1059,10 +1067,12 @@
           "text": "在Cañas或Tilarán吃午饭。Cañas到Tilarán之间别跟GPS左转走土路捷径。"
         },
         {
+          "id": "d3-nuevo-arenal",
           "time": "13:30",
           "title": "Arenal湖北岸",
           "text": "沿Route 142的弯路开，路边观景停车处拍湖和火山。",
-          "placeId": "nuevo-arenal"
+          "placeId": "nuevo-arenal",
+          "rate": true
         },
         {
           "time": "14:30",
@@ -1071,10 +1081,24 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d3-hotel-springs",
           "time": "15:00",
           "title": "泡酒店温泉",
           "text": "先泡一会儿，17:00前收拾好。",
-          "placeId": "hotel-arenal"
+          "placeId": "hotel-arenal",
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "Rainforest 巧克力工坊（15:00场）",
+              "text": "在La Fortuna镇上，约2小时：看可可树，自己磨可可豆，尝刚做好的热巧克力，基本是平路，坐着的时候多。英文场8:00、10:00、13:00、15:00，约USD34/人（两人约CA$97）。从酒店打车约10分钟，结束后离Bogarín夜间徒步很近。",
+              "links": [
+                {
+                  "label": "Rainforest Chocolate Tour 订票",
+                  "url": "https://rainforestchocolatetour.com/book-tour/"
+                }
+              ]
+            }
+          ]
         },
         {
           "time": "17:30",
@@ -1082,6 +1106,7 @@
           "text": "约10分钟，都在镇上，天刚黑也好开。"
         },
         {
+          "id": "d3-bogarin",
           "time": "约17:45–19:45",
           "title": "Bogarín 夜间徒步",
           "text": "向导打手电带着走，找夜里出来的蛙、蛇、蝎子、蜘蛛和睡觉的鸟、树懒。路大部分平缓，穿包脚的鞋，带件薄外套和驱蚊水。开始时间以订单为准。",
@@ -1103,7 +1128,8 @@
               "label": "备选：Fortuna Welcome 夜间徒步＋柴火晚餐 · USD100含接送 · 16:30出发约4小时",
               "url": "https://www.fortunawelcome.com/la-fortuna-tours/night-hike-arenal-fortuna/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "20:00",
@@ -1123,11 +1149,14 @@
       ],
       "schedule": [
         {
+          "id": "d4-0",
           "time": "06:00",
           "title": "早起看火山",
-          "text": "早上6–9点火山最可能露脸，从酒店就能看。"
+          "text": "早上6–9点火山最可能露脸，从酒店就能看。",
+          "rate": true
         },
         {
+          "id": "d4-penas-blancas",
           "time": "07:30",
           "title": "Peñas Blancas 安全漂流",
           "text": "酒店接送；坐在充气筏上由导游掌舵，基本不用划（有的团会让你轻轻划几下），约2小时看树懒、猴子、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上可能有泥和石头，注意脚下，穿防滑包脚的水鞋。",
@@ -1145,7 +1174,8 @@
               "label": "备选：Two Weeks in Costa Rica 河上漂流 · 1月起USD69＋税含接送 · 7:30出发约4.5小时",
               "url": "https://www.twoweeksincostarica.com/product/safari-float-penas-blancas-river-group-tour/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "12:00",
@@ -1154,6 +1184,7 @@
           "placeId": "fortuna"
         },
         {
+          "id": "d4-mistico",
           "time": "14:00",
           "title": "Mistico 吊桥公园",
           "text": "开车约25分钟。3.2公里环线，有缓坡、台阶，吊桥会晃，约2小时。跟着前面的向导团走，常能看到睫毛蝮蛇这类小动物。上下坡注意脚下。最后入园15:50。",
@@ -1175,13 +1206,22 @@
               "label": "备选：Sky Adventures 吊桥（El Castillo，开车约40分钟） · 要提前预约",
               "url": "https://skyadventures.travel/hanging-bridges/"
             }
-          ]
+          ],
+          "rate": true
         },
         {
+          "id": "d4-hotel-springs",
           "time": "16:30",
           "title": "回酒店泡温泉",
           "text": "吊桥回来先泡一会儿，再出门吃晚饭。",
-          "placeId": "hotel-arenal"
+          "placeId": "hotel-arenal",
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "回酒店歇一会儿，或去镇中心走走",
+              "text": "吊桥回来不泡温泉的话，在房间歇一会儿；傍晚去镇中心教堂前的小公园，火山就在正前方，顺路买杯咖啡，再去吃晚饭。"
+            }
+          ]
         },
         {
           "time": "18:30",
@@ -1207,6 +1247,7 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d5-1",
           "time": "08:00–11:00",
           "title": "骑马看Arenal火山",
           "text": "约2.5小时骑行，林间和牧场路线，到火山观景点和Los Lirios湖，向导会先教。注意：脚踩马镫时脚跟往下压、上下马要单脚蹬地，跟腱会吃力一点，觉得紧就让马慢走。",
@@ -1223,7 +1264,8 @@
               "label": "备选：Don Tobias 骑马上火山观景点 · 8:30开始约3小时，含接送，价格要问",
               "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
-          ]
+          ],
+          "rate": true
         },
         {
           "time": "11:30",
@@ -1232,6 +1274,7 @@
           "placeId": "hotel-arenal"
         },
         {
+          "id": "d5-tabacon",
           "time": "12:00–17:00",
           "title": "Tabacón 热河温泉＋午餐",
           "text": "开车约10分钟。火山脚下的热河、瀑布和园林，日票含午餐。河道里的天然池底是石头，泡平底的人工池更稳。下雨天泡也很舒服。17:00离开，天黑前回到酒店。",
@@ -1240,6 +1283,43 @@
             {
               "label": "Tabacón日票",
               "url": "https://www.tabacon.com/day-pass/"
+            }
+          ],
+          "rate": "maybe",
+          "alternatives": [
+            {
+              "title": "Fortuna Welcome 树懒团（13:00场）",
+              "text": "约2.5–3小时，向导带着在农场林间的平缓小路上找树懒、鸟和蛙，难度标为「容易」。USD90/人含税，含La Fortuna酒店接送，两人约CA$257，比Tabacón省约CA$220。最少2人成团。",
+              "links": [
+                {
+                  "label": "Fortuna Welcome 树懒团",
+                  "url": "https://www.fortunawelcome.com/la-fortuna-tours/arenal-sloth-tour/"
+                }
+              ]
+            },
+            {
+              "title": "Sky Adventures 滑索（13:30场）",
+              "text": "先坐缆车上山看湖和火山，再顺着7条滑索滑下来，最长一条750多米，全程约2小时。1/6以后USD94＋13%税/人，La Fortuna接送另加USD25/人，两人约CA$374。公司写明近一年做过手术、骨骼或肌肉有问题的人不建议参加；她的跟腱还在复健，先问康复师再订。你看到的100% Aventura在Monteverde，离这里单程约3小时，这几天排不下。",
+              "links": [
+                {
+                  "label": "Sky Adventures 滑索（含接送选项）",
+                  "url": "https://www.twoweeksincostarica.com/product/sky-adventures-zipline-arenal/"
+                },
+                {
+                  "label": "Sky Adventures 官网",
+                  "url": "https://skyadventures.travel/skytrek/"
+                }
+              ]
+            },
+            {
+              "title": "Rainforest 巧克力工坊（13:00场）",
+              "text": "1/8下午没去的话放在这里，约2小时，USD34/人；之后回酒店休息，晚上去镇上吃饭。",
+              "links": [
+                {
+                  "label": "Rainforest Chocolate Tour 订票",
+                  "url": "https://rainforestchocolatetour.com/book-tour/"
+                }
+              ]
             }
           ]
         },

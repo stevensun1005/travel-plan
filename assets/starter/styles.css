@@ -485,3 +485,35 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 
 /* 手机上不显示黑板/方格纸切换，固定用方格纸 */
 @media (max-width:760px){#theme-btn{display:none}}
+
+/* ---------- 行程里的「夯 / 待定 / 额」 ---------- */
+.schedule li.has-rate{grid-template-columns:120px minmax(0,1fr) auto}
+.rate{display:flex;gap:5px;align-self:start;margin-top:2px}
+.rate button{border:2px solid var(--ink);border-radius:var(--r3);background:var(--card);color:var(--ink);padding:0 9px;font:600 14px/1.7 var(--sans);box-shadow:2px 2px 0 var(--shadow);white-space:nowrap}
+.rate button:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--shadow)}
+.rate button[aria-pressed="true"]{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--shadow);font-weight:700}
+.rate button[data-val="hot"][aria-pressed="true"]{background:var(--orange-f);border-color:var(--orange);color:var(--orange)}
+.rate button[data-val="maybe"][aria-pressed="true"]{background:var(--hl)}
+.rate button[data-val="meh"][aria-pressed="true"]{background:var(--line);color:var(--ink2)}
+.vote-tally{color:var(--orange)!important}
+.vote-tally:empty{display:none}
+/* ---------- 同步面板 ---------- */
+.sync-panel{position:fixed;z-index:200;top:calc(env(safe-area-inset-top,0px) + 64px);right:max(16px,env(safe-area-inset-right,0px));width:min(380px,calc(100vw - 32px));padding:12px 14px;background:var(--card);border:2.5px solid var(--ink);border-radius:var(--r3);box-shadow:4px 4px 0 var(--shadow);font-size:14px}
+.sync-panel p{margin:0 0 8px;line-height:1.55}
+.sync-panel label{display:block;margin:8px 0 4px;font:15px/1.4 var(--hand)}
+.sync-panel textarea{width:100%;font:12px/1.4 ui-monospace,Consolas,monospace;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:6px;resize:vertical;word-break:break-all}
+.sync-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:6px}
+.sync-row button{border:2px solid var(--ink);border-radius:var(--r3);background:var(--card);color:var(--ink);padding:1px 12px;font:15px var(--hand);box-shadow:2px 2px 0 var(--shadow)}
+#sync-msg{font-size:13px;color:var(--green)}
+@media (max-width:760px){
+  .schedule li.has-rate{grid-template-columns:1fr}
+  .rate{margin:6px 0 2px}
+  .sync-panel{top:calc(env(safe-area-inset-top,0px) + 96px)}
+}
+.alts{margin:8px 0 2px;border:1.5px dashed var(--line);border-radius:var(--r3);padding:4px 10px;background:var(--card)}
+.alts summary{cursor:pointer;font:15px/1.6 var(--hand);color:var(--ink2)}
+.alts ul{margin:4px 0 6px;padding-left:18px}
+.schedule .alts li{display:block;margin:0;padding:6px 0;border-bottom:1px dashed var(--line)}
+.schedule .alts li:last-child{border-bottom:0}
+.schedule .alts p{margin:2px 0 4px}
+.alts strong{font-size:15px}

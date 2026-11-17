@@ -67,6 +67,8 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 - "She doesn't hike" keeps normal sightseeing and only swaps out trails; "no long drives at night" puts the long drives in daylight.
 - The pre-departure checklist looks up visas and entry rules for each traveler's passport and residency, adds the bookings that sell out, and sorts everything by deadline with a countdown.
 - The checklist and the budget are linked: switch the hotel, flight or activities in the budget and the bookings on the checklist follow; tick one off as booked and its budget card turns green.
+- Every activity has "Love it / Maybe / Meh" buttons; anything you're unsure about (say, a hot spring she may skip) starts as Maybe, with priced alternatives listed underneath.
+- Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync in the top bar.
 
 ### Sharing: looks good when sent, and friends can make their own
 

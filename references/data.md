@@ -8,7 +8,7 @@
 | `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,demo,notice,constraints[]`，ISO日期；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
 | `budget` | `target,categories[],presets[],chartGroups?` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,fareFamily,departure,arrival,route,duration,connection,note,url` |
-| `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `time,title,text,placeId,links[]` |
+| `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,text,placeId,links[],rate?,alternatives[]?` |
 | `map` | `places[],dailyRoutes[],routesFile,basemapFile,home?` |
 | `share` | 可选：分享路线图海报，见下方「分享路线图」 |
 | `coverage` | `{item,when,note}` |
@@ -43,6 +43,8 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 ## 地点与路线
 
 place：`{id,name,lat,lng,maps,photos,address,note,url}`，WGS84坐标。入口与中心不同要说明，未知交车点不填假点。`maps` 是在 Google Maps 里搜的地名（英文或当地文字，如 `"Llanos de Cortés Waterfall, Bagaces"`、`"Hotel Renew, 129 Paoakalani Ave, Honolulu"`），「地点导航」和当天路线导航都按它搜，没写才退回坐标；只有示例位置、私人交车点这类没有名字可搜的点不写。`photos` 是「看照片」链接的搜索词（如 `"Llanos de Cortés waterfall"`，写 `true` 就用 `maps`），给没有门票、没有官网的经典景点用：瀑布、观景台、海滩、看日落的地方，链接打开 Google 图片看风景照和游客实拍。中英文两份文件里这两个值相同。
+
+行程项：`rate:true` 在右边显示「夯 / 待定 / 额」；写 `"hot"` / `"maybe"` / `"meh"` 时就是默认选中的那个（用户点了以后以点的为准）。评价按行程项的 `id` 记，没写 id 用「第几天-第几项」，所以要评价的项最好写稳定的 `id`（中英文相同）。`alternatives:[{title,text,links:[{label,url}]}]` 折叠显示在行程项下方，标题是「不想去的话，可以换成 N 个项目」。
 
 dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`。
 
