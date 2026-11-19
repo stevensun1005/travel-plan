@@ -105,7 +105,10 @@ const EXACT = {
   '导入日历': 'Add to calendar', '没有带具体时间的行程': 'No timed plans to export',
   '这里不能下载日历文件，用网页版打开再点': 'Calendar files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
   '已打开日历文件，在日历里点「全部添加」': 'Calendar file opened: tap "Add All" in Calendar',
-  '已打开日历文件，在日历里点「全部添加」（日历文件按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',
+  '已打开日历文件，在日历里点「全部添加」（日历按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',
+  '在日历里点「订阅」，会新建一个单独的日历': 'Tap "Subscribe" in Calendar; the trip gets a calendar of its own',
+  '在日历里点「订阅」，会新建一个单独的日历（日历按原计划，换过的项目要在日历里自己改）': 'Tap "Subscribe" in Calendar; the trip gets a calendar of its own (it follows the original plan; change swapped items in Calendar yourself)',
+  '单独成一个日历，可以一键隐藏，行程改了会自动更新 ·': 'Its own calendar you can hide in one tap, updated when the plan changes ·', '只下载一次': 'Download once',
   '把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入': 'Export every timed plan as a calendar file that Apple Calendar, Google Calendar or Outlook can import in one go',
 };
 const joinCn = s => s.replace(/、/g, ', ');

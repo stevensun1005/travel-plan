@@ -12,6 +12,7 @@
 // - 换成了备选项目的，用备选的标题和说明（由 pick 决定）。
 
 const MIN = 60000, DAY = 1440 * MIN;
+export const DEFAULT_COLOR = '#D07D9C';
 
 export function parseTime(text) {
   const m = String(text ?? '').match(/(\d{1,2})[:：](\d{2})(?:\s*[–—~～\-至到]\s*(\d{1,2})[:：](\d{2}))?/);
@@ -96,7 +97,11 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
       events.push(...lines);
     });
   }
-  const head = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//travel-plan//stevensun1005//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', `X-WR-CALNAME:${text(trip.title || 'Trip')}`];
+  // 订阅（webcal）时，苹果日历会把整个行程建成单独一个日历：名字用 X-WR-CALNAME，颜色用 X-APPLE-CALENDAR-COLOR，
+  // 在「日历」列表里一点就能整组显示或隐藏；REFRESH-INTERVAL / X-PUBLISHED-TTL 让行程改了以后自动更新。
+  const color = /^#[0-9a-f]{6}$/i.test(trip.calendarColor || '') ? trip.calendarColor.toUpperCase() : DEFAULT_COLOR;
+  const head = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//travel-plan//stevensun1005//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', `X-WR-CALNAME:${text(trip.title || 'Trip')}`,
+    `X-APPLE-CALENDAR-COLOR:${color}`, 'REFRESH-INTERVAL;VALUE=DURATION:PT12H', 'X-PUBLISHED-TTL:PT12H'];
   if (zone) head.push(`X-WR-TIMEZONE:${zone}`);
   const count = events.filter(l => l === 'BEGIN:VEVENT').length;
   return { ics: [...head, ...events, 'END:VCALENDAR'].map(fold).join('\r\n') + '\r\n', count, skipped };

@@ -5,7 +5,7 @@
 | 根字段 | 结构 |
 | --- | --- |
 | `version` | `1` |
-| `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,timezone,calendarUrl?,demo,notice,constraints[]`，ISO日期；`timezone` 是目的地的IANA时区（例如 `America/Costa_Rica`），导出日历用；`calendarUrl` 是托管好的静态 .ics 的 https 地址（英文版指向 `calendar.en.ics`）；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
+| `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,timezone,calendarUrl?,demo,notice,constraints[]`，ISO日期；`timezone` 是目的地的IANA时区（例如 `America/Costa_Rica`），导出日历用；`calendarUrl` 是托管好的静态 .ics 的 https 地址（英文版指向 `calendar.en.ics`）；`calendarColor` 是订阅后这个日历的颜色（`#RRGGBB`，默认 `#D07D9C`）；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
 | `budget` | `target,categories[],presets[],chartGroups?` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,flightNo?,fareFamily,departure,arrival,route,duration,connection,note,url`；定了航班就写 `flightNo`（如 `"PD 783"`），航班卡片在路线旁边显示；出了票加 `booked:true`，卡片右上角显示「已订」，清单里订机票那项写 `status:"booked"` |
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,text,placeId,links[],rate?,alternatives[]?,tz?,end?,endTz?` |
@@ -47,6 +47,8 @@ place：`{id,name,lat,lng,maps,photos,address,note,url}`，WGS84坐标。入口�
 行程项：`rate:true` 在右边显示「夯 / 待定 / 额」；写 `"hot"` / `"maybe"` / `"meh"` 时就是默认选中的那个（用户点了以后以点的为准）。评价按行程项的 `id` 记，没写 id 用「第几天-第几项」，所以要评价的项最好写稳定的 `id`（中英文相同）。`alternatives:[{title,text,links:[{label,url}],option?}]` 折叠显示在行程项下方，标题是「不想去的话，可以换成 N 个项目」，每项前面有「改为去这儿」的勾。要让勾选影响预算和清单：给这个时段建一个预算分类（例如「1/10下午」，原安排和每个替代项各是一个方案），行程项写 `budget:"分类id"` 和 `option:"原安排的方案id"`，替代项写 `option`；勾上就切到那个方案，勾掉回到原安排，在预算下拉里换也会反映到行程上；清单里要订的项写同一个 `budget`，用方案上的 `booking` 换成要订的东西。没写 `option` 的替代项（例如「回酒店歇一会儿」）只记在本机并一起同步。
 
 导入日历：行程标题右边的「导入日历」把带具体时刻的行程项导出成一个 .ics，苹果日历、Google 日历、Outlook 都能一次全部导入（iPhone 上直接弹出「全部添加」）。`time` 里的第一个 `HH:MM` 是开始；写成 `17:30–19:30` 就用这个区间；否则一直排到当天下一项开始，所以 `09:20 出发` 后面接 `13:00 滑索`，日历上就是 09:20–13:00 一整段在路上（最长 12 小时）；当天最后一项默认 1 小时。`上午`、`晚上` 这种没有具体时刻的不导出。时间按 `trip.timezone` 计算；在出发地的项目（到机场、起飞）写 `tz:"America/Toronto"`；跨时区的回程航班写 `end:"22:45", endTz:"America/Toronto"`，日历上的落地时间才对。换成替代项目后，导出的是替代项目。
+
+有 `calendarUrl` 时，「导入日历」是 `webcal://` 订阅：苹果日历会把整个行程建成单独一个日历（名字是行程标题，颜色是 `calendarColor`），在日历列表里一点就能整组显示或隐藏；文件每 12 小时刷新，行程改了重新生成并发布后会自动更新。旁边的「只下载一次」是普通导入。
 
 哪里能导入：电脑浏览器打开独立网页（GitHub Pages、本地预览）时，按钮直接下载当场生成的文件，换过的项目也算进去。Artifact 的 `downloads` 不放行 .ics，iPhone/iPad 也不能把页面里生成的日历直接交给「日历」，这两种情况按钮会打开 `trip.calendarUrl`：先跑 `node scripts/export_calendar.mjs <trip>` 生成 `calendar.ics`（有英文版时也生成 `calendar.en.ics`），随页面一起发到 https 托管上（GitHub Pages 等），再把地址写进 `calendarUrl`。iPhone Safari 打开它会弹出「全部添加」。静态文件按原计划导出；改了行程要重跑，校验器会提醒文件比数据旧。没有 `calendarUrl` 时，Artifact 里只提示用网页版打开。
 

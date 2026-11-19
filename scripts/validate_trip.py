@@ -36,6 +36,7 @@ def validate(folder):
     def zone(value):return isinstance(value,str) and (value=='UTC' or re.fullmatch(r'[A-Z][A-Za-z_]+(/[A-Za-z0-9_+-]+)+',value) is not None)
     check('timezone' not in trip or zone(trip['timezone']),'trip.timezone must be an IANA time zone such as America/Toronto')
     if days and not trip.get('timezone') and not trip.get('demo'):warnings.append('trip.timezone missing: calendar export uses floating local times')
+    check('calendarColor' not in trip or (isinstance(trip['calendarColor'],str) and re.fullmatch(r'#[0-9A-Fa-f]{6}',trip['calendarColor']) is not None),'trip.calendarColor must be a #RRGGBB colour')
     check('calendarUrl' not in trip or (isinstance(trip['calendarUrl'],str) and trip['calendarUrl'].startswith('https://') and trip['calendarUrl'].endswith('.ics')),'trip.calendarUrl must be an https link to the hosted .ics')
     for data_name,ics_name in [('trip-data.json','calendar.ics'),('trip-data.en.json','calendar.en.ics')]:
         if (folder/ics_name).is_file() and (folder/data_name).is_file() and (folder/ics_name).stat().st_mtime<(folder/data_name).stat().st_mtime:
@@ -194,7 +195,7 @@ def validate(folder):
 CJK=re.compile(r'[　-〿㐀-鿿豈-﫿＀-￯]')
 SAME_KEYS={'id','placeId','placeIds','extraPlaceIds','defaultOption','selections','chartGroup','url','officialUrl','date','startDate','endDate','due','checkedOn','asOf',
            'currency','code','symbol','color','icon','transport','group','kind','rank','lat','lng','amount','converted','bagCount','bagPerPerson','carryOn','bundleOnly','bundles','split',
-           'target','travelers','nights','day','maps','photos','timezone','tz','end','endTz','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
+           'target','travelers','nights','day','maps','photos','timezone','tz','end','endTz','calendarColor','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
 def check_english(folder,data):
     """trip-data.en.json (optional): same structure, same ids/numbers/dates/links, and not a single CJK character."""
     path=Path(folder)/'trip-data.en.json'

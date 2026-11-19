@@ -39,7 +39,8 @@ test('each timed plan lasts until the next one, across time zones',()=>{
   assert.equal(e[4].SUMMARY,'Later flight');
   assert.equal(e[1].LOCATION,'Liberia Airport');assert.equal(e[1].GEO,'10.59;-85.54');
   assert.match(e[3].DESCRIPTION,/jacket\\; it is cold/);
-  assert.match(ics,/X-WR-CALNAME:Demo\\, trip/);
+  assert.match(ics,/X-WR-CALNAME:Demo\\, trip/);assert.match(ics,/X-APPLE-CALENDAR-COLOR:#D07D9C\r\n/);
+  assert.match(buildIcs({trip:{...trip,calendarColor:'#1f9652'},days}).ics,/X-APPLE-CALENDAR-COLOR:#1F9652/);
   for(const line of ics.split('\r\n'))assert.ok(new TextEncoder().encode(line).length<=75,line);
   assert.ok(ics.endsWith('END:VCALENDAR\r\n'));
 });
