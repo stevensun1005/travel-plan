@@ -34,13 +34,13 @@
         "options": [
           {
             "id": "porter",
-            "label": "Porter 直飞往返 · PD 783 / PD 784 · 含随身行李",
+            "label": "Porter 直飞往返 · PD 783 / PD 7301 · 含随身行李",
             "amount": 2076,
             "status": "11/15 多平台比价（含税）",
             "carryOn": true,
             "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（下单时确认）",
             "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-            "note": "选定航班：去程PD 783、回程PD 784，Porter Flexible票价档；截图里没有价格，预算仍按11/15查到的CA$2,076，订的时候以Flexible档的实际价为准。去程1/6 10:40→15:24，回程1/11 14:40→20:58，都是Porter直飞（与Air Transat联营）。Trip.com这一组标明含随身行李，两人CA$2,076；Porter官网同航班CA$2,302，但Google Flights写这一档不含随身行李，两边说法不一致，下单时点开票价详情确认行李。WestJet同日期每人约CA$1,399起，没标行李，贵很多。",
+            "note": "选定航班：去程PD 783、回程PD 7301，Porter Flexible票价档；截图里没有价格，预算仍按11/15查到的CA$2,076，订的时候以Flexible档的实际价为准。去程1/6 10:40→15:24，回程1/11 14:40→20:58，都是Porter直飞（与Air Transat联营）。Trip.com这一组标明含随身行李，两人CA$2,076；Porter官网同航班CA$2,302，但Google Flights写这一档不含随身行李，两边说法不一致，下单时点开票价详情确认行李。WestJet同日期每人约CA$1,399起，没标行李，贵很多。",
             "items": [
               {
                 "label": "Porter 去程＋回程 · 两人",
@@ -752,7 +752,7 @@
       "title": "回程｜利比里亚 → 多伦多",
       "proposal": {
         "airline": "Porter · 直飞（与Air Transat联营）",
-        "flightNo": "PD 784",
+        "flightNo": "PD 7301",
         "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（下单时确认）",
         "departure": {
           "airport": "LIR",
@@ -767,7 +767,7 @@
         "route": "LIR → YYZ",
         "duration": "5小时18分",
         "connection": "直飞",
-        "note": "12:00前还车，坐接驳车到航站楼。",
+        "note": "已订回程PD 7301；起降时刻先按原来的14:40→20:58显示，以确认单为准。12:00前还车，坐接驳车到航站楼。",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
       }
     }
@@ -1439,7 +1439,7 @@
         },
         {
           "time": "14:40",
-          "title": "Porter PD 784 直飞回多伦多",
+          "title": "Porter PD 7301 直飞回多伦多",
           "text": "20:58到。女朋友入境加拿大出示PR卡。"
         }
       ]
@@ -1732,7 +1732,7 @@
         "short": "回家",
         "items": [
           "🌋 早上看火山",
-          "✈️ PD 784 14:40 直飞回多伦多"
+          "✈️ PD 7301 14:40 直飞回多伦多"
         ],
         "badgeAt": 0.6
       }
@@ -1871,7 +1871,7 @@
         "id": "book-flight",
         "group": "bookings",
         "who": "我",
-        "title": "订1/6–1/11 Porter直飞往返（PD 783 / PD 784，Flexible档）",
+        "title": "订1/6–1/11 Porter直飞往返（PD 783 / PD 7301，Flexible档）",
         "due": "2026-11-30",
         "lead": "现在是高价期，越早越好",
         "note": "Trip.com两人CA$2,076（标明含随身行李）。下单时点开票价详情确认能带随身行李箱。",
