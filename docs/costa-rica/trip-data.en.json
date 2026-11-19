@@ -34,13 +34,13 @@
         "options": [
           {
             "id": "porter",
-            "label": "Porter nonstop round trip · carry-on included",
+            "label": "Porter nonstop round trip · PD 783 / PD 784 · carry-on included",
             "amount": 2076,
             "status": "Compared across sites, Nov 15 (incl. tax)",
             "carryOn": true,
-            "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+            "fareFamily": "Economy · Porter Flexible fare · 1 carry-on per person (confirm when booking)",
             "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-            "note": "Outbound 1/6 10:40→15:24, return 1/11 14:40→20:58, both Porter nonstop (codeshare with Air Transat). Trip.com lists this fare as including a carry-on: CA$2,076 for two. Porter's own site has the same flights at CA$2,302, but Google Flights says that fare excludes a carry-on. The sources disagree, so open the fare details when booking and confirm the baggage. WestJet on the same dates starts at about CA$1,399 per person with no baggage listed, much more expensive.",
+            "note": "Chosen flights: PD 783 out, PD 784 back, Porter Flexible fare; the screenshot shows no price, so the budget still uses the CA$2,076 found on Nov 15; go by the actual Flexible fare when booking. Outbound 1/6 10:40→15:24, return 1/11 14:40→20:58, both Porter nonstop (codeshare with Air Transat). Trip.com lists this fare as including a carry-on: CA$2,076 for two. Porter's own site has the same flights at CA$2,302, but Google Flights says that fare excludes a carry-on. The sources disagree, so open the fare details when booking and confirm the baggage. WestJet on the same dates starts at about CA$1,399 per person with no baggage listed, much more expensive.",
             "items": [
               {
                 "label": "Porter outbound + return · 2 people",
@@ -728,7 +728,8 @@
       "title": "Outbound | Toronto → Liberia",
       "proposal": {
         "airline": "Porter · nonstop (codeshare with Air Transat)",
-        "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+        "flightNo": "PD 783",
+        "fareFamily": "Economy · Porter Flexible fare · 1 carry-on per person (confirm when booking)",
         "departure": {
           "airport": "YYZ",
           "date": "2027-01-06",
@@ -742,7 +743,7 @@
         "route": "YYZ → LIR",
         "duration": "5h 44m",
         "connection": "Nonstop",
-        "note": "Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Adobe shuttle to pick up the car. Confirm flight numbers on the booking page.",
+        "note": "Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Adobe shuttle to pick up the car.",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
       }
     },
@@ -751,7 +752,8 @@
       "title": "Return | Liberia → Toronto",
       "proposal": {
         "airline": "Porter · nonstop (codeshare with Air Transat)",
-        "fareFamily": "Economy · 1 carry-on per person (confirm when booking)",
+        "flightNo": "PD 784",
+        "fareFamily": "Economy · Porter Flexible fare · 1 carry-on per person (confirm when booking)",
         "departure": {
           "airport": "LIR",
           "date": "2027-01-11",
@@ -1029,7 +1031,7 @@
         },
         {
           "time": "10:40",
-          "title": "Porter nonstop departs",
+          "title": "Porter PD 783 departs",
           "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto."
         },
         {
@@ -1437,7 +1439,7 @@
         },
         {
           "time": "14:40",
-          "title": "Porter nonstop back to Toronto",
+          "title": "Porter PD 784 nonstop back to Toronto",
           "text": "Arrive 20:58. Partner shows PR card when entering Canada."
         }
       ]
@@ -1673,7 +1675,7 @@
         "tag": "Arrival · beach",
         "short": "Arrive",
         "items": [
-          "✈️ Porter 10:40 → 15:24",
+          "✈️ PD 783 10:40 → 15:24",
           "🚗 Pick up the car",
           "🌅 Sunset in Coco",
           "🌌 Stars on the beach"
@@ -1730,7 +1732,7 @@
         "short": "Home",
         "items": [
           "🌋 Morning volcano views",
-          "✈️ 14:40 nonstop to Toronto"
+          "✈️ PD 784 14:40 nonstop to Toronto"
         ],
         "badgeAt": 0.6
       }
@@ -1869,7 +1871,7 @@
         "id": "book-flight",
         "group": "bookings",
         "who": "Me",
-        "title": "Book the Porter nonstop round trip 1/6–1/11",
+        "title": "Book the Porter nonstop round trip 1/6–1/11 (PD 783 / PD 784, Flexible fare)",
         "due": "2026-11-30",
         "lead": "Prices are high now; the sooner the better",
         "note": "Trip.com CA$2,076 for two (carry-on listed as included). When booking, open the fare details to confirm a carry-on bag is allowed.",

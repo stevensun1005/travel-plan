@@ -523,3 +523,4 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 .schedule .alts li.chosen{background:var(--green-f);border-radius:8px;padding-inline:8px;border-bottom-color:transparent}
 .schedule li.swapped>div>strong,.schedule li.swapped>div>p:not(.swap-note){text-decoration:line-through;opacity:.55}
 .swap-note{display:inline-block;margin:6px 0 0!important;padding:0 10px;border:2px solid var(--green);border-radius:var(--r3);background:var(--green-f);color:var(--ink)!important;font:600 14px/1.8 var(--sans)}
+.flight-no{display:inline-block;margin-left:10px;padding:0 9px;border:2px solid var(--ink);border-radius:var(--r3);background:var(--hl);color:var(--ink);font:700 15px/1.6 var(--sans);letter-spacing:.03em;vertical-align:middle}
