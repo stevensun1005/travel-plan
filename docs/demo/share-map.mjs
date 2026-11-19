@@ -164,7 +164,6 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     const x = MX + 20 + rand() * (MW - 40), y = MY + 20 + rand() * (MH - 40);
     ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + 7, y - 6, x + 14, y); ctx.quadraticCurveTo(x + 21, y + 6, x + 28, y); ctx.stroke();
   }
-  // 投影：等距圆柱，按纬度修正经度
   // 范围：share.bbox [西,南,东,北] 优先；否则取所有地点和路线的范围，四周留白，再按面板比例补齐
   const pts = [...(data.map?.places || []).map(p => [p.lng, p.lat]), ...roads.flatMap(r => r.geometry?.coordinates || [])];
   const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
@@ -175,8 +174,8 @@ async function drawPoster({ data, roads = [], basemap, color }) {
   else if (Array.isArray(basemap?.bbox) && basemap.bbox[0] <= inner.w && basemap.bbox[2] >= inner.e && basemap.bbox[1] <= inner.s && basemap.bbox[3] >= inner.n) {
     const [w, s, e, n] = basemap.bbox; bbox = { w, s, e, n }; // stay inside the drawn base map
   } else bbox = { w: w0 - Math.max((e0 - w0) * .1, .01), e: e0 + Math.max((e0 - w0) * .1, .01), s: s0 - Math.max((n0 - s0) * .1, .01), n: n0 + Math.max((n0 - s0) * .1, .01) };
-  const k = Math.cos((bbox.n + bbox.s) / 2 * Math.PI / 180);
   { // 按面板宽高比：先在不切掉地点的前提下裁窄，仍不够再补齐另一边，地图不会被压扁
+    const k = Math.cos((bbox.n + bbox.s) / 2 * Math.PI / 180);
     const want = (MW - 70) / (MH - 60), have = (bbox.e - bbox.w) * k / (bbox.n - bbox.s);
     const clampCenter = (c, half, lo, hi) => Math.max(lo + half, Math.min(hi - half, c));
     if (!share.bbox && have > want) {
@@ -186,37 +185,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       const newH = Math.max((bbox.e - bbox.w) * k / want, inner.n - inner.s), c = clampCenter((inner.s + inner.n) / 2, newH / 2, bbox.s, bbox.n);
       bbox.s = c - newH / 2; bbox.n = c + newH / 2;
     }
-    const now = (bbox.e - bbox.w) * k / (bbox.n - bbox.s);
-    if (now < want) { const add = ((bbox.n - bbox.s) * want / k - (bbox.e - bbox.w)) / 2; bbox.w -= add; bbox.e += add; }
-    else { const add = ((bbox.e - bbox.w) * k / want - (bbox.n - bbox.s)) / 2; bbox.s -= add; bbox.n += add; }
   }
-  const sc = Math.min((MW - 70) / ((bbox.e - bbox.w) * k), (MH - 60) / (bbox.n - bbox.s));
-  const ox = MX + (MW - (bbox.e - bbox.w) * k * sc) / 2, oy = MY + (MH - (bbox.n - bbox.s) * sc) / 2;
-  const P = (lng, lat) => [ox + (lng - bbox.w) * k * sc, oy + (bbox.n - lat) * sc];
-  const ring = (pts, close = true) => { pts.forEach(([lng, lat], i) => { const [x, y] = P(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); if (close) ctx.closePath(); };
-
-  if (basemap && !basemap.land?.length) { ctx.fillStyle = '#f6efd6'; ctx.fillRect(MX, MY, MW, MH); }
-  if (basemap) {
-    // 陆地：先画一圈浅色海岸光晕，再画陆地；没有陆地面时只画海岸线
-    ctx.beginPath(); (basemap.land || []).forEach(poly => poly.forEach(r => ring(r)));
-    ctx.strokeStyle = 'rgba(255,255,255,.75)'; ctx.lineWidth = 16; ctx.lineJoin = 'round'; ctx.stroke();
-    ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd');
-    ctx.beginPath(); (basemap.green || []).forEach(poly => poly.forEach(r => ring(r)));
-    ctx.fillStyle = '#c9e0b4'; ctx.fill('evenodd');
-    ctx.beginPath(); (basemap.water || []).forEach(poly => poly.forEach(r => ring(r)));
-    ctx.fillStyle = '#bcd8e6'; ctx.fill('evenodd');
-    ctx.beginPath(); (basemap.land || []).forEach(poly => poly.forEach(r => ring(r))); (basemap.coast || []).forEach(l => ring(l, false));
-    ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 2.2; ctx.stroke();
-    for (const [cls, w, c] of [['primary', 1.6, '#e9c77d'], ['trunk', 2.4, '#e2a35f'], ['motorway', 3, '#d98a45']]) {
-      ctx.beginPath(); (basemap.roads?.[cls] || []).forEach(l => ring(l, false));
-      ctx.strokeStyle = c; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.stroke();
-    }
-    for (const l of basemap.labels || []) {
-      if (l.kind === 'range') text(ctx, l.name, ...P(l.lng, l.lat), { font: `italic 600 15px ${SANS}`, color: '#5f7d52', align: 'center', halo: 4, haloColor: '#c9e0b4' });
-    }
-  }
-  if (share.mapTitle?.text) text(ctx, share.mapTitle.text, ...P(share.mapTitle.lng, share.mapTitle.lat), { font: `bold 64px ${HAND}`, color: 'rgba(42,42,46,.82)', align: 'center', halo: 8, haloColor: '#f6efd6' });
-  if (share.seaLabel) text(ctx, share.seaLabel, MX + 70, MY + MH - 40, { font: `italic 600 18px ${SANS}`, color: 'rgba(42,90,130,.6)' });
 
   // 每天的路线：白色描边 + 彩色虚线
   const routeFor = day => {
@@ -225,72 +194,151 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     const r = data.map?.dailyRoutes?.find(x => x.day === day);
     return r ? r.placeIds.map(placeById).filter(Boolean).map(p => [p.lng, p.lat]) : null;
   };
-  const badges = [];
-  for (const d of days) {
-    const coords = routeFor(d.day); if (!coords || coords.length < 2) continue;
-    const special = !roads.find(r => r.day === d.day);
-    const draw = () => {
-      ctx.beginPath();
-      if (special) { // 观光巴士/接送车：画一条轻微弯曲的示意线，不冒充道路
-        coords.forEach(([lng, lat], i) => {
-          const [x, y] = P(lng, lat);
-          if (!i) { ctx.moveTo(x, y); return; }
-          const [px, py] = P(...coords[i - 1]); const mx = (px + x) / 2 - (y - py) * .25, my = (py + y) / 2 + (x - px) * .25;
-          ctx.quadraticCurveTo(mx, my, x, y);
-        });
-      } else ring(coords, false);
-    };
-    ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.setLineDash([]);
-    draw(); ctx.strokeStyle = 'rgba(255,255,255,.95)'; ctx.lineWidth = 11; ctx.stroke();
-    draw(); ctx.strokeStyle = dayColor(d.day); ctx.lineWidth = 5.5; ctx.setLineDash(special ? [4, 10] : [16, 9]); ctx.stroke();
-    ctx.setLineDash([]);
-    // 徽章放在路线的某个比例处（share.days[].badgeAt，默认一半）；离别的徽章太近就往上挪
-    const pts = coords.map(c => P(...c)); let total = 0; const seg = pts.slice(1).map((q, i) => { const l = Math.hypot(q[0] - pts[i][0], q[1] - pts[i][1]); total += l; return l; });
-    let goal = total * (d.badgeAt ?? .5), bx = pts[0][0], by = pts[0][1];
-    for (let i = 0; i < seg.length; i++) { if (goal <= seg[i]) { const t = seg[i] ? goal / seg[i] : 0; bx = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * t; by = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t; break; } goal -= seg[i]; }
-    if (d.badgeOffset) { bx += d.badgeOffset[0]; by += d.badgeOffset[1]; }
-    for (let tries = 0; tries < 6 && badges.some(b => Math.hypot(b.x - bx, b.y - by) < 46); tries++) by -= 44;
-    badges.push({ x: bx, y: by, day: d.day });
+  // 局部放大小图（share.inset）：一片地方挤了好几天的短途（例如火山小镇周边），放大画在主图一角；
+  // inset.days 的徽章画在小图里，inset.pois 的贴纸也只在小图里。
+  const inset = Array.isArray(share.inset?.bbox) && share.inset.bbox.length === 4 ? share.inset : null;
+  const insetDays = new Set(inset?.days || []);
+
+  // 画一层地图：F 是画框，box 是经纬度范围（会按画框比例补齐）
+  function layer(F, box, { main = false, badgeDays, pois: layerPois, spread = 4.5, pad = [35, 30] }) {
+    const k = Math.cos((box.n + box.s) / 2 * Math.PI / 180);
+    const want = (F.w - pad[0] * 2) / (F.h - pad[1] * 2), now = (box.e - box.w) * k / (box.n - box.s);
+    if (now < want) { const add = ((box.n - box.s) * want / k - (box.e - box.w)) / 2; box.w -= add; box.e += add; }
+    else { const add = ((box.e - box.w) * k / want - (box.n - box.s)) / 2; box.s -= add; box.n += add; }
+    const sc = Math.min((F.w - pad[0] * 2) / ((box.e - box.w) * k), (F.h - pad[1] * 2) / (box.n - box.s));
+    const ox = F.x + (F.w - (box.e - box.w) * k * sc) / 2, oy = F.y + (F.h - (box.n - box.s) * sc) / 2;
+    const P = (lng, lat) => [ox + (lng - box.w) * k * sc, oy + (box.n - lat) * sc];
+    const ring = (pts, close = true) => { pts.forEach(([lng, lat], i) => { const [x, y] = P(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); if (close) ctx.closePath(); };
+
+    if (basemap && !basemap.land?.length) { ctx.fillStyle = '#f6efd6'; ctx.fillRect(F.x, F.y, F.w, F.h); }
+    if (basemap) {
+      // 陆地：先画一圈浅色海岸光晕，再画陆地；没有陆地面时只画海岸线
+      ctx.beginPath(); (basemap.land || []).forEach(poly => poly.forEach(r => ring(r)));
+      ctx.strokeStyle = 'rgba(255,255,255,.75)'; ctx.lineWidth = 16; ctx.lineJoin = 'round'; ctx.stroke();
+      ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd');
+      ctx.beginPath(); (basemap.green || []).forEach(poly => poly.forEach(r => ring(r)));
+      ctx.fillStyle = '#c9e0b4'; ctx.fill('evenodd');
+      ctx.beginPath(); (basemap.water || []).forEach(poly => poly.forEach(r => ring(r)));
+      ctx.fillStyle = '#bcd8e6'; ctx.fill('evenodd');
+      ctx.beginPath(); (basemap.land || []).forEach(poly => poly.forEach(r => ring(r))); (basemap.coast || []).forEach(l => ring(l, false));
+      ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 2.2; ctx.stroke();
+      for (const [cls, w, c] of [['primary', 1.6, '#e9c77d'], ['trunk', 2.4, '#e2a35f'], ['motorway', 3, '#d98a45']]) {
+        ctx.beginPath(); (basemap.roads?.[cls] || []).forEach(l => ring(l, false));
+        ctx.strokeStyle = c; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.stroke();
+      }
+      if (main) for (const l of basemap.labels || []) {
+        if (l.kind === 'range') text(ctx, l.name, ...P(l.lng, l.lat), { font: `italic 600 15px ${SANS}`, color: '#5f7d52', align: 'center', halo: 4, haloColor: '#c9e0b4' });
+      }
+    }
+    if (main && share.mapTitle?.text) text(ctx, share.mapTitle.text, ...P(share.mapTitle.lng, share.mapTitle.lat), { font: `bold 64px ${HAND}`, color: 'rgba(42,42,46,.82)', align: 'center', halo: 8, haloColor: '#f6efd6' });
+    if (main && share.seaLabel) text(ctx, share.seaLabel, F.x + 70, F.y + F.h - 40, { font: `italic 600 18px ${SANS}`, color: 'rgba(42,90,130,.6)' });
+
+    // 几天走同一段路时，每天的线往旁边错开一点（两头收回到地点上），后画的不会把先画的整段盖住；
+    // 长的先画、短的后画，短途不会被长途压在底下。
+    const lines = days.map((d, i) => {
+      const coords = routeFor(d.day); if (!coords || coords.length < 2) return null;
+      const special = !roads.find(r => r.day === d.day), raw = coords.map(c => P(...c));
+      const acc = [0]; for (let j = 1; j < raw.length; j++) acc[j] = acc[j - 1] + Math.hypot(raw[j][0] - raw[j - 1][0], raw[j][1] - raw[j - 1][1]);
+      const L = acc[acc.length - 1], off = (i - (days.length - 1) / 2) * spread;
+      const pts = special || !off ? raw : raw.map((p, j) => {
+        const a = raw[Math.max(0, j - 1)], b = raw[Math.min(raw.length - 1, j + 1)], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1;
+        const t = Math.min(1, acc[j] / 24, (L - acc[j]) / 24);
+        return [p[0] - dy / l * off * t, p[1] + dx / l * off * t];
+      });
+      return { d, pts, L, special };
+    }).filter(Boolean).sort((a, b) => b.L - a.L);
+    const badges = [];
+    for (const { d, pts, special } of lines) {
+      const draw = () => {
+        ctx.beginPath();
+        if (special) { // 观光巴士/接送车：画一条轻微弯曲的示意线，不冒充道路
+          pts.forEach(([x, y], i) => {
+            if (!i) { ctx.moveTo(x, y); return; }
+            const [px, py] = pts[i - 1]; const mx = (px + x) / 2 - (y - py) * .25, my = (py + y) / 2 + (x - px) * .25;
+            ctx.quadraticCurveTo(mx, my, x, y);
+          });
+        } else pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+      };
+      ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.setLineDash([]);
+      draw(); ctx.strokeStyle = 'rgba(255,255,255,.95)'; ctx.lineWidth = 11; ctx.stroke();
+      draw(); ctx.strokeStyle = dayColor(d.day); ctx.lineWidth = 5.5; ctx.setLineDash(special ? [4, 10] : [16, 9]); ctx.stroke();
+      ctx.setLineDash([]);
+      if (!badgeDays(d.day)) continue;
+      // 徽章放在路线的某个比例处（share.days[].badgeAt，默认一半；小图里用 insetBadgeAt）；离别的徽章太近就往上挪
+      let total = 0; const seg = pts.slice(1).map((q, i) => { const l = Math.hypot(q[0] - pts[i][0], q[1] - pts[i][1]); total += l; return l; });
+      let goal = total * ((main ? d.badgeAt : d.insetBadgeAt ?? d.badgeAt) ?? .5), bx = pts[0][0], by = pts[0][1];
+      for (let i = 0; i < seg.length; i++) { if (goal <= seg[i]) { const t = seg[i] ? goal / seg[i] : 0; bx = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * t; by = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t; break; } goal -= seg[i]; }
+      const shift = main ? d.badgeOffset : d.insetBadgeOffset;
+      if (shift) { bx += shift[0]; by += shift[1]; }
+      for (let tries = 0; tries < 6 && badges.some(b => Math.hypot(b.x - bx, b.y - by) < 46); tries++) by -= 44;
+      badges.push({ x: bx, y: by, day: d.day });
+    }
+
+    // 景点贴纸：手动 side/dx/dy 优先；否则依次试右、左、上、下，避开已放的贴纸和徽章
+    const placed = [];
+    const hits = (r) => placed.some(o => r.x < o.x + o.w + 4 && r.x + r.w + 4 > o.x && r.y < o.y + o.h + 4 && r.y + r.h + 4 > o.y)
+      || badges.some(b => b.x + 23 > r.x && b.x - 23 < r.x + r.w && b.y + 23 > r.y && b.y - 23 < r.y + r.h);
+    for (const poi of layerPois) {
+      const pl = placeById(poi.placeId); if (!pl) continue;
+      const [x, y] = P(pl.lng, pl.lat);
+      if (x < F.x || x > F.x + F.w || y < F.y || y > F.y + F.h) continue;
+      ctx.beginPath(); ctx.arc(x, y, 6.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2.5; ctx.stroke();
+      const label = fit(ctx, `${poi.icon || ''} ${poi.label}`.trim(), `22px ${HAND}`, 300);
+      ctx.font = `22px ${HAND}`; const w = ctx.measureText(label).width + 22, h = 34;
+      let lx = x + 14, ly = y - h / 2;
+      if (!poi.side && poi.dx === undefined) {
+        const inside = r => r.x >= F.x + 10 && r.x + r.w <= F.x + F.w - 10 && r.y >= F.y + 10 && r.y + r.h <= F.y + F.h - 10;
+        const tries = [[x + 14, y - h / 2], [x - 14 - w, y - h / 2], [x - w / 2, y - 14 - h], [x - w / 2, y + 14], [x + 14, y + 10], [x - 14 - w, y - h - 10]];
+        const ok = tries.find(([tx, ty]) => { const r = { x: tx, y: ty, w, h }; return inside(r) && !hits(r); }) || tries.find(([tx, ty]) => inside({ x: tx, y: ty, w, h })) || tries[0];
+        [lx, ly] = ok;
+      }
+      if (poi.side === 'left') lx = x - 14 - w;
+      if (poi.side === 'right') lx = x + 14;
+      if (poi.side === 'above') { lx = x - w / 2; ly = y - 14 - h; }
+      if (poi.side === 'below') { lx = x - w / 2; ly = y + 14; }
+      if (poi.dx !== undefined) { lx = x + poi.dx; ly = y + poi.dy; }
+      lx = Math.max(F.x + 10, Math.min(F.x + F.w - 10 - w, lx)); ly = Math.max(F.y + 10, Math.min(F.y + F.h - 10 - h, ly));
+      if (poi.dx !== undefined) { // 细引线连回地点
+        const tx = Math.max(lx, Math.min(lx + w, x)), ty = Math.max(ly, Math.min(ly + h, y));
+        ctx.strokeStyle = INK; ctx.lineWidth = 1.6; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(tx, ty); ctx.stroke(); ctx.setLineDash([]);
+      }
+      placed.push({ x: lx, y: ly, w, h });
+      sketchBox(ctx, lx, ly, w, h, { fill: '#fffdf5', shadow: 2.5, lw: 2, r: [10, 4, 9, 5] });
+      text(ctx, label, lx + 11, ly + h / 2 + 1, { font: `22px ${HAND}`, base: 'middle' });
+    }
+    for (const b of badges) {
+      ctx.beginPath(); ctx.arc(b.x + 2.5, b.y + 2.5, 21, 0, Math.PI * 2); ctx.fillStyle = INK; ctx.fill();
+      ctx.beginPath(); ctx.arc(b.x, b.y, 21, 0, Math.PI * 2); ctx.fillStyle = dayColor(b.day); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2.5; ctx.stroke();
+      text(ctx, String(b.day), b.x, b.y + 1, { font: `bold 26px ${HAND}`, color: '#fff', align: 'center', base: 'middle' });
+    }
+    return P;
   }
 
-  // 景点贴纸：手动 side/dx/dy 优先；否则依次试右、左、上、下，避开已放的贴纸和徽章
-  const placed = [];
-  const hits = (r) => placed.some(o => r.x < o.x + o.w + 4 && r.x + r.w + 4 > o.x && r.y < o.y + o.h + 4 && r.y + r.h + 4 > o.y)
-    || badges.some(b => b.x + 23 > r.x && b.x - 23 < r.x + r.w && b.y + 23 > r.y && b.y - 23 < r.y + r.h);
-  for (const poi of pois) {
-    const pl = placeById(poi.placeId); if (!pl) continue;
-    const [x, y] = P(pl.lng, pl.lat);
-    ctx.beginPath(); ctx.arc(x, y, 6.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2.5; ctx.stroke();
-    const label = fit(ctx, `${poi.icon || ''} ${poi.label}`.trim(), `22px ${HAND}`, 300);
-    ctx.font = `22px ${HAND}`; const w = ctx.measureText(label).width + 22, h = 34;
-    if (x < MX || x > MX + MW || y < MY || y > MY + MH) continue;
-    let lx = x + 14, ly = y - h / 2;
-    if (!poi.side && poi.dx === undefined) {
-      const inside = r => r.x >= MX + 10 && r.x + r.w <= MX + MW - 10 && r.y >= MY + 10 && r.y + r.h <= MY + MH - 10;
-      const tries = [[x + 14, y - h / 2], [x - 14 - w, y - h / 2], [x - w / 2, y - 14 - h], [x - w / 2, y + 14], [x + 14, y + 10], [x - 14 - w, y - h - 10]];
-      const ok = tries.find(([tx, ty]) => { const r = { x: tx, y: ty, w, h }; return inside(r) && !hits(r); }) || tries.find(([tx, ty]) => inside({ x: tx, y: ty, w, h })) || tries[0];
-      [lx, ly] = ok;
+  const MP = layer({ x: MX, y: MY, w: MW, h: MH }, { ...bbox }, { main: true, badgeDays: d => !insetDays.has(d), pois });
+  if (inset) {
+    // 小图默认放左下角，宽 inset.width（默认 470），高按范围比例
+    const [iw, is, ie, inn] = inset.bbox, ik = Math.cos((is + inn) / 2 * Math.PI / 180);
+    const IW = inset.width || 470, IH = Math.max(200, Math.min(380, Math.round(IW * (inn - is) / ((ie - iw) * ik)) + 20));
+    const corner = inset.corner || 'bl';
+    const IX = corner.includes('r') ? MX + MW - IW - 24 : MX + 24, IY = corner.includes('t') ? MY + 24 : MY + MH - IH - 24;
+    // 主图上框出放大的范围，用虚线连到小图
+    const [ax, ay] = MP(iw, inn), [bx2, by2] = MP(ie, is);
+    ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+    ctx.strokeRect(ax, ay, bx2 - ax, by2 - ay);
+    const fx = Math.max(IX, Math.min(IX + IW, (ax + bx2) / 2)), fy = corner.includes('t') ? IY + IH : IY;
+    ctx.beginPath(); ctx.moveTo((ax + bx2) / 2, corner.includes('t') ? ay : by2); ctx.lineTo(fx, fy); ctx.stroke(); ctx.setLineDash([]);
+    sketchBox(ctx, IX, IY, IW, IH, { fill: '#cfe6ec', shadow: 4 });
+    ctx.save(); roundPath(ctx, IX + 2, IY + 2, IW - 4, IH - 4, [12, 4, 12, 5]); ctx.clip();
+    layer({ x: IX, y: IY, w: IW, h: IH }, { w: iw, s: is, e: ie, n: inn }, { badgeDays: d => insetDays.has(d), pois: inset.pois || [], spread: 5, pad: [14, 14] });
+    ctx.restore();
+    if (inset.title) {
+      ctx.font = `bold 21px ${HAND}`; const tw2 = ctx.measureText(inset.title).width + 24;
+      sketchBox(ctx, IX + 12, IY - 18, tw2, 34, { fill: HL, shadow: 0, lw: 2, r: [10, 4, 9, 5] });
+      text(ctx, inset.title, IX + 24, IY - 1, { font: `bold 21px ${HAND}`, base: 'middle' });
     }
-    if (poi.side === 'left') lx = x - 14 - w;
-    if (poi.side === 'above') { lx = x - w / 2; ly = y - 14 - h; }
-    if (poi.side === 'below') { lx = x - w / 2; ly = y + 14; }
-    if (poi.dx !== undefined) { lx = x + poi.dx; ly = y + poi.dy; }
-    lx = Math.max(MX + 10, Math.min(MX + MW - 10 - w, lx)); ly = Math.max(MY + 10, Math.min(MY + MH - 10 - h, ly));
-    if (poi.dx !== undefined) { // 细引线连回地点
-      const tx = Math.max(lx, Math.min(lx + w, x)), ty = Math.max(ly, Math.min(ly + h, y));
-      ctx.strokeStyle = INK; ctx.lineWidth = 1.6; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(tx, ty); ctx.stroke(); ctx.setLineDash([]);
-    }
-    placed.push({ x: lx, y: ly, w, h });
-    sketchBox(ctx, lx, ly, w, h, { fill: '#fffdf5', shadow: 2.5, lw: 2, r: [10, 4, 9, 5] });
-    text(ctx, label, lx + 11, ly + h / 2 + 1, { font: `22px ${HAND}`, base: 'middle' });
   }
-  for (const b of badges) {
-    ctx.beginPath(); ctx.arc(b.x + 2.5, b.y + 2.5, 21, 0, Math.PI * 2); ctx.fillStyle = INK; ctx.fill();
-    ctx.beginPath(); ctx.arc(b.x, b.y, 21, 0, Math.PI * 2); ctx.fillStyle = dayColor(b.day); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2.5; ctx.stroke();
-    text(ctx, String(b.day), b.x, b.y + 1, { font: `bold 26px ${HAND}`, color: '#fff', align: 'center', base: 'middle' });
-  }
-  // 指北针
-  const cx = MX + MW - 62, cy = MY + 70;
+  // 指北针（小图占了右上角就放到左上角）
+  const cx = inset && (inset.corner || 'bl') === 'tr' ? MX + 62 : MX + MW - 62, cy = MY + 70;
   ctx.beginPath(); ctx.arc(cx, cy, 34, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,253,245,.92)'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, cy - 26); ctx.lineTo(cx + 9, cy + 6); ctx.lineTo(cx, cy); ctx.lineTo(cx - 9, cy + 6); ctx.closePath(); ctx.fillStyle = '#d2402f'; ctx.fill(); ctx.stroke();
   text(ctx, 'N', cx, cy + 24, { font: `bold 18px ${HAND}`, align: 'center' });
@@ -325,8 +373,14 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     const x = 70 + i * step, y = SY + SH / 2;
     ctx.beginPath(); ctx.arc(x + 14, y, 15, 0, Math.PI * 2); ctx.fillStyle = dayColor(d.day); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();
     text(ctx, String(d.day), x + 14, y + 1, { font: `bold 19px ${HAND}`, color: '#fff', align: 'center', base: 'middle' });
-    const tag = fit(ctx, d.short || d.tag, `20px ${HAND}`, step - 64);
-    text(ctx, tag, x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
+    // 和上面卡片的标题一样；放不下就在「·」处折成两行，再不行才省略
+    const full = d.tag || d.short || '', room = step - 64; ctx.font = `20px ${HAND}`;
+    const parts = full.split(/\s*[·・]\s*/).filter(Boolean);
+    if (ctx.measureText(full).width <= room || parts.length < 2) text(ctx, fit(ctx, full, `20px ${HAND}`, room), x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
+    else {
+      const half = Math.ceil(parts.length / 2), lines = [parts.slice(0, half).join(' · '), parts.slice(half).join(' · ')];
+      lines.forEach((l, j) => text(ctx, fit(ctx, l, `17px ${HAND}`, room), x + 36, y + (j ? 12 : -9), { font: `17px ${HAND}`, base: 'middle' }));
+    }
     if (i < days.length - 1) text(ctx, '→', x + step - 18, y + 1, { font: `20px ${HAND}`, color: INK2, align: 'center', base: 'middle' });
   });
   // ---- 底部品牌栏：小羊驼 + travel—plan，右边是数据说明

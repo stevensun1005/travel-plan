@@ -1676,15 +1676,15 @@
   "share": {
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "Costa Rica 6 days / 5 nights route map",
-    "subtitle": "Beach + cloud forest + volcano · 5 days driving · wildlife without hiking",
+    "subtitle": "Pacific waves, cloud-forest treetops, volcano hot springs",
     "footer": "Routes drawn from OpenStreetMap road data · flights, hotels and car booked · prices checked 2026-11-15",
     "days": [
       {
         "day": 1,
         "tag": "Arrival · beach",
-        "short": "Arrive",
+        "short": "Beach",
         "items": [
-          "✈️ PD 783 10:40 → 15:24",
+          "✈️ PD YYZ-LIR",
           "🚗 Pick up the car",
           "🌅 Sunset in Coco",
           "🌌 Stars on the beach"
@@ -1694,46 +1694,50 @@
       {
         "day": 2,
         "tag": "Waterfall · ziplines",
-        "short": "Uphill",
+        "short": "Ziplines",
         "items": [
           "💦 Llanos de Cortés waterfall",
           "🪂 100% Aventura ziplines",
           "🔦 Rainforest night walk"
         ],
-        "badgeAt": 0.5
+        "badgeAt": 0.48
       },
       {
         "day": 3,
         "tag": "Lake · hot springs",
-        "short": "Transfer",
+        "short": "Springs",
         "items": [
           "🏞️ North shore of Lake Arenal",
-          "♨️ Hotel hot springs",
+          "♨️ Volcano hot springs",
           "🐟 Seafood in town"
         ],
-        "badgeAt": 0.45
+        "badgeAt": 0.55
       },
       {
         "day": 4,
         "tag": "Float · bridges",
-        "short": "Wildlife",
+        "short": "Float",
         "items": [
           "🦥 River float wildlife tour",
           "🌉 Mistico Hanging Bridges",
           "🐟 Seafood in town"
         ],
-        "badgeAt": 0.5
+        "insetBadgeAt": 0.24
       },
       {
         "day": 5,
         "tag": "Horseback · sloths",
-        "short": "Wildlife",
+        "short": "Horses",
         "items": [
           "🐴 Horseback to the volcano",
           "🦥 Sloth tour",
           "🍽️ Dinner in town"
         ],
-        "badgeAt": 0.5
+        "insetBadgeAt": 0.25,
+        "insetBadgeOffset": [
+          0,
+          -30
+        ]
       },
       {
         "day": 6,
@@ -1741,9 +1745,9 @@
         "short": "Home",
         "items": [
           "🌋 Morning volcano views",
-          "✈️ PD 7301 16:35 nonstop to Toronto"
+          "✈️ PD LIR-YYZ"
         ],
-        "badgeAt": 0.6
+        "badgeAt": 0.85
       }
     ],
     "pois": [
@@ -1782,18 +1786,6 @@
         "icon": "🏞️",
         "label": "Lake Arenal",
         "side": "above"
-      },
-      {
-        "placeId": "hotel-arenal",
-        "icon": "🌋",
-        "label": "Stay at Termales del Arenal",
-        "side": "above"
-      },
-      {
-        "placeId": "mistico",
-        "icon": "🌉",
-        "label": "Bridges",
-        "side": "below"
       }
     ],
     "bbox": [
@@ -1804,8 +1796,57 @@
     ],
     "mapTitle": {
       "text": "Costa Rica",
-      "lng": -85.5,
-      "lat": 10.29
+      "lng": -85.35,
+      "lat": 10.8
+    },
+    "inset": {
+      "title": "🌋 Around Arenal Volcano",
+      "bbox": [
+        -84.775,
+        10.44,
+        -84.588,
+        10.515
+      ],
+      "corner": "tr",
+      "width": 540,
+      "days": [
+        4,
+        5
+      ],
+      "pois": [
+        {
+          "placeId": "hotel-arenal",
+          "icon": "🌋",
+          "label": "Termales del Arenal",
+          "dx": -290,
+          "dy": 34
+        },
+        {
+          "placeId": "mistico",
+          "icon": "🌉",
+          "label": "Bridges",
+          "side": "above"
+        },
+        {
+          "placeId": "fortuna",
+          "icon": "🏘️",
+          "label": "La Fortuna",
+          "dx": -6,
+          "dy": 40
+        },
+        {
+          "placeId": "horse-ranch",
+          "icon": "🐴",
+          "label": "Horses",
+          "side": "above"
+        },
+        {
+          "placeId": "sloth",
+          "icon": "🦥",
+          "label": "Sloths",
+          "side": "above"
+        }
+      ]
     }
   },
   "checklist": {

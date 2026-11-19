@@ -189,6 +189,12 @@ def validate(folder):
         share=share if isinstance(share,dict) else {}
         for poi in share.get('pois',[]):check(poi.get('placeId') in place_ids,f'Share poster references unknown place {poi.get("placeId")}')
         for day in share.get('days',[]):check(day.get('day') in day_ids,f'Share poster references unknown day {day.get("day")}')
+        inset=share.get('inset')
+        if inset is not None:
+            box=inset.get('bbox') if isinstance(inset,dict) else None
+            check(isinstance(box,list) and len(box)==4 and all(isinstance(v,(int,float)) and math.isfinite(v) for v in box) and box[0]<box[2] and box[1]<box[3],'share.inset.bbox must be [west,south,east,north]')
+            for poi in (inset.get('pois',[]) if isinstance(inset,dict) else []):check(poi.get('placeId') in place_ids,f'Share inset references unknown place {poi.get("placeId")}')
+            for d in (inset.get('days',[]) if isinstance(inset,dict) else []):check(d in day_ids,f'Share inset references unknown day {d}')
         if 'bbox' in share:
             box=share['bbox'];check(isinstance(box,list) and len(box)==4 and all(isinstance(v,(int,float)) and math.isfinite(v) for v in box) and box[0]<box[2] and box[1]<box[3],'share.bbox must be [west,south,east,north]')
         if share.get('mapTitle'):

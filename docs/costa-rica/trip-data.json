@@ -1676,15 +1676,15 @@
   "share": {
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "哥斯达黎加 5晚6天 路线图",
-    "subtitle": "海边＋云雾森林＋火山 · 自驾5天 · 不爬山也能看动物",
+    "subtitle": "一晚太平洋的海浪，一程云雾森林的树梢，三晚火山脚下的温泉",
     "footer": "路线按 OpenStreetMap 道路数据绘制 · 机票、酒店、租车已订 · 查价 2026-11-15",
     "days": [
       {
         "day": 1,
         "tag": "落地·海边",
-        "short": "抵达",
+        "short": "海边",
         "items": [
-          "✈️ PD 783 10:40 → 15:24",
+          "✈️ PD YYZ-LIR",
           "🚗 机场取车",
           "🌅 Coco 海边日落",
           "🌌 沙滩看星星"
@@ -1694,46 +1694,50 @@
       {
         "day": 2,
         "tag": "瀑布·滑索",
-        "short": "上山",
+        "short": "滑索",
         "items": [
           "💦 Llanos de Cortés 瀑布",
           "🪂 100% Aventura 滑索",
           "🔦 雨林夜间徒步"
         ],
-        "badgeAt": 0.5
+        "badgeAt": 0.48
       },
       {
         "day": 3,
         "tag": "湖边·温泉",
-        "short": "转场",
+        "short": "温泉",
         "items": [
           "🏞️ Arenal湖北岸",
-          "♨️ 下午泡酒店温泉",
+          "♨️ 火山温泉",
           "🐟 镇上海鲜"
         ],
-        "badgeAt": 0.45
+        "badgeAt": 0.55
       },
       {
         "day": 4,
         "tag": "漂流·吊桥",
-        "short": "动物",
+        "short": "漂流",
         "items": [
           "🦥 河上漂流看动物",
           "🌉 Mistico 吊桥",
           "🐟 镇上海鲜"
         ],
-        "badgeAt": 0.5
+        "insetBadgeAt": 0.24
       },
       {
         "day": 5,
         "tag": "骑马·树懒",
-        "short": "动物",
+        "short": "骑马",
         "items": [
           "🐴 骑马看火山",
           "🦥 树懒团",
           "🍽️ 镇上晚餐"
         ],
-        "badgeAt": 0.5
+        "insetBadgeAt": 0.25,
+        "insetBadgeOffset": [
+          0,
+          -30
+        ]
       },
       {
         "day": 6,
@@ -1741,9 +1745,9 @@
         "short": "回家",
         "items": [
           "🌋 早上看火山",
-          "✈️ PD 7301 16:35 直飞回多伦多"
+          "✈️ PD LIR-YYZ"
         ],
-        "badgeAt": 0.6
+        "badgeAt": 0.85
       }
     ],
     "pois": [
@@ -1782,18 +1786,6 @@
         "icon": "🏞️",
         "label": "Arenal湖",
         "side": "above"
-      },
-      {
-        "placeId": "hotel-arenal",
-        "icon": "🌋",
-        "label": "住Termales del Arenal",
-        "side": "above"
-      },
-      {
-        "placeId": "mistico",
-        "icon": "🌉",
-        "label": "吊桥",
-        "side": "below"
       }
     ],
     "bbox": [
@@ -1804,8 +1796,57 @@
     ],
     "mapTitle": {
       "text": "Costa Rica",
-      "lng": -85.5,
-      "lat": 10.29
+      "lng": -85.35,
+      "lat": 10.8
+    },
+    "inset": {
+      "title": "🌋 Arenal 火山周边",
+      "bbox": [
+        -84.775,
+        10.44,
+        -84.588,
+        10.515
+      ],
+      "corner": "tr",
+      "width": 540,
+      "days": [
+        4,
+        5
+      ],
+      "pois": [
+        {
+          "placeId": "hotel-arenal",
+          "icon": "🌋",
+          "label": "住Termales del Arenal",
+          "dx": -290,
+          "dy": 34
+        },
+        {
+          "placeId": "mistico",
+          "icon": "🌉",
+          "label": "吊桥",
+          "side": "above"
+        },
+        {
+          "placeId": "fortuna",
+          "icon": "🏘️",
+          "label": "La Fortuna 镇",
+          "dx": -6,
+          "dy": 40
+        },
+        {
+          "placeId": "horse-ranch",
+          "icon": "🐴",
+          "label": "骑马",
+          "side": "above"
+        },
+        {
+          "placeId": "sloth",
+          "icon": "🦥",
+          "label": "树懒",
+          "side": "above"
+        }
+      ]
     }
   },
   "checklist": {
