@@ -9,6 +9,7 @@
     "nights": 3,
     "travelers": 2,
     "currency": "CAD",
+    "timezone": "America/Vancouver",
     "demo": true,
     "notice": "功能演示：酒店、价格、航班与时刻均为虚构，不能预订。公共地标和缓存道路用于展示真实地图能力。",
     "constraints": [

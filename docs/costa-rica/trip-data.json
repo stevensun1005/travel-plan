@@ -9,6 +9,7 @@
     "nights": 5,
     "travelers": 2,
     "currency": "CAD",
+    "timezone": "America/Costa_Rica",
     "demo": false,
     "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [
@@ -1029,12 +1030,14 @@
         {
           "time": "07:40前",
           "title": "到Pearson 3号航站楼",
-          "text": "国际航班提前3小时到。女朋友带中国护照、美签（确认是多次入境M）和PR卡。"
+          "text": "国际航班提前3小时到。女朋友带中国护照、美签（确认是多次入境M）和PR卡。",
+          "tz": "America/Toronto"
         },
         {
           "time": "10:40",
           "title": "Porter PD 783 起飞",
-          "text": "约5小时44分。哥斯达黎加比多伦多晚1小时。"
+          "text": "约5小时44分。哥斯达黎加比多伦多晚1小时。",
+          "tz": "America/Toronto"
         },
         {
           "time": "15:24",
@@ -1448,7 +1451,9 @@
         {
           "time": "16:35",
           "title": "Porter PD 7301 直飞回多伦多",
-          "text": "Air Transat执飞，约5小时10分，22:45到皮尔逊。女朋友入境加拿大出示PR卡。"
+          "text": "Air Transat执飞，约5小时10分，22:45到皮尔逊。女朋友入境加拿大出示PR卡。",
+          "end": "22:45",
+          "endTz": "America/Toronto"
         }
       ]
     }

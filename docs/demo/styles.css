@@ -396,6 +396,11 @@ footer>a:last-child{font-family:var(--hand);font-size:16px;text-decoration:none}
 .share-btn{border:2px solid var(--ink);border-radius:var(--r3);background:var(--hl);color:var(--ink);padding:4px 14px;font:18px/1.4 var(--hand);box-shadow:3px 3px 0 var(--shadow);transform:rotate(-1deg)}
 .share-btn:active{transform:translate(2px,2px) rotate(-1deg);box-shadow:1px 1px 0 var(--shadow)}
 .share-btn::before{content:"🗺 "}
+.cal-btn::before{content:"📅 "}
+.cal-box{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+#cal-status{font-size:13px;color:var(--ink2);max-width:280px;text-align:right}
+#cal-status:empty{display:none}
+@media (max-width:760px){.cal-box{align-items:flex-start}#cal-status{text-align:left}}
 .share-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(20,24,22,.55)}
 .share-sheet{width:min(720px,100%);max-height:100%;overflow:auto;background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--r1);box-shadow:6px 6px 0 var(--shadow);padding:14px 16px 16px}
 .share-sheet header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}

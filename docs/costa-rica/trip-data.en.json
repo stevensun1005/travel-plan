@@ -9,6 +9,7 @@
     "nights": 5,
     "travelers": 2,
     "currency": "CAD",
+    "timezone": "America/Costa_Rica",
     "demo": false,
     "notice": "Flights are booked (PD 783 out, PD 7301 back); nothing else is booked yet. Flights and hotels were re-checked on Nov 15–16 for this version of the route; for the rental car we only have the rules and insurance rates, so the car price is an estimate. USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
     "constraints": [
@@ -1029,12 +1030,14 @@
         {
           "time": "By 07:40",
           "title": "Arrive at Pearson Terminal 3",
-          "text": "Arrive 3 hours early for international flights. Partner: bring Chinese passport, US visa (confirm it's multiple-entry, M) and PR card."
+          "text": "Arrive 3 hours early for international flights. Partner: bring Chinese passport, US visa (confirm it's multiple-entry, M) and PR card.",
+          "tz": "America/Toronto"
         },
         {
           "time": "10:40",
           "title": "Porter PD 783 departs",
-          "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto."
+          "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto.",
+          "tz": "America/Toronto"
         },
         {
           "time": "15:24",
@@ -1448,7 +1451,9 @@
         {
           "time": "16:35",
           "title": "Porter PD 7301 nonstop back to Toronto",
-          "text": "Operated by Air Transat, about 5 h 10 min, arriving at Pearson at 22:45. Partner shows PR card when entering Canada."
+          "text": "Operated by Air Transat, about 5 h 10 min, arriving at Pearson at 22:45. Partner shows PR card when entering Canada.",
+          "end": "22:45",
+          "endTz": "America/Toronto"
         }
       ]
     }

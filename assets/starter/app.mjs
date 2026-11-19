@@ -173,6 +173,40 @@ function pickSwap(key,index,on){
   drawSwaps();
 }
 
+// ---------- 一键导入日历 ----------
+// 把带具体时刻的行程导出成 .ics（calendar.mjs）：iPhone 直接弹出「全部添加」，电脑下载后双击打开；Artifact 里用 downloads 能力。
+function renderCalendar(){
+  const head=$('#itinerary .section-head');if(!head||$('#cal-btn'))return;
+  if(!(data.days||[]).some(d=>(d.schedule||[]).some(i=>/\d{1,2}[:：]\d{2}/.test(i.time||''))))return;
+  head.insertAdjacentHTML('beforeend','<div class="cal-box"><button class="share-btn cal-btn" id="cal-btn" type="button" title="把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入">导入日历</button><small id="cal-status" role="status" aria-live="polite"></small></div>');
+  $('#cal-btn').onclick=exportCalendar;
+}
+async function exportCalendar(){
+  const btn=$('#cal-btn'),say=t=>{$('#cal-status').textContent=t;};
+  btn.disabled=true;say('');
+  try{
+    const {buildIcs}=await import('./calendar.mjs');
+    const pick=(day,item,index)=>{const k=voteKey(day,item,index),i=chosenAlt(k);return i>=0?{...item,...swapItems[k].alts[i]}:item;};
+    const {ics,count}=buildIcs({trip:data.trip,days:data.days||[],places:data.map?.places||[],pick});
+    if(!count)return say('没有带具体时间的行程');
+    const name=`${String(data.trip.title||'trip').replace(/[\\/:*?"<>|\s·,，]+/g,'-').replace(/^-+|-+$/g,'')||'trip'}.ics`;
+    const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'}),done=`已导出 ${count} 个日程，在日历里点「全部添加」`;
+    if(typeof globalThis.claude?.use==='function'){
+      const downloads=await globalThis.claude.use('downloads').catch(()=>null);
+      if(!downloads)return say('这里不能直接下载日历文件');
+      try{await downloads.save({filename:name,data:blob});say(done);}
+      catch(e){say(e?.code==='declined'?'':e?.code==='rate_limited'?'稍等一下再试':'这里不能直接下载日历文件');}
+      return;
+    }
+    // iPhone/iPad 的 Safari 打开 text/calendar 会直接弹出日历预览，点「全部添加」就行
+    if(/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)){location.href=`data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;return say(done);}
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;
+    document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),10000);
+    say(`已下载 ${count} 个日程，打开文件导入日历`);
+  }catch(error){console.error(error);say('导出失败，刷新后再试');}
+  finally{btn.disabled=false;}
+}
+
 // ---------- 行程里的「夯 / 待定 / 额」 ----------
 // 行程项写 rate:true 就在右边出现三个按钮；记在 votes 里（键是行程项的 id，没写 id 用「第几天-第几项」），和其他选择一起同步。
 const VOTES=[['hot','夯'],['maybe','待定'],['meh','额']];
@@ -556,7 +590,7 @@ async function init(){
     document.title=`${data.trip.title} · travel-plan`;$('#trip-title').textContent=data.trip.title;if(data.trip.kicker&&$('#trip-kicker'))$('#trip-kicker').textContent=data.trip.kicker;$('#trip-subtitle').textContent=data.trip.subtitle||'';
     $('#trip-facts').innerHTML=[data.trip.startDate&&`${data.trip.startDate} — ${data.trip.endDate}`,data.trip.travelers&&`${data.trip.travelers}人同行`,data.trip.nights&&`${data.trip.nights}晚住宿`,data.trip.currency&&`预算币种 ${data.trip.currency}`].filter(Boolean).map(t=>`<span>${escape(t)}</span>`).join('');
     $('#trip-notice').hidden=!data.trip.notice;$('#trip-notice').textContent=data.trip.notice||'';$('#constraints').innerHTML=(data.trip.constraints||[]).map(t=>`<span>${escape(t)}</span>`).join('');
-    renderBudget();renderCash();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderSync();renderOwnPrompt();navSpy();renderMap();
+    renderBudget();renderCash();renderFlights();renderDays();renderRental();renderChecklist();renderTodo();renderSync();renderCalendar();renderOwnPrompt();navSpy();renderMap();
     $('#events').hidden=!data.events?.length;
     $('#event-cards').innerHTML=(data.events||[]).map(e=>`<article class="event"><span class="price-status">${escape(e.status||'待确认')}</span><h3>${escape(e.title)}</h3><strong>${escape(e.priceLabel||'费用待确认')}</strong><p>${escape(e.description||'')}</p><p class="quote-warning">${escape(e.conflict||'按实际行程安排，不重复预订。')}</p>${link('官方详情',e.url)}</article>`).join('');
     $('#research').hidden=!data.sources?.length;$('#sources').innerHTML=(data.sources||[]).map(s=>`<p>${link(s.label,s.url)||escape(s.label)}${s.checkedOn?' · '+escape(s.checkedOn):''}<br>${escape(s.note||'')}</p>`).join('');

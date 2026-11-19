@@ -33,6 +33,9 @@ def validate(folder):
         else:warnings.append(f'trip.{key} pending')
     if trip.get('startDate') and trip.get('endDate'):
         check(trip['startDate']<=trip['endDate'],'Trip ends before it starts')
+    def zone(value):return isinstance(value,str) and (value=='UTC' or re.fullmatch(r'[A-Z][A-Za-z_]+(/[A-Za-z0-9_+-]+)+',value) is not None)
+    check('timezone' not in trip or zone(trip['timezone']),'trip.timezone must be an IANA time zone such as America/Toronto')
+    if days and not trip.get('timezone') and not trip.get('demo'):warnings.append('trip.timezone missing: calendar export uses floating local times')
     places=data.get('map',{}).get('places',[]);place_ids=unique(places,'id','places')
     for place in places:
         check(isinstance(place.get('lat'),(int,float)) and -90<=place['lat']<=90,f'{place.get("id")}: invalid latitude')
@@ -46,6 +49,8 @@ def validate(folder):
         for item in day.get('schedule',[]):
             check(not item.get('placeId') or item['placeId'] in place_ids,'Schedule references missing place')
             check(item.get('rate') in (None,True,False,'hot','maybe','meh'),f'Day {day.get("day")}: rate must be true or hot/maybe/meh')
+            for key in ['tz','endTz']:check(key not in item or zone(item[key]),f'Day {day.get("day")}: {key} must be an IANA time zone')
+            check('end' not in item or (isinstance(item['end'],str) and re.fullmatch(r'([01]?\d|2[0-3])[:：][0-5]\d',item['end']) is not None),f'Day {day.get("day")}: end must be a HH:MM time')
             alts=item.get('alternatives')
             if item.get('budget'):
                 cat=next((c for c in budget.get('categories',[]) if c.get('id')==item['budget']),None) if isinstance(data.get('budget'),dict) else None
@@ -185,7 +190,7 @@ def validate(folder):
 CJK=re.compile(r'[　-〿㐀-鿿豈-﫿＀-￯]')
 SAME_KEYS={'id','placeId','placeIds','extraPlaceIds','defaultOption','selections','chartGroup','url','officialUrl','date','startDate','endDate','due','checkedOn','asOf',
            'currency','code','symbol','color','icon','transport','group','kind','rank','lat','lng','amount','converted','bagCount','bagPerPerson','carryOn','bundleOnly','bundles','split',
-           'target','travelers','nights','day','maps','photos','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
+           'target','travelers','nights','day','maps','photos','timezone','tz','end','endTz','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
 def check_english(folder,data):
     """trip-data.en.json (optional): same structure, same ids/numbers/dates/links, and not a single CJK character."""
     path=Path(folder)/'trip-data.en.json'

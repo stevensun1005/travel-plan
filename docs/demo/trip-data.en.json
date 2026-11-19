@@ -9,6 +9,7 @@
     "nights": 5,
     "travelers": 2,
     "currency": "CAD",
+    "timezone": "Pacific/Honolulu",
     "demo": false,
     "notice": "Nothing is booked yet. Flights and hotels were compared across several sites (Air Canada's official site, Trip.com, Ctrip, Booking.com, Expedia, Vio); each item uses the cheapest, with the site noted. Foreign currencies are converted to CAD at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD, 1 CNY = 0.2137 CAD). All flight fares include one carry-on bag per person. Tickets and meals are still converted from official or published standard prices. The return is a nonstop at 00:10 on Jan 9, so you head to the airport on the evening of Jan 8. Standalone hotels are priced for 5 nights (Jan 3–8); the Expedia flight + hotel bundle keeps the 6 nights Expedia quoted.",
     "constraints": [
@@ -1566,12 +1567,14 @@
         {
           "time": "Before 15:00",
           "title": "Arrive at Pearson",
-          "text": "Nonstop flights to the US clear US preclearance in Toronto, so arrive 2.5–3 hours before departure. Even if you don't need a visa, double-check passport validity."
+          "text": "Nonstop flights to the US clear US preclearance in Toronto, so arrive 2.5–3 hours before departure. Even if you don't need a visa, double-check passport validity.",
+          "tz": "America/Toronto"
         },
         {
           "time": "17:35",
           "title": "AC589 departs",
-          "text": "~10 hours nonstop. Try to sleep on Hawaii time on the plane; Hawaii is 5 hours behind Toronto."
+          "text": "~10 hours nonstop. Try to sleep on Hawaii time on the plane; Hawaii is 5 hours behind Toronto.",
+          "tz": "America/Toronto"
         },
         {
           "time": "22:38",
@@ -2017,7 +2020,8 @@
         {
           "time": "13:51",
           "title": "Arrive in Toronto",
-          "text": "Toronto time. Clear Canadian customs on the way back from the US."
+          "text": "Toronto time. Clear Canadian customs on the way back from the US.",
+          "tz": "America/Toronto"
         }
       ]
     }
