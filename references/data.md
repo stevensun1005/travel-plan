@@ -7,7 +7,7 @@
 | `version` | `1` |
 | `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,demo,notice,constraints[]`，ISO日期；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
 | `budget` | `target,categories[],presets[],chartGroups?` |
-| `journeys` | `{id,title,proposal}`；proposal含 `airline,flightNo?,fareFamily,departure,arrival,route,duration,connection,note,url`；定了航班就写 `flightNo`（如 `"PD 783"`），航班卡片在路线旁边显示 |
+| `journeys` | `{id,title,proposal}`；proposal含 `airline,flightNo?,fareFamily,departure,arrival,route,duration,connection,note,url`；定了航班就写 `flightNo`（如 `"PD 783"`），航班卡片在路线旁边显示；出了票加 `booked:true`，卡片右上角显示「已订」，清单里订机票那项写 `status:"booked"` |
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,text,placeId,links[],rate?,alternatives[]?` |
 | `map` | `places[],dailyRoutes[],routesFile,basemapFile,home?` |
 | `share` | 可选：分享路线图海报，见下方「分享路线图」 |

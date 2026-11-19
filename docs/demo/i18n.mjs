@@ -75,7 +75,7 @@ const EXACT = {
   '此日使用专用交通，以官方线路为准，不画汽车最短路线。': 'This day uses dedicated transport; follow the official route. No car route is drawn.',
   '道路缓存待补充；先显示准确地点，不画示意连线。': 'Road data pending; places are shown without a drawn line.',
   '官方线路': 'Official route', '当天导航': 'Directions', '完整范围': 'Whole trip', '全屏地图': 'Full screen', '正在画…': 'Drawing…', '地点导航': 'Directions',
-  '改为去这儿': 'Go here instead', '夯': 'Love it', '待定': 'Maybe', '额': 'Meh', '想不想去': 'Want to go?',
+  '改为去这儿': 'Go here instead', '已订 · 以确认单为准': 'Booked · see your confirmation', '夯': 'Love it', '待定': 'Maybe', '额': 'Meh', '想不想去': 'Want to go?',
   '同步': 'Sync', '☁ 已同步': '☁ Synced', '☁ 只读': '☁ Read-only',
   '选择存在这台设备的浏览器里。换设备时，用下面的同步码（或同步链接）带过去。': 'Your choices are saved in this browser. To move them to another device, use the sync code (or sync link) below.',
   '正在连接云端…': 'Connecting to the cloud…',

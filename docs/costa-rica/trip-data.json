@@ -10,7 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "demo": false,
-    "notice": "全部未预订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
+    "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [
       "两人 · 一间房",
       "不冲浪；她跟腱在复健后期（已能慢跑和负重训练），正常的团都能去，乱石路、上下船、骑马注意一点",
@@ -36,11 +36,11 @@
             "id": "porter",
             "label": "Porter 直飞往返 · PD 783 / PD 7301 · 含随身行李",
             "amount": 2076,
-            "status": "11/15 多平台比价（含税）",
+            "status": "已订 · 金额按11/15查价",
             "carryOn": true,
-            "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（下单时确认）",
+            "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（以确认单为准）",
             "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-            "note": "选定航班：去程PD 783、回程PD 7301，Porter Flexible票价档；截图里没有价格，预算仍按11/15查到的CA$2,076，订的时候以Flexible档的实际价为准。去程1/6 10:40→15:24，回程1/11 14:40→20:58，都是Porter直飞（与Air Transat联营）。Trip.com这一组标明含随身行李，两人CA$2,076；Porter官网同航班CA$2,302，但Google Flights写这一档不含随身行李，两边说法不一致，下单时点开票价详情确认行李。WestJet同日期每人约CA$1,399起，没标行李，贵很多。",
+            "note": "已订：去程PD 783（1/6 10:40→15:24），回程PD 7301（1/11 16:35→22:45，Air Transat执飞），Porter Flexible票价档。实际付款金额还没填，预算先按11/15查到的两人CA$2,076。",
             "items": [
               {
                 "label": "Porter 去程＋回程 · 两人",
@@ -727,9 +727,9 @@
       "id": "outbound",
       "title": "去程｜多伦多 → 利比里亚",
       "proposal": {
-        "airline": "Porter · 直飞（与Air Transat联营）",
+        "airline": "Porter · 直飞（Air Transat执飞）",
         "flightNo": "PD 783",
-        "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（下单时确认）",
+        "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（以确认单为准）",
         "departure": {
           "airport": "YYZ",
           "date": "2027-01-06",
@@ -743,32 +743,34 @@
         "route": "YYZ → LIR",
         "duration": "5小时44分",
         "connection": "直飞",
-        "note": "哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Adobe接驳车去取车。",
-        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
+        "note": "已订。哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Adobe接驳车去取车。",
+        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+        "booked": true
       }
     },
     {
       "id": "return",
       "title": "回程｜利比里亚 → 多伦多",
       "proposal": {
-        "airline": "Porter · 直飞（与Air Transat联营）",
+        "airline": "Porter · 直飞（Air Transat执飞）",
         "flightNo": "PD 7301",
-        "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（下单时确认）",
+        "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（以确认单为准）",
         "departure": {
           "airport": "LIR",
           "date": "2027-01-11",
-          "time": "14:40"
+          "time": "16:35"
         },
         "arrival": {
           "airport": "YYZ",
           "date": "2027-01-11",
-          "time": "20:58"
+          "time": "22:45"
         },
         "route": "LIR → YYZ",
-        "duration": "5小时18分",
+        "duration": "5小时10分",
         "connection": "直飞",
-        "note": "已订回程PD 7301；起降时刻先按原来的14:40→20:58显示，以确认单为准。12:00前还车，坐接驳车到航站楼。",
-        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD"
+        "note": "已订。回程由Air Transat执飞，在Air Transat柜台值机、托运。13:15前还车，坐接驳车到航站楼。",
+        "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
+        "booked": true
       }
     }
   ],
@@ -1002,7 +1004,7 @@
           "lir"
         ],
         "transport": "driving",
-        "note": "约3小时；8:45出发，12:00前还车。"
+        "note": "约3小时；10:00出发，13:15前还车。"
       }
     ],
     "routesFile": "routes.json",
@@ -1426,21 +1428,27 @@
           "placeId": "hotel-arenal"
         },
         {
-          "time": "08:45",
+          "time": "08:00",
+          "title": "上午慢慢收拾",
+          "text": "飞机下午才飞，早上可以再泡一次酒店温泉，10:00前退房。",
+          "placeId": "hotel-arenal"
+        },
+        {
+          "time": "10:00",
           "title": "出发回机场",
-          "text": "沿湖经Tilarán、Cañas，路上约3小时；留出加油时间（还车要加满），12:00前到。",
+          "text": "沿湖经Tilarán、Cañas，路上约3小时；留出加油时间（还车要加满），13:15前到。",
           "placeId": "nuevo-arenal"
         },
         {
-          "time": "12:00",
+          "time": "13:15",
           "title": "还车，坐接驳车到机场",
-          "text": "离境税一般已含在机票里。",
+          "text": "离境税一般已含在机票里。回程由Air Transat执飞，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小时到最稳。",
           "placeId": "lir"
         },
         {
-          "time": "14:40",
+          "time": "16:35",
           "title": "Porter PD 7301 直飞回多伦多",
-          "text": "20:58到。女朋友入境加拿大出示PR卡。"
+          "text": "Air Transat执飞，约5小时10分，22:45到皮尔逊。女朋友入境加拿大出示PR卡。"
         }
       ]
     }
@@ -1523,7 +1531,7 @@
     }
   ],
   "rental": {
-    "title": "租车：1/6 16:15取 – 1/11 12:00还（5天）",
+    "title": "租车：1/6 16:15取 – 1/11 13:15还（5天）",
     "summary": "哥斯达黎加两个区域之间没有方便的公共交通，五天都开车。推荐Adobe：最低23岁、不收青年费；取还车都在机场外的门店，有免费接驳。",
     "details": [
       {
@@ -1668,7 +1676,7 @@
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "哥斯达黎加 5晚6天 路线图",
     "subtitle": "海边＋云雾森林＋火山 · 自驾5天 · 不爬山也能看动物",
-    "footer": "路线按 OpenStreetMap 道路数据绘制 · 全部未预订 · 查价 2026-11-15",
+    "footer": "路线按 OpenStreetMap 道路数据绘制 · 机票已订，其余未订 · 查价 2026-11-15",
     "days": [
       {
         "day": 1,
@@ -1732,7 +1740,7 @@
         "short": "回家",
         "items": [
           "🌋 早上看火山",
-          "✈️ PD 7301 14:40 直飞回多伦多"
+          "✈️ PD 7301 16:35 直飞回多伦多"
         ],
         "badgeAt": 0.6
       }
@@ -1874,10 +1882,11 @@
         "title": "订1/6–1/11 Porter直飞往返（PD 783 / PD 7301，Flexible档）",
         "due": "2026-11-30",
         "lead": "现在是高价期，越早越好",
-        "note": "Trip.com两人CA$2,076（标明含随身行李）。下单时点开票价详情确认能带随身行李箱。",
+        "note": "已订。回程PD 7301由Air Transat执飞，1/11在Air Transat柜台值机、托运。",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
         "urlLabel": "Trip.com",
-        "budget": "flights"
+        "budget": "flights",
+        "status": "booked"
       },
       {
         "group": "bookings",
