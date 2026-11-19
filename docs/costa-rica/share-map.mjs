@@ -407,7 +407,9 @@ async function drawPoster({ data, roads = [], basemap, color }) {
   if (alpaca) ctx.drawImage(alpaca, 36, fy - 46, 60, 60);
   const bx = alpaca ? 100 : 44, bw = text(ctx, 'travel—plan', bx, fy, { font: `bold 30px ${HAND}` });
   ctx.beginPath(); ctx.arc(bx + bw + 10, fy - 12, 6, 0, Math.PI * 2); ctx.fillStyle = '#e07a12'; ctx.fill();
-  text(ctx, fit(ctx, share.footer || (i18n.lang === 'en' ? 'Roads drawn from OpenStreetMap data · prices and bookings per the trip page' : '路线按 OpenStreetMap 道路数据绘制 · 价格与预订以攻略页为准'), `15px ${SANS}`, W - bx - bw - 90), W - 40, fy - 2, { font: `15px ${SANS}`, color: INK2, align: 'right' });
+  // 右下角只留 OpenStreetMap 的署名（地图数据许可要求）；share.footer 写了才在前面加一句
+  const credit = i18n.lang === 'en' ? '© OpenStreetMap contributors' : '© OpenStreetMap 贡献者';
+  text(ctx, fit(ctx, share.footer ? `${share.footer} · ${credit}` : credit, `13px ${SANS}`, W - bx - bw - 90), W - 40, fy - 2, { font: `13px ${SANS}`, color: 'rgba(98,98,107,.7)', align: 'right' });
 
   return { canvas, title, days, dayColor, map: { MX, MY, MW, MH } };
 }

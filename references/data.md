@@ -106,7 +106,7 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 
 | 字段 | 说明 |
 | --- | --- |
-| `kicker,title,subtitle,footer` | 海报页头和页脚文字 |
+| `kicker,title,subtitle,footer` | 海报页头文字；`footer` 一般不写，右下角只留一行很小的「© OpenStreetMap 贡献者」（地图数据许可要求，不能去掉），写了才在它前面加一句 |
 | `days[]` | `{day,tag,short,items[],badgeAt,badgeOffset?,insetBadgeAt?,insetBadgeOffset?}`；`tag`卡片标题，海报底部日程条也写它（放不下在「·」处折成两行）；`short`只给小尺寸预览卡用；`items`最多5条亮点，航班写「航空公司代码 出发-到达」，例如 `"✈️ PD YYZ-LIR"`，不写航班号和时刻；`badgeAt`是日期徽章在当天路线上的位置（0–1），徽章挤在一起或压住贴纸时调它或 `badgeOffset:[dx,dy]` |
 | `inset` | 局部放大小图 `{title,bbox:[西,南,东,北],days:[],pois:[],corner?,width?}`：好几天的短途挤在一小片（例如火山小镇周边）时用。小图画在主图一角（`corner` 默认 `bl`，可 `tr` 等），主图上用虚线框出范围并连过去；`days` 的徽章画在小图里（位置用 `insetBadgeAt`），`pois` 的贴纸只在小图里（主图 `pois` 就别再放这些点）。几天走同一段路时，海报会把每天的线往旁边错开一点，长的先画、短的后画，每天都看得见 |
 | `pois[]` | `{placeId,icon,label,side,dx,dy}`；side为left/right/above/below，或用dx/dy像素偏移并自动画引线 |
