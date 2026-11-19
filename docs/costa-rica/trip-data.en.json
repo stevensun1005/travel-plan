@@ -13,12 +13,13 @@
     "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.en.ics",
     "calendarColor": "#D07D9C",
     "demo": false,
-    "notice": "Flights are booked (PD 783 out, PD 7301 back); nothing else is booked yet. Flights and hotels were re-checked on Nov 15–16 for this version of the route; for the rental car we only have the rules and insurance rates, so the car price is an estimate. USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
+    "notice": "Flights are booked (PD 783 out, PD 7301 back); nothing else is booked yet. Flights and hotels were re-checked on Nov 15–16 for this version of the route; the rental car uses Adobe's and Alamo's own-site quotes from 11/19 (smallest SUV). USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
     "constraints": [
       "2 people · 1 room",
       "No surfing. Her Achilles is in late-stage rehab (already jogging and doing weight training), so regular tours are fine; just take a little care on rocky paths, getting on and off boats, and horseback riding",
       "Loves seafood",
       "Driver is 23 at time of travel · Canadian G licence",
+      "Rental car must be an SUV; the smallest SUV is fine",
       "Target budget around CAD 6000",
       "Dates: depart 1/6 (Wed), return 1/11 (Mon)",
       "Finish long and mountain drives in daylight (sunset ~17:30); at night only short drives of a few km in town"
@@ -358,43 +359,43 @@
       },
       {
         "id": "car",
-        "label": "Car rental | 5 days (incl. mandatory insurance and CDW)",
+        "label": "Rental car | 5 days · smallest SUV (incl. mandatory insurance and CDW)",
         "icon": "🚗",
         "color": "#1f9652",
         "defaultOption": "adobe",
         "options": [
           {
             "id": "adobe",
-            "label": "Adobe 5 days · no young-driver fee at 23 · incl. mandatory insurance and CDW",
-            "amount": 491.87,
-            "status": "Budget estimate · no quote yet",
-            "note": "Costa Rica rental prices must include mandatory liability insurance; most low prices on third-party sites leave it out. Adobe's minimum age is 23 with a licence held 2+ years, and there's no young-driver fee. Insurance is estimated from Vamos's published rates (liability USD15.95/day, CDW USD18/day). No actual quote for the car itself yet; enter age 23 and get a fresh quote before booking.",
+            "label": "Adobe 5 days · Hyundai Kona 2WD automatic (smallest SUV) · incl. mandatory insurance and CDW",
+            "amount": 895.84,
+            "status": "Official-site quote · checked 11/19 · not booked",
+            "note": "Quoted on Adobe's own site for pickup at the Liberia airport office 1/6 16:00, return 1/11 13:00: Hyundai Kona 2WD automatic or similar, their cheapest SUV. Car USD475.80 + mandatory liability USD67.80 (USD13.56/day) + car protection (CDW) USD84.75 (USD16.95/day), USD628.35 including tax, paid at the counter. Adobe's minimum age is 23 with a licence held 2+ years and no young-driver fee; the USD1,000 deposit must go on a credit card.",
             "items": [
               {
-                "label": "Compact SUV or sedan, 5 days (~USD35/day, estimate)",
-                "amount": 249.5
+                "label": "Hyundai Kona 2WD or similar, 5 days USD475.80",
+                "amount": 678.35
               },
               {
-                "label": "Mandatory third-party liability ~USD16/day",
-                "amount": 114.06
+                "label": "Mandatory third-party liability USD13.56/day",
+                "amount": 96.66
               },
               {
-                "label": "Collision damage waiver (CDW) ~USD18/day",
-                "amount": 128.31
+                "label": "Car protection (CDW) USD16.95/day",
+                "amount": 120.83
               }
             ],
-            "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv"
           },
           {
             "id": "alamo",
-            "label": "Alamo 5 days · Nissan Sentra automatic · incl. mandatory insurance and CDW (Fully package)",
-            "amount": 844.81,
+            "label": "Alamo 5 days · Suzuki Ignis automatic (smallest SUV) · incl. mandatory insurance and CDW (Fully package)",
+            "amount": 852.43,
             "status": "Official-site quote · checked 11/19 · not booked",
-            "note": "Quoted on Alamo Costa Rica's own site for pickup 1/6 16:00, return 1/11 13:00, driver aged 23: the Fully package is USD592.56, including mandatory third-party liability, CDW (damage and theft), 13% VAT, the airport fee and the young-driver fee (USD50 for the whole rental), paid at the counter, unlimited mileage. The Basic package with only the mandatory insurance is USD542.56 (no CDW); Premium with zero deductible is USD667.56. The site also lists an unnamed car at USD502.18 Basic. Pickup and return are at Alamo's office about 1 km from Liberia airport, open daily 5:00–22:00.",
+            "note": "Quoted on Alamo Costa Rica's own site for pickup 1/6 16:00, return 1/11 13:00, driver aged 23: Suzuki Ignis automatic or similar (4 people, 2 suitcases), their smallest SUV. The Fully package is USD597.90, including mandatory third-party liability, CDW (damage and theft), 13% VAT, the airport fee and the young-driver fee (USD50 for the whole rental), paid at the counter, unlimited mileage. Basic with only the mandatory insurance is USD547.90 (no CDW); Premium with zero deductible is USD672.90. Pickup and return are at Alamo's office about 1 km from Liberia airport, open daily 5:00–22:00.",
             "items": [
               {
-                "label": "Nissan Sentra or similar, 5 days (incl. mandatory liability, tax, airport fee) USD478.29",
-                "amount": 681.9
+                "label": "Suzuki Ignis or similar, 5 days (incl. mandatory liability, tax, airport fee) USD483.63",
+                "amount": 689.51
               },
               {
                 "label": "Young-driver fee USD50 at 23, plus its airport fee and tax, USD64.27",
@@ -402,12 +403,12 @@
               },
               {
                 "label": "CDW damage and theft cover (Fully is USD50 more than Basic)",
-                "amount": 71.28
+                "amount": 71.29
               }
             ],
             "url": "https://www.alamo.cr/reservas",
             "booking": {
-              "title": "Book on Alamo's site (Fully package), enter age 23",
+              "title": "Book a Suzuki Ignis (smallest SUV, Fully package) on Alamo's site, enter age 23",
               "note": "Pay at the counter; credit card for the deposit. Pickup is at Alamo's office about 1 km from the airport.",
               "url": "https://www.alamo.cr/reservas",
               "urlLabel": "Alamo Costa Rica"
@@ -1724,11 +1725,11 @@
       },
       {
         "label": "Default vehicle",
-        "value": "Sedan or compact SUV, ~CA$492 (incl. mandatory insurance and CDW, estimate)"
+        "value": "Smallest SUV: Adobe Hyundai Kona 2WD automatic, CA$895.84 (incl. mandatory insurance and CDW, official-site quote)"
       },
       {
         "label": "Current status",
-        "value": "Not booked · no full checkout price for a 23-year-old yet"
+        "value": "Not booked · both companies quoted on their own sites for age 23, smallest SUV (11/19)"
       }
     ],
     "notes": [
@@ -2102,7 +2103,7 @@
         "id": "book-car",
         "group": "bookings",
         "who": "Me",
-        "title": "Book the car on Adobe's site; enter your real age to see the total with mandatory insurance",
+        "title": "Book the Hyundai Kona 2WD (smallest SUV) on Adobe's site, with car protection",
         "due": "2026-12-10",
         "lead": "4 weeks ahead",
         "note": "Deposit ~USD1,000, credit card only.",

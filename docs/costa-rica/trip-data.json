@@ -13,12 +13,13 @@
     "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.ics",
     "calendarColor": "#D07D9C",
     "demo": false,
-    "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
+    "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车按Adobe和Alamo官网11/19的报价（最小的SUV）。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [
       "两人 · 一间房",
       "不冲浪；她跟腱在复健后期（已能慢跑和负重训练），正常的团都能去，乱石路、上下船、骑马注意一点",
       "喜欢海鲜",
       "驾驶人出行时23岁 · 加拿大G牌",
+      "租车要SUV，最小的SUV就行",
       "目标预算CAD 6000左右",
       "日期：1/6（周三）去，1/11（周一）回",
       "长途和山路白天开完（日落约17:30）；晚上只开镇上几公里的短途"
@@ -358,43 +359,43 @@
       },
       {
         "id": "car",
-        "label": "租车｜5天（含强制险和CDW）",
+        "label": "租车｜5天 · 最小的SUV（含强制险和CDW）",
         "icon": "🚗",
         "color": "#1f9652",
         "defaultOption": "adobe",
         "options": [
           {
             "id": "adobe",
-            "label": "Adobe 5天 · 23岁不收青年费 · 含强制险和CDW",
-            "amount": 491.87,
-            "status": "预算估算 · 尚无报价",
-            "note": "哥斯达黎加的租车价一定要加上强制责任险，第三方网站的低价大多没含。Adobe最低23岁、驾照满2年，不收青年费；保险按Vamos公开价估算（责任险USD15.95/天、CDW USD18/天）。车价没拿到实际报价，订之前填23岁重新报价。",
+            "label": "Adobe 5天 · Hyundai Kona 2WD自动挡（最小SUV）· 含强制险和CDW",
+            "amount": 895.84,
+            "status": "官网报价 · 11/19查 · 未订",
+            "note": "Adobe官网按1/6 16:00在利比里亚机场店取、1/11 13:00还查的价：Hyundai Kona 2WD自动挡或同级，是他们最便宜的SUV。车价USD475.80＋强制责任险USD67.80（USD13.56/天）＋车损保障CDW USD84.75（USD16.95/天），含税合计USD628.35，到店付款。Adobe最低23岁、驾照满2年，不收青年费；押金USD1,000只收信用卡。",
             "items": [
               {
-                "label": "小型SUV或轿车 5天（约USD35/天，估算）",
-                "amount": 249.5
+                "label": "Hyundai Kona 2WD或同级 5天 USD475.80",
+                "amount": 678.35
               },
               {
-                "label": "强制第三者责任险 约USD16/天",
-                "amount": 114.06
+                "label": "强制第三者责任险 USD13.56/天",
+                "amount": 96.66
               },
               {
-                "label": "车损保障CDW 约USD18/天",
-                "amount": 128.31
+                "label": "车损保障CDW USD16.95/天",
+                "amount": 120.83
               }
             ],
-            "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv"
           },
           {
             "id": "alamo",
-            "label": "Alamo 5天 · Nissan Sentra自动挡 · 含强制险和CDW（Fully套餐）",
-            "amount": 844.81,
+            "label": "Alamo 5天 · Suzuki Ignis自动挡（最小SUV）· 含强制险和CDW（Fully套餐）",
+            "amount": 852.43,
             "status": "官网报价 · 11/19查 · 未订",
-            "note": "Alamo哥斯达黎加官网按1/6 16:00取、1/11 13:00还、驾驶人23岁查的价：Fully套餐USD592.56，已含强制第三者责任险、CDW（车损和防盗）、13%增值税、机场费和23岁青年费（整单USD50），到店付款，不限里程。只要强制险的Basic套餐是USD542.56（不含CDW）；再加零自付额的Premium是USD667.56。官网还有一款没写车型的车，Basic USD502.18。取还车在利比里亚机场外约1公里的Alamo门店，每天5:00–22:00。",
+            "note": "Alamo哥斯达黎加官网按1/6 16:00取、1/11 13:00还、驾驶人23岁查的价：Suzuki Ignis自动挡或同级（4人、2个箱子），是他们最小的SUV。Fully套餐USD597.90，已含强制第三者责任险、CDW（车损和防盗）、13%增值税、机场费和23岁青年费（整单USD50），到店付款，不限里程。只要强制险的Basic套餐是USD547.90（不含CDW）；再加零自付额的Premium是USD672.90。取还车在利比里亚机场外约1公里的Alamo门店，每天5:00–22:00。",
             "items": [
               {
-                "label": "Nissan Sentra或同级 5天（含强制责任险、税、机场费）USD478.29",
-                "amount": 681.9
+                "label": "Suzuki Ignis或同级 5天（含强制责任险、税、机场费）USD483.63",
+                "amount": 689.51
               },
               {
                 "label": "23岁青年费USD50，加上对应的机场费和税 USD64.27",
@@ -402,12 +403,12 @@
               },
               {
                 "label": "CDW车损和防盗（Fully比Basic多USD50）",
-                "amount": 71.28
+                "amount": 71.29
               }
             ],
             "url": "https://www.alamo.cr/reservas",
             "booking": {
-              "title": "在Alamo官网订车（Fully套餐），填23岁",
+              "title": "在Alamo官网订Suzuki Ignis（最小SUV，Fully套餐），填23岁",
               "note": "到店付款；押金用信用卡。取车在机场外约1公里的Alamo门店。",
               "url": "https://www.alamo.cr/reservas",
               "urlLabel": "Alamo哥斯达黎加"
@@ -1724,11 +1725,11 @@
       },
       {
         "label": "默认车型",
-        "value": "轿车或小型SUV，约CA$492（含强制险和CDW，估算）"
+        "value": "最小的SUV：Adobe Hyundai Kona 2WD自动挡，CA$895.84（含强制险和CDW，官网报价）"
       },
       {
         "label": "当前状态",
-        "value": "未预订 · 没有23岁的完整结算价"
+        "value": "未预订 · 两家都按23岁、最小SUV在官网查过价（11/19）"
       }
     ],
     "notes": [
@@ -2102,7 +2103,7 @@
         "id": "book-car",
         "group": "bookings",
         "who": "我",
-        "title": "在Adobe官网订车，填真实年龄看含强制险的总价",
+        "title": "在Adobe官网订Hyundai Kona 2WD（最小SUV），选上车损保障",
         "due": "2026-12-10",
         "lead": "提前4周",
         "note": "押金约USD1,000，只收信用卡。",
