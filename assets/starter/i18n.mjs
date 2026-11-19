@@ -107,9 +107,11 @@ const EXACT = {
   '这里不能下载日历文件，用网页版打开再点': 'Calendar files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
   '已打开日历文件，在日历里点「全部添加」': 'Calendar file opened: tap "Add All" in Calendar',
   '已打开日历文件，在日历里点「全部添加」（日历按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',
-  '在日历里点「订阅」，会新建一个单独的日历': 'Tap "Subscribe" in Calendar; the trip gets a calendar of its own',
-  '在日历里点「订阅」，会新建一个单独的日历（日历按原计划，换过的项目要在日历里自己改）': 'Tap "Subscribe" in Calendar; the trip gets a calendar of its own (it follows the original plan; change swapped items in Calendar yourself)',
-  '单独成一个日历，可以一键隐藏，行程改了会自动更新 ·': 'Its own calendar you can hide in one tap, updated when the plan changes ·', '只下载一次': 'Download once',
+  '订阅到日历': 'Subscribe in Calendar', '订阅这份行程：单独成一个日历，行程改了会自动更新': 'Subscribe to this trip: it gets its own calendar and updates when the plan changes',
+  '单独成一个日历，可以一键隐藏，行程改了会自动更新': 'Its own calendar you can hide in one tap, updated when the plan changes',
+  '在日历里点「订阅」。如果只打开了日历、没弹出订阅，回到这里再点一次': 'Tap "Subscribe" in Calendar. If Calendar opens without asking, come back and tap again',
+  '在日历里点「订阅」。如果只打开了日历、没弹出订阅，回到这里再点一次（日历按原计划，换过的项目要在日历里自己改）': 'Tap "Subscribe" in Calendar. If Calendar opens without asking, come back and tap again (it follows the original plan; change swapped items in Calendar yourself)',
+  '不想订阅的话，也可以': "Rather not subscribe? You can ", '下载日历文件': 'download the calendar file', '一次性导入（以后行程改了不会跟着更新）。': ' and import it once (it won\'t update when the plan changes).',
   '把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入': 'Export every timed plan as a calendar file that Apple Calendar, Google Calendar or Outlook can import in one go',
 };
 const joinCn = s => s.replace(/、/g, ', ');

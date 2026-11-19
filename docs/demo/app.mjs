@@ -181,9 +181,10 @@ function pickSwap(key,index,on){
 // 托管好的静态日历文件（scripts/export_calendar.mjs 生成，trip.calendarUrl 指向它）用在两种地方，按钮直接做成链接：
 // - Artifact 里不能下载 .ics（downloads 只放行图片、PDF、表格等），脚本打开新页面也会被拦，只有真的点链接才放行；
 // - iPhone/iPad 不能把页面里生成的日历直接交给「日历」，打开托管的 https .ics，Safari 会弹出「全部添加」。
-// 有托管文件时，主按钮是 webcal:// 订阅：苹果日历会新建一个单独的日历（名字是行程标题，颜色 trip.calendarColor，默认 #D07D9C），
-// 在「日历」列表里一点就能整组显示或隐藏，行程改了还会自动更新。旁边留一个「只下载一次」的普通文件链接。
-// 静态文件按原计划导出；电脑浏览器打开独立网页时，「只下载一次」下载当场生成的文件，换过的项目也算进去。
+// 有托管文件时，所有人默认订阅：主按钮是 webcal:// 链接，苹果日历会新建一个单独的日历（名字是行程标题，颜色 trip.calendarColor，
+// 默认 #D07D9C），在「日历」列表里一点就能整组显示或隐藏，行程改了还会自动更新。一次性下载不提倡，只放在页面最底下。
+// iPhone 上「日历」没在后台时，第一次点可能只把日历打开、不弹订阅框（系统行为），提示回来再点一次。
+// 静态文件按原计划导出；电脑浏览器打开独立网页时，底下的下载链接下载当场生成的文件，换过的项目也算进去。
 const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 const inArtifact=()=>location.href==='about:srcdoc'||/\.claudeusercontent\.com$/.test(location.hostname)||typeof globalThis.claude?.use==='function';
 const anySwap=()=>Object.keys(swapItems).some(k=>chosenAlt(k)>=0);
@@ -195,19 +196,21 @@ function renderCalendar(){
   const blank=inArtifact()?' target="_blank" rel="noopener noreferrer"':'';
   if(!hosted){
     head.insertAdjacentHTML('beforeend',`<div class="cal-box"><button class="share-btn cal-btn" id="cal-btn" type="button" title="${escape(title)}">导入日历</button><small id="cal-status" role="status" aria-live="polite"></small></div>`);
-    $('#cal-btn').onclick=exportCalendar;return;
+    $('#cal-btn').onclick=()=>exportCalendar();return;
   }
   const webcal=hosted.replace(/^https?:/,'webcal:');
-  head.insertAdjacentHTML('beforeend',`<div class="cal-box"><a class="share-btn cal-btn" id="cal-btn" href="${escape(webcal)}"${blank} title="${escape(title)}">导入日历</a><small class="cal-alt">单独成一个日历，可以一键隐藏，行程改了会自动更新 · <a id="cal-file" href="${escape(hosted)}"${blank}>只下载一次</a></small><small id="cal-status" role="status" aria-live="polite"></small></div>`);
-  const say=t=>{$('#cal-status').textContent=t;};
-  $('#cal-btn').onclick=()=>say(`在日历里点「订阅」，会新建一个单独的日历${swapNote()}`);
-  $('#cal-file').onclick=event=>{
-    if(inArtifact()||isIOS())return say(`已打开日历文件，在日历里点「全部添加」${swapNote()}`);
-    event.preventDefault();exportCalendar();
-  };
+  head.insertAdjacentHTML('beforeend',`<div class="cal-box"><a class="share-btn cal-btn" id="cal-btn" href="${escape(webcal)}"${blank} title="订阅这份行程：单独成一个日历，行程改了会自动更新">订阅到日历</a><small class="cal-alt">单独成一个日历，可以一键隐藏，行程改了会自动更新</small><small id="cal-status" role="status" aria-live="polite"></small></div>`);
+  $('#cal-btn').onclick=()=>{$('#cal-status').textContent=`在日历里点「订阅」。如果只打开了日历、没弹出订阅，回到这里再点一次${swapNote()}`;};
+  // 一次性下载放在页面最底下，不提倡
+  $('footer p')?.insertAdjacentHTML('beforeend',`<br><span class="cal-foot">不想订阅的话，也可以<a id="cal-file" href="${escape(hosted)}"${blank}>下载日历文件</a>一次性导入（以后行程改了不会跟着更新）。</span><span id="cal-foot-status" role="status" aria-live="polite"></span>`);
+  const sayFoot=t=>{const el=$('#cal-foot-status');if(el)el.textContent=t?` ${t}`:'';};
+  $('#cal-file')&&($('#cal-file').onclick=event=>{
+    if(inArtifact()||isIOS())return sayFoot(`已打开日历文件，在日历里点「全部添加」${swapNote()}`);
+    event.preventDefault();exportCalendar(sayFoot,$('#cal-file'));
+  });
 }
-function exportCalendar(){
-  const btn=$('#cal-btn'),say=t=>{$('#cal-status').textContent=t;};
+function exportCalendar(sayTo,btnEl){
+  const btn=btnEl||$('#cal-btn'),say=sayTo||(t=>{$('#cal-status').textContent=t;});
   say('');
   if(inArtifact())return say('这里不能下载日历文件，用网页版打开再点');
   btn.disabled=true;

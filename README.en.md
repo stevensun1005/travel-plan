@@ -68,7 +68,7 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 - The pre-departure checklist looks up visas and entry rules for each traveler's passport and residency, adds the bookings that sell out, and sorts everything by deadline with a countdown.
 - The checklist and the budget are linked: switch the hotel, flight or activities in the budget and the bookings on the checklist follow; tick one off as booked and its budget card turns green.
 - Every activity has "Love it / Maybe / Meh" buttons; anything you're unsure about (say, a hot spring she may skip) starts as Maybe, with priced alternatives listed underneath.
-- "Add to calendar" puts the whole itinerary into Apple Calendar (or Google Calendar / Outlook) in one go: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends.
+- "Subscribe in Calendar" adds the whole itinerary to Apple Calendar as its own calendar you can hide in one tap, and it updates when the plan changes: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends.
 - Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync in the top bar.
 
 ### Sharing: looks good when sent, and friends can make their own

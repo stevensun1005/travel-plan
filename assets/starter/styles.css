@@ -404,6 +404,8 @@ a.cal-btn{display:inline-block;text-decoration:none}
 #cal-status:empty{display:none}
 .cal-alt{font-size:13px;color:var(--ink2);max-width:300px;text-align:right}
 .cal-alt a{color:inherit;text-decoration:underline}
+.cal-foot,#cal-foot-status{font-size:13px;color:var(--ink2)}
+.cal-foot a{color:inherit;text-decoration:underline}
 @media (max-width:760px){.cal-box{align-items:flex-start}#cal-status,.cal-alt{text-align:left}}
 .share-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(20,24,22,.55)}
 .share-sheet{width:min(720px,100%);max-height:100%;overflow:auto;background:var(--paper);border:2.5px solid var(--ink);border-radius:var(--r1);box-shadow:6px 6px 0 var(--shadow);padding:14px 16px 16px}
