@@ -17,7 +17,9 @@ for (const [src, out] of [['trip-data.json', 'calendar.ics'], ['trip-data.en.jso
   const file = path.join(folder, src);
   if (!fs.existsSync(file)) continue;
   const data = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const { ics, count, skipped } = buildIcs({ trip: data.trip || {}, days: data.days || [], places: data.map?.places || [] });
+  const routeFile = path.join(folder, data.map?.routesFile || 'routes.json');
+  const routes = fs.existsSync(routeFile) ? (JSON.parse(fs.readFileSync(routeFile, 'utf8')).routes || []) : [];
+  const { ics, count, skipped } = buildIcs({ trip: data.trip || {}, days: data.days || [], places: data.map?.places || [], routes, lang: src.includes('.en.') ? 'en' : 'zh' });
   fs.writeFileSync(path.join(folder, out), ics);
   console.log(`${out}: ${count} events${skipped ? `, ${skipped} without a clock time skipped` : ''}`);
 }

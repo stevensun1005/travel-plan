@@ -51,3 +51,15 @@ test('without a time zone the calendar uses floating local times; long gaps cap 
   assert.deepEqual(e.map(x=>[x.DTSTART,x.DTEND]),[['20300629T090000','20300629T210000'],['20300629T233000','20300630T003000']]);
   assert.equal(zoned('2027-07-01',600,'America/Toronto'),Date.UTC(2027,6,1,14,0));
 });
+
+test('notes carry opening hours on arrival and travel time from the previous stop',()=>{
+  const places=[{id:'hotel',name:'H',maps:'Hotel One, Town',lat:10,lng:-84,hours:'Check-in 14:00'},{id:'falls',name:'F',maps:'Falls',lat:10.3,lng:-84.2,hours:'Daily 8:00-16:00'},{id:'shop',name:'S',maps:'Shop',lat:10.303,lng:-84.203}];
+  const routes=[{day:2,placeIds:['hotel','falls'],legs:[{duration:1800,distance:25000}]}];
+  const days=[{day:2,date:'2027-01-07',schedule:[{time:'07:00',title:'Breakfast',placeId:'hotel'},{time:'08:00',title:'Falls',placeId:'falls'},{time:'11:00',title:'Shop',placeId:'shop'},{time:'12:00',title:'Back',placeId:'hotel'}]}];
+  const e=events(buildIcs({trip:{id:'t',timezone:'America/Costa_Rica'},days,places,routes,lang:'en'}).ics);
+  const plain=s=>(s||'').replace(/\\n/g,'\n').replace(/\\,/g,',');
+  assert.doesNotMatch(plain(e[0].DESCRIPTION),/Hours|Getting there/);
+  assert.match(plain(e[1].DESCRIPTION),/Hours: Daily 8:00-16:00\n🚗 Getting there: about 30 min drive from Hotel One \(25 km\)/);
+  assert.match(plain(e[2].DESCRIPTION),/🚶 Getting there: about \d+ min walk from Falls/);
+  assert.match(plain(e[3].DESCRIPTION),/Getting there: about \d+ min drive from Shop \(~[\d.]+ km, estimated\)/);
+});

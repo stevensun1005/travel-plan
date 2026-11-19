@@ -384,6 +384,34 @@
               }
             ],
             "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+          },
+          {
+            "id": "alamo",
+            "label": "Alamo 5 days · Nissan Sentra automatic · incl. mandatory insurance and CDW (Fully package)",
+            "amount": 844.81,
+            "status": "Official-site quote · checked 11/19 · not booked",
+            "note": "Quoted on Alamo Costa Rica's own site for pickup 1/6 16:00, return 1/11 13:00, driver aged 23: the Fully package is USD592.56, including mandatory third-party liability, CDW (damage and theft), 13% VAT, the airport fee and the young-driver fee (USD50 for the whole rental), paid at the counter, unlimited mileage. The Basic package with only the mandatory insurance is USD542.56 (no CDW); Premium with zero deductible is USD667.56. The site also lists an unnamed car at USD502.18 Basic. Pickup and return are at Alamo's office about 1 km from Liberia airport, open daily 5:00–22:00.",
+            "items": [
+              {
+                "label": "Nissan Sentra or similar, 5 days (incl. mandatory liability, tax, airport fee) USD478.29",
+                "amount": 681.9
+              },
+              {
+                "label": "Young-driver fee USD50 at 23, plus its airport fee and tax, USD64.27",
+                "amount": 91.63
+              },
+              {
+                "label": "CDW damage and theft cover (Fully is USD50 more than Basic)",
+                "amount": 71.28
+              }
+            ],
+            "url": "https://www.alamo.cr/reservas",
+            "booking": {
+              "title": "Book on Alamo's site (Fully package), enter age 23",
+              "note": "Pay at the counter; credit card for the deposit. Pickup is at Alamo's office about 1 km from the airport.",
+              "url": "https://www.alamo.cr/reservas",
+              "urlLabel": "Alamo Costa Rica"
+            }
           }
         ],
         "chartGroup": "drive"
@@ -795,6 +823,7 @@
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
         "address": "Calle La Chorrera, Playas del Coco, Sardinal, Guanacaste",
+        "hours": "Check-in from 14:00 (until about 20:00), check-out 11:00",
         "note": "Rated 8.6, 150 m from the beach, at the quieter north end of Coco; ~15 min walk (~1.2 km) to the beach boardwalk and restaurants."
       },
       {
@@ -805,6 +834,7 @@
         "maps": "Playas del Coco Beach, Guanacaste",
         "photos": "Playas del Coco beach sunset",
         "address": "Playa del Coco, El Coco, Sardinal, Guanacaste",
+        "hours": "Public beach, open all day; sunset about 17:33 on 1/6",
         "note": "The beach in front of the hotel, darker than downtown: sunsets in the evening, stargazing at night."
       },
       {
@@ -825,6 +855,7 @@
         "maps": "Llanos de Cortés Waterfall, Bagaces",
         "photos": "Llanos de Cortés waterfall",
         "address": "Ruta 1, 7 km al noroeste de Bagaces, Guanacaste",
+        "hours": "Daily 8:00–16:00 (last entry about 15:30); ₡4,000 per person, cash only",
         "note": "About 30 concrete steps down from the parking lot, with a rope handrail; sandy below the falls and rocky at the water's edge, so watch your footing. 8:00–16:00, cash only.",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
       },
@@ -845,6 +876,7 @@
         "maps": "100% Aventura Zipline, Monteverde",
         "photos": "100% Aventura superman zipline Monteverde",
         "address": "Camino a la Reserva Santa Elena, Monteverde, Puntarenas",
+        "hours": "Zipline tours leave daily at 8:00, 11:00 and 14:00, about 3 h (some listings also show 13:00 and 15:00; go by your booking)",
         "note": "The park itself, not the ticket office in town.",
         "url": "https://www.aventuracanopytour.com/"
       },
@@ -855,6 +887,7 @@
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
         "address": "Calle Manaquín, Cerro Plano, Monteverde, Puntarenas",
+        "hours": "Check-in from 14:00, check-out 12:00, 24-hour front desk",
         "note": "0.8 km from Santa Elena town centre."
       },
       {
@@ -864,6 +897,7 @@
         "lng": -84.8144494,
         "maps": "Bajo del Tigre, Bosque Eterno de los Niños, Monteverde",
         "address": "Bajo del Tigre, Cerro Plano, Monteverde, Puntarenas",
+        "hours": "Opens 7:00 for day visits (closes about 16:00); night walk daily at 17:30, about 2 h, reservation needed",
         "note": "The Bajo del Tigre station of the Children’s Eternal Rainforest, about 5 minutes’ drive from the hotel.",
         "url": "https://acmcr.org/en/rates-and-reservations/"
       },
@@ -884,6 +918,7 @@
         "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
         "photos": "Lake Arenal volcano view",
         "address": "Ruta 142, Nuevo Arenal, Tilarán, Guanacaste",
+        "hours": "Selva Paraiso coffee shop by the lake, daily 8:30–17:30",
         "note": "Winding road along the north shore with roadside viewpoints; on clear days you can see the volcano reflected in the lake."
       },
       {
@@ -893,6 +928,7 @@
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
         "address": "Vía 142, 4.6 km al oeste del parque, La Fortuna, Alajuela",
+        "hours": "Check-in from 14:00, check-out 11:00; hot springs open daily 11:00–21:00 (guest hours per the hotel)",
         "note": "Own hot-spring pools, ~3 km west of La Fortuna; ~5 min drive to town and ~10 min to Tabacón."
       },
       {
@@ -911,6 +947,7 @@
         "lng": -84.753777,
         "maps": "Mistico Arenal Hanging Bridges Park",
         "address": "Calle Sangregado, 2 km al este de la represa, La Fortuna, Alajuela",
+        "hours": "Daily from 6:00, last entry 15:50, closes about 16:30",
         "note": "3.2 km loop with 16 bridges (6 hanging), listed as an accessible trail on the official site (whether it's paved throughout is unverified); gentle slopes and some steps, ~2 hours; the hanging bridges sway. Last entry 15:50.",
         "url": "https://misticopark.com/"
       },
@@ -921,6 +958,7 @@
         "lng": -84.58,
         "maps": "Peñas Blancas River, San Carlos, Costa Rica",
         "address": "Río Peñas Blancas, San Carlos, Alajuela",
+        "hours": "Float tours at 7:30 or 14:00, about 4 h in total; hotel pickup included",
         "note": "Tour provides transfers; the map shows an approximate location only."
       },
       {
@@ -930,6 +968,7 @@
         "lng": -85.58299,
         "maps": "Adobe Rent a Car Liberia",
         "address": "El Fósforo, Guardia, Liberia, Guanacaste",
+        "hours": "The official site is inconsistent (8:00–17:00 or 5:00–22:00); plan on 8:00–17:00, so a 13:15 return is fine; phone 2542-4890",
         "note": "About 7 km from the airport; take Adobe's free shuttle from arrivals."
       },
       {
@@ -948,6 +987,7 @@
         "lng": -84.68625,
         "maps": "Los Lagos Hotel Spa & Resort, La Fortuna",
         "address": "Vía 142, La Palma, La Fortuna, Alajuela",
+        "hours": "Horseback tours at 8:00 or 13:00, about 3 h; hotel pickup included, pickup time on your voucher",
         "note": "The horseback tour includes hotel pickup; you mount up at the Los Lagos resort stables."
       },
       {
@@ -957,6 +997,7 @@
         "lng": -84.60222,
         "maps": "Sloth's Territory, El Tanque, La Fortuna",
         "address": "Vía 142, El Tanque, La Fortuna, Alajuela",
+        "hours": "Sloth tours at 8:00, 10:00, 13:00 and 14:30, about 3 h; hotel pickup included",
         "note": "Private reserve about 10 minutes east of town, 1.3 km trail along the Habana River; hotel pickup included."
       },
       {
@@ -966,6 +1007,7 @@
         "lng": -84.6469,
         "maps": "Cianikal, La Fortuna",
         "address": "100 m al oeste de la Iglesia, La Fortuna, Alajuela",
+        "hours": "Cianikal daily 9:00–21:00; Lava Collective in the park daily 12:00–20:00; Mega Súper about 7:00–21:00",
         "note": "100 m west of the church, run by a local artists' collective; more souvenir shops and a supermarket within 150 m."
       },
       {
@@ -975,6 +1017,7 @@
         "lng": -84.6519,
         "maps": "Rainforest Chocolate Tour, La Fortuna",
         "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
+        "hours": "Daily tours at 8:00, 10:00, 13:00 and 15:00, about 2 h",
         "note": "About 2 km south of town on the road to La Fortuna Waterfall."
       }
     ],
@@ -984,12 +1027,12 @@
         "label": "01/06 Arrival · beach",
         "placeIds": [
           "lir",
+          "adobe-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
           "coco-beach",
-          "coco",
-          "adobe-lir"
+          "coco"
         ],
         "transport": "driving",
         "note": "Airport to Coco ~30 min, arrive by 17:00; walk into town for dinner."
@@ -1004,13 +1047,12 @@
           "aventura",
           "hotel-monteverde",
           "night-walk",
+          "santa-elena",
           "hotel-monteverde"
         ],
         "transport": "driving",
         "note": "Via Liberia, Bagaces (waterfall) and Cañas, turning onto Route 606 for the climb; about 4 hours of driving, all long stretches in daylight. In the evening drive about 5 minutes to the night walk.",
-        "extraPlaceIds": [
-          "santa-elena"
-        ]
+        "extraPlaceIds": []
       },
       {
         "day": 3,
@@ -1066,13 +1108,12 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
+          "adobe-lir",
           "lir"
         ],
         "transport": "driving",
         "note": "About 3 hours; leave at 10:00, return the car by 13:15.",
-        "extraPlaceIds": [
-          "adobe-lir"
-        ]
+        "extraPlaceIds": []
       }
     ],
     "routesFile": "routes.json",
@@ -1692,7 +1733,7 @@
     ],
     "notes": [
       "Mandatory third-party liability (TPL/SLI) can't be waived, and most low prices on third-party sites exclude it; go by the rental office's quote.",
-      "Other companies: Vamos also has no young-driver fee; Europcar charges USD6/day; Alamo, Enterprise and National charge drivers aged 21–24 but don't publish the amount.",
+      "Other companies: Vamos also has no young-driver fee; Europcar charges USD6/day; Alamo's own site charges a USD50 young-driver fee for the whole rental at 23 (now a budget option); Enterprise and National charge drivers aged 21–24 but don't publish the amount.",
       "A Canadian licence is valid as is; bring your original passport (copies aren't accepted).",
       "Leave nothing in the car, and after parking pull the door handle to confirm it's locked (thieves sometimes jam key-fob signals).",
       "Drive the long legs in daylight: sunset is around 17:30, Route 142 along the lake is winding and dark, and Route 606 up to Monteverde is steep with tight bends; at night only short drives in town."

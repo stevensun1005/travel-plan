@@ -384,6 +384,34 @@
               }
             ],
             "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
+          },
+          {
+            "id": "alamo",
+            "label": "Alamo 5天 · Nissan Sentra自动挡 · 含强制险和CDW（Fully套餐）",
+            "amount": 844.81,
+            "status": "官网报价 · 11/19查 · 未订",
+            "note": "Alamo哥斯达黎加官网按1/6 16:00取、1/11 13:00还、驾驶人23岁查的价：Fully套餐USD592.56，已含强制第三者责任险、CDW（车损和防盗）、13%增值税、机场费和23岁青年费（整单USD50），到店付款，不限里程。只要强制险的Basic套餐是USD542.56（不含CDW）；再加零自付额的Premium是USD667.56。官网还有一款没写车型的车，Basic USD502.18。取还车在利比里亚机场外约1公里的Alamo门店，每天5:00–22:00。",
+            "items": [
+              {
+                "label": "Nissan Sentra或同级 5天（含强制责任险、税、机场费）USD478.29",
+                "amount": 681.9
+              },
+              {
+                "label": "23岁青年费USD50，加上对应的机场费和税 USD64.27",
+                "amount": 91.63
+              },
+              {
+                "label": "CDW车损和防盗（Fully比Basic多USD50）",
+                "amount": 71.28
+              }
+            ],
+            "url": "https://www.alamo.cr/reservas",
+            "booking": {
+              "title": "在Alamo官网订车（Fully套餐），填23岁",
+              "note": "到店付款；押金用信用卡。取车在机场外约1公里的Alamo门店。",
+              "url": "https://www.alamo.cr/reservas",
+              "urlLabel": "Alamo哥斯达黎加"
+            }
           }
         ],
         "chartGroup": "drive"
@@ -795,6 +823,7 @@
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
         "address": "Calle La Chorrera, Playas del Coco, Sardinal, Guanacaste",
+        "hours": "入住 14:00 起（最晚约20:00），退房 11:00",
         "note": "评分8.6，离海滩150米，在Coco比较安静的北头；走到海边步道和餐厅约15分钟（约1.2公里）。"
       },
       {
@@ -805,6 +834,7 @@
         "maps": "Playas del Coco Beach, Guanacaste",
         "photos": "Playas del Coco beach sunset",
         "address": "Playa del Coco, El Coco, Sardinal, Guanacaste",
+        "hours": "公共海滩，全天开放；1/6日落约17:33",
         "note": "酒店前面的海滩，比镇中心暗，晚上看星星、傍晚看日落。"
       },
       {
@@ -825,6 +855,7 @@
         "maps": "Llanos de Cortés Waterfall, Bagaces",
         "photos": "Llanos de Cortés waterfall",
         "address": "Ruta 1, 7 km al noroeste de Bagaces, Guanacaste",
+        "hours": "每天 8:00–16:00（约15:30停止入场）；每人₡4,000，只收现金",
         "note": "停车场下去约30级水泥台阶，有扶绳；瀑布下面是沙地，水边是石头，注意脚下。8:00–16:00，只收现金。",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
       },
@@ -845,6 +876,7 @@
         "maps": "100% Aventura Zipline, Monteverde",
         "photos": "100% Aventura superman zipline Monteverde",
         "address": "Camino a la Reserva Santa Elena, Monteverde, Puntarenas",
+        "hours": "滑索每天 8:00、11:00、14:00 出发，约3小时（也有资料写13:00、15:00场，以订票确认为准）",
         "note": "园区位置，不是镇上的售票处。",
         "url": "https://www.aventuracanopytour.com/"
       },
@@ -855,6 +887,7 @@
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
         "address": "Calle Manaquín, Cerro Plano, Monteverde, Puntarenas",
+        "hours": "入住 14:00 起，退房 12:00，前台24小时",
         "note": "离Santa Elena镇中心0.8公里。"
       },
       {
@@ -864,6 +897,7 @@
         "lng": -84.8144494,
         "maps": "Bajo del Tigre, Bosque Eterno de los Niños, Monteverde",
         "address": "Bajo del Tigre, Cerro Plano, Monteverde, Puntarenas",
+        "hours": "白天 7:00 开门（约16:00关）；夜间徒步每天 17:30 开始，约2小时，要预约",
         "note": "儿童永恒雨林的Bajo del Tigre站，离酒店开车约5分钟。",
         "url": "https://acmcr.org/en/rates-and-reservations/"
       },
@@ -884,6 +918,7 @@
         "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
         "photos": "Lake Arenal volcano view",
         "address": "Ruta 142, Nuevo Arenal, Tilarán, Guanacaste",
+        "hours": "湖边的 Selva Paraiso 咖啡店每天 8:30–17:30",
         "note": "沿湖北岸的弯路，路边有观景停车处，天气好能看到火山倒影。"
       },
       {
@@ -893,6 +928,7 @@
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
         "address": "Vía 142, 4.6 km al oeste del parque, La Fortuna, Alajuela",
+        "hours": "入住 14:00 起，退房 11:00；温泉区每天 11:00–21:00（住客时间以酒店为准）",
         "note": "自带温泉池，在La Fortuna镇西边约3公里，开车到镇上约5分钟、到Tabacón约10分钟。"
       },
       {
@@ -911,6 +947,7 @@
         "lng": -84.753777,
         "maps": "Mistico Arenal Hanging Bridges Park",
         "address": "Calle Sangregado, 2 km al este de la represa, La Fortuna, Alajuela",
+        "hours": "每天 6:00 起，最晚 15:50 入场，约16:30关门",
         "note": "3.2公里环线、16座桥（6座吊桥），官网标为无障碍步道（是否全程铺装未核实），有缓坡和台阶，约2小时；吊桥会晃。最后入园15:50。",
         "url": "https://misticopark.com/"
       },
@@ -921,6 +958,7 @@
         "lng": -84.58,
         "maps": "Peñas Blancas River, San Carlos, Costa Rica",
         "address": "Río Peñas Blancas, San Carlos, Alajuela",
+        "hours": "漂流团 7:30 或 14:00 出发，全程约4小时；含酒店接送",
         "note": "团里接送，地图只标大概位置。"
       },
       {
@@ -930,6 +968,7 @@
         "lng": -85.58299,
         "maps": "Adobe Rent a Car Liberia",
         "address": "El Fósforo, Guardia, Liberia, Guanacaste",
+        "hours": "官网写法不一（8:00–17:00 或 5:00–22:00），按 8:00–17:00 算，13:15还车没问题；电话 2542-4890",
         "note": "在机场外约7公里，到达口坐Adobe的免费接驳车过去。"
       },
       {
@@ -948,6 +987,7 @@
         "lng": -84.68625,
         "maps": "Los Lagos Hotel Spa & Resort, La Fortuna",
         "address": "Vía 142, La Palma, La Fortuna, Alajuela",
+        "hours": "骑马团 8:00 或 13:00 出发，约3小时；含酒店接送，接人时间看确认单",
         "note": "骑马团含酒店接送，在Los Lagos度假村的马厩上马。"
       },
       {
@@ -957,6 +997,7 @@
         "lng": -84.60222,
         "maps": "Sloth's Territory, El Tanque, La Fortuna",
         "address": "Vía 142, El Tanque, La Fortuna, Alajuela",
+        "hours": "树懒团 8:00、10:00、13:00、14:30 场，约3小时；含酒店接送",
         "note": "镇中心往东约10分钟车程的私人保护区，沿Habana河走1.3公里步道；团含酒店接送。"
       },
       {
@@ -966,6 +1007,7 @@
         "lng": -84.6469,
         "maps": "Cianikal, La Fortuna",
         "address": "100 m al oeste de la Iglesia, La Fortuna, Alajuela",
+        "hours": "Cianikal 每天 9:00–21:00；公园里的 Lava Collective 每天 12:00–20:00；Mega Súper 约 7:00–21:00",
         "note": "教堂往西100米，本地艺术家合作的小店；周围150米内还有几家纪念品店和超市。"
       },
       {
@@ -975,6 +1017,7 @@
         "lng": -84.6519,
         "maps": "Rainforest Chocolate Tour, La Fortuna",
         "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
+        "hours": "每天 8:00、10:00、13:00、15:00 场，约2小时",
         "note": "镇中心往南约2公里，去La Fortuna瀑布的路上。"
       }
     ],
@@ -984,12 +1027,12 @@
         "label": "01/06 落地·海边",
         "placeIds": [
           "lir",
+          "adobe-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
           "coco-beach",
-          "coco",
-          "adobe-lir"
+          "coco"
         ],
         "transport": "driving",
         "note": "机场到Coco约30分钟，17:00前到；晚饭走路去镇上。"
@@ -1004,13 +1047,12 @@
           "aventura",
           "hotel-monteverde",
           "night-walk",
+          "santa-elena",
           "hotel-monteverde"
         ],
         "transport": "driving",
         "note": "经Liberia、Bagaces（瀑布）、Cañas，转606号路上山，约4小时车程，长途都在白天。晚上开约5分钟去夜间徒步。",
-        "extraPlaceIds": [
-          "santa-elena"
-        ]
+        "extraPlaceIds": []
       },
       {
         "day": 3,
@@ -1066,13 +1108,12 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
+          "adobe-lir",
           "lir"
         ],
         "transport": "driving",
         "note": "约3小时；10:00出发，13:15前还车。",
-        "extraPlaceIds": [
-          "adobe-lir"
-        ]
+        "extraPlaceIds": []
       }
     ],
     "routesFile": "routes.json",
@@ -1692,7 +1733,7 @@
     ],
     "notes": [
       "强制第三者责任险（TPL/SLI）不能免，第三方网站的低价大多不含；以门店报价为准。",
-      "其他公司：Vamos也不收青年费；Europcar每天USD6；Alamo、Enterprise、National对21–24岁收费但没公布金额。",
+      "其他公司：Vamos也不收青年费；Europcar每天USD6；Alamo官网查到23岁青年费整单USD50（已放进预算的Alamo方案）；Enterprise、National对21–24岁收费但没公布金额。",
       "加拿大驾照可以直接开，带护照原件（复印件不行）。",
       "车里不留任何东西，停车后手动拉门确认锁好（有人用信号干扰遥控锁）。",
       "长途在白天开：日落约17:30，湖边的Route 142又弯又黑，Monteverde的606号路坡陡弯急；晚上只在镇上开短途。"

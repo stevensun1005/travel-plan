@@ -56,18 +56,65 @@ function fold(line) {
 }
 const goodUrl = v => { try { const u = new URL(v); return ['https:', 'http:'].includes(u.protocol) ? u.href : ''; } catch { return ''; } };
 
-export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.now() }) {
+// 备注里的「路程」：从上一站（同一天前一个有地点的行程项，当天第一项就用前一天最后一站）到这里。
+// 优先用 routes.json 里 OSRM 的分段时长和里程（不含堵车）；路线缓存里没有这一段，就按直线距离×1.35估算并注明。
+const WORDS = {
+  zh: { drive: (m, km, from, est) => `🚗 路程：从 ${from} 开车约 ${m} 分钟（${est ? '约' : ''}${km} 公里${est ? '，估算' : ''}）`, walk: (m, from) => `🚶 路程：从 ${from} 步行约 ${m} 分钟`, hours: '🕘 营业时间：' },
+  en: { drive: (m, km, from, est) => `🚗 Getting there: about ${m} min drive from ${from} (${est ? '~' : ''}${km} km${est ? ', estimated' : ''})`, walk: (m, from) => `🚶 Getting there: about ${m} min walk from ${from}`, hours: '🕘 Hours: ' },
+};
+const rad = d => d * Math.PI / 180;
+const straightKm = (a, b) => { const h = Math.sin(rad(b.lat - a.lat) / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(rad(b.lng - a.lng) / 2) ** 2; return 12742 * Math.asin(Math.sqrt(h)); };
+// 两点之间开车多久：找路线里 a 之后最近出现的 b，把中间各段加起来；正向没有就反过来找（来回时长差不多）
+function leg(routes, a, b) {
+  let best = null;
+  for (const [from, to] of [[a, b], [b, a]]) {
+    for (const r of routes || []) {
+      const ids = r?.placeIds || [], legs = r?.legs || [];
+      if (legs.length !== ids.length - 1) continue;
+      ids.forEach((id, i) => {
+        if (id !== from) return;
+        const j = ids.indexOf(to, i + 1);
+        if (j < 0 || (best && j - i >= best.n)) return;
+        const seg = legs.slice(i, j);
+        best = { n: j - i, duration: seg.reduce((s, x) => s + (x.duration || 0), 0), distance: seg.reduce((s, x) => s + (x.distance || 0), 0) };
+      });
+    }
+    if (best) return best;
+  }
+  return best;
+}
+const roundMin = m => m > 15 ? Math.round(m / 5) * 5 : Math.max(1, Math.round(m));
+function travelNote(words, routes, from, to) {
+  if (!from || !to || from.id === to.id || ![from.lat, from.lng, to.lat, to.lng].every(Number.isFinite)) return '';
+  const straight = straightKm(from, to);
+  if (straight < 0.15) return '';
+  const name = String(from.maps || from.name || '').split(',')[0].trim();
+  const known = leg(routes, from.id, to.id);
+  if (known && known.duration > 0) return words.drive(roundMin(known.duration / 60), (known.distance / 1000).toFixed(known.distance < 10000 ? 1 : 0), name, false);
+  const km = straight * 1.35;
+  if (km < 1) return words.walk(roundMin(km / 4.5 * 60), name);
+  return words.drive(roundMin(km / 40 * 60), km.toFixed(km < 10 ? 1 : 0), name, true);
+}
+
+export function buildIcs({ trip = {}, days = [], places = [], pick, routes = [], lang = 'zh', now = Date.now() }) {
   const zone = validZone(trip.timezone) ? trip.timezone : '';
-  const utc = !!zone, events = [];
-  let skipped = 0;
+  const utc = !!zone, events = [], words = WORDS[lang] || WORDS.zh;
+  const byId = id => (id ? places.find(p => p.id === id) : null) || null;
+  let skipped = 0, lastPlace = null;
   for (const day of days) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(day?.date || '')) continue;
+    // 每天从当天路线的起点出发（一般是前一晚住的酒店）
+    const start = byId((routes || []).find(r => r?.day === day.day)?.placeIds?.[0]);
+    if (start) lastPlace = start;
     const timed = [];
     (day.schedule || []).forEach((item, index) => {
+      const shown = (pick && pick(day, item, index)) || item;
+      const here = byId(shown.placeId || item?.placeId), prev = lastPlace;
+      if (here) lastPlace = here;
       const t = parseTime(item?.time);
       if (!t) { if (item?.title) skipped++; return; }
       const tz = zone && validZone(item.tz) ? item.tz : zone;
-      timed.push({ item, index, t, tz, start: zoned(day.date, t.start, tz), shown: (pick && pick(day, item, index)) || item });
+      timed.push({ item, index, t, tz, start: zoned(day.date, t.start, tz), shown, place: here, prev });
     });
     timed.forEach((e, i) => {
       let end = null;
@@ -76,7 +123,7 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
       else if (e.t.end != null) end = zoned(day.date, e.t.end, e.tz);
       if (end != null) while (end <= e.start) end += DAY;
       else { const next = timed.slice(i + 1).find(n => n.start > e.start); end = next ? Math.min(next.start, e.start + 12 * 60 * MIN) : e.start + 60 * MIN; }
-      const s = e.shown, place = places.find(p => p.id === (s.placeId || e.item.placeId));
+      const s = e.shown, place = e.place;
       const where = place ? (typeof place.maps === 'string' && place.maps.trim() ? place.maps.trim() : place.name || '') : '';
       const geo = place && Number.isFinite(place.lat) && Number.isFinite(place.lng);
       const addr = place && typeof place.address === 'string' ? place.address.trim() : '';
@@ -93,7 +140,10 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
         `DTEND:${stamp(end, utc)}`,
         `SUMMARY:${text(`${ICONS[s.kind] ? `${ICONS[s.kind]} ` : ''}${s.title || e.item.title || ''}`)}`,
       ];
-      const desc = [s.text || '', links.join('\n')].filter(Boolean).join('\n\n');
+      // 营业时间只在刚到一个地方时写（在酒店吃早餐、收拾行李就不重复写酒店的入住退房时间）
+      const arrived = place && e.prev?.id !== place.id;
+      const facts = [arrived && typeof place.hours === 'string' && place.hours.trim() ? `${words.hours}${place.hours.trim()}` : '', travelNote(words, routes, e.prev, place)].filter(Boolean).join('\n');
+      const desc = [s.text || '', facts, links.join('\n')].filter(Boolean).join('\n\n');
       if (desc) lines.push(`DESCRIPTION:${text(desc)}`);
       if (location) lines.push(`LOCATION:${text(location)}`);
       if (nav) lines.push(`URL:${nav}`);

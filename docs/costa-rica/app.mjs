@@ -213,7 +213,7 @@ function exportCalendar(){
   btn.disabled=true;
   import('./calendar.mjs').then(({buildIcs})=>{
     const pick=(day,item,index)=>{const k=voteKey(day,item,index),i=chosenAlt(k);return i>=0?{...item,...swapItems[k].alts[i]}:item;};
-    const {ics,count}=buildIcs({trip:data.trip,days:data.days||[],places:data.map?.places||[],pick});
+    const {ics,count}=buildIcs({trip:data.trip,days:data.days||[],places:data.map?.places||[],pick,routes:cachedRoads,lang:i18n.lang});
     if(!count)return say('没有带具体时间的行程');
     const name=`${String(data.trip.title||'trip').replace(/[\\/:*?"<>|\s·,，]+/g,'-').replace(/^-+|-+$/g,'')||'trip'}.ics`;
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));a.download=name;
