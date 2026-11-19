@@ -174,30 +174,26 @@ function pickSwap(key,index,on){
 }
 
 // ---------- 一键导入日历 ----------
-// 把带具体时刻的行程导出成 .ics（calendar.mjs）：iPhone 直接弹出「全部添加」，电脑下载后双击打开；Artifact 里用 downloads 能力。
+// 把带具体时刻的行程导出成 .ics（calendar.mjs）。
+// 托管好的静态日历文件（scripts/export_calendar.mjs 生成，trip.calendarUrl 指向它）用在两种地方，按钮直接做成链接：
+// - Artifact 里不能下载 .ics（downloads 只放行图片、PDF、表格等），脚本打开新页面也会被拦，只有真的点链接才放行；
+// - iPhone/iPad 不能把页面里生成的日历直接交给「日历」，打开托管的 https .ics，Safari 会弹出「全部添加」。
+// 静态文件按原计划导出；电脑浏览器直接下载当场生成的文件，换过的项目也算进去。
+const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const inArtifact=()=>location.href==='about:srcdoc'||/\.claudeusercontent\.com$/.test(location.hostname)||typeof globalThis.claude?.use==='function';
+const anySwap=()=>Object.keys(swapItems).some(k=>chosenAlt(k)>=0);
 function renderCalendar(){
   const head=$('#itinerary .section-head');if(!head||$('#cal-btn'))return;
   if(!(data.days||[]).some(d=>(d.schedule||[]).some(i=>/\d{1,2}[:：]\d{2}/.test(i.time||''))))return;
-  head.insertAdjacentHTML('beforeend','<div class="cal-box"><button class="share-btn cal-btn" id="cal-btn" type="button" title="把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入">导入日历</button><small id="cal-status" role="status" aria-live="polite"></small></div>');
-  $('#cal-btn').onclick=exportCalendar;
+  const hosted=url(data.trip.calendarUrl),title='把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入';
+  const asLink=hosted&&(inArtifact()||isIOS());
+  head.insertAdjacentHTML('beforeend',`<div class="cal-box">${asLink?`<a class="share-btn cal-btn" id="cal-btn" href="${escape(hosted)}"${inArtifact()?' target="_blank" rel="noopener noreferrer"':''} title="${escape(title)}">导入日历</a>`:`<button class="share-btn cal-btn" id="cal-btn" type="button" title="${escape(title)}">导入日历</button>`}<small id="cal-status" role="status" aria-live="polite"></small></div>`);
+  $('#cal-btn').onclick=asLink?()=>{$('#cal-status').textContent=`已打开日历文件，在日历里点「全部添加」${anySwap()?'（日历文件按原计划，换过的项目要在日历里自己改）':''}`;}:exportCalendar;
 }
-// 托管好的静态日历文件（scripts/export_calendar.mjs 生成，trip.calendarUrl 指向它）：
-// - Artifact 里不能下载 .ics（downloads 只放行图片、PDF、表格等），就在新页面打开托管的那份；
-// - iPhone/iPad 不能把页面里生成的日历直接交给「日历」，跳到托管的 https .ics，Safari 会弹出「全部添加」。
-// 静态文件按原计划导出；电脑浏览器直接下载当场生成的文件，换过的项目也算进去。
-const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-const anySwap=()=>Object.keys(swapItems).some(k=>chosenAlt(k)>=0);
 function exportCalendar(){
   const btn=$('#cal-btn'),say=t=>{$('#cal-status').textContent=t;};
-  const hosted=url(data.trip.calendarUrl),opened=`已打开日历文件，在日历里点「全部添加」${anySwap()?'（日历文件按原计划，换过的项目要在日历里自己改）':''}`;
   say('');
-  if(typeof globalThis.claude?.use==='function'){
-    if(!hosted)return say('这里不能下载日历文件，用网页版打开再点');
-    // 在点击里同步打开，避免被当成弹窗拦掉
-    const a=document.createElement('a');a.href=hosted;a.target='_blank';a.rel='noopener noreferrer';document.body.append(a);a.click();a.remove();
-    return say(opened);
-  }
-  if(isIOS()&&hosted){location.href=hosted;return say(opened);}
+  if(inArtifact())return say('这里不能下载日历文件，用网页版打开再点');
   btn.disabled=true;
   import('./calendar.mjs').then(({buildIcs})=>{
     const pick=(day,item,index)=>{const k=voteKey(day,item,index),i=chosenAlt(k);return i>=0?{...item,...swapItems[k].alts[i]}:item;};
