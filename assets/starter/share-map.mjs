@@ -355,6 +355,56 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       text(ctx, inset.title, IX + 24, IY - 1, { font: `bold 21px ${HAND}`, base: 'middle' });
     }
   }
+  // 飞行位置小图（share.locator）：主图空着的一角画一张大陆小地图，标出从哪里飞过来。
+  // 陆地轮廓来自 world-land.json（Natural Earth 1:110m，公有领域）；文件不在就不画。
+  const loc = share.locator;
+  if (loc?.from && loc?.to && [loc.from.lng, loc.from.lat, loc.to.lng, loc.to.lat].every(Number.isFinite)) {
+    const world = await fetch('world-land.json').then(r => r.ok ? r.json() : null).catch(() => null);
+    if (world?.land?.length) {
+      const LW = loc.width || 300, LH = loc.height || 240, corner = loc.corner || 'bl';
+      const LX = corner.includes('r') ? MX + MW - LW - 24 : MX + 24, LY = corner.includes('t') ? MY + 24 : MY + MH - LH - 24;
+      sketchBox(ctx, LX, LY, LW, LH, { fill: '#cfe6ec', shadow: 4 });
+      ctx.save(); roundPath(ctx, LX + 2, LY + 2, LW - 4, LH - 4, [12, 4, 12, 5]); ctx.clip();
+      const pad = loc.pad ?? 7;
+      const b = { w: Math.min(loc.from.lng, loc.to.lng) - pad, e: Math.max(loc.from.lng, loc.to.lng) + pad, s: Math.min(loc.from.lat, loc.to.lat) - pad, n: Math.max(loc.from.lat, loc.to.lat) + pad };
+      const k = Math.cos((b.n + b.s) / 2 * Math.PI / 180), want = LW / LH, have = (b.e - b.w) * k / (b.n - b.s);
+      if (have < want) { const add = ((b.n - b.s) * want / k - (b.e - b.w)) / 2; b.w -= add; b.e += add; }
+      else { const add = ((b.e - b.w) * k / want - (b.n - b.s)) / 2; b.s -= add; b.n += add; }
+      const sc = LW / ((b.e - b.w) * k), Q = (lng, lat) => [LX + (lng - b.w) * k * sc, LY + (b.n - lat) * sc];
+      ctx.beginPath();
+      for (const r of world.land) {
+        if (!r.some(([lng, lat]) => lng > b.w - 20 && lng < b.e + 20 && lat > b.s - 20 && lat < b.n + 20)) continue;
+        r.forEach(([lng, lat], i) => { const [x, y] = Q(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.closePath();
+      }
+      ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd'); ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 1.4; ctx.stroke();
+      // 航线：一条往外弯的虚线弧，中间放一架飞机
+      const [ax, ay] = Q(loc.from.lng, loc.from.lat), [bx3, by3] = Q(loc.to.lng, loc.to.lat);
+      const mx = (ax + bx3) / 2, my = (ay + by3) / 2, dx = bx3 - ax, dy = by3 - ay, bend = .22;
+      const cxp = mx - dy * bend, cyp = my + dx * bend;
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.quadraticCurveTo(cxp, cyp, bx3, by3);
+      ctx.strokeStyle = 'rgba(255,255,255,.95)'; ctx.lineWidth = 7; ctx.setLineDash([]); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(ax, ay); ctx.quadraticCurveTo(cxp, cyp, bx3, by3);
+      ctx.strokeStyle = INK; ctx.lineWidth = 2.6; ctx.setLineDash([9, 7]); ctx.stroke(); ctx.setLineDash([]);
+      const px = .25 * ax + .5 * cxp + .25 * bx3, py = .25 * ay + .5 * cyp + .25 * by3;
+      const ang = Math.atan2(by3 - ay, bx3 - ax);
+      ctx.save(); ctx.translate(px, py); ctx.rotate(ang);
+      text(ctx, '✈', 0, 1, { font: `28px ${SANS}`, color: INK, align: 'center', base: 'middle', halo: 4, haloColor: '#cfe6ec' });
+      ctx.restore();
+      for (const [pt, x, y, color] of [[loc.from, ax, ay, INK], [loc.to, bx3, by3, dayColor(1)]]) {
+        ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.stroke();
+        if (!pt.label) continue;
+        ctx.font = `bold 19px ${HAND}`; const w = ctx.measureText(pt.label).width;
+        const right = x + 12 + w < LX + LW - 8, tx = right ? x + 12 : x - 12;
+        text(ctx, pt.label, tx, y + 1, { font: `bold 19px ${HAND}`, align: right ? 'left' : 'right', base: 'middle', halo: 5, haloColor: '#fffdf5' });
+      }
+      ctx.restore();
+      if (loc.title) {
+        ctx.font = `bold 21px ${HAND}`; const tw3 = ctx.measureText(loc.title).width + 24;
+        sketchBox(ctx, LX + 12, LY - 18, tw3, 34, { fill: HL, shadow: 0, lw: 2, r: [10, 4, 9, 5] });
+        text(ctx, loc.title, LX + 24, LY - 1, { font: `bold 21px ${HAND}`, base: 'middle' });
+      }
+    }
+  }
   // 指北针（小图占了右上角就放到左上角）
   const cx = inset && (inset.corner || 'bl') === 'tr' ? MX + 62 : MX + MW - 62, cy = MY + 70;
   ctx.beginPath(); ctx.arc(cx, cy, 34, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,253,245,.92)'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();

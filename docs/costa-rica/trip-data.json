@@ -898,7 +898,9 @@
         "label": "01/09 漂流·吊桥",
         "placeIds": [
           "hotel-arenal",
+          "fortuna",
           "mistico",
+          "hotel-arenal",
           "fortuna",
           "hotel-arenal"
         ],
@@ -913,15 +915,14 @@
         "label": "01/10 骑马·树懒",
         "placeIds": [
           "hotel-arenal",
-          "fortuna",
+          "horse-ranch",
+          "hotel-arenal",
+          "sloth",
           "hotel-arenal"
         ],
         "transport": "driving",
-        "note": "上午骑马、下午树懒团都在酒店接送（不画线）；晚上开5分钟去镇上吃饭。",
-        "extraPlaceIds": [
-          "horse-ranch",
-          "sloth"
-        ]
+        "note": "上午骑马、下午树懒团都在酒店接送，线是接送车走的路；晚饭在酒店吃。",
+        "extraPlaceIds": []
       },
       {
         "day": 6,
@@ -1644,7 +1645,7 @@
           "🌉 Mistico 吊桥",
           "🐟 镇上海鲜"
         ],
-        "insetBadgeAt": 0.24
+        "insetBadgeAt": 0.34
       },
       {
         "day": 5,
@@ -1769,6 +1770,20 @@
           "side": "above"
         }
       ]
+    },
+    "locator": {
+      "title": "✈ 从多伦多飞过来",
+      "corner": "bl",
+      "from": {
+        "lng": -79.63,
+        "lat": 43.68,
+        "label": "多伦多"
+      },
+      "to": {
+        "lng": -85.54,
+        "lat": 10.59,
+        "label": "哥斯达黎加"
+      }
     }
   },
   "checklist": {

@@ -898,7 +898,9 @@
         "label": "01/09 Float · hanging bridges",
         "placeIds": [
           "hotel-arenal",
+          "fortuna",
           "mistico",
+          "hotel-arenal",
           "fortuna",
           "hotel-arenal"
         ],
@@ -913,15 +915,14 @@
         "label": "01/10 Horseback · sloths",
         "placeIds": [
           "hotel-arenal",
-          "fortuna",
+          "horse-ranch",
+          "hotel-arenal",
+          "sloth",
           "hotel-arenal"
         ],
         "transport": "driving",
-        "note": "Morning horseback ride and afternoon sloth tour both pick up at the hotel (no line drawn); in the evening drive 5 minutes into town for dinner.",
-        "extraPlaceIds": [
-          "horse-ranch",
-          "sloth"
-        ]
+        "note": "The morning horseback ride and afternoon sloth tour both pick up at the hotel; the line shows the pickup van's route. Dinner at the hotel.",
+        "extraPlaceIds": []
       },
       {
         "day": 6,
@@ -1644,7 +1645,7 @@
           "🌉 Mistico Hanging Bridges",
           "🐟 Seafood in town"
         ],
-        "insetBadgeAt": 0.24
+        "insetBadgeAt": 0.34
       },
       {
         "day": 5,
@@ -1769,6 +1770,20 @@
           "side": "above"
         }
       ]
+    },
+    "locator": {
+      "title": "✈ Flying in from Toronto",
+      "corner": "bl",
+      "from": {
+        "lng": -79.63,
+        "lat": 43.68,
+        "label": "Toronto"
+      },
+      "to": {
+        "lng": -85.54,
+        "lat": 10.59,
+        "label": "Costa Rica"
+      }
     }
   },
   "checklist": {
