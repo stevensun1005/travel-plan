@@ -1772,7 +1772,7 @@
       ]
     },
     "locator": {
-      "title": "✈ Flying in from Toronto",
+      "title": "✈ From Toronto",
       "corner": "bl",
       "from": {
         "lng": -79.63,
@@ -1783,7 +1783,8 @@
         "lng": -85.54,
         "lat": 10.59,
         "label": "Costa Rica"
-      }
+      },
+      "pad": 9
     }
   },
   "checklist": {

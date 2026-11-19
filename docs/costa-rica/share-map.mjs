@@ -380,6 +380,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       path(world.borders, false); ctx.strokeStyle = 'rgba(128,100,82,.8)'; ctx.lineWidth = 1; ctx.setLineDash([4, 3]); ctx.stroke(); ctx.setLineDash([]);
       const en = i18n.lang === 'en', simp = s => String(s || '').replace(/灣/g, '湾').replace(/裏/g, '里').replace(/島/g, '岛');
       const taken = [];
+      if (loc.title) { ctx.font = `bold 21px ${HAND}`; taken.push({ x: LX + 8, y: LY - 20, w: ctx.measureText(loc.title).width + 32, h: 40 }); } // 标题贴纸那一块不写名字
       const free = (x, y, w, h) => x > LX + 4 && x + w < LX + LW - 4 && y > LY + 4 && y + h < LY + LH - 4 && !taken.some(o => x < o.x + o.w + 3 && x + w + 3 > o.x && y < o.y + o.h + 2 && y + h + 2 > o.y);
       const cityLabel = (pt, x, y) => { ctx.font = `bold 19px ${HAND}`; const w = ctx.measureText(pt.label || '').width, right = x + 12 + w < LX + LW - 8; return { right, box: { x: right ? x + 10 : x - 12 - w, y: y - 12, w: w + 4, h: 24 } }; };
       const [fx0, fy0] = Q(loc.from.lng, loc.from.lat), [tx0, ty0] = Q(loc.to.lng, loc.to.lat);
@@ -400,11 +401,16 @@ async function drawPoster({ data, roads = [], basemap, color }) {
         if (!spot) continue;
         const [x, y] = spot; taken.push({ x, y, w, h: 16 }); text(ctx, name, x, y + 8, { font, color: 'rgba(42,90,130,.8)', base: 'middle', halo: 3, haloColor: '#cfe6ec' });
       }
-      for (const [lng, lat, zh, enName, rank] of (world.countries || []).slice().sort((a, b2) => a[4] - b2[4])) {
-        if (lng < b.w || lng > b.e || lat < b.s || lat > b.n) continue;
-        const name = en ? enName : simp(zh), font = `${rank <= 3 ? 'bold ' : ''}${rank <= 3 ? 14 : 12}px ${SANS}`; ctx.font = font;
-        const w = ctx.measureText(name).width, [x0, y0] = Q(lng, lat);
-        const spot = [[0, 0], [0, -18], [0, 18], [-w / 2 - 6, 0], [w / 2 + 6, 0], [0, -36], [0, 36]].map(([dx, dy]) => [x0 + dx, y0 + dy]).find(([cx1, cy1]) => free(cx1 - w / 2, cy1 - 8, w, 16));
+      // 只写大国（面积 150 万平方公里以上，数据里只有这些）：标注点在画面里就用它，不在（比如只露出加拿大南边）就在露出来的那块里找空位
+      for (const c of world.countries || []) {
+        if (!c?.rings) continue;
+        const name = en ? c.en : simp(c.zh), font = `bold 15px ${SANS}`; ctx.font = font;
+        const w = ctx.measureText(name).width, cands = [];
+        if (c.x > b.w && c.x < b.e && c.y > b.s && c.y < b.n) { const [x0, y0] = Q(c.x, c.y); cands.push([x0, y0], [x0, y0 - 18], [x0, y0 + 18]); }
+        const hit = [];
+        for (let gx = 1; gx < 12; gx++) for (let gy = 1; gy < 12; gy++) { const lng = b.w + (b.e - b.w) * gx / 12, lat = b.s + (b.n - b.s) * gy / 12; if (inside(c.rings, lng, lat)) hit.push(Q(lng, lat)); }
+        if (hit.length) { const mx2 = hit.reduce((s, p) => s + p[0], 0) / hit.length, my2 = hit.reduce((s, p) => s + p[1], 0) / hit.length; cands.push(...hit.sort((p, q) => Math.hypot(p[0] - mx2, p[1] - my2) - Math.hypot(q[0] - mx2, q[1] - my2))); }
+        const spot = cands.find(([cx1, cy1]) => free(cx1 - w / 2, cy1 - 8, w, 16));
         if (!spot) continue;
         taken.push({ x: spot[0] - w / 2, y: spot[1] - 8, w, h: 16 }); text(ctx, name, spot[0], spot[1], { font, color: '#5c4b3d', align: 'center', base: 'middle', halo: 3, haloColor: '#f6efd6' });
       }
