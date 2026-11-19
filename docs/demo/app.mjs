@@ -198,8 +198,10 @@ function renderCalendar(){
     head.insertAdjacentHTML('beforeend',`<div class="cal-box"><button class="share-btn cal-btn" id="cal-btn" type="button" title="${escape(title)}">导入日历</button><small id="cal-status" role="status" aria-live="polite"></small></div>`);
     $('#cal-btn').onclick=()=>exportCalendar();return;
   }
-  const webcal=hosted.replace(/^https?:/,'webcal:');
-  head.insertAdjacentHTML('beforeend',`<div class="cal-box"><a class="share-btn cal-btn" id="cal-btn" href="${escape(webcal)}"${blank} title="订阅这份行程：单独成一个日历，行程改了会自动更新">订阅到日历</a><small class="cal-alt">单独成一个日历，可以一键隐藏，行程改了会自动更新</small><small id="cal-status" role="status" aria-live="polite"></small></div>`);
+  // Artifact 只放行 http(s) 链接，webcal:// 点了没反应：改为打开托管的订阅中转页（export_calendar.mjs 生成），由它跳到 webcal://
+  const relay=hosted.replace(/calendar(\.en)?\.ics$/,'subscribe$1.html');
+  const target=inArtifact()&&relay!==hosted?relay:hosted.replace(/^https?:/,'webcal:');
+  head.insertAdjacentHTML('beforeend',`<div class="cal-box"><a class="share-btn cal-btn" id="cal-btn" href="${escape(target)}"${blank} title="订阅这份行程：单独成一个日历，行程改了会自动更新">订阅到日历</a><small class="cal-alt">单独成一个日历，可以一键隐藏，行程改了会自动更新</small><small id="cal-status" role="status" aria-live="polite"></small></div>`);
   $('#cal-btn').onclick=()=>{$('#cal-status').textContent=`在日历里点「订阅」。如果只打开了日历、没弹出订阅，回到这里再点一次${swapNote()}`;};
   // 一次性下载放在页面最底下，不提倡
   $('footer p')?.insertAdjacentHTML('beforeend',`<br><span class="cal-foot">不想订阅的话，也可以<a id="cal-file" href="${escape(hosted)}"${blank}>下载日历文件</a>一次性导入（以后行程改了不会跟着更新）。</span><span id="cal-foot-status" role="status" aria-live="polite"></span>`);

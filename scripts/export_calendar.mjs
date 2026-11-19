@@ -9,7 +9,7 @@
 // 静态文件按原计划导出（不含页面上换过的项目）；改了行程要重新跑一次。
 import fs from 'node:fs';
 import path from 'node:path';
-import { buildIcs } from '../assets/starter/calendar.mjs';
+import { buildIcs, subscribePage, subscribePath } from '../assets/starter/calendar.mjs';
 
 const folder = process.argv[2];
 if (!folder) { console.error('Usage: node scripts/export_calendar.mjs <trip-folder>'); process.exit(2); }
@@ -22,4 +22,11 @@ for (const [src, out] of [['trip-data.json', 'calendar.ics'], ['trip-data.en.jso
   const { ics, count, skipped } = buildIcs({ trip: data.trip || {}, days: data.days || [], places: data.map?.places || [], routes, lang: src.includes('.en.') ? 'en' : 'zh' });
   fs.writeFileSync(path.join(folder, out), ics);
   console.log(`${out}: ${count} events${skipped ? `, ${skipped} without a clock time skipped` : ''}`);
+  // 有 calendarUrl 时一起写订阅中转页（Artifact 里点订阅会打开它）
+  const icsUrl = data.trip?.calendarUrl;
+  if (typeof icsUrl === 'string' && icsUrl.endsWith(out) && subscribePath(icsUrl) !== icsUrl) {
+    const page = path.basename(subscribePath(icsUrl));
+    fs.writeFileSync(path.join(folder, page), subscribePage({ title: data.trip.title, icsUrl, lang: src.includes('.en.') ? 'en' : 'zh', color: data.trip.calendarColor }));
+    console.log(`${page}: subscribe page`);
+  }
 }

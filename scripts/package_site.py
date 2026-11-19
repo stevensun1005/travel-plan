@@ -18,7 +18,7 @@ def package(source,destination):
     data=json.loads((source/'trip-data.json').read_text(encoding='utf-8'))
     files=['index.html','styles.css','app.mjs','budget.mjs','trip-data.json']
     files+=[p.relative_to(source).as_posix() for p in (source/'vendor').rglob('*') if p.is_file()]
-    files+=[name for name in ['share-map.mjs','calendar.mjs','i18n.mjs','trip-data.en.json','og.png','calendar.ics','calendar.en.ics'] if (source/name).is_file()]  # optional in projects made before they existed
+    files+=[name for name in ['share-map.mjs','calendar.mjs','i18n.mjs','trip-data.en.json','og.png','calendar.ics','calendar.en.ics','subscribe.html','subscribe.en.html'] if (source/name).is_file()]  # optional in projects made before they existed
     for optional in [data.get('map',{}).get('routesFile','routes.json'),data.get('map',{}).get('basemapFile','basemap.json')]:
         if (source/optional).is_file():files.append(optional)
     for name in files:

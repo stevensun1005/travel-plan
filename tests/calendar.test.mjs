@@ -63,3 +63,12 @@ test('notes carry opening hours on arrival and travel time from the previous sto
   assert.match(plain(e[2].DESCRIPTION),/🚶 Getting there: about \d+ min walk from Falls/);
   assert.match(plain(e[3].DESCRIPTION),/Getting there: about \d+ min drive from Shop \(~[\d.]+ km, estimated\)/);
 });
+
+test('the subscribe relay page sits next to the calendar and hands off to webcal',async()=>{
+  const {subscribePage,subscribePath}=await import('../assets/starter/calendar.mjs');
+  assert.equal(subscribePath('https://x.github.io/t/calendar.en.ics'),'https://x.github.io/t/subscribe.en.html');
+  const html=subscribePage({title:'A <b>trip</b>',icsUrl:'https://x.github.io/t/calendar.ics'});
+  assert.match(html,/href="webcal:\/\/x\.github\.io\/t\/calendar\.ics"/);
+  assert.match(html,/订阅「A &lt;b&gt;trip&lt;\/b&gt;」/);
+  assert.match(html,/travel-plan — https:\/\/github\.com\/stevensun1005\/travel-plan/);
+});
