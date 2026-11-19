@@ -373,14 +373,15 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     const x = 70 + i * step, y = SY + SH / 2;
     ctx.beginPath(); ctx.arc(x + 14, y, 15, 0, Math.PI * 2); ctx.fillStyle = dayColor(d.day); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();
     text(ctx, String(d.day), x + 14, y + 1, { font: `bold 19px ${HAND}`, color: '#fff', align: 'center', base: 'middle' });
-    // 和上面卡片的标题一样；放不下就在「·」处折成两行，再不行才省略
+    // 和上面卡片的标题一样；放不下就在「·」处折成两行；还放不下就用 short，再不行才省略
     const full = d.tag || d.short || '', room = step - 64; ctx.font = `20px ${HAND}`;
-    const parts = full.split(/\s*[·・]\s*/).filter(Boolean);
-    if (ctx.measureText(full).width <= room || parts.length < 2) text(ctx, fit(ctx, full, `20px ${HAND}`, room), x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
-    else {
-      const half = Math.ceil(parts.length / 2), lines = [parts.slice(0, half).join(' · '), parts.slice(half).join(' · ')];
-      lines.forEach((l, j) => text(ctx, fit(ctx, l, `17px ${HAND}`, room), x + 36, y + (j ? 12 : -9), { font: `17px ${HAND}`, base: 'middle' }));
-    }
+    const parts = full.split(/\s*[·・]\s*/).filter(Boolean), half = Math.ceil(parts.length / 2);
+    const lines = parts.length > 1 ? [parts.slice(0, half).join(' · '), parts.slice(half).join(' · ')] : [];
+    const fits2 = lines.length && lines.every(l => { ctx.font = `17px ${HAND}`; return ctx.measureText(l).width <= room; });
+    ctx.font = `20px ${HAND}`;
+    if (ctx.measureText(full).width <= room) text(ctx, full, x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
+    else if (fits2) lines.forEach((l, j) => text(ctx, l, x + 36, y + (j ? 12 : -9), { font: `17px ${HAND}`, base: 'middle' }));
+    else text(ctx, fit(ctx, d.short || full, `20px ${HAND}`, room), x + 36, y + 1, { font: `20px ${HAND}`, base: 'middle' });
     if (i < days.length - 1) text(ctx, '→', x + step - 18, y + 1, { font: `20px ${HAND}`, color: INK2, align: 'center', base: 'middle' });
   });
   // ---- 底部品牌栏：小羊驼 + travel—plan，右边是数据说明
