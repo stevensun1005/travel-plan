@@ -10,6 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "timezone": "Pacific/Honolulu",
+    "calendarUrl": "https://stevensun1005.github.io/travel-plan/demo/calendar.en.ics",
     "demo": false,
     "notice": "Nothing is booked yet. Flights and hotels were compared across several sites (Air Canada's official site, Trip.com, Ctrip, Booking.com, Expedia, Vio); each item uses the cheapest, with the site noted. Foreign currencies are converted to CAD at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD, 1 CNY = 0.2137 CAD). All flight fares include one carry-on bag per person. Tickets and meals are still converted from official or published standard prices. The return is a nonstop at 00:10 on Jan 9, so you head to the airport on the evening of Jan 8. Standalone hotels are priced for 5 nights (Jan 3–8); the Expedia flight + hotel bundle keeps the 6 nights Expedia quoted.",
     "constraints": [

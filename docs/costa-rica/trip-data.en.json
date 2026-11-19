@@ -10,6 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "timezone": "America/Costa_Rica",
+    "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.en.ics",
     "demo": false,
     "notice": "Flights are booked (PD 783 out, PD 7301 back); nothing else is booked yet. Flights and hotels were re-checked on Nov 15–16 for this version of the route; for the rental car we only have the rules and insurance rates, so the car price is an estimate. USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
     "constraints": [

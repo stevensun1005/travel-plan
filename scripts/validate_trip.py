@@ -36,6 +36,10 @@ def validate(folder):
     def zone(value):return isinstance(value,str) and (value=='UTC' or re.fullmatch(r'[A-Z][A-Za-z_]+(/[A-Za-z0-9_+-]+)+',value) is not None)
     check('timezone' not in trip or zone(trip['timezone']),'trip.timezone must be an IANA time zone such as America/Toronto')
     if days and not trip.get('timezone') and not trip.get('demo'):warnings.append('trip.timezone missing: calendar export uses floating local times')
+    check('calendarUrl' not in trip or (isinstance(trip['calendarUrl'],str) and trip['calendarUrl'].startswith('https://') and trip['calendarUrl'].endswith('.ics')),'trip.calendarUrl must be an https link to the hosted .ics')
+    for data_name,ics_name in [('trip-data.json','calendar.ics'),('trip-data.en.json','calendar.en.ics')]:
+        if (folder/ics_name).is_file() and (folder/data_name).is_file() and (folder/ics_name).stat().st_mtime<(folder/data_name).stat().st_mtime:
+            warnings.append(f'{ics_name} is older than {data_name}: rerun node scripts/export_calendar.mjs')
     places=data.get('map',{}).get('places',[]);place_ids=unique(places,'id','places')
     for place in places:
         check(isinstance(place.get('lat'),(int,float)) and -90<=place['lat']<=90,f'{place.get("id")}: invalid latitude')

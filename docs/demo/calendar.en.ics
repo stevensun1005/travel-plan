@@ -1,0 +1,559 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//travel-plan//stevensun1005//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Oʻahu\, 5 nights · Jan 3–9
+X-WR-TIMEZONE:Pacific/Honolulu
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d1-0@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270103T200000Z
+DTEND:20270103T223500Z
+SUMMARY:Arrive at Pearson
+DESCRIPTION:Nonstop flights to the US clear US preclearance in Toronto\, so
+  arrive 2.5–3 hours before departure. Even if you don't need a visa\, do
+ uble-check passport validity.
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d1-1@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270103T223500Z
+DTEND:20270104T083800Z
+SUMMARY:AC589 departs
+DESCRIPTION:~10 hours nonstop. Try to sleep on Hawaii time on the plane\; H
+ awaii is 5 hours behind Toronto.
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d1-2@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T083800Z
+DTEND:20270104T093000Z
+SUMMARY:Land in Honolulu
+DESCRIPTION:Domestic arrival\, no immigration again. After baggage claim\, 
+ taxi or Uber to the hotel\, ~25–30 min\, ~USD40–50.\n\nGoogle Maps: ht
+ tps://www.google.com/maps/search/?api=1&query=Daniel%20K.%20Inouye%20Inter
+ national%20Airport
+LOCATION:Daniel K. Inouye International Airport
+GEO:21.3330717;-157.9196383
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel K.
+  Inouye International Airport":geo:21.3330717,-157.9196383
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d1-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T093000Z
+DTEND:20270104T103000Z
+SUMMARY:Hotel check-in
+DESCRIPTION:Let the hotel know you'll arrive late so the room isn't release
+ d.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Hotel%2
+ 0Renew%2C%20129%20Paoakalani%20Ave%2C%20Honolulu
+LOCATION:Hotel Renew\, 129 Paoakalani Ave\, Honolulu
+GEO:21.2727845;-157.8222219
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Ren
+ ew, 129 Paoakalani Ave, Honolulu":geo:21.2727845,-157.8222219
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-0@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T163000Z
+DTEND:20270104T171500Z
+SUMMARY:Jet-lagged early start\, breakfast
+DESCRIPTION:You'll wake up early the first few days\, perfect for Pearl Har
+ bor. No driving.
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-1@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T171500Z
+DTEND:20270104T180000Z
+SUMMARY:Uber to Pearl Harbor
+DESCRIPTION:~25 min. No bags allowed\, only small clear bags or phone walle
+ ts\; paid bag storage available.\n\nGoogle Maps: https://www.google.com/ma
+ ps/search/?api=1&query=Pearl%20Harbor%20Visitor%20Center
+LOCATION:Pearl Harbor Visitor Center
+GEO:21.3674843;-157.9384488
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Pearl Har
+ bor Visitor Center":geo:21.3674843,-157.9384488
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-2@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T180000Z
+DTEND:20270104T193000Z
+SUMMARY:USS Arizona Memorial
+DESCRIPTION:Reservations are free\, with only a small booking fee. Released
+  on Recreation.gov\; book the earliest slot. Includes a film and boat ride
+ \, ~75 min.\n\nRecreation.gov reservations: https://www.recreation.gov/tic
+ ket/facility/233338\nGoogle Maps: https://www.google.com/maps/search/?api=
+ 1&query=USS%20Arizona%20Memorial
+LOCATION:USS Arizona Memorial
+GEO:21.364906;-157.9500297
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="USS Arizo
+ na Memorial":geo:21.364906,-157.9500297
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T193000Z
+DTEND:20270104T210000Z
+SUMMARY:Submarine Museum / USS Bowfin
+DESCRIPTION:Right next to the visitor center\; included in the Passport.\n\
+ nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Pearl%20Harb
+ or%20Bowfin%20Submarine%20Museum
+LOCATION:Pearl Harbor Bowfin Submarine Museum
+GEO:21.368732;-157.9394436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Pearl Har
+ bor Bowfin Submarine Museum":geo:21.368732,-157.9394436
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-4@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T210000Z
+DTEND:20270104T233000Z
+SUMMARY:Shuttle to Ford Island · USS Missouri
+DESCRIPTION:The deck where Japan signed the surrender\; grab a simple lunch
+  on the island afterwards.\n\nGoogle Maps: https://www.google.com/maps/sea
+ rch/?api=1&query=Battleship%20Missouri%20Memorial
+LOCATION:Battleship Missouri Memorial
+GEO:21.3621708;-157.9533179
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Battleshi
+ p Missouri Memorial":geo:21.3621708,-157.9533179
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-5@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270104T233000Z
+DTEND:20270105T013000Z
+SUMMARY:Pearl Harbor Aviation Museum
+DESCRIPTION:Two hangars\, ~1.5 hours. Shuttle back to the visitor center af
+ terwards.\n\nPassport to Pearl Harbor: https://www.pearlharborhistoricsite
+ s.org/tickets\nGoogle Maps: https://www.google.com/maps/search/?api=1&quer
+ y=Pearl%20Harbor%20Aviation%20Museum
+LOCATION:Pearl Harbor Aviation Museum
+GEO:21.3588442;-157.9629042
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Pearl Har
+ bor Aviation Museum":geo:21.3588442,-157.9629042
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-6@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T013000Z
+DTEND:20270105T023000Z
+SUMMARY:Back to Waikīkī
+DESCRIPTION:After the aviation museum\, shuttle back to the visitor center\
+ , then Uber ~25 min\, arriving around 16:00.\n\nGoogle Maps: https://www.g
+ oogle.com/maps/search/?api=1&query=Hotel%20Renew%2C%20129%20Paoakalani%20A
+ ve%2C%20Honolulu
+LOCATION:Hotel Renew\, 129 Paoakalani Ave\, Honolulu
+GEO:21.2727845;-157.8222219
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Ren
+ ew, 129 Paoakalani Ave, Honolulu":geo:21.2727845,-157.8222219
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-7@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T023000Z
+DTEND:20270105T050000Z
+SUMMARY:Backup: Waikīkī sunset sail
+DESCRIPTION:The sunset sail can be today or Jan 7: check the weather and se
+ a conditions before the trip and pick whichever day is calmer with fewer c
+ louds. If today\, be at the beach boarding spot at 16:30\, sailing 17:00
+ –19:00\; you'll still be adjusting to the time change\, so if you're tir
+ ed save it for Jan 7. No sail? Stroll Kūhiō Beach and watch the sunset (
+ ~18:05 in January).\n\nBook Moana Sailing: https://www.hawaiiactivities.co
+ m/en/hawaii/oahu/a/166886\nGoogle Maps: https://www.google.com/maps/search
+ /?api=1&query=K%C5%ABhi%C5%8D%20Beach%2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu
+GEO:21.275;-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Kūhiō B
+ each, Honolulu":geo:21.275,-157.82694
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d2-8@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T043000Z
+DTEND:20270105T053000Z
+SUMMARY:Dinner: Duke's Waikiki
+DESCRIPTION:Oceanfront\; fish and Hula Pie. Reserve ahead\; if you sail tod
+ ay\, book 19:15.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1
+ &query=Duke's%20Waikiki
+LOCATION:Duke's Waikiki
+GEO:21.2768421;-157.8277917
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Duke's Wa
+ ikiki":geo:21.2768421,-157.8277917
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-0@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T181500Z
+DTEND:20270105T190000Z
+SUMMARY:Pick up the car in Waikīkī
+DESCRIPTION:Bring your G licence and credit card\; inspect the car and take
+  photos. Clockwise loop today: the northeast valleys first\, then back alo
+ ng the North Shore.\n\nGoogle Maps: https://www.google.com/maps/search/?ap
+ i=1&query=Waik%C4%ABk%C4%AB%20rental%20office%20(sample%20location)
+LOCATION:Waikīkī rental office (sample location)
+GEO:21.2734513;-157.8222713
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Waikīkī
+  rental office (sample location)":geo:21.2734513,-157.8222713
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-1@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T190000Z
+DTEND:20270105T200500Z
+SUMMARY:Hoʻomaluhia Botanical Garden
+DESCRIPTION:Opens at 9:00. Drive in\, park by the lake for mountain photos\
+ , and walk a short stretch. Skipping Byodo-In this time\, so you can linge
+ r here.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Ho
+ %CA%BBomaluhia%20Botanical%20Garden
+LOCATION:Hoʻomaluhia Botanical Garden
+GEO:21.3882747;-157.8070148
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hoʻomalu
+ hia Botanical Garden":geo:21.3882747,-157.8070148
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-2@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270105T210000Z
+DTEND:20270105T233000Z
+SUMMARY:Kualoa Ranch Jurassic Adventure
+DESCRIPTION:Check in at the ranch around 10:40. Ride an off-road vehicle in
+ to the Kualoa\, Hakipuʻu and Kaʻaʻawa valleys to see filming spots from
+  Jurassic Park\, Jurassic World and more. Bumpy ride\, only short walks. B
+ ook your slot ahead.\n\nKualoa official site: https://www.kualoa.com/tours
+ /\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Kualoa%20R
+ anch
+LOCATION:Kualoa Ranch
+GEO:21.5208318;-157.8372577
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Kualoa Ra
+ nch":geo:21.5208318,-157.8372577
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T000500Z
+DTEND:20270106T004000Z
+SUMMARY:Giovanni's garlic shrimp
+DESCRIPTION:Lunch. If the line is too long\, try Romy's or Fumi's next door
+ . Then head west on Kamehameha Hwy\; just glance at Shark's Cove and Waime
+ a Bay from the car: North Shore surf is big on winter afternoons\, so no d
+ edicated stops.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&
+ query=Giovanni's%20Shrimp%20Truck%2C%20Kahuku
+LOCATION:Giovanni's Shrimp Truck\, Kahuku
+GEO:21.677198;-157.9484211
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Giovanni'
+ s Shrimp Truck, Kahuku":geo:21.677198,-157.9484211
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-4@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T010500Z
+DTEND:20270106T012000Z
+SUMMARY:Turtle watching at Laniakea
+DESCRIPTION:Turtles often haul out to bask in the afternoon\; watch from sh
+ ore for 15 min and keep your distance. Roadside parking is tight\; if ther
+ e's no spot\, go straight to Dole.\n\nGoogle Maps: https://www.google.com/
+ maps/search/?api=1&query=Laniakea%20Beach
+LOCATION:Laniakea Beach
+GEO:21.6187;-158.0853
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Laniakea 
+ Beach":geo:21.6187,-158.0853
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-5@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T014000Z
+DTEND:20270106T033000Z
+SUMMARY:Dole Plantation: train + maze
+DESCRIPTION:Ride the Pineapple Express train first (~20 min\, roughly every
+  10 min\; the official site suggests 1 hour including the pineapple-cuttin
+ g demo)\, then the Pineapple Garden Maze (40 min on average)\, and finish 
+ with Dole Whip. Park hours 9:30–17:30\; the last train and last maze ent
+ ry aren't listed online\, so call 808-621-8408 before you go. If the last 
+ train is early\, do the maze first.\n\nDole Plantation official site: http
+ s://www.doleplantation.com/\nGoogle Maps: https://www.google.com/maps/sear
+ ch/?api=1&query=Dole%20Plantation
+LOCATION:Dole Plantation
+GEO:21.5259081;-158.0378039
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Dole Plan
+ tation":geo:21.5259081,-158.0378039
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-6@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T035000Z
+DTEND:20270106T044000Z
+SUMMARY:Waikele Premium Outlets
+DESCRIPTION:~20 min from Dole via H-2. Shop for ~50 min only\; if you run l
+ ate at Dole\, skip it and go straight to Ko Olina for dinner.\n\nOutlets o
+ fficial site: https://www.premiumoutlets.com/outlet/waikele\nGoogle Maps: 
+ https://www.google.com/maps/search/?api=1&query=Waikele%20Premium%20Outlet
+ s
+LOCATION:Waikele Premium Outlets
+GEO:21.4017617;-158.0068567
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Waikele P
+ remium Outlets":geo:21.4017617,-158.0068567
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-7@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T050000Z
+DTEND:20270106T055000Z
+SUMMARY:Ko Olina dinner
+DESCRIPTION:~18 min drive from the outlets (~35 min straight from Dole). Ea
+ t inside the Ko Olina resort area\, e.g. Monkeypod Kitchen\; reservations 
+ recommended.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&que
+ ry=Four%20Seasons%20Resort%20Oahu%20at%20Ko%20Olina
+LOCATION:Four Seasons Resort Oahu at Ko Olina
+GEO:21.3392955;-158.125741
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Four Seas
+ ons Resort Oahu at Ko Olina":geo:21.3392955,-158.125741
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-8@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T060000Z
+DTEND:20270106T070000Z
+SUMMARY:Stargazing · Stars Above Hawaii
+DESCRIPTION:An astronomy guide with a computerized telescope talks about Ha
+ waiian star navigation\, ~1 hour\, and photos are sent to your phone. Jan 
+ 7 is the new moon\, so these are the darkest nights. Start time depends on
+  the slot you book\; you'll get a text that afternoon about weather and th
+ e viewing spot. Weather cancellations get a full refund or rebooking.\n\nB
+ ooking page: https://www.greetwell.com/us/direct/stargazing-star-show-ko-o
+ lina-resort\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=
+ Four%20Seasons%20Resort%20Oahu%20at%20Ko%20Olina
+LOCATION:Four Seasons Resort Oahu at Ko Olina
+GEO:21.3392955;-158.125741
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Four Seas
+ ons Resort Oahu at Ko Olina":geo:21.3392955,-158.125741
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d3-9@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T070000Z
+DTEND:20270106T080000Z
+SUMMARY:Drive back to Waikīkī
+DESCRIPTION:~45 min\, back at the hotel around 21:45. Take it easy on the r
+ oads at night\; it's a long day. Park at the hotel overnight (~USD45) and 
+ return the car tomorrow morning.\n\nGoogle Maps: https://www.google.com/ma
+ ps/search/?api=1&query=Hotel%20Renew%2C%20129%20Paoakalani%20Ave%2C%20Hono
+ lulu
+LOCATION:Hotel Renew\, 129 Paoakalani Ave\, Honolulu
+GEO:21.2727845;-157.8222219
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Ren
+ ew, 129 Paoakalani Ave, Honolulu":geo:21.2727845,-157.8222219
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-0@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T180000Z
+DTEND:20270106T190000Z
+SUMMARY:Fill up and return the car
+DESCRIPTION:Return by the time on your booking\; being late may cost an ext
+ ra day.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Wa
+ ik%C4%ABk%C4%AB%20rental%20office%20(sample%20location)
+LOCATION:Waikīkī rental office (sample location)
+GEO:21.2734513;-157.8222713
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Waikīkī
+  rental office (sample location)":geo:21.2734513,-157.8222713
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-1@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T190000Z
+DTEND:20270106T200000Z
+SUMMARY:Start the Waikiki Trolley 4-day pass
+DESCRIPTION:4-day all-line pass ~USD150 for two\, hop on/hop off\, good for
+  Jan 6–8. Take the Red Line (downtown history line) to the palace.\n\nWa
+ ikiki Trolley official site: https://waikikitrolley.com/\nGoogle Maps: htt
+ ps://www.google.com/maps/search/?api=1&query=T%20Galleria%20by%20DFS%2C%20
+ Waikiki
+LOCATION:T Galleria by DFS\, Waikiki
+GEO:21.28;-157.8296
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="T Galleri
+ a by DFS, Waikiki":geo:21.28,-157.8296
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-2@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T200000Z
+DTEND:20270106T213000Z
+SUMMARY:ʻIolani Palace
+DESCRIPTION:The only royal palace in the US\; open Tue–Sat\, tickets onli
+ ne only.\n\nʻIolani Palace official site: https://www.iolanipalace.org/vi
+ sit/\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=%CA%BBI
+ olani%20Palace
+LOCATION:ʻIolani Palace
+GEO:21.3068147;-157.8587655
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="ʻIolani 
+ Palace":geo:21.3068147,-157.8587655
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T213000Z
+DTEND:20270106T223000Z
+SUMMARY:King Kamehameha Statue\, Chinatown
+DESCRIPTION:The statue is right across from the palace\; take the Red Line 
+ or walk to Chinatown.
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-4@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270106T223000Z
+DTEND:20270107T003000Z
+SUMMARY:Seafood lunch at Nico's Pier 38
+DESCRIPTION:Not on a trolley line\; Uber ~10 min. Poke bowls and fried fish
+ .\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Nico's%2
+ 0Pier%2038
+LOCATION:Nico's Pier 38
+GEO:21.3175754;-157.8775063
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nico's Pi
+ er 38":geo:21.3175754,-157.8775063
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-5@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270107T003000Z
+DTEND:20270107T040000Z
+SUMMARY:Ala Moana Center
+DESCRIPTION:Pink Line (Ala Moana shopping line) both ways.\n\nGoogle Maps: 
+ https://www.google.com/maps/search/?api=1&query=Ala%20Moana%20Center
+LOCATION:Ala Moana Center
+GEO:21.2911;-157.8435
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Ala Moana
+  Center":geo:21.2911,-157.8435
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d4-6@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270107T040000Z
+DTEND:20270107T050000Z
+SUMMARY:Dinner in Waikīkī
+DESCRIPTION:Hanauma Bay tomorrow morning\, so turn in early.\n\nGoogle Maps
+ : https://www.google.com/maps/search/?api=1&query=K%C5%ABhi%C5%8D%20Beach%
+ 2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu
+GEO:21.275;-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Kūhiō B
+ each, Honolulu":geo:21.275,-157.82694
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d5-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270107T233000Z
+DTEND:20270108T023000Z
+SUMMARY:Green Line to the Diamond Head lookout
+DESCRIPTION:The Green Line (Diamond Head Line) has a photo stop at Kahala L
+ ookout\; step off and you'll see Diamond Head and the ocean\, no hiking. A
+  loop takes ~70 min\, and the last afternoon run heads back from the Diamo
+ nd Head area around 15:10–15:40\, so don't set out too late. Not going i
+ nto the crater: that needs a separate state park reservation\, and without
+  the summit there isn't much to see.\n\nGreen Line schedule and stops: htt
+ ps://waikikitrolley.com/green-line/\nGoogle Maps: https://www.google.com/m
+ aps/search/?api=1&query=Diamond%20Head%20Lookout%2C%20Diamond%20Head%20Rd%
+ 2C%20Honolulu
+LOCATION:Diamond Head Lookout\, Diamond Head Rd\, Honolulu
+GEO:21.2557;-157.807
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Diamond H
+ ead Lookout, Diamond Head Rd, Honolulu":geo:21.2557,-157.807
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d5-4@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270108T023000Z
+DTEND:20270108T030000Z
+SUMMARY:Meet at the beach boarding spot
+DESCRIPTION:Usually arrive 20–30 min early. Wear shoes that are easy to b
+ oard in and bring a light jacket\; it's breezy on the water in the evening
+ .\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=K%C5%ABh
+ i%C5%8D%20Beach%2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu
+GEO:21.275;-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Kūhiō B
+ each, Honolulu":geo:21.275,-157.82694
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d5-5@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270108T030000Z
+DTEND:20270108T050000Z
+SUMMARY:Waikīkī sunset sail (or move to Jan 4)
+DESCRIPTION:E.g. Moana Sailing's 2-hour sail (~USD81/person\, one drink inc
+ luded)\; Manu Kai's 1.5-hour happy hour ~USD56/person. January sunset is ~
+ 18:05\, and heading back after dark you'll see Waikīkī and Diamond Head 
+ lit up. Operators may cancel in rough seas. The sail can also go on the ev
+ ening of Jan 4: check the forecast before the trip and pick the calmer\, l
+ ess cloudy day\; if you already sailed on Jan 4\, just watch the sunset fr
+ om the beach and eat early.\n\nBook Moana Sailing: https://www.hawaiiactiv
+ ities.com/en/hawaii/oahu/a/166886\nGoogle Maps: https://www.google.com/map
+ s/search/?api=1&query=K%C5%ABhi%C5%8D%20Beach%2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu
+GEO:21.275;-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Kūhiō B
+ each, Honolulu":geo:21.275,-157.82694
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d5-6@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270108T051500Z
+DTEND:20270108T061500Z
+SUMMARY:Dinner: Waikīkī seafood
+DESCRIPTION:Eat nearby after the sail\; if you missed Duke's on Jan 4\, go 
+ there.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Duk
+ e's%20Waikiki
+LOCATION:Duke's Waikiki
+GEO:21.2768421;-157.8277917
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Duke's Wa
+ ikiki":geo:21.2768421,-157.8277917
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d6-3@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270109T033000Z
+DTEND:20270109T070000Z
+SUMMARY:House Without A Key sunset dinner
+DESCRIPTION:Sunset and hula show\; reservations recommended.\n\nGoogle Maps
+ : https://www.google.com/maps/search/?api=1&query=House%20Without%20A%20Ke
+ y%2C%20Halekulani
+LOCATION:House Without A Key\, Halekulani
+GEO:21.2774759;-157.8318823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="House Wit
+ hout A Key, Halekulani":geo:21.2774759,-157.8318823
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d6-4@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270109T070000Z
+DTEND:20270109T080000Z
+SUMMARY:Head to the airport
+DESCRIPTION:~25–30 min. The return is the Air Canada nonstop at 00:10 on 
+ Jan 9\; arrive 2.5–3 hours early. If you booked the bundle\, follow its 
+ transfer arrangements.\n\nGoogle Maps: https://www.google.com/maps/search/
+ ?api=1&query=Daniel%20K.%20Inouye%20International%20Airport
+LOCATION:Daniel K. Inouye International Airport
+GEO:21.3330717;-157.9196383
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel K.
+  Inouye International Airport":geo:21.3330717,-157.9196383
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d7-0@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270109T101000Z
+DTEND:20270109T185100Z
+SUMMARY:Air Canada nonstop departs
+DESCRIPTION:Red-eye\, ~8h 41m\; try to sleep on the plane.
+END:VEVENT
+BEGIN:VEVENT
+UID:oahu-2027-jan-five-nights-d7-1@travel-plan
+DTSTAMP:20261119T191352Z
+DTSTART:20270109T185100Z
+DTEND:20270109T195100Z
+SUMMARY:Arrive in Toronto
+DESCRIPTION:Toronto time. Clear Canadian customs on the way back from the U
+ S.
+END:VEVENT
+END:VCALENDAR

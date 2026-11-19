@@ -103,7 +103,9 @@ const EXACT = {
   '点「保存图片」存到手机或电脑；也可以直接截图。': 'Tap "Save image" to save it to your phone or computer, or take a screenshot.',
   // calendar export
   '导入日历': 'Add to calendar', '没有带具体时间的行程': 'No timed plans to export',
-  '这里不能直接下载日历文件': 'The calendar file cannot be downloaded here', '导出失败，刷新后再试': 'Export failed; reload and try again',
+  '这里不能下载日历文件，用网页版打开再点': 'Calendar files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
+  '已打开日历文件，在日历里点「全部添加」': 'Calendar file opened: tap "Add All" in Calendar',
+  '已打开日历文件，在日历里点「全部添加」（日历文件按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',
   '把带具体时间的行程导出成日历文件，苹果日历、Google 日历、Outlook 都能一次导入': 'Export every timed plan as a calendar file that Apple Calendar, Google Calendar or Outlook can import in one go',
 };
 const joinCn = s => s.replace(/、/g, ', ');
@@ -124,7 +126,6 @@ const PATTERNS = [
   [/^还有 (\d+) \/ (\d+) 项$/, '$1 of $2 left'], [/^· 最近：(.*)$/, '· next: $1'], [/^(\d+) 项待办$/, '$1 to do'], [/^待办 (\d+) 项$/, '$1 to do'],
   [/^(.*) · 路线图$/, '$1 · route map'],
   [/^已换成：(.+)$/, 'Swapped for: $1'],
-  [/^已导出 (\d+) 个日程，在日历里点「全部添加」$/, 'Exported $1 events: tap "Add All" in Calendar'],
   [/^已下载 (\d+) 个日程，打开文件导入日历$/, 'Downloaded $1 events: open the file to add them to your calendar'],
   [/^不想去的话，可以换成 (\d+) 个项目$/, (m, n) => `Rather skip it? ${n} alternative${n === '1' ? '' : 's'}`],
   [/^(?:(?:夯|待定|额) \d+(?: · )?)+$/, m => m.replace(/夯/g, 'Love it').replace(/待定/g, 'Maybe').replace(/额/g, 'Meh')],

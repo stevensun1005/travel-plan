@@ -1,0 +1,515 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//travel-plan//stevensun1005//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:哥斯达黎加五晚 · 1/6–1/11
+X-WR-TIMEZONE:America/Costa_Rica
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T124000Z
+DTEND:20270106T154000Z
+SUMMARY:到Pearson 3号航站楼
+DESCRIPTION:国际航班提前3小时到。女朋友带中国护照、美
+ 签（确认是多次入境M）和PR卡。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T154000Z
+DTEND:20270106T212400Z
+SUMMARY:Porter PD 783 起飞
+DESCRIPTION:约5小时44分。哥斯达黎加比多伦多晚1小时。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T212400Z
+DTEND:20270106T221500Z
+SUMMARY:落地利比里亚
+DESCRIPTION:入境盖章（确认护照上有章），拿行李后到Adobe
+ 接驳点。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&que
+ ry=Daniel%20Oduber%20Quir%C3%B3s%20International%20Airport
+LOCATION:Daniel Oduber Quirós International Airport
+GEO:10.5917;-85.5411
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
+ uber Quirós International Airport":geo:10.5917,-85.5411
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T221500Z
+DTEND:20270106T230000Z
+SUMMARY:取车
+DESCRIPTION:带实体驾照、护照和本人信用卡（押金约USD1\,000
+ ）。检查车况拍照；手动确认车门锁好，这里租车被撬
+ 很常见。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-4@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T230000Z
+DTEND:20270106T233000Z
+SUMMARY:到Playas del Coco入住
+DESCRIPTION:约30分钟，天黑前到。\n\nGoogle Maps: https://www.googl
+ e.com/maps/search/?api=1&query=Villa%20Del%20Sol%20Boutique%20Hotel%2C%20P
+ layas%20del%20Coco
+LOCATION:Villa Del Sol Boutique Hotel\, Playas del Coco
+GEO:10.55894;-85.690166
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Villa Del
+  Sol Boutique Hotel, Playas del Coco":geo:10.55894,-85.690166
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-5@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270106T233000Z
+DTEND:20270107T010000Z
+SUMMARY:海滩看日落
+DESCRIPTION:酒店前面的海滩朝西，日落正对海面。\n\nGoogle M
+ aps: https://www.google.com/maps/search/?api=1&query=Playas%20del%20Coco%2
+ 0Beach%2C%20Guanacaste
+LOCATION:Playas del Coco Beach\, Guanacaste
+GEO:10.5585;-85.6915
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
+ l Coco Beach, Guanacaste":geo:10.5585,-85.6915
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-6@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T010000Z
+DTEND:20270107T020000Z
+SUMMARY:海边吃海鲜
+DESCRIPTION:走路去Coco镇上（约15分钟），Papagayo Seafood（常
+ 有现场音乐）或Mar Azul；回来不想走就打车。\n\nGoogle Maps
+ : https://www.google.com/maps/search/?api=1&query=Playas%20del%20Coco%2C%2
+ 0Guanacaste%2C%20Costa%20Rica
+LOCATION:Playas del Coco\, Guanacaste\, Costa Rica
+GEO:10.5505;-85.6995
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
+ l Coco, Guanacaste, Costa Rica":geo:10.5505,-85.6995
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d1-7@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T020000Z
+DTEND:20270107T030000Z
+SUMMARY:沙滩上看星星
+DESCRIPTION:明天1/7是新月，今晚几乎没有月光；Guanacaste旱
+ 季晴天多，19:00天就全黑了。酒店前面就是Coco海滩比较
+ 暗的北头，走到离路灯远一点的地方，躺在毛巾上看：
+ 东南方高处是猎户座，下面最亮的是天狼星；21:00后往南
+ 方低处找老人星（全天第二亮的星，在多伦多看不到）
+ 。手机装Stellarium或SkyView对着天空认星。只带手机和毛巾
+ ，别带贵重物品，不走远；明天要早起开山路，别熬太
+ 晚。\n\n月相（timeanddate）: https://www.timeanddate.com/moon/phases
+ /costa-rica/liberia?year=2027\nGoogle Maps: https://www.google.com/maps/se
+ arch/?api=1&query=Playas%20del%20Coco%20Beach%2C%20Guanacaste
+LOCATION:Playas del Coco Beach\, Guanacaste
+GEO:10.5585;-85.6915
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
+ l Coco Beach, Guanacaste":geo:10.5585,-85.6915
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T130000Z
+DTEND:20270107T142000Z
+SUMMARY:退房出发
+DESCRIPTION:带点现金（瀑布只收现金）。经Liberia、Bagaces南
+ 下，约1小时15分钟到瀑布。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T142000Z
+DTEND:20270107T152000Z
+SUMMARY:Llanos de Cortés 瀑布
+DESCRIPTION:水泥台阶约30级、有扶绳，下面是沙地，水边和
+ 水里是石头。可以下水泡一会儿，踩石头时注意脚下别
+ 崴。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Lla
+ nos%20de%20Cort%C3%A9s%20Waterfall%2C%20Bagaces
+LOCATION:Llanos de Cortés Waterfall\, Bagaces
+GEO:10.524302;-85.298602
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Llanos de
+  Cortés Waterfall, Bagaces":geo:10.524302,-85.298602
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T152000Z
+DTEND:20270107T190000Z
+SUMMARY:沿1号公路去Monteverde
+DESCRIPTION:经Cañas，转606号路上山，约2.5小时；606号路已铺
+ 好，上坡和急弯多，慢慢开。12:00左右到Santa Elena镇上，
+ 简单吃个午饭。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T190000Z
+DTEND:20270107T220000Z
+SUMMARY:100% Aventura 滑索
+DESCRIPTION:约2.5–3小时：10条滑索，最长一条1\,590米，是哥
+ 斯达黎加最长的；最后两条是趴着飞的Superman线，还有一
+ 次Tarzan大秋千（可以不荡）。官网USD72起/人（另加税）
+ ，不含接送，从镇上开车约10分钟。场次以订票页为准（
+ 常见8:00、11:00、13:00、15:00）。她的跟腱还在复健：Superma
+ n线到站是工作人员刹停再扶着站起来，冲击不大；要留
+ 意的是平台之间的台阶和林间小路，以及普通滑索到站
+ 时偶尔要用脚踩一下平台，订之前问一下康复师。\n\n100%
+  Aventura 订票（官网）: https://fareharbor.com/embeds/book/aventurac
+ anopytour/items/39178/calendar/?ref=https%3A%2F%2Fwww.aventuracanopytour.c
+ om&language=en-us\n100% Aventura 官网: https://www.aventuracanopytour.co
+ m/\n备选：Selvatura 滑索（也有Superman线）: https://selvatura.co
+ m/packages/\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=
+ 100%25%20Aventura%20Zipline%2C%20Monteverde
+LOCATION:100% Aventura Zipline\, Monteverde
+GEO:10.3388806;-84.8241529
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="100% Aven
+ tura Zipline, Monteverde":geo:10.3388806,-84.8241529
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-4@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T220000Z
+DTEND:20270107T233000Z
+SUMMARY:入住Monteverde酒店
+DESCRIPTION:离镇中心0.8公里；歇一会儿，换件外套：Monteverd
+ e晚上只有十几度，常有风和毛毛雨。\n\nGoogle Maps: https://
+ www.google.com/maps/search/?api=1&query=Hotel%20Monta%C3%B1a%20Monteverde
+LOCATION:Hotel Montaña Monteverde
+GEO:10.3115843;-84.816105
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
+ taña Monteverde":geo:10.3115843,-84.816105
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-5@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270107T233000Z
+DTEND:20270108T013000Z
+SUMMARY:雨林夜间徒步
+DESCRIPTION:Bajo del Tigre（儿童永恒雨林）的向导打手电带着
+ 走，找树蛙、蛇、蜘蛛、睡着的鸟，运气好能看到树懒
+ 和刺豚鼠。USD30＋税/人，最少2人；从酒店开车约5分钟。
+ 是林间土路，穿防滑包脚的鞋，带雨衣和驱蚊水。\n\nBajo
+  del Tigre 价格与预订: https://acmcr.org/en/rates-and-reservations/\n
+ 备选：Monteverde云雾森林保护区夜间徒步: https://mytanfeet.co
+ m/booking/monteverde-cloud-forest-reserve-night-walk/\nGoogle Maps: https:
+ //www.google.com/maps/search/?api=1&query=Bajo%20del%20Tigre%2C%20Bosque%2
+ 0Eterno%20de%20los%20Ni%C3%B1os%2C%20Monteverde
+LOCATION:Bajo del Tigre\, Bosque Eterno de los Niños\, Monteverde
+GEO:10.3056389;-84.8144494
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Bajo del 
+ Tigre, Bosque Eterno de los Niños, Monteverde":geo:10.3056389,-84.8144494
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d2-6@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T014500Z
+DTEND:20270108T024500Z
+SUMMARY:镇上吃晚饭
+DESCRIPTION:在Santa Elena镇上吃，开几分钟回酒店。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T130000Z
+DTEND:20270108T143000Z
+SUMMARY:早餐
+DESCRIPTION:酒店含早；早上山里最清透，能看到云从山谷里
+ 升起来。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&que
+ ry=Hotel%20Monta%C3%B1a%20Monteverde
+LOCATION:Hotel Montaña Monteverde
+GEO:10.3115843;-84.816105
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
+ taña Monteverde":geo:10.3115843,-84.816105
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T143000Z
+DTEND:20270108T173000Z
+SUMMARY:下山去La Fortuna
+DESCRIPTION:沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸
+ 开，全程铺装路，开车约4小时；别走Monteverde–Tilarán的
+ 土路捷径。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T173000Z
+DTEND:20270108T193000Z
+SUMMARY:Arenal湖北岸
+DESCRIPTION:沿Route 142的弯路开，路边观景停车处拍湖和火山
+ ；在Nuevo Arenal吃午饭。\n\nGoogle Maps: https://www.google.com/maps
+ /search/?api=1&query=Nuevo%20Arenal%2C%20Guanacaste%2C%20Costa%20Rica
+LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica
+GEO:10.547;-84.863736
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
+ nal, Guanacaste, Costa Rica":geo:10.547,-84.863736
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T193000Z
+DTEND:20270108T210000Z
+SUMMARY:到Termales del Arenal入住
+DESCRIPTION:全程白天开完。房间收拾好就先泡酒店的温泉池
+ 。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termal
+ es%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-4@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270108T210000Z
+DTEND:20270109T003000Z
+SUMMARY:泡酒店温泉
+DESCRIPTION:先泡一会儿，傍晚去镇上吃饭。\n\nGoogle Maps: http
+ s://www.google.com/maps/search/?api=1&query=Termales%20del%20Arenal%2C%20L
+ a%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-5@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T003000Z
+DTEND:20270109T013000Z
+SUMMARY:镇上吃晚饭
+DESCRIPTION:Snapper's House就在镇中心；吃完开5分钟回酒店。\n
+ \nGoogle Maps: https://www.google.com/maps/search/?api=1&query=La%20Fortun
+ a%2C%20San%20Carlos%2C%20Costa%20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica
+GEO:10.471683;-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
+ a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T120000Z
+DTEND:20270109T133000Z
+SUMMARY:早起看火山
+DESCRIPTION:早上6–9点火山最可能露脸，从酒店就能看。
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T133000Z
+DTEND:20270109T180000Z
+SUMMARY:Peñas Blancas 安全漂流
+DESCRIPTION:酒店接送；坐在充气筏上由导游掌舵，基本不用
+ 划（有的团会让你轻轻划几下），约2小时看树懒、猴子
+ 、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上
+ 可能有泥和石头，注意脚下，穿防滑包脚的水鞋。\n\nFort
+ una Welcome 河上漂流 · USD70含接送 · 7:30出发约4小时: https:
+ //www.fortunawelcome.com/la-fortuna-tours/safari-float-penas-blancas-river
+ /\n备选：Desafío 河上漂流 · USD72＋税含接送 · 8:00开始约
+ 3小时，要轻轻划几下: https://www.desafiocostarica.com/service/saf
+ ari-float-penas-blancas/\n备选：Two Weeks in Costa Rica 河上漂流 ·
+  1月起USD69＋税含接送 · 7:30出发约4.5小时: https://www.twowee
+ ksincostarica.com/product/safari-float-penas-blancas-river-group-tour/\nGo
+ ogle Maps: https://www.google.com/maps/search/?api=1&query=Pe%C3%B1as%20Bl
+ ancas%20River%2C%20San%20Carlos%2C%20Costa%20Rica
+LOCATION:Peñas Blancas River\, San Carlos\, Costa Rica
+GEO:10.39;-84.58
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Peñas Bl
+ ancas River, San Carlos, Costa Rica":geo:10.39,-84.58
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T180000Z
+DTEND:20270109T200000Z
+SUMMARY:镇上午餐
+DESCRIPTION:Cevichería D'Mora吃ceviche。\n\nGoogle Maps: https://www.goo
+ gle.com/maps/search/?api=1&query=La%20Fortuna%2C%20San%20Carlos%2C%20Costa
+ %20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica
+GEO:10.471683;-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
+ a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T200000Z
+DTEND:20270109T223000Z
+SUMMARY:Mistico 吊桥公园
+DESCRIPTION:开车约25分钟。3.2公里环线，有缓坡、台阶，吊
+ 桥会晃，约2小时。跟着前面的向导团走，常能看到睫毛
+ 蝮蛇这类小动物。上下坡注意脚下。最后入园15:50。\n\nMi
+ stico官网: https://misticopark.com/\n备选：Mistico 向导团（自然
+ 史步道） · USD44＋税 · 约2.5小时，向导带着找动物: https
+ ://misticopark.com/tours/natural-history-walk/\n备选：Fortuna Welcome 
+ 吊桥向导团 · USD70含接送和门票 · 14:00出发约4小时: https
+ ://www.fortunawelcome.com/la-fortuna-tours/arenal-hanging-bridges-tour/\n
+ 备选：Sky Adventures 吊桥（El Castillo，开车约40分钟） · 要
+ 提前预约: https://skyadventures.travel/hanging-bridges/\nGoogle Maps: 
+ https://www.google.com/maps/search/?api=1&query=Mistico%20Arenal%20Hanging
+ %20Bridges%20Park
+LOCATION:Mistico Arenal Hanging Bridges Park
+GEO:10.488049;-84.753777
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Mistico A
+ renal Hanging Bridges Park":geo:10.488049,-84.753777
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-4@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270109T223000Z
+DTEND:20270110T003000Z
+SUMMARY:回酒店泡温泉
+DESCRIPTION:吊桥回来先泡一会儿，再出门吃晚饭。\n\nGoogle M
+ aps: https://www.google.com/maps/search/?api=1&query=Termales%20del%20Aren
+ al%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d4-5@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270110T003000Z
+DTEND:20270110T013000Z
+SUMMARY:镇上吃晚饭
+DESCRIPTION:开5分钟去镇上：Snapper's House（马林鱼ceviche、海
+ 鲜汤）或Cevichería D'Mora；吃完开回酒店。\n\nGoogle Maps: htt
+ ps://www.google.com/maps/search/?api=1&query=La%20Fortuna%2C%20San%20Carlo
+ s%2C%20Costa%20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica
+GEO:10.471683;-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
+ a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d5-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270110T133000Z
+DTEND:20270110T140000Z
+SUMMARY:酒店接人（骑马团）
+DESCRIPTION:早上火山最容易露脸。\n\nGoogle Maps: https://www.goog
+ le.com/maps/search/?api=1&query=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d5-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270110T140000Z
+DTEND:20270110T170000Z
+SUMMARY:骑马看Arenal火山
+DESCRIPTION:约2.5小时骑行，林间和牧场路线，到火山观景点
+ 和Los Lirios湖，向导会先教。注意：脚踩马镫时脚跟往下
+ 压、上下马要单脚蹬地，跟腱会吃力一点，觉得紧就让
+ 马慢走。\n\nFortuna Welcome 骑马团: https://www.fortunawelcome.com/
+ la-fortuna-tours/arenal-volcano-horseback-riding-tour\n备选：Mistico「
+ Paco’s Horses」骑马 · USD58＋税 · 8:15开始约2.5小时，会骑
+ 马过河: https://misticopark.com/tours/pacos-horses/\n备选：Don Tobia
+ s 骑马上火山观景点 · 8:30开始约3小时，含接送，价格要
+ 问: https://www.arenal.net/tours/don-tobias-horseback-ride-volcano
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d5-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270110T173000Z
+DTEND:20270110T190000Z
+SUMMARY:回酒店换衣服、吃午饭
+DESCRIPTION:在酒店或镇上吃个简单的午饭，13:00树懒团来接
+ 。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termal
+ es%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d5-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270110T190000Z
+DTEND:20270110T220000Z
+SUMMARY:树懒团
+DESCRIPTION:向导带着在农场林间的平缓小路上找树懒，常能
+ 看到二趾和三趾树懒，还有鸟、蛙和蜂鸟；约2.5–3小时
+ ，难度标为「容易」，含酒店接送。USD90/人含税，最少2
+ 人成团。\n\nFortuna Welcome 树懒团: https://www.fortunawelcome.com/
+ la-fortuna-tours/arenal-sloth-tour/\n备选：Fortuna Welcome 树懒＋农
+ 场午餐（约6小时）: https://www.fortunawelcome.com/la-fortuna-tours
+ /sloth-watching-campesino-farmer-tour
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d6-0@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270111T123000Z
+DTEND:20270111T140000Z
+SUMMARY:最后看一眼火山，早餐
+DESCRIPTION:Google Maps: https://www.google.com/maps/search/?api=1&query=Te
+ rmales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d6-1@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270111T140000Z
+DTEND:20270111T160000Z
+SUMMARY:上午慢慢收拾
+DESCRIPTION:飞机下午才飞，早上可以再泡一次酒店温泉，10:
+ 00前退房。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&q
+ uery=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
+ del Arenal, La Fortuna":geo:10.478292,-84.672823
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d6-2@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270111T160000Z
+DTEND:20270111T191500Z
+SUMMARY:出发回机场
+DESCRIPTION:沿湖经Tilarán、Cañas，路上约3小时；留出加油时
+ 间（还车要加满），13:15前到。\n\nGoogle Maps: https://www.goog
+ le.com/maps/search/?api=1&query=Nuevo%20Arenal%2C%20Guanacaste%2C%20Costa%
+ 20Rica
+LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica
+GEO:10.547;-84.863736
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
+ nal, Guanacaste, Costa Rica":geo:10.547,-84.863736
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d6-3@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270111T191500Z
+DTEND:20270111T223500Z
+SUMMARY:还车，坐接驳车到机场
+DESCRIPTION:离境税一般已含在机票里。回程由Air Transat执飞
+ ，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小
+ 时到最稳。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&
+ query=Daniel%20Oduber%20Quir%C3%B3s%20International%20Airport
+LOCATION:Daniel Oduber Quirós International Airport
+GEO:10.5917;-85.5411
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
+ uber Quirós International Airport":geo:10.5917,-85.5411
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d6-4@travel-plan
+DTSTAMP:20261119T191351Z
+DTSTART:20270111T223500Z
+DTEND:20270112T034500Z
+SUMMARY:Porter PD 7301 直飞回多伦多
+DESCRIPTION:Air Transat执飞，约5小时10分，22:45到皮尔逊。女
+ 朋友入境加拿大出示PR卡。
+END:VEVENT
+END:VCALENDAR

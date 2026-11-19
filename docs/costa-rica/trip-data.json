@@ -10,6 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "timezone": "America/Costa_Rica",
+    "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.ics",
     "demo": false,
     "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车只有规定和保险单价，车价是估算。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [

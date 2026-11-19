@@ -10,6 +10,7 @@
     "travelers": 2,
     "currency": "CAD",
     "timezone": "Pacific/Honolulu",
+    "calendarUrl": "https://stevensun1005.github.io/travel-plan/demo/calendar.ics",
     "demo": false,
     "notice": "全部未预订。机票和酒店都在多个平台比过价（AC官网、Trip.com、携程、Booking.com、Expedia、Vio），每项选最便宜的，后面标了是哪个平台的价；外币按加拿大央行2026-11-13汇率换成加币（1 USD = 1.4257 CAD，1 CNY = 0.2137 CAD）。机票都按每人可带1件随身行李箱的票价算。门票和餐饮仍是官方或公开常规价折算。回程是1/9凌晨00:10的直飞，所以1/8晚上去机场。单独订的酒店都按5晚（1/3–1/8）算；Expedia机酒套餐维持Expedia给的6晚。",
     "constraints": [
