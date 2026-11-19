@@ -13,6 +13,8 @@
 
 const MIN = 60000, DAY = 1440 * MIN;
 export const DEFAULT_COLOR = '#D07D9C';
+// 苹果日历只认整个日历的颜色，一个订阅里没法给日程分颜色；行程项写 kind，标题前加图标区分。
+export const ICONS = { flight: '✈️', drive: '🚗', transit: '🚌', tour: '🎟️', sight: '📸', food: '🍽️', hotel: '🏨', spa: '♨️', shop: '🛍️' };
 
 export function parseTime(text) {
   const m = String(text ?? '').match(/(\d{1,2})[:：](\d{2})(?:\s*[–—~～\-至到]\s*(\d{1,2})[:：](\d{2}))?/);
@@ -84,7 +86,7 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
         `DTSTAMP:${stamp(now, true)}`,
         `DTSTART:${stamp(e.start, utc)}`,
         `DTEND:${stamp(end, utc)}`,
-        `SUMMARY:${text(s.title || e.item.title || '')}`,
+        `SUMMARY:${text(`${ICONS[s.kind] ? `${ICONS[s.kind]} ` : ''}${s.title || e.item.title || ''}`)}`,
       ];
       const desc = [s.text || '', links.join('\n')].filter(Boolean).join('\n\n');
       if (desc) lines.push(`DESCRIPTION:${text(desc)}`);

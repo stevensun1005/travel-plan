@@ -1569,24 +1569,28 @@
         {
           "time": "Before 15:00",
           "title": "Arrive at Pearson",
+          "kind": "flight",
           "text": "Nonstop flights to the US clear US preclearance in Toronto, so arrive 2.5–3 hours before departure. Even if you don't need a visa, double-check passport validity.",
           "tz": "America/Toronto"
         },
         {
           "time": "17:35",
           "title": "AC589 departs",
+          "kind": "flight",
           "text": "~10 hours nonstop. Try to sleep on Hawaii time on the plane; Hawaii is 5 hours behind Toronto.",
           "tz": "America/Toronto"
         },
         {
           "time": "22:38",
           "title": "Land in Honolulu",
+          "kind": "flight",
           "text": "Domestic arrival, no immigration again. After baggage claim, taxi or Uber to the hotel, ~25–30 min, ~USD40–50.",
           "placeId": "hnl"
         },
         {
           "time": "~23:30",
           "title": "Hotel check-in",
+          "kind": "hotel",
           "text": "Let the hotel know you'll arrive late so the room isn't released.",
           "placeId": "hotel"
         }
@@ -1608,11 +1612,13 @@
         {
           "time": "06:30",
           "title": "Jet-lagged early start, breakfast",
+          "kind": "food",
           "text": "You'll wake up early the first few days, perfect for Pearl Harbor. No driving."
         },
         {
           "time": "07:15",
           "title": "Uber to Pearl Harbor",
+          "kind": "transit",
           "text": "~25 min. No bags allowed, only small clear bags or phone wallets; paid bag storage available.",
           "placeId": "pearl-harbor"
         },
@@ -1620,6 +1626,7 @@
           "id": "d2-arizona",
           "time": "~08:00",
           "title": "USS Arizona Memorial",
+          "kind": "sight",
           "text": "Reservations are free, with only a small booking fee. Released on Recreation.gov; book the earliest slot. Includes a film and boat ride, ~75 min.",
           "placeId": "arizona",
           "links": [
@@ -1634,6 +1641,7 @@
           "id": "d2-bowfin",
           "time": "09:30",
           "title": "Submarine Museum / USS Bowfin",
+          "kind": "sight",
           "text": "Right next to the visitor center; included in the Passport.",
           "placeId": "bowfin",
           "rate": true
@@ -1642,6 +1650,7 @@
           "id": "d2-missouri",
           "time": "11:00",
           "title": "Shuttle to Ford Island · USS Missouri",
+          "kind": "sight",
           "text": "The deck where Japan signed the surrender; grab a simple lunch on the island afterwards.",
           "placeId": "missouri",
           "rate": true
@@ -1650,6 +1659,7 @@
           "id": "d2-aviation",
           "time": "13:30",
           "title": "Pearl Harbor Aviation Museum",
+          "kind": "sight",
           "text": "Two hangars, ~1.5 hours. Shuttle back to the visitor center afterwards.",
           "placeId": "aviation",
           "links": [
@@ -1663,6 +1673,7 @@
         {
           "time": "15:30",
           "title": "Back to Waikīkī",
+          "kind": "transit",
           "text": "After the aviation museum, shuttle back to the visitor center, then Uber ~25 min, arriving around 16:00.",
           "placeId": "hotel"
         },
@@ -1670,6 +1681,7 @@
           "id": "d2-waikiki-beach",
           "time": "16:30–19:00 (weather permitting)",
           "title": "Backup: Waikīkī sunset sail",
+          "kind": "tour",
           "text": "The sunset sail can be today or Jan 7: check the weather and sea conditions before the trip and pick whichever day is calmer with fewer clouds. If today, be at the beach boarding spot at 16:30, sailing 17:00–19:00; you'll still be adjusting to the time change, so if you're tired save it for Jan 7. No sail? Stroll Kūhiō Beach and watch the sunset (~18:05 in January).",
           "placeId": "waikiki-beach",
           "links": [
@@ -1683,6 +1695,7 @@
         {
           "time": "18:30 (19:15 if sailing)",
           "title": "Dinner: Duke's Waikiki",
+          "kind": "food",
           "text": "Oceanfront; fish and Hula Pie. Reserve ahead; if you sail today, book 19:15.",
           "placeId": "dukes"
         }
@@ -1705,6 +1718,7 @@
         {
           "time": "08:15",
           "title": "Pick up the car in Waikīkī",
+          "kind": "drive",
           "text": "Bring your G licence and credit card; inspect the car and take photos. Clockwise loop today: the northeast valleys first, then back along the North Shore.",
           "placeId": "car-pickup"
         },
@@ -1712,6 +1726,7 @@
           "id": "d3-hoomaluhia",
           "time": "09:00–10:05",
           "title": "Hoʻomaluhia Botanical Garden",
+          "kind": "sight",
           "text": "Opens at 9:00. Drive in, park by the lake for mountain photos, and walk a short stretch. Skipping Byodo-In this time, so you can linger here.",
           "placeId": "hoomaluhia",
           "rate": true
@@ -1720,6 +1735,7 @@
           "id": "d3-kualoa",
           "time": "11:00–13:30",
           "title": "Kualoa Ranch Jurassic Adventure",
+          "kind": "tour",
           "text": "Check in at the ranch around 10:40. Ride an off-road vehicle into the Kualoa, Hakipuʻu and Kaʻaʻawa valleys to see filming spots from Jurassic Park, Jurassic World and more. Bumpy ride, only short walks. Book your slot ahead.",
           "placeId": "kualoa",
           "links": [
@@ -1734,6 +1750,7 @@
           "id": "d3-giovanni",
           "time": "14:05–14:40",
           "title": "Giovanni's garlic shrimp",
+          "kind": "food",
           "text": "Lunch. If the line is too long, try Romy's or Fumi's next door. Then head west on Kamehameha Hwy; just glance at Shark's Cove and Waimea Bay from the car: North Shore surf is big on winter afternoons, so no dedicated stops.",
           "placeId": "giovanni",
           "rate": true
@@ -1742,6 +1759,7 @@
           "id": "d3-laniakea",
           "time": "15:05–15:20",
           "title": "Turtle watching at Laniakea",
+          "kind": "sight",
           "text": "Turtles often haul out to bask in the afternoon; watch from shore for 15 min and keep your distance. Roadside parking is tight; if there's no spot, go straight to Dole.",
           "placeId": "laniakea",
           "rate": true
@@ -1750,6 +1768,7 @@
           "id": "d3-dole",
           "time": "15:40–17:30",
           "title": "Dole Plantation: train + maze",
+          "kind": "tour",
           "text": "Ride the Pineapple Express train first (~20 min, roughly every 10 min; the official site suggests 1 hour including the pineapple-cutting demo), then the Pineapple Garden Maze (40 min on average), and finish with Dole Whip. Park hours 9:30–17:30; the last train and last maze entry aren't listed online, so call 808-621-8408 before you go. If the last train is early, do the maze first.",
           "placeId": "dole",
           "links": [
@@ -1764,6 +1783,7 @@
           "id": "d3-waikele",
           "time": "17:50–18:40 (optional)",
           "title": "Waikele Premium Outlets",
+          "kind": "shop",
           "text": "~20 min from Dole via H-2. Shop for ~50 min only; if you run late at Dole, skip it and go straight to Ko Olina for dinner.",
           "placeId": "waikele",
           "links": [
@@ -1777,6 +1797,7 @@
         {
           "time": "19:00–19:50",
           "title": "Ko Olina dinner",
+          "kind": "food",
           "text": "~18 min drive from the outlets (~35 min straight from Dole). Eat inside the Ko Olina resort area, e.g. Monkeypod Kitchen; reservations recommended.",
           "placeId": "ko-olina"
         },
@@ -1784,6 +1805,7 @@
           "id": "d3-ko-olina",
           "time": "20:00–21:00",
           "title": "Stargazing · Stars Above Hawaii",
+          "kind": "tour",
           "text": "An astronomy guide with a computerized telescope talks about Hawaiian star navigation, ~1 hour, and photos are sent to your phone. Jan 7 is the new moon, so these are the darkest nights. Start time depends on the slot you book; you'll get a text that afternoon about weather and the viewing spot. Weather cancellations get a full refund or rebooking.",
           "placeId": "ko-olina",
           "links": [
@@ -1797,6 +1819,7 @@
         {
           "time": "21:00",
           "title": "Drive back to Waikīkī",
+          "kind": "drive",
           "text": "~45 min, back at the hotel around 21:45. Take it easy on the roads at night; it's a long day. Park at the hotel overnight (~USD45) and return the car tomorrow morning.",
           "placeId": "hotel"
         }
@@ -1816,12 +1839,14 @@
         {
           "time": "08:00",
           "title": "Fill up and return the car",
+          "kind": "drive",
           "text": "Return by the time on your booking; being late may cost an extra day.",
           "placeId": "car-pickup"
         },
         {
           "time": "09:00",
           "title": "Start the Waikiki Trolley 4-day pass",
+          "kind": "transit",
           "text": "4-day all-line pass ~USD150 for two, hop on/hop off, good for Jan 6–8. Take the Red Line (downtown history line) to the palace.",
           "placeId": "trolley-hub",
           "links": [
@@ -1835,6 +1860,7 @@
           "id": "d4-iolani",
           "time": "10:00",
           "title": "ʻIolani Palace",
+          "kind": "sight",
           "text": "The only royal palace in the US; open Tue–Sat, tickets online only.",
           "placeId": "iolani",
           "links": [
@@ -1848,11 +1874,13 @@
         {
           "time": "11:30",
           "title": "King Kamehameha Statue, Chinatown",
+          "kind": "sight",
           "text": "The statue is right across from the palace; take the Red Line or walk to Chinatown."
         },
         {
           "time": "12:30",
           "title": "Seafood lunch at Nico's Pier 38",
+          "kind": "food",
           "text": "Not on a trolley line; Uber ~10 min. Poke bowls and fried fish.",
           "placeId": "nicos"
         },
@@ -1860,6 +1888,7 @@
           "id": "d4-ala-moana",
           "time": "14:30",
           "title": "Ala Moana Center",
+          "kind": "shop",
           "text": "Pink Line (Ala Moana shopping line) both ways.",
           "placeId": "ala-moana",
           "rate": true
@@ -1867,6 +1896,7 @@
         {
           "time": "18:00",
           "title": "Dinner in Waikīkī",
+          "kind": "food",
           "text": "Hanauma Bay tomorrow morning, so turn in early.",
           "placeId": "waikiki-beach"
         }
@@ -1885,6 +1915,7 @@
         {
           "time": "Morning (per tour pickup time)",
           "title": "Roberts Hawaii Hanauma Bay transfer tour",
+          "kind": "tour",
           "text": "Includes entry and round-trip transport from Waikīkī, ~USD65/person; snorkel gear not included, rent it at the bay. Bookable up to one month ahead.",
           "placeId": "hanauma",
           "links": [
@@ -1902,6 +1933,7 @@
           "id": "d5-hanauma",
           "time": "Morning",
           "title": "Snorkeling",
+          "kind": "tour",
           "text": "Watch the preserve video first, then snorkel in the inner bay. Decide on swimming and fins based on your own fitness, lifeguard guidance and the day's conditions. If it's closed or conditions are bad, it's also open Jan 8, so you can switch.",
           "placeId": "hanauma",
           "rate": true
@@ -1909,6 +1941,7 @@
         {
           "time": "Noon",
           "title": "Back to the hotel to rest, lunch",
+          "kind": "food",
           "text": "The tour bus drops you back in Waikīkī.",
           "placeId": "hotel"
         },
@@ -1916,6 +1949,7 @@
           "id": "d5-diamond-head",
           "time": "13:30",
           "title": "Green Line to the Diamond Head lookout",
+          "kind": "sight",
           "text": "The Green Line (Diamond Head Line) has a photo stop at Kahala Lookout; step off and you'll see Diamond Head and the ocean, no hiking. A loop takes ~70 min, and the last afternoon run heads back from the Diamond Head area around 15:10–15:40, so don't set out too late. Not going into the crater: that needs a separate state park reservation, and without the summit there isn't much to see.",
           "placeId": "diamond-head",
           "links": [
@@ -1929,6 +1963,7 @@
         {
           "time": "16:30",
           "title": "Meet at the beach boarding spot",
+          "kind": "tour",
           "text": "Usually arrive 20–30 min early. Wear shoes that are easy to board in and bring a light jacket; it's breezy on the water in the evening.",
           "placeId": "waikiki-beach"
         },
@@ -1936,6 +1971,7 @@
           "id": "d5-waikiki-beach",
           "time": "17:00–19:00",
           "title": "Waikīkī sunset sail (or move to Jan 4)",
+          "kind": "tour",
           "text": "E.g. Moana Sailing's 2-hour sail (~USD81/person, one drink included); Manu Kai's 1.5-hour happy hour ~USD56/person. January sunset is ~18:05, and heading back after dark you'll see Waikīkī and Diamond Head lit up. Operators may cancel in rough seas. The sail can also go on the evening of Jan 4: check the forecast before the trip and pick the calmer, less cloudy day; if you already sailed on Jan 4, just watch the sunset from the beach and eat early.",
           "placeId": "waikiki-beach",
           "links": [
@@ -1949,6 +1985,7 @@
         {
           "time": "19:15",
           "title": "Dinner: Waikīkī seafood",
+          "kind": "food",
           "text": "Eat nearby after the sail; if you missed Duke's on Jan 4, go there.",
           "placeId": "dukes"
         }
@@ -1967,11 +2004,13 @@
         {
           "time": "Morning (backup)",
           "title": "Hanauma Bay backup",
+          "kind": "tour",
           "text": "Only if Jan 7 gets canceled; open Fridays."
         },
         {
           "time": "Morning",
           "title": "Check out, store bags",
+          "kind": "hotel",
           "text": "Check out in the morning, leave bags at the front desk and pick them up in the evening. To shower before the airport, ask if you can use the gym or pool showers. If you went with the Expedia flight + hotel bundle, the room is booked through Jan 9, so you can use it until you leave for the airport.",
           "placeId": "hotel"
         },
@@ -1979,6 +2018,7 @@
           "id": "d6-halona",
           "time": "Morning",
           "title": "Optional: Blue Line along the southeast coast",
+          "kind": "transit",
           "text": "The Blue Line (Ocean View Line) runs along the coast to Hālona Blowhole (photo stop) and Sea Life Park, ~1h 50m per loop, every ~40 min from 8:30. If you'd rather not, relax on the beach or go shopping.",
           "placeId": "halona",
           "links": [
@@ -1993,6 +2033,7 @@
           "id": "d6-house",
           "time": "17:30",
           "title": "House Without A Key sunset dinner",
+          "kind": "food",
           "text": "Sunset and hula show; reservations recommended.",
           "placeId": "house",
           "rate": true
@@ -2000,6 +2041,7 @@
         {
           "time": "21:00",
           "title": "Head to the airport",
+          "kind": "flight",
           "text": "~25–30 min. The return is the Air Canada nonstop at 00:10 on Jan 9; arrive 2.5–3 hours early. If you booked the bundle, follow its transfer arrangements.",
           "placeId": "hnl"
         }
@@ -2017,11 +2059,13 @@
         {
           "time": "00:10",
           "title": "Air Canada nonstop departs",
+          "kind": "flight",
           "text": "Red-eye, ~8h 41m; try to sleep on the plane."
         },
         {
           "time": "13:51",
           "title": "Arrive in Toronto",
+          "kind": "flight",
           "text": "Toronto time. Clear Canadian customs on the way back from the US.",
           "tz": "America/Toronto"
         }

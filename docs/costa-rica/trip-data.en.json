@@ -1032,29 +1032,34 @@
         {
           "time": "By 07:40",
           "title": "Arrive at Pearson Terminal 3",
+          "kind": "flight",
           "text": "Arrive 3 hours early for international flights. Partner: bring Chinese passport, US visa (confirm it's multiple-entry, M) and PR card.",
           "tz": "America/Toronto"
         },
         {
           "time": "10:40",
           "title": "Porter PD 783 departs",
+          "kind": "flight",
           "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto.",
           "tz": "America/Toronto"
         },
         {
           "time": "15:24",
           "title": "Land in Liberia",
+          "kind": "flight",
           "text": "Get the entry stamp (check it's in your passport), collect bags, then head to the Adobe shuttle stop.",
           "placeId": "lir"
         },
         {
           "time": "16:15",
           "title": "Pick up the car",
+          "kind": "drive",
           "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here."
         },
         {
           "time": "17:00",
           "title": "Check in at Playas del Coco",
+          "kind": "hotel",
           "text": "About 30 min, arrive before dark.",
           "placeId": "hotel-beach"
         },
@@ -1062,6 +1067,7 @@
           "id": "d1-coco-beach",
           "time": "17:30",
           "title": "Sunset on the beach",
+          "kind": "sight",
           "text": "The beach in front of the hotel faces west, so the sun sets right over the water.",
           "placeId": "coco-beach",
           "rate": true
@@ -1069,6 +1075,7 @@
         {
           "time": "19:00",
           "title": "Seafood by the sea",
+          "kind": "food",
           "text": "Walk into Coco town (about 15 minutes): Papagayo Seafood (often live music) or Mar Azul; take a taxi back if you don’t feel like walking.",
           "placeId": "coco"
         },
@@ -1076,6 +1083,7 @@
           "id": "d1-stars",
           "time": "20:00",
           "title": "Stargazing on the beach",
+          "kind": "sight",
           "placeId": "coco-beach",
           "text": "Tomorrow, 1/7, is the new moon, so tonight is nearly moonless; Guanacaste’s dry season is mostly clear and it is fully dark by 19:00. The darker north end of Coco beach is right in front of the hotel; walk away from the streetlights, lie on a towel and look: Orion is high in the southeast with Sirius, the brightest star, below it; after 21:00 look low in the south for Canopus (the second-brightest star, never visible from Toronto). Use Stellarium or SkyView on your phone to identify stars. Bring only your phone and a towel, no valuables, and don’t wander far; tomorrow is an early start on mountain roads, so don’t stay up too late.",
           "links": [
@@ -1102,12 +1110,14 @@
         {
           "time": "07:00",
           "title": "Check out and set off",
+          "kind": "drive",
           "text": "Bring some cash (the waterfall is cash only). South via Liberia and Bagaces, about 1 h 15 min to the waterfall."
         },
         {
           "id": "d2-llanos",
           "time": "08:20",
           "title": "Llanos de Cortés waterfall",
+          "kind": "sight",
           "text": "About 30 concrete steps with a rope handrail; sandy at the bottom, rocky at the edge and in the water. You can take a dip; watch your step on the rocks so you don't roll an ankle.",
           "placeId": "llanos",
           "rate": true
@@ -1115,12 +1125,14 @@
         {
           "time": "09:20",
           "title": "Route 1 to Monteverde",
+          "kind": "drive",
           "text": "Via Cañas, turning onto Route 606 for the climb, about 2.5 hours; Route 606 is paved but steep with tight bends, so take it slowly. Reach Santa Elena around 12:00 for a quick lunch."
         },
         {
           "id": "d2-aventura",
           "time": "13:00",
           "title": "100% Aventura ziplines",
+          "kind": "tour",
           "text": "About 2.5–3 hours: 10 ziplines, the longest 1,590 m, the longest in Costa Rica; the last two are Superman lines you fly face-down, plus one Tarzan swing (optional). From USD72 per person on the official site (plus tax), transport not included; about 10 minutes’ drive from town. Check the booking page for slots (commonly 8:00, 11:00, 13:00, 15:00). Her Achilles is still in rehab: on the Superman lines staff brake you and help you stand, so the stop itself is gentle; what to watch is the stairs and forest paths between platforms, and the occasional foot touchdown at the end of the regular lines, so ask her physio before booking.",
           "placeId": "aventura",
           "links": [
@@ -1142,6 +1154,7 @@
         {
           "time": "16:00",
           "title": "Check in to the Monteverde hotel",
+          "kind": "hotel",
           "text": "0.8 km from the town centre; rest a bit and grab a jacket: Monteverde evenings are only in the teens and often windy with drizzle.",
           "placeId": "hotel-monteverde"
         },
@@ -1149,6 +1162,7 @@
           "id": "d2-night-walk",
           "time": "17:30–19:30",
           "title": "Rainforest night walk",
+          "kind": "tour",
           "text": "At Bajo del Tigre (Children’s Eternal Rainforest) a guide leads you by flashlight to find tree frogs, snakes, spiders and sleeping birds, and with luck sloths and agoutis. USD30 + tax per person, minimum 2; about 5 minutes’ drive from the hotel. The trails are forest dirt paths, so wear closed non-slip shoes and bring a rain jacket and bug spray.",
           "placeId": "night-walk",
           "links": [
@@ -1166,6 +1180,7 @@
         {
           "time": "19:45",
           "title": "Dinner in town",
+          "kind": "food",
           "text": "Eat in Santa Elena town, then drive a few minutes back to the hotel."
         }
       ]
@@ -1183,18 +1198,21 @@
         {
           "time": "07:00",
           "title": "Breakfast",
+          "kind": "food",
           "text": "Breakfast is included at the hotel; mornings in the mountains are the clearest, with cloud rising out of the valleys.",
           "placeId": "hotel-monteverde"
         },
         {
           "time": "08:30",
           "title": "Down to La Fortuna",
+          "kind": "drive",
           "text": "Down Route 606, via Cañas and Tilarán, then along the north shore of Lake Arenal; all paved, about 4 hours of driving. Skip the dirt shortcut from Monteverde to Tilarán."
         },
         {
           "id": "d3-nuevo-arenal",
           "time": "11:30",
           "title": "North shore of Lake Arenal",
+          "kind": "sight",
           "text": "Follow the winding Route 142 and stop at roadside viewpoints for photos of the lake and volcano; lunch in Nuevo Arenal.",
           "placeId": "nuevo-arenal",
           "rate": true
@@ -1202,6 +1220,7 @@
         {
           "time": "13:30",
           "title": "Check in at Termales del Arenal",
+          "kind": "hotel",
           "text": "All the driving done in daylight. Once the room is ready, start with the hotel hot spring pools.",
           "placeId": "hotel-arenal"
         },
@@ -1209,6 +1228,7 @@
           "id": "d3-hotel-springs",
           "time": "15:00",
           "title": "Soak in the hotel hot springs",
+          "kind": "spa",
           "text": "Soak for a while, then head into town for dinner in the evening.",
           "placeId": "hotel-arenal",
           "rate": "maybe",
@@ -1222,7 +1242,8 @@
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
               ],
-              "option": "chocolate"
+              "option": "chocolate",
+              "kind": "tour"
             }
           ],
           "budget": "d3-pm",
@@ -1231,6 +1252,7 @@
         {
           "time": "18:30",
           "title": "Dinner in town",
+          "kind": "food",
           "text": "Snapper's House is right in the town centre; drive 5 minutes back to the hotel afterwards.",
           "placeId": "fortuna"
         }
@@ -1250,6 +1272,7 @@
           "id": "d4-0",
           "time": "06:00",
           "title": "Early volcano viewing",
+          "kind": "sight",
           "text": "The volcano is most likely to show itself 6–9 am, and you can see it from the hotel.",
           "rate": true
         },
@@ -1257,6 +1280,7 @@
           "id": "d4-penas-blancas",
           "time": "07:30",
           "title": "Peñas Blancas safari float",
+          "kind": "tour",
           "text": "Hotel pickup; you sit in an inflatable raft steered by the guide, with little or no paddling (some operators ask for a few light strokes), for about 2 hours spotting sloths, monkeys, caimans and birds; back around 11:00. You get on and off at the riverbank, which may be muddy and rocky, so watch your step and wear non-slip, closed-toe water shoes.",
           "placeId": "penas-blancas",
           "links": [
@@ -1278,6 +1302,7 @@
         {
           "time": "12:00",
           "title": "Lunch in town",
+          "kind": "food",
           "text": "Ceviche at Cevichería D'Mora.",
           "placeId": "fortuna"
         },
@@ -1285,6 +1310,7 @@
           "id": "d4-mistico",
           "time": "14:00",
           "title": "Mistico Hanging Bridges Park",
+          "kind": "tour",
           "text": "About 25 min drive. 3.2 km loop with gentle slopes and steps; the hanging bridges sway; ~2 hours. Tag along behind a guided group and you'll often spot small creatures like eyelash vipers. Watch your footing on the slopes. Last entry 15:50.",
           "placeId": "mistico",
           "links": [
@@ -1311,19 +1337,22 @@
           "id": "d4-hotel-springs",
           "time": "16:30",
           "title": "Back to the hotel for the hot springs",
+          "kind": "spa",
           "text": "After the bridges, soak for a while before heading out to dinner.",
           "placeId": "hotel-arenal",
           "rate": "maybe",
           "alternatives": [
             {
               "title": "Rest at the hotel, or stroll the town centre",
-              "text": "If you skip the hot springs after the bridges, rest in the room for a bit; around sunset walk to the little park in front of the church in town, with the volcano straight ahead, grab a coffee, then go to dinner."
+              "text": "If you skip the hot springs after the bridges, rest in the room for a bit; around sunset walk to the little park in front of the church in town, with the volcano straight ahead, grab a coffee, then go to dinner.",
+              "kind": "hotel"
             }
           ]
         },
         {
           "time": "18:30",
           "title": "Dinner in town",
+          "kind": "food",
           "text": "5 min drive to town: Snapper's House (marlin ceviche, seafood soup) or Cevichería D'Mora; drive back to the hotel afterwards.",
           "placeId": "fortuna"
         }
@@ -1341,6 +1370,7 @@
         {
           "time": "07:30",
           "title": "Hotel pickup (horseback tour)",
+          "kind": "tour",
           "text": "The volcano is most likely to be visible in the morning.",
           "placeId": "hotel-arenal"
         },
@@ -1348,6 +1378,7 @@
           "id": "d5-1",
           "time": "08:00–11:00",
           "title": "Horseback ride with Arenal Volcano views",
+          "kind": "tour",
           "text": "About 2.5 hours of riding through forest and pasture to a volcano viewpoint and Los Lirios lake; the guide gives a lesson first. Note: keeping heels down in the stirrups and pushing off one foot to mount and dismount put some strain on the Achilles; if it feels tight, keep the horse at a walk.",
           "links": [
             {
@@ -1368,6 +1399,7 @@
         {
           "time": "11:30",
           "title": "Back to the hotel to change and have lunch",
+          "kind": "food",
           "text": "A simple lunch at the hotel or in town; the sloth tour picks you up at 13:00.",
           "placeId": "hotel-arenal"
         },
@@ -1375,6 +1407,7 @@
           "id": "d5-sloth",
           "time": "13:00–16:00",
           "title": "Sloth tour",
+          "kind": "tour",
           "text": "A guide leads you along gentle trails through farm forest looking for sloths, often both two- and three-toed, plus birds, frogs and hummingbirds; about 2.5–3 hours, rated \"easy\", hotel pickup included. USD90 per person incl. tax, minimum 2 people.",
           "links": [
             {
@@ -1399,18 +1432,21 @@
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
               ],
-              "option": "chocolate"
+              "option": "chocolate",
+              "kind": "tour"
             },
             {
               "title": "Soak and rest at the hotel",
               "text": "Stay in and spend the afternoon in the hotel hot spring pools, then go into town for dinner.",
-              "option": "rest"
+              "option": "rest",
+              "kind": "spa"
             }
           ]
         },
         {
           "time": "Evening",
           "title": "Dinner at the hotel",
+          "kind": "food",
           "text": "Eat at the hotel, or drive 5 minutes into town.",
           "placeId": "hotel-arenal"
         }
@@ -1429,30 +1465,35 @@
         {
           "time": "06:30",
           "title": "One last look at the volcano, breakfast",
+          "kind": "food",
           "text": "",
           "placeId": "hotel-arenal"
         },
         {
           "time": "08:00",
           "title": "A slow morning",
+          "kind": "hotel",
           "text": "The flight isn’t until the afternoon, so soak in the hotel hot springs once more and check out by 10:00.",
           "placeId": "hotel-arenal"
         },
         {
           "time": "10:00",
           "title": "Head to the airport",
+          "kind": "drive",
           "text": "Along the lake via Tilarán and Cañas, about 3 hours on the road; allow time to fill up (the car must be returned full) and arrive by 13:15.",
           "placeId": "nuevo-arenal"
         },
         {
           "time": "13:15",
           "title": "Return the car, shuttle to the airport",
+          "kind": "drive",
           "text": "The departure tax is usually included in the airfare. The return is operated by Air Transat, so check in and drop bags at the Air Transat counter; arriving 2.5–3 hours before an international flight is safest.",
           "placeId": "lir"
         },
         {
           "time": "16:35",
           "title": "Porter PD 7301 nonstop back to Toronto",
+          "kind": "flight",
           "text": "Operated by Air Transat, about 5 h 10 min, arriving at Pearson at 22:45. Partner shows PR card when entering Canada.",
           "end": "22:45",
           "endTz": "America/Toronto"

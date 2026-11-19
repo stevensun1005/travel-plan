@@ -1032,29 +1032,34 @@
         {
           "time": "07:40前",
           "title": "到Pearson 3号航站楼",
+          "kind": "flight",
           "text": "国际航班提前3小时到。女朋友带中国护照、美签（确认是多次入境M）和PR卡。",
           "tz": "America/Toronto"
         },
         {
           "time": "10:40",
           "title": "Porter PD 783 起飞",
+          "kind": "flight",
           "text": "约5小时44分。哥斯达黎加比多伦多晚1小时。",
           "tz": "America/Toronto"
         },
         {
           "time": "15:24",
           "title": "落地利比里亚",
+          "kind": "flight",
           "text": "入境盖章（确认护照上有章），拿行李后到Adobe接驳点。",
           "placeId": "lir"
         },
         {
           "time": "16:15",
           "title": "取车",
+          "kind": "drive",
           "text": "带实体驾照、护照和本人信用卡（押金约USD1,000）。检查车况拍照；手动确认车门锁好，这里租车被撬很常见。"
         },
         {
           "time": "17:00",
           "title": "到Playas del Coco入住",
+          "kind": "hotel",
           "text": "约30分钟，天黑前到。",
           "placeId": "hotel-beach"
         },
@@ -1062,6 +1067,7 @@
           "id": "d1-coco-beach",
           "time": "17:30",
           "title": "海滩看日落",
+          "kind": "sight",
           "text": "酒店前面的海滩朝西，日落正对海面。",
           "placeId": "coco-beach",
           "rate": true
@@ -1069,6 +1075,7 @@
         {
           "time": "19:00",
           "title": "海边吃海鲜",
+          "kind": "food",
           "text": "走路去Coco镇上（约15分钟），Papagayo Seafood（常有现场音乐）或Mar Azul；回来不想走就打车。",
           "placeId": "coco"
         },
@@ -1076,6 +1083,7 @@
           "id": "d1-stars",
           "time": "20:00",
           "title": "沙滩上看星星",
+          "kind": "sight",
           "placeId": "coco-beach",
           "text": "明天1/7是新月，今晚几乎没有月光；Guanacaste旱季晴天多，19:00天就全黑了。酒店前面就是Coco海滩比较暗的北头，走到离路灯远一点的地方，躺在毛巾上看：东南方高处是猎户座，下面最亮的是天狼星；21:00后往南方低处找老人星（全天第二亮的星，在多伦多看不到）。手机装Stellarium或SkyView对着天空认星。只带手机和毛巾，别带贵重物品，不走远；明天要早起开山路，别熬太晚。",
           "links": [
@@ -1102,12 +1110,14 @@
         {
           "time": "07:00",
           "title": "退房出发",
+          "kind": "drive",
           "text": "带点现金（瀑布只收现金）。经Liberia、Bagaces南下，约1小时15分钟到瀑布。"
         },
         {
           "id": "d2-llanos",
           "time": "08:20",
           "title": "Llanos de Cortés 瀑布",
+          "kind": "sight",
           "text": "水泥台阶约30级、有扶绳，下面是沙地，水边和水里是石头。可以下水泡一会儿，踩石头时注意脚下别崴。",
           "placeId": "llanos",
           "rate": true
@@ -1115,12 +1125,14 @@
         {
           "time": "09:20",
           "title": "沿1号公路去Monteverde",
+          "kind": "drive",
           "text": "经Cañas，转606号路上山，约2.5小时；606号路已铺好，上坡和急弯多，慢慢开。12:00左右到Santa Elena镇上，简单吃个午饭。"
         },
         {
           "id": "d2-aventura",
           "time": "13:00",
           "title": "100% Aventura 滑索",
+          "kind": "tour",
           "text": "约2.5–3小时：10条滑索，最长一条1,590米，是哥斯达黎加最长的；最后两条是趴着飞的Superman线，还有一次Tarzan大秋千（可以不荡）。官网USD72起/人（另加税），不含接送，从镇上开车约10分钟。场次以订票页为准（常见8:00、11:00、13:00、15:00）。她的跟腱还在复健：Superman线到站是工作人员刹停再扶着站起来，冲击不大；要留意的是平台之间的台阶和林间小路，以及普通滑索到站时偶尔要用脚踩一下平台，订之前问一下康复师。",
           "placeId": "aventura",
           "links": [
@@ -1142,6 +1154,7 @@
         {
           "time": "16:00",
           "title": "入住Monteverde酒店",
+          "kind": "hotel",
           "text": "离镇中心0.8公里；歇一会儿，换件外套：Monteverde晚上只有十几度，常有风和毛毛雨。",
           "placeId": "hotel-monteverde"
         },
@@ -1149,6 +1162,7 @@
           "id": "d2-night-walk",
           "time": "17:30–19:30",
           "title": "雨林夜间徒步",
+          "kind": "tour",
           "text": "Bajo del Tigre（儿童永恒雨林）的向导打手电带着走，找树蛙、蛇、蜘蛛、睡着的鸟，运气好能看到树懒和刺豚鼠。USD30＋税/人，最少2人；从酒店开车约5分钟。是林间土路，穿防滑包脚的鞋，带雨衣和驱蚊水。",
           "placeId": "night-walk",
           "links": [
@@ -1166,6 +1180,7 @@
         {
           "time": "19:45",
           "title": "镇上吃晚饭",
+          "kind": "food",
           "text": "在Santa Elena镇上吃，开几分钟回酒店。"
         }
       ]
@@ -1183,18 +1198,21 @@
         {
           "time": "07:00",
           "title": "早餐",
+          "kind": "food",
           "text": "酒店含早；早上山里最清透，能看到云从山谷里升起来。",
           "placeId": "hotel-monteverde"
         },
         {
           "time": "08:30",
           "title": "下山去La Fortuna",
+          "kind": "drive",
           "text": "沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸开，全程铺装路，开车约4小时；别走Monteverde–Tilarán的土路捷径。"
         },
         {
           "id": "d3-nuevo-arenal",
           "time": "11:30",
           "title": "Arenal湖北岸",
+          "kind": "sight",
           "text": "沿Route 142的弯路开，路边观景停车处拍湖和火山；在Nuevo Arenal吃午饭。",
           "placeId": "nuevo-arenal",
           "rate": true
@@ -1202,6 +1220,7 @@
         {
           "time": "13:30",
           "title": "到Termales del Arenal入住",
+          "kind": "hotel",
           "text": "全程白天开完。房间收拾好就先泡酒店的温泉池。",
           "placeId": "hotel-arenal"
         },
@@ -1209,6 +1228,7 @@
           "id": "d3-hotel-springs",
           "time": "15:00",
           "title": "泡酒店温泉",
+          "kind": "spa",
           "text": "先泡一会儿，傍晚去镇上吃饭。",
           "placeId": "hotel-arenal",
           "rate": "maybe",
@@ -1222,7 +1242,8 @@
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
               ],
-              "option": "chocolate"
+              "option": "chocolate",
+              "kind": "tour"
             }
           ],
           "budget": "d3-pm",
@@ -1231,6 +1252,7 @@
         {
           "time": "18:30",
           "title": "镇上吃晚饭",
+          "kind": "food",
           "text": "Snapper's House就在镇中心；吃完开5分钟回酒店。",
           "placeId": "fortuna"
         }
@@ -1250,6 +1272,7 @@
           "id": "d4-0",
           "time": "06:00",
           "title": "早起看火山",
+          "kind": "sight",
           "text": "早上6–9点火山最可能露脸，从酒店就能看。",
           "rate": true
         },
@@ -1257,6 +1280,7 @@
           "id": "d4-penas-blancas",
           "time": "07:30",
           "title": "Peñas Blancas 安全漂流",
+          "kind": "tour",
           "text": "酒店接送；坐在充气筏上由导游掌舵，基本不用划（有的团会让你轻轻划几下），约2小时看树懒、猴子、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上可能有泥和石头，注意脚下，穿防滑包脚的水鞋。",
           "placeId": "penas-blancas",
           "links": [
@@ -1278,6 +1302,7 @@
         {
           "time": "12:00",
           "title": "镇上午餐",
+          "kind": "food",
           "text": "Cevichería D'Mora吃ceviche。",
           "placeId": "fortuna"
         },
@@ -1285,6 +1310,7 @@
           "id": "d4-mistico",
           "time": "14:00",
           "title": "Mistico 吊桥公园",
+          "kind": "tour",
           "text": "开车约25分钟。3.2公里环线，有缓坡、台阶，吊桥会晃，约2小时。跟着前面的向导团走，常能看到睫毛蝮蛇这类小动物。上下坡注意脚下。最后入园15:50。",
           "placeId": "mistico",
           "links": [
@@ -1311,19 +1337,22 @@
           "id": "d4-hotel-springs",
           "time": "16:30",
           "title": "回酒店泡温泉",
+          "kind": "spa",
           "text": "吊桥回来先泡一会儿，再出门吃晚饭。",
           "placeId": "hotel-arenal",
           "rate": "maybe",
           "alternatives": [
             {
               "title": "回酒店歇一会儿，或去镇中心走走",
-              "text": "吊桥回来不泡温泉的话，在房间歇一会儿；傍晚去镇中心教堂前的小公园，火山就在正前方，顺路买杯咖啡，再去吃晚饭。"
+              "text": "吊桥回来不泡温泉的话，在房间歇一会儿；傍晚去镇中心教堂前的小公园，火山就在正前方，顺路买杯咖啡，再去吃晚饭。",
+              "kind": "hotel"
             }
           ]
         },
         {
           "time": "18:30",
           "title": "镇上吃晚饭",
+          "kind": "food",
           "text": "开5分钟去镇上：Snapper's House（马林鱼ceviche、海鲜汤）或Cevichería D'Mora；吃完开回酒店。",
           "placeId": "fortuna"
         }
@@ -1341,6 +1370,7 @@
         {
           "time": "07:30",
           "title": "酒店接人（骑马团）",
+          "kind": "tour",
           "text": "早上火山最容易露脸。",
           "placeId": "hotel-arenal"
         },
@@ -1348,6 +1378,7 @@
           "id": "d5-1",
           "time": "08:00–11:00",
           "title": "骑马看Arenal火山",
+          "kind": "tour",
           "text": "约2.5小时骑行，林间和牧场路线，到火山观景点和Los Lirios湖，向导会先教。注意：脚踩马镫时脚跟往下压、上下马要单脚蹬地，跟腱会吃力一点，觉得紧就让马慢走。",
           "links": [
             {
@@ -1368,6 +1399,7 @@
         {
           "time": "11:30",
           "title": "回酒店换衣服、吃午饭",
+          "kind": "food",
           "text": "在酒店或镇上吃个简单的午饭，13:00树懒团来接。",
           "placeId": "hotel-arenal"
         },
@@ -1375,6 +1407,7 @@
           "id": "d5-sloth",
           "time": "13:00–16:00",
           "title": "树懒团",
+          "kind": "tour",
           "text": "向导带着在农场林间的平缓小路上找树懒，常能看到二趾和三趾树懒，还有鸟、蛙和蜂鸟；约2.5–3小时，难度标为「容易」，含酒店接送。USD90/人含税，最少2人成团。",
           "links": [
             {
@@ -1399,18 +1432,21 @@
                   "url": "https://rainforestchocolatetour.com/book-tour/"
                 }
               ],
-              "option": "chocolate"
+              "option": "chocolate",
+              "kind": "tour"
             },
             {
               "title": "回酒店泡温泉、休息",
               "text": "不出门，下午就在酒店的温泉池泡着，晚上去镇上吃饭。",
-              "option": "rest"
+              "option": "rest",
+              "kind": "spa"
             }
           ]
         },
         {
           "time": "晚上",
           "title": "晚饭在酒店",
+          "kind": "food",
           "text": "在酒店吃，或开5分钟去镇上吃。",
           "placeId": "hotel-arenal"
         }
@@ -1429,30 +1465,35 @@
         {
           "time": "06:30",
           "title": "最后看一眼火山，早餐",
+          "kind": "food",
           "text": "",
           "placeId": "hotel-arenal"
         },
         {
           "time": "08:00",
           "title": "上午慢慢收拾",
+          "kind": "hotel",
           "text": "飞机下午才飞，早上可以再泡一次酒店温泉，10:00前退房。",
           "placeId": "hotel-arenal"
         },
         {
           "time": "10:00",
           "title": "出发回机场",
+          "kind": "drive",
           "text": "沿湖经Tilarán、Cañas，路上约3小时；留出加油时间（还车要加满），13:15前到。",
           "placeId": "nuevo-arenal"
         },
         {
           "time": "13:15",
           "title": "还车，坐接驳车到机场",
+          "kind": "drive",
           "text": "离境税一般已含在机票里。回程由Air Transat执飞，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小时到最稳。",
           "placeId": "lir"
         },
         {
           "time": "16:35",
           "title": "Porter PD 7301 直飞回多伦多",
+          "kind": "flight",
           "text": "Air Transat执飞，约5小时10分，22:45到皮尔逊。女朋友入境加拿大出示PR卡。",
           "end": "22:45",
           "endTz": "America/Toronto"

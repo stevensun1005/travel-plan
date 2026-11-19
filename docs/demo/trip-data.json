@@ -1569,24 +1569,28 @@
         {
           "time": "15:00前",
           "title": "到Pearson机场",
+          "kind": "flight",
           "text": "直飞到美国的航班要先在多伦多过美国预清关，建议起飞前2.5–3小时到。不需要签证的话，也确认一下护照有效期。",
           "tz": "America/Toronto"
         },
         {
           "time": "17:35",
           "title": "AC589 起飞",
+          "kind": "flight",
           "text": "直飞约10小时。飞机上尽量按夏威夷时间睡觉，夏威夷比多伦多晚5小时。",
           "tz": "America/Toronto"
         },
         {
           "time": "22:38",
           "title": "落地檀香山",
+          "kind": "flight",
           "text": "国内到达，不用再入境。取行李后打车或用Uber去酒店，约25–30分钟，费用约USD40–50。",
           "placeId": "hnl"
         },
         {
           "time": "约23:30",
           "title": "入住酒店",
+          "kind": "hotel",
           "text": "提前告诉酒店会深夜到达，以免房间被取消。",
           "placeId": "hotel"
         }
@@ -1608,11 +1612,13 @@
         {
           "time": "06:30",
           "title": "时差早起，吃早餐",
+          "kind": "food",
           "text": "刚到几天会很早醒，正好用来去珍珠港。不用开车。"
         },
         {
           "time": "07:15",
           "title": "Uber到珍珠港",
+          "kind": "transit",
           "text": "约25分钟。不能带包进入，只能带透明小包或手机钱包；有付费寄存处。",
           "placeId": "pearl-harbor"
         },
@@ -1620,6 +1626,7 @@
           "id": "d2-arizona",
           "time": "08:00左右",
           "title": "USS Arizona 亚利桑那号纪念馆",
+          "kind": "sight",
           "text": "预约免费，只收少量订票费。预约在Recreation.gov放出，订最早的场次。包括影片和乘船，约75分钟。",
           "placeId": "arizona",
           "links": [
@@ -1634,6 +1641,7 @@
           "id": "d2-bowfin",
           "time": "09:30",
           "title": "潜艇博物馆 / USS Bowfin",
+          "kind": "sight",
           "text": "就在游客中心旁边，Passport通票包含。",
           "placeId": "bowfin",
           "rate": true
@@ -1642,6 +1650,7 @@
           "id": "d2-missouri",
           "time": "11:00",
           "title": "接驳车去福特岛 · 密苏里号",
+          "kind": "sight",
           "text": "日本投降签字的甲板就在这里，看完在岛上吃简单午餐。",
           "placeId": "missouri",
           "rate": true
@@ -1650,6 +1659,7 @@
           "id": "d2-aviation",
           "time": "13:30",
           "title": "珍珠港航空博物馆",
+          "kind": "sight",
           "text": "两个机库，约1.5小时。看完坐接驳车回游客中心。",
           "placeId": "aviation",
           "links": [
@@ -1663,6 +1673,7 @@
         {
           "time": "15:30",
           "title": "回Waikīkī",
+          "kind": "transit",
           "text": "航空博物馆看完坐接驳车回游客中心，Uber约25分钟，16:00左右到。",
           "placeId": "hotel"
         },
@@ -1670,6 +1681,7 @@
           "id": "d2-waikiki-beach",
           "time": "16:30–19:00（看天气）",
           "title": "备选：Waikīkī 日落帆船",
+          "kind": "tour",
           "text": "日落帆船可以安排在今天或1/7，看出发前的天气和海况，哪天风浪小、云少就选哪天。选今天的话，16:30到海滩上船点，17:00–19:00出海；时差刚倒，累的话就留给1/7。不坐船就在Kūhiō Beach散步看日落（1月约18:05）。",
           "placeId": "waikiki-beach",
           "links": [
@@ -1683,6 +1695,7 @@
         {
           "time": "18:30（坐船就改19:15）",
           "title": "晚餐：Duke's Waikiki",
+          "kind": "food",
           "text": "海边餐厅，吃鱼和Hula Pie，建议提前订位；今天坐日落帆船的话，订19:15。",
           "placeId": "dukes"
         }
@@ -1705,6 +1718,7 @@
         {
           "time": "08:15",
           "title": "Waikīkī取车",
+          "kind": "drive",
           "text": "带上G牌驾照和信用卡，检查车况并拍照。今天顺时针绕岛：先去东北边的山谷，再沿北岸回来。",
           "placeId": "car-pickup"
         },
@@ -1712,6 +1726,7 @@
           "id": "d3-hoomaluhia",
           "time": "09:00–10:05",
           "title": "Hoʻomaluhia 植物园",
+          "kind": "sight",
           "text": "9:00开门。开车进园，在湖边停车拍山，下车走一小段。这次不去平等院，所以这里可以多待一会儿。",
           "placeId": "hoomaluhia",
           "rate": true
@@ -1720,6 +1735,7 @@
           "id": "d3-kualoa",
           "time": "11:00–13:30",
           "title": "古兰尼牧场 Jurassic Adventure",
+          "kind": "tour",
           "text": "10:40左右到牧场签到。坐越野车进Kualoa、Hakipuʻu、Kaʻaʻawa三条山谷，看《侏罗纪公园》《侏罗纪世界》等拍摄地。路面颠簸，只有短距离步行。场次要提前订。",
           "placeId": "kualoa",
           "links": [
@@ -1734,6 +1750,7 @@
           "id": "d3-giovanni",
           "time": "14:05–14:40",
           "title": "Giovanni's 蒜蓉虾饭",
+          "kind": "food",
           "text": "午餐。排队太长就换旁边的Romy's或Fumi's。之后沿Kamehameha Hwy往西开，经过鲨鱼湾和威美亚湾时在车上看一眼就好：冬天下午北岸浪大，不专门停。",
           "placeId": "giovanni",
           "rate": true
@@ -1742,6 +1759,7 @@
           "id": "d3-laniakea",
           "time": "15:05–15:20",
           "title": "Laniakea 看海龟",
+          "kind": "sight",
           "text": "下午常有海龟上岸晒太阳，在岸边看15分钟，保持距离。路边停车紧，找不到车位就直接去菠萝园。",
           "placeId": "laniakea",
           "rate": true
@@ -1750,6 +1768,7 @@
           "id": "d3-dole",
           "time": "15:40–17:30",
           "title": "Dole Plantation：小火车 + 迷宫",
+          "kind": "tour",
           "text": "先坐Pineapple Express小火车（约20分钟，大约每10分钟一班；官方建议连菠萝切片表演留1小时），再走Pineapple Garden Maze（平均40分钟），最后吃Dole Whip。全园9:30–17:30，末班车和迷宫最后入场时间官网没写，出发前打电话808-621-8408确认；如果末班较早，就先走迷宫。",
           "placeId": "dole",
           "links": [
@@ -1764,6 +1783,7 @@
           "id": "d3-waikele",
           "time": "17:50–18:40（可选）",
           "title": "Waikele Premium Outlets 奥莱",
+          "kind": "shop",
           "text": "从菠萝园沿H-2开约20分钟。只逛50分钟左右；在菠萝园玩得晚，就跳过，直接去Ko Olina吃晚饭。",
           "placeId": "waikele",
           "links": [
@@ -1777,6 +1797,7 @@
         {
           "time": "19:00–19:50",
           "title": "Ko Olina 晚餐",
+          "kind": "food",
           "text": "从奥莱开约18分钟（从菠萝园直接过去约35分钟）。在Ko Olina度假区里吃，例如 Monkeypod Kitchen，建议订位。",
           "placeId": "ko-olina"
         },
@@ -1784,6 +1805,7 @@
           "id": "d3-ko-olina",
           "time": "20:00–21:00",
           "title": "星空讲解 · Stars Above Hawaii",
+          "kind": "tour",
           "text": "天文讲解员带电脑望远镜，讲夏威夷星空导航，约1小时，照片会发到手机。1/7是新月，这几天月光最暗。开场时间按订到的场次为准，当天下午会发短信说明天气和观测位置；因天气取消可全额退款或改期。",
           "placeId": "ko-olina",
           "links": [
@@ -1797,6 +1819,7 @@
         {
           "time": "21:00",
           "title": "开回Waikīkī",
+          "kind": "drive",
           "text": "约45分钟，21:45左右到酒店。夜路慢一点；今天是很长的一天。车停酒店过夜（约USD45），明早还车。",
           "placeId": "hotel"
         }
@@ -1816,12 +1839,14 @@
         {
           "time": "08:00",
           "title": "加满油还车",
+          "kind": "drive",
           "text": "按订单上的时间还，超时可能多算一天。",
           "placeId": "car-pickup"
         },
         {
           "time": "09:00",
           "title": "启用Waikiki Trolley四日票",
+          "kind": "transit",
           "text": "四日全线票两人约USD150，可以随上随下，1/6到1/8都用它。坐红线（市区历史线）去王宫。",
           "placeId": "trolley-hub",
           "links": [
@@ -1835,6 +1860,7 @@
           "id": "d4-iolani",
           "time": "10:00",
           "title": "ʻIolani Palace 王宫",
+          "kind": "sight",
           "text": "美国唯一的王宫，周二至周六开放，只能网上买票。",
           "placeId": "iolani",
           "links": [
@@ -1848,11 +1874,13 @@
         {
           "time": "11:30",
           "title": "卡美哈梅哈国王像、唐人街",
+          "kind": "sight",
           "text": "国王像就在王宫对面，唐人街坐红线或走过去。"
         },
         {
           "time": "12:30",
           "title": "Nico's Pier 38 海鲜午餐",
+          "kind": "food",
           "text": "不在观光巴士线上，Uber约10分钟。poke饭和炸鱼。",
           "placeId": "nicos"
         },
@@ -1860,6 +1888,7 @@
           "id": "d4-ala-moana",
           "time": "14:30",
           "title": "Ala Moana 商场",
+          "kind": "shop",
           "text": "坐粉线（Ala Moana购物线）来回。",
           "placeId": "ala-moana",
           "rate": true
@@ -1867,6 +1896,7 @@
         {
           "time": "18:00",
           "title": "Waikīkī晚餐",
+          "kind": "food",
           "text": "明早去恐龙湾，早点睡。",
           "placeId": "waikiki-beach"
         }
@@ -1885,6 +1915,7 @@
         {
           "time": "早上（按团的接送时间）",
           "title": "Roberts Hawaii 恐龙湾接送团",
+          "kind": "tour",
           "text": "含门票和Waikīkī往返车，约USD65/人；浮潜装备不含，可以在湾里现场租。最多提前一个月订。",
           "placeId": "hanauma",
           "links": [
@@ -1902,6 +1933,7 @@
           "id": "d5-hanauma",
           "time": "上午",
           "title": "浮潜",
+          "kind": "tour",
           "text": "先看保护区影片，再在内湾浮潜。是否适合游泳和用脚蹼，按自己的身体状况、救生员指示和当天海况决定。如果当天关闭或海况不好，1/8也开放，可以改期。",
           "placeId": "hanauma",
           "rate": true
@@ -1909,6 +1941,7 @@
         {
           "time": "中午",
           "title": "回酒店休息、午餐",
+          "kind": "food",
           "text": "跟团车送回Waikīkī。",
           "placeId": "hotel"
         },
@@ -1916,6 +1949,7 @@
           "id": "d5-diamond-head",
           "time": "13:30",
           "title": "坐绿线去钻石山观景台",
+          "kind": "sight",
           "text": "绿线（Diamond Head Line）在Kahala Lookout有拍照停靠，下车就能看到钻石山和海，不用走路爬山。绿线一圈约70分钟，下午最后一班约15:10–15:40从钻石山一带返回，别太晚出发。不进火山口：进火山口要另外预约州立公园门票，而且不登顶也没什么可看。",
           "placeId": "diamond-head",
           "links": [
@@ -1929,6 +1963,7 @@
         {
           "time": "16:30",
           "title": "到海滩上船点集合",
+          "kind": "tour",
           "text": "一般提前20–30分钟到。穿方便上下船的鞋，带件薄外套，海上傍晚有风。",
           "placeId": "waikiki-beach"
         },
@@ -1936,6 +1971,7 @@
           "id": "d5-waikiki-beach",
           "time": "17:00–19:00",
           "title": "Waikīkī 日落帆船（或改到1/4）",
+          "kind": "tour",
           "text": "例如Moana Sailing 2小时帆船（约USD81/人，含一杯饮料）；Manu Kai的1.5小时happy hour约USD56/人。1月日落约18:05，回程天黑后能看到Waikīkī和钻石山的夜景。风浪大时船公司可能取消。帆船也可以放在1/4傍晚，按出发前的天气预报选风浪小、云少的一天；如果已经在1/4坐过，今天就在海边看日落、早点吃饭。",
           "placeId": "waikiki-beach",
           "links": [
@@ -1949,6 +1985,7 @@
         {
           "time": "19:15",
           "title": "晚餐：Waikīkī 海鲜",
+          "kind": "food",
           "text": "下船后就在附近吃，1/4没去成的话就去Duke's。",
           "placeId": "dukes"
         }
@@ -1967,11 +2004,13 @@
         {
           "time": "上午（备用）",
           "title": "恐龙湾备用",
+          "kind": "tour",
           "text": "只有1/7被取消时才用，周五开放。"
         },
         {
           "time": "上午",
           "title": "退房，寄存行李",
+          "kind": "hotel",
           "text": "上午退房，把行李寄存在前台，晚上回来取。想在去机场前洗个澡，可以问酒店能不能用健身房或泳池的淋浴。选的是Expedia机酒套餐的话，套餐含到1/9的房间，可以一直用到去机场前。",
           "placeId": "hotel"
         },
@@ -1979,6 +2018,7 @@
           "id": "d6-halona",
           "time": "上午",
           "title": "可选：坐蓝线看东南海岸",
+          "kind": "transit",
           "text": "蓝线（Ocean View Line）沿海边开到Hālona喷泉孔（拍照停靠）和Sea Life Park，一圈约1小时50分钟，早上8:30起约40分钟一班。不想坐就在海滩休息、购物。",
           "placeId": "halona",
           "links": [
@@ -1993,6 +2033,7 @@
           "id": "d6-house",
           "time": "17:30",
           "title": "House Without A Key 日落晚餐",
+          "kind": "food",
           "text": "看日落和草裙舞表演，建议预订。",
           "placeId": "house",
           "rate": true
@@ -2000,6 +2041,7 @@
         {
           "time": "21:00",
           "title": "去机场",
+          "kind": "flight",
           "text": "约25–30分钟。回程是1/9 00:10的Air Canada直飞，建议提前2.5–3小时到。订的是机酒套餐的话，按订单的接送安排走。",
           "placeId": "hnl"
         }
@@ -2017,11 +2059,13 @@
         {
           "time": "00:10",
           "title": "Air Canada直飞起飞",
+          "kind": "flight",
           "text": "红眼航班约8小时41分，尽量在飞机上睡。"
         },
         {
           "time": "13:51",
           "title": "到达多伦多",
+          "kind": "flight",
           "text": "按多伦多时间。从美国回加拿大要过加拿大海关。",
           "tz": "America/Toronto"
         }

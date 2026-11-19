@@ -10,27 +10,27 @@ X-PUBLISHED-TTL:PT12H
 X-WR-TIMEZONE:America/Costa_Rica
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T124000Z
 DTEND:20270106T154000Z
-SUMMARY:Arrive at Pearson Terminal 3
+SUMMARY:✈️ Arrive at Pearson Terminal 3
 DESCRIPTION:Arrive 3 hours early for international flights. Partner: bring 
  Chinese passport\, US visa (confirm it's multiple-entry\, M) and PR card.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T154000Z
 DTEND:20270106T212400Z
-SUMMARY:Porter PD 783 departs
+SUMMARY:✈️ Porter PD 783 departs
 DESCRIPTION:About 5h 44m. Costa Rica is 1 hour behind Toronto.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T212400Z
 DTEND:20270106T221500Z
-SUMMARY:Land in Liberia
+SUMMARY:✈️ Land in Liberia
 DESCRIPTION:Get the entry stamp (check it's in your passport)\, collect bag
  s\, then head to the Adobe shuttle stop.\n\nGoogle Maps: https://www.googl
  e.com/maps/search/?api=1&query=Daniel%20Oduber%20Quir%C3%B3s%20Internation
@@ -42,10 +42,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T221500Z
 DTEND:20270106T230000Z
-SUMMARY:Pick up the car
+SUMMARY:🚗 Pick up the car
 DESCRIPTION:Bring your physical licence\, passport\, and a credit card in t
  he driver's name (deposit ~USD1\,000). Inspect the car and take photos\; c
  heck by hand that the doors are locked\, as rental car break-ins are commo
@@ -53,10 +53,10 @@ DESCRIPTION:Bring your physical licence\, passport\, and a credit card in t
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-4@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T230000Z
 DTEND:20270106T233000Z
-SUMMARY:Check in at Playas del Coco
+SUMMARY:🏨 Check in at Playas del Coco
 DESCRIPTION:About 30 min\, arrive before dark.\n\nGoogle Maps: https://www.
  google.com/maps/search/?api=1&query=Villa%20Del%20Sol%20Boutique%20Hotel%2
  C%20Playas%20del%20Coco
@@ -67,10 +67,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Villa Del
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-5@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270106T233000Z
 DTEND:20270107T010000Z
-SUMMARY:Sunset on the beach
+SUMMARY:📸 Sunset on the beach
 DESCRIPTION:The beach in front of the hotel faces west\, so the sun sets ri
  ght over the water.\n\nGoogle Maps: https://www.google.com/maps/search/?ap
  i=1&query=Playas%20del%20Coco%20Beach%2C%20Guanacaste
@@ -81,10 +81,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-6@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T010000Z
 DTEND:20270107T020000Z
-SUMMARY:Seafood by the sea
+SUMMARY:🍽️ Seafood by the sea
 DESCRIPTION:Walk into Coco town (about 15 minutes): Papagayo Seafood (often
   live music) or Mar Azul\; take a taxi back if you don’t feel like walki
  ng.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Playas
@@ -96,10 +96,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-7@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T020000Z
 DTEND:20270107T030000Z
-SUMMARY:Stargazing on the beach
+SUMMARY:📸 Stargazing on the beach
 DESCRIPTION:Tomorrow\, 1/7\, is the new moon\, so tonight is nearly moonles
  s\; Guanacaste’s dry season is mostly clear and it is fully dark by 19:0
  0. The darker north end of Coco beach is right in front of the hotel\; wal
@@ -119,19 +119,19 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T130000Z
 DTEND:20270107T142000Z
-SUMMARY:Check out and set off
+SUMMARY:🚗 Check out and set off
 DESCRIPTION:Bring some cash (the waterfall is cash only). South via Liberia
   and Bagaces\, about 1 h 15 min to the waterfall.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T142000Z
 DTEND:20270107T152000Z
-SUMMARY:Llanos de Cortés waterfall
+SUMMARY:📸 Llanos de Cortés waterfall
 DESCRIPTION:About 30 concrete steps with a rope handrail\; sandy at the bot
  tom\, rocky at the edge and in the water. You can take a dip\; watch your 
  step on the rocks so you don't roll an ankle.\n\nGoogle Maps: https://www.
@@ -144,20 +144,20 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Llanos de
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T152000Z
 DTEND:20270107T190000Z
-SUMMARY:Route 1 to Monteverde
+SUMMARY:🚗 Route 1 to Monteverde
 DESCRIPTION:Via Cañas\, turning onto Route 606 for the climb\, about 2.5 h
  ours\; Route 606 is paved but steep with tight bends\, so take it slowly. 
  Reach Santa Elena around 12:00 for a quick lunch.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T190000Z
 DTEND:20270107T220000Z
-SUMMARY:100% Aventura ziplines
+SUMMARY:🎟️ 100% Aventura ziplines
 DESCRIPTION:About 2.5–3 hours: 10 ziplines\, the longest 1\,590 m\, the l
  ongest in Costa Rica\; the last two are Superman lines you fly face-down\,
   plus one Tarzan swing (optional). From USD72 per person on the official s
@@ -180,10 +180,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="100% Aven
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-4@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T220000Z
 DTEND:20270107T233000Z
-SUMMARY:Check in to the Monteverde hotel
+SUMMARY:🏨 Check in to the Monteverde hotel
 DESCRIPTION:0.8 km from the town centre\; rest a bit and grab a jacket: Mon
  teverde evenings are only in the teens and often windy with drizzle.\n\nGo
  ogle Maps: https://www.google.com/maps/search/?api=1&query=Hotel%20Monta%C
@@ -195,10 +195,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-5@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270107T233000Z
 DTEND:20270108T013000Z
-SUMMARY:Rainforest night walk
+SUMMARY:🎟️ Rainforest night walk
 DESCRIPTION:At Bajo del Tigre (Children’s Eternal Rainforest) a guide lea
  ds you by flashlight to find tree frogs\, snakes\, spiders and sleeping bi
  rds\, and with luck sloths and agoutis. USD30 + tax per person\, minimum 2
@@ -216,19 +216,19 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Bajo del
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-6@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T014500Z
 DTEND:20270108T024500Z
-SUMMARY:Dinner in town
+SUMMARY:🍽️ Dinner in town
 DESCRIPTION:Eat in Santa Elena town\, then drive a few minutes back to the 
  hotel.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T130000Z
 DTEND:20270108T143000Z
-SUMMARY:Breakfast
+SUMMARY:🍽️ Breakfast
 DESCRIPTION:Breakfast is included at the hotel\; mornings in the mountains 
  are the clearest\, with cloud rising out of the valleys.\n\nGoogle Maps: h
  ttps://www.google.com/maps/search/?api=1&query=Hotel%20Monta%C3%B1a%20Mont
@@ -240,20 +240,20 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T143000Z
 DTEND:20270108T173000Z
-SUMMARY:Down to La Fortuna
+SUMMARY:🚗 Down to La Fortuna
 DESCRIPTION:Down Route 606\, via Cañas and Tilarán\, then along the north
   shore of Lake Arenal\; all paved\, about 4 hours of driving. Skip the dir
  t shortcut from Monteverde to Tilarán.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T173000Z
 DTEND:20270108T193000Z
-SUMMARY:North shore of Lake Arenal
+SUMMARY:📸 North shore of Lake Arenal
 DESCRIPTION:Follow the winding Route 142 and stop at roadside viewpoints fo
  r photos of the lake and volcano\; lunch in Nuevo Arenal.\n\nGoogle Maps: 
  https://www.google.com/maps/search/?api=1&query=Nuevo%20Arenal%2C%20Guanac
@@ -265,10 +265,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T193000Z
 DTEND:20270108T210000Z
-SUMMARY:Check in at Termales del Arenal
+SUMMARY:🏨 Check in at Termales del Arenal
 DESCRIPTION:All the driving done in daylight. Once the room is ready\, star
  t with the hotel hot spring pools.\n\nGoogle Maps: https://www.google.com/
  maps/search/?api=1&query=Termales%20del%20Arenal%2C%20La%20Fortuna
@@ -279,10 +279,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-4@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270108T210000Z
 DTEND:20270109T003000Z
-SUMMARY:Soak in the hotel hot springs
+SUMMARY:♨️ Soak in the hotel hot springs
 DESCRIPTION:Soak for a while\, then head into town for dinner in the evenin
  g.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termale
  s%20del%20Arenal%2C%20La%20Fortuna
@@ -293,10 +293,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-5@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T003000Z
 DTEND:20270109T013000Z
-SUMMARY:Dinner in town
+SUMMARY:🍽️ Dinner in town
 DESCRIPTION:Snapper's House is right in the town centre\; drive 5 minutes b
  ack to the hotel afterwards.\n\nGoogle Maps: https://www.google.com/maps/s
  earch/?api=1&query=La%20Fortuna%2C%20San%20Carlos%2C%20Costa%20Rica
@@ -307,19 +307,19 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T120000Z
 DTEND:20270109T133000Z
-SUMMARY:Early volcano viewing
+SUMMARY:📸 Early volcano viewing
 DESCRIPTION:The volcano is most likely to show itself 6–9 am\, and you ca
  n see it from the hotel.
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T133000Z
 DTEND:20270109T180000Z
-SUMMARY:Peñas Blancas safari float
+SUMMARY:🎟️ Peñas Blancas safari float
 DESCRIPTION:Hotel pickup\; you sit in an inflatable raft steered by the gui
  de\, with little or no paddling (some operators ask for a few light stroke
  s)\, for about 2 hours spotting sloths\, monkeys\, caimans and birds\; bac
@@ -342,10 +342,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Peñas Bl
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T180000Z
 DTEND:20270109T200000Z
-SUMMARY:Lunch in town
+SUMMARY:🍽️ Lunch in town
 DESCRIPTION:Ceviche at Cevichería D'Mora.\n\nGoogle Maps: https://www.goog
  le.com/maps/search/?api=1&query=La%20Fortuna%2C%20San%20Carlos%2C%20Costa%
  20Rica
@@ -356,10 +356,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T200000Z
 DTEND:20270109T223000Z
-SUMMARY:Mistico Hanging Bridges Park
+SUMMARY:🎟️ Mistico Hanging Bridges Park
 DESCRIPTION:About 25 min drive. 3.2 km loop with gentle slopes and steps\; 
  the hanging bridges sway\; ~2 hours. Tag along behind a guided group and y
  ou'll often spot small creatures like eyelash vipers. Watch your footing o
@@ -380,10 +380,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Mistico A
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-4@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270109T223000Z
 DTEND:20270110T003000Z
-SUMMARY:Back to the hotel for the hot springs
+SUMMARY:♨️ Back to the hotel for the hot springs
 DESCRIPTION:After the bridges\, soak for a while before heading out to dinn
  er.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termal
  es%20del%20Arenal%2C%20La%20Fortuna
@@ -394,10 +394,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-5@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270110T003000Z
 DTEND:20270110T013000Z
-SUMMARY:Dinner in town
+SUMMARY:🍽️ Dinner in town
 DESCRIPTION:5 min drive to town: Snapper's House (marlin ceviche\, seafood 
  soup) or Cevichería D'Mora\; drive back to the hotel afterwards.\n\nGoogl
  e Maps: https://www.google.com/maps/search/?api=1&query=La%20Fortuna%2C%20
@@ -409,10 +409,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270110T133000Z
 DTEND:20270110T140000Z
-SUMMARY:Hotel pickup (horseback tour)
+SUMMARY:🎟️ Hotel pickup (horseback tour)
 DESCRIPTION:The volcano is most likely to be visible in the morning.\n\nGoo
  gle Maps: https://www.google.com/maps/search/?api=1&query=Termales%20del%2
  0Arenal%2C%20La%20Fortuna
@@ -423,10 +423,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270110T140000Z
 DTEND:20270110T170000Z
-SUMMARY:Horseback ride with Arenal Volcano views
+SUMMARY:🎟️ Horseback ride with Arenal Volcano views
 DESCRIPTION:About 2.5 hours of riding through forest and pasture to a volca
  no viewpoint and Los Lirios lake\; the guide gives a lesson first. Note: k
  eeping heels down in the stirrups and pushing off one foot to mount and di
@@ -441,10 +441,10 @@ DESCRIPTION:About 2.5 hours of riding through forest and pasture to a volca
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270110T173000Z
 DTEND:20270110T190000Z
-SUMMARY:Back to the hotel to change and have lunch
+SUMMARY:🍽️ Back to the hotel to change and have lunch
 DESCRIPTION:A simple lunch at the hotel or in town\; the sloth tour picks y
  ou up at 13:00.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&
  query=Termales%20del%20Arenal%2C%20La%20Fortuna
@@ -455,10 +455,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270110T190000Z
 DTEND:20270110T220000Z
-SUMMARY:Sloth tour
+SUMMARY:🎟️ Sloth tour
 DESCRIPTION:A guide leads you along gentle trails through farm forest looki
  ng for sloths\, often both two- and three-toed\, plus birds\, frogs and hu
  mmingbirds\; about 2.5–3 hours\, rated "easy"\, hotel pickup included. U
@@ -469,10 +469,10 @@ DESCRIPTION:A guide leads you along gentle trails through farm forest looki
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-0@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270111T123000Z
 DTEND:20270111T140000Z
-SUMMARY:One last look at the volcano\, breakfast
+SUMMARY:🍽️ One last look at the volcano\, breakfast
 DESCRIPTION:Google Maps: https://www.google.com/maps/search/?api=1&query=Te
  rmales%20del%20Arenal%2C%20La%20Fortuna
 LOCATION:Termales del Arenal\, La Fortuna
@@ -482,10 +482,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-1@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270111T140000Z
 DTEND:20270111T160000Z
-SUMMARY:A slow morning
+SUMMARY:🏨 A slow morning
 DESCRIPTION:The flight isn’t until the afternoon\, so soak in the hotel h
  ot springs once more and check out by 10:00.\n\nGoogle Maps: https://www.g
  oogle.com/maps/search/?api=1&query=Termales%20del%20Arenal%2C%20La%20Fortu
@@ -497,10 +497,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-2@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270111T160000Z
 DTEND:20270111T191500Z
-SUMMARY:Head to the airport
+SUMMARY:🚗 Head to the airport
 DESCRIPTION:Along the lake via Tilarán and Cañas\, about 3 hours on the r
  oad\; allow time to fill up (the car must be returned full) and arrive by 
  13:15.\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Nue
@@ -512,10 +512,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-3@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270111T191500Z
 DTEND:20270111T223500Z
-SUMMARY:Return the car\, shuttle to the airport
+SUMMARY:🚗 Return the car\, shuttle to the airport
 DESCRIPTION:The departure tax is usually included in the airfare. The retur
  n is operated by Air Transat\, so check in and drop bags at the Air Transa
  t counter\; arriving 2.5–3 hours before an international flight is safes
@@ -528,10 +528,10 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-4@travel-plan
-DTSTAMP:20261119T193121Z
+DTSTAMP:20261119T193407Z
 DTSTART:20270111T223500Z
 DTEND:20270112T034500Z
-SUMMARY:Porter PD 7301 nonstop back to Toronto
+SUMMARY:✈️ Porter PD 7301 nonstop back to Toronto
 DESCRIPTION:Operated by Air Transat\, about 5 h 10 min\, arriving at Pearso
  n at 22:45. Partner shows PR card when entering Canada.
 END:VEVENT

@@ -54,6 +54,9 @@ def validate(folder):
         for item in day.get('schedule',[]):
             check(not item.get('placeId') or item['placeId'] in place_ids,'Schedule references missing place')
             check(item.get('rate') in (None,True,False,'hot','maybe','meh'),f'Day {day.get("day")}: rate must be true or hot/maybe/meh')
+            KINDS={'flight','drive','transit','tour','sight','food','hotel','spa','shop'}
+            for one in [item]+[a for a in (item.get('alternatives') or []) if isinstance(a,dict)]:
+                check(one.get('kind') is None or one['kind'] in KINDS,f'Day {day.get("day")}: kind must be one of {", ".join(sorted(KINDS))}')
             for key in ['tz','endTz']:check(key not in item or zone(item[key]),f'Day {day.get("day")}: {key} must be an IANA time zone')
             check('end' not in item or (isinstance(item['end'],str) and re.fullmatch(r'([01]?\d|2[0-3])[:：][0-5]\d',item['end']) is not None),f'Day {day.get("day")}: end must be a HH:MM time')
             alts=item.get('alternatives')

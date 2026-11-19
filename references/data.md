@@ -8,7 +8,7 @@
 | `trip` | `id,title,subtitle,kicker,startDate,endDate,nights,travelers,currency,timezone,calendarUrl?,demo,notice,constraints[]`，ISO日期；`timezone` 是目的地的IANA时区（例如 `America/Costa_Rica`），导出日历用；`calendarUrl` 是托管好的静态 .ics 的 https 地址（英文版指向 `calendar.en.ics`）；`calendarColor` 是订阅后这个日历的颜色（`#RRGGBB`，默认 `#D07D9C`）；endDate可以包含跨夜回家日；`kicker`是标题上方的小标签 |
 | `budget` | `target,categories[],presets[],chartGroups?` |
 | `journeys` | `{id,title,proposal}`；proposal含 `airline,flightNo?,fareFamily,departure,arrival,route,duration,connection,note,url`；定了航班就写 `flightNo`（如 `"PD 783"`），航班卡片在路线旁边显示；出了票加 `booked:true`，卡片右上角显示「已订」，清单里订机票那项写 `status:"booked"` |
-| `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,text,placeId,links[],rate?,alternatives[]?,tz?,end?,endTz?` |
+| `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,kind?,text,placeId,links[],rate?,alternatives[]?,tz?,end?,endTz?`；`kind` 是活动类型，导出日历时标题前加图标：`flight` ✈️、`drive` 🚗、`transit` 🚌（打车、接驳、观光巴士）、`tour` 🎟️（跟团和要买票的活动）、`sight` 📸、`food` 🍽️、`hotel` 🏨、`spa` ♨️、`shop` 🛍️；替代项目也可以写自己的 `kind` |
 | `map` | `places[],dailyRoutes[],routesFile,basemapFile,home?` |
 | `share` | 可选：分享路线图海报，见下方「分享路线图」 |
 | `coverage` | `{item,when,note}` |

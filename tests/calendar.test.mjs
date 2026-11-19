@@ -16,7 +16,7 @@ test('each timed plan lasts until the next one, across time zones',()=>{
   const trip={id:'demo',title:'Demo, trip',timezone:'America/Costa_Rica'};
   const days=[
     {day:1,date:'2027-01-06',schedule:[
-      {time:'10:40',title:'Fly',tz:'America/Toronto'},
+      {time:'10:40',title:'Fly',tz:'America/Toronto',kind:'flight'},
       {time:'15:24',title:'Land',placeId:'lir'},
       {time:'晚上',title:'Untimed'},
       {time:'17:30–19:30',title:'Night walk'},
@@ -36,7 +36,7 @@ test('each timed plan lasts until the next one, across time zones',()=>{
     ['20270107T020000Z','20270107T030000Z'],   // last of the day: one hour
     ['20270111T223500Z','20270112T034500Z'],   // end + endTz
   ]);
-  assert.equal(e[4].SUMMARY,'Later flight');
+  assert.equal(e[4].SUMMARY,'Later flight');assert.equal(e[0].SUMMARY,'✈️ Fly');
   assert.equal(e[1].LOCATION,'Liberia Airport');assert.equal(e[1].GEO,'10.59;-85.54');
   assert.match(e[3].DESCRIPTION,/jacket\\; it is cold/);
   assert.match(ics,/X-WR-CALNAME:Demo\\, trip/);assert.match(ics,/X-APPLE-CALENDAR-COLOR:#D07D9C\r\n/);
