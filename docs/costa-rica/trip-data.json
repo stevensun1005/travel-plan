@@ -1777,14 +1777,18 @@
       "from": {
         "lng": -79.63,
         "lat": 43.68,
-        "label": "多伦多"
+        "label": "多伦多",
+        "country": "加拿大"
       },
       "to": {
         "lng": -85.54,
         "lat": 10.59,
         "label": "哥斯达黎加"
       },
-      "pad": 9
+      "pad": 7,
+      "width": 340,
+      "height": 290,
+      "originVisible": 0.34
     }
   },
   "checklist": {

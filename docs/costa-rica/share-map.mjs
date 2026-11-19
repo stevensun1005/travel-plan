@@ -370,7 +370,9 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       // 出发的国家一定要写名字：loc.from.country 可写名字（或 {zh,en}）；不写就按出发点落在哪个大国里自动找
       const named = loc.from.country, byName = n => (world.countries || []).find(c => c.zh === n || c.en === n);
       const origin = typeof named === 'string' ? (byName(named) || { zh: named, en: named }) : named?.zh ? (byName(named.zh) || named)
-        : (world.countries || []).find(c => c.rings && inside(c.rings, loc.from.lng, loc.from.lat)) || null;
+        : (world.countries || []).find(c => c.rings && inside(c.rings, loc.from.lng, loc.from.lat))
+        // 轮廓很粗，海边/湖边的城市可能落在轮廓外：取 3 度以内最近的大国
+        || (world.countries || []).map(c => [c, Math.min(Infinity, ...(c.rings || []).flat().map(([x, y]) => Math.hypot(x - loc.from.lng, y - loc.from.lat)))]).filter(([, dd]) => dd < 3).sort((a, b2) => a[1] - b2[1])[0]?.[0] || null;
       // 先排版再画：出发国名字放不下，就把范围放大一点（地图整体缩小）重新排
       const plan = pad => {
         const b = { w: Math.min(loc.from.lng, loc.to.lng) - pad, e: Math.max(loc.from.lng, loc.to.lng) + pad, s: Math.min(loc.from.lat, loc.to.lat) - pad, n: Math.max(loc.from.lat, loc.to.lat) + pad };
@@ -378,6 +380,18 @@ async function drawPoster({ data, roads = [], basemap, color }) {
         if (have < want) { const add = ((b.n - b.s) * want / k - (b.e - b.w)) / 2; b.w -= add; b.e += add; }
         else { const add = ((b.e - b.w) * k / want - (b.n - b.s)) / 2; b.s -= add; b.n += add; }
         const sc = LW / ((b.e - b.w) * k), Q = (lng, lat) => [LX + (lng - b.w) * k * sc, LY + (b.n - lat) * sc];
+        // loc.originVisible（例如 0.33）：出发国至少这么大比例的面积要在画面里，不够就再缩小
+        if (origin?.rings && loc.originVisible > 0) {
+          const all = origin.rings.flat(), ow = Math.min(...all.map(p => p[0])), oe = Math.max(...all.map(p => p[0])), os = Math.min(...all.map(p => p[1])), on = Math.max(...all.map(p => p[1]));
+          let tot = 0, seen = 0;
+          for (let gx = 0; gx < 48; gx++) for (let gy = 0; gy < 48; gy++) {
+            const lng = ow + (oe - ow) * (gx + .5) / 48, lat = os + (on - os) * (gy + .5) / 48;
+            if (!inside(origin.rings, lng, lat)) continue;
+            const wgt = Math.cos(lat * Math.PI / 180); tot += wgt;
+            if (lng > b.w && lng < b.e && lat > b.s && lat < b.n) seen += wgt;
+          }
+          if (tot && seen / tot < loc.originVisible) return { b, Q, labels: [], ok: false };
+        }
         const taken = [], labels = [];
         if (loc.title) { ctx.font = `bold 21px ${HAND}`; taken.push({ x: LX + 8, y: LY - 20, w: ctx.measureText(loc.title).width + 32, h: 40 }); } // 标题贴纸那一块不写名字
         const free = (x, y, w, h) => x > LX + 4 && x + w < LX + LW - 4 && y > LY + 4 && y + h < LY + LH - 4 && !taken.some(o => x < o.x + o.w + 3 && x + w + 3 > o.x && y < o.y + o.h + 2 && y + h + 2 > o.y);
@@ -423,7 +437,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
         return { b, Q, labels, ok };
       };
       let laid = null;
-      for (let i = 0, pad = loc.pad ?? 7; i < 6; i++, pad *= 1.35) { laid = plan(pad); if (laid.ok) break; }
+      for (let i = 0, pad = loc.pad ?? 7; i < 12; i++, pad *= 1.2) { laid = plan(pad); if (laid.ok) break; }
       const { b, Q, labels } = laid;
       // 陆地、湖、主要河流、国界线，再写排好的名字
       const near = r => r.some(([lng, lat]) => lng > b.w - 20 && lng < b.e + 20 && lat > b.s - 20 && lat < b.n + 20);

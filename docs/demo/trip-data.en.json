@@ -2442,7 +2442,8 @@
       "from": {
         "lng": -79.63,
         "lat": 43.68,
-        "label": "Toronto"
+        "label": "Toronto",
+        "country": "Canada"
       },
       "to": {
         "lng": -157.92,
