@@ -1147,18 +1147,14 @@
           "tz": "America/Toronto"
         },
         {
-          "time": "10:40",
-          "title": "Porter PD 783 起飞",
+          "time": "10:40–15:24",
+          "title": "Porter PD 783 多伦多 → 利比里亚",
           "kind": "flight",
-          "text": "约5小时44分。哥斯达黎加比多伦多晚1小时。",
-          "tz": "America/Toronto"
-        },
-        {
-          "time": "15:24",
-          "title": "落地利比里亚",
-          "kind": "flight",
-          "text": "入境盖章（确认护照上有章），拿行李后到Alamo接驳点。",
-          "placeId": "lir"
+          "text": "直飞约5小时44分。起飞是多伦多时间，落地是当地时间（比多伦多晚1小时）。落地后入境盖章（确认护照上有章），拿行李后到Alamo接驳点。",
+          "placeId": "lir",
+          "tz": "America/Toronto",
+          "end": "15:24",
+          "endTz": "America/Costa_Rica"
         },
         {
           "time": "16:15",
@@ -1627,7 +1623,7 @@
           "placeId": "alamo-lir"
         },
         {
-          "time": "16:35",
+          "time": "16:35–22:45",
           "title": "Porter PD 7301 直飞回多伦多",
           "kind": "flight",
           "text": "Air Transat执飞，约5小时10分，22:45到皮尔逊。女朋友入境加拿大出示PR卡。",

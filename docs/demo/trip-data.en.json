@@ -1574,18 +1574,14 @@
           "tz": "America/Toronto"
         },
         {
-          "time": "17:35",
-          "title": "AC589 departs",
+          "time": "17:35–22:38",
+          "title": "AC589 Toronto → Honolulu",
           "kind": "flight",
-          "text": "~10 hours nonstop. Try to sleep on Hawaii time on the plane; Hawaii is 5 hours behind Toronto.",
-          "tz": "America/Toronto"
-        },
-        {
-          "time": "22:38",
-          "title": "Land in Honolulu",
-          "kind": "flight",
-          "text": "Domestic arrival, no immigration again. After baggage claim, taxi or Uber to the hotel, ~25–30 min, ~USD40–50.",
-          "placeId": "hnl"
+          "text": "About 10 hours nonstop. Departure is Toronto time, landing is Hawaii time (5 hours behind Toronto); try to sleep on Hawaii time on the plane. It is a domestic arrival, so no immigration again; after baggage claim, taxi or Uber to the hotel, ~25–30 min, ~USD40–50.",
+          "placeId": "hnl",
+          "tz": "America/Toronto",
+          "end": "22:38",
+          "endTz": "Pacific/Honolulu"
         },
         {
           "time": "~23:30",
@@ -2057,17 +2053,12 @@
       ],
       "schedule": [
         {
-          "time": "00:10",
-          "title": "Air Canada nonstop departs",
+          "time": "00:10–13:51",
+          "title": "Air Canada Honolulu → Toronto",
           "kind": "flight",
-          "text": "Red-eye, ~8h 41m; try to sleep on the plane."
-        },
-        {
-          "time": "13:51",
-          "title": "Arrive in Toronto",
-          "kind": "flight",
-          "text": "Toronto time. Clear Canadian customs on the way back from the US.",
-          "tz": "America/Toronto"
+          "text": "Red-eye, about 8h 41m; try to sleep on the plane. 13:51 is Toronto time; clear Canadian customs on the way back from the US.",
+          "end": "13:51",
+          "endTz": "America/Toronto"
         }
       ]
     }

@@ -1574,18 +1574,14 @@
           "tz": "America/Toronto"
         },
         {
-          "time": "17:35",
-          "title": "AC589 起飞",
+          "time": "17:35–22:38",
+          "title": "AC589 多伦多 → 檀香山",
           "kind": "flight",
-          "text": "直飞约10小时。飞机上尽量按夏威夷时间睡觉，夏威夷比多伦多晚5小时。",
-          "tz": "America/Toronto"
-        },
-        {
-          "time": "22:38",
-          "title": "落地檀香山",
-          "kind": "flight",
-          "text": "国内到达，不用再入境。取行李后打车或用Uber去酒店，约25–30分钟，费用约USD40–50。",
-          "placeId": "hnl"
+          "text": "直飞约10小时。起飞是多伦多时间，落地是夏威夷时间（比多伦多晚5小时），飞机上尽量按夏威夷时间睡觉。落地是国内到达，不用再入境；取行李后打车或用Uber去酒店，约25–30分钟，费用约USD40–50。",
+          "placeId": "hnl",
+          "tz": "America/Toronto",
+          "end": "22:38",
+          "endTz": "Pacific/Honolulu"
         },
         {
           "time": "约23:30",
@@ -2057,17 +2053,12 @@
       ],
       "schedule": [
         {
-          "time": "00:10",
-          "title": "Air Canada直飞起飞",
+          "time": "00:10–13:51",
+          "title": "Air Canada 檀香山 → 多伦多",
           "kind": "flight",
-          "text": "红眼航班约8小时41分，尽量在飞机上睡。"
-        },
-        {
-          "time": "13:51",
-          "title": "到达多伦多",
-          "kind": "flight",
-          "text": "按多伦多时间。从美国回加拿大要过加拿大海关。",
-          "tz": "America/Toronto"
+          "text": "红眼航班约8小时41分，尽量在飞机上睡。13:51是多伦多时间；从美国回加拿大要过加拿大海关。",
+          "end": "13:51",
+          "endTz": "America/Toronto"
         }
       ]
     }

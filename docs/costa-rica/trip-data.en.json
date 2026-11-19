@@ -1147,18 +1147,14 @@
           "tz": "America/Toronto"
         },
         {
-          "time": "10:40",
-          "title": "Porter PD 783 departs",
+          "time": "10:40–15:24",
+          "title": "Porter PD 783 Toronto → Liberia",
           "kind": "flight",
-          "text": "About 5h 44m. Costa Rica is 1 hour behind Toronto.",
-          "tz": "America/Toronto"
-        },
-        {
-          "time": "15:24",
-          "title": "Land in Liberia",
-          "kind": "flight",
-          "text": "Get the entry stamp (check it's in your passport), collect bags, then head to the Alamo shuttle stop.",
-          "placeId": "lir"
+          "text": "About 5h 44m nonstop. Departure is Toronto time, landing is local time (1 hour behind Toronto). After landing, get the entry stamp (check it's in your passport), collect bags, then head to the Alamo shuttle stop.",
+          "placeId": "lir",
+          "tz": "America/Toronto",
+          "end": "15:24",
+          "endTz": "America/Costa_Rica"
         },
         {
           "time": "16:15",
@@ -1627,7 +1623,7 @@
           "placeId": "alamo-lir"
         },
         {
-          "time": "16:35",
+          "time": "16:35–22:45",
           "title": "Porter PD 7301 nonstop back to Toronto",
           "kind": "flight",
           "text": "Operated by Air Transat, about 5 h 10 min, arriving at Pearson at 22:45. Partner shows PR card when entering Canada.",
