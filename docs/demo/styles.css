@@ -509,7 +509,8 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 .vote-tally{color:var(--orange)!important}
 .vote-tally:empty{display:none}
 /* ---------- 同步面板 ---------- */
-.sync-panel{position:fixed;z-index:200;top:calc(env(safe-area-inset-top,0px) + 64px);right:max(16px,env(safe-area-inset-right,0px));width:min(380px,calc(100vw - 32px));padding:12px 14px;background:var(--card);border:2.5px solid var(--ink);border-radius:var(--r3);box-shadow:4px 4px 0 var(--shadow);font-size:14px}
+.footer-links .sync-btn{font-family:var(--hand);font-size:16px;color:var(--ink2);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.sync-panel{position:fixed;z-index:200;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);right:max(16px,env(safe-area-inset-right,0px));width:min(380px,calc(100vw - 32px));padding:12px 14px;background:var(--card);border:2.5px solid var(--ink);border-radius:var(--r3);box-shadow:4px 4px 0 var(--shadow);font-size:14px}
 .sync-panel p{margin:0 0 8px;line-height:1.55}
 .sync-panel label{display:block;margin:8px 0 4px;font:15px/1.4 var(--hand)}
 .sync-panel textarea{width:100%;font:12px/1.4 ui-monospace,Consolas,monospace;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:6px;padding:6px;resize:vertical;word-break:break-all}
@@ -519,7 +520,6 @@ footer .brand-alpaca{width:28px;height:28px;margin:-6px 0 -3px}
 @media (max-width:760px){
   .schedule li.has-rate{grid-template-columns:1fr}
   .rate{margin:6px 0 2px}
-  .sync-panel{top:calc(env(safe-area-inset-top,0px) + 96px)}
 }
 .alts{margin:8px 0 2px;border:1.5px dashed var(--line);border-radius:var(--r3);padding:4px 10px;background:var(--card)}
 .alts summary{cursor:pointer;font:15px/1.6 var(--hand);color:var(--ink2)}

@@ -48,15 +48,15 @@ const EXACT = {
   '复制提示词': 'Copy prompt', '看看会复制什么': 'See what gets copied', '提示词': 'Prompt',
   '页面数据未能载入，请使用本地服务器打开，并检查trip-data.json。': 'The trip data did not load. Open the page through a local server and check trip-data.json.',
   '一起选，一起出发。': 'Choose together, go together.',
-  '页面上的选择保存在浏览器里，点顶栏「同步」可以带到别的设备；这些选择不代表已经预订。': 'Choices are saved in this browser; use Sync in the top bar to carry them to another device. Nothing here is booked.',
+  '页面上的选择保存在浏览器里，点最底下的「同步」可以带到别的设备；这些选择不代表已经预订。': 'Choices are saved in this browser; use Sync at the very bottom to carry them to another device. Nothing here is booked.',
   '做一份自己的 →': 'Make your own →', '回到顶部 ↑': 'Back to top ↑',
   // budget
   '已自动保存到当前浏览器': 'Saved in this browser', '本次选择有效，浏览器未能保存': 'Applied for now; this browser could not save it',
   '预算上限': 'Budget limit', '恢复初始方案': 'Reset to defaults', '选择保存在当前浏览器': 'Choices are saved in this browser',
   '自定义总额…': 'Custom total…', '自定义总额': 'Custom total', '自定义金额': 'Custom amount', '预算都花在哪？': 'Where the money goes',
   '占当前总支出的百分比 · 点 + 看每一笔': 'Share of current spending · tap + for each item', '分类支出占比，详见图例': 'Spending by category, see the legend',
-  '所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。选择保存在浏览器，点顶栏「同步」可以带到别的设备；日程与地图仍按原排定方案参考。':
-    'All amounts use the same trip basis. Price checks and estimates are not locked prices; the live total recalculates your choices, not merchant prices. Choices are saved in this browser; use Sync in the top bar to carry them to another device. The schedule and map follow the original plan.',
+  '所有金额为同一旅行口径。查价记录与估算不是锁价，实时重算不代表商家实时调价。选择保存在浏览器，点页面最底下的「同步」可以带到别的设备；日程与地图仍按原排定方案参考。':
+    'All amounts use the same trip basis. Price checks and estimates are not locked prices; the live total recalculates your choices, not merchant prices. Choices are saved in this browser; use Sync at the very bottom of the page to carry them to another device. The schedule and map follow the original plan.',
   '手动输入的全程合计，用于试算，不是商家报价。': 'A whole-trip total you typed in for planning, not a quote.',
   '待确认': 'To confirm', '查价入口': 'Check prices', '所有支出为0，填写金额后显示占比。': 'Spending is 0. Enter amounts to see the shares.',
   '机票按完整往返计算，酒店按全住期计算；套餐中已包含的晚餐、接送和门票只计一次。':

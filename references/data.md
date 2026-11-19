@@ -11,7 +11,7 @@
 | `days` | `{day,date,title,locations[],schedule[]}`；schedule含 `id?,time,title,kind?,text,placeId,links[],rate?,alternatives[]?,tz?,end?,endTz?`；`kind` 是活动类型，导出日历时标题前加图标：`flight` ✈️、`drive` 🚗、`transit` 🚌（打车、接驳、观光巴士）、`tour` 🎟️（跟团和要买票的活动）、`sight` 📸、`food` 🍽️、`hotel` 🏨、`spa` ♨️、`shop` 🛍️；替代项目也可以写自己的 `kind` |
 | `map` | `places[],dailyRoutes[],routesFile,basemapFile,home?` |
 | `share` | 可选：分享路线图海报，见下方「分享路线图」 |
-| `coverage` | `{item,when,note}` |
+| `coverage` | `{item,when,note}`；只在用户给了旧攻略时写，页面显示成「原攻略项目核对 · 安排与取舍」；从零做的攻略不要这个字段 |
 | `rental` | `{title,summary,details:[{label,value}],notes[],links:[{label,url}]}` |
 | `todo` | 用户明确提供的提醒文字数组，可以为空 |
 | `checklist` | 出发前待办：`{asOf,groups[],items[]}`，见下方「待办清单」 |

@@ -63,13 +63,13 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 
 ### Days and checklist: at your pace
 
-- Places from old plans, PDFs and screenshots are merged one by one, with a reason for everything scheduled, swapped, kept as an option or dropped.
+- If you hand over an old plan, PDF or screenshots, every place in them is merged one by one, and the page gets a "check against the original plan" table explaining what was scheduled, swapped, kept as an option or dropped; a plan made from scratch has no such table.
 - "She doesn't hike" keeps normal sightseeing and only swaps out trails; "no long drives at night" puts the long drives in daylight.
 - The pre-departure checklist looks up visas and entry rules for each traveler's passport and residency, adds the bookings that sell out, and sorts everything by deadline with a countdown.
 - The checklist and the budget are linked: switch the hotel, flight or activities in the budget and the bookings on the checklist follow; tick one off as booked and its budget card turns green.
 - Every activity has "Love it / Maybe / Meh" buttons; anything you're unsure about (say, a hot spring she may skip) starts as Maybe, with priced alternatives listed underneath.
 - "Subscribe in Calendar" adds the whole itinerary to Apple Calendar as its own calendar you can hide in one tap, and it updates when the plan changes: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends.
-- Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync in the top bar.
+- Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync at the very bottom of the page.
 
 ### Sharing: looks good when sent, and friends can make their own
 
