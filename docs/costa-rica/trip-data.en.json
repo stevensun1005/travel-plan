@@ -36,11 +36,11 @@
             "id": "porter",
             "label": "Porter nonstop round trip · PD 783 / PD 7301 · carry-on included",
             "amount": 2076,
-            "status": "Booked · amount from the Nov 15 price check",
+            "status": "Booked · CA$2,076 paid for two",
             "carryOn": true,
             "fareFamily": "Economy · Porter Flexible fare · 1 carry-on per person (see your confirmation)",
             "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-            "note": "Booked: PD 783 out (1/6 10:40 → 15:24), PD 7301 back (1/11 16:35 → 22:45, operated by Air Transat), Porter Flexible fare. The amount actually paid isn’t filled in yet, so the budget still uses the CA$2,076 for two found on Nov 15.",
+            "note": "Booked: PD 783 out (1/6 10:40 → 15:24), PD 7301 back (1/11 16:35 → 22:45, operated by Air Transat), Porter Flexible fare, CA$2,076 paid for two (incl. tax).",
             "items": [
               {
                 "label": "Porter outbound + return · 2 people",

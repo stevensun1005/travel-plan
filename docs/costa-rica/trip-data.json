@@ -36,11 +36,11 @@
             "id": "porter",
             "label": "Porter 直飞往返 · PD 783 / PD 7301 · 含随身行李",
             "amount": 2076,
-            "status": "已订 · 金额按11/15查价",
+            "status": "已订 · 两人实付CA$2,076",
             "carryOn": true,
             "fareFamily": "经济舱 · Porter Flexible票价档 · 每人1件随身行李（以确认单为准）",
             "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
-            "note": "已订：去程PD 783（1/6 10:40→15:24），回程PD 7301（1/11 16:35→22:45，Air Transat执飞），Porter Flexible票价档。实际付款金额还没填，预算先按11/15查到的两人CA$2,076。",
+            "note": "已订：去程PD 783（1/6 10:40→15:24），回程PD 7301（1/11 16:35→22:45，Air Transat执飞），Porter Flexible票价档，两人实付CA$2,076（含税）。",
             "items": [
               {
                 "label": "Porter 去程＋回程 · 两人",
