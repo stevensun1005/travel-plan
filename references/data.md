@@ -42,7 +42,7 @@ category：`{id,label,color,defaultOption,options[]}`。option：`{id,label,amou
 
 ## 地点与路线
 
-place：`{id,name,lat,lng,maps,photos,address,note,url}`，WGS84坐标。入口与中心不同要说明，未知交车点不填假点。`maps` 是在 Google Maps 里搜的地名（英文或当地文字，如 `"Llanos de Cortés Waterfall, Bagaces"`、`"Hotel Renew, 129 Paoakalani Ave, Honolulu"`），「地点导航」和当天路线导航都按它搜，没写才退回坐标；只有示例位置、私人交车点这类没有名字可搜的点不写。`photos` 是「看照片」链接的搜索词（如 `"Llanos de Cortés waterfall"`，写 `true` 就用 `maps`），给没有门票、没有官网的经典景点用：瀑布、观景台、海滩、看日落的地方，链接打开 Google 图片看风景照和游客实拍。中英文两份文件里这两个值相同。
+place：`{id,name,lat,lng,maps,photos,address,note,url}`，WGS84坐标。入口与中心不同要说明，未知交车点不填假点。`maps` 是在 Google Maps 里搜的地名（英文或当地文字，如 `"Llanos de Cortés Waterfall, Bagaces"`、`"Hotel Renew, 129 Paoakalani Ave, Honolulu"`），「地点导航」和当天路线导航都按它搜，没写才退回坐标；只有示例位置、私人交车点这类没有名字可搜的点不写。`photos` 是「看照片」链接的搜索词（如 `"Llanos de Cortés waterfall"`，写 `true` 就用 `maps`），给没有门票、没有官网的经典景点用：瀑布、观景台、海滩、看日落的地方，链接打开 Google 图片看风景照和游客实拍。中英文两份文件里这两个值相同。`address` 写能在地图上找到的真实地址（官网或 Google Maps 上的写法，哥斯达黎加这类没有门牌的地方写道路和地标，例如 `"Ruta 142, La Fortuna, Alajuela"`）：行程里每个玩、吃、住的地方都要有，页面上显示成「📍 地址」，点一下打开 Google Maps 路线导航；导出的日历里地点写成「名称, 地址」，带图钉和导航链接。地址用当地文字，中英文两份相同。
 
 行程项：`rate:true` 在右边显示「夯 / 待定 / 额」；写 `"hot"` / `"maybe"` / `"meh"` 时就是默认选中的那个（用户点了以后以点的为准）。评价按行程项的 `id` 记，没写 id 用「第几天-第几项」，所以要评价的项最好写稳定的 `id`（中英文相同）。`alternatives:[{title,text,links:[{label,url}],option?}]` 折叠显示在行程项下方，标题是「不想去的话，可以换成 N 个项目」，每项前面有「改为去这儿」的勾。要让勾选影响预算和清单：给这个时段建一个预算分类（例如「1/10下午」，原安排和每个替代项各是一个方案），行程项写 `budget:"分类id"` 和 `option:"原安排的方案id"`，替代项写 `option`；勾上就切到那个方案，勾掉回到原安排，在预算下拉里换也会反映到行程上；清单里要订的项写同一个 `budget`，用方案上的 `booking` 换成要订的东西。没写 `option` 的替代项（例如「回酒店歇一会儿」）只记在本机并一起同步。
 

@@ -78,8 +78,13 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
       else { const next = timed.slice(i + 1).find(n => n.start > e.start); end = next ? Math.min(next.start, e.start + 12 * 60 * MIN) : e.start + 60 * MIN; }
       const s = e.shown, place = places.find(p => p.id === (s.placeId || e.item.placeId));
       const where = place ? (typeof place.maps === 'string' && place.maps.trim() ? place.maps.trim() : place.name || '') : '';
+      const geo = place && Number.isFinite(place.lat) && Number.isFinite(place.lng);
+      const addr = place && typeof place.address === 'string' ? place.address.trim() : '';
+      const location = addr && !where.includes(addr) ? (where ? `${where}, ${addr}` : addr) : where;
+      // 点日程里的地址或链接就能导航：苹果日历用 GEO / X-APPLE-STRUCTURED-LOCATION 的图钉，链接用 Google Maps 路线（目的地写名称）
+      const nav = place ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(where || `${place.lat},${place.lng}`)}` : '';
       const links = (Array.isArray(s.links) ? s.links : []).filter(l => goodUrl(l?.url)).map(l => `${l.label || ''}: ${goodUrl(l.url)}`);
-      if (place && Number.isFinite(place.lat) && Number.isFinite(place.lng)) links.push(`Google Maps: https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(where || `${place.lat},${place.lng}`)}`);
+      if (nav) links.unshift(`📍 ${location}\n🧭 ${nav}`);
       const lines = [
         'BEGIN:VEVENT',
         `UID:${String(trip.id || 'trip').replace(/[^\w.-]/g, '-')}-d${day.day ?? ''}-${e.index}@travel-plan`,
@@ -90,10 +95,12 @@ export function buildIcs({ trip = {}, days = [], places = [], pick, now = Date.n
       ];
       const desc = [s.text || '', links.join('\n')].filter(Boolean).join('\n\n');
       if (desc) lines.push(`DESCRIPTION:${text(desc)}`);
-      if (where) lines.push(`LOCATION:${text(where)}`);
-      if (place && Number.isFinite(place.lat) && Number.isFinite(place.lng)) {
+      if (location) lines.push(`LOCATION:${text(location)}`);
+      if (nav) lines.push(`URL:${nav}`);
+      if (geo) {
+        const param = v => String(v).replace(/["\r\n]/g, ' ');
         lines.push(`GEO:${place.lat};${place.lng}`);
-        lines.push(`X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="${String(where || place.name || '').replace(/["\r\n]/g, ' ')}":geo:${place.lat},${place.lng}`);
+        lines.push(`X-APPLE-STRUCTURED-LOCATION;VALUE=URI;${addr ? `X-ADDRESS="${param(addr)}";` : ''}X-APPLE-RADIUS=100;X-TITLE="${param(where || place.name || '')}":geo:${place.lat},${place.lng}`);
       }
       lines.push('END:VEVENT');
       events.push(...lines);

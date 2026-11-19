@@ -785,7 +785,7 @@
         "lat": 10.5917,
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
-        "address": "Daniel Oduber Quirós International Airport",
+        "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
         "note": "Adobe门店在机场外约7公里（Route 21旁），坐免费接驳车；地图按航站楼画线。"
       },
       {
@@ -794,7 +794,7 @@
         "lat": 10.55894,
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
-        "address": "Playas del Coco北头",
+        "address": "Calle La Chorrera, Playas del Coco, Sardinal, Guanacaste",
         "note": "评分8.6，离海滩150米，在Coco比较安静的北头；走到海边步道和餐厅约15分钟（约1.2公里）。"
       },
       {
@@ -804,7 +804,7 @@
         "lng": -85.6915,
         "maps": "Playas del Coco Beach, Guanacaste",
         "photos": "Playas del Coco beach sunset",
-        "address": "Playas del Coco",
+        "address": "Playa del Coco, El Coco, Sardinal, Guanacaste",
         "note": "酒店前面的海滩，比镇中心暗，晚上看星星、傍晚看日落。"
       },
       {
@@ -813,7 +813,7 @@
         "lat": 10.5505,
         "lng": -85.6995,
         "maps": "Playas del Coco, Guanacaste, Costa Rica",
-        "address": "Playas del Coco, Guanacaste",
+        "address": "Playas del Coco, Sardinal, Carrillo, Guanacaste",
         "note": "Marlin del Rey在步道上Bar El Ancla前的大榕树下集合；镇上海鲜餐厅多（Papagayo Seafood、Mar Azul）。",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
       },
@@ -824,7 +824,7 @@
         "lng": -85.298602,
         "maps": "Llanos de Cortés Waterfall, Bagaces",
         "photos": "Llanos de Cortés waterfall",
-        "address": "Route 1旁, Bagaces",
+        "address": "Ruta 1, 7 km al noroeste de Bagaces, Guanacaste",
         "note": "停车场下去约30级水泥台阶，有扶绳；瀑布下面是沙地，水边是石头，注意脚下。8:00–16:00，只收现金。",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
       },
@@ -844,7 +844,7 @@
         "lng": -84.8241529,
         "maps": "100% Aventura Zipline, Monteverde",
         "photos": "100% Aventura superman zipline Monteverde",
-        "address": "Santa Elena北边约3公里",
+        "address": "Camino a la Reserva Santa Elena, Monteverde, Puntarenas",
         "note": "园区位置，不是镇上的售票处。",
         "url": "https://www.aventuracanopytour.com/"
       },
@@ -854,7 +854,7 @@
         "lat": 10.3115843,
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
-        "address": "Vía 620, Cerro Plano, Santa Elena",
+        "address": "Calle Manaquín, Cerro Plano, Monteverde, Puntarenas",
         "note": "离Santa Elena镇中心0.8公里。"
       },
       {
@@ -863,7 +863,7 @@
         "lat": 10.3056389,
         "lng": -84.8144494,
         "maps": "Bajo del Tigre, Bosque Eterno de los Niños, Monteverde",
-        "address": "Bosque Eterno de los Niños, Monteverde",
+        "address": "Bajo del Tigre, Cerro Plano, Monteverde, Puntarenas",
         "note": "儿童永恒雨林的Bajo del Tigre站，离酒店开车约5分钟。",
         "url": "https://acmcr.org/en/rates-and-reservations/"
       },
@@ -883,7 +883,7 @@
         "lng": -84.863736,
         "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
         "photos": "Lake Arenal volcano view",
-        "address": "Route 142, Tilarán",
+        "address": "Ruta 142, Nuevo Arenal, Tilarán, Guanacaste",
         "note": "沿湖北岸的弯路，路边有观景停车处，天气好能看到火山倒影。"
       },
       {
@@ -892,7 +892,7 @@
         "lat": 10.478292,
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
-        "address": "Vía 142, La Fortuna",
+        "address": "Vía 142, 4.6 km al oeste del parque, La Fortuna, Alajuela",
         "note": "自带温泉池，在La Fortuna镇西边约3公里，开车到镇上约5分钟、到Tabacón约10分钟。"
       },
       {
@@ -901,7 +901,7 @@
         "lat": 10.471683,
         "lng": -84.644436,
         "maps": "La Fortuna, San Carlos, Costa Rica",
-        "address": "La Fortuna, San Carlos",
+        "address": "Parque Central, Calle 470, La Fortuna, Alajuela",
         "note": "漂流团在酒店接人；镇上海鲜：Cevichería D'Mora、Snapper's House。离酒店开车约5分钟。"
       },
       {
@@ -910,7 +910,7 @@
         "lat": 10.488049,
         "lng": -84.753777,
         "maps": "Mistico Arenal Hanging Bridges Park",
-        "address": "Calle Sangregado（大坝路）",
+        "address": "Calle Sangregado, 2 km al este de la represa, La Fortuna, Alajuela",
         "note": "3.2公里环线、16座桥（6座吊桥），官网标为无障碍步道（是否全程铺装未核实），有缓坡和台阶，约2小时；吊桥会晃。最后入园15:50。",
         "url": "https://misticopark.com/"
       },
@@ -920,8 +920,62 @@
         "lat": 10.39,
         "lng": -84.58,
         "maps": "Peñas Blancas River, San Carlos, Costa Rica",
-        "address": "La Fortuna东南约25分钟",
+        "address": "Río Peñas Blancas, San Carlos, Alajuela",
         "note": "团里接送，地图只标大概位置。"
+      },
+      {
+        "id": "adobe-lir",
+        "name": "Adobe租车 · 利比里亚门店",
+        "lat": 10.57201,
+        "lng": -85.58299,
+        "maps": "Adobe Rent a Car Liberia",
+        "address": "El Fósforo, Guardia, Liberia, Guanacaste",
+        "note": "在机场外约7公里，到达口坐Adobe的免费接驳车过去。"
+      },
+      {
+        "id": "santa-elena",
+        "name": "Santa Elena 镇中心",
+        "lat": 10.31651,
+        "lng": -84.82434,
+        "maps": "Santa Elena, Monteverde, Costa Rica",
+        "address": "Centro de Santa Elena, Monteverde, Puntarenas",
+        "note": "Monteverde的小镇，餐厅和小店都在中心几条街上。"
+      },
+      {
+        "id": "horse-ranch",
+        "name": "Los Lagos 马厩（骑马出发点）",
+        "lat": 10.4922,
+        "lng": -84.68625,
+        "maps": "Los Lagos Hotel Spa & Resort, La Fortuna",
+        "address": "Vía 142, La Palma, La Fortuna, Alajuela",
+        "note": "骑马团含酒店接送，在Los Lagos度假村的马厩上马。"
+      },
+      {
+        "id": "sloth",
+        "name": "Sloth's Territory 树懒保护区",
+        "lat": 10.47446,
+        "lng": -84.60222,
+        "maps": "Sloth's Territory, El Tanque, La Fortuna",
+        "address": "Vía 142, El Tanque, La Fortuna, Alajuela",
+        "note": "镇中心往东约10分钟车程的私人保护区，沿Habana河走1.3公里步道；团含酒店接送。"
+      },
+      {
+        "id": "souvenir",
+        "name": "Cianikal 手作小店（镇中心）",
+        "lat": 10.4716,
+        "lng": -84.6469,
+        "maps": "Cianikal, La Fortuna",
+        "address": "100 m al oeste de la Iglesia, La Fortuna, Alajuela",
+        "note": "教堂往西100米，本地艺术家合作的小店；周围150米内还有几家纪念品店和超市。"
+      },
+      {
+        "id": "chocolate",
+        "name": "Rainforest 巧克力工坊",
+        "lat": 10.45675,
+        "lng": -84.6519,
+        "maps": "Rainforest Chocolate Tour, La Fortuna",
+        "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
+        "note": "镇中心往南约2公里，去La Fortuna瀑布的路上。"
       }
     ],
     "dailyRoutes": [
@@ -934,7 +988,8 @@
         ],
         "extraPlaceIds": [
           "coco-beach",
-          "coco"
+          "coco",
+          "adobe-lir"
         ],
         "transport": "driving",
         "note": "机场到Coco约30分钟，17:00前到；晚饭走路去镇上。"
@@ -953,7 +1008,9 @@
         ],
         "transport": "driving",
         "note": "经Liberia、Bagaces（瀑布）、Cañas，转606号路上山，约4小时车程，长途都在白天。晚上开约5分钟去夜间徒步。",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "santa-elena"
+        ]
       },
       {
         "day": 3,
@@ -969,7 +1026,9 @@
         ],
         "transport": "driving",
         "note": "沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸到La Fortuna，开车约4小时，13:30左右到酒店。晚上开5分钟去镇上吃饭。",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "souvenir"
+        ]
       },
       {
         "day": 4,
@@ -996,7 +1055,10 @@
         ],
         "transport": "driving",
         "note": "上午骑马、下午树懒团都在酒店接送（不画线）；晚上开5分钟去镇上吃饭。",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "horse-ranch",
+          "sloth"
+        ]
       },
       {
         "day": 6,
@@ -1007,7 +1069,10 @@
           "lir"
         ],
         "transport": "driving",
-        "note": "约3小时；10:00出发，13:15前还车。"
+        "note": "约3小时；10:00出发，13:15前还车。",
+        "extraPlaceIds": [
+          "adobe-lir"
+        ]
       }
     ],
     "routesFile": "routes.json",
@@ -1054,7 +1119,8 @@
           "time": "16:15",
           "title": "取车",
           "kind": "drive",
-          "text": "带实体驾照、护照和本人信用卡（押金约USD1,000）。检查车况拍照；手动确认车门锁好，这里租车被撬很常见。"
+          "text": "带实体驾照、护照和本人信用卡（押金约USD1,000）。检查车况拍照；手动确认车门锁好，这里租车被撬很常见。",
+          "placeId": "adobe-lir"
         },
         {
           "time": "17:00",
@@ -1181,7 +1247,8 @@
           "time": "19:45",
           "title": "镇上吃晚饭",
           "kind": "food",
-          "text": "在Santa Elena镇上吃，开几分钟回酒店。"
+          "text": "在Santa Elena镇上吃，开几分钟回酒店。",
+          "placeId": "santa-elena"
         }
       ]
     },
@@ -1243,11 +1310,31 @@
                 }
               ],
               "option": "chocolate",
-              "kind": "tour"
+              "kind": "tour",
+              "placeId": "chocolate"
             }
           ],
           "budget": "d3-pm",
           "option": "hotel"
+        },
+        {
+          "id": "d3-shopping",
+          "time": "17:30",
+          "title": "逛镇中心小店买纪念品",
+          "kind": "shop",
+          "text": "镇中心公园周围走一圈，都在150米以内：Cianikal是本地艺术家合作的小店，卖火山石和银饰、陶器、版画和小批量巧克力（每天9:00–21:00）；公园里的Lava Collective有本地手作杯子、蜂蜜和咖啡（12:00–20:00）；教堂北边的Galería Onírica卖原创画和玉饰，价格高一些。想带咖啡回家，去公园西南两个路口的Mega Súper（7:00–21:00），比纪念品店便宜。逛完走过去吃晚饭，车停在镇上就行。",
+          "placeId": "souvenir",
+          "links": [
+            {
+              "label": "Cianikal（营业时间和评价）",
+              "url": "https://wanderlog.com/place/details/459296"
+            },
+            {
+              "label": "Lava Collective（营业时间和评价）",
+              "url": "https://wanderlog.com/place/details/6971873"
+            }
+          ],
+          "rate": true
         },
         {
           "time": "18:30",
@@ -1274,7 +1361,8 @@
           "title": "早起看火山",
           "kind": "sight",
           "text": "早上6–9点火山最可能露脸，从酒店就能看。",
-          "rate": true
+          "rate": true,
+          "placeId": "hotel-arenal"
         },
         {
           "id": "d4-penas-blancas",
@@ -1394,7 +1482,8 @@
               "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
           ],
-          "rate": true
+          "rate": true,
+          "placeId": "horse-ranch"
         },
         {
           "time": "11:30",
@@ -1433,7 +1522,8 @@
                 }
               ],
               "option": "chocolate",
-              "kind": "tour"
+              "kind": "tour",
+              "placeId": "chocolate"
             },
             {
               "title": "回酒店泡温泉、休息",
@@ -1441,7 +1531,8 @@
               "option": "rest",
               "kind": "spa"
             }
-          ]
+          ],
+          "placeId": "sloth"
         },
         {
           "time": "晚上",
@@ -1488,7 +1579,7 @@
           "title": "还车，坐接驳车到机场",
           "kind": "drive",
           "text": "离境税一般已含在机票里。回程由Air Transat执飞，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小时到最稳。",
-          "placeId": "lir"
+          "placeId": "adobe-lir"
         },
         {
           "time": "16:35",

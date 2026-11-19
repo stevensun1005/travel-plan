@@ -103,6 +103,7 @@ const EXACT = {
   '点「保存图片」存到手机或电脑；也可以直接截图。': 'Tap "Save image" to save it to your phone or computer, or take a screenshot.',
   // calendar export
   '导入日历': 'Add to calendar', '没有带具体时间的行程': 'No timed plans to export',
+  '导航': 'Directions', '导航到这里': 'Directions to here',
   '这里不能下载日历文件，用网页版打开再点': 'Calendar files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
   '已打开日历文件，在日历里点「全部添加」': 'Calendar file opened: tap "Add All" in Calendar',
   '已打开日历文件，在日历里点「全部添加」（日历按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',

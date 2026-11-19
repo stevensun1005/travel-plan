@@ -10,7 +10,7 @@ X-PUBLISHED-TTL:PT12H
 X-WR-TIMEZONE:America/Costa_Rica
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T124000Z
 DTEND:20270106T154000Z
 SUMMARY:✈️ 到Pearson 3号航站楼
@@ -19,7 +19,7 @@ DESCRIPTION:国际航班提前3小时到。女朋友带中国护照、美
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T154000Z
 DTEND:20270106T212400Z
 SUMMARY:✈️ Porter PD 783 起飞
@@ -27,74 +27,105 @@ DESCRIPTION:约5小时44分。哥斯达黎加比多伦多晚1小时。
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T212400Z
 DTEND:20270106T221500Z
 SUMMARY:✈️ 落地利比里亚
 DESCRIPTION:入境盖章（确认护照上有章），拿行李后到Adobe
- 接驳点。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&que
- ry=Daniel%20Oduber%20Quir%C3%B3s%20International%20Airport
-LOCATION:Daniel Oduber Quirós International Airport
+ 接驳点。\n\n📍 Daniel Oduber Quirós International Airport\, Corredo
+ r Chorotega\, Llano Grande\, Liberia\, Guanacaste\n🧭 https://www.google
+ .com/maps/dir/?api=1&destination=Daniel%20Oduber%20Quir%C3%B3s%20Internati
+ onal%20Airport
+LOCATION:Daniel Oduber Quirós International Airport\, Corredor Chorotega\,
+  Llano Grande\, Liberia\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Daniel%20Oduber%20Qu
+ ir%C3%B3s%20International%20Airport
 GEO:10.5917;-85.5411
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
- uber Quirós International Airport":geo:10.5917,-85.5411
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Corredor Chorotega, Llano 
+ Grande, Liberia, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Daniel Oduber Qui
+ rós International Airport":geo:10.5917,-85.5411
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T221500Z
 DTEND:20270106T230000Z
 SUMMARY:🚗 取车
 DESCRIPTION:带实体驾照、护照和本人信用卡（押金约USD1\,000
  ）。检查车况拍照；手动确认车门锁好，这里租车被撬
- 很常见。
+ 很常见。\n\n📍 Adobe Rent a Car Liberia\, El Fósforo\, Guardia\, Li
+ beria\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=1&destinatio
+ n=Adobe%20Rent%20a%20Car%20Liberia
+LOCATION:Adobe Rent a Car Liberia\, El Fósforo\, Guardia\, Liberia\, Guana
+ caste
+URL:https://www.google.com/maps/dir/?api=1&destination=Adobe%20Rent%20a%20C
+ ar%20Liberia
+GEO:10.57201;-85.58299
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="El Fósforo, Guardia, Libe
+ ria, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Adobe Rent a Car Liberia":geo
+ :10.57201,-85.58299
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-4@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T230000Z
 DTEND:20270106T233000Z
 SUMMARY:🏨 到Playas del Coco入住
-DESCRIPTION:约30分钟，天黑前到。\n\nGoogle Maps: https://www.googl
- e.com/maps/search/?api=1&query=Villa%20Del%20Sol%20Boutique%20Hotel%2C%20P
- layas%20del%20Coco
-LOCATION:Villa Del Sol Boutique Hotel\, Playas del Coco
+DESCRIPTION:约30分钟，天黑前到。\n\n📍 Villa Del Sol Boutique Ho
+ tel\, Playas del Coco\, Calle La Chorrera\, Playas del Coco\, Sardinal\, G
+ uanacaste\n🧭 https://www.google.com/maps/dir/?api=1&destination=Villa%2
+ 0Del%20Sol%20Boutique%20Hotel%2C%20Playas%20del%20Coco
+LOCATION:Villa Del Sol Boutique Hotel\, Playas del Coco\, Calle La Chorrera
+ \, Playas del Coco\, Sardinal\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Villa%20Del%20Sol%20
+ Boutique%20Hotel%2C%20Playas%20del%20Coco
 GEO:10.55894;-85.690166
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Villa Del
-  Sol Boutique Hotel, Playas del Coco":geo:10.55894,-85.690166
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle La Chorrera, Playas 
+ del Coco, Sardinal, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Villa Del Sol 
+ Boutique Hotel, Playas del Coco":geo:10.55894,-85.690166
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-5@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270106T233000Z
 DTEND:20270107T010000Z
 SUMMARY:📸 海滩看日落
-DESCRIPTION:酒店前面的海滩朝西，日落正对海面。\n\nGoogle M
- aps: https://www.google.com/maps/search/?api=1&query=Playas%20del%20Coco%2
- 0Beach%2C%20Guanacaste
-LOCATION:Playas del Coco Beach\, Guanacaste
+DESCRIPTION:酒店前面的海滩朝西，日落正对海面。\n\n📍 Pla
+ yas del Coco Beach\, Guanacaste\, Playa del Coco\, El Coco\, Sardinal\, Gu
+ anacaste\n🧭 https://www.google.com/maps/dir/?api=1&destination=Playas%2
+ 0del%20Coco%20Beach%2C%20Guanacaste
+LOCATION:Playas del Coco Beach\, Guanacaste\, Playa del Coco\, El Coco\, Sa
+ rdinal\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Playas%20del%20Coco%
+ 20Beach%2C%20Guanacaste
 GEO:10.5585;-85.6915
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
- l Coco Beach, Guanacaste":geo:10.5585,-85.6915
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playa del Coco, El Coco, S
+ ardinal, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Playas del Coco Beach, Gu
+ anacaste":geo:10.5585,-85.6915
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-6@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T010000Z
 DTEND:20270107T020000Z
 SUMMARY:🍽️ 海边吃海鲜
 DESCRIPTION:走路去Coco镇上（约15分钟），Papagayo Seafood（常
- 有现场音乐）或Mar Azul；回来不想走就打车。\n\nGoogle Maps
- : https://www.google.com/maps/search/?api=1&query=Playas%20del%20Coco%2C%2
- 0Guanacaste%2C%20Costa%20Rica
-LOCATION:Playas del Coco\, Guanacaste\, Costa Rica
+ 有现场音乐）或Mar Azul；回来不想走就打车。\n\n📍 Playas
+  del Coco\, Guanacaste\, Costa Rica\, Playas del Coco\, Sardinal\, Carrill
+ o\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=1&destination=Pl
+ ayas%20del%20Coco%2C%20Guanacaste%2C%20Costa%20Rica
+LOCATION:Playas del Coco\, Guanacaste\, Costa Rica\, Playas del Coco\, Sard
+ inal\, Carrillo\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Playas%20del%20Coco%
+ 2C%20Guanacaste%2C%20Costa%20Rica
 GEO:10.5505;-85.6995
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
- l Coco, Guanacaste, Costa Rica":geo:10.5505,-85.6995
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playas del Coco, Sardinal,
+  Carrillo, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Playas del Coco, Guanac
+ aste, Costa Rica":geo:10.5505,-85.6995
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-7@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T020000Z
 DTEND:20270107T030000Z
 SUMMARY:📸 沙滩上看星星
@@ -105,17 +136,22 @@ DESCRIPTION:明天1/7是新月，今晚几乎没有月光；Guanacaste旱
  方低处找老人星（全天第二亮的星，在多伦多看不到）
  。手机装Stellarium或SkyView对着天空认星。只带手机和毛巾
  ，别带贵重物品，不走远；明天要早起开山路，别熬太
- 晚。\n\n月相（timeanddate）: https://www.timeanddate.com/moon/phases
- /costa-rica/liberia?year=2027\nGoogle Maps: https://www.google.com/maps/se
- arch/?api=1&query=Playas%20del%20Coco%20Beach%2C%20Guanacaste
-LOCATION:Playas del Coco Beach\, Guanacaste
+ 晚。\n\n📍 Playas del Coco Beach\, Guanacaste\, Playa del Coco\, El Co
+ co\, Sardinal\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=1&de
+ stination=Playas%20del%20Coco%20Beach%2C%20Guanacaste\n月相（timeanddat
+ e）: https://www.timeanddate.com/moon/phases/costa-rica/liberia?year=2027
+LOCATION:Playas del Coco Beach\, Guanacaste\, Playa del Coco\, El Coco\, Sa
+ rdinal\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Playas%20del%20Coco%
+ 20Beach%2C%20Guanacaste
 GEO:10.5585;-85.6915
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Playas de
- l Coco Beach, Guanacaste":geo:10.5585,-85.6915
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playa del Coco, El Coco, S
+ ardinal, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Playas del Coco Beach, Gu
+ anacaste":geo:10.5585,-85.6915
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T130000Z
 DTEND:20270107T142000Z
 SUMMARY:🚗 退房出发
@@ -124,22 +160,27 @@ DESCRIPTION:带点现金（瀑布只收现金）。经Liberia、Bagaces南
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T142000Z
 DTEND:20270107T152000Z
 SUMMARY:📸 Llanos de Cortés 瀑布
 DESCRIPTION:水泥台阶约30级、有扶绳，下面是沙地，水边和
  水里是石头。可以下水泡一会儿，踩石头时注意脚下别
- 崴。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Lla
- nos%20de%20Cort%C3%A9s%20Waterfall%2C%20Bagaces
-LOCATION:Llanos de Cortés Waterfall\, Bagaces
+ 崴。\n\n📍 Llanos de Cortés Waterfall\, Bagaces\, Ruta 1\, 7 km al no
+ roeste de Bagaces\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=
+ 1&destination=Llanos%20de%20Cort%C3%A9s%20Waterfall%2C%20Bagaces
+LOCATION:Llanos de Cortés Waterfall\, Bagaces\, Ruta 1\, 7 km al noroeste 
+ de Bagaces\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Llanos%20de%20Cort%C
+ 3%A9s%20Waterfall%2C%20Bagaces
 GEO:10.524302;-85.298602
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Llanos de
-  Cortés Waterfall, Bagaces":geo:10.524302,-85.298602
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 1, 7 km al noroeste d
+ e Bagaces, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Llanos de Cortés Water
+ fall, Bagaces":geo:10.524302,-85.298602
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T152000Z
 DTEND:20270107T190000Z
 SUMMARY:🚗 沿1号公路去Monteverde
@@ -149,7 +190,7 @@ DESCRIPTION:经Cañas，转606号路上山，约2.5小时；606号路已铺
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T190000Z
 DTEND:20270107T220000Z
 SUMMARY:🎟️ 100% Aventura 滑索
@@ -160,77 +201,110 @@ DESCRIPTION:约2.5–3小时：10条滑索，最长一条1\,590米，是哥
  常见8:00、11:00、13:00、15:00）。她的跟腱还在复健：Superma
  n线到站是工作人员刹停再扶着站起来，冲击不大；要留
  意的是平台之间的台阶和林间小路，以及普通滑索到站
- 时偶尔要用脚踩一下平台，订之前问一下康复师。\n\n100%
-  Aventura 订票（官网）: https://fareharbor.com/embeds/book/aventurac
- anopytour/items/39178/calendar/?ref=https%3A%2F%2Fwww.aventuracanopytour.c
- om&language=en-us\n100% Aventura 官网: https://www.aventuracanopytour.co
- m/\n备选：Selvatura 滑索（也有Superman线）: https://selvatura.co
- m/packages/\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=
- 100%25%20Aventura%20Zipline%2C%20Monteverde
-LOCATION:100% Aventura Zipline\, Monteverde
+ 时偶尔要用脚踩一下平台，订之前问一下康复师。\n\n📍
+  100% Aventura Zipline\, Monteverde\, Camino a la Reserva Santa Elena\, Mo
+ nteverde\, Puntarenas\n🧭 https://www.google.com/maps/dir/?api=1&destina
+ tion=100%25%20Aventura%20Zipline%2C%20Monteverde\n100% Aventura 订票（
+ 官网）: https://fareharbor.com/embeds/book/aventuracanopytour/items/391
+ 78/calendar/?ref=https%3A%2F%2Fwww.aventuracanopytour.com&language=en-us\n
+ 100% Aventura 官网: https://www.aventuracanopytour.com/\n备选：Selvat
+ ura 滑索（也有Superman线）: https://selvatura.com/packages/
+LOCATION:100% Aventura Zipline\, Monteverde\, Camino a la Reserva Santa Ele
+ na\, Monteverde\, Puntarenas
+URL:https://www.google.com/maps/dir/?api=1&destination=100%25%20Aventura%20
+ Zipline%2C%20Monteverde
 GEO:10.3388806;-84.8241529
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="100% Aven
- tura Zipline, Monteverde":geo:10.3388806,-84.8241529
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Camino a la Reserva Santa 
+ Elena, Monteverde, Puntarenas";X-APPLE-RADIUS=100;X-TITLE="100% Aventura Z
+ ipline, Monteverde":geo:10.3388806,-84.8241529
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-4@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T220000Z
 DTEND:20270107T233000Z
 SUMMARY:🏨 入住Monteverde酒店
 DESCRIPTION:离镇中心0.8公里；歇一会儿，换件外套：Monteverd
- e晚上只有十几度，常有风和毛毛雨。\n\nGoogle Maps: https://
- www.google.com/maps/search/?api=1&query=Hotel%20Monta%C3%B1a%20Monteverde
-LOCATION:Hotel Montaña Monteverde
+ e晚上只有十几度，常有风和毛毛雨。\n\n📍 Hotel Montaña M
+ onteverde\, Calle Manaquín\, Cerro Plano\, Monteverde\, Puntarenas\n🧭 
+ https://www.google.com/maps/dir/?api=1&destination=Hotel%20Monta%C3%B1a%20
+ Monteverde
+LOCATION:Hotel Montaña Monteverde\, Calle Manaquín\, Cerro Plano\, Montev
+ erde\, Puntarenas
+URL:https://www.google.com/maps/dir/?api=1&destination=Hotel%20Monta%C3%B1a
+ %20Monteverde
 GEO:10.3115843;-84.816105
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
- taña Monteverde":geo:10.3115843,-84.816105
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Manaquín, Cerro Pla
+ no, Monteverde, Puntarenas";X-APPLE-RADIUS=100;X-TITLE="Hotel Montaña Mon
+ teverde":geo:10.3115843,-84.816105
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-5@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270107T233000Z
 DTEND:20270108T013000Z
 SUMMARY:🎟️ 雨林夜间徒步
 DESCRIPTION:Bajo del Tigre（儿童永恒雨林）的向导打手电带着
  走，找树蛙、蛇、蜘蛛、睡着的鸟，运气好能看到树懒
  和刺豚鼠。USD30＋税/人，最少2人；从酒店开车约5分钟。
- 是林间土路，穿防滑包脚的鞋，带雨衣和驱蚊水。\n\nBajo
-  del Tigre 价格与预订: https://acmcr.org/en/rates-and-reservations/\n
- 备选：Monteverde云雾森林保护区夜间徒步: https://mytanfeet.co
- m/booking/monteverde-cloud-forest-reserve-night-walk/\nGoogle Maps: https:
- //www.google.com/maps/search/?api=1&query=Bajo%20del%20Tigre%2C%20Bosque%2
- 0Eterno%20de%20los%20Ni%C3%B1os%2C%20Monteverde
-LOCATION:Bajo del Tigre\, Bosque Eterno de los Niños\, Monteverde
+ 是林间土路，穿防滑包脚的鞋，带雨衣和驱蚊水。\n\n📍
+  Bajo del Tigre\, Bosque Eterno de los Niños\, Monteverde\, Bajo del Tigr
+ e\, Cerro Plano\, Monteverde\, Puntarenas\n🧭 https://www.google.com/map
+ s/dir/?api=1&destination=Bajo%20del%20Tigre%2C%20Bosque%20Eterno%20de%20lo
+ s%20Ni%C3%B1os%2C%20Monteverde\nBajo del Tigre 价格与预订: https://ac
+ mcr.org/en/rates-and-reservations/\n备选：Monteverde云雾森林保护
+ 区夜间徒步: https://mytanfeet.com/booking/monteverde-cloud-forest-res
+ erve-night-walk/
+LOCATION:Bajo del Tigre\, Bosque Eterno de los Niños\, Monteverde\, Bajo d
+ el Tigre\, Cerro Plano\, Monteverde\, Puntarenas
+URL:https://www.google.com/maps/dir/?api=1&destination=Bajo%20del%20Tigre%2
+ C%20Bosque%20Eterno%20de%20los%20Ni%C3%B1os%2C%20Monteverde
 GEO:10.3056389;-84.8144494
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Bajo del 
- Tigre, Bosque Eterno de los Niños, Monteverde":geo:10.3056389,-84.8144494
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Bajo del Tigre, Cerro Plan
+ o, Monteverde, Puntarenas";X-APPLE-RADIUS=100;X-TITLE="Bajo del Tigre, Bos
+ que Eterno de los Niños, Monteverde":geo:10.3056389,-84.8144494
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-6@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T014500Z
 DTEND:20270108T024500Z
 SUMMARY:🍽️ 镇上吃晚饭
-DESCRIPTION:在Santa Elena镇上吃，开几分钟回酒店。
+DESCRIPTION:在Santa Elena镇上吃，开几分钟回酒店。\n\n📍 Sant
+ a Elena\, Monteverde\, Costa Rica\, Centro de Santa Elena\, Monteverde\, P
+ untarenas\n🧭 https://www.google.com/maps/dir/?api=1&destination=Santa%2
+ 0Elena%2C%20Monteverde%2C%20Costa%20Rica
+LOCATION:Santa Elena\, Monteverde\, Costa Rica\, Centro de Santa Elena\, Mo
+ nteverde\, Puntarenas
+URL:https://www.google.com/maps/dir/?api=1&destination=Santa%20Elena%2C%20M
+ onteverde%2C%20Costa%20Rica
+GEO:10.31651;-84.82434
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Centro de Santa Elena, Mon
+ teverde, Puntarenas";X-APPLE-RADIUS=100;X-TITLE="Santa Elena, Monteverde, 
+ Costa Rica":geo:10.31651,-84.82434
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T130000Z
 DTEND:20270108T143000Z
 SUMMARY:🍽️ 早餐
 DESCRIPTION:酒店含早；早上山里最清透，能看到云从山谷里
- 升起来。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&que
- ry=Hotel%20Monta%C3%B1a%20Monteverde
-LOCATION:Hotel Montaña Monteverde
+ 升起来。\n\n📍 Hotel Montaña Monteverde\, Calle Manaquín\, Cerro P
+ lano\, Monteverde\, Puntarenas\n🧭 https://www.google.com/maps/dir/?api=
+ 1&destination=Hotel%20Monta%C3%B1a%20Monteverde
+LOCATION:Hotel Montaña Monteverde\, Calle Manaquín\, Cerro Plano\, Montev
+ erde\, Puntarenas
+URL:https://www.google.com/maps/dir/?api=1&destination=Hotel%20Monta%C3%B1a
+ %20Monteverde
 GEO:10.3115843;-84.816105
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Hotel Mon
- taña Monteverde":geo:10.3115843,-84.816105
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Manaquín, Cerro Pla
+ no, Monteverde, Puntarenas";X-APPLE-RADIUS=100;X-TITLE="Hotel Montaña Mon
+ teverde":geo:10.3115843,-84.816105
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T143000Z
 DTEND:20270108T173000Z
 SUMMARY:🚗 下山去La Fortuna
@@ -240,275 +314,412 @@ DESCRIPTION:沿606号路下山，经Cañas、Tilarán，沿Arenal湖北岸
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T173000Z
 DTEND:20270108T193000Z
 SUMMARY:📸 Arenal湖北岸
 DESCRIPTION:沿Route 142的弯路开，路边观景停车处拍湖和火山
- ；在Nuevo Arenal吃午饭。\n\nGoogle Maps: https://www.google.com/maps
- /search/?api=1&query=Nuevo%20Arenal%2C%20Guanacaste%2C%20Costa%20Rica
-LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica
+ ；在Nuevo Arenal吃午饭。\n\n📍 Nuevo Arenal\, Guanacaste\, Costa R
+ ica\, Ruta 142\, Nuevo Arenal\, Tilarán\, Guanacaste\n🧭 https://www.go
+ ogle.com/maps/dir/?api=1&destination=Nuevo%20Arenal%2C%20Guanacaste%2C%20C
+ osta%20Rica
+LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica\, Ruta 142\, Nuevo Arenal\,
+  Tilarán\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Nuevo%20Arenal%2C%20
+ Guanacaste%2C%20Costa%20Rica
 GEO:10.547;-84.863736
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
- nal, Guanacaste, Costa Rica":geo:10.547,-84.863736
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 142, Nuevo Arenal, Ti
+ larán, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Nuevo Arenal, Guanacaste, 
+ Costa Rica":geo:10.547,-84.863736
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T193000Z
 DTEND:20270108T210000Z
 SUMMARY:🏨 到Termales del Arenal入住
 DESCRIPTION:全程白天开完。房间收拾好就先泡酒店的温泉池
- 。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termal
- es%20del%20Arenal%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+ 。\n\n📍 Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste 
+ del parque\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?
+ api=1&destination=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-4@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270108T210000Z
-DTEND:20270109T003000Z
+DTEND:20270108T233000Z
 SUMMARY:♨️ 泡酒店温泉
-DESCRIPTION:先泡一会儿，傍晚去镇上吃饭。\n\nGoogle Maps: http
- s://www.google.com/maps/search/?api=1&query=Termales%20del%20Arenal%2C%20L
- a%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+DESCRIPTION:先泡一会儿，傍晚去镇上吃饭。\n\n📍 Termales del
+  Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del parque\, La Fortuna\
+ , Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&destination=Termal
+ es%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-5@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
+DTSTART:20270108T233000Z
+DTEND:20270109T003000Z
+SUMMARY:🛍️ 逛镇中心小店买纪念品
+DESCRIPTION:镇中心公园周围走一圈，都在150米以内：Cianikal
+ 是本地艺术家合作的小店，卖火山石和银饰、陶器、版
+ 画和小批量巧克力（每天9:00–21:00）；公园里的Lava Collec
+ tive有本地手作杯子、蜂蜜和咖啡（12:00–20:00）；教堂北
+ 边的Galería Onírica卖原创画和玉饰，价格高一些。想带咖
+ 啡回家，去公园西南两个路口的Mega Súper（7:00–21:00），
+ 比纪念品店便宜。逛完走过去吃晚饭，车停在镇上就行
+ 。\n\n📍 Cianikal\, La Fortuna\, 100 m al oeste de la Iglesia\, La Fort
+ una\, Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&destination=Ci
+ anikal%2C%20La%20Fortuna\nCianikal（营业时间和评价）: https://wan
+ derlog.com/place/details/459296\nLava Collective（营业时间和评价
+ ）: https://wanderlog.com/place/details/6971873
+LOCATION:Cianikal\, La Fortuna\, 100 m al oeste de la Iglesia\, La Fortuna\
+ , Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Cianikal%2C%20La%20F
+ ortuna
+GEO:10.4716;-84.6469
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="100 m al oeste de la Igles
+ ia, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Cianikal, La Fortuna
+ ":geo:10.4716,-84.6469
+END:VEVENT
+BEGIN:VEVENT
+UID:costa-rica-2027-jan-6-11-d3-6@travel-plan
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T003000Z
 DTEND:20270109T013000Z
 SUMMARY:🍽️ 镇上吃晚饭
 DESCRIPTION:Snapper's House就在镇中心；吃完开5分钟回酒店。\n
- \nGoogle Maps: https://www.google.com/maps/search/?api=1&query=La%20Fortun
- a%2C%20San%20Carlos%2C%20Costa%20Rica
-LOCATION:La Fortuna\, San Carlos\, Costa Rica
+ \n📍 La Fortuna\, San Carlos\, Costa Rica\, Parque Central\, Calle 470\,
+  La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&destin
+ ation=La%20Fortuna%2C%20San%20Carlos%2C%20Costa%20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica\, Parque Central\, Calle 470\
+ , La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=La%20Fortuna%2C%20Sa
+ n%20Carlos%2C%20Costa%20Rica
 GEO:10.471683;-84.644436
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
- a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
+  La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="La Fortuna, San Carlos,
+  Costa Rica":geo:10.471683,-84.644436
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T120000Z
 DTEND:20270109T133000Z
 SUMMARY:📸 早起看火山
-DESCRIPTION:早上6–9点火山最可能露脸，从酒店就能看。
+DESCRIPTION:早上6–9点火山最可能露脸，从酒店就能看。\n\n
+ 📍 Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del par
+ que\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&d
+ estination=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
+GEO:10.478292;-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T133000Z
 DTEND:20270109T180000Z
 SUMMARY:🎟️ Peñas Blancas 安全漂流
 DESCRIPTION:酒店接送；坐在充气筏上由导游掌舵，基本不用
  划（有的团会让你轻轻划几下），约2小时看树懒、猴子
  、凯门鳄和鸟，11:00左右回来。上下筏子在河岸边，岸上
- 可能有泥和石头，注意脚下，穿防滑包脚的水鞋。\n\nFort
- una Welcome 河上漂流 · USD70含接送 · 7:30出发约4小时: https:
- //www.fortunawelcome.com/la-fortuna-tours/safari-float-penas-blancas-river
- /\n备选：Desafío 河上漂流 · USD72＋税含接送 · 8:00开始约
- 3小时，要轻轻划几下: https://www.desafiocostarica.com/service/saf
- ari-float-penas-blancas/\n备选：Two Weeks in Costa Rica 河上漂流 ·
-  1月起USD69＋税含接送 · 7:30出发约4.5小时: https://www.twowee
- ksincostarica.com/product/safari-float-penas-blancas-river-group-tour/\nGo
- ogle Maps: https://www.google.com/maps/search/?api=1&query=Pe%C3%B1as%20Bl
- ancas%20River%2C%20San%20Carlos%2C%20Costa%20Rica
-LOCATION:Peñas Blancas River\, San Carlos\, Costa Rica
+ 可能有泥和石头，注意脚下，穿防滑包脚的水鞋。\n\n📍
+  Peñas Blancas River\, San Carlos\, Costa Rica\, Río Peñas Blancas\, Sa
+ n Carlos\, Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&destinati
+ on=Pe%C3%B1as%20Blancas%20River%2C%20San%20Carlos%2C%20Costa%20Rica\nFortu
+ na Welcome 河上漂流 · USD70含接送 · 7:30出发约4小时: https:/
+ /www.fortunawelcome.com/la-fortuna-tours/safari-float-penas-blancas-river/
+ \n备选：Desafío 河上漂流 · USD72＋税含接送 · 8:00开始约3
+ 小时，要轻轻划几下: https://www.desafiocostarica.com/service/safa
+ ri-float-penas-blancas/\n备选：Two Weeks in Costa Rica 河上漂流 · 
+ 1月起USD69＋税含接送 · 7:30出发约4.5小时: https://www.twoweek
+ sincostarica.com/product/safari-float-penas-blancas-river-group-tour/
+LOCATION:Peñas Blancas River\, San Carlos\, Costa Rica\, Río Peñas Blanc
+ as\, San Carlos\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Pe%C3%B1as%20Blancas
+ %20River%2C%20San%20Carlos%2C%20Costa%20Rica
 GEO:10.39;-84.58
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Peñas Bl
- ancas River, San Carlos, Costa Rica":geo:10.39,-84.58
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Río Peñas Blancas, San C
+ arlos, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Peñas Blancas River, San Car
+ los, Costa Rica":geo:10.39,-84.58
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T180000Z
 DTEND:20270109T200000Z
 SUMMARY:🍽️ 镇上午餐
-DESCRIPTION:Cevichería D'Mora吃ceviche。\n\nGoogle Maps: https://www.goo
- gle.com/maps/search/?api=1&query=La%20Fortuna%2C%20San%20Carlos%2C%20Costa
- %20Rica
-LOCATION:La Fortuna\, San Carlos\, Costa Rica
+DESCRIPTION:Cevichería D'Mora吃ceviche。\n\n📍 La Fortuna\, San Carlos
+ \, Costa Rica\, Parque Central\, Calle 470\, La Fortuna\, Alajuela\n🧭 h
+ ttps://www.google.com/maps/dir/?api=1&destination=La%20Fortuna%2C%20San%20
+ Carlos%2C%20Costa%20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica\, Parque Central\, Calle 470\
+ , La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=La%20Fortuna%2C%20Sa
+ n%20Carlos%2C%20Costa%20Rica
 GEO:10.471683;-84.644436
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
- a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
+  La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="La Fortuna, San Carlos,
+  Costa Rica":geo:10.471683,-84.644436
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T200000Z
 DTEND:20270109T223000Z
 SUMMARY:🎟️ Mistico 吊桥公园
 DESCRIPTION:开车约25分钟。3.2公里环线，有缓坡、台阶，吊
  桥会晃，约2小时。跟着前面的向导团走，常能看到睫毛
- 蝮蛇这类小动物。上下坡注意脚下。最后入园15:50。\n\nMi
- stico官网: https://misticopark.com/\n备选：Mistico 向导团（自然
- 史步道） · USD44＋税 · 约2.5小时，向导带着找动物: https
- ://misticopark.com/tours/natural-history-walk/\n备选：Fortuna Welcome 
- 吊桥向导团 · USD70含接送和门票 · 14:00出发约4小时: https
- ://www.fortunawelcome.com/la-fortuna-tours/arenal-hanging-bridges-tour/\n
- 备选：Sky Adventures 吊桥（El Castillo，开车约40分钟） · 要
- 提前预约: https://skyadventures.travel/hanging-bridges/\nGoogle Maps: 
- https://www.google.com/maps/search/?api=1&query=Mistico%20Arenal%20Hanging
- %20Bridges%20Park
-LOCATION:Mistico Arenal Hanging Bridges Park
+ 蝮蛇这类小动物。上下坡注意脚下。最后入园15:50。\n\n
+ 📍 Mistico Arenal Hanging Bridges Park\, Calle Sangregado\, 2 km al este
+  de la represa\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/d
+ ir/?api=1&destination=Mistico%20Arenal%20Hanging%20Bridges%20Park\nMistico
+ 官网: https://misticopark.com/\n备选：Mistico 向导团（自然史
+ 步道） · USD44＋税 · 约2.5小时，向导带着找动物: https://
+ misticopark.com/tours/natural-history-walk/\n备选：Fortuna Welcome 吊
+ 桥向导团 · USD70含接送和门票 · 14:00出发约4小时: https://
+ www.fortunawelcome.com/la-fortuna-tours/arenal-hanging-bridges-tour/\n备
+ 选：Sky Adventures 吊桥（El Castillo，开车约40分钟） · 要提
+ 前预约: https://skyadventures.travel/hanging-bridges/
+LOCATION:Mistico Arenal Hanging Bridges Park\, Calle Sangregado\, 2 km al e
+ ste de la represa\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Mistico%20Arenal%20H
+ anging%20Bridges%20Park
 GEO:10.488049;-84.753777
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Mistico A
- renal Hanging Bridges Park":geo:10.488049,-84.753777
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Sangregado, 2 km al 
+ este de la represa, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Mist
+ ico Arenal Hanging Bridges Park":geo:10.488049,-84.753777
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-4@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270109T223000Z
 DTEND:20270110T003000Z
 SUMMARY:♨️ 回酒店泡温泉
-DESCRIPTION:吊桥回来先泡一会儿，再出门吃晚饭。\n\nGoogle M
- aps: https://www.google.com/maps/search/?api=1&query=Termales%20del%20Aren
- al%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+DESCRIPTION:吊桥回来先泡一会儿，再出门吃晚饭。\n\n📍 Ter
+ males del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del parque\, La
+  Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?api=1&destinati
+ on=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-5@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270110T003000Z
 DTEND:20270110T013000Z
 SUMMARY:🍽️ 镇上吃晚饭
 DESCRIPTION:开5分钟去镇上：Snapper's House（马林鱼ceviche、海
- 鲜汤）或Cevichería D'Mora；吃完开回酒店。\n\nGoogle Maps: htt
- ps://www.google.com/maps/search/?api=1&query=La%20Fortuna%2C%20San%20Carlo
- s%2C%20Costa%20Rica
-LOCATION:La Fortuna\, San Carlos\, Costa Rica
+ 鲜汤）或Cevichería D'Mora；吃完开回酒店。\n\n📍 La Fortuna\
+ , San Carlos\, Costa Rica\, Parque Central\, Calle 470\, La Fortuna\, Alaj
+ uela\n🧭 https://www.google.com/maps/dir/?api=1&destination=La%20Fortuna
+ %2C%20San%20Carlos%2C%20Costa%20Rica
+LOCATION:La Fortuna\, San Carlos\, Costa Rica\, Parque Central\, Calle 470\
+ , La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=La%20Fortuna%2C%20Sa
+ n%20Carlos%2C%20Costa%20Rica
 GEO:10.471683;-84.644436
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="La Fortun
- a, San Carlos, Costa Rica":geo:10.471683,-84.644436
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
+  La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="La Fortuna, San Carlos,
+  Costa Rica":geo:10.471683,-84.644436
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270110T133000Z
 DTEND:20270110T140000Z
 SUMMARY:🎟️ 酒店接人（骑马团）
-DESCRIPTION:早上火山最容易露脸。\n\nGoogle Maps: https://www.goog
- le.com/maps/search/?api=1&query=Termales%20del%20Arenal%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+DESCRIPTION:早上火山最容易露脸。\n\n📍 Termales del Arenal\, La
+  Fortuna\, Vía 142\, 4.6 km al oeste del parque\, La Fortuna\, Alajuela\n
+ 🧭 https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20A
+ renal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270110T140000Z
 DTEND:20270110T170000Z
 SUMMARY:🎟️ 骑马看Arenal火山
 DESCRIPTION:约2.5小时骑行，林间和牧场路线，到火山观景点
  和Los Lirios湖，向导会先教。注意：脚踩马镫时脚跟往下
  压、上下马要单脚蹬地，跟腱会吃力一点，觉得紧就让
- 马慢走。\n\nFortuna Welcome 骑马团: https://www.fortunawelcome.com/
- la-fortuna-tours/arenal-volcano-horseback-riding-tour\n备选：Mistico「
- Paco’s Horses」骑马 · USD58＋税 · 8:15开始约2.5小时，会骑
- 马过河: https://misticopark.com/tours/pacos-horses/\n备选：Don Tobia
- s 骑马上火山观景点 · 8:30开始约3小时，含接送，价格要
- 问: https://www.arenal.net/tours/don-tobias-horseback-ride-volcano
+ 马慢走。\n\n📍 Los Lagos Hotel Spa & Resort\, La Fortuna\, Vía 142\
+ , La Palma\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?
+ api=1&destination=Los%20Lagos%20Hotel%20Spa%20%26%20Resort%2C%20La%20Fortu
+ na\nFortuna Welcome 骑马团: https://www.fortunawelcome.com/la-fortuna-t
+ ours/arenal-volcano-horseback-riding-tour\n备选：Mistico「Paco’s Hor
+ ses」骑马 · USD58＋税 · 8:15开始约2.5小时，会骑马过河: h
+ ttps://misticopark.com/tours/pacos-horses/\n备选：Don Tobias 骑马上
+ 火山观景点 · 8:30开始约3小时，含接送，价格要问: https:
+ //www.arenal.net/tours/don-tobias-horseback-ride-volcano
+LOCATION:Los Lagos Hotel Spa & Resort\, La Fortuna\, Vía 142\, La Palma\, 
+ La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Los%20Lagos%20Hotel%
+ 20Spa%20%26%20Resort%2C%20La%20Fortuna
+GEO:10.4922;-84.68625
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, La Palma, La For
+ tuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Los Lagos Hotel Spa & Resort, 
+ La Fortuna":geo:10.4922,-84.68625
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270110T173000Z
 DTEND:20270110T190000Z
 SUMMARY:🍽️ 回酒店换衣服、吃午饭
 DESCRIPTION:在酒店或镇上吃个简单的午饭，13:00树懒团来接
- 。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=Termal
- es%20del%20Arenal%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+ 。\n\n📍 Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste 
+ del parque\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir/?
+ api=1&destination=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270110T190000Z
 DTEND:20270110T220000Z
 SUMMARY:🎟️ 树懒团
 DESCRIPTION:向导带着在农场林间的平缓小路上找树懒，常能
  看到二趾和三趾树懒，还有鸟、蛙和蜂鸟；约2.5–3小时
  ，难度标为「容易」，含酒店接送。USD90/人含税，最少2
- 人成团。\n\nFortuna Welcome 树懒团: https://www.fortunawelcome.com/
- la-fortuna-tours/arenal-sloth-tour/\n备选：Fortuna Welcome 树懒＋农
- 场午餐（约6小时）: https://www.fortunawelcome.com/la-fortuna-tours
- /sloth-watching-campesino-farmer-tour
+ 人成团。\n\n📍 Sloth's Territory\, El Tanque\, La Fortuna\, Vía 142
+ \, El Tanque\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/dir
+ /?api=1&destination=Sloth's%20Territory%2C%20El%20Tanque%2C%20La%20Fortuna
+ \nFortuna Welcome 树懒团: https://www.fortunawelcome.com/la-fortuna-tou
+ rs/arenal-sloth-tour/\n备选：Fortuna Welcome 树懒＋农场午餐（
+ 约6小时）: https://www.fortunawelcome.com/la-fortuna-tours/sloth-watch
+ ing-campesino-farmer-tour
+LOCATION:Sloth's Territory\, El Tanque\, La Fortuna\, Vía 142\, El Tanque\
+ , La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Sloth's%20Territory%
+ 2C%20El%20Tanque%2C%20La%20Fortuna
+GEO:10.47446;-84.60222
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, El Tanque, La Fo
+ rtuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Sloth's Territory, El Tanque,
+  La Fortuna":geo:10.47446,-84.60222
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-0@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270111T123000Z
 DTEND:20270111T140000Z
 SUMMARY:🍽️ 最后看一眼火山，早餐
-DESCRIPTION:Google Maps: https://www.google.com/maps/search/?api=1&query=Te
- rmales%20del%20Arenal%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+DESCRIPTION:📍 Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oe
+ ste del parque\, La Fortuna\, Alajuela\n🧭 https://www.google.com/maps/d
+ ir/?api=1&destination=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-1@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270111T140000Z
 DTEND:20270111T160000Z
 SUMMARY:🏨 上午慢慢收拾
 DESCRIPTION:飞机下午才飞，早上可以再泡一次酒店温泉，10:
- 00前退房。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&q
- uery=Termales%20del%20Arenal%2C%20La%20Fortuna
-LOCATION:Termales del Arenal\, La Fortuna
+ 00前退房。\n\n📍 Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 k
+ m al oeste del parque\, La Fortuna\, Alajuela\n🧭 https://www.google.com
+ /maps/dir/?api=1&destination=Termales%20del%20Arenal%2C%20La%20Fortuna
+LOCATION:Termales del Arenal\, La Fortuna\, Vía 142\, 4.6 km al oeste del 
+ parque\, La Fortuna\, Alajuela
+URL:https://www.google.com/maps/dir/?api=1&destination=Termales%20del%20Are
+ nal%2C%20La%20Fortuna
 GEO:10.478292;-84.672823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Termales 
- del Arenal, La Fortuna":geo:10.478292,-84.672823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste 
+ del parque, La Fortuna, Alajuela";X-APPLE-RADIUS=100;X-TITLE="Termales del
+  Arenal, La Fortuna":geo:10.478292,-84.672823
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-2@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270111T160000Z
 DTEND:20270111T191500Z
 SUMMARY:🚗 出发回机场
 DESCRIPTION:沿湖经Tilarán、Cañas，路上约3小时；留出加油时
- 间（还车要加满），13:15前到。\n\nGoogle Maps: https://www.goog
- le.com/maps/search/?api=1&query=Nuevo%20Arenal%2C%20Guanacaste%2C%20Costa%
- 20Rica
-LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica
+ 间（还车要加满），13:15前到。\n\n📍 Nuevo Arenal\, Guanacast
+ e\, Costa Rica\, Ruta 142\, Nuevo Arenal\, Tilarán\, Guanacaste\n🧭 htt
+ ps://www.google.com/maps/dir/?api=1&destination=Nuevo%20Arenal%2C%20Guanac
+ aste%2C%20Costa%20Rica
+LOCATION:Nuevo Arenal\, Guanacaste\, Costa Rica\, Ruta 142\, Nuevo Arenal\,
+  Tilarán\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Nuevo%20Arenal%2C%20
+ Guanacaste%2C%20Costa%20Rica
 GEO:10.547;-84.863736
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Nuevo Are
- nal, Guanacaste, Costa Rica":geo:10.547,-84.863736
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 142, Nuevo Arenal, Ti
+ larán, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Nuevo Arenal, Guanacaste, 
+ Costa Rica":geo:10.547,-84.863736
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-3@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270111T191500Z
 DTEND:20270111T223500Z
 SUMMARY:🚗 还车，坐接驳车到机场
 DESCRIPTION:离境税一般已含在机票里。回程由Air Transat执飞
  ，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小
- 时到最稳。\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&
- query=Daniel%20Oduber%20Quir%C3%B3s%20International%20Airport
-LOCATION:Daniel Oduber Quirós International Airport
-GEO:10.5917;-85.5411
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-RADIUS=100;X-TITLE="Daniel Od
- uber Quirós International Airport":geo:10.5917,-85.5411
+ 时到最稳。\n\n📍 Adobe Rent a Car Liberia\, El Fósforo\, Guardia\,
+  Liberia\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=1&destina
+ tion=Adobe%20Rent%20a%20Car%20Liberia
+LOCATION:Adobe Rent a Car Liberia\, El Fósforo\, Guardia\, Liberia\, Guana
+ caste
+URL:https://www.google.com/maps/dir/?api=1&destination=Adobe%20Rent%20a%20C
+ ar%20Liberia
+GEO:10.57201;-85.58299
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="El Fósforo, Guardia, Libe
+ ria, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Adobe Rent a Car Liberia":geo
+ :10.57201,-85.58299
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-4@travel-plan
-DTSTAMP:20261119T193407Z
+DTSTAMP:20261119T194625Z
 DTSTART:20270111T223500Z
 DTEND:20270112T034500Z
 SUMMARY:✈️ Porter PD 7301 直飞回多伦多

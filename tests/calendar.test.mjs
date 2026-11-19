@@ -24,7 +24,7 @@ test('each timed plan lasts until the next one, across time zones',()=>{
     ]},
     {day:2,date:'2027-01-11',schedule:[{time:'16:35',title:'Home',end:'22:45',endTz:'America/Toronto',id:'home',alternatives:[{title:'Later flight'}]}]},
   ];
-  const places=[{id:'lir',name:'LIR',maps:'Liberia Airport',lat:10.59,lng:-85.54}];
+  const places=[{id:'lir',name:'LIR',maps:'Liberia Airport',address:'Route 21 Liberia',lat:10.59,lng:-85.54}];
   const pick=(day,item)=>item.id==='home'?{...item,...item.alternatives[0]}:item;
   const {ics,count,skipped}=buildIcs({trip,days,places,pick,now:Date.UTC(2026,10,19)});
   assert.equal(count,5);assert.equal(skipped,1);
@@ -37,7 +37,7 @@ test('each timed plan lasts until the next one, across time zones',()=>{
     ['20270111T223500Z','20270112T034500Z'],   // end + endTz
   ]);
   assert.equal(e[4].SUMMARY,'Later flight');assert.equal(e[0].SUMMARY,'✈️ Fly');
-  assert.equal(e[1].LOCATION,'Liberia Airport');assert.equal(e[1].GEO,'10.59;-85.54');
+  assert.equal(e[1].LOCATION,'Liberia Airport\\, Route 21 Liberia');assert.equal(e[1].URL,'https://www.google.com/maps/dir/?api=1&destination=Liberia%20Airport');assert.match(e[1].DESCRIPTION,/^📍 Liberia Airport/);assert.equal(e[1].GEO,'10.59;-85.54');
   assert.match(e[3].DESCRIPTION,/jacket\\; it is cold/);
   assert.match(ics,/X-WR-CALNAME:Demo\\, trip/);assert.match(ics,/X-APPLE-CALENDAR-COLOR:#D07D9C\r\n/);
   assert.match(buildIcs({trip:{...trip,calendarColor:'#1f9652'},days}).ics,/X-APPLE-CALENDAR-COLOR:#1F9652/);

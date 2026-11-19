@@ -785,7 +785,7 @@
         "lat": 10.5917,
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
-        "address": "Daniel Oduber Quirós International Airport",
+        "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
         "note": "The Adobe office is ~7 km outside the airport (off Route 21), reached by free shuttle; the map draws routes from the terminal."
       },
       {
@@ -794,7 +794,7 @@
         "lat": 10.55894,
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
-        "address": "North end of Playas del Coco",
+        "address": "Calle La Chorrera, Playas del Coco, Sardinal, Guanacaste",
         "note": "Rated 8.6, 150 m from the beach, at the quieter north end of Coco; ~15 min walk (~1.2 km) to the beach boardwalk and restaurants."
       },
       {
@@ -804,7 +804,7 @@
         "lng": -85.6915,
         "maps": "Playas del Coco Beach, Guanacaste",
         "photos": "Playas del Coco beach sunset",
-        "address": "Playas del Coco",
+        "address": "Playa del Coco, El Coco, Sardinal, Guanacaste",
         "note": "The beach in front of the hotel, darker than downtown: sunsets in the evening, stargazing at night."
       },
       {
@@ -813,7 +813,7 @@
         "lat": 10.5505,
         "lng": -85.6995,
         "maps": "Playas del Coco, Guanacaste, Costa Rica",
-        "address": "Playas del Coco, Guanacaste",
+        "address": "Playas del Coco, Sardinal, Carrillo, Guanacaste",
         "note": "Marlin del Rey meets under the big banyan tree in front of Bar El Ancla on the boardwalk; plenty of seafood restaurants in town (Papagayo Seafood, Mar Azul).",
         "url": "https://marlindelrey.com/sailing-tours/catamaran-tours-playas-del-coco/"
       },
@@ -824,7 +824,7 @@
         "lng": -85.298602,
         "maps": "Llanos de Cortés Waterfall, Bagaces",
         "photos": "Llanos de Cortés waterfall",
-        "address": "Off Route 1, Bagaces",
+        "address": "Ruta 1, 7 km al noroeste de Bagaces, Guanacaste",
         "note": "About 30 concrete steps down from the parking lot, with a rope handrail; sandy below the falls and rocky at the water's edge, so watch your footing. 8:00–16:00, cash only.",
         "url": "https://vamosrentacar.com/blog/llanos-de-cortes-waterfall/"
       },
@@ -844,7 +844,7 @@
         "lng": -84.8241529,
         "maps": "100% Aventura Zipline, Monteverde",
         "photos": "100% Aventura superman zipline Monteverde",
-        "address": "About 3 km north of Santa Elena",
+        "address": "Camino a la Reserva Santa Elena, Monteverde, Puntarenas",
         "note": "The park itself, not the ticket office in town.",
         "url": "https://www.aventuracanopytour.com/"
       },
@@ -854,7 +854,7 @@
         "lat": 10.3115843,
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
-        "address": "Vía 620, Cerro Plano, Santa Elena",
+        "address": "Calle Manaquín, Cerro Plano, Monteverde, Puntarenas",
         "note": "0.8 km from Santa Elena town centre."
       },
       {
@@ -863,7 +863,7 @@
         "lat": 10.3056389,
         "lng": -84.8144494,
         "maps": "Bajo del Tigre, Bosque Eterno de los Niños, Monteverde",
-        "address": "Bosque Eterno de los Niños, Monteverde",
+        "address": "Bajo del Tigre, Cerro Plano, Monteverde, Puntarenas",
         "note": "The Bajo del Tigre station of the Children’s Eternal Rainforest, about 5 minutes’ drive from the hotel.",
         "url": "https://acmcr.org/en/rates-and-reservations/"
       },
@@ -883,7 +883,7 @@
         "lng": -84.863736,
         "maps": "Nuevo Arenal, Guanacaste, Costa Rica",
         "photos": "Lake Arenal volcano view",
-        "address": "Route 142, Tilarán",
+        "address": "Ruta 142, Nuevo Arenal, Tilarán, Guanacaste",
         "note": "Winding road along the north shore with roadside viewpoints; on clear days you can see the volcano reflected in the lake."
       },
       {
@@ -892,7 +892,7 @@
         "lat": 10.478292,
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
-        "address": "Vía 142, La Fortuna",
+        "address": "Vía 142, 4.6 km al oeste del parque, La Fortuna, Alajuela",
         "note": "Own hot-spring pools, ~3 km west of La Fortuna; ~5 min drive to town and ~10 min to Tabacón."
       },
       {
@@ -901,7 +901,7 @@
         "lat": 10.471683,
         "lng": -84.644436,
         "maps": "La Fortuna, San Carlos, Costa Rica",
-        "address": "La Fortuna, San Carlos",
+        "address": "Parque Central, Calle 470, La Fortuna, Alajuela",
         "note": "The float tour picks you up at the hotel; seafood in town: Cevichería D'Mora, Snapper's House. ~5 min drive from the hotel."
       },
       {
@@ -910,7 +910,7 @@
         "lat": 10.488049,
         "lng": -84.753777,
         "maps": "Mistico Arenal Hanging Bridges Park",
-        "address": "Calle Sangregado (dam road)",
+        "address": "Calle Sangregado, 2 km al este de la represa, La Fortuna, Alajuela",
         "note": "3.2 km loop with 16 bridges (6 hanging), listed as an accessible trail on the official site (whether it's paved throughout is unverified); gentle slopes and some steps, ~2 hours; the hanging bridges sway. Last entry 15:50.",
         "url": "https://misticopark.com/"
       },
@@ -920,8 +920,62 @@
         "lat": 10.39,
         "lng": -84.58,
         "maps": "Peñas Blancas River, San Carlos, Costa Rica",
-        "address": "~25 min southeast of La Fortuna",
+        "address": "Río Peñas Blancas, San Carlos, Alajuela",
         "note": "Tour provides transfers; the map shows an approximate location only."
+      },
+      {
+        "id": "adobe-lir",
+        "name": "Adobe Rent a Car · Liberia office",
+        "lat": 10.57201,
+        "lng": -85.58299,
+        "maps": "Adobe Rent a Car Liberia",
+        "address": "El Fósforo, Guardia, Liberia, Guanacaste",
+        "note": "About 7 km from the airport; take Adobe's free shuttle from arrivals."
+      },
+      {
+        "id": "santa-elena",
+        "name": "Santa Elena town centre",
+        "lat": 10.31651,
+        "lng": -84.82434,
+        "maps": "Santa Elena, Monteverde, Costa Rica",
+        "address": "Centro de Santa Elena, Monteverde, Puntarenas",
+        "note": "Monteverde's little town; restaurants and shops sit on a few central streets."
+      },
+      {
+        "id": "horse-ranch",
+        "name": "Los Lagos stables (horseback start)",
+        "lat": 10.4922,
+        "lng": -84.68625,
+        "maps": "Los Lagos Hotel Spa & Resort, La Fortuna",
+        "address": "Vía 142, La Palma, La Fortuna, Alajuela",
+        "note": "The horseback tour includes hotel pickup; you mount up at the Los Lagos resort stables."
+      },
+      {
+        "id": "sloth",
+        "name": "Sloth's Territory reserve",
+        "lat": 10.47446,
+        "lng": -84.60222,
+        "maps": "Sloth's Territory, El Tanque, La Fortuna",
+        "address": "Vía 142, El Tanque, La Fortuna, Alajuela",
+        "note": "Private reserve about 10 minutes east of town, 1.3 km trail along the Habana River; hotel pickup included."
+      },
+      {
+        "id": "souvenir",
+        "name": "Cianikal artisan shop (town centre)",
+        "lat": 10.4716,
+        "lng": -84.6469,
+        "maps": "Cianikal, La Fortuna",
+        "address": "100 m al oeste de la Iglesia, La Fortuna, Alajuela",
+        "note": "100 m west of the church, run by a local artists' collective; more souvenir shops and a supermarket within 150 m."
+      },
+      {
+        "id": "chocolate",
+        "name": "Rainforest Chocolate Tour",
+        "lat": 10.45675,
+        "lng": -84.6519,
+        "maps": "Rainforest Chocolate Tour, La Fortuna",
+        "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
+        "note": "About 2 km south of town on the road to La Fortuna Waterfall."
       }
     ],
     "dailyRoutes": [
@@ -934,7 +988,8 @@
         ],
         "extraPlaceIds": [
           "coco-beach",
-          "coco"
+          "coco",
+          "adobe-lir"
         ],
         "transport": "driving",
         "note": "Airport to Coco ~30 min, arrive by 17:00; walk into town for dinner."
@@ -953,7 +1008,9 @@
         ],
         "transport": "driving",
         "note": "Via Liberia, Bagaces (waterfall) and Cañas, turning onto Route 606 for the climb; about 4 hours of driving, all long stretches in daylight. In the evening drive about 5 minutes to the night walk.",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "santa-elena"
+        ]
       },
       {
         "day": 3,
@@ -969,7 +1026,9 @@
         ],
         "transport": "driving",
         "note": "Down Route 606, via Cañas and Tilarán, along the north shore of Lake Arenal to La Fortuna, about 4 hours of driving, at the hotel around 13:30. In the evening drive 5 minutes into town for dinner.",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "souvenir"
+        ]
       },
       {
         "day": 4,
@@ -996,7 +1055,10 @@
         ],
         "transport": "driving",
         "note": "Morning horseback ride and afternoon sloth tour both pick up at the hotel (no line drawn); in the evening drive 5 minutes into town for dinner.",
-        "extraPlaceIds": []
+        "extraPlaceIds": [
+          "horse-ranch",
+          "sloth"
+        ]
       },
       {
         "day": 6,
@@ -1007,7 +1069,10 @@
           "lir"
         ],
         "transport": "driving",
-        "note": "About 3 hours; leave at 10:00, return the car by 13:15."
+        "note": "About 3 hours; leave at 10:00, return the car by 13:15.",
+        "extraPlaceIds": [
+          "adobe-lir"
+        ]
       }
     ],
     "routesFile": "routes.json",
@@ -1054,7 +1119,8 @@
           "time": "16:15",
           "title": "Pick up the car",
           "kind": "drive",
-          "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here."
+          "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here.",
+          "placeId": "adobe-lir"
         },
         {
           "time": "17:00",
@@ -1181,7 +1247,8 @@
           "time": "19:45",
           "title": "Dinner in town",
           "kind": "food",
-          "text": "Eat in Santa Elena town, then drive a few minutes back to the hotel."
+          "text": "Eat in Santa Elena town, then drive a few minutes back to the hotel.",
+          "placeId": "santa-elena"
         }
       ]
     },
@@ -1243,11 +1310,31 @@
                 }
               ],
               "option": "chocolate",
-              "kind": "tour"
+              "kind": "tour",
+              "placeId": "chocolate"
             }
           ],
           "budget": "d3-pm",
           "option": "hotel"
+        },
+        {
+          "id": "d3-shopping",
+          "time": "17:30",
+          "title": "Souvenir shopping in town",
+          "kind": "shop",
+          "text": "Do a loop around the central park; everything is within 150 m. Cianikal is a local artists' collective with volcanic-stone and silver jewellery, ceramics, prints and small-batch chocolate (daily 9:00–21:00). Lava Collective in the park has local handmade cups, honey and coffee (12:00–20:00). Galería Onírica, north of the church, sells original paintings and jade, at higher prices. For coffee to take home, Mega Súper two blocks southwest of the park (7:00–21:00) is cheaper than the gift shops. Walk on to dinner afterwards and leave the car in town.",
+          "placeId": "souvenir",
+          "links": [
+            {
+              "label": "Cianikal (hours and reviews)",
+              "url": "https://wanderlog.com/place/details/459296"
+            },
+            {
+              "label": "Lava Collective (hours and reviews)",
+              "url": "https://wanderlog.com/place/details/6971873"
+            }
+          ],
+          "rate": true
         },
         {
           "time": "18:30",
@@ -1274,7 +1361,8 @@
           "title": "Early volcano viewing",
           "kind": "sight",
           "text": "The volcano is most likely to show itself 6–9 am, and you can see it from the hotel.",
-          "rate": true
+          "rate": true,
+          "placeId": "hotel-arenal"
         },
         {
           "id": "d4-penas-blancas",
@@ -1394,7 +1482,8 @@
               "url": "https://www.arenal.net/tours/don-tobias-horseback-ride-volcano"
             }
           ],
-          "rate": true
+          "rate": true,
+          "placeId": "horse-ranch"
         },
         {
           "time": "11:30",
@@ -1433,7 +1522,8 @@
                 }
               ],
               "option": "chocolate",
-              "kind": "tour"
+              "kind": "tour",
+              "placeId": "chocolate"
             },
             {
               "title": "Soak and rest at the hotel",
@@ -1441,7 +1531,8 @@
               "option": "rest",
               "kind": "spa"
             }
-          ]
+          ],
+          "placeId": "sloth"
         },
         {
           "time": "Evening",
@@ -1488,7 +1579,7 @@
           "title": "Return the car, shuttle to the airport",
           "kind": "drive",
           "text": "The departure tax is usually included in the airfare. The return is operated by Air Transat, so check in and drop bags at the Air Transat counter; arriving 2.5–3 hours before an international flight is safest.",
-          "placeId": "lir"
+          "placeId": "adobe-lir"
         },
         {
           "time": "16:35",
