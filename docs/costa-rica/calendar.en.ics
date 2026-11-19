@@ -10,7 +10,7 @@ X-PUBLISHED-TTL:PT12H
 X-WR-TIMEZONE:America/Costa_Rica
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270106T124000Z
 DTEND:20270106T154000Z
 SUMMARY:✈️ Arrive at Pearson Terminal 3
@@ -19,17 +19,17 @@ DESCRIPTION:Arrive 3 hours early for international flights. Partner: bring
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270106T154000Z
 DTEND:20270106T212400Z
 SUMMARY:✈️ Porter PD 783 Toronto → Liberia
 DESCRIPTION:About 5h 44m nonstop. Departure is Toronto time\, landing is lo
  cal time (1 hour behind Toronto). After landing\, get the entry stamp (che
- ck it's in your passport)\, collect bags\, then head to the Alamo shuttle 
- stop.\n\n📍 Daniel Oduber Quirós International Airport\, Corredor Choro
- tega\, Llano Grande\, Liberia\, Guanacaste\n🧭 https://www.google.com/ma
- ps/dir/?api=1&destination=Daniel%20Oduber%20Quir%C3%B3s%20International%20
- Airport
+ ck it's in your passport)\, collect bags\, then head to the Dollar shuttle
+  stop.\n\n📍 Daniel Oduber Quirós International Airport\, Corredor Chor
+ otega\, Llano Grande\, Liberia\, Guanacaste\n🧭 https://www.google.com/m
+ aps/dir/?api=1&destination=Daniel%20Oduber%20Quir%C3%B3s%20International%2
+ 0Airport
 LOCATION:Daniel Oduber Quirós International Airport\, Corredor Chorotega\,
   Llano Grande\, Liberia\, Guanacaste
 URL:https://www.google.com/maps/dir/?api=1&destination=Daniel%20Oduber%20Qu
@@ -41,40 +41,39 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Corredor Chorotega, Llano
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270106T221500Z
 DTEND:20270106T230000Z
 SUMMARY:🚗 Pick up the car
 DESCRIPTION:Bring your physical licence\, passport\, and a credit card in t
  he driver's name (deposit ~USD1\,000). Inspect the car and take photos\; c
  heck by hand that the doors are locked\, as rental car break-ins are commo
- n here.\n\n🕘 Hours: Daily 5:00–22:00\n🚗 Getting there: about 4 min
-  drive from Daniel Oduber Quirós International Airport (2.8 km)\n\n📍 A
- lamo Rent a Car Liberia Airport\, Ruta 21\, 1 km al este del Aeropuerto Da
- niel Oduber\, Liberia\, Guanacaste\n🧭 https://www.google.com/maps/dir/?
- api=1&destination=Alamo%20Rent%20a%20Car%20Liberia%20Airport
-LOCATION:Alamo Rent a Car Liberia Airport\, Ruta 21\, 1 km al este del Aero
- puerto Daniel Oduber\, Liberia\, Guanacaste
-URL:https://www.google.com/maps/dir/?api=1&destination=Alamo%20Rent%20a%20C
- ar%20Liberia%20Airport
-GEO:10.59854;-85.51977
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 21, 1 km al este del 
- Aeropuerto Daniel Oduber, Liberia, Guanacaste";X-APPLE-RADIUS=100;X-TITLE=
- "Alamo Rent a Car Liberia Airport":geo:10.59854,-85.51977
+ n here.\n\n🚗 Getting there: about 4 min drive from Daniel Oduber Quiró
+ s International Airport (3.4 km)\n\n📍 Dollar Rent a Car Liberia\, Corre
+ dor Chorotega\, Llano Grande\, Liberia\, Guanacaste\n🧭 https://www.goog
+ le.com/maps/dir/?api=1&destination=Dollar%20Rent%20a%20Car%20Liberia
+LOCATION:Dollar Rent a Car Liberia\, Corredor Chorotega\, Llano Grande\, Li
+ beria\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Dollar%20Rent%20a%20
+ Car%20Liberia
+GEO:10.60314;-85.51284
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Corredor Chorotega, Llano 
+ Grande, Liberia, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Dollar Rent a Car
+  Liberia":geo:10.60314,-85.51284
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270106T230000Z
 DTEND:20270106T233000Z
 SUMMARY:🏨 Check in at Playas del Coco
-DESCRIPTION:About 35 min from the Alamo office\, arrive before dark.\n\n
+DESCRIPTION:About 35 min from the Dollar office\, arrive before dark.\n\n
  🕘 Hours: Check-in from 14:00 (until about 20:00)\, check-out 11:00\n
- 🚗 Getting there: about 35 min drive from Alamo Rent a Car Liberia Airpo
- rt (27 km)\n\n📍 Villa Del Sol Boutique Hotel\, Playas del Coco\, Calle 
- La Chorrera\, Playas del Coco\, Sardinal\, Guanacaste\n🧭 https://www.go
- ogle.com/maps/dir/?api=1&destination=Villa%20Del%20Sol%20Boutique%20Hotel%
- 2C%20Playas%20del%20Coco
+ 🚗 Getting there: about 35 min drive from Dollar Rent a Car Liberia (28 
+ km)\n\n📍 Villa Del Sol Boutique Hotel\, Playas del Coco\, Calle La Chor
+ rera\, Playas del Coco\, Sardinal\, Guanacaste\n🧭 https://www.google.co
+ m/maps/dir/?api=1&destination=Villa%20Del%20Sol%20Boutique%20Hotel%2C%20Pl
+ ayas%20del%20Coco
 LOCATION:Villa Del Sol Boutique Hotel\, Playas del Coco\, Calle La Chorrera
  \, Playas del Coco\, Sardinal\, Guanacaste
 URL:https://www.google.com/maps/dir/?api=1&destination=Villa%20Del%20Sol%20
@@ -86,7 +85,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle La Chorrera, Playas
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-4@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270106T233000Z
 DTEND:20270107T010000Z
 SUMMARY:📸 Sunset on the beach
@@ -107,7 +106,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playa del Coco, El Coco, S
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-5@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T010000Z
 DTEND:20270107T020000Z
 SUMMARY:🍽️ Seafood by the sea
@@ -129,7 +128,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playas del Coco, Sardinal,
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d1-6@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T020000Z
 DTEND:20270107T030000Z
 SUMMARY:📸 Stargazing on the beach
@@ -160,7 +159,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Playa del Coco, El Coco, S
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T130000Z
 DTEND:20270107T142000Z
 SUMMARY:🚗 Check out and set off
@@ -169,7 +168,7 @@ DESCRIPTION:Bring some cash (the waterfall is cash only). South via Liberia
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T142000Z
 DTEND:20270107T152000Z
 SUMMARY:📸 Llanos de Cortés waterfall
@@ -192,7 +191,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 1, 7 km al noroeste d
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T152000Z
 DTEND:20270107T190000Z
 SUMMARY:🚗 Route 1 to Monteverde
@@ -202,7 +201,7 @@ DESCRIPTION:Via Cañas\, turning onto Route 606 for the climb\, about 2.5 h
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T190000Z
 DTEND:20270107T220000Z
 SUMMARY:🎟️ 100% Aventura ziplines
@@ -237,7 +236,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Camino a la Reserva Santa
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-4@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T220000Z
 DTEND:20270107T233000Z
 SUMMARY:🏨 Check in to the Monteverde hotel
@@ -259,7 +258,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Manaquín, Cerro Pla
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-5@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270107T233000Z
 DTEND:20270108T013000Z
 SUMMARY:🎟️ Rainforest night walk
@@ -289,7 +288,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Bajo del Tigre, Cerro Plan
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d2-6@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T014500Z
 DTEND:20270108T024500Z
 SUMMARY:🍽️ Dinner in town
@@ -309,7 +308,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Centro de Santa Elena, Mon
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T130000Z
 DTEND:20270108T143000Z
 SUMMARY:🍽️ Breakfast
@@ -329,7 +328,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Manaquín, Cerro Pla
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T143000Z
 DTEND:20270108T173000Z
 SUMMARY:🚗 Down to La Fortuna
@@ -339,7 +338,7 @@ DESCRIPTION:Down Route 606\, via Cañas and Tilarán\, then along the north
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T173000Z
 DTEND:20270108T193000Z
 SUMMARY:📸 North shore of Lake Arenal
@@ -361,7 +360,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 142, Nuevo Arenal, Ti
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T193000Z
 DTEND:20270108T210000Z
 SUMMARY:🏨 Check in at Termales del Arenal
@@ -383,7 +382,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-4@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T210000Z
 DTEND:20270108T233000Z
 SUMMARY:♨️ Soak in the hotel hot springs
@@ -402,7 +401,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-5@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270108T233000Z
 DTEND:20270109T003000Z
 SUMMARY:🛍️ Souvenir shopping in town
@@ -433,7 +432,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="100 m al oeste de la Igles
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d3-6@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T003000Z
 DTEND:20270109T013000Z
 SUMMARY:🍽️ Dinner in town
@@ -453,7 +452,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T120000Z
 DTEND:20270109T133000Z
 SUMMARY:📸 Early volcano viewing
@@ -473,7 +472,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T133000Z
 DTEND:20270109T180000Z
 SUMMARY:🎟️ Peñas Blancas safari float
@@ -507,7 +506,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Río Peñas Blancas, San C
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T180000Z
 DTEND:20270109T200000Z
 SUMMARY:🍽️ Lunch in town
@@ -527,7 +526,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T200000Z
 DTEND:20270109T223000Z
 SUMMARY:🎟️ Mistico Hanging Bridges Park
@@ -558,7 +557,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Calle Sangregado, 2 km al
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-4@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270109T223000Z
 DTEND:20270110T003000Z
 SUMMARY:♨️ Back to the hotel for the hot springs
@@ -580,7 +579,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d4-5@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270110T003000Z
 DTEND:20270110T013000Z
 SUMMARY:🍽️ Dinner in town
@@ -601,7 +600,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Parque Central, Calle 470,
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270110T133000Z
 DTEND:20270110T140000Z
 SUMMARY:🎟️ Hotel pickup (horseback tour)
@@ -620,7 +619,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270110T140000Z
 DTEND:20270110T170000Z
 SUMMARY:🎟️ Horseback ride with Arenal Volcano views
@@ -652,7 +651,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, La Palma, La For
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270110T173000Z
 DTEND:20270110T190000Z
 SUMMARY:🍽️ Back to the hotel to change and have lunch
@@ -674,7 +673,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d5-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270110T190000Z
 DTEND:20270110T220000Z
 SUMMARY:🎟️ Sloth tour
@@ -702,7 +701,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, El Tanque, La Fo
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-0@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270111T123000Z
 DTEND:20270111T140000Z
 SUMMARY:🍽️ One last look at the volcano\, breakfast
@@ -720,7 +719,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-1@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270111T140000Z
 DTEND:20270111T160000Z
 SUMMARY:🏨 A slow morning
@@ -740,7 +739,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Vía 142, 4.6 km al oeste
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-2@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270111T160000Z
 DTEND:20270111T191500Z
 SUMMARY:🚗 Head to the airport
@@ -762,30 +761,29 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 142, Nuevo Arenal, Ti
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-3@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270111T191500Z
 DTEND:20270111T223500Z
 SUMMARY:🚗 Return the car\, shuttle to the airport
 DESCRIPTION:The departure tax is usually included in the airfare. The retur
  n is operated by Air Transat\, so check in and drop bags at the Air Transa
  t counter\; arriving 2.5–3 hours before an international flight is safes
- t.\n\n🕘 Hours: Daily 5:00–22:00\n🚗 Getting there: about 130 min dr
- ive from Nuevo Arenal (100 km)\n\n📍 Alamo Rent a Car Liberia Airport\, 
- Ruta 21\, 1 km al este del Aeropuerto Daniel Oduber\, Liberia\, Guanacaste
- \n🧭 https://www.google.com/maps/dir/?api=1&destination=Alamo%20Rent%20a
- %20Car%20Liberia%20Airport
-LOCATION:Alamo Rent a Car Liberia Airport\, Ruta 21\, 1 km al este del Aero
- puerto Daniel Oduber\, Liberia\, Guanacaste
-URL:https://www.google.com/maps/dir/?api=1&destination=Alamo%20Rent%20a%20C
- ar%20Liberia%20Airport
-GEO:10.59854;-85.51977
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Ruta 21, 1 km al este del 
- Aeropuerto Daniel Oduber, Liberia, Guanacaste";X-APPLE-RADIUS=100;X-TITLE=
- "Alamo Rent a Car Liberia Airport":geo:10.59854,-85.51977
+ t.\n\n🚗 Getting there: about 125 min drive from Nuevo Arenal (99 km)\n\
+ n📍 Dollar Rent a Car Liberia\, Corredor Chorotega\, Llano Grande\, Libe
+ ria\, Guanacaste\n🧭 https://www.google.com/maps/dir/?api=1&destination=
+ Dollar%20Rent%20a%20Car%20Liberia
+LOCATION:Dollar Rent a Car Liberia\, Corredor Chorotega\, Llano Grande\, Li
+ beria\, Guanacaste
+URL:https://www.google.com/maps/dir/?api=1&destination=Dollar%20Rent%20a%20
+ Car%20Liberia
+GEO:10.60314;-85.51284
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Corredor Chorotega, Llano 
+ Grande, Liberia, Guanacaste";X-APPLE-RADIUS=100;X-TITLE="Dollar Rent a Car
+  Liberia":geo:10.60314,-85.51284
 END:VEVENT
 BEGIN:VEVENT
 UID:costa-rica-2027-jan-6-11-d6-4@travel-plan
-DTSTAMP:20261119T205829Z
+DTSTAMP:20261119T213348Z
 DTSTART:20270111T223500Z
 DTEND:20270112T034500Z
 SUMMARY:✈️ Porter PD 7301 nonstop back to Toronto

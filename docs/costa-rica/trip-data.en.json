@@ -13,7 +13,7 @@
     "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.en.ics",
     "calendarColor": "#D07D9C",
     "demo": false,
-    "notice": "Flights are booked (PD 783 out, PD 7301 back); nothing else is booked yet. Flights and hotels were re-checked on Nov 15–16 for this version of the route; the rental car uses Adobe's and Alamo's own-site quotes from 11/19 (smallest SUV). USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
+    "notice": "Flights (PD 783 out, PD 7301 back), all three hotels and the Dollar rental car are booked; the car is still awaiting confirmation from Dollar. Flights and hotels were re-checked on Nov 15–16 for this version of the route; the rental car is Dollar's actual price, with Adobe and Alamo kept as backups (own-site quotes from 11/19). USD converted at the Bank of Canada rate of 2026-11-13 (1 USD = 1.4257 CAD); Costa Rica VAT is 13%. January is the local school holiday, so beaches are still fairly busy around 1/6.",
     "constraints": [
       "2 people · 1 room",
       "No surfing. Her Achilles is in late-stage rehab (already jogging and doing weight training), so regular tours are fine; just take a little care on rocky paths, getting on and off boats, and horseback riding",
@@ -88,7 +88,7 @@
             "id": "villa-sol",
             "label": "Villa Del Sol Boutique · in Coco · breakfast included",
             "amount": 197,
-            "status": "Booking.com, Nov 16 (incl. tax)",
+            "status": "Booked · Booking.com · free cancellation",
             "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "Rated 8.6, in Playas del Coco, 150 m from the beach, walk to dinner; breakfast included, free cancellation.",
             "quotes": [
@@ -100,56 +100,6 @@
                 "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "note": "CA$174 + CA$23 taxes and fees",
                 "converted": 197
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "mm-beach",
-            "label": "Hotel M&M Beach House · right on the sand · breakfast included",
-            "amount": 138,
-            "status": "Booking.com, Nov 16 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 8.2, right on the beach in central Coco, breakfast included, free cancellation; rooms are basic.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 138,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$122 + CA$16 taxes and fees",
-                "converted": 138
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "huetares",
-            "label": "Hotel & Villas Huetares · Hermosa · with kitchen",
-            "amount": 253,
-            "status": "Booking.com, Nov 16 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 8.6, 300 m from the beach, has a pool; no breakfast, free cancellation not shown on the page.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 253,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$224 + CA$29 taxes and fees",
-                "converted": 253
               },
               {
                 "platform": "Expedia",
@@ -174,7 +124,7 @@
             "id": "montana",
             "label": "Hotel Montaña Monteverde · close to town · breakfast",
             "amount": 194,
-            "status": "Booking.com, Nov 16 (incl. tax)",
+            "status": "Booked · Booking.com · free cancellation",
             "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "Rated 9.0, 0.8 km from Santa Elena town centre, close to dinner and the night walk; breakfast included, free cancellation, pay at the property.",
             "quotes": [
@@ -186,56 +136,6 @@
                 "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "note": "CA$172 + CA$22 taxes and fees",
                 "converted": 194
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (only Booking.com was checked this time)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "corazon",
-            "label": "Hotel con Corazón · rated 9.0 · breakfast",
-            "amount": 199,
-            "status": "Booking.com, Nov 16 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 9.0, 2 km from the town centre; breakfast included, free cancellation, pay at the property.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 199,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$176 + CA$23 taxes and fees (was CA$195)",
-                "converted": 199
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (only Booking.com was checked this time)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "green-tree",
-            "label": "The Green Tree Lodge · rated 9.2 · cheapest",
-            "amount": 109,
-            "status": "Booking.com, Nov 16 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 9.2, great value, 3 km from the town centre, rooms with a balcony; breakfast included, pay at the property, free cancellation not shown.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 109,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$109 incl. taxes (was CA$122)",
-                "converted": 109
               },
               {
                 "platform": "Expedia",
@@ -257,101 +157,10 @@
           {
             "id": "termales",
             "label": "Termales del Arenal · own hot-spring pools · breakfast included",
-            "amount": 777,
-            "status": "Booking.com, Nov 15 (incl. tax)",
+            "amount": 782,
+            "status": "Booked · Booking.com · non-refundable",
             "url": "https://www.booking.com/hotel/cr/termales-del-arenal.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 8.7. The hotel has its own hot-spring pools you can use any time during the three nights, so no need to buy separate Ecotermales tickets (Ecotermales is right next door). Breakfast included. Free cancellation isn't shown on the page, so check carefully before booking.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 777,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/termales-del-arenal.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$688 + CA$89 taxes and fees",
-                "converted": 777
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "lavas",
-            "label": "Hotel Lavas Tacotal · volcano views · breakfast included",
-            "amount": 425,
-            "status": "Booking.com, Nov 15 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/lavas-tacotal-la-fortuna-san-carlos.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 8.6, on the hot-springs road, close to both Ecotermales and Tabacón; breakfast included. Free cancellation not shown for these dates.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 425,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/lavas-tacotal-la-fortuna-san-carlos.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$376 + CA$49 taxes and fees",
-                "converted": 425
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "loma-real",
-            "label": "Loma Real Hot Springs B&B · own hot-spring pools",
-            "amount": 597,
-            "status": "Booking.com, Nov 15 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/loma-real-amp-hotsprings.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Rated 8.8, guests can use the property's own hot-spring pools; breakfast included, free cancellation.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 597,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/loma-real-amp-hotsprings.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$528 + CA$69 taxes and fees",
-                "converted": 597
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "campo-verde",
-            "label": "Hotel Campo Verde · rated 9.0 · breakfast included",
-            "amount": 1329,
-            "status": "Booking.com, Nov 15 (incl. tax)",
-            "url": "https://www.booking.com/hotel/cr/campo-verde.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "Cabin-style and quiet; breakfast included, free cancellation. Twice the price of the 1/10 week for these dates.",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 1329,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/campo-verde.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$1,176 + CA$153 taxes and fees",
-                "converted": 1329
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "Not compared (Expedia showed no prices when checking the 1/10 version)"
-              }
-            ],
+            "note": "Booked for 1/8–1/11, three nights, CA$782 paid (non-refundable). Rated 8.7. The hotel has its own hot-spring pools you can use any time during the three nights, so no need to buy separate Ecotermales tickets (Ecotermales is right next door). Breakfast included. Free cancellation isn't shown on the page, so check carefully before booking.",
             "source": "Booking.com"
           }
         ],
@@ -362,11 +171,25 @@
         "label": "Rental car | 5 days · smallest SUV (incl. mandatory insurance and CDW)",
         "icon": "🚗",
         "color": "#1f9652",
-        "defaultOption": "alamo",
+        "defaultOption": "dollar",
         "previousDefaults": [
-          "adobe"
+          "adobe",
+          "alamo"
         ],
         "options": [
+          {
+            "id": "dollar",
+            "label": "Dollar 5 days · Subaru Crosstrek or similar (SUV) · booked",
+            "amount": 710.01,
+            "status": "Booked · awaiting Dollar confirmation · CA$710.01",
+            "note": "Booked on Booking.com, pickup and return in Liberia 1/6–1/11, CA$710.01 in total, still awaiting Dollar's confirmation. Third-party rental prices often leave out Costa Rica's mandatory third-party liability (TPL/SLI), which may then be charged at the counter; when the confirmation arrives, check whether mandatory insurance and CDW are included, the deposit, whether there's a young-driver fee at 23, and where to catch the shuttle.",
+            "items": [
+              {
+                "label": "Subaru Crosstrek or similar, 5 days · Booking.com total",
+                "amount": 710.01
+              }
+            ]
+          },
           {
             "id": "alamo",
             "label": "Alamo 5 days · Suzuki Ignis automatic (smallest SUV) · incl. mandatory insurance and CDW (Fully package)",
@@ -387,7 +210,13 @@
                 "amount": 71.29
               }
             ],
-            "url": "https://www.alamo.cr/reservas"
+            "url": "https://www.alamo.cr/reservas",
+            "booking": {
+              "title": "Book a Suzuki Ignis (smallest SUV, Fully package) on Alamo's site, enter age 23",
+              "note": "Pay at the counter; credit card for the deposit (confirm the amount and licence-age rules with Alamo). Pickup is at Alamo's office about 1 km from the airport.",
+              "url": "https://www.alamo.cr/reservas",
+              "urlLabel": "Alamo Costa Rica"
+            }
           },
           {
             "id": "adobe",
@@ -718,25 +547,14 @@
         "note": "Use this if you'd rather skip the horseback ride."
       },
       {
-        "id": "hermosa",
-        "label": "Stay on the sand in Coco",
-        "selections": {
-          "hotel-beach": "mm-beach"
-        },
-        "note": "Switch the beach night to M&M, right on the sand in central Coco."
-      },
-      {
         "id": "save",
         "label": "Cheapest",
         "selections": {
-          "hotel-beach": "mm-beach",
-          "hotel-arenal": "lavas",
           "food": "lean",
           "activities": "lite",
-          "buffer": "none",
-          "hotel-monteverde": "green-tree"
+          "buffer": "none"
         },
-        "note": "The cheapest option at all three hotels, eat at sodas, 3 activities."
+        "note": "Hotels are booked, so this only trims food and activities: eat at sodas, 3 activities."
       }
     ],
     "chartGroups": {
@@ -778,7 +596,7 @@
         "route": "YYZ → LIR",
         "duration": "5h 44m",
         "connection": "Nonstop",
-        "note": "Booked. Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Alamo shuttle to pick up the car.",
+        "note": "Booked. Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Dollar shuttle to pick up the car.",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
         "booked": true
       }
@@ -818,11 +636,11 @@
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
         "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
-        "note": "Alamo's office is about 1 km outside the airport (off Ruta 21), reached by shuttle; the map draws the line from the terminal."
+        "note": "Dollar's office is about 2 km outside the airport, reached by shuttle; the map draws the line from the terminal."
       },
       {
         "id": "hotel-beach",
-        "name": "Hotel Villa Del Sol (Playas del Coco, default, not booked)",
+        "name": "Hotel Villa Del Sol (Playas del Coco, booked)",
         "lat": 10.55894,
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
@@ -886,7 +704,7 @@
       },
       {
         "id": "hotel-monteverde",
-        "name": "Hotel Montaña Monteverde (default, not booked)",
+        "name": "Hotel Montaña Monteverde (booked)",
         "lat": 10.3115843,
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
@@ -927,7 +745,7 @@
       },
       {
         "id": "hotel-arenal",
-        "name": "Termales del Arenal (default hotel, not booked)",
+        "name": "Termales del Arenal (booked)",
         "lat": 10.478292,
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
@@ -1015,14 +833,13 @@
         "note": "About 2 km south of town on the road to La Fortuna Waterfall."
       },
       {
-        "id": "alamo-lir",
-        "name": "Alamo Rent a Car · Liberia airport office",
-        "lat": 10.59854,
-        "lng": -85.51977,
-        "maps": "Alamo Rent a Car Liberia Airport",
-        "address": "Ruta 21, 1 km al este del Aeropuerto Daniel Oduber, Liberia, Guanacaste",
-        "hours": "Daily 5:00–22:00",
-        "note": "About 1 km from the airport; take Alamo's shuttle (check your confirmation email for the pickup point)."
+        "id": "dollar-lir",
+        "name": "Dollar Rent a Car · Liberia airport office",
+        "lat": 10.60314,
+        "lng": -85.51284,
+        "maps": "Dollar Rent a Car Liberia",
+        "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
+        "note": "About 2 km from the airport; take Dollar's shuttle. Check the pickup point and hours on your confirmation."
       }
     ],
     "dailyRoutes": [
@@ -1031,7 +848,7 @@
         "label": "01/06 Arrival · beach",
         "placeIds": [
           "lir",
-          "alamo-lir",
+          "dollar-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
@@ -1112,7 +929,7 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
-          "alamo-lir",
+          "dollar-lir",
           "lir"
         ],
         "transport": "driving",
@@ -1150,7 +967,7 @@
           "time": "10:40–15:24",
           "title": "Porter PD 783 Toronto → Liberia",
           "kind": "flight",
-          "text": "About 5h 44m nonstop. Departure is Toronto time, landing is local time (1 hour behind Toronto). After landing, get the entry stamp (check it's in your passport), collect bags, then head to the Alamo shuttle stop.",
+          "text": "About 5h 44m nonstop. Departure is Toronto time, landing is local time (1 hour behind Toronto). After landing, get the entry stamp (check it's in your passport), collect bags, then head to the Dollar shuttle stop.",
           "placeId": "lir",
           "tz": "America/Toronto",
           "end": "15:24",
@@ -1161,13 +978,13 @@
           "title": "Pick up the car",
           "kind": "drive",
           "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here.",
-          "placeId": "alamo-lir"
+          "placeId": "dollar-lir"
         },
         {
           "time": "17:00",
           "title": "Check in at Playas del Coco",
           "kind": "hotel",
-          "text": "About 35 min from the Alamo office, arrive before dark.",
+          "text": "About 35 min from the Dollar office, arrive before dark.",
           "placeId": "hotel-beach"
         },
         {
@@ -1620,7 +1437,7 @@
           "title": "Return the car, shuttle to the airport",
           "kind": "drive",
           "text": "The departure tax is usually included in the airfare. The return is operated by Air Transat, so check in and drop bags at the Air Transat counter; arriving 2.5–3 hours before an international flight is safest.",
-          "placeId": "alamo-lir"
+          "placeId": "dollar-lir"
         },
         {
           "time": "16:35–22:45",
@@ -1712,28 +1529,28 @@
   ],
   "rental": {
     "title": "Car rental: pick up 1/6 16:15 – return 1/11 13:15 (5 days)",
-    "summary": "There's no convenient public transit between the two regions, so we drive all five days. Default: Alamo, the cheapest smallest SUV on the companies' own sites (Suzuki Ignis), with the young-driver fee for age 23 already in the price; the office is about 1 km from the airport with a shuttle. Adobe has no young-driver fee, but its smallest SUV costs about CA$43 more.",
+    "summary": "There's no convenient public transit between the two regions, so we drive all five days. Booked: a Dollar SUV (Subaru Crosstrek or similar) through Booking.com, still awaiting confirmation; the office is about 2 km from Liberia airport with a shuttle. Adobe's and Alamo's quotes stay as backups.",
     "details": [
       {
         "label": "Driver",
-        "value": "Driver is 23 at time of travel, Canadian G licence (Alamo charges a USD50 young-driver fee for the whole rental, already in the quote)"
+        "value": "23 at time of travel, Canadian G licence (whether Dollar charges a young-driver fee is on the confirmation)"
       },
       {
         "label": "Pick-up / return",
-        "value": "Alamo's Liberia airport office (about 1 km outside the airport, shuttle, daily 5:00–22:00)"
+        "value": "Dollar's Liberia airport office (about 2 km outside the airport, shuttle)"
       },
       {
         "label": "Default vehicle",
-        "value": "Smallest SUV: Alamo Suzuki Ignis automatic, CA$852.43 (Fully package, incl. mandatory insurance, CDW and young-driver fee, official-site quote)"
+        "value": "Subaru Crosstrek or similar SUV, CA$710.01 (Booking.com total)"
       },
       {
         "label": "Current status",
-        "value": "Not booked · both companies quoted on their own sites for age 23, smallest SUV (11/19)"
+        "value": "Booked · awaiting Dollar confirmation; check whether mandatory third-party liability is included"
       }
     ],
     "notes": [
       "Mandatory third-party liability (TPL/SLI) can't be waived, and most low prices on third-party sites exclude it; go by the rental office's quote.",
-      "Other companies: Vamos also has no young-driver fee; Europcar charges USD6/day; Alamo's own site charges a USD50 young-driver fee for the whole rental at 23 (now a budget option); Enterprise and National charge drivers aged 21–24 but don't publish the amount.",
+      "Other companies: Vamos also has no young-driver fee; Europcar charges USD6/day; Alamo's own site charges a USD50 young-driver fee for the whole rental at 23 (the Alamo option stays in the budget as a backup); Enterprise and National charge drivers aged 21–24 but don't publish the amount.",
       "A Canadian licence is valid as is; bring your original passport (copies aren't accepted).",
       "Leave nothing in the car, and after parking pull the door handle to confirm it's locked (thieves sometimes jam key-fob signals).",
       "Drive the long legs in daylight: sunset is around 17:30, Route 142 along the lake is winding and dark, and Route 606 up to Monteverde is steep with tight bends; at night only short drives in town."
@@ -1860,7 +1677,7 @@
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "Costa Rica 6 days / 5 nights route map",
     "subtitle": "Beach + cloud forest + volcano · 5 days driving · wildlife without hiking",
-    "footer": "Routes drawn from OpenStreetMap road data · flights booked, the rest not yet · prices checked 2026-11-15",
+    "footer": "Routes drawn from OpenStreetMap road data · flights, hotels and car booked · prices checked 2026-11-15",
     "days": [
       {
         "day": 1,
@@ -2078,9 +1895,10 @@
         "due": "2026-11-30",
         "lead": "January is local school holidays; book early",
         "id": "book-hotel-beach",
-        "title": "Book the beach hotel: {option} (1/6–1/7, 1 night)",
+        "title": "Beach hotel booked: Villa Del Sol (1/6–1/7, 1 night)",
         "budget": "hotel-beach",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "group": "bookings",
@@ -2088,9 +1906,10 @@
         "due": "2026-11-30",
         "lead": "January is the local school holiday, book early",
         "id": "book-hotel-monteverde",
-        "title": "Book the Monteverde hotel: {option} (1/7–1/8, 1 night)",
+        "title": "Monteverde hotel booked: Hotel Montaña (1/7–1/8, 1 night)",
         "budget": "hotel-monteverde",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "group": "bookings",
@@ -2098,21 +1917,21 @@
         "due": "2026-11-30",
         "lead": "January is local school holidays; book early",
         "id": "book-hotel-arenal",
-        "title": "Book the volcano hotel: {option} (1/8–1/11, 3 nights)",
+        "title": "Volcano hotel booked: Termales del Arenal (1/8–1/11, 3 nights)",
         "budget": "hotel-arenal",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "id": "book-car",
         "group": "bookings",
         "who": "Me",
-        "title": "Book a Suzuki Ignis (smallest SUV, Fully package) on Alamo's site, enter age 23",
+        "title": "Dollar rental car booked (Subaru Crosstrek or similar), awaiting confirmation",
         "due": "2026-12-10",
         "lead": "4 weeks ahead",
-        "note": "Pay at the counter; credit card for the deposit (confirm the amount and licence-age rules with Alamo). Pickup is at Alamo's office about 1 km from the airport.",
-        "url": "https://www.alamo.cr/reservas",
-        "urlLabel": "Alamo Costa Rica",
-        "budget": "car"
+        "note": "When the confirmation email arrives, check: mandatory third-party liability and CDW, deposit, young-driver fee at 23, pickup point and shuttle. The deposit must go on a credit card.",
+        "budget": "car",
+        "status": "booked"
       },
       {
         "id": "book-float",

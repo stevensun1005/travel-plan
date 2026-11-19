@@ -13,7 +13,7 @@
     "calendarUrl": "https://stevensun1005.github.io/travel-plan/costa-rica/calendar.ics",
     "calendarColor": "#D07D9C",
     "demo": false,
-    "notice": "机票已订（去程PD 783、回程PD 7301），其余还没订。机票、酒店是11/15–11/16按这版行程查的价；租车按Adobe和Alamo官网11/19的报价（最小的SUV）。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
+    "notice": "机票（去程PD 783、回程PD 7301）、三家酒店和Dollar租车都已订，租车还在等Dollar确认。机票、酒店是11/15–11/16按这版行程查的价；租车是Dollar的实付价；Adobe和Alamo留作备选（11/19官网报价）。美元按加拿大央行2026-11-13汇率换算（1 USD = 1.4257 CAD），哥斯达黎加增值税13%。一月是当地学校假期，1/6前后海边人还比较多。",
     "constraints": [
       "两人 · 一间房",
       "不冲浪；她跟腱在复健后期（已能慢跑和负重训练），正常的团都能去，乱石路、上下船、骑马注意一点",
@@ -88,7 +88,7 @@
             "id": "villa-sol",
             "label": "Villa Del Sol Boutique · 住Coco · 含早餐",
             "amount": 197,
-            "status": "11/16 Booking.com（含税）",
+            "status": "已订 · Booking.com · 可免费取消",
             "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "评分8.6，在Playas del Coco，离海滩150米，晚上吃饭走路；含早，可免费取消。",
             "quotes": [
@@ -100,56 +100,6 @@
                 "url": "https://www.booking.com/hotel/cr/villa-del-sol.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "note": "CA$174＋税费CA$23",
                 "converted": 197
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "mm-beach",
-            "label": "Hotel M&M Beach House · 在沙滩上 · 含早餐",
-            "amount": 138,
-            "status": "11/16 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.2，就在Coco镇中心的海滩上，含早餐，可免费取消；房间简单。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 138,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/hote-m-and-m-beach-house.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$122＋税费CA$16",
-                "converted": 138
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "huetares",
-            "label": "Hotel & Villas Huetares · Hermosa · 带厨房",
-            "amount": 253,
-            "status": "11/16 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.6，离海滩300米，有泳池；不含早，页面没标免费取消。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 253,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/amp-villashuetares.html?checkin=2027-01-06&checkout=2027-01-07&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$224＋税费CA$29",
-                "converted": 253
               },
               {
                 "platform": "Expedia",
@@ -174,7 +124,7 @@
             "id": "montana",
             "label": "Hotel Montaña Monteverde · 离镇中心近 · 含早餐",
             "amount": 194,
-            "status": "11/16 Booking.com（含税）",
+            "status": "已订 · Booking.com · 可免费取消",
             "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
             "note": "评分9.0，离Santa Elena镇中心0.8公里，晚上去吃饭、去夜间徒步都近；含早，可免费取消、到店付款。",
             "quotes": [
@@ -186,56 +136,6 @@
                 "url": "https://www.booking.com/hotel/cr/de-montaa-a-monteverde-monte-verde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
                 "note": "CA$172＋税费CA$22",
                 "converted": 194
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（这次只查了Booking.com）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "corazon",
-            "label": "Hotel con Corazón · 评分9.0 · 含早餐",
-            "amount": 199,
-            "status": "11/16 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分9.0，离镇中心2公里；含早，可免费取消、到店付款。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 199,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/con-corazon-monteverde.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$176＋税费CA$23（原价CA$195）",
-                "converted": 199
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（这次只查了Booking.com）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "green-tree",
-            "label": "The Green Tree Lodge · 评分9.2 · 最省",
-            "amount": 109,
-            "status": "11/16 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分9.2，性价比高，离镇中心3公里，房间带阳台；含早、到店付款，页面没标免费取消。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 109,
-                "currency": "CAD",
-                "checkedOn": "2026-11-16",
-                "url": "https://www.booking.com/hotel/cr/the-green-tree-b-amp-b.html?checkin=2027-01-07&checkout=2027-01-08&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$109含税（原价CA$122）",
-                "converted": 109
               },
               {
                 "platform": "Expedia",
@@ -257,101 +157,10 @@
           {
             "id": "termales",
             "label": "Termales del Arenal · 自带温泉池 · 含早餐",
-            "amount": 777,
-            "status": "11/15 Booking.com（含税）",
+            "amount": 782,
+            "status": "已订 · Booking.com · 不可退款",
             "url": "https://www.booking.com/hotel/cr/termales-del-arenal.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.7，酒店里有自家温泉池，住三晚随时泡，就不用另买Ecotermales门票（Ecotermales就在隔壁）；含早。页面没标免费取消，订之前看清楚。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 777,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/termales-del-arenal.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$688＋税费CA$89",
-                "converted": 777
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "lavas",
-            "label": "Hotel Lavas Tacotal · 看火山 · 含早餐",
-            "amount": 425,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/lavas-tacotal-la-fortuna-san-carlos.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.6，在温泉区路上，离Ecotermales、Tabacón都近；含早。这几天的价格页面没标免费取消。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 425,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/lavas-tacotal-la-fortuna-san-carlos.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$376＋税费CA$49",
-                "converted": 425
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "loma-real",
-            "label": "Loma Real Hot Springs B&B · 自带温泉池",
-            "amount": 597,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/loma-real-amp-hotsprings.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "评分8.8，住客能泡自家温泉池；含早，可免费取消。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 597,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/loma-real-amp-hotsprings.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$528＋税费CA$69",
-                "converted": 597
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
-            "source": "Booking.com"
-          },
-          {
-            "id": "campo-verde",
-            "label": "Hotel Campo Verde · 评分9.0 · 含早餐",
-            "amount": 1329,
-            "status": "11/15 Booking.com（含税）",
-            "url": "https://www.booking.com/hotel/cr/campo-verde.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-            "note": "小木屋式，安静；含早，可免费取消。这几天比1/10那周贵一倍。",
-            "quotes": [
-              {
-                "platform": "Booking.com",
-                "amount": 1329,
-                "currency": "CAD",
-                "checkedOn": "2026-11-15",
-                "url": "https://www.booking.com/hotel/cr/campo-verde.html?checkin=2027-01-08&checkout=2027-01-11&group_adults=2&no_rooms=1&group_children=0&selected_currency=CAD",
-                "note": "CA$1,176＋税费CA$153",
-                "converted": 1329
-              },
-              {
-                "platform": "Expedia",
-                "available": false,
-                "note": "没比（1/10那份查时Expedia不显示价格）"
-              }
-            ],
+            "note": "已订1/8–1/11三晚，实付CA$782（不可退款）。 评分8.7，酒店里有自家温泉池，住三晚随时泡，就不用另买Ecotermales门票（Ecotermales就在隔壁）；含早。页面没标免费取消，订之前看清楚。",
             "source": "Booking.com"
           }
         ],
@@ -362,11 +171,25 @@
         "label": "租车｜5天 · 最小的SUV（含强制险和CDW）",
         "icon": "🚗",
         "color": "#1f9652",
-        "defaultOption": "alamo",
+        "defaultOption": "dollar",
         "previousDefaults": [
-          "adobe"
+          "adobe",
+          "alamo"
         ],
         "options": [
+          {
+            "id": "dollar",
+            "label": "Dollar 5天 · Subaru Crosstrek或同级（SUV）· 已订",
+            "amount": 710.01,
+            "status": "已订 · 等Dollar确认 · CA$710.01",
+            "note": "在Booking.com订的，1/6–1/11利比里亚取还车，总价CA$710.01，还在等Dollar确认。第三方平台的租车价常常不含哥斯达黎加强制第三者责任险（TPL/SLI），到店可能要另付，确认单到了核对：是否含强制险和CDW、押金多少、23岁收不收青年费、在哪里坐接驳车。",
+            "items": [
+              {
+                "label": "Subaru Crosstrek或同级 5天 · Booking.com总价",
+                "amount": 710.01
+              }
+            ]
+          },
           {
             "id": "alamo",
             "label": "Alamo 5天 · Suzuki Ignis自动挡（最小SUV）· 含强制险和CDW（Fully套餐）",
@@ -387,7 +210,13 @@
                 "amount": 71.29
               }
             ],
-            "url": "https://www.alamo.cr/reservas"
+            "url": "https://www.alamo.cr/reservas",
+            "booking": {
+              "title": "在Alamo官网订Suzuki Ignis（最小SUV，Fully套餐），填23岁",
+              "note": "到店付款；押金用信用卡（金额和驾照年限要求以Alamo确认为准）。取车在机场外约1公里的Alamo门店。",
+              "url": "https://www.alamo.cr/reservas",
+              "urlLabel": "Alamo哥斯达黎加"
+            }
           },
           {
             "id": "adobe",
@@ -718,25 +547,14 @@
         "note": "不想骑马时用这个。"
       },
       {
-        "id": "hermosa",
-        "label": "海边住Coco沙滩上",
-        "selections": {
-          "hotel-beach": "mm-beach"
-        },
-        "note": "海边那晚改住Coco镇中心、就在沙滩上的M&M。"
-      },
-      {
         "id": "save",
         "label": "最省",
         "selections": {
-          "hotel-beach": "mm-beach",
-          "hotel-arenal": "lavas",
           "food": "lean",
           "activities": "lite",
-          "buffer": "none",
-          "hotel-monteverde": "green-tree"
+          "buffer": "none"
         },
-        "note": "三家都选最便宜的，吃soda小馆，活动3项。"
+        "note": "酒店已订，只省吃和活动：吃soda小馆，活动3项。"
       }
     ],
     "chartGroups": {
@@ -778,7 +596,7 @@
         "route": "YYZ → LIR",
         "duration": "5小时44分",
         "connection": "直飞",
-        "note": "已订。哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Alamo接驳车去取车。",
+        "note": "已订。哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Dollar接驳车去取车。",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
         "booked": true
       }
@@ -818,11 +636,11 @@
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
         "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
-        "note": "Alamo门店在机场外约1公里（Ruta 21旁），坐接驳车；地图按航站楼画线。"
+        "note": "Dollar门店在机场外约2公里，坐接驳车；地图按航站楼画线。"
       },
       {
         "id": "hotel-beach",
-        "name": "Hotel Villa Del Sol（Playas del Coco，默认，未订）",
+        "name": "Hotel Villa Del Sol（Playas del Coco，已订）",
         "lat": 10.55894,
         "lng": -85.690166,
         "maps": "Villa Del Sol Boutique Hotel, Playas del Coco",
@@ -886,7 +704,7 @@
       },
       {
         "id": "hotel-monteverde",
-        "name": "Hotel Montaña Monteverde（默认，未订）",
+        "name": "Hotel Montaña Monteverde（已订）",
         "lat": 10.3115843,
         "lng": -84.816105,
         "maps": "Hotel Montaña Monteverde",
@@ -927,7 +745,7 @@
       },
       {
         "id": "hotel-arenal",
-        "name": "Termales del Arenal（默认酒店，未订）",
+        "name": "Termales del Arenal（已订）",
         "lat": 10.478292,
         "lng": -84.672823,
         "maps": "Termales del Arenal, La Fortuna",
@@ -1015,14 +833,13 @@
         "note": "镇中心往南约2公里，去La Fortuna瀑布的路上。"
       },
       {
-        "id": "alamo-lir",
-        "name": "Alamo租车 · 利比里亚机场店",
-        "lat": 10.59854,
-        "lng": -85.51977,
-        "maps": "Alamo Rent a Car Liberia Airport",
-        "address": "Ruta 21, 1 km al este del Aeropuerto Daniel Oduber, Liberia, Guanacaste",
-        "hours": "每天 5:00–22:00",
-        "note": "在机场外约1公里，坐Alamo的接驳车过去（接驳安排以确认邮件为准）。"
+        "id": "dollar-lir",
+        "name": "Dollar租车 · 利比里亚机场店",
+        "lat": 10.60314,
+        "lng": -85.51284,
+        "maps": "Dollar Rent a Car Liberia",
+        "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
+        "note": "在机场外约2公里，坐Dollar的接驳车过去；接驳点和营业时间以确认单为准。"
       }
     ],
     "dailyRoutes": [
@@ -1031,7 +848,7 @@
         "label": "01/06 落地·海边",
         "placeIds": [
           "lir",
-          "alamo-lir",
+          "dollar-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
@@ -1112,7 +929,7 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
-          "alamo-lir",
+          "dollar-lir",
           "lir"
         ],
         "transport": "driving",
@@ -1150,7 +967,7 @@
           "time": "10:40–15:24",
           "title": "Porter PD 783 多伦多 → 利比里亚",
           "kind": "flight",
-          "text": "直飞约5小时44分。起飞是多伦多时间，落地是当地时间（比多伦多晚1小时）。落地后入境盖章（确认护照上有章），拿行李后到Alamo接驳点。",
+          "text": "直飞约5小时44分。起飞是多伦多时间，落地是当地时间（比多伦多晚1小时）。落地后入境盖章（确认护照上有章），拿行李后到Dollar接驳点。",
           "placeId": "lir",
           "tz": "America/Toronto",
           "end": "15:24",
@@ -1161,13 +978,13 @@
           "title": "取车",
           "kind": "drive",
           "text": "带实体驾照、护照和本人信用卡（押金约USD1,000）。检查车况拍照；手动确认车门锁好，这里租车被撬很常见。",
-          "placeId": "alamo-lir"
+          "placeId": "dollar-lir"
         },
         {
           "time": "17:00",
           "title": "到Playas del Coco入住",
           "kind": "hotel",
-          "text": "从Alamo门店开约35分钟，天黑前到。",
+          "text": "从Dollar门店开约35分钟，天黑前到。",
           "placeId": "hotel-beach"
         },
         {
@@ -1620,7 +1437,7 @@
           "title": "还车，坐接驳车到机场",
           "kind": "drive",
           "text": "离境税一般已含在机票里。回程由Air Transat执飞，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小时到最稳。",
-          "placeId": "alamo-lir"
+          "placeId": "dollar-lir"
         },
         {
           "time": "16:35–22:45",
@@ -1712,28 +1529,28 @@
   ],
   "rental": {
     "title": "租车：1/6 16:15取 – 1/11 13:15还（5天）",
-    "summary": "哥斯达黎加两个区域之间没有方便的公共交通，五天都开车。默认Alamo：官网实价里最便宜的最小SUV（Suzuki Ignis），23岁青年费已含在价里；门店在机场外约1公里，有接驳。Adobe不收青年费，但最小的SUV贵约CA$43。",
+    "summary": "哥斯达黎加两个区域之间没有方便的公共交通，五天都开车。已订Dollar的SUV（Subaru Crosstrek或同级），在Booking.com订的，还在等确认；门店在利比里亚机场外约2公里，有接驳。Adobe和Alamo的报价留作备选。",
     "details": [
       {
         "label": "驾驶人",
-        "value": "出行时23岁，加拿大G牌（Alamo收23岁青年费，整单USD50，已含在报价里）"
+        "value": "出行时23岁，加拿大G牌（Dollar收不收青年费看确认单）"
       },
       {
         "label": "取还车",
-        "value": "Alamo利比里亚机场店（机场外约1公里，接驳车，每天5:00–22:00）"
+        "value": "Dollar利比里亚机场店（机场外约2公里，接驳车）"
       },
       {
         "label": "默认车型",
-        "value": "最小的SUV：Alamo Suzuki Ignis自动挡，CA$852.43（Fully套餐，含强制险、CDW和青年费，官网报价）"
+        "value": "Subaru Crosstrek或同级SUV，CA$710.01（Booking.com总价）"
       },
       {
         "label": "当前状态",
-        "value": "未预订 · 两家都按23岁、最小SUV在官网查过价（11/19）"
+        "value": "已订 · 等Dollar确认；核对是否含强制第三者责任险"
       }
     ],
     "notes": [
       "强制第三者责任险（TPL/SLI）不能免，第三方网站的低价大多不含；以门店报价为准。",
-      "其他公司：Vamos也不收青年费；Europcar每天USD6；Alamo官网查到23岁青年费整单USD50（已放进预算的Alamo方案）；Enterprise、National对21–24岁收费但没公布金额。",
+      "其他公司：Vamos也不收青年费；Europcar每天USD6；Alamo官网查到23岁青年费整单USD50（Alamo方案留在预算里作备选）；Enterprise、National对21–24岁收费但没公布金额。",
       "加拿大驾照可以直接开，带护照原件（复印件不行）。",
       "车里不留任何东西，停车后手动拉门确认锁好（有人用信号干扰遥控锁）。",
       "长途在白天开：日落约17:30，湖边的Route 142又弯又黑，Monteverde的606号路坡陡弯急；晚上只在镇上开短途。"
@@ -1860,7 +1677,7 @@
     "kicker": "YYZ ✈ LIR · 2027.1.6 – 1.11",
     "title": "哥斯达黎加 5晚6天 路线图",
     "subtitle": "海边＋云雾森林＋火山 · 自驾5天 · 不爬山也能看动物",
-    "footer": "路线按 OpenStreetMap 道路数据绘制 · 机票已订，其余未订 · 查价 2026-11-15",
+    "footer": "路线按 OpenStreetMap 道路数据绘制 · 机票、酒店、租车已订 · 查价 2026-11-15",
     "days": [
       {
         "day": 1,
@@ -2078,9 +1895,10 @@
         "due": "2026-11-30",
         "lead": "一月是当地学校假期，尽早",
         "id": "book-hotel-beach",
-        "title": "订海边酒店：{option}（1/6–1/7 一晚）",
+        "title": "已订海边酒店：Villa Del Sol（1/6–1/7 一晚）",
         "budget": "hotel-beach",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "group": "bookings",
@@ -2088,9 +1906,10 @@
         "due": "2026-11-30",
         "lead": "一月是当地学校假期，尽早",
         "id": "book-hotel-monteverde",
-        "title": "订Monteverde酒店：{option}（1/7–1/8 一晚）",
+        "title": "已订Monteverde酒店：Hotel Montaña（1/7–1/8 一晚）",
         "budget": "hotel-monteverde",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "group": "bookings",
@@ -2098,21 +1917,21 @@
         "due": "2026-11-30",
         "lead": "一月是当地学校假期，尽早",
         "id": "book-hotel-arenal",
-        "title": "订火山酒店：{option}（1/8–1/11 三晚）",
+        "title": "已订火山酒店：Termales del Arenal（1/8–1/11 三晚）",
         "budget": "hotel-arenal",
-        "urlLabel": "Booking.com"
+        "urlLabel": "Booking.com",
+        "status": "booked"
       },
       {
         "id": "book-car",
         "group": "bookings",
         "who": "我",
-        "title": "在Alamo官网订Suzuki Ignis（最小SUV，Fully套餐），填23岁",
+        "title": "已订Dollar租车（Subaru Crosstrek或同级），等确认",
         "due": "2026-12-10",
         "lead": "提前4周",
-        "note": "到店付款；押金用信用卡（金额和驾照年限要求以Alamo确认为准）。取车在机场外约1公里的Alamo门店。",
-        "url": "https://www.alamo.cr/reservas",
-        "urlLabel": "Alamo哥斯达黎加",
-        "budget": "car"
+        "note": "确认邮件到了核对：是否含强制第三者责任险和CDW、押金、23岁青年费、取车地点和接驳。押金只能用信用卡。",
+        "budget": "car",
+        "status": "booked"
       },
       {
         "id": "book-float",
