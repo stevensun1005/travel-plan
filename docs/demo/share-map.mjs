@@ -200,7 +200,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
   const insetDays = new Set(inset?.days || []);
 
   // 画一层地图：F 是画框，box 是经纬度范围（会按画框比例补齐）
-  function layer(F, box, { main = false, badgeDays, pois: layerPois, spread = 4.5, pad = [35, 30] }) {
+  function layer(F, box, { main = false, badgeDays, showDay = () => true, pois: layerPois, spread = 4.5, pad = [35, 30] }) {
     const k = Math.cos((box.n + box.s) / 2 * Math.PI / 180);
     const want = (F.w - pad[0] * 2) / (F.h - pad[1] * 2), now = (box.e - box.w) * k / (box.n - box.s);
     if (now < want) { const add = ((box.n - box.s) * want / k - (box.e - box.w)) / 2; box.w -= add; box.e += add; }
@@ -234,16 +234,34 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     if (main && share.seaLabel) text(ctx, share.seaLabel, F.x + 70, F.y + F.h - 40, { font: `italic 600 18px ${SANS}`, color: 'rgba(42,90,130,.6)' });
 
     // 几天走同一段路时，每天的线往旁边错开一点（两头收回到地点上），后画的不会把先画的整段盖住；
-    // 长的先画、短的后画，短途不会被长途压在底下。
+    // 错开的方向只看路、不看走的方向，同一天去了又回来的路叠成一条；先把弯弯绕绕的路按屏幕像素化简，线不会抖。
+    // 长的先画、短的后画，短途不会被长途压在底下。放进小图的那几天只在小图里画。
+    const simplify = (p, tol) => {
+      if (p.length < 3) return p;
+      const keep = new Uint8Array(p.length); keep[0] = keep[p.length - 1] = 1;
+      const stack = [[0, p.length - 1]];
+      while (stack.length) {
+        const [a, b] = stack.pop(); let best = 0, at = -1;
+        const [ax, ay] = p[a], [bx, by] = p[b], len = Math.hypot(bx - ax, by - ay);
+        for (let j = a + 1; j < b; j++) { // 首尾重合（绕一圈回到原地）时按到起点的距离算
+          const dd = len < 1e-6 ? Math.hypot(p[j][0] - ax, p[j][1] - ay) : Math.abs((bx - ax) * (ay - p[j][1]) - (ax - p[j][0]) * (by - ay)) / len;
+          if (dd > best) { best = dd; at = j; }
+        }
+        if (best > tol) { keep[at] = 1; stack.push([a, at], [at, b]); }
+      }
+      return p.filter((_, j) => keep[j]);
+    };
     const lines = days.map((d, i) => {
+      if (!showDay(d.day)) return null;
       const coords = routeFor(d.day); if (!coords || coords.length < 2) return null;
-      const special = !roads.find(r => r.day === d.day), raw = coords.map(c => P(...c));
+      const special = !roads.find(r => r.day === d.day), raw = special ? coords.map(c => P(...c)) : simplify(coords.map(c => P(...c)), 1.8);
       const acc = [0]; for (let j = 1; j < raw.length; j++) acc[j] = acc[j - 1] + Math.hypot(raw[j][0] - raw[j - 1][0], raw[j][1] - raw[j - 1][1]);
       const L = acc[acc.length - 1], off = (i - (days.length - 1) / 2) * spread;
       const pts = special || !off ? raw : raw.map((p, j) => {
         const a = raw[Math.max(0, j - 1)], b = raw[Math.min(raw.length - 1, j + 1)], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1;
+        let nx = -dy / l, ny = dx / l; if (ny > 0 || (ny === 0 && nx > 0)) { nx = -nx; ny = -ny; } // 法线统一朝上（或朝左）
         const t = Math.min(1, acc[j] / 24, (L - acc[j]) / 24);
-        return [p[0] - dy / l * off * t, p[1] + dx / l * off * t];
+        return [p[0] + nx * off * t, p[1] + ny * off * t];
       });
       return { d, pts, L, special };
     }).filter(Boolean).sort((a, b) => b.L - a.L);
@@ -314,7 +332,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     return P;
   }
 
-  const MP = layer({ x: MX, y: MY, w: MW, h: MH }, { ...bbox }, { main: true, badgeDays: d => !insetDays.has(d), pois });
+  const MP = layer({ x: MX, y: MY, w: MW, h: MH }, { ...bbox }, { main: true, badgeDays: d => !insetDays.has(d), showDay: d => !insetDays.has(d), pois });
   if (inset) {
     // 小图默认放左下角，宽 inset.width（默认 470），高按范围比例
     const [iw, is, ie, inn] = inset.bbox, ik = Math.cos((is + inn) / 2 * Math.PI / 180);
@@ -329,7 +347,7 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     ctx.beginPath(); ctx.moveTo((ax + bx2) / 2, corner.includes('t') ? ay : by2); ctx.lineTo(fx, fy); ctx.stroke(); ctx.setLineDash([]);
     sketchBox(ctx, IX, IY, IW, IH, { fill: '#cfe6ec', shadow: 4 });
     ctx.save(); roundPath(ctx, IX + 2, IY + 2, IW - 4, IH - 4, [12, 4, 12, 5]); ctx.clip();
-    layer({ x: IX, y: IY, w: IW, h: IH }, { w: iw, s: is, e: ie, n: inn }, { badgeDays: d => insetDays.has(d), pois: inset.pois || [], spread: 5, pad: [14, 14] });
+    layer({ x: IX, y: IY, w: IW, h: IH }, { w: iw, s: is, e: ie, n: inn }, { badgeDays: d => insetDays.has(d), showDay: d => insetDays.has(d), pois: inset.pois || [], spread: 5, pad: [14, 14] });
     ctx.restore();
     if (inset.title) {
       ctx.font = `bold 21px ${HAND}`; const tw2 = ctx.measureText(inset.title).width + 24;
