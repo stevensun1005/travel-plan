@@ -365,55 +365,74 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       const LX = corner.includes('r') ? MX + MW - LW - 24 : MX + 24, LY = corner.includes('t') ? MY + 24 : MY + MH - LH - 24;
       sketchBox(ctx, LX, LY, LW, LH, { fill: '#cfe6ec', shadow: 4 });
       ctx.save(); roundPath(ctx, LX + 2, LY + 2, LW - 4, LH - 4, [12, 4, 12, 5]); ctx.clip();
-      const pad = loc.pad ?? 7;
-      const b = { w: Math.min(loc.from.lng, loc.to.lng) - pad, e: Math.max(loc.from.lng, loc.to.lng) + pad, s: Math.min(loc.from.lat, loc.to.lat) - pad, n: Math.max(loc.from.lat, loc.to.lat) + pad };
-      const k = Math.cos((b.n + b.s) / 2 * Math.PI / 180), want = LW / LH, have = (b.e - b.w) * k / (b.n - b.s);
-      if (have < want) { const add = ((b.n - b.s) * want / k - (b.e - b.w)) / 2; b.w -= add; b.e += add; }
-      else { const add = ((b.e - b.w) * k / want - (b.n - b.s)) / 2; b.s -= add; b.n += add; }
-      const sc = LW / ((b.e - b.w) * k), Q = (lng, lat) => [LX + (lng - b.w) * k * sc, LY + (b.n - lat) * sc];
-      // 陆地、湖、主要河流、国界线，再写海洋和国家名（不和城市标签、彼此重叠）
+      const en = i18n.lang === 'en', simp = s => String(s || '').replace(/灣/g, '湾').replace(/裏/g, '里').replace(/島/g, '岛');
+      const inside = (rings, lng, lat) => rings.some(r => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > lat) !== (yj > lat) && lng < (xj - xi) * (lat - yi) / (yj - yi) + xi) c = !c; } return c; });
+      // 出发的国家一定要写名字：loc.from.country 可写名字（或 {zh,en}）；不写就按出发点落在哪个大国里自动找
+      const named = loc.from.country, byName = n => (world.countries || []).find(c => c.zh === n || c.en === n);
+      const origin = typeof named === 'string' ? (byName(named) || { zh: named, en: named }) : named?.zh ? (byName(named.zh) || named)
+        : (world.countries || []).find(c => c.rings && inside(c.rings, loc.from.lng, loc.from.lat)) || null;
+      // 先排版再画：出发国名字放不下，就把范围放大一点（地图整体缩小）重新排
+      const plan = pad => {
+        const b = { w: Math.min(loc.from.lng, loc.to.lng) - pad, e: Math.max(loc.from.lng, loc.to.lng) + pad, s: Math.min(loc.from.lat, loc.to.lat) - pad, n: Math.max(loc.from.lat, loc.to.lat) + pad };
+        const k = Math.cos((b.n + b.s) / 2 * Math.PI / 180), want = LW / LH, have = (b.e - b.w) * k / (b.n - b.s);
+        if (have < want) { const add = ((b.n - b.s) * want / k - (b.e - b.w)) / 2; b.w -= add; b.e += add; }
+        else { const add = ((b.e - b.w) * k / want - (b.n - b.s)) / 2; b.s -= add; b.n += add; }
+        const sc = LW / ((b.e - b.w) * k), Q = (lng, lat) => [LX + (lng - b.w) * k * sc, LY + (b.n - lat) * sc];
+        const taken = [], labels = [];
+        if (loc.title) { ctx.font = `bold 21px ${HAND}`; taken.push({ x: LX + 8, y: LY - 20, w: ctx.measureText(loc.title).width + 32, h: 40 }); } // 标题贴纸那一块不写名字
+        const free = (x, y, w, h) => x > LX + 4 && x + w < LX + LW - 4 && y > LY + 4 && y + h < LY + LH - 4 && !taken.some(o => x < o.x + o.w + 3 && x + w + 3 > o.x && y < o.y + o.h + 2 && y + h + 2 > o.y);
+        const [fx0, fy0] = Q(loc.from.lng, loc.from.lat), [tx0, ty0] = Q(loc.to.lng, loc.to.lat);
+        for (const [pt, x, y] of [[loc.from, fx0, fy0], [loc.to, tx0, ty0]]) {
+          taken.push({ x: x - 9, y: y - 9, w: 18, h: 18 });
+          if (pt.label) { ctx.font = `bold 19px ${HAND}`; const w = ctx.measureText(pt.label).width, right = x + 12 + w < LX + LW - 8; taken.push({ x: right ? x + 10 : x - 12 - w, y: y - 12, w: w + 4, h: 24 }); }
+        }
+        { // 航线弧和飞机也先占位，名字不压在线上
+          const cx0 = (fx0 + tx0) / 2 - (ty0 - fy0) * .22, cy0 = (fy0 + ty0) / 2 + (tx0 - fx0) * .22, B = (t, a0, c, b0) => (1 - t) * (1 - t) * a0 + 2 * (1 - t) * t * c + t * t * b0;
+          for (let t = 0; t <= 1.001; t += .04) taken.push({ x: B(t, fx0, cx0, tx0) - 6, y: B(t, fy0, cy0, ty0) - 6, w: 12, h: 12 });
+          taken.push({ x: B(.5, fx0, cx0, tx0) - 18, y: B(.5, fy0, cy0, ty0) - 18, w: 36, h: 36 });
+        }
+        const place = (name, font, cands, style) => {
+          ctx.font = font; const w = ctx.measureText(name).width;
+          const spot = cands.find(([cx1, cy1]) => free(cx1 - w / 2, cy1 - 8, w, 16));
+          if (!spot) return false;
+          taken.push({ x: spot[0] - w / 2, y: spot[1] - 8, w, h: 16 }); labels.push({ name, font, x: spot[0], y: spot[1], ...style }); return true;
+        };
+        const grid = (rings, n) => { const hit = []; for (let gx = 1; gx < n; gx++) for (let gy = 1; gy < n; gy++) { const lng = b.w + (b.e - b.w) * gx / n, lat = b.s + (b.n - b.s) * gy / n; if (inside(rings, lng, lat)) hit.push(Q(lng, lat)); } return hit; };
+        const byDist = (pts, [ox, oy]) => pts.sort((p, q) => Math.hypot(p[0] - ox, p[1] - oy) - Math.hypot(q[0] - ox, q[1] - oy));
+        const landStyle = { color: '#5c4b3d', halo: 3, haloColor: '#f6efd6' }, bold = `bold 15px ${SANS}`;
+        let ok = true;
+        if (origin) { // 出发国：贴着出发城市找位置
+          const cands = origin.rings ? byDist(grid(origin.rings, 16), [fx0, fy0]) : [];
+          for (const [dx, dy] of [[0, -26], [0, 26], [-50, -14], [50, -14], [-50, 14], [50, 14], [0, -46], [0, 46]]) cands.push([fx0 + dx, fy0 + dy]);
+          ok = place(en ? origin.en : simp(origin.zh), bold, cands, landStyle);
+        }
+        for (const sea of (world.seas || []).slice().sort((a, b2) => a.rank - b2.rank)) {
+          const hit = grid(sea.rings, 10); if (hit.length < 3) continue; // 在看得见的范围里撒点，名字放在落在这片海里的点中间
+          const c0 = [hit.reduce((s, p) => s + p[0], 0) / hit.length, hit.reduce((s, p) => s + p[1], 0) / hit.length];
+          place(en ? sea.en : simp(sea.zh), `italic ${sea.rank ? 13 : 15}px ${SANS}`, [c0, ...byDist(hit, c0)], { color: 'rgba(42,90,130,.8)', halo: 3, haloColor: '#cfe6ec' });
+        }
+        // 其他国家只写大国（面积 150 万平方公里以上，数据里只有这些）：标注点在画面里就用它，不在就在露出来的那块里找空位
+        for (const c of world.countries || []) {
+          if (!c?.rings || c === origin || (origin && c.zh === origin.zh)) continue;
+          const cands = [];
+          if (c.x > b.w && c.x < b.e && c.y > b.s && c.y < b.n) { const [x0, y0] = Q(c.x, c.y); cands.push([x0, y0], [x0, y0 - 18], [x0, y0 + 18]); }
+          const hit = grid(c.rings, 12);
+          if (hit.length) cands.push(...byDist(hit, [hit.reduce((s, p) => s + p[0], 0) / hit.length, hit.reduce((s, p) => s + p[1], 0) / hit.length]));
+          place(en ? c.en : simp(c.zh), bold, cands, landStyle);
+        }
+        return { b, Q, labels, ok };
+      };
+      let laid = null;
+      for (let i = 0, pad = loc.pad ?? 7; i < 6; i++, pad *= 1.35) { laid = plan(pad); if (laid.ok) break; }
+      const { b, Q, labels } = laid;
+      // 陆地、湖、主要河流、国界线，再写排好的名字
       const near = r => r.some(([lng, lat]) => lng > b.w - 20 && lng < b.e + 20 && lat > b.s - 20 && lat < b.n + 20);
       const path = (rings, close) => { ctx.beginPath(); for (const r of rings || []) { if (!near(r)) continue; r.forEach(([lng, lat], i) => { const [x, y] = Q(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); if (close) ctx.closePath(); } };
       path(world.land, true); ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd'); ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 1.2; ctx.lineJoin = 'round'; ctx.stroke();
       path(world.lakes, true); ctx.fillStyle = '#bcd8e6'; ctx.fill(); ctx.strokeStyle = '#7fa6bd'; ctx.lineWidth = .8; ctx.stroke();
       path(world.rivers, false); ctx.strokeStyle = '#7fb0d0'; ctx.lineWidth = 1.1; ctx.stroke();
       path(world.borders, false); ctx.strokeStyle = 'rgba(128,100,82,.8)'; ctx.lineWidth = 1; ctx.setLineDash([4, 3]); ctx.stroke(); ctx.setLineDash([]);
-      const en = i18n.lang === 'en', simp = s => String(s || '').replace(/灣/g, '湾').replace(/裏/g, '里').replace(/島/g, '岛');
-      const taken = [];
-      if (loc.title) { ctx.font = `bold 21px ${HAND}`; taken.push({ x: LX + 8, y: LY - 20, w: ctx.measureText(loc.title).width + 32, h: 40 }); } // 标题贴纸那一块不写名字
-      const free = (x, y, w, h) => x > LX + 4 && x + w < LX + LW - 4 && y > LY + 4 && y + h < LY + LH - 4 && !taken.some(o => x < o.x + o.w + 3 && x + w + 3 > o.x && y < o.y + o.h + 2 && y + h + 2 > o.y);
-      const cityLabel = (pt, x, y) => { ctx.font = `bold 19px ${HAND}`; const w = ctx.measureText(pt.label || '').width, right = x + 12 + w < LX + LW - 8; return { right, box: { x: right ? x + 10 : x - 12 - w, y: y - 12, w: w + 4, h: 24 } }; };
-      const [fx0, fy0] = Q(loc.from.lng, loc.from.lat), [tx0, ty0] = Q(loc.to.lng, loc.to.lat);
-      for (const [pt, x, y] of [[loc.from, fx0, fy0], [loc.to, tx0, ty0]]) { taken.push({ x: x - 9, y: y - 9, w: 18, h: 18 }); if (pt.label) taken.push(cityLabel(pt, x, y).box); }
-      { // 航线弧和飞机也先占位，名字不压在线上
-        const cx0 = (fx0 + tx0) / 2 - (ty0 - fy0) * .22, cy0 = (fy0 + ty0) / 2 + (tx0 - fx0) * .22, B = (t, a0, c, b0) => (1 - t) * (1 - t) * a0 + 2 * (1 - t) * t * c + t * t * b0;
-        for (let t = 0; t <= 1.001; t += .04) taken.push({ x: B(t, fx0, cx0, tx0) - 6, y: B(t, fy0, cy0, ty0) - 6, w: 12, h: 12 });
-        taken.push({ x: B(.5, fx0, cx0, tx0) - 18, y: B(.5, fy0, cy0, ty0) - 18, w: 36, h: 36 });
-      }
-      const inside = (rings, lng, lat) => rings.some(r => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > lat) !== (yj > lat) && lng < (xj - xi) * (lat - yi) / (yj - yi) + xi) c = !c; } return c; });
-      for (const sea of (world.seas || []).slice().sort((a, b2) => a.rank - b2.rank)) {
-        const hit = []; // 在看得见的范围里撒点，取落在这片海里的点的中心放名字
-        for (let gx = 1; gx < 10; gx++) for (let gy = 1; gy < 10; gy++) { const lng = b.w + (b.e - b.w) * gx / 10, lat = b.s + (b.n - b.s) * gy / 10; if (inside(sea.rings, lng, lat)) hit.push(Q(lng, lat)); }
-        if (hit.length < 3) continue;
-        const name = en ? sea.en : simp(sea.zh), font = `italic ${sea.rank ? 13 : 15}px ${SANS}`; ctx.font = font;
-        const w = ctx.measureText(name).width, mx1 = hit.reduce((s, p) => s + p[0], 0) / hit.length, my1 = hit.reduce((s, p) => s + p[1], 0) / hit.length;
-        const spot = [[mx1, my1], ...hit.slice().sort((p, q) => Math.hypot(p[0] - mx1, p[1] - my1) - Math.hypot(q[0] - mx1, q[1] - my1))].map(([px, py]) => [px - w / 2, py - 8]).find(([x, y]) => free(x, y, w, 16));
-        if (!spot) continue;
-        const [x, y] = spot; taken.push({ x, y, w, h: 16 }); text(ctx, name, x, y + 8, { font, color: 'rgba(42,90,130,.8)', base: 'middle', halo: 3, haloColor: '#cfe6ec' });
-      }
-      // 只写大国（面积 150 万平方公里以上，数据里只有这些）：标注点在画面里就用它，不在（比如只露出加拿大南边）就在露出来的那块里找空位
-      for (const c of world.countries || []) {
-        if (!c?.rings) continue;
-        const name = en ? c.en : simp(c.zh), font = `bold 15px ${SANS}`; ctx.font = font;
-        const w = ctx.measureText(name).width, cands = [];
-        if (c.x > b.w && c.x < b.e && c.y > b.s && c.y < b.n) { const [x0, y0] = Q(c.x, c.y); cands.push([x0, y0], [x0, y0 - 18], [x0, y0 + 18]); }
-        const hit = [];
-        for (let gx = 1; gx < 12; gx++) for (let gy = 1; gy < 12; gy++) { const lng = b.w + (b.e - b.w) * gx / 12, lat = b.s + (b.n - b.s) * gy / 12; if (inside(c.rings, lng, lat)) hit.push(Q(lng, lat)); }
-        if (hit.length) { const mx2 = hit.reduce((s, p) => s + p[0], 0) / hit.length, my2 = hit.reduce((s, p) => s + p[1], 0) / hit.length; cands.push(...hit.sort((p, q) => Math.hypot(p[0] - mx2, p[1] - my2) - Math.hypot(q[0] - mx2, q[1] - my2))); }
-        const spot = cands.find(([cx1, cy1]) => free(cx1 - w / 2, cy1 - 8, w, 16));
-        if (!spot) continue;
-        taken.push({ x: spot[0] - w / 2, y: spot[1] - 8, w, h: 16 }); text(ctx, name, spot[0], spot[1], { font, color: '#5c4b3d', align: 'center', base: 'middle', halo: 3, haloColor: '#f6efd6' });
-      }
+      for (const l of labels) text(ctx, l.name, l.x, l.y, { font: l.font, color: l.color, align: 'center', base: 'middle', halo: l.halo, haloColor: l.haloColor });
       // 航线：一条往外弯的虚线弧，中间放一架飞机
       const [ax, ay] = Q(loc.from.lng, loc.from.lat), [bx3, by3] = Q(loc.to.lng, loc.to.lat);
       const mx = (ax + bx3) / 2, my = (ay + by3) / 2, dx = bx3 - ax, dy = by3 - ay, bend = .22;

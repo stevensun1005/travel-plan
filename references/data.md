@@ -108,7 +108,7 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 | --- | --- |
 | `kicker,title,subtitle,footer` | 海报页头文字；`footer` 一般不写，右下角只留一行很小的「© OpenStreetMap 贡献者」（地图数据许可要求，不能去掉），写了才在它前面加一句 |
 | `days[]` | `{day,tag,short,items[],badgeAt,badgeOffset?,insetBadgeAt?,insetBadgeOffset?}`；`tag`卡片标题，海报底部日程条也写它（放不下在「·」处折成两行）；`short`只给小尺寸预览卡用；`items`最多5条亮点，航班写「航空公司代码 出发-到达」，例如 `"✈️ PD YYZ-LIR"`，不写航班号和时刻；`badgeAt`是日期徽章在当天路线上的位置（0–1），徽章挤在一起或压住贴纸时调它或 `badgeOffset:[dx,dy]` |
-| `locator` | 飞行位置小图 `{title,from:{lng,lat,label},to:{lng,lat,label},corner?,width?,height?,pad?}`：主图空着的一角（`corner` 默认 `bl`）画一张大陆小地图和一条虚线航线，标出从哪里飞过来（例如多伦多 → 哥斯达黎加）。底图读同目录的 `world-land.json`（随底板提供，Natural Earth 公有领域数据：1:110m 陆地、湖、国界、海洋名，1:50m 主要河流；国家名只写面积 150 万平方公里以上的大国（加拿大、美国、墨西哥……），其他国家只画国界不写名；发布时一起带上），不在就不画；国家名和海洋名自动避开航线、飞机和城市标签。航线经过的国家很远、主图又有空角时用；放在不挡路线和贴纸的角 |
+| `locator` | 飞行位置小图 `{title,from:{lng,lat,label,country?},to:{lng,lat,label},corner?,width?,height?,pad?}`；出发的国家一定写名字（`from.country` 可指定，不写就按出发点落在哪个大国里自动找），放不下时自动把范围放大、地图整体缩小再排：主图空着的一角（`corner` 默认 `bl`）画一张大陆小地图和一条虚线航线，标出从哪里飞过来（例如多伦多 → 哥斯达黎加）。底图读同目录的 `world-land.json`（随底板提供，Natural Earth 公有领域数据：1:110m 陆地、湖、国界、海洋名，1:50m 主要河流；国家名只写面积 150 万平方公里以上的大国（加拿大、美国、墨西哥……），其他国家只画国界不写名；发布时一起带上），不在就不画；国家名和海洋名自动避开航线、飞机和城市标签。航线经过的国家很远、主图又有空角时用；放在不挡路线和贴纸的角 |
 | `inset` | 局部放大小图 `{title,bbox:[西,南,东,北],days:[],pois:[],corner?,width?}`：好几天的短途挤在一小片（例如火山小镇周边）时用。小图画在主图一角（`corner` 默认 `bl`，可 `tr` 等），主图上用虚线框出范围并连过去；`days` 的徽章画在小图里（位置用 `insetBadgeAt`），`pois` 的贴纸只在小图里（主图 `pois` 就别再放这些点）。几天走同一段路时，海报会把每天的线往旁边错开一点，长的先画、短的后画，每天都看得见 |
 | `pois[]` | `{placeId,icon,label,side,dx,dy}`；side为left/right/above/below，或用dx/dy像素偏移并自动画引线 |
 | `bbox` | `[西,南,东,北]`，海报地图范围；缺省为全部地点和路线外扩10% |
