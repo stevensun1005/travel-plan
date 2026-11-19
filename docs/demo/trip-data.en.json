@@ -2432,7 +2432,24 @@
       "lng": -158.035,
       "lat": 21.6
     },
-    "seaLabel": "PACIFIC OCEAN"
+    "seaLabel": "PACIFIC OCEAN",
+    "locator": {
+      "title": "✈ Flying in from Toronto",
+      "corner": "tr",
+      "width": 300,
+      "height": 200,
+      "pad": 5,
+      "from": {
+        "lng": -79.63,
+        "lat": 43.68,
+        "label": "Toronto"
+      },
+      "to": {
+        "lng": -157.92,
+        "lat": 21.32,
+        "label": "Honolulu"
+      }
+    }
   },
   "checklist": {
     "asOf": "2026-11-15",

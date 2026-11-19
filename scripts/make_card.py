@@ -63,7 +63,7 @@ def inject(page, url=None, image='og.png'):
         url = url if url.endswith('/') else url + '/'
         image = url + image
     block = og_block(title, desc, image, url)
-    page = re.sub(re.escape(START) + '.*?' + re.escape(END) + r'\n?', '', page, flags=re.S)
+    page = re.sub(r'[ \t]*' + re.escape(START) + '.*?' + re.escape(END) + r'\r?\n?', '', page, flags=re.S)
     return page.replace('</head>', f'  {block}\n</head>', 1)
 
 

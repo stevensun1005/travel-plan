@@ -371,12 +371,43 @@ async function drawPoster({ data, roads = [], basemap, color }) {
       if (have < want) { const add = ((b.n - b.s) * want / k - (b.e - b.w)) / 2; b.w -= add; b.e += add; }
       else { const add = ((b.e - b.w) * k / want - (b.n - b.s)) / 2; b.s -= add; b.n += add; }
       const sc = LW / ((b.e - b.w) * k), Q = (lng, lat) => [LX + (lng - b.w) * k * sc, LY + (b.n - lat) * sc];
-      ctx.beginPath();
-      for (const r of world.land) {
-        if (!r.some(([lng, lat]) => lng > b.w - 20 && lng < b.e + 20 && lat > b.s - 20 && lat < b.n + 20)) continue;
-        r.forEach(([lng, lat], i) => { const [x, y] = Q(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.closePath();
+      // 陆地、湖、主要河流、国界线，再写海洋和国家名（不和城市标签、彼此重叠）
+      const near = r => r.some(([lng, lat]) => lng > b.w - 20 && lng < b.e + 20 && lat > b.s - 20 && lat < b.n + 20);
+      const path = (rings, close) => { ctx.beginPath(); for (const r of rings || []) { if (!near(r)) continue; r.forEach(([lng, lat], i) => { const [x, y] = Q(lng, lat); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); if (close) ctx.closePath(); } };
+      path(world.land, true); ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd'); ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 1.2; ctx.lineJoin = 'round'; ctx.stroke();
+      path(world.lakes, true); ctx.fillStyle = '#bcd8e6'; ctx.fill(); ctx.strokeStyle = '#7fa6bd'; ctx.lineWidth = .8; ctx.stroke();
+      path(world.rivers, false); ctx.strokeStyle = '#7fb0d0'; ctx.lineWidth = 1.1; ctx.stroke();
+      path(world.borders, false); ctx.strokeStyle = 'rgba(128,100,82,.8)'; ctx.lineWidth = 1; ctx.setLineDash([4, 3]); ctx.stroke(); ctx.setLineDash([]);
+      const en = i18n.lang === 'en', simp = s => String(s || '').replace(/灣/g, '湾').replace(/裏/g, '里').replace(/島/g, '岛');
+      const taken = [];
+      const free = (x, y, w, h) => x > LX + 4 && x + w < LX + LW - 4 && y > LY + 4 && y + h < LY + LH - 4 && !taken.some(o => x < o.x + o.w + 3 && x + w + 3 > o.x && y < o.y + o.h + 2 && y + h + 2 > o.y);
+      const cityLabel = (pt, x, y) => { ctx.font = `bold 19px ${HAND}`; const w = ctx.measureText(pt.label || '').width, right = x + 12 + w < LX + LW - 8; return { right, box: { x: right ? x + 10 : x - 12 - w, y: y - 12, w: w + 4, h: 24 } }; };
+      const [fx0, fy0] = Q(loc.from.lng, loc.from.lat), [tx0, ty0] = Q(loc.to.lng, loc.to.lat);
+      for (const [pt, x, y] of [[loc.from, fx0, fy0], [loc.to, tx0, ty0]]) { taken.push({ x: x - 9, y: y - 9, w: 18, h: 18 }); if (pt.label) taken.push(cityLabel(pt, x, y).box); }
+      { // 航线弧和飞机也先占位，名字不压在线上
+        const cx0 = (fx0 + tx0) / 2 - (ty0 - fy0) * .22, cy0 = (fy0 + ty0) / 2 + (tx0 - fx0) * .22, B = (t, a0, c, b0) => (1 - t) * (1 - t) * a0 + 2 * (1 - t) * t * c + t * t * b0;
+        for (let t = 0; t <= 1.001; t += .04) taken.push({ x: B(t, fx0, cx0, tx0) - 6, y: B(t, fy0, cy0, ty0) - 6, w: 12, h: 12 });
+        taken.push({ x: B(.5, fx0, cx0, tx0) - 18, y: B(.5, fy0, cy0, ty0) - 18, w: 36, h: 36 });
       }
-      ctx.fillStyle = '#f6efd6'; ctx.fill('evenodd'); ctx.strokeStyle = '#6f8f6a'; ctx.lineWidth = 1.4; ctx.stroke();
+      const inside = (rings, lng, lat) => rings.some(r => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > lat) !== (yj > lat) && lng < (xj - xi) * (lat - yi) / (yj - yi) + xi) c = !c; } return c; });
+      for (const sea of (world.seas || []).slice().sort((a, b2) => a.rank - b2.rank)) {
+        const hit = []; // 在看得见的范围里撒点，取落在这片海里的点的中心放名字
+        for (let gx = 1; gx < 10; gx++) for (let gy = 1; gy < 10; gy++) { const lng = b.w + (b.e - b.w) * gx / 10, lat = b.s + (b.n - b.s) * gy / 10; if (inside(sea.rings, lng, lat)) hit.push(Q(lng, lat)); }
+        if (hit.length < 3) continue;
+        const name = en ? sea.en : simp(sea.zh), font = `italic ${sea.rank ? 13 : 15}px ${SANS}`; ctx.font = font;
+        const w = ctx.measureText(name).width, mx1 = hit.reduce((s, p) => s + p[0], 0) / hit.length, my1 = hit.reduce((s, p) => s + p[1], 0) / hit.length;
+        const spot = [[mx1, my1], ...hit.slice().sort((p, q) => Math.hypot(p[0] - mx1, p[1] - my1) - Math.hypot(q[0] - mx1, q[1] - my1))].map(([px, py]) => [px - w / 2, py - 8]).find(([x, y]) => free(x, y, w, 16));
+        if (!spot) continue;
+        const [x, y] = spot; taken.push({ x, y, w, h: 16 }); text(ctx, name, x, y + 8, { font, color: 'rgba(42,90,130,.8)', base: 'middle', halo: 3, haloColor: '#cfe6ec' });
+      }
+      for (const [lng, lat, zh, enName, rank] of (world.countries || []).slice().sort((a, b2) => a[4] - b2[4])) {
+        if (lng < b.w || lng > b.e || lat < b.s || lat > b.n) continue;
+        const name = en ? enName : simp(zh), font = `${rank <= 3 ? 'bold ' : ''}${rank <= 3 ? 14 : 12}px ${SANS}`; ctx.font = font;
+        const w = ctx.measureText(name).width, [x0, y0] = Q(lng, lat);
+        const spot = [[0, 0], [0, -18], [0, 18], [-w / 2 - 6, 0], [w / 2 + 6, 0], [0, -36], [0, 36]].map(([dx, dy]) => [x0 + dx, y0 + dy]).find(([cx1, cy1]) => free(cx1 - w / 2, cy1 - 8, w, 16));
+        if (!spot) continue;
+        taken.push({ x: spot[0] - w / 2, y: spot[1] - 8, w, h: 16 }); text(ctx, name, spot[0], spot[1], { font, color: '#5c4b3d', align: 'center', base: 'middle', halo: 3, haloColor: '#f6efd6' });
+      }
       // 航线：一条往外弯的虚线弧，中间放一架飞机
       const [ax, ay] = Q(loc.from.lng, loc.from.lat), [bx3, by3] = Q(loc.to.lng, loc.to.lat);
       const mx = (ax + bx3) / 2, my = (ay + by3) / 2, dx = bx3 - ax, dy = by3 - ay, bend = .22;
@@ -406,7 +437,8 @@ async function drawPoster({ data, roads = [], basemap, color }) {
     }
   }
   // 指北针（小图占了右上角就放到左上角）
-  const cx = inset && (inset.corner || 'bl') === 'tr' ? MX + 62 : MX + MW - 62, cy = MY + 70;
+  const trTaken = (inset && (inset.corner || 'bl') === 'tr') || (loc?.from && loc.corner === 'tr');
+  const cx = trTaken ? MX + 62 : MX + MW - 62, cy = MY + 70;
   ctx.beginPath(); ctx.arc(cx, cy, 34, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,253,245,.92)'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx, cy - 26); ctx.lineTo(cx + 9, cy + 6); ctx.lineTo(cx, cy); ctx.lineTo(cx - 9, cy + 6); ctx.closePath(); ctx.fillStyle = '#d2402f'; ctx.fill(); ctx.stroke();
   text(ctx, 'N', cx, cy + 24, { font: `bold 18px ${HAND}`, align: 'center' });
