@@ -64,11 +64,16 @@ test('notes carry opening hours on arrival and travel time from the previous sto
   assert.match(plain(e[3].DESCRIPTION),/Getting there: about \d+ min drive from Shop \(~[\d.]+ km, estimated\)/);
 });
 
-test('the subscribe relay page sits next to the calendar and hands off to webcal',async()=>{
-  const {subscribePage,subscribePath}=await import('../assets/starter/calendar.mjs');
-  assert.equal(subscribePath('https://x.github.io/t/calendar.en.ics'),'https://x.github.io/t/subscribe.en.html');
-  const html=subscribePage({title:'A <b>trip</b>',icsUrl:'https://x.github.io/t/calendar.ics'});
-  assert.match(html,/href="webcal:\/\/x\.github\.io\/t\/calendar\.ics"/);
-  assert.match(html,/订阅「A &lt;b&gt;trip&lt;\/b&gt;」/);
-  assert.match(html,/travel-plan — https:\/\/github\.com\/stevensun1005\/travel-plan/);
+test('artifacts subscribe through the shared relay and download a zip when nothing is hosted',async()=>{
+  const {relayUrl,zipOne,crc32}=await import('../assets/starter/calendar.mjs');
+  const zlib=await import('node:zlib');
+  const r=new URL(relayUrl({icsUrl:'https://gist.githubusercontent.com/u/1/raw/calendar.ics',title:'Trip · 1/6',lang:'en',color:'#d07d9c'}));
+  assert.equal(r.origin+r.pathname,'https://stevensun1005.github.io/travel-plan/subscribe.html');
+  assert.deepEqual(Object.fromEntries(r.searchParams),{ics:'https://gist.githubusercontent.com/u/1/raw/calendar.ics',t:'Trip · 1/6',lang:'en',c:'d07d9c'});
+  const text='BEGIN:VCALENDAR\r\nSUMMARY:咖啡\r\nEND:VCALENDAR\r\n',zip=Buffer.from(zipOne('trip.ics',text));
+  const data=Buffer.from(text);
+  if(zlib.crc32)assert.equal(crc32(data),zlib.crc32(data));
+  assert.equal(zip.readUInt32LE(0),0x04034b50);assert.equal(zip.readUInt32LE(14),crc32(data));
+  assert.equal(zip.toString('utf8',30,38),'trip.ics');assert.equal(zip.subarray(38,38+data.length).toString(),text);
+  const end=zip.length-22;assert.equal(zip.readUInt32LE(end),0x06054b50);assert.equal(zip.readUInt32LE(end+16),30+8+data.length);
 });

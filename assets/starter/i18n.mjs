@@ -104,7 +104,7 @@ const EXACT = {
   // calendar export
   '导入日历': 'Add to calendar', '没有带具体时间的行程': 'No timed plans to export',
   '导航': 'Directions', '导航到这里': 'Directions to here',
-  '这里不能下载日历文件，用网页版打开再点': 'Calendar files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
+  '这里不能下载文件，用网页版打开再点': 'Files cannot be downloaded here; open the web version and try again', '导出失败，刷新后再试': 'Export failed; reload and try again',
   '已打开日历文件，在日历里点「全部添加」': 'Calendar file opened: tap "Add All" in Calendar',
   '已打开日历文件，在日历里点「全部添加」（日历按原计划，换过的项目要在日历里自己改）': 'Calendar file opened: tap "Add All" in Calendar (it follows the original plan; change swapped items in Calendar yourself)',
   '订阅到日历': 'Subscribe in Calendar', '订阅这份行程：单独成一个日历，行程改了会自动更新': 'Subscribe to this trip: it gets its own calendar and updates when the plan changes',
@@ -133,6 +133,7 @@ const PATTERNS = [
   [/^(.*) · 路线图$/, '$1 · route map'],
   [/^已换成：(.+)$/, 'Swapped for: $1'],
   [/^已下载 (\d+) 个日程，打开文件导入日历$/, 'Downloaded $1 events: open the file to add them to your calendar'],
+  [/^已下载 (\d+) 个日程（zip），解压后打开 \.ics 导入日历$/, 'Downloaded $1 events (zip): unzip it and open the .ics to add them to your calendar'],
   [/^不想去的话，可以换成 (\d+) 个项目$/, (m, n) => `Rather skip it? ${n} alternative${n === '1' ? '' : 's'}`],
   [/^(?:(?:夯|待定|额) \d+(?: · )?)+$/, m => m.replace(/夯/g, 'Love it').replace(/待定/g, 'Maybe').replace(/额/g, 'Meh')],
   [/^(.*) · 还有 (\d+) 天$/, '$1 · in $2 days'], [/^(.*) · 已过 (\d+) 天$/, '$1 · $2 days ago'], [/^(.*) · 今天$/, '$1 · today'],

@@ -176,15 +176,16 @@ function pickSwap(key,index,on){
   drawSwaps();
 }
 
-// ---------- 一键导入日历 ----------
-// 把带具体时刻的行程导出成 .ics（calendar.mjs）。
-// 托管好的静态日历文件（scripts/export_calendar.mjs 生成，trip.calendarUrl 指向它）用在两种地方，按钮直接做成链接：
-// - Artifact 里不能下载 .ics（downloads 只放行图片、PDF、表格等），脚本打开新页面也会被拦，只有真的点链接才放行；
-// - iPhone/iPad 不能把页面里生成的日历直接交给「日历」，打开托管的 https .ics，Safari 会弹出「全部添加」。
-// 有托管文件时，所有人默认订阅：主按钮是 webcal:// 链接，苹果日历会新建一个单独的日历（名字是行程标题，颜色 trip.calendarColor，
-// 默认 #D07D9C），在「日历」列表里一点就能整组显示或隐藏，行程改了还会自动更新。一次性下载不提倡，只放在页面最底下。
+// ---------- 日历：默认订阅，没有托管就下载 ----------
+// 行程项导出成 .ics（calendar.mjs）。trip.calendarUrl 是托管在公开 https 上的同一份文件（scripts/export_calendar.mjs 生成，
+// 放在 GitHub Pages、Gist 等处）。有它时所有人默认订阅：苹果日历会新建一个单独的日历（名字是行程标题，颜色 trip.calendarColor，
+// 默认 #D07D9C），一键显示或隐藏，行程改了自动更新；一次性下载不提倡，只放在页面最底下。
+// - 独立网页：按钮直接是 webcal:// 链接。
+// - Artifact：只放行真正点击的 http(s) 链接，webcal:// 没反应，所以按钮打开 skill 网站上通用的 subscribe.html（带上日历地址），由它跳到 webcal://。
+// - 没有 calendarUrl：没法订阅，按钮改为下载。Artifact 的 downloads 不放行 .ics，就把 .ics 装进 zip 下载。
 // iPhone 上「日历」没在后台时，第一次点可能只把日历打开、不弹订阅框（系统行为），提示回来再点一次。
-// 静态文件按原计划导出；电脑浏览器打开独立网页时，底下的下载链接下载当场生成的文件，换过的项目也算进去。
+// 托管文件按原计划导出；当场生成的下载会把页面上换过的项目算进去。
+const RELAY='https://stevensun1005.github.io/travel-plan/subscribe.html';
 const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 const inArtifact=()=>location.href==='about:srcdoc'||/\.claudeusercontent\.com$/.test(location.hostname)||typeof globalThis.claude?.use==='function';
 const anySwap=()=>Object.keys(swapItems).some(k=>chosenAlt(k)>=0);
@@ -198,9 +199,8 @@ function renderCalendar(){
     head.insertAdjacentHTML('beforeend',`<div class="cal-box"><button class="share-btn cal-btn" id="cal-btn" type="button" title="${escape(title)}">导入日历</button><small id="cal-status" role="status" aria-live="polite"></small></div>`);
     $('#cal-btn').onclick=()=>exportCalendar();return;
   }
-  // Artifact 只放行 http(s) 链接，webcal:// 点了没反应：改为打开托管的订阅中转页（export_calendar.mjs 生成），由它跳到 webcal://
-  const relay=hosted.replace(/calendar(\.en)?\.ics$/,'subscribe$1.html');
-  const target=inArtifact()&&relay!==hosted?relay:hosted.replace(/^https?:/,'webcal:');
+  const relay=`${RELAY}?${new URLSearchParams({ics:hosted,t:data.trip.title||'',lang:i18n.lang==='en'?'en':'zh',...(/^#[0-9a-f]{6}$/i.test(data.trip.calendarColor||'')?{c:data.trip.calendarColor.slice(1)}:{})})}`;
+  const target=inArtifact()?relay:hosted.replace(/^https?:/,'webcal:');
   head.insertAdjacentHTML('beforeend',`<div class="cal-box"><a class="share-btn cal-btn" id="cal-btn" href="${escape(target)}"${blank} title="订阅这份行程：单独成一个日历，行程改了会自动更新">订阅到日历</a><small class="cal-alt">单独成一个日历，可以一键隐藏，行程改了会自动更新</small><small id="cal-status" role="status" aria-live="polite"></small></div>`);
   $('#cal-btn').onclick=()=>{$('#cal-status').textContent=`在日历里点「订阅」。如果只打开了日历、没弹出订阅，回到这里再点一次${swapNote()}`;};
   // 一次性下载放在页面最底下，不提倡
@@ -213,15 +213,21 @@ function renderCalendar(){
 }
 function exportCalendar(sayTo,btnEl){
   const btn=btnEl||$('#cal-btn'),say=sayTo||(t=>{$('#cal-status').textContent=t;});
-  say('');
-  if(inArtifact())return say('这里不能下载日历文件，用网页版打开再点');
-  btn.disabled=true;
-  import('./calendar.mjs').then(({buildIcs})=>{
+  say('');btn.disabled=true;
+  import('./calendar.mjs').then(async({buildIcs,zipOne})=>{
     const pick=(day,item,index)=>{const k=voteKey(day,item,index),i=chosenAlt(k);return i>=0?{...item,...swapItems[k].alts[i]}:item;};
     const {ics,count}=buildIcs({trip:data.trip,days:data.days||[],places:data.map?.places||[],pick,routes:cachedRoads,lang:i18n.lang});
     if(!count)return say('没有带具体时间的行程');
-    const name=`${String(data.trip.title||'trip').replace(/[\\/:*?"<>|\s·,，]+/g,'-').replace(/^-+|-+$/g,'')||'trip'}.ics`;
-    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));a.download=name;
+    const base=String(data.trip.title||'trip').replace(/[\\/:*?"<>|\s·,，]+/g,'-').replace(/^-+|-+$/g,'')||'trip';
+    if(inArtifact()){
+      // Artifact 的 downloads 不放行 .ics：装进 zip，解压后打开 .ics 导入
+      const downloads=await globalThis.claude?.use?.('downloads').catch(()=>null);
+      if(!downloads)return say('这里不能下载文件，用网页版打开再点');
+      try{await downloads.save({filename:`${base}-calendar.zip`,data:zipOne(`${base}.ics`,ics)});say(`已下载 ${count} 个日程（zip），解压后打开 .ics 导入日历`);}
+      catch(e){say(e?.code==='declined'?'':e?.code==='rate_limited'?'稍等一下再试':'这里不能下载文件，用网页版打开再点');}
+      return;
+    }
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar;charset=utf-8'}));a.download=`${base}.ics`;
     document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),10000);
     say(`已下载 ${count} 个日程，打开文件导入日历`);
   }).catch(error=>{console.error(error);say('导出失败，刷新后再试');}).finally(()=>{btn.disabled=false;});
