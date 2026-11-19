@@ -10,7 +10,12 @@ export function normalize(budget,saved) {
   for(const category of budget.categories || []) {
     const value=saved?.selections?.[category.id];
     const valid=category.options.some(option=>option.id===value?.optionId) || (value?.optionId==='custom' && validMoney(value.customAmount));
-    selections[category.id]={optionId:valid?value.optionId:category.defaultOption,customAmount:validMoney(value?.customAmount)?cents(value.customAmount)/100:0};
+    // Saved choices remember which default they were saved under (def). If the visitor never changed it and the trip's
+    // default has moved on, follow the new default; a choice the visitor made stays. Selections saved before def
+    // existed count as untouched only when they equal one of category.previousDefaults.
+    const prior=typeof value?.def==='string'?value.def:(Array.isArray(category.previousDefaults)&&category.previousDefaults.includes(value?.optionId)?value.optionId:null);
+    const follow=prior!==null&&prior!==category.defaultOption&&value?.optionId===prior;
+    selections[category.id]={optionId:valid&&!follow?value.optionId:category.defaultOption,customAmount:validMoney(value?.customAmount)?cents(value.customAmount)/100:0,def:category.defaultOption};
   }
   // Bundles: an option may include another category (e.g. a flight+hotel package). The included category is locked
   // to its bundled option; a bundle-only option falls back to the default once nothing includes it.

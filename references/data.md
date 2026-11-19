@@ -80,6 +80,8 @@ dailyRoute：`{day,label,placeIds[],extraPlaceIds[],transport,note,officialUrl}`
 | `budget` | 可选，关联的预算分类 id。标题里的 `{option}` 换成当前选中方案名（`label` 的第一段）；没写 `url` 时用方案的 `url`。勾选按「清单项@方案」保存，换方案就要重新勾；关联的项全部勾上，预算卡片显示「已预订」变绿 |
 | `budgetOptions` | 可选，方案 id 列表；只有选中这些方案时才出现这一项（例如只有含骑马的门票方案才要「订骑马」） |
 
+改默认方案：页面保存的选择会记住保存时的默认方案（`def`），访客没自己改过的分类会跟着新的默认走，自己选过的不动。在这个机制之前保存的选择没有 `def`，改默认时在分类上写 `previousDefaults:["旧默认id"]`，停在旧默认上的保存也会换过去。
+
 预算方案可写 `booking` 调整联动的清单项：`booking:false` 表示选这个方案不用单独订（例如被机酒套餐包含的酒店）；`booking:{title,note,url,urlLabel,due,lead}` 覆盖清单项；一个分类关联多项时按清单项 id 分开写 `booking:{"kualoa":{title:"…"},"sail":false}`。校验器会检查 `budget` 和 `budgetOptions` 指向存在的分类和方案。
 
 `asOf` 写资料核对日期。证件要求以官方来源为准；会变的规定（费用、有效期规则、放票窗口）写进 note 并附来源。

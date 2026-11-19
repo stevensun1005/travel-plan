@@ -72,6 +72,8 @@ def validate(folder):
     for category in categories:
         options=category.get('options',[]);option_ids=unique(options,'id',category['id'])
         check(category.get('defaultOption') in option_ids,f'{category["id"]}: invalid default')
+        prev=category.get('previousDefaults')
+        check(prev is None or (isinstance(prev,list) and all(x in option_ids and x!=category.get('defaultOption') for x in prev)),f'{category["id"]}: previousDefaults must list other option ids')
         for option in options:
             check(money(option.get('amount')),f'{category["id"]}/{option.get("id")}: invalid amount')
             if not option.get('status'):warnings.append(f'{category["id"]}/{option.get("id")}: price status missing')
@@ -198,7 +200,7 @@ def validate(folder):
 CJK=re.compile(r'[　-〿㐀-鿿豈-﫿＀-￯]')
 SAME_KEYS={'id','placeId','placeIds','extraPlaceIds','defaultOption','selections','chartGroup','url','officialUrl','date','startDate','endDate','due','checkedOn','asOf',
            'currency','code','symbol','color','icon','transport','group','kind','rank','lat','lng','amount','converted','bagCount','bagPerPerson','carryOn','bundleOnly','bundles','split',
-           'target','travelers','nights','day','maps','photos','timezone','tz','end','endTz','calendarColor','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
+           'target','travelers','nights','day','maps','photos','timezone','tz','end','endTz','calendarColor','previousDefaults','status_code','rates','routesFile','basemapFile','bbox','dx','dy','side','badgeAt'}
 def check_english(folder,data):
     """trip-data.en.json (optional): same structure, same ids/numbers/dates/links, and not a single CJK character."""
     path=Path(folder)/'trip-data.en.json'

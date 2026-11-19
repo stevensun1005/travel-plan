@@ -66,3 +66,11 @@ test('ledger items add up to the row, scaling for package splits and bag counts'
   assert.deepEqual(itemize({amount:0,option:{id:'none',items:[{label:'z',amount:0}]}}).map(i=>i.share),[0]);
   assert.equal(sum(itemize({amount:5,option:{id:'bad',items:[{label:'q',amount:-3},{label:'r',amount:2}]}})),500);
 });
+test('an untouched saved choice follows a new default; a chosen one stays',()=>{
+  const budget={target:100,categories:[{id:'car',defaultOption:'b',previousDefaults:['a'],options:[{id:'a',amount:1},{id:'b',amount:2},{id:'c',amount:3}]}]};
+  assert.equal(normalize(budget,{selections:{car:{optionId:'a'}}}).selections.car.optionId,'b');
+  assert.equal(normalize(budget,{selections:{car:{optionId:'c'}}}).selections.car.optionId,'c');
+  assert.equal(normalize(budget,{selections:{car:{optionId:'a',def:'c'}}}).selections.car.optionId,'a');
+  assert.equal(normalize(budget,{selections:{car:{optionId:'c',def:'c'}}}).selections.car.optionId,'b');
+  assert.equal(normalize(budget,{selections:{car:{optionId:'b',def:'b'}}}).selections.car.def,'b');
+});

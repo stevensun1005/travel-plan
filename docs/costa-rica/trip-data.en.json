@@ -362,30 +362,11 @@
         "label": "Rental car | 5 days · smallest SUV (incl. mandatory insurance and CDW)",
         "icon": "🚗",
         "color": "#1f9652",
-        "defaultOption": "adobe",
+        "defaultOption": "alamo",
+        "previousDefaults": [
+          "adobe"
+        ],
         "options": [
-          {
-            "id": "adobe",
-            "label": "Adobe 5 days · Hyundai Kona 2WD automatic (smallest SUV) · incl. mandatory insurance and CDW",
-            "amount": 895.84,
-            "status": "Official-site quote · checked 11/19 · not booked",
-            "note": "Quoted on Adobe's own site for pickup at the Liberia airport office 1/6 16:00, return 1/11 13:00: Hyundai Kona 2WD automatic or similar, their cheapest SUV. Car USD475.80 + mandatory liability USD67.80 (USD13.56/day) + car protection (CDW) USD84.75 (USD16.95/day), USD628.35 including tax, paid at the counter. Adobe's minimum age is 23 with a licence held 2+ years and no young-driver fee; the USD1,000 deposit must go on a credit card.",
-            "items": [
-              {
-                "label": "Hyundai Kona 2WD or similar, 5 days USD475.80",
-                "amount": 678.35
-              },
-              {
-                "label": "Mandatory third-party liability USD13.56/day",
-                "amount": 96.66
-              },
-              {
-                "label": "Car protection (CDW) USD16.95/day",
-                "amount": 120.83
-              }
-            ],
-            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv"
-          },
           {
             "id": "alamo",
             "label": "Alamo 5 days · Suzuki Ignis automatic (smallest SUV) · incl. mandatory insurance and CDW (Fully package)",
@@ -406,12 +387,34 @@
                 "amount": 71.29
               }
             ],
-            "url": "https://www.alamo.cr/reservas",
+            "url": "https://www.alamo.cr/reservas"
+          },
+          {
+            "id": "adobe",
+            "label": "Adobe 5 days · Hyundai Kona 2WD automatic (smallest SUV) · incl. mandatory insurance and CDW",
+            "amount": 895.84,
+            "status": "Official-site quote · checked 11/19 · not booked",
+            "note": "Quoted on Adobe's own site for pickup at the Liberia airport office 1/6 16:00, return 1/11 13:00: Hyundai Kona 2WD automatic or similar, their cheapest SUV. Car USD475.80 + mandatory liability USD67.80 (USD13.56/day) + car protection (CDW) USD84.75 (USD16.95/day), USD628.35 including tax, paid at the counter. Adobe's minimum age is 23 with a licence held 2+ years and no young-driver fee; the USD1,000 deposit must go on a credit card.",
+            "items": [
+              {
+                "label": "Hyundai Kona 2WD or similar, 5 days USD475.80",
+                "amount": 678.35
+              },
+              {
+                "label": "Mandatory third-party liability USD13.56/day",
+                "amount": 96.66
+              },
+              {
+                "label": "Car protection (CDW) USD16.95/day",
+                "amount": 120.83
+              }
+            ],
+            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv",
             "booking": {
-              "title": "Book a Suzuki Ignis (smallest SUV, Fully package) on Alamo's site, enter age 23",
-              "note": "Pay at the counter; credit card for the deposit. Pickup is at Alamo's office about 1 km from the airport.",
-              "url": "https://www.alamo.cr/reservas",
-              "urlLabel": "Alamo Costa Rica"
+              "title": "Book the Hyundai Kona 2WD (smallest SUV) on Adobe's site, with car protection",
+              "note": "Deposit ~USD1,000, credit card only.",
+              "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
+              "urlLabel": "Adobe"
             }
           }
         ],
@@ -775,7 +778,7 @@
         "route": "YYZ → LIR",
         "duration": "5h 44m",
         "connection": "Nonstop",
-        "note": "Booked. Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Adobe shuttle to pick up the car.",
+        "note": "Booked. Costa Rica is 1 hour behind Toronto. After immigration and baggage claim, take the Alamo shuttle to pick up the car.",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
         "booked": true
       }
@@ -815,7 +818,7 @@
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
         "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
-        "note": "The Adobe office is ~7 km outside the airport (off Route 21), reached by free shuttle; the map draws routes from the terminal."
+        "note": "Alamo's office is about 1 km outside the airport (off Ruta 21), reached by shuttle; the map draws the line from the terminal."
       },
       {
         "id": "hotel-beach",
@@ -963,16 +966,6 @@
         "note": "Tour provides transfers; the map shows an approximate location only."
       },
       {
-        "id": "adobe-lir",
-        "name": "Adobe Rent a Car · Liberia office",
-        "lat": 10.57201,
-        "lng": -85.58299,
-        "maps": "Adobe Rent a Car Liberia",
-        "address": "El Fósforo, Guardia, Liberia, Guanacaste",
-        "hours": "The official site is inconsistent (8:00–17:00 or 5:00–22:00); plan on 8:00–17:00, so a 13:15 return is fine; phone 2542-4890",
-        "note": "About 7 km from the airport; take Adobe's free shuttle from arrivals."
-      },
-      {
         "id": "santa-elena",
         "name": "Santa Elena town centre",
         "lat": 10.31651,
@@ -1020,6 +1013,16 @@
         "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
         "hours": "Daily tours at 8:00, 10:00, 13:00 and 15:00, about 2 h",
         "note": "About 2 km south of town on the road to La Fortuna Waterfall."
+      },
+      {
+        "id": "alamo-lir",
+        "name": "Alamo Rent a Car · Liberia airport office",
+        "lat": 10.59854,
+        "lng": -85.51977,
+        "maps": "Alamo Rent a Car Liberia Airport",
+        "address": "Ruta 21, 1 km al este del Aeropuerto Daniel Oduber, Liberia, Guanacaste",
+        "hours": "Daily 5:00–22:00",
+        "note": "About 1 km from the airport; take Alamo's shuttle (check your confirmation email for the pickup point)."
       }
     ],
     "dailyRoutes": [
@@ -1028,7 +1031,7 @@
         "label": "01/06 Arrival · beach",
         "placeIds": [
           "lir",
-          "adobe-lir",
+          "alamo-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
@@ -1109,7 +1112,7 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
-          "adobe-lir",
+          "alamo-lir",
           "lir"
         ],
         "transport": "driving",
@@ -1154,7 +1157,7 @@
           "time": "15:24",
           "title": "Land in Liberia",
           "kind": "flight",
-          "text": "Get the entry stamp (check it's in your passport), collect bags, then head to the Adobe shuttle stop.",
+          "text": "Get the entry stamp (check it's in your passport), collect bags, then head to the Alamo shuttle stop.",
           "placeId": "lir"
         },
         {
@@ -1162,13 +1165,13 @@
           "title": "Pick up the car",
           "kind": "drive",
           "text": "Bring your physical licence, passport, and a credit card in the driver's name (deposit ~USD1,000). Inspect the car and take photos; check by hand that the doors are locked, as rental car break-ins are common here.",
-          "placeId": "adobe-lir"
+          "placeId": "alamo-lir"
         },
         {
           "time": "17:00",
           "title": "Check in at Playas del Coco",
           "kind": "hotel",
-          "text": "About 30 min, arrive before dark.",
+          "text": "About 35 min from the Alamo office, arrive before dark.",
           "placeId": "hotel-beach"
         },
         {
@@ -1621,7 +1624,7 @@
           "title": "Return the car, shuttle to the airport",
           "kind": "drive",
           "text": "The departure tax is usually included in the airfare. The return is operated by Air Transat, so check in and drop bags at the Air Transat counter; arriving 2.5–3 hours before an international flight is safest.",
-          "placeId": "adobe-lir"
+          "placeId": "alamo-lir"
         },
         {
           "time": "16:35",
@@ -1713,19 +1716,19 @@
   ],
   "rental": {
     "title": "Car rental: pick up 1/6 16:15 – return 1/11 13:15 (5 days)",
-    "summary": "There's no convenient public transit between the two regions, so we drive all five days. Recommended: Adobe, minimum age 23 with no young-driver fee; pick-up and return are at the office outside the airport, with a free shuttle.",
+    "summary": "There's no convenient public transit between the two regions, so we drive all five days. Default: Alamo, the cheapest smallest SUV on the companies' own sites (Suzuki Ignis), with the young-driver fee for age 23 already in the price; the office is about 1 km from the airport with a shuttle. Adobe has no young-driver fee, but its smallest SUV costs about CA$43 more.",
     "details": [
       {
         "label": "Driver",
-        "value": "23 at time of travel, Canadian G licence (Adobe requires a licence held 2+ years)"
+        "value": "Driver is 23 at time of travel, Canadian G licence (Alamo charges a USD50 young-driver fee for the whole rental, already in the quote)"
       },
       {
         "label": "Pick-up / return",
-        "value": "Adobe Liberia Airport branch (~7 km outside the airport, shuttle)"
+        "value": "Alamo's Liberia airport office (about 1 km outside the airport, shuttle, daily 5:00–22:00)"
       },
       {
         "label": "Default vehicle",
-        "value": "Smallest SUV: Adobe Hyundai Kona 2WD automatic, CA$895.84 (incl. mandatory insurance and CDW, official-site quote)"
+        "value": "Smallest SUV: Alamo Suzuki Ignis automatic, CA$852.43 (Fully package, incl. mandatory insurance, CDW and young-driver fee, official-site quote)"
       },
       {
         "label": "Current status",
@@ -1740,6 +1743,10 @@
       "Drive the long legs in daylight: sunset is around 17:30, Route 142 along the lake is winding and dark, and Route 606 up to Monteverde is steep with tight bends; at night only short drives in town."
     ],
     "links": [
+      {
+        "label": "Alamo Costa Rica",
+        "url": "https://www.alamo.cr/reservas"
+      },
       {
         "label": "Adobe Liberia",
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
@@ -2103,12 +2110,12 @@
         "id": "book-car",
         "group": "bookings",
         "who": "Me",
-        "title": "Book the Hyundai Kona 2WD (smallest SUV) on Adobe's site, with car protection",
+        "title": "Book a Suzuki Ignis (smallest SUV, Fully package) on Alamo's site, enter age 23",
         "due": "2026-12-10",
         "lead": "4 weeks ahead",
-        "note": "Deposit ~USD1,000, credit card only.",
-        "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
-        "urlLabel": "Adobe",
+        "note": "Pay at the counter; credit card for the deposit (confirm the amount and licence-age rules with Alamo). Pickup is at Alamo's office about 1 km from the airport.",
+        "url": "https://www.alamo.cr/reservas",
+        "urlLabel": "Alamo Costa Rica",
         "budget": "car"
       },
       {

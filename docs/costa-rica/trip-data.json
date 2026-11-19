@@ -362,30 +362,11 @@
         "label": "租车｜5天 · 最小的SUV（含强制险和CDW）",
         "icon": "🚗",
         "color": "#1f9652",
-        "defaultOption": "adobe",
+        "defaultOption": "alamo",
+        "previousDefaults": [
+          "adobe"
+        ],
         "options": [
-          {
-            "id": "adobe",
-            "label": "Adobe 5天 · Hyundai Kona 2WD自动挡（最小SUV）· 含强制险和CDW",
-            "amount": 895.84,
-            "status": "官网报价 · 11/19查 · 未订",
-            "note": "Adobe官网按1/6 16:00在利比里亚机场店取、1/11 13:00还查的价：Hyundai Kona 2WD自动挡或同级，是他们最便宜的SUV。车价USD475.80＋强制责任险USD67.80（USD13.56/天）＋车损保障CDW USD84.75（USD16.95/天），含税合计USD628.35，到店付款。Adobe最低23岁、驾照满2年，不收青年费；押金USD1,000只收信用卡。",
-            "items": [
-              {
-                "label": "Hyundai Kona 2WD或同级 5天 USD475.80",
-                "amount": 678.35
-              },
-              {
-                "label": "强制第三者责任险 USD13.56/天",
-                "amount": 96.66
-              },
-              {
-                "label": "车损保障CDW USD16.95/天",
-                "amount": 120.83
-              }
-            ],
-            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv"
-          },
           {
             "id": "alamo",
             "label": "Alamo 5天 · Suzuki Ignis自动挡（最小SUV）· 含强制险和CDW（Fully套餐）",
@@ -406,12 +387,34 @@
                 "amount": 71.29
               }
             ],
-            "url": "https://www.alamo.cr/reservas",
+            "url": "https://www.alamo.cr/reservas"
+          },
+          {
+            "id": "adobe",
+            "label": "Adobe 5天 · Hyundai Kona 2WD自动挡（最小SUV）· 含强制险和CDW",
+            "amount": 895.84,
+            "status": "官网报价 · 11/19查 · 未订",
+            "note": "Adobe官网按1/6 16:00在利比里亚机场店取、1/11 13:00还查的价：Hyundai Kona 2WD自动挡或同级，是他们最便宜的SUV。车价USD475.80＋强制责任险USD67.80（USD13.56/天）＋车损保障CDW USD84.75（USD16.95/天），含税合计USD628.35，到店付款。Adobe最低23岁、驾照满2年，不收青年费；押金USD1,000只收信用卡。",
+            "items": [
+              {
+                "label": "Hyundai Kona 2WD或同级 5天 USD475.80",
+                "amount": 678.35
+              },
+              {
+                "label": "强制第三者责任险 USD13.56/天",
+                "amount": 96.66
+              },
+              {
+                "label": "车损保障CDW USD16.95/天",
+                "amount": 120.83
+              }
+            ],
+            "url": "https://www.adobecar.com/en/adobe-results/?adobe_search=1&pick_up_place=LIB&drop_off_place=LIB&pick_up_date=2027-01-06&drop_off_date=2027-01-11&pick_up_time=16%3A00%3A00&drop_off_time=13%3A00%3A00&cr_resident=0&promo_code=&type_of_car=suv",
             "booking": {
-              "title": "在Alamo官网订Suzuki Ignis（最小SUV，Fully套餐），填23岁",
-              "note": "到店付款；押金用信用卡。取车在机场外约1公里的Alamo门店。",
-              "url": "https://www.alamo.cr/reservas",
-              "urlLabel": "Alamo哥斯达黎加"
+              "title": "在Adobe官网订Hyundai Kona 2WD（最小SUV），选上车损保障",
+              "note": "押金约USD1,000，只收信用卡。",
+              "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
+              "urlLabel": "Adobe"
             }
           }
         ],
@@ -775,7 +778,7 @@
         "route": "YYZ → LIR",
         "duration": "5小时44分",
         "connection": "直飞",
-        "note": "已订。哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Adobe接驳车去取车。",
+        "note": "已订。哥斯达黎加比多伦多晚1小时。落地入境，拿行李后坐Alamo接驳车去取车。",
         "url": "https://ca.trip.com/flights/showfarefirst?dcity=yyz&acity=lir&ddate=2027-01-06&rdate=2027-01-11&triptype=rt&class=y&quantity=2&nonstoponly=on&locale=en-CA&curr=CAD",
         "booked": true
       }
@@ -815,7 +818,7 @@
         "lng": -85.5411,
         "maps": "Daniel Oduber Quirós International Airport",
         "address": "Corredor Chorotega, Llano Grande, Liberia, Guanacaste",
-        "note": "Adobe门店在机场外约7公里（Route 21旁），坐免费接驳车；地图按航站楼画线。"
+        "note": "Alamo门店在机场外约1公里（Ruta 21旁），坐接驳车；地图按航站楼画线。"
       },
       {
         "id": "hotel-beach",
@@ -963,16 +966,6 @@
         "note": "团里接送，地图只标大概位置。"
       },
       {
-        "id": "adobe-lir",
-        "name": "Adobe租车 · 利比里亚门店",
-        "lat": 10.57201,
-        "lng": -85.58299,
-        "maps": "Adobe Rent a Car Liberia",
-        "address": "El Fósforo, Guardia, Liberia, Guanacaste",
-        "hours": "官网写法不一（8:00–17:00 或 5:00–22:00），按 8:00–17:00 算，13:15还车没问题；电话 2542-4890",
-        "note": "在机场外约7公里，到达口坐Adobe的免费接驳车过去。"
-      },
-      {
         "id": "santa-elena",
         "name": "Santa Elena 镇中心",
         "lat": 10.31651,
@@ -1020,6 +1013,16 @@
         "address": "Camino a la Catarata Río Fortuna, frente a Cabinas La Catarata, La Fortuna, Alajuela",
         "hours": "每天 8:00、10:00、13:00、15:00 场，约2小时",
         "note": "镇中心往南约2公里，去La Fortuna瀑布的路上。"
+      },
+      {
+        "id": "alamo-lir",
+        "name": "Alamo租车 · 利比里亚机场店",
+        "lat": 10.59854,
+        "lng": -85.51977,
+        "maps": "Alamo Rent a Car Liberia Airport",
+        "address": "Ruta 21, 1 km al este del Aeropuerto Daniel Oduber, Liberia, Guanacaste",
+        "hours": "每天 5:00–22:00",
+        "note": "在机场外约1公里，坐Alamo的接驳车过去（接驳安排以确认邮件为准）。"
       }
     ],
     "dailyRoutes": [
@@ -1028,7 +1031,7 @@
         "label": "01/06 落地·海边",
         "placeIds": [
           "lir",
-          "adobe-lir",
+          "alamo-lir",
           "hotel-beach"
         ],
         "extraPlaceIds": [
@@ -1109,7 +1112,7 @@
         "placeIds": [
           "hotel-arenal",
           "nuevo-arenal",
-          "adobe-lir",
+          "alamo-lir",
           "lir"
         ],
         "transport": "driving",
@@ -1154,7 +1157,7 @@
           "time": "15:24",
           "title": "落地利比里亚",
           "kind": "flight",
-          "text": "入境盖章（确认护照上有章），拿行李后到Adobe接驳点。",
+          "text": "入境盖章（确认护照上有章），拿行李后到Alamo接驳点。",
           "placeId": "lir"
         },
         {
@@ -1162,13 +1165,13 @@
           "title": "取车",
           "kind": "drive",
           "text": "带实体驾照、护照和本人信用卡（押金约USD1,000）。检查车况拍照；手动确认车门锁好，这里租车被撬很常见。",
-          "placeId": "adobe-lir"
+          "placeId": "alamo-lir"
         },
         {
           "time": "17:00",
           "title": "到Playas del Coco入住",
           "kind": "hotel",
-          "text": "约30分钟，天黑前到。",
+          "text": "从Alamo门店开约35分钟，天黑前到。",
           "placeId": "hotel-beach"
         },
         {
@@ -1621,7 +1624,7 @@
           "title": "还车，坐接驳车到机场",
           "kind": "drive",
           "text": "离境税一般已含在机票里。回程由Air Transat执飞，去Air Transat柜台值机、托运；国际航班起飞前2.5–3小时到最稳。",
-          "placeId": "adobe-lir"
+          "placeId": "alamo-lir"
         },
         {
           "time": "16:35",
@@ -1713,19 +1716,19 @@
   ],
   "rental": {
     "title": "租车：1/6 16:15取 – 1/11 13:15还（5天）",
-    "summary": "哥斯达黎加两个区域之间没有方便的公共交通，五天都开车。推荐Adobe：最低23岁、不收青年费；取还车都在机场外的门店，有免费接驳。",
+    "summary": "哥斯达黎加两个区域之间没有方便的公共交通，五天都开车。默认Alamo：官网实价里最便宜的最小SUV（Suzuki Ignis），23岁青年费已含在价里；门店在机场外约1公里，有接驳。Adobe不收青年费，但最小的SUV贵约CA$43。",
     "details": [
       {
         "label": "驾驶人",
-        "value": "出行时23岁，加拿大G牌（Adobe要求驾照满2年）"
+        "value": "出行时23岁，加拿大G牌（Alamo收23岁青年费，整单USD50，已含在报价里）"
       },
       {
         "label": "取还车",
-        "value": "Adobe利比里亚机场店（机场外约7公里，接驳车）"
+        "value": "Alamo利比里亚机场店（机场外约1公里，接驳车，每天5:00–22:00）"
       },
       {
         "label": "默认车型",
-        "value": "最小的SUV：Adobe Hyundai Kona 2WD自动挡，CA$895.84（含强制险和CDW，官网报价）"
+        "value": "最小的SUV：Alamo Suzuki Ignis自动挡，CA$852.43（Fully套餐，含强制险、CDW和青年费，官网报价）"
       },
       {
         "label": "当前状态",
@@ -1740,6 +1743,10 @@
       "长途在白天开：日落约17:30，湖边的Route 142又弯又黑，Monteverde的606号路坡陡弯急；晚上只在镇上开短途。"
     ],
     "links": [
+      {
+        "label": "Alamo 哥斯达黎加",
+        "url": "https://www.alamo.cr/reservas"
+      },
       {
         "label": "Adobe 利比里亚",
         "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/"
@@ -2103,12 +2110,12 @@
         "id": "book-car",
         "group": "bookings",
         "who": "我",
-        "title": "在Adobe官网订Hyundai Kona 2WD（最小SUV），选上车损保障",
+        "title": "在Alamo官网订Suzuki Ignis（最小SUV，Fully套餐），填23岁",
         "due": "2026-12-10",
         "lead": "提前4周",
-        "note": "押金约USD1,000，只收信用卡。",
-        "url": "https://www.adobecar.com/en/rental-car-libera-costa-rica/",
-        "urlLabel": "Adobe",
+        "note": "到店付款；押金用信用卡（金额和驾照年限要求以Alamo确认为准）。取车在机场外约1公里的Alamo门店。",
+        "url": "https://www.alamo.cr/reservas",
+        "urlLabel": "Alamo哥斯达黎加",
         "budget": "car"
       },
       {
