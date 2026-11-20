@@ -1175,7 +1175,7 @@
         "lat": 21.3330717,
         "lng": -157.9196383,
         "maps": "Daniel K. Inouye International Airport",
-        "address": "Daniel K. Inouye International Airport",
+        "address": "300 Rodgers Blvd, Honolulu, HI 96819",
         "note": "定位在航站楼停车楼附近；接送按实际航站楼的上下客区。"
       },
       {
@@ -1194,7 +1194,7 @@
         "lng": -157.82694,
         "maps": "Kūhiō Beach, Honolulu",
         "photos": "Waikiki beach sunset Diamond Head",
-        "address": "Kalākaua Ave, Waikīkī",
+        "address": "2453 Kalākaua Ave, Honolulu, HI 96815",
         "note": "离酒店步行几分钟；1/7日落帆船从海滩上船，具体上船点以订单为准。"
       },
       {
@@ -1203,7 +1203,7 @@
         "lat": 21.2768421,
         "lng": -157.8277917,
         "maps": "Duke's Waikiki",
-        "address": "2335 Kalākaua Ave, Honolulu",
+        "address": "2335 Kalākaua Ave, Honolulu, HI 96815",
         "note": "海边餐厅，晚餐建议预订。"
       },
       {
@@ -1212,7 +1212,7 @@
         "lat": 21.3674843,
         "lng": -157.9384488,
         "maps": "Pearl Harbor Visitor Center",
-        "address": "1 Arizona Memorial Pl, Honolulu",
+        "address": "1 Arizona Memorial Pl, Honolulu, HI 96818",
         "note": "不能带包入场，有付费寄存。去福特岛（密苏里号、航空博物馆）坐官方接驳车。"
       },
       {
@@ -1221,7 +1221,7 @@
         "lat": 21.364906,
         "lng": -157.9500297,
         "maps": "USS Arizona Memorial",
-        "address": "Pearl Harbor（只能乘官方船）",
+        "address": "1 Arizona Memorial Pl, Honolulu, HI 96818",
         "note": "在港湾水面上，只能坐国家公园的船过去，地图只标位置。"
       },
       {
@@ -1230,7 +1230,7 @@
         "lat": 21.368732,
         "lng": -157.9394436,
         "maps": "Pearl Harbor Bowfin Submarine Museum",
-        "address": "11 Arizona Memorial Dr, Honolulu",
+        "address": "11 Arizona Memorial Dr, Honolulu, HI 96818",
         "note": "就在游客中心旁边，走过去。"
       },
       {
@@ -1239,7 +1239,7 @@
         "lat": 21.3621708,
         "lng": -157.9533179,
         "maps": "Battleship Missouri Memorial",
-        "address": "63 Cowpens St, Ford Island",
+        "address": "63 Cowpens St, Honolulu, HI 96818",
         "note": "福特岛是现役军事基地，私家车不能进，只能坐接驳车。"
       },
       {
@@ -1248,7 +1248,7 @@
         "lat": 21.3588442,
         "lng": -157.9629042,
         "maps": "Pearl Harbor Aviation Museum",
-        "address": "319 Lexington Blvd, Ford Island",
+        "address": "319 Lexington Blvd, Honolulu, HI 96818",
         "note": "坐接驳车去，和密苏里号同一条线。"
       },
       {
@@ -1256,7 +1256,7 @@
         "name": "Waikīkī租车门店（示例位置）",
         "lat": 21.2734513,
         "lng": -157.8222713,
-        "address": "Kalākaua Ave东段",
+        "address": "Waikīkī 的租车门店（订好车后按确认单上的地址）",
         "note": "具体门店订车后才能确定。1/5早上取车，1/6早上还车。"
       },
       {
@@ -1265,7 +1265,7 @@
         "lat": 21.3882747,
         "lng": -157.8070148,
         "maps": "Hoʻomaluhia Botanical Garden",
-        "address": "45-680 Luluku Rd, Kāneʻohe",
+        "address": "45-680 Luluku Rd, Kāneʻohe, HI 96744",
         "note": "9:00–16:00，免费；每周四和元旦闭园。可以开车进园，也可以下车走一小段。"
       },
       {
@@ -1274,7 +1274,7 @@
         "lat": 21.5208318,
         "lng": -157.8372577,
         "maps": "Kualoa Ranch",
-        "address": "49-560 Kamehameha Hwy, Kāneʻohe",
+        "address": "49-560 Kamehameha Hwy, Kāneʻohe, HI 96744",
         "note": "Jurassic Adventure约2.5小时，坐车进三条山谷，提前签到。"
       },
       {
@@ -1284,7 +1284,7 @@
         "lng": -157.8367475,
         "maps": "Kualoa Regional Park",
         "photos": "Kualoa Regional Park Mokoliʻi",
-        "address": "49-479 Kamehameha Hwy",
+        "address": "49-479 Kamehameha Hwy, Kāneʻohe, HI 96744",
         "note": "可以看草帽岛（Mokoliʻi），岸边散步。"
       },
       {
@@ -1293,7 +1293,7 @@
         "lat": 21.5259081,
         "lng": -158.0378039,
         "maps": "Dole Plantation",
-        "address": "64-1550 Kamehameha Hwy, Wahiawā",
+        "address": "64-1550 Kamehameha Hwy, Wahiawā, HI 96786",
         "note": "每天9:30–17:30。小火车约20分钟、大约每10分钟一班；迷宫平均40分钟。末班时间以电话确认为准。"
       },
       {
@@ -1303,7 +1303,7 @@
         "lng": -158.0853,
         "maps": "Laniakea Beach",
         "photos": "Laniakea Beach sea turtles",
-        "address": "Kamehameha Hwy, Haleʻiwa",
+        "address": "Kamehameha Hwy at Pohaku Loa Way, Haleʻiwa, HI 96712",
         "note": "在岸边看海龟，要保持距离；冬天浪大，不下水。路边停车很紧张。"
       },
       {
@@ -1312,7 +1312,7 @@
         "lat": 21.677198,
         "lng": -157.9484211,
         "maps": "Giovanni's Shrimp Truck, Kahuku",
-        "address": "56-505 Kamehameha Hwy, Kahuku",
+        "address": "56-505 Kamehameha Hwy, Kahuku, HI 96731",
         "note": "排队的话，旁边的Romy's和Fumi's也可以。"
       },
       {
@@ -1321,7 +1321,7 @@
         "lat": 21.2734227,
         "lng": -157.6948549,
         "maps": "Hanauma Bay Nature Preserve",
-        "address": "7455 Kalanianaʻole Hwy, Honolulu",
+        "address": "7455 Kalanianaʻole Hwy, Honolulu, HI 96825",
         "note": "周三至周日开放，周一、二闭园。这次跟Roberts Hawaii的接送团去，不开车。"
       },
       {
@@ -1331,7 +1331,7 @@
         "lng": -157.6776,
         "maps": "Hālona Blowhole Lookout",
         "photos": "Halona Blowhole lookout",
-        "address": "8483 Kalanianaʻole Hwy",
+        "address": "8483 Kalanianaʻole Hwy, Honolulu, HI 96825",
         "note": "蓝线观光巴士的拍照停靠点。"
       },
       {
@@ -1341,7 +1341,7 @@
         "lng": -157.6609,
         "maps": "Makapuʻu Lookout",
         "photos": "Makapuu lookout",
-        "address": "Kalanianaʻole Hwy",
+        "address": "Kalanianaʻole Hwy at Makapuʻu Point, Waimānalo, HI 96795",
         "note": "公路边的观景点，不走灯塔步道。"
       },
       {
@@ -1351,7 +1351,7 @@
         "lng": -157.6942,
         "maps": "Waimānalo Beach Park",
         "photos": "Waimanalo Beach",
-        "address": "41-741 Kalanianaʻole Hwy, Waimānalo",
+        "address": "41-741 Kalanianaʻole Hwy, Waimānalo, HI 96795",
         "note": "长长的白沙滩，适合慢慢走。"
       },
       {
@@ -1361,7 +1361,7 @@
         "lng": -157.807,
         "maps": "Diamond Head Lookout, Diamond Head Rd, Honolulu",
         "photos": "Diamond Head lookout Kahala ocean view",
-        "address": "Diamond Head Rd",
+        "address": "Diamond Head Rd at Kuilei Cliffs Beach Park, Honolulu, HI 96815",
         "note": "绿线观光巴士的拍照停靠点，下车即到，不用爬山。"
       },
       {
@@ -1370,7 +1370,7 @@
         "lat": 21.3068147,
         "lng": -157.8587655,
         "maps": "ʻIolani Palace",
-        "address": "364 S King St, Honolulu",
+        "address": "364 S King St, Honolulu, HI 96813",
         "note": "周二至周六开放，只能网上买票。"
       },
       {
@@ -1379,7 +1379,7 @@
         "lat": 21.3175754,
         "lng": -157.8775063,
         "maps": "Nico's Pier 38",
-        "address": "1129 N Nimitz Hwy, Honolulu",
+        "address": "1129 N Nimitz Hwy, Honolulu, HI 96817",
         "note": "鱼市场旁边，有poke和炸鱼。"
       },
       {
@@ -1388,7 +1388,7 @@
         "lat": 21.2911,
         "lng": -157.8435,
         "maps": "Ala Moana Center",
-        "address": "1450 Ala Moana Blvd, Honolulu",
+        "address": "1450 Ala Moana Blvd, Honolulu, HI 96814",
         "note": "购物，旁边是Magic Island海滨公园。"
       },
       {
@@ -1397,7 +1397,7 @@
         "lat": 21.2774759,
         "lng": -157.8318823,
         "maps": "House Without A Key, Halekulani",
-        "address": "2199 Kālia Rd, Honolulu",
+        "address": "2199 Kālia Rd, Honolulu, HI 96815",
         "note": "Halekulani酒店里的海边餐厅，有日落和草裙舞表演，建议预订。"
       },
       {
@@ -1406,7 +1406,7 @@
         "lat": 21.2645,
         "lng": -157.8213,
         "maps": "Kaimana Beach Hotel",
-        "address": "2863 Kalākaua Ave, Honolulu",
+        "address": "2863 Kalākaua Ave, Honolulu, HI 96815",
         "note": "在海滩上，Kapiʻolani公园旁边。"
       },
       {
@@ -1415,7 +1415,7 @@
         "lat": 21.2741,
         "lng": -157.824,
         "maps": "ʻAlohilani Resort Waikiki Beach",
-        "address": "2490 Kalākaua Ave, Honolulu",
+        "address": "2490 Kalākaua Ave, Honolulu, HI 96815",
         "note": "在Kūhiō Beach对面。"
       },
       {
@@ -1424,7 +1424,7 @@
         "lat": 21.2775,
         "lng": -157.8306,
         "maps": "Sheraton Waikiki Beach Resort",
-        "address": "2255 Kalākaua Ave, Honolulu",
+        "address": "2255 Kalākaua Ave, Honolulu, HI 96815",
         "note": "Waikīkī中心，直接临海。"
       },
       {
@@ -1433,7 +1433,7 @@
         "lat": 21.28,
         "lng": -157.8296,
         "maps": "T Galleria by DFS, Waikiki",
-        "address": "330 Royal Hawaiian Ave, Honolulu",
+        "address": "330 Royal Hawaiian Ave, Honolulu, HI 96815",
         "note": "各条线路的主要上车点之一；每条线的站点和发车时间以官方为准。"
       },
       {
@@ -1453,6 +1453,16 @@
         "maps": "Four Seasons Resort Oahu at Ko Olina",
         "address": "92-1001 Olani St, Kapolei, HI 96707",
         "note": "Stars Above Hawaii的集合点在酒店Naupaka Spa金色电梯；观测在泳池平台或网球场屋顶。"
+      },
+      {
+        "id": "kamehameha",
+        "name": "卡美哈梅哈国王像",
+        "lat": 21.30595,
+        "lng": -157.85965,
+        "maps": "King Kamehameha Statue, Honolulu",
+        "address": "417 S King St, Honolulu, HI 96813",
+        "note": "在王宫对面的 Aliʻiōlani Hale 门前；唐人街往西北走约10分钟。",
+        "photos": true
       }
     ],
     "dailyRoutes": [
@@ -1512,7 +1522,8 @@
         ],
         "extraPlaceIds": [
           "car-pickup",
-          "nicos"
+          "nicos",
+          "kamehameha"
         ],
         "transport": "trolley",
         "note": "红线去王宫和唐人街，粉线去Ala Moana；地图只标站点，不画巴士线路。Nico's用Uber。",
@@ -1609,7 +1620,8 @@
           "time": "06:30",
           "title": "时差早起，吃早餐",
           "kind": "food",
-          "text": "刚到几天会很早醒，正好用来去珍珠港。不用开车。"
+          "text": "刚到几天会很早醒，正好用来去珍珠港。不用开车。",
+          "placeId": "hotel"
         },
         {
           "time": "07:15",
@@ -1871,7 +1883,8 @@
           "time": "11:30",
           "title": "卡美哈梅哈国王像、唐人街",
           "kind": "sight",
-          "text": "国王像就在王宫对面，唐人街坐红线或走过去。"
+          "text": "国王像就在王宫对面，唐人街坐红线或走过去。",
+          "placeId": "kamehameha"
         },
         {
           "time": "12:30",
@@ -2001,7 +2014,8 @@
           "time": "上午（备用）",
           "title": "恐龙湾备用",
           "kind": "tour",
-          "text": "只有1/7被取消时才用，周五开放。"
+          "text": "只有1/7被取消时才用，周五开放。",
+          "placeId": "hanauma"
         },
         {
           "time": "上午",

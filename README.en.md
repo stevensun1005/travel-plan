@@ -58,7 +58,8 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 ### Map: real roads, not sketches
 
 - Places use real coordinates and routes come from the OpenStreetMap road network, with day filters, leg distances and one-tap directions.
-- A bundled offline base map keeps land, roads and place names visible when a host blocks map tiles; zoom all the way out for a world map, and one button frames home and the destination together.
+- Every place to see, eat or stay has a real address; tap "📍 address" in the itinerary to open Google Maps directions.
+- A bundled offline base map keeps forests, lakes, rivers, country and province borders, roads, towns and villages, province and national-park names visible when a host blocks map tiles (as the Claude Artifact viewer on a computer does), with names appearing as you zoom in; zoom all the way out for a world map, and one button frames home and the destination together.
 - Sightseeing buses, boats and park shuttles are never drawn as the shortest car route.
 
 ### Days and checklist: at your pace
@@ -68,12 +69,12 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 - The pre-departure checklist looks up visas and entry rules for each traveler's passport and residency, adds the bookings that sell out, and sorts everything by deadline with a countdown.
 - The checklist and the budget are linked: switch the hotel, flight or activities in the budget and the bookings on the checklist follow; tick one off as booked and its budget card turns green.
 - Every activity has "Love it / Maybe / Meh" buttons; anything you're unsure about (say, a hot spring she may skip) starts as Maybe, with priced alternatives listed underneath.
-- "Subscribe in Calendar" adds the whole itinerary to Apple Calendar as its own calendar you can hide in one tap, and it updates when the plan changes: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends.
+- "Subscribe in Calendar" adds the whole itinerary to Apple Calendar as its own calendar you can hide in one tap, and it updates when the plan changes: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends, as one event from take-off to landing. Each event's notes carry the address, a directions link, opening hours and how long the drive from the previous stop takes, and titles start with an icon (✈️ 🚗 🎟️ 🍽️ 🏨…). Host the calendar file on GitHub Pages or a secret GitHub Gist to subscribe; with nowhere to host it, the button downloads it instead.
 - Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync at the very bottom of the page.
 
 ### Sharing: looks good when sent, and friends can make their own
 
-- "Share route map" draws a hand-drawn poster of each day's route, place stickers and highlights, with a QR code in the corner and a little alpaca at the bottom.
+- "Share route map" draws a hand-drawn poster of each day's route, place stickers and highlights, with a QR code in the corner and a little alpaca at the bottom. When several days of short trips crowd one small area, a zoomed-in inset sits in a corner; an empty corner gets a "From Toronto" map showing the home country, big countries, oceans, rivers and borders.
 - A shared link shows a preview card with the route map in iMessage, WhatsApp, Telegram, Slack, Discord and claude.ai Artifacts.
 - One button switches the whole page between Chinese and English, with no Chinese left in English mode; graph-paper and chalkboard themes; a layout made for phones.
 - "Make your own" copies a prompt that a friend can paste into their own AI to make a page of their own.

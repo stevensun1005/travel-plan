@@ -10,7 +10,7 @@ X-PUBLISHED-TTL:PT12H
 X-WR-TIMEZONE:Pacific/Honolulu
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d1-0@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270103T200000Z
 DTEND:20270103T223500Z
 SUMMARY:✈️ Arrive at Pearson
@@ -20,7 +20,7 @@ DESCRIPTION:Nonstop flights to the US clear US preclearance in Toronto\, so
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d1-1@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270103T223500Z
 DTEND:20270104T083800Z
 SUMMARY:✈️ AC589 Toronto → Honolulu
@@ -28,19 +28,21 @@ DESCRIPTION:About 10 hours nonstop. Departure is Toronto time\, landing is
  Hawaii time (5 hours behind Toronto)\; try to sleep on Hawaii time on the 
  plane. It is a domestic arrival\, so no immigration again\; after baggage 
  claim\, taxi or Uber to the hotel\, ~25–30 min\, ~USD40–50.\n\n📍 Da
- niel K. Inouye International Airport\n🧭 https://www.google.com/maps/dir
- /?api=1&destination=Daniel%20K.%20Inouye%20International%20Airport
-LOCATION:Daniel K. Inouye International Airport
+ niel K. Inouye International Airport\, 300 Rodgers Blvd\, Honolulu\, HI 96
+ 819\n🧭 https://www.google.com/maps/dir/?api=1&destination=Daniel%20K.%2
+ 0Inouye%20International%20Airport
+LOCATION:Daniel K. Inouye International Airport\, 300 Rodgers Blvd\, Honolu
+ lu\, HI 96819
 URL:https://www.google.com/maps/dir/?api=1&destination=Daniel%20K.%20Inouye
  %20International%20Airport
 GEO:21.3330717;-157.9196383
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Daniel K. Inouye Internati
- onal Airport";X-APPLE-RADIUS=100;X-TITLE="Daniel K. Inouye International A
- irport":geo:21.3330717,-157.9196383
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="300 Rodgers Blvd, Honolulu
+ , HI 96819";X-APPLE-RADIUS=100;X-TITLE="Daniel K. Inouye International Air
+ port":geo:21.3330717,-157.9196383
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d1-2@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T093000Z
 DTEND:20270104T103000Z
 SUMMARY:🏨 Hotel check-in
@@ -61,115 +63,128 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="129 Paoakalani Ave, Honolu
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-0@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T163000Z
 DTEND:20270104T171500Z
 SUMMARY:🍽️ Jet-lagged early start\, breakfast
 DESCRIPTION:You'll wake up early the first few days\, perfect for Pearl Har
- bor. No driving.
+ bor. No driving.\n\n📍 Hotel Renew\, 129 Paoakalani Ave\, Honolulu\, 129
+  Paoakalani Ave\, Honolulu\, HI 96815\n🧭 https://www.google.com/maps/di
+ r/?api=1&destination=Hotel%20Renew%2C%20129%20Paoakalani%20Ave%2C%20Honolu
+ lu
+LOCATION:Hotel Renew\, 129 Paoakalani Ave\, Honolulu\, 129 Paoakalani Ave\,
+  Honolulu\, HI 96815
+URL:https://www.google.com/maps/dir/?api=1&destination=Hotel%20Renew%2C%201
+ 29%20Paoakalani%20Ave%2C%20Honolulu
+GEO:21.2727845;-157.8222219
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="129 Paoakalani Ave, Honolu
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Hotel Renew, 129 Paoakalani Ave,
+  Honolulu":geo:21.2727845,-157.8222219
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-1@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T171500Z
 DTEND:20270104T180000Z
 SUMMARY:🚌 Uber to Pearl Harbor
 DESCRIPTION:~25 min. No bags allowed\, only small clear bags or phone walle
  ts\; paid bag storage available.\n\n🚗 Getting there: about 25 min drive
   from Hotel Renew (20 km)\n\n📍 Pearl Harbor Visitor Center\, 1 Arizona 
- Memorial Pl\, Honolulu\n🧭 https://www.google.com/maps/dir/?api=1&destin
- ation=Pearl%20Harbor%20Visitor%20Center
-LOCATION:Pearl Harbor Visitor Center\, 1 Arizona Memorial Pl\, Honolulu
+ Memorial Pl\, Honolulu\, HI 96818\n🧭 https://www.google.com/maps/dir/?a
+ pi=1&destination=Pearl%20Harbor%20Visitor%20Center
+LOCATION:Pearl Harbor Visitor Center\, 1 Arizona Memorial Pl\, Honolulu\, H
+ I 96818
 URL:https://www.google.com/maps/dir/?api=1&destination=Pearl%20Harbor%20Vis
  itor%20Center
 GEO:21.3674843;-157.9384488
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="1 Arizona Memorial Pl, Hon
- olulu";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Visitor Center":geo:21.367
- 4843,-157.9384488
+ olulu, HI 96818";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Visitor Center":
+ geo:21.3674843,-157.9384488
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-2@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T180000Z
 DTEND:20270104T193000Z
 SUMMARY:📸 USS Arizona Memorial
 DESCRIPTION:Reservations are free\, with only a small booking fee. Released
   on Recreation.gov\; book the earliest slot. Includes a film and boat ride
  \, ~75 min.\n\n🚗 Getting there: about 2 min drive from Pearl Harbor Vis
- itor Center (~1.7 km\, estimated)\n\n📍 USS Arizona Memorial\, Pearl Har
- bor (official boat only)\n🧭 https://www.google.com/maps/dir/?api=1&dest
- ination=USS%20Arizona%20Memorial\nRecreation.gov reservations: https://www
- .recreation.gov/ticket/facility/233338
-LOCATION:USS Arizona Memorial\, Pearl Harbor (official boat only)
+ itor Center (~1.7 km\, estimated)\n\n📍 USS Arizona Memorial\, 1 Arizona
+  Memorial Pl\, Honolulu\, HI 96818\n🧭 https://www.google.com/maps/dir/?
+ api=1&destination=USS%20Arizona%20Memorial\nRecreation.gov reservations: h
+ ttps://www.recreation.gov/ticket/facility/233338
+LOCATION:USS Arizona Memorial\, 1 Arizona Memorial Pl\, Honolulu\, HI 96818
 URL:https://www.google.com/maps/dir/?api=1&destination=USS%20Arizona%20Memo
  rial
 GEO:21.364906;-157.9500297
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Pearl Harbor (official boa
- t only)";X-APPLE-RADIUS=100;X-TITLE="USS Arizona Memorial":geo:21.364906,-
- 157.9500297
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="1 Arizona Memorial Pl, Hon
+ olulu, HI 96818";X-APPLE-RADIUS=100;X-TITLE="USS Arizona Memorial":geo:21.
+ 364906,-157.9500297
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-3@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T193000Z
 DTEND:20270104T210000Z
 SUMMARY:📸 Submarine Museum / USS Bowfin
 DESCRIPTION:Right next to the visitor center\; included in the Passport.\n\
  n🚗 Getting there: about 2 min drive from USS Arizona Memorial (~1.6 km\
  , estimated)\n\n📍 Pearl Harbor Bowfin Submarine Museum\, 11 Arizona Mem
- orial Dr\, Honolulu\n🧭 https://www.google.com/maps/dir/?api=1&destinati
- on=Pearl%20Harbor%20Bowfin%20Submarine%20Museum
+ orial Dr\, Honolulu\, HI 96818\n🧭 https://www.google.com/maps/dir/?api=
+ 1&destination=Pearl%20Harbor%20Bowfin%20Submarine%20Museum
 LOCATION:Pearl Harbor Bowfin Submarine Museum\, 11 Arizona Memorial Dr\, Ho
- nolulu
+ nolulu\, HI 96818
 URL:https://www.google.com/maps/dir/?api=1&destination=Pearl%20Harbor%20Bow
  fin%20Submarine%20Museum
 GEO:21.368732;-157.9394436
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="11 Arizona Memorial Dr, Ho
- nolulu";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Bowfin Submarine Museum":
- geo:21.368732,-157.9394436
+ nolulu, HI 96818";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Bowfin Submarin
+ e Museum":geo:21.368732,-157.9394436
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-4@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T210000Z
 DTEND:20270104T233000Z
 SUMMARY:📸 Shuttle to Ford Island · USS Missouri
 DESCRIPTION:The deck where Japan signed the surrender\; grab a simple lunch
   on the island afterwards.\n\n🚗 Getting there: about 3 min drive from P
  earl Harbor Bowfin Submarine Museum (~2.2 km\, estimated)\n\n📍 Battlesh
- ip Missouri Memorial\, 63 Cowpens St\, Ford Island\n🧭 https://www.googl
- e.com/maps/dir/?api=1&destination=Battleship%20Missouri%20Memorial
-LOCATION:Battleship Missouri Memorial\, 63 Cowpens St\, Ford Island
+ ip Missouri Memorial\, 63 Cowpens St\, Honolulu\, HI 96818\n🧭 https://w
+ ww.google.com/maps/dir/?api=1&destination=Battleship%20Missouri%20Memorial
+LOCATION:Battleship Missouri Memorial\, 63 Cowpens St\, Honolulu\, HI 96818
 URL:https://www.google.com/maps/dir/?api=1&destination=Battleship%20Missour
  i%20Memorial
 GEO:21.3621708;-157.9533179
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="63 Cowpens St, Ford Island
- ";X-APPLE-RADIUS=100;X-TITLE="Battleship Missouri Memorial":geo:21.3621708
- ,-157.9533179
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="63 Cowpens St, Honolulu, H
+ I 96818";X-APPLE-RADIUS=100;X-TITLE="Battleship Missouri Memorial":geo:21.
+ 3621708,-157.9533179
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-5@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270104T233000Z
 DTEND:20270105T013000Z
 SUMMARY:📸 Pearl Harbor Aviation Museum
 DESCRIPTION:Two hangars\, ~1.5 hours. Shuttle back to the visitor center af
  terwards.\n\n🚗 Getting there: about 2 min drive from Battleship Missour
  i Memorial (~1.4 km\, estimated)\n\n📍 Pearl Harbor Aviation Museum\, 31
- 9 Lexington Blvd\, Ford Island\n🧭 https://www.google.com/maps/dir/?api=
- 1&destination=Pearl%20Harbor%20Aviation%20Museum\nPassport to Pearl Harbor
- : https://www.pearlharborhistoricsites.org/tickets
-LOCATION:Pearl Harbor Aviation Museum\, 319 Lexington Blvd\, Ford Island
+ 9 Lexington Blvd\, Honolulu\, HI 96818\n🧭 https://www.google.com/maps/d
+ ir/?api=1&destination=Pearl%20Harbor%20Aviation%20Museum\nPassport to Pear
+ l Harbor: https://www.pearlharborhistoricsites.org/tickets
+LOCATION:Pearl Harbor Aviation Museum\, 319 Lexington Blvd\, Honolulu\, HI 
+ 96818
 URL:https://www.google.com/maps/dir/?api=1&destination=Pearl%20Harbor%20Avi
  ation%20Museum
 GEO:21.3588442;-157.9629042
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="319 Lexington Blvd, Ford I
- sland";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Aviation Museum":geo:21.35
- 88442,-157.9629042
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="319 Lexington Blvd, Honolu
+ lu, HI 96818";X-APPLE-RADIUS=100;X-TITLE="Pearl Harbor Aviation Museum":ge
+ o:21.3588442,-157.9629042
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-6@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T013000Z
 DTEND:20270105T023000Z
 SUMMARY:🚌 Back to Waikīkī
@@ -190,7 +205,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="129 Paoakalani Ave, Honolu
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-7@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T023000Z
 DTEND:20270105T050000Z
 SUMMARY:🎟️ Backup: Waikīkī sunset sail
@@ -200,57 +215,60 @@ DESCRIPTION:The sunset sail can be today or Jan 7: check the weather and se
  –19:00\; you'll still be adjusting to the time change\, so if you're tir
  ed save it for Jan 7. No sail? Stroll Kūhiō Beach and watch the sunset (
  ~18:05 in January).\n\n🚶 Getting there: about 10 min walk from Hotel Re
- new\n\n📍 Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī\n🧭 htt
- ps://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Beach%2C
- %20Honolulu\nBook Moana Sailing: https://www.hawaiiactivities.com/en/hawai
- i/oahu/a/166886
-LOCATION:Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī
+ new\n\n📍 Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 
+ 96815\n🧭 https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C
+ 5%8D%20Beach%2C%20Honolulu\nBook Moana Sailing: https://www.hawaiiactiviti
+ es.com/en/hawaii/oahu/a/166886
+LOCATION:Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 9681
+ 5
 URL:https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Be
  ach%2C%20Honolulu
 GEO:21.275;-157.82694
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, Waikīkī";
- X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.275,-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2453 Kalākaua Ave, Honolu
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.
+ 275,-157.82694
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d2-8@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T043000Z
 DTEND:20270105T053000Z
 SUMMARY:🍽️ Dinner: Duke's Waikiki
 DESCRIPTION:Oceanfront\; fish and Hula Pie. Reserve ahead\; if you sail tod
  ay\, book 19:15.\n\n🚶 Getting there: about 4 min walk from Kūhiō Beac
- h\n\n📍 Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\n🧭 https://www
- .google.com/maps/dir/?api=1&destination=Duke's%20Waikiki
-LOCATION:Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu
+ h\n\n📍 Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\, HI 96815\n🧭 
+ https://www.google.com/maps/dir/?api=1&destination=Duke's%20Waikiki
+LOCATION:Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\, HI 96815
 URL:https://www.google.com/maps/dir/?api=1&destination=Duke's%20Waikiki
 GEO:21.2768421;-157.8277917
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2335 Kalākaua Ave, Honolu
- lu";X-APPLE-RADIUS=100;X-TITLE="Duke's Waikiki":geo:21.2768421,-157.827791
- 7
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Duke's Waikiki":geo:21.2768421,-
+ 157.8277917
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-0@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T181500Z
 DTEND:20270105T190000Z
 SUMMARY:🚗 Pick up the car in Waikīkī
 DESCRIPTION:Bring your G licence and credit card\; inspect the car and take
   photos. Clockwise loop today: the northeast valleys first\, then back alo
- ng the North Shore.\n\n📍 Waikīkī rental office (sample location)\, Ka
- lākaua Ave\, east end\n🧭 https://www.google.com/maps/dir/?api=1&destin
- ation=Waik%C4%ABk%C4%AB%20rental%20office%20(sample%20location)
-LOCATION:Waikīkī rental office (sample location)\, Kalākaua Ave\, east e
- nd
+ ng the North Shore.\n\n📍 Waikīkī rental office (sample location)\, Wa
+ ikīkī rental counter (use the address on your booking)\n🧭 https://www
+ .google.com/maps/dir/?api=1&destination=Waik%C4%ABk%C4%AB%20rental%20offic
+ e%20(sample%20location)
+LOCATION:Waikīkī rental office (sample location)\, Waikīkī rental count
+ er (use the address on your booking)
 URL:https://www.google.com/maps/dir/?api=1&destination=Waik%C4%ABk%C4%AB%20
  rental%20office%20(sample%20location)
 GEO:21.2734513;-157.8222713
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, east end";X
- -APPLE-RADIUS=100;X-TITLE="Waikīkī rental office (sample location)":geo:
- 21.2734513,-157.8222713
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Waikīkī rental counter (
+ use the address on your booking)";X-APPLE-RADIUS=100;X-TITLE="Waikīkī re
+ ntal office (sample location)":geo:21.2734513,-157.8222713
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-1@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T190000Z
 DTEND:20270105T200500Z
 SUMMARY:📸 Hoʻomaluhia Botanical Garden
@@ -258,19 +276,20 @@ DESCRIPTION:Opens at 9:00. Drive in\, park by the lake for mountain photos\
  , and walk a short stretch. Skipping Byodo-In this time\, so you can linge
  r here.\n\n🚗 Getting there: about 35 min drive from Waikīkī rental of
  fice (sample location) (24 km)\n\n📍 Hoʻomaluhia Botanical Garden\, 45-
- 680 Luluku Rd\, Kāneʻohe\n🧭 https://www.google.com/maps/dir/?api=1&de
- stination=Ho%CA%BBomaluhia%20Botanical%20Garden
-LOCATION:Hoʻomaluhia Botanical Garden\, 45-680 Luluku Rd\, Kāneʻohe
+ 680 Luluku Rd\, Kāneʻohe\, HI 96744\n🧭 https://www.google.com/maps/di
+ r/?api=1&destination=Ho%CA%BBomaluhia%20Botanical%20Garden
+LOCATION:Hoʻomaluhia Botanical Garden\, 45-680 Luluku Rd\, Kāneʻohe\, HI
+  96744
 URL:https://www.google.com/maps/dir/?api=1&destination=Ho%CA%BBomaluhia%20B
  otanical%20Garden
 GEO:21.3882747;-157.8070148
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="45-680 Luluku Rd, Kāneʻo
- he";X-APPLE-RADIUS=100;X-TITLE="Hoʻomaluhia Botanical Garden":geo:21.3882
- 747,-157.8070148
+ he, HI 96744";X-APPLE-RADIUS=100;X-TITLE="Hoʻomaluhia Botanical Garden":g
+ eo:21.3882747,-157.8070148
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-2@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270105T210000Z
 DTEND:20270105T233000Z
 SUMMARY:🎟️ Kualoa Ranch Jurassic Adventure
@@ -279,18 +298,19 @@ DESCRIPTION:Check in at the ranch around 10:40. Ride an off-road vehicle in
   Jurassic Park\, Jurassic World and more. Bumpy ride\, only short walks. B
  ook your slot ahead.\n\n🚗 Getting there: about 30 min drive from Hoʻom
  aluhia Botanical Garden (20 km)\n\n📍 Kualoa Ranch\, 49-560 Kamehameha H
- wy\, Kāneʻohe\n🧭 https://www.google.com/maps/dir/?api=1&destination=K
- ualoa%20Ranch\nKualoa official site: https://www.kualoa.com/tours/
-LOCATION:Kualoa Ranch\, 49-560 Kamehameha Hwy\, Kāneʻohe
+ wy\, Kāneʻohe\, HI 96744\n🧭 https://www.google.com/maps/dir/?api=1&de
+ stination=Kualoa%20Ranch\nKualoa official site: https://www.kualoa.com/tou
+ rs/
+LOCATION:Kualoa Ranch\, 49-560 Kamehameha Hwy\, Kāneʻohe\, HI 96744
 URL:https://www.google.com/maps/dir/?api=1&destination=Kualoa%20Ranch
 GEO:21.5208318;-157.8372577
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="49-560 Kamehameha Hwy, Kā
- neʻohe";X-APPLE-RADIUS=100;X-TITLE="Kualoa Ranch":geo:21.5208318,-157.837
- 2577
+ neʻohe, HI 96744";X-APPLE-RADIUS=100;X-TITLE="Kualoa Ranch":geo:21.520831
+ 8,-157.8372577
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-3@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T000500Z
 DTEND:20270106T004000Z
 SUMMARY:🍽️ Giovanni's garlic shrimp
@@ -299,19 +319,20 @@ DESCRIPTION:Lunch. If the line is too long\, try Romy's or Fumi's next door
  a Bay from the car: North Shore surf is big on winter afternoons\, so no d
  edicated stops.\n\n🚗 Getting there: about 35 min drive from Kualoa Ranc
  h (25 km)\n\n📍 Giovanni's Shrimp Truck\, Kahuku\, 56-505 Kamehameha Hwy
- \, Kahuku\n🧭 https://www.google.com/maps/dir/?api=1&destination=Giovann
- i's%20Shrimp%20Truck%2C%20Kahuku
-LOCATION:Giovanni's Shrimp Truck\, Kahuku\, 56-505 Kamehameha Hwy\, Kahuku
+ \, Kahuku\, HI 96731\n🧭 https://www.google.com/maps/dir/?api=1&destinat
+ ion=Giovanni's%20Shrimp%20Truck%2C%20Kahuku
+LOCATION:Giovanni's Shrimp Truck\, Kahuku\, 56-505 Kamehameha Hwy\, Kahuku\
+ , HI 96731
 URL:https://www.google.com/maps/dir/?api=1&destination=Giovanni's%20Shrimp%
  20Truck%2C%20Kahuku
 GEO:21.677198;-157.9484211
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="56-505 Kamehameha Hwy, Kah
- uku";X-APPLE-RADIUS=100;X-TITLE="Giovanni's Shrimp Truck, Kahuku":geo:21.6
- 77198,-157.9484211
+ uku, HI 96731";X-APPLE-RADIUS=100;X-TITLE="Giovanni's Shrimp Truck, Kahuku
+ ":geo:21.677198,-157.9484211
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-4@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T010500Z
 DTEND:20270106T012000Z
 SUMMARY:📸 Turtle watching at Laniakea
@@ -319,17 +340,19 @@ DESCRIPTION:Turtles often haul out to bask in the afternoon\; watch from sh
  ore for 15 min and keep your distance. Roadside parking is tight\; if ther
  e's no spot\, go straight to Dole.\n\n🚗 Getting there: about 25 min dri
  ve from Giovanni's Shrimp Truck (20 km)\n\n📍 Laniakea Beach\, Kamehameh
- a Hwy\, Haleʻiwa\n🧭 https://www.google.com/maps/dir/?api=1&destination
- =Laniakea%20Beach
-LOCATION:Laniakea Beach\, Kamehameha Hwy\, Haleʻiwa
+ a Hwy at Pohaku Loa Way\, Haleʻiwa\, HI 96712\n🧭 https://www.google.co
+ m/maps/dir/?api=1&destination=Laniakea%20Beach
+LOCATION:Laniakea Beach\, Kamehameha Hwy at Pohaku Loa Way\, Haleʻiwa\, HI
+  96712
 URL:https://www.google.com/maps/dir/?api=1&destination=Laniakea%20Beach
 GEO:21.6187;-158.0853
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kamehameha Hwy, Haleʻiwa"
- ;X-APPLE-RADIUS=100;X-TITLE="Laniakea Beach":geo:21.6187,-158.0853
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kamehameha Hwy at Pohaku L
+ oa Way, Haleʻiwa, HI 96712";X-APPLE-RADIUS=100;X-TITLE="Laniakea Beach":g
+ eo:21.6187,-158.0853
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-5@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T014000Z
 DTEND:20270106T033000Z
 SUMMARY:🎟️ Dole Plantation: train + maze
@@ -340,19 +363,19 @@ DESCRIPTION:Ride the Pineapple Express train first (~20 min\, roughly every
  ry aren't listed online\, so call 808-621-8408 before you go. If the last 
  train is early\, do the maze first.\n\n🚗 Getting there: about 15 min dr
  ive from Laniakea Beach (15 km)\n\n📍 Dole Plantation\, 64-1550 Kamehame
- ha Hwy\, Wahiawā\n🧭 https://www.google.com/maps/dir/?api=1&destination
- =Dole%20Plantation\nDole Plantation official site: https://www.doleplantat
- ion.com/
-LOCATION:Dole Plantation\, 64-1550 Kamehameha Hwy\, Wahiawā
+ ha Hwy\, Wahiawā\, HI 96786\n🧭 https://www.google.com/maps/dir/?api=1&
+ destination=Dole%20Plantation\nDole Plantation official site: https://www.
+ doleplantation.com/
+LOCATION:Dole Plantation\, 64-1550 Kamehameha Hwy\, Wahiawā\, HI 96786
 URL:https://www.google.com/maps/dir/?api=1&destination=Dole%20Plantation
 GEO:21.5259081;-158.0378039
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="64-1550 Kamehameha Hwy, Wa
- hiawā";X-APPLE-RADIUS=100;X-TITLE="Dole Plantation":geo:21.5259081,-158.0
- 378039
+ hiawā, HI 96786";X-APPLE-RADIUS=100;X-TITLE="Dole Plantation":geo:21.5259
+ 081,-158.0378039
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-6@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T035000Z
 DTEND:20270106T044000Z
 SUMMARY:🛍️ Waikele Premium Outlets
@@ -372,7 +395,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="94-790 Lumiaina St, Waipah
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-7@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T050000Z
 DTEND:20270106T055000Z
 SUMMARY:🍽️ Ko Olina dinner
@@ -393,7 +416,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="92-1001 Olani St, Kapolei,
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-8@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T060000Z
 DTEND:20270106T070000Z
 SUMMARY:🎟️ Stargazing · Stars Above Hawaii
@@ -417,7 +440,7 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="92-1001 Olani St, Kapolei,
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d3-9@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T070000Z
 DTEND:20270106T080000Z
 SUMMARY:🚗 Drive back to Waikīkī
@@ -439,26 +462,27 @@ X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="129 Paoakalani Ave, Honolu
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-0@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T180000Z
 DTEND:20270106T190000Z
 SUMMARY:🚗 Fill up and return the car
 DESCRIPTION:Return by the time on your booking\; being late may cost an ext
- ra day.\n\n📍 Waikīkī rental office (sample location)\, Kalākaua Ave\
- , east end\n🧭 https://www.google.com/maps/dir/?api=1&destination=Waik%C
- 4%ABk%C4%AB%20rental%20office%20(sample%20location)
-LOCATION:Waikīkī rental office (sample location)\, Kalākaua Ave\, east e
- nd
+ ra day.\n\n📍 Waikīkī rental office (sample location)\, Waikīkī rent
+ al counter (use the address on your booking)\n🧭 https://www.google.com/
+ maps/dir/?api=1&destination=Waik%C4%ABk%C4%AB%20rental%20office%20(sample%
+ 20location)
+LOCATION:Waikīkī rental office (sample location)\, Waikīkī rental count
+ er (use the address on your booking)
 URL:https://www.google.com/maps/dir/?api=1&destination=Waik%C4%ABk%C4%AB%20
  rental%20office%20(sample%20location)
 GEO:21.2734513;-157.8222713
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, east end";X
- -APPLE-RADIUS=100;X-TITLE="Waikīkī rental office (sample location)":geo:
- 21.2734513,-157.8222713
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Waikīkī rental counter (
+ use the address on your booking)";X-APPLE-RADIUS=100;X-TITLE="Waikīkī re
+ ntal office (sample location)":geo:21.2734513,-157.8222713
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-1@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T190000Z
 DTEND:20270106T200000Z
 SUMMARY:🚌 Start the Waikiki Trolley 4-day pass
@@ -466,97 +490,115 @@ DESCRIPTION:4-day all-line pass ~USD150 for two\, hop on/hop off\, good for
   Jan 6–8. Take the Red Line (downtown history line) to the palace.\n\n
  🚗 Getting there: about 2 min drive from Waikīkī rental office (sample
   location) (~1.4 km\, estimated)\n\n📍 T Galleria by DFS\, Waikiki\, 330
-  Royal Hawaiian Ave\, Honolulu\n🧭 https://www.google.com/maps/dir/?api=
- 1&destination=T%20Galleria%20by%20DFS%2C%20Waikiki\nWaikiki Trolley offici
- al site: https://waikikitrolley.com/
-LOCATION:T Galleria by DFS\, Waikiki\, 330 Royal Hawaiian Ave\, Honolulu
+  Royal Hawaiian Ave\, Honolulu\, HI 96815\n🧭 https://www.google.com/map
+ s/dir/?api=1&destination=T%20Galleria%20by%20DFS%2C%20Waikiki\nWaikiki Tro
+ lley official site: https://waikikitrolley.com/
+LOCATION:T Galleria by DFS\, Waikiki\, 330 Royal Hawaiian Ave\, Honolulu\, 
+ HI 96815
 URL:https://www.google.com/maps/dir/?api=1&destination=T%20Galleria%20by%20
  DFS%2C%20Waikiki
 GEO:21.28;-157.8296
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="330 Royal Hawaiian Ave, Ho
- nolulu";X-APPLE-RADIUS=100;X-TITLE="T Galleria by DFS, Waikiki":geo:21.28,
- -157.8296
+ nolulu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="T Galleria by DFS, Waikiki":
+ geo:21.28,-157.8296
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-2@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T200000Z
 DTEND:20270106T213000Z
 SUMMARY:📸 ʻIolani Palace
 DESCRIPTION:The only royal palace in the US\; open Tue–Sat\, tickets onli
  ne only.\n\n🚗 Getting there: about 9 min drive from T Galleria by DFS (
- ~5.7 km\, estimated)\n\n📍 ʻIolani Palace\, 364 S King St\, Honolulu\n
- 🧭 https://www.google.com/maps/dir/?api=1&destination=%CA%BBIolani%20Pal
- ace\nʻIolani Palace official site: https://www.iolanipalace.org/visit/
-LOCATION:ʻIolani Palace\, 364 S King St\, Honolulu
+ ~5.7 km\, estimated)\n\n📍 ʻIolani Palace\, 364 S King St\, Honolulu\, 
+ HI 96813\n🧭 https://www.google.com/maps/dir/?api=1&destination=%CA%BBIo
+ lani%20Palace\nʻIolani Palace official site: https://www.iolanipalace.org
+ /visit/
+LOCATION:ʻIolani Palace\, 364 S King St\, Honolulu\, HI 96813
 URL:https://www.google.com/maps/dir/?api=1&destination=%CA%BBIolani%20Palac
  e
 GEO:21.3068147;-157.8587655
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="364 S King St, Honolulu";X
- -APPLE-RADIUS=100;X-TITLE="ʻIolani Palace":geo:21.3068147,-157.8587655
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="364 S King St, Honolulu, H
+ I 96813";X-APPLE-RADIUS=100;X-TITLE="ʻIolani Palace":geo:21.3068147,-157.
+ 8587655
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-3@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T213000Z
 DTEND:20270106T223000Z
 SUMMARY:📸 King Kamehameha Statue\, Chinatown
 DESCRIPTION:The statue is right across from the palace\; take the Red Line 
- or walk to Chinatown.
+ or walk to Chinatown.\n\n📍 King Kamehameha Statue\, Honolulu\, 417 S Ki
+ ng St\, Honolulu\, HI 96813\n🧭 https://www.google.com/maps/dir/?api=1&d
+ estination=King%20Kamehameha%20Statue%2C%20Honolulu
+LOCATION:King Kamehameha Statue\, Honolulu\, 417 S King St\, Honolulu\, HI 
+ 96813
+URL:https://www.google.com/maps/dir/?api=1&destination=King%20Kamehameha%20
+ Statue%2C%20Honolulu
+GEO:21.30595;-157.85965
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="417 S King St, Honolulu, H
+ I 96813";X-APPLE-RADIUS=100;X-TITLE="King Kamehameha Statue, Honolulu":geo
+ :21.30595,-157.85965
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-4@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270106T223000Z
 DTEND:20270107T003000Z
 SUMMARY:🍽️ Seafood lunch at Nico's Pier 38
 DESCRIPTION:Not on a trolley line\; Uber ~10 min. Poke bowls and fried fish
- .\n\n🚗 Getting there: about 5 min drive from ʻIolani Palace (~3.1 km\,
-  estimated)\n\n📍 Nico's Pier 38\, 1129 N Nimitz Hwy\, Honolulu\n🧭 ht
- tps://www.google.com/maps/dir/?api=1&destination=Nico's%20Pier%2038
-LOCATION:Nico's Pier 38\, 1129 N Nimitz Hwy\, Honolulu
+ .\n\n🚗 Getting there: about 5 min drive from King Kamehameha Statue (~3
+ .0 km\, estimated)\n\n📍 Nico's Pier 38\, 1129 N Nimitz Hwy\, Honolulu\,
+  HI 96817\n🧭 https://www.google.com/maps/dir/?api=1&destination=Nico's%
+ 20Pier%2038
+LOCATION:Nico's Pier 38\, 1129 N Nimitz Hwy\, Honolulu\, HI 96817
 URL:https://www.google.com/maps/dir/?api=1&destination=Nico's%20Pier%2038
 GEO:21.3175754;-157.8775063
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="1129 N Nimitz Hwy, Honolul
- u";X-APPLE-RADIUS=100;X-TITLE="Nico's Pier 38":geo:21.3175754,-157.8775063
+ u, HI 96817";X-APPLE-RADIUS=100;X-TITLE="Nico's Pier 38":geo:21.3175754,-1
+ 57.8775063
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-5@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270107T003000Z
 DTEND:20270107T040000Z
 SUMMARY:🛍️ Ala Moana Center
 DESCRIPTION:Pink Line (Ala Moana shopping line) both ways.\n\n🚗 Getting 
  there: about 9 min drive from Nico's Pier 38 (~6.2 km\, estimated)\n\n📍
-  Ala Moana Center\, 1450 Ala Moana Blvd\, Honolulu\n🧭 https://www.googl
- e.com/maps/dir/?api=1&destination=Ala%20Moana%20Center
-LOCATION:Ala Moana Center\, 1450 Ala Moana Blvd\, Honolulu
+  Ala Moana Center\, 1450 Ala Moana Blvd\, Honolulu\, HI 96814\n🧭 https:
+ //www.google.com/maps/dir/?api=1&destination=Ala%20Moana%20Center
+LOCATION:Ala Moana Center\, 1450 Ala Moana Blvd\, Honolulu\, HI 96814
 URL:https://www.google.com/maps/dir/?api=1&destination=Ala%20Moana%20Center
 GEO:21.2911;-157.8435
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="1450 Ala Moana Blvd, Honol
- ulu";X-APPLE-RADIUS=100;X-TITLE="Ala Moana Center":geo:21.2911,-157.8435
+ ulu, HI 96814";X-APPLE-RADIUS=100;X-TITLE="Ala Moana Center":geo:21.2911,-
+ 157.8435
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d4-6@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270107T040000Z
 DTEND:20270107T050000Z
 SUMMARY:🍽️ Dinner in Waikīkī
 DESCRIPTION:Hanauma Bay tomorrow morning\, so turn in early.\n\n🚗 Gettin
  g there: about 5 min drive from Ala Moana Center (~3.3 km\, estimated)\n\n
- 📍 Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī\n🧭 https://ww
- w.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Beach%2C%20Hono
- lulu
-LOCATION:Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī
+ 📍 Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 96815\n
+ 🧭 https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20
+ Beach%2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 9681
+ 5
 URL:https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Be
  ach%2C%20Honolulu
 GEO:21.275;-157.82694
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, Waikīkī";
- X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.275,-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2453 Kalākaua Ave, Honolu
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.
+ 275,-157.82694
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d5-3@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270107T233000Z
 DTEND:20270108T023000Z
 SUMMARY:📸 Green Line to the Diamond Head lookout
@@ -567,39 +609,43 @@ DESCRIPTION:The Green Line (Diamond Head Line) has a photo stop at Kahala L
  nto the crater: that needs a separate state park reservation\, and without
   the summit there isn't much to see.\n\n🚗 Getting there: about 5 min dr
  ive from Hotel Renew (~3.3 km\, estimated)\n\n📍 Diamond Head Lookout\, 
- Diamond Head Rd\, Honolulu\n🧭 https://www.google.com/maps/dir/?api=1&de
- stination=Diamond%20Head%20Lookout%2C%20Diamond%20Head%20Rd%2C%20Honolulu\
- nGreen Line schedule and stops: https://waikikitrolley.com/green-line/
-LOCATION:Diamond Head Lookout\, Diamond Head Rd\, Honolulu
+ Diamond Head Rd\, Honolulu\, Diamond Head Rd at Kuilei Cliffs Beach Park\,
+  Honolulu\, HI 96815\n🧭 https://www.google.com/maps/dir/?api=1&destinat
+ ion=Diamond%20Head%20Lookout%2C%20Diamond%20Head%20Rd%2C%20Honolulu\nGreen
+  Line schedule and stops: https://waikikitrolley.com/green-line/
+LOCATION:Diamond Head Lookout\, Diamond Head Rd\, Honolulu\, Diamond Head R
+ d at Kuilei Cliffs Beach Park\, Honolulu\, HI 96815
 URL:https://www.google.com/maps/dir/?api=1&destination=Diamond%20Head%20Loo
  kout%2C%20Diamond%20Head%20Rd%2C%20Honolulu
 GEO:21.2557;-157.807
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Diamond Head Rd";X-APPLE-R
- ADIUS=100;X-TITLE="Diamond Head Lookout, Diamond Head Rd, Honolulu":geo:21
- .2557,-157.807
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Diamond Head Rd at Kuilei 
+ Cliffs Beach Park, Honolulu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Diamond
+  Head Lookout, Diamond Head Rd, Honolulu":geo:21.2557,-157.807
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d5-4@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270108T023000Z
 DTEND:20270108T030000Z
 SUMMARY:🎟️ Meet at the beach boarding spot
 DESCRIPTION:Usually arrive 20–30 min early. Wear shoes that are easy to b
  oard in and bring a light jacket\; it's breezy on the water in the evening
  .\n\n🚗 Getting there: about 6 min drive from Diamond Head Lookout (~4.0
-  km\, estimated)\n\n📍 Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikī
- kī\n🧭 https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%
- 8D%20Beach%2C%20Honolulu
-LOCATION:Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī
+  km\, estimated)\n\n📍 Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, H
+ onolulu\, HI 96815\n🧭 https://www.google.com/maps/dir/?api=1&destinatio
+ n=K%C5%ABhi%C5%8D%20Beach%2C%20Honolulu
+LOCATION:Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 9681
+ 5
 URL:https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Be
  ach%2C%20Honolulu
 GEO:21.275;-157.82694
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, Waikīkī";
- X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.275,-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2453 Kalākaua Ave, Honolu
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.
+ 275,-157.82694
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d5-5@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270108T030000Z
 DTEND:20270108T050000Z
 SUMMARY:🎟️ Waikīkī sunset sail (or move to Jan 4)
@@ -609,76 +655,80 @@ DESCRIPTION:E.g. Moana Sailing's 2-hour sail (~USD81/person\, one drink inc
  lit up. Operators may cancel in rough seas. The sail can also go on the ev
  ening of Jan 4: check the forecast before the trip and pick the calmer\, l
  ess cloudy day\; if you already sailed on Jan 4\, just watch the sunset fr
- om the beach and eat early.\n\n📍 Kūhiō Beach\, Honolulu\, Kalākaua A
- ve\, Waikīkī\n🧭 https://www.google.com/maps/dir/?api=1&destination=K%
- C5%ABhi%C5%8D%20Beach%2C%20Honolulu\nBook Moana Sailing: https://www.hawai
- iactivities.com/en/hawaii/oahu/a/166886
-LOCATION:Kūhiō Beach\, Honolulu\, Kalākaua Ave\, Waikīkī
+ om the beach and eat early.\n\n📍 Kūhiō Beach\, Honolulu\, 2453 Kalāk
+ aua Ave\, Honolulu\, HI 96815\n🧭 https://www.google.com/maps/dir/?api=1
+ &destination=K%C5%ABhi%C5%8D%20Beach%2C%20Honolulu\nBook Moana Sailing: ht
+ tps://www.hawaiiactivities.com/en/hawaii/oahu/a/166886
+LOCATION:Kūhiō Beach\, Honolulu\, 2453 Kalākaua Ave\, Honolulu\, HI 9681
+ 5
 URL:https://www.google.com/maps/dir/?api=1&destination=K%C5%ABhi%C5%8D%20Be
  ach%2C%20Honolulu
 GEO:21.275;-157.82694
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Kalākaua Ave, Waikīkī";
- X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.275,-157.82694
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2453 Kalākaua Ave, Honolu
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Kūhiō Beach, Honolulu":geo:21.
+ 275,-157.82694
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d5-6@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270108T051500Z
 DTEND:20270108T061500Z
 SUMMARY:🍽️ Dinner: Waikīkī seafood
 DESCRIPTION:Eat nearby after the sail\; if you missed Duke's on Jan 4\, go 
  there.\n\n🚶 Getting there: about 4 min walk from Kūhiō Beach\n\n📍 
- Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\n🧭 https://www.google.co
- m/maps/dir/?api=1&destination=Duke's%20Waikiki
-LOCATION:Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu
+ Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\, HI 96815\n🧭 https://ww
+ w.google.com/maps/dir/?api=1&destination=Duke's%20Waikiki
+LOCATION:Duke's Waikiki\, 2335 Kalākaua Ave\, Honolulu\, HI 96815
 URL:https://www.google.com/maps/dir/?api=1&destination=Duke's%20Waikiki
 GEO:21.2768421;-157.8277917
 X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2335 Kalākaua Ave, Honolu
- lu";X-APPLE-RADIUS=100;X-TITLE="Duke's Waikiki":geo:21.2768421,-157.827791
- 7
+ lu, HI 96815";X-APPLE-RADIUS=100;X-TITLE="Duke's Waikiki":geo:21.2768421,-
+ 157.8277917
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d6-3@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270109T033000Z
 DTEND:20270109T070000Z
 SUMMARY:🍽️ House Without A Key sunset dinner
 DESCRIPTION:Sunset and hula show\; reservations recommended.\n\n🚗 Gettin
  g there: about 30 min drive from Hālona Blowhole Lookout (~22 km\, estima
  ted)\n\n📍 House Without A Key\, Halekulani\, 2199 Kālia Rd\, Honolulu\
- n🧭 https://www.google.com/maps/dir/?api=1&destination=House%20Without%2
- 0A%20Key%2C%20Halekulani
-LOCATION:House Without A Key\, Halekulani\, 2199 Kālia Rd\, Honolulu
+ , HI 96815\n🧭 https://www.google.com/maps/dir/?api=1&destination=House%
+ 20Without%20A%20Key%2C%20Halekulani
+LOCATION:House Without A Key\, Halekulani\, 2199 Kālia Rd\, Honolulu\, HI 
+ 96815
 URL:https://www.google.com/maps/dir/?api=1&destination=House%20Without%20A%
  20Key%2C%20Halekulani
 GEO:21.2774759;-157.8318823
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2199 Kālia Rd, Honolulu";
- X-APPLE-RADIUS=100;X-TITLE="House Without A Key, Halekulani":geo:21.277475
- 9,-157.8318823
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="2199 Kālia Rd, Honolulu, 
+ HI 96815";X-APPLE-RADIUS=100;X-TITLE="House Without A Key, Halekulani":geo
+ :21.2774759,-157.8318823
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d6-4@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270109T070000Z
 DTEND:20270109T080000Z
 SUMMARY:✈️ Head to the airport
 DESCRIPTION:~25–30 min. The return is the Air Canada nonstop at 00:10 on 
  Jan 9\; arrive 2.5–3 hours early. If you booked the bundle\, follow its 
  transfer arrangements.\n\n🚗 Getting there: about 20 min drive from Hous
- e Without A Key (15 km)\n\n📍 Daniel K. Inouye International Airport\n
- 🧭 https://www.google.com/maps/dir/?api=1&destination=Daniel%20K.%20Inou
- ye%20International%20Airport
-LOCATION:Daniel K. Inouye International Airport
+ e Without A Key (15 km)\n\n📍 Daniel K. Inouye International Airport\, 3
+ 00 Rodgers Blvd\, Honolulu\, HI 96819\n🧭 https://www.google.com/maps/di
+ r/?api=1&destination=Daniel%20K.%20Inouye%20International%20Airport
+LOCATION:Daniel K. Inouye International Airport\, 300 Rodgers Blvd\, Honolu
+ lu\, HI 96819
 URL:https://www.google.com/maps/dir/?api=1&destination=Daniel%20K.%20Inouye
  %20International%20Airport
 GEO:21.3330717;-157.9196383
-X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="Daniel K. Inouye Internati
- onal Airport";X-APPLE-RADIUS=100;X-TITLE="Daniel K. Inouye International A
- irport":geo:21.3330717,-157.9196383
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="300 Rodgers Blvd, Honolulu
+ , HI 96819";X-APPLE-RADIUS=100;X-TITLE="Daniel K. Inouye International Air
+ port":geo:21.3330717,-157.9196383
 END:VEVENT
 BEGIN:VEVENT
 UID:oahu-2027-jan-five-nights-d7-0@travel-plan
-DTSTAMP:20261119T234308Z
+DTSTAMP:20261120T000918Z
 DTSTART:20270109T101000Z
 DTEND:20270109T185100Z
 SUMMARY:✈️ Air Canada Honolulu → Toronto
