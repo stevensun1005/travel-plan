@@ -69,8 +69,20 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 - The pre-departure checklist looks up visas and entry rules for each traveler's passport and residency, adds the bookings that sell out, and sorts everything by deadline with a countdown.
 - The checklist and the budget are linked: switch the hotel, flight or activities in the budget and the bookings on the checklist follow; tick one off as booked and its budget card turns green.
 - Every activity has "Love it / Maybe / Meh" buttons; anything you're unsure about (say, a hot spring she may skip) starts as Maybe, with priced alternatives listed underneath.
-- "Subscribe in Calendar" adds the whole itinerary to Apple Calendar as its own calendar you can hide in one tap, and it updates when the plan changes: leave at 9:00 and reach the next stop at 13:00, and the calendar shows one 9:00–13:00 block; flights across time zones use the real local times at both ends, as one event from take-off to landing. Each event's notes carry the address, a directions link, opening hours and how long the drive from the previous stop takes, and titles start with an icon (✈️ 🚗 🎟️ 🍽️ 🏨…). Host the calendar file on GitHub Pages or a secret GitHub Gist to subscribe; with nowhere to host it, the button downloads it instead.
 - Your choices are remembered: published as a Claude Artifact they follow your account to your phone and laptop; anywhere else, carry them over with the sync code or link from Sync at the very bottom of the page.
+
+### Calendar: subscribe to the whole trip in one tap
+
+- Tap "Subscribe in Calendar" at the top right of the daily itinerary and the whole trip goes into Apple Calendar (Google Calendar and Outlook can add it "from URL" too). It is its own calendar, rose pink by default, and one tap hides or shows all of it.
+- Every timed item becomes an event that runs until the next one starts: leave at 9 a.m. and reach the next stop at 1 p.m., and the calendar shows 9:00–13:00. Flights across time zones use the real local times at both ends, as one event from take-off to landing.
+- Titles start with an icon for the kind of plan: ✈️ flight, 🚗 drive, 🎟️ tour or ticket, 📸 sight, 🍽️ meal, 🏨 stay, ♨️ hot spring, 🛍️ shopping.
+- Notes carry the address, a Google Maps directions link, opening hours, how long and how far the drive from the previous stop is, and the backup options, ready to tap on the road.
+- When the plan changes the calendar updates itself: calendar apps fetch it again on their own schedule, and the file suggests every 12 hours.
+- Subscribing needs the calendar file online: publishing to GitHub Pages includes it; with no site, `node scripts/export_calendar.mjs ./my-trip --gist` saves it as a secret GitHub Gist; inside a Claude Artifact the button opens a small hand-off page that passes it to your calendar. With nothing hosted the button downloads an `.ics` file instead, a one-time import that will not update; a "download the calendar file" link also stays at the very bottom of the page.
+
+![Illustration of the subscribed calendar: a week of trip events, with the waterfall event showing its address, hours and drive time](docs/assets/calendar.en.png)
+
+<sub>Drawn from the real calendar.ics exported from the Costa Rica plan, shown in Costa Rica time.</sub>
 
 ### Sharing: looks good when sent, and friends can make their own
 
@@ -84,7 +96,7 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 | Offline base map | Share route poster |
 | :---: | :---: |
 | [![Land, forests, rivers, borders, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers, highlights and the alpaca](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
-| Road classes · route shields · rivers and borders · towns, national parks and bays | A colour per day · place stickers · day cards · one-tap save |
+| Road classes · route shields · rivers and borders · towns, national parks and bays | A colour per day · place stickers · zoomed inset · flight locator map · one-tap save |
 
 **Multi-city trips can become a picker**: choose cities, reorder them and set nights per city, pick train or plane, and dates, lodging, routes and budget all follow; a match or show you must attend becomes the anchor. See the [multi-city workflow](references/multi-city.md).
 
