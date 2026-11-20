@@ -2,7 +2,8 @@
 # Copyright 2026 Steven Sun (stevensun1005). SPDX-License-Identifier: Apache-2.0
 # Reusing or adapting this file (by hand or with an AI assistant)? Keep this header
 # and credit "travel-plan by Steven Sun" with the link above. See LICENSE and NOTICE.
-"""Cache an offline base map from OpenStreetMap: land, forests, lakes, roads by class, route shields and place names.
+"""Cache an offline base map from OpenStreetMap: land, forests, lakes, rivers, borders, roads by class, route shields and
+place names (towns and villages, provinces, parks, lakes, peaks, bays).
 
 The page draws it under the online tiles, so the map still reads where tiles are blocked (for example a
 hosting CSP). One Overpass request per run, with backoff across public mirrors. Optional: with `shapely`
@@ -24,7 +25,7 @@ ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.s
              'https://maps.mail.ru/osm/tools/overpass/api/interpreter']
 USER_AGENT = 'travel-plan/1.0 (personal itinerary basemap)'
 ROAD_CLASSES = ['motorway', 'trunk', 'primary', 'secondary', 'tertiary']
-MARINE_WORDS = ('Fisheries', 'MLCD', 'Marine', 'Wildlife Refuge', 'Lagoon')
+MARINE_WORDS = ('Fisheries', 'MLCD', 'Marine', 'Marino', 'Wildlife Refuge', 'Lagoon')
 
 try:  # optional, improves mainland coastlines
     from shapely.geometry import LineString, Polygon, Point, box as shapely_box
@@ -147,12 +148,16 @@ def build_query(bbox, detail):
     places = 'city|town|village|suburb|neighbourhood|quarter' if area < .05 else 'city|town|village' if detail == 'full' else 'city|town'
     parts = [f'way["natural"="coastline"]{b};', f'way["highway"~"^({roads})$"]{b};', f'node["place"~"^({places})$"]{b};']
     if detail != 'light':
+        parts += [f'way["waterway"="river"]{b};', f'way["boundary"="administrative"]["admin_level"~"^(2|4)$"]{b};',
+                  f'node["place"~"^(state|province)$"]["name"]{b};', f'way["boundary"~"^(protected_area|national_park)$"]["name"]{b};',
+                  f'relation["boundary"~"^(protected_area|national_park)$"]["name"]{b};']
         parts += [f'way["landuse"="forest"]{b};', f'relation["landuse"="forest"]{b};', f'way["leisure"="nature_reserve"]{b};',
                   f'relation["leisure"="nature_reserve"]{b};', f'node["natural"="peak"]["name"]{b};', f'node["natural"="bay"]["name"]{b};',
                   f'nwr["natural"="mountain_range"]["name"]{b};', f'way["natural"="water"]{b};', f'relation["natural"="water"]{b};']
     if detail == 'full':
         parts += [f'way["natural"="wood"]{b};', f'relation["natural"="wood"]{b};']
-    return '[out:json][timeout:180];(' + ''.join(parts) + ');out geom;'
+    tail = '' if detail == 'light' else f'rel["boundary"="administrative"]["admin_level"="4"]["name"]{b};out tags center;'  # province names at their centres
+    return '[out:json][timeout:180];(' + ''.join(parts) + ');out geom;' + tail
 
 
 def overpass(query, endpoints=ENDPOINTS, attempts=4):
@@ -183,7 +188,7 @@ def build(elements, bbox, use_shapely=None):
     tol = max(e - w, n - s) / 1500
     min_area = (e - w) * (n - s) * 2e-5
     ways = [x for x in elements if x['type'] == 'way']
-    payload = {'land': [], 'coast': [], 'green': [], 'water': [], 'roads': {}, 'shields': [], 'labels': []}
+    payload = {'land': [], 'coast': [], 'green': [], 'water': [], 'rivers': [], 'borders': {}, 'roads': {}, 'shields': [], 'labels': []}
 
     # land
     coast = merge_lines([coords(x.get('geometry')) for x in ways if x.get('tags', {}).get('natural') == 'coastline'])
@@ -250,6 +255,16 @@ def build(elements, bbox, use_shapely=None):
             lakes += merge_lines([coords(m.get('geometry')) for m in x.get('members', []) if m.get('type') == 'way' and m.get('role') in ('outer', '')])
     payload['water'] = [[rnd(simplify(r, tol))] for r in lakes if len(r) >= 4 and r[0] == r[-1] and abs(ring_area(r)) > min_area * 5]
 
+    # rivers: the longer ones only, so the map is not a hairball
+    rivers = merge_lines([coords(x.get('geometry')) for x in ways if x.get('tags', {}).get('waterway') == 'river'])
+    payload['rivers'] = [rnd(simplify(l, tol)) for l in rivers if length(l) > tol * 60]
+    # borders: country (admin_level 2) and provinces / states (admin_level 4)
+    for level, key in (('2', 'country'), ('4', 'region')):
+        lines = merge_lines([coords(x.get('geometry')) for x in ways if x.get('tags', {}).get('boundary') == 'administrative' and x['tags'].get('admin_level') == level])
+        keep = [rnd(simplify(l, tol)) for l in lines if length(l) > tol * 6]
+        if keep:
+            payload['borders'][key] = keep
+
     # roads by class
     for cls in ROAD_CLASSES:
         lines = merge_lines([coords(x.get('geometry')) for x in ways if x.get('tags', {}).get('highway') == cls])
@@ -288,10 +303,12 @@ def build(elements, bbox, use_shapely=None):
         return all(math.hypot(x['lon'] - l['lng'], x['lat'] - l['lat']) > span * gap for l in payload['labels'])
     seen = set()
     for x in towns:
-        if len(payload['labels']) >= 18 or plain(x['tags']['name']) in seen or not room(x, .06):
+        big = x['tags']['place'] in ('city', 'town')
+        count = sum(l['kind'] == 'town' and l['rank'] == (1 if big else 2) for l in payload['labels'])
+        if count >= (36 if big else 40) or plain(x['tags']['name']) in seen or not room(x, .035 if big else .025):
             continue
         seen.add(plain(x['tags']['name']))
-        payload['labels'].append({'name': x['tags']['name'], 'lat': round(x['lat'], 5), 'lng': round(x['lon'], 5), 'rank': 1 if x['tags']['place'] in ('city', 'town') else 2, 'kind': 'town'})
+        payload['labels'].append({'name': x['tags']['name'], 'lat': round(x['lat'], 5), 'lng': round(x['lon'], 5), 'rank': 1 if big else 2, 'kind': 'town'})
     def elevation(x):
         try:
             return float(re.sub(r'[^0-9.]', '', x['tags'].get('ele', '')) or 0)
@@ -313,6 +330,47 @@ def build(elements, bbox, use_shapely=None):
             if pts:
                 cx, cy = point_at(pts, .5) if len(pts) > 1 else pts[0]
                 payload['labels'].append({'name': x['tags']['name'], 'lat': round(cy, 5), 'lng': round(cx, 5), 'rank': 3, 'kind': 'range'})
+    regions = [{'name': x['tags']['name'], 'lat': x['lat'], 'lon': x['lon']} for x in nodes if x.get('tags', {}).get('place') in ('state', 'province') and x['tags'].get('name')]
+    regions += [{'name': x['tags']['name'], 'lat': x['center']['lat'], 'lon': x['center']['lon']} for x in elements
+                if x['type'] == 'relation' and x.get('center') and x.get('tags', {}).get('admin_level') == '4' and x['tags'].get('name')]
+    for x in regions:  # provinces / states, written big and faint like a paper map
+        if w <= x['lon'] <= e and s <= x['lat'] <= n and plain(x['name']) not in seen and room(x, .05):
+            seen.add(plain(x['name']))
+            payload['labels'].append({'name': x['name'], 'lat': round(x['lat'], 5), 'lng': round(x['lon'], 5), 'rank': 1, 'kind': 'region'})
+    def outline(x):
+        if x['type'] == 'way':
+            return [coords(x.get('geometry'))]
+        return merge_lines([coords(m.get('geometry')) for m in x.get('members', []) if m.get('type') == 'way' and m.get('role') in ('outer', '')])
+    named = []
+    for x in elements:  # national parks, reserves and big lakes, labelled at the middle of their biggest ring
+        tags = x.get('tags', {})
+        if not tags.get('name') or x['type'] == 'node':
+            continue
+        kind = 'park' if tags.get('boundary') in ('protected_area', 'national_park') or tags.get('leisure') == 'nature_reserve' else \
+               'water' if tags.get('natural') == 'water' and tags.get('water') not in ('river', 'canal', 'stream', 'pond', 'wastewater') else None
+        if not kind or (kind == 'park' and any(word in tags['name'] for word in MARINE_WORDS)):
+            continue
+        rings = [r for r in outline(x) if len(r) >= 4]
+        if not rings:
+            continue
+        ring = max(rings, key=lambda r: abs(ring_area(r)))
+        area = abs(ring_area(ring))
+        if area < min_area * (40 if kind == 'park' else 8):
+            continue
+        xs, ys = [p[0] for p in ring], [p[1] for p in ring]
+        cx, cy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+        if w <= cx <= e and s <= cy <= n:
+            named.append((area, kind, tags['name'], cx, cy))
+    taken = set()
+    for area, kind, name, cx, cy in sorted(named, reverse=True):
+        if plain(name) in taken or sum(l['kind'] == kind for l in payload['labels']) >= (10 if kind == 'park' else 6):
+            continue
+        spot = {'lon': cx, 'lat': cy}
+        # park names are long: keep them well apart from each other, and a little apart from everything else
+        if not room(spot, .025) or any(math.hypot(cx - l['lng'], cy - l['lat']) < span * .08 for l in payload['labels'] if l['kind'] == kind):
+            continue
+        taken.add(plain(name))
+        payload['labels'].append({'name': name, 'lat': round(cy, 5), 'lng': round(cx, 5), 'rank': 2, 'kind': kind})
     return payload
 
 
@@ -338,7 +396,7 @@ def fetch(folder, bbox=None, detail=None, pad=.15, endpoints=ENDPOINTS, raw_out=
     if not target.is_relative_to(folder):
         raise ValueError('Base map output escapes project')
     target.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-    print(f'land {len(payload["land"])} · coast {len(payload["coast"])} · green {len(payload["green"])} · water {len(payload["water"])} · roads '
+    print(f'land {len(payload["land"])} · coast {len(payload["coast"])} · green {len(payload["green"])} · water {len(payload["water"])} · rivers {len(payload["rivers"])} · borders { {k: len(v) for k, v in payload["borders"].items()} } · roads '
           f'{ {k: len(v) for k, v in payload["roads"].items()} } · shields {len(payload["shields"])} · labels {len(payload["labels"])} · {target.stat().st_size // 1024} KB')
     return target
 

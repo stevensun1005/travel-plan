@@ -278,6 +278,11 @@ h3{font:700 21px/1.35 var(--hand);margin:0 0 6px}
 .base-label.kind-peak{font:600 11px/1.2 var(--sans);color:#6b5a3e}
 .base-label.kind-bay,.base-label.kind-range{font:italic 600 12px/1.2 var(--sans);color:#4f7f93;text-shadow:none;letter-spacing:.06em}
 .base-label.kind-range{color:#6f8a5e;font-size:12.5px;letter-spacing:.18em}
+.base-label.rank-2.kind-town{font:600 10.5px/1.2 var(--sans);color:#69735f}
+.base-label.kind-region{font:italic 600 16px/1.2 var(--sans);color:rgba(112,96,140,.6);letter-spacing:.22em;text-shadow:none}
+.base-label.kind-park span{white-space:normal;width:130px;text-align:center;font:italic 600 11px/1.25 var(--sans);color:#4c7a45}
+.base-label.kind-water{font:italic 600 11.5px/1.2 var(--sans);color:#4f7f93}
+#map.z-far .base-label.rank-2,#map.z-far .base-label.kind-peak,#map.z-mid .base-label.rank-2.kind-town,#map.z-near .base-label.kind-region{display:none}
 .base-shield span{display:inline-block;transform:translate(-50%,-50%);font:700 10px/1 var(--sans);color:#3f3a2e;background:#fff7dc;border:1.5px solid #8c7a5e;border-radius:4px;padding:2px 4px}
 .base-shield.interstate span{background:#2a5ea8;color:#fff;border-color:#1c3f73;border-radius:6px 6px 9px 9px}
 .map-layout:fullscreen{height:100dvh;width:100vw;border-radius:0}

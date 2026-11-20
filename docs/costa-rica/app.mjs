@@ -441,6 +441,10 @@ async function renderMap(){
     else{$('#map').classList.add('base-land');if(b.coast?.length)L.polyline(b.coast.map(ll),{...flat,color:'#6f9fb3',weight:2}).addTo(map);}
     if(b.green?.length)L.polygon(b.green.map(poly=>poly.map(ll)),{...flat,stroke:false,fillColor:'#cfe2bd',fillOpacity:.85}).addTo(map);
     if(b.water?.length)L.polygon(b.water.map(poly=>poly.map(ll)),{...flat,color:'#8fb6c9',weight:1,fillColor:'#bcd8e6',fillOpacity:1}).addTo(map);
+    if(b.rivers?.length)L.polyline(b.rivers.map(ll),{...flat,color:'#93bfd6',weight:1.3,opacity:.9}).addTo(map);
+    // Borders: provinces faint and dotted, the country stronger and dashed (like the online map)
+    if(b.borders?.region?.length)L.polyline(b.borders.region.map(ll),{...flat,color:'#a99cc2',weight:1.2,dashArray:'3 5'}).addTo(map);
+    if(b.borders?.country?.length)L.polyline(b.borders.country.map(ll),{...flat,color:'#857399',weight:2.4,dashArray:'8 5',opacity:.9}).addTo(map);
     // Roads from small to big: tertiary, secondary, primary, trunk, motorway — the big ones with a soft casing so they read on the paper.
     for(const [cls,w,c] of [['tertiary',.9,'#ddd6c2'],['secondary',1.3,'#d3cdb8'],['primary',2,'#f2d48c'],['trunk',2.6,'#efb36b'],['motorway',3.2,'#e38f4a']]){
       const lines=b.roads?.[cls];if(!lines?.length)continue;
@@ -450,6 +454,9 @@ async function renderMap(){
     const tag=(lat,lng,cls,html)=>L.marker([lat,lng],{pane:'base',interactive:false,keyboard:false,icon:L.divIcon({className:cls,html:`<span>${html}</span>`,iconSize:null})}).addTo(map);
     (b.shields||[]).forEach(s=>tag(s.lat,s.lng,`base-shield${s.cls==='motorway'?' interstate':''}`,escape(s.ref)));
     (b.labels||[]).forEach(l=>tag(l.lat,l.lng,`base-label rank-${l.rank} kind-${l.kind||'town'}`,(l.kind==='peak'?'▲ ':'')+escape(l.name)));
+    // Names by zoom, like a paper map: far out only cities and provinces, then parks, then villages and peaks
+    const zoomClass=()=>{const z=map.getZoom(),el=$('#map');el.classList.toggle('z-far',z<9);el.classList.toggle('z-mid',z>=9&&z<10);el.classList.toggle('z-near',z>=10);};
+    map.on('zoomend',zoomClass);zoomClass();
   }).catch(()=>{});
   const layer=L.featureGroup().addTo(map),markers=new Map();let selected=0,roads=[];
   const get=id=>config.places.find(p=>p.id===id);
