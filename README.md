@@ -22,9 +22,9 @@
 
 | [![欧胡岛五晚](docs/demo/og.png)](https://stevensun1005.github.io/travel-plan/demo/) | [![哥斯达黎加五晚](docs/costa-rica/og.png)](https://stevensun1005.github.io/travel-plan/costa-rica/) |
 | :--- | :--- |
-| **欧胡岛 · 一月五晚**<br>把多伦多的大雪留在身后：在珍珠港前静静站一会儿，绕岛看海龟和星河，再乘帆船追一次落日。 | **哥斯达黎加 · 1/6–1/11**<br>逃离多伦多的冰雪，一路向南：两晚枕着太平洋的海浪，三晚住在火山脚下的温泉边。 |
+| **欧胡岛 · 一月五晚**<br>把多伦多的大雪留在身后：在珍珠港前静静站一会儿，绕岛看海龟和星河，再乘帆船追一次落日。 | **哥斯达黎加 · 1/6–1/11**<br>逃离多伦多的冰雪，一路向南：一晚枕着太平洋的海浪，一晚在云雾森林的树梢上飞过，三晚住在火山脚下的温泉边。 |
 
-两份都是用 travel-plan 给两个人做的真实攻略，点图片就能打开，不用登录。价格是 2026 年 11 月中旬查到的报价记录和估算，**全部没有预订**，以下单页面为准。
+两份都是用 travel-plan 给两个人做的真实攻略，点图片就能打开，不用登录。价格是 2026 年 11 月中旬查到的报价记录和估算：哥斯达黎加的机票、三家酒店和租车已经订好，写的是实付价；欧胡岛**还没有预订**，以下单页面为准。
 
 ## 一句话安装
 
@@ -83,8 +83,8 @@
 
 | 地图自带离线底图 | 一键生成分享路线图 |
 | :---: | :---: |
-| [![陆地、山区、公路分级、编号牌和地名，在线图块被拦截时也能看](docs/assets/map.png)](docs/assets/map.png) | [![手绘海报：每天路线、景点贴纸、每日亮点和小羊驼](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
-| 公路分级 · 编号牌 · 山区绿地 · 城镇和海湾名 | 每天一种颜色 · 景点贴纸 · 每日卡片 · 一键保存 |
+| [![陆地、山区、河流、国界、公路分级、编号牌和地名，在线图块被拦截时也能看](docs/assets/map.png)](docs/assets/map.png) | [![手绘海报：每天路线、景点贴纸、每日亮点和小羊驼](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
+| 公路分级 · 编号牌 · 河流和国界 · 城镇、国家公园和海湾名 | 每天一种颜色 · 景点贴纸 · 每日卡片 · 一键保存 |
 
 **多城市旅行也能做成选择器**：自由勾选城市、调整顺序和每城晚数、火车飞机二选一，日期、住宿、路线和预算一起联动；有必须参加的球赛或演出，就围绕它来排。详见[多城市工作流](references/multi-city.md)。
 
@@ -166,11 +166,16 @@ python scripts/serve.py ./my-trip
 # 改了 trip-data.json 之后，重新取真实道路线
 python scripts/fetch_routes.py ./my-trip
 
-# 离线底图；装了 shapely 时大陆海岸线也能填色，--detail full 会加上三级公路
+# 离线底图（森林、湖、河流、国界省界、公路、城镇村庄、省名和国家公园名）；
+# 装了 shapely 时大陆海岸线也能填色，--detail full 会加上三级公路和更多小地名
 python scripts/fetch_basemap.py ./my-trip
 
 # 链接预览卡片；发布到固定网址时加 --url
 python scripts/make_card.py ./my-trip --url https://你的网址/
+
+# 日历文件 calendar.ics / calendar.en.ics；放到 GitHub Pages 上就能订阅，
+# 没有网站时加 --gist 存成不公开的 GitHub Gist（需要已登录的 gh）
+node scripts/export_calendar.mjs ./my-trip --gist
 
 # 只打包页面需要的文件，输出目录必须是新的或空的
 python scripts/package_site.py ./my-trip ./site-output
@@ -209,14 +214,14 @@ python scripts/package_site.py ./my-trip ./site-output
 
 用 Leaflet、OpenStreetMap 和真实经纬度，道路线来自缓存的 OSRM 路网结果。没有道路数据时只显示地点和导航，不画虚构的曲线。
 
-在线地图下面还垫着一层用 OpenStreetMap 数据生成的离线底图，所以发布到会拦截外部图片的地方，地图照样有陆地、湖泊、公路和地名；再往下是随页面打包的简化世界地图（Natural Earth，公有领域），缩到整个大洲也不会变成一片空白。国界只是示意。
+在线地图下面还垫着一层用 OpenStreetMap 数据生成的离线底图，所以发布到会拦截外部图片的地方（比如电脑上打开的 Claude Artifact），地图照样有森林、湖泊、河流、国界省界、公路、城镇和国家公园名，地名随缩放逐级出现；再往下是随页面打包的简化世界地图（Natural Earth，公有领域），缩到整个大洲也不会变成一片空白。国界只是示意。
 
 </details>
 
 <details>
 <summary>发给同伴后，两个人的选择会同步吗？</summary>
 
-不会。每个人的选择存在自己的浏览器里，互不覆盖。本机地址（`127.0.0.1`）只有自己能打开，要发给别人得先发布到能访问的托管服务。
+看发布方式。发布成 Claude Artifact 时，选择存在云端：你和有编辑权限的同伴在电脑、手机上打开都是同一套，只读的人能看不能改。其他托管方式下选择只存在自己的浏览器里，点页面最底下的「同步」把同步码或链接发给对方，就能用同一套选择。本机地址（`127.0.0.1`）只有自己能打开，要发给别人得先发布到能访问的托管服务。
 
 </details>
 
@@ -238,12 +243,13 @@ python scripts/package_site.py ./my-trip ./site-output
 
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
-node --test tests/budget.test.mjs
+node --test
 node --check assets/starter/app.mjs
+node --check assets/starter/calendar.mjs
 node --check assets/starter/share-map.mjs
 ```
 
-测试覆盖预算组合、行李联动、套餐锁定与释放、金额精度、零支出、损坏的保存记录、航班切换、数据和海报引用、离线底图生成（不联网，用样例数据）、预览卡片标签，以及打包时不会带上原始 PDF、`.env` 和发布凭据。
+测试覆盖预算组合、行李联动、套餐锁定与释放、金额精度、零支出、损坏的保存记录、默认选项更新后没改过的选择跟着走、航班切换、日历导出（时区、跨时区航班、路程和营业时间备注、长行折行、zip 打包、订阅中转链接）、数据和海报引用、离线底图生成（不联网，用样例数据）、预览卡片标签，以及打包时不会带上原始 PDF、`.env` 和发布凭据。
 
 欢迎提具体的问题、能复现的行程边界情况，或者小而完整的 PR。新功能请附上能说明行为的测试；公开的样例请用虚构数据。
 

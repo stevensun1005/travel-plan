@@ -22,9 +22,9 @@ Trip planning starts out scattered: an old PDF, a few flight screenshots, saved 
 
 | [![Oʻahu, five nights](docs/demo/og.png)](https://stevensun1005.github.io/travel-plan/demo/?lang=en) | [![Costa Rica, five nights](docs/costa-rica/og.png)](https://stevensun1005.github.io/travel-plan/costa-rica/?lang=en) |
 | :--- | :--- |
-| **Oʻahu · five nights in January**<br>Leave the Toronto snow behind: stand quietly at Pearl Harbor for a while, loop the island for turtles and stars, then chase one more sunset under sail. | **Costa Rica · Jan 6–11**<br>Out of the Toronto cold and south: two nights to the sound of the Pacific, three nights by the hot springs at the foot of a volcano. |
+| **Oʻahu · five nights in January**<br>Leave the Toronto snow behind: stand quietly at Pearl Harbor for a while, loop the island for turtles and stars, then chase one more sunset under sail. | **Costa Rica · Jan 6–11**<br>Out of the Toronto cold and south: one night to the sound of the Pacific, one day gliding over the cloud-forest canopy, three nights by the hot springs at the foot of a volcano. |
 
-Both are real plans made with travel-plan for two people; click a card to open one, no sign-in needed. Prices are records and estimates from mid-November 2026, and **nothing is booked**; the booking page has the final price.
+Both are real plans made with travel-plan for two people; click a card to open one, no sign-in needed. Prices are records and estimates from mid-November 2026: the Costa Rica flights, three hotels and rental car are booked and show what was paid; Oʻahu is **not booked yet**, and the booking page has the final price.
 
 ## Install in one message
 
@@ -83,8 +83,8 @@ For claude.ai or the Claude desktop app, see [Install](#install) below.
 
 | Offline base map | Share route poster |
 | :---: | :---: |
-| [![Land, forests, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers, highlights and the alpaca](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
-| Road classes · route shields · forests · towns and bays | A colour per day · place stickers · day cards · one-tap save |
+| [![Land, forests, rivers, borders, road classes, route shields and place names](docs/assets/map.png)](docs/assets/map.png) | [![Hand-drawn poster with each day's route, place stickers, highlights and the alpaca](docs/assets/share-poster.png)](docs/assets/share-poster.png) |
+| Road classes · route shields · rivers and borders · towns, national parks and bays | A colour per day · place stickers · day cards · one-tap save |
 
 **Multi-city trips can become a picker**: choose cities, reorder them and set nights per city, pick train or plane, and dates, lodging, routes and budget all follow; a match or show you must attend becomes the anchor. See the [multi-city workflow](references/multi-city.md).
 
@@ -166,11 +166,16 @@ Open the address the last command prints. `--demo` is a fictional Vancouver samp
 # after editing trip-data.json, fetch real road geometry again
 python scripts/fetch_routes.py ./my-trip
 
-# offline base map; with shapely installed mainland coastlines get filled, --detail full adds tertiary roads
+# offline base map (forests, lakes, rivers, borders, roads, towns and villages, province and park names);
+# with shapely installed mainland coastlines get filled, --detail full adds tertiary roads and smaller places
 python scripts/fetch_basemap.py ./my-trip
 
 # link preview card; add --url when publishing to a fixed address
 python scripts/make_card.py ./my-trip --url https://your-site/
+
+# calendar.ics / calendar.en.ics; host them on GitHub Pages to subscribe,
+# or with no site add --gist to save a secret GitHub Gist (needs a signed-in gh)
+node scripts/export_calendar.mjs ./my-trip --gist
 
 # package only the files the page needs; the output folder must be new or empty
 python scripts/package_site.py ./my-trip ./site-output
@@ -209,14 +214,14 @@ PDFs with text are converted first, page images are checked when needed, and eve
 
 It uses Leaflet, OpenStreetMap and real coordinates, with road lines from cached OSRM results. Without road data it shows places and directions and draws no invented curves.
 
-Under the online map sits an offline base map built from OpenStreetMap data, so hosts that block outside images still show land, lakes, roads and names; under that is a bundled simplified world map (Natural Earth, public domain), so zooming out to a whole continent never goes blank. Borders are approximate.
+Under the online map sits an offline base map built from OpenStreetMap data, so hosts that block outside images (such as the Claude Artifact viewer on a computer) still show forests, lakes, rivers, borders, roads, towns and national parks, with names appearing as you zoom in; under that is a bundled simplified world map (Natural Earth, public domain), so zooming out to a whole continent never goes blank. Borders are approximate.
 
 </details>
 
 <details>
 <summary>Do two people's choices sync?</summary>
 
-No. Each person's choices stay in their own browser and never overwrite each other. A local address (`127.0.0.1`) only opens on your own computer; to share, publish to a host others can reach.
+It depends on where the page lives. Published as a Claude Artifact, choices are saved in the cloud: you and anyone with edit access see the same set on computer and phone, and read-only viewers can look but not change them. On other hosts choices stay in each browser; tap "Sync" at the very bottom of the page and send the sync code or link to share the same set. A local address (`127.0.0.1`) only opens on your own computer; to share, publish to a host others can reach.
 
 </details>
 
@@ -238,12 +243,13 @@ No. An existing plan only changes the part you asked about; earlier decisions, c
 
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
-node --test tests/budget.test.mjs
+node --test
 node --check assets/starter/app.mjs
+node --check assets/starter/calendar.mjs
 node --check assets/starter/share-map.mjs
 ```
 
-Tests cover budget combinations, bag fees, package locking and release, money precision, zero spending, broken saved data, flight switching, data and poster references, offline base map generation (offline, with sample data), preview-card tags, and packages that leave out source PDFs, `.env` files and publishing credentials.
+Tests cover budget combinations, bag fees, package locking and release, money precision, zero spending, broken saved data, untouched choices following a new default, flight switching, calendar export (time zones, cross-zone flights, drive and opening-hour notes, line folding, zip packing, the subscribe relay link), data and poster references, offline base map generation (offline, with sample data), preview-card tags, and packages that leave out source PDFs, `.env` files and publishing credentials.
 
 Specific issues, reproducible itinerary edge cases and small complete PRs are welcome. Please add tests that show the behavior of new features, and use fictional data in public samples.
 
